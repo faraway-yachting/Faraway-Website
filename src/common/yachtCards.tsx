@@ -54,7 +54,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
   useEffect(() => {
     const fetchYachts = async () => {
       try {
-        const res = await axios.get("https://faraway.thedevapp.online/yacht/all-yachts");
+        const res = await axios.get("https://awais.thedevapp.online/yacht/all-yachts");
         const allYachts: Yacht[] = res.data.data.yachts;
 
         const normalizedPath = pathname?.replace(/\/+$/, "").trim() || "/";

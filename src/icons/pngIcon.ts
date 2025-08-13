@@ -63,6 +63,7 @@ var PngIcons = {
     line3: "/images/Line_3.png",
     frame1: "/images/Frame.png",
     rframe2: "/images/rframe2.png",
+    frame3: "/images/frame3.png",
     // Detail Card Hero
     Hbg2: "/images/Hbg_2.png",
     Hbg3: "/images/Hbg_3.png",

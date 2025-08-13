@@ -1,17 +1,9 @@
 "use client";
 import DOMPurify from "dompurify";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { blogData, BlogData } from "../../data/blogData";
 
-interface BlogData {
-  _id: string;
-  title: string;
-  slug: string;
-  shortDescription: string;
-  detailDescription: string;
-  image: string;
-  status: string;
-}
+
 
 interface BlogProps {
   slug: string;
@@ -34,11 +26,10 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchBlog = async () => {
+    const fetchBlog = () => {
       try {
-        // Get all blogs from the API
-        const allBlogsRes = await axios.get("https://faraway.thedevapp.online/blog/all-blogs");
-        const allBlogs: BlogData[] = allBlogsRes.data?.data?.blogs || [];
+        // Use local blog data instead of API call
+        const allBlogs: BlogData[] = blogData;
 
         // Find the blog that matches our slug using the same slugify logic
         const matchingBlog = allBlogs.find(blog => {
@@ -53,46 +44,11 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
         if (matchingBlog) {
           setData(matchingBlog);
         } else {
-          // Try direct API calls with different slug formats
-          const slugVariations = [
-            slug,
-            slug.toLowerCase(),
-            slugify(slug),
-            slug.replace(/-/g, ' '),
-            slug.replace(/-/g, '_'),
-            slug.replace(/-/g, ''),
-          ];
-          
-          let found = false;
-          for (const variation of slugVariations) {
-            try {
-              const res = await axios.get(`https://faraway.thedevapp.online/blog/${variation}`);
-              
-              if (res.data?.data?.blog) {
-                setData(res.data.data.blog);
-                found = true;
-                break;
-              } else if (res.data?.blog) {
-                setData(res.data.blog);
-                found = true;
-                break;
-              } else if (res.data && res.data.title) {
-                setData(res.data);
-                found = true;
-                break;
-              }
-            } catch (directErr: any) {
-              continue;
-            }
-          }
-
-          if (!found) {
-            const errorMessage = `Blog not found. Searched for slug: "${slug}". Available slugs: ${allBlogs.map(b => slugify(b.slug)).join(", ")}`;
-            throw new Error(errorMessage);
-          }
+          const errorMessage = `Blog not found. Searched for slug: "${slug}". Available slugs: ${allBlogs.map(b => slugify(b.slug)).join(", ")}`;
+          throw new Error(errorMessage);
         }
       } catch (err: any) {
-        const errorMessage = err?.response?.data?.message || err.message || "Failed to fetch blog";
+        const errorMessage = err?.message || "Failed to fetch blog";
         setError(errorMessage);
       } finally {
         setLoading(false);

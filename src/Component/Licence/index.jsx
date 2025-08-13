@@ -1,5 +1,6 @@
 import Image from "next/image";
 import PngIcons from "@/icons/pngIcon";
+import Link from "next/link";
 
 const Licence = () => {
   const certificates = [
@@ -15,9 +16,11 @@ const Licence = () => {
     <div className="bg-white pt-7">
       {/* Header Section */}
       <div className="flex flex-col justify-center items-center text-center mb-6 px-4">
-        <p className="text-[21px] font-bold mb-2 underline text-[#034250] xl:text-[24px] uppercase">
-          Booking terms and conditions
-        </p>
+        <Link href="/terms-and-conditions">
+          <p className="text-[21px] font-bold mb-2 underline text-[#034250] xl:text-[24px] uppercase">
+            Booking terms and conditions
+          </p>
+        </Link>
         <Image
           src={PngIcons.Certificate1}
           height={100}

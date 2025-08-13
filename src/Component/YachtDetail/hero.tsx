@@ -55,7 +55,7 @@ const HeroSection: React.FC<HeroProps> = ({ slug }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("https://faraway.thedevapp.online/yacht/all-yachts");
+        const res = await axios.get("https://awais.thedevapp.online/yacht/all-yachts");
         const allYachts: Yacht[] = res.data.data.yachts;
 
         const matched = allYachts.find(

@@ -47,7 +47,7 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
         const fetchBlogs = async () => {
             try {
 
-                const res = await axios.get("https://faraway.thedevapp.online/blog/all-blogs");
+                const res = await axios.get("https://awais.thedevapp.online/blog/all-blogs");
                 const allBlogs: BlogData[] = res.data?.data?.blogs || [];
 
                 const publishedBlogs = allBlogs.filter(
