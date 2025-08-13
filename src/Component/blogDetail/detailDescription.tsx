@@ -1,15 +1,24 @@
 "use client";
+
 import DOMPurify from "dompurify";
 import { useEffect, useState } from "react";
-import { blogData, BlogData } from "../../data/blogData";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 
-
+interface BlogData {
+  _id: string;
+  title: string;
+  slug: string;
+  shortDescription: string;
+  detailDescription: string;
+  image: string;
+  status: string;
+}
 
 interface BlogProps {
   slug: string;
 }
 
-// Use the same slugify function as in blogCards.tsx for consistency
 const slugify = (text: string | undefined | null): string => {
   if (!text) return "";
   return text
@@ -23,44 +32,42 @@ const slugify = (text: string | undefined | null): string => {
 const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
   const [data, setData] = useState<BlogData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
-    const fetchBlog = () => {
-      try {
-        // Use local blog data instead of API call
-        const allBlogs: BlogData[] = blogData;
+    if (!slug) {
+      setLoading(false);
+      return;
+    }
 
-        // Find the blog that matches our slug using the same slugify logic
-        const matchingBlog = allBlogs.find(blog => {
-          const blogSlugified = slugify(blog.slug);
-          const inputSlugified = slugify(slug);
-          
-          return blogSlugified === inputSlugified || 
-                 blogSlugified === slug.toLowerCase() ||
-                 blog.slug.toLowerCase() === slug.toLowerCase();
-        });
+    const fetchBlog = async () => {
+      try {
+        const res = await axios.get(
+          "https://awais.thedevapp.online/blog/all-blogs"
+        );
+        const allBlogs: BlogData[] = res.data?.data?.blogs || [];
+
+        // Only published blogs
+        const publishedBlogs = allBlogs.filter(
+          (blog) => blog.status?.toLowerCase().trim() === "published"
+        );
+
+        // Match by slug
+        const matchingBlog = publishedBlogs.find(
+          (blog) => slugify(blog.slug) === slugify(slug)
+        );
 
         if (matchingBlog) {
           setData(matchingBlog);
-        } else {
-          const errorMessage = `Blog not found. Searched for slug: "${slug}". Available slugs: ${allBlogs.map(b => slugify(b.slug)).join(", ")}`;
-          throw new Error(errorMessage);
         }
-      } catch (err: any) {
-        const errorMessage = err?.message || "Failed to fetch blog";
-        setError(errorMessage);
+      } catch (err) {
+        console.error("Error fetching blog detail:", err);
       } finally {
         setLoading(false);
       }
     };
 
-    if (slug) {
-      fetchBlog();
-    } else {
-      setError("No slug provided");
-      setLoading(false);
-    }
+    fetchBlog();
   }, [slug]);
 
   if (loading) {
@@ -71,33 +78,31 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
     );
   }
 
-  if (error) {
-    return (
-      <div className="max-w-7xl mx-auto py-10 px-4">
-        <p className="text-red-500 text-lg font-semibold mb-4">Error loading blog:</p>
-        <p className="text-red-500 text-base">{error}</p>
-        <p className="text-gray-600 text-sm mt-4">
-          Searched for slug: <code className="bg-gray-100 px-2 py-1 rounded">{slug}</code>
-        </p>
-      </div>
-    );
-  }
-
   if (!data) {
     return (
-      <div className="max-w-7xl mx-auto py-10 px-4">
-        <p className="text-gray-500 text-lg">No blog found with slug: {slug}</p>
+      <div className="max-w-7xl mx-auto py-10 px-4 text-center">
+        <p className="text-red-500 text-lg font-semibold mb-4">
+          Blog not found
+        </p>
+        <button
+          onClick={() => router.push("/blog")}
+          className="bg-[#2185D0] text-white px-6 py-2 rounded-lg hover:bg-[#1b6fab] transition"
+        >
+          Back to Blog List
+        </button>
       </div>
     );
   }
 
   return (
-    <div className="">
+    <div>
       <div className="relative">
         <div className="bg-[url('/images/blogimg1.png')] bg-cover bg-center bg-no-repeat min-h-[30vh] md:min-h-[40vh] lg:min-h-[58vh] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
           <div className="absolute inset-0 bg-[#034250]/40 z-0" />
           <div className="relative z-10">
-            <p className="text-[40px] font-playfair font-bold mb-4 text-white max-w-2xl mx-auto text-center">{data.title}</p>
+            <p className="text-[40px] font-playfair font-bold mb-4 text-white max-w-2xl mx-auto text-center">
+              {data.title}
+            </p>
           </div>
         </div>
       </div>
@@ -106,14 +111,16 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
         <img
           src={data.image || "/images/default-blog.jpg"}
           alt={data.title}
-          className="w-full h-94 object-cover mb-4 "
+          className="w-full h-94 object-cover mb-4"
         />
         <p className="text-lg text-black font-normal font-sourceSanspro leading-relaxed">
           {data.shortDescription}
         </p>
         <div
           className="text-lg text-black font-normal font-sourceSanspro leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data.detailDescription || "") }}
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(data.detailDescription || ""),
+          }}
         />
       </div>
     </div>
