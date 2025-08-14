@@ -97,12 +97,12 @@ export const termsData: TermSection[] = [
         content: "The date we receive the message is the one used in calculating the charge. The following cancellation charges apply:"
       },
       {
-        id: "3.2.1",
+        id: "day-charter-cancellation",
         title: "3.2.1 Day charter cancellation",
         content: "Longer than 14 days prior to the charter date – there will be a 100 Euro administration fee for cancellations. Less than 14 days prior to the charter date – 50% of the full charter fee will be charged. Less than 7 days prior to departure date – 100% of the full charter fee will be charged."
       },
       {
-        id: "3.2.2",
+        id: "overnight-charter-cancellation",
         title: "3.2.2 Overnight charter cancellation",
         content: "60 days or prior to the charter – there will be a 100 Euro administration fee for cancellations. Between 60 and 45 days prior to the charter – 30% of the total charter fee. Less than 45 days – 100% of the charter fee will be charged."
       },
@@ -195,7 +195,7 @@ export const termsData: TermSection[] = [
     ]
   },
   {
-    id: "insurance",
+    id: "holiday&cancellation-insurance",
     title: "7. Holiday & Cancellation Insurance",
     icon: "MdSecurity",
     subsections: [
@@ -212,7 +212,7 @@ export const termsData: TermSection[] = [
     ]
   },
   {
-    id: "equipment",
+    id: "equipment-breakdown",
     title: "8. Equipment Breakdown",
     icon: "MdWarning",
     subsections: [
@@ -261,7 +261,7 @@ export const termsData: TermSection[] = [
     ]
   },
   {
-    id: "information",
+    id: "information-provided",
     title: "10. Information Provided",
     icon: "IoMdInformationCircleOutline",
     subsections: [
@@ -273,7 +273,7 @@ export const termsData: TermSection[] = [
     ]
   },
   {
-    id: "price",
+    id: "price-changes&promotions",
     title: "11. Price Changes & Promotions",
     icon: "MdCreditCard",
     subsections: [
@@ -290,7 +290,7 @@ export const termsData: TermSection[] = [
     ]
   },
   {
-    id: "intellectual",
+    id: "intellectual-property&privacy-policy",
     title: "12. Intellectual Property & Privacy Policy",
     icon: "MdOutlinePrivacyTip",
     subsections: [
@@ -312,7 +312,7 @@ export const termsData: TermSection[] = [
     ]
   },
   {
-    id: "additional",
+    id: "additional-terms",
     title: "13. Additional Terms",
     icon: "LuFileTerminal",
     subsections: [
@@ -329,7 +329,7 @@ export const termsData: TermSection[] = [
     ]
   },
   {
-    id: "final",
+    id: "final-note",
     title: "14. Final Note",
     icon: " BiSolidCommentDetail",
     subsections: [

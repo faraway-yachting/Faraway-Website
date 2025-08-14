@@ -8,7 +8,7 @@ const HeroContent = () => {
 
       {/* Batch Image Top-Left inside container */}
       <div className="relative max-w-6xl mx-auto w-full ">
-        <img
+        <img 
           src="/images/batch1.png"
           alt="Batch"
           className="absolute top-6 w-[150px] h-auto z-10"

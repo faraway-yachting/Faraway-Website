@@ -9,7 +9,7 @@ import { FaRegEnvelope } from "react-icons/fa";
 import { RiMap2Line } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
-
+ 
 const quickLinks = [
   { label: "Crewed Yachts", href: "/yacht-carter-phuket" },
   { label: "Bareboat Yachts", href: "/bareboat-charter-thailand" },
@@ -20,10 +20,10 @@ const quickLinks = [
 
 const usefulLinks = [
   { label: "About Us", href: "/aboutus" },
-  { label: "Mission Statement", href: "/mission" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Mission Statement", href: "/aboutus#mission" },
+  { label: "FAQ", href: "/aboutus#faq" },
   { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Blog", href: "/blog" },
+  { label: "Blog", href: "/blog" },   
 ];
 
 const iconClass = "text-[#D6AB61]";
@@ -119,7 +119,7 @@ const Footer = () => {
           <form className="space-y-3">
             <input
               type="text"
-              placeholder="Name"
+              placeholder="Name"                         
               className="w-full p-2 rounded bg-white text-black placeholder:text-gray-600"
             />
             <input
@@ -130,10 +130,10 @@ const Footer = () => {
             <button
               type="submit"
               className="w-full p-2 rounded bg-[#D6AB61] hover:bg-yellow-600 text-black font-semibold"
-            >
+            >        
               Send
             </button>
-          </form>
+          </form>         
         </div>
       </div>
 

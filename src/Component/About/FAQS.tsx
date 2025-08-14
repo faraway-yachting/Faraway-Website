@@ -13,9 +13,9 @@ const AboutSection_FAQs = () => {
   const toggleItem = (index: number) => {
     setActiveId((prev) => (prev === index ? null : index));
   };
-
+ 
   return (
-    <section className="bg-white">
+    <section className="bg-white"  id="faq">
       <div className="max-w-7xl mx-auto px-4 xl:px-0">
         {/* Heading */}
         <div className="mb-8 lg:mb-10 xl:mb-12 flex justify-center flex-col items-center">

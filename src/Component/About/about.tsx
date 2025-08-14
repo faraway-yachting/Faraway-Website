@@ -23,7 +23,7 @@ const AboutSection = () => {
                 </div>
 
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 lg:gap-8 xl:gap-16 mt-6 md:mt-8 lg:mt-11 xl:mt-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 lg:gap-8 xl:gap-16 mt-6 md:mt-8 lg:mt-11 xl:mt-14" id="mission">
                 <div className="flex items-center">
                     <img src={PngIcons.aboutimg4} alt="" />
                 </div>
