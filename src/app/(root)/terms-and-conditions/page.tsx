@@ -7,7 +7,7 @@ const TermsAndCondition = () => {
     return (
         <Fragment>
             <HeroSection />
-            <TableOfContents />
+            {/* <TableOfContents /> */}
             <TermsAndConditions />
         </Fragment>
     )

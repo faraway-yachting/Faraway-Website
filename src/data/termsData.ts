@@ -263,7 +263,7 @@ export const termsData: TermSection[] = [
   {
     id: "information",
     title: "10. Information Provided",
-    icon: "MdDescription",
+    icon: "IoMdInformationCircleOutline",
     subsections: [
       {
         id: "10.1",
@@ -292,7 +292,7 @@ export const termsData: TermSection[] = [
   {
     id: "intellectual",
     title: "12. Intellectual Property & Privacy Policy",
-    icon: "MdDescription",
+    icon: "MdOutlinePrivacyTip",
     subsections: [
       {
         id: "12.1",
@@ -314,7 +314,7 @@ export const termsData: TermSection[] = [
   {
     id: "additional",
     title: "13. Additional Terms",
-    icon: "MdDescription",
+    icon: "LuFileTerminal",
     subsections: [
       {
         id: "13.1",
@@ -331,7 +331,7 @@ export const termsData: TermSection[] = [
   {
     id: "final",
     title: "14. Final Note",
-    icon: "MdDescription",
+    icon: " BiSolidCommentDetail",
     subsections: [
       {
         id: "14.1",

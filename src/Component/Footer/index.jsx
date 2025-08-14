@@ -11,11 +11,11 @@ import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
 
 const quickLinks = [
-  { label: "Crewed Yachts", href: "/crewed-yachts" },
-  { label: "Bareboat Yachts", href: "/bareboat-yachts" },
-  { label: "Day Trip Yachts", href: "/day-trip-yachts" },
-  { label: "Luxury Yachts", href: "/luxury-yachts" },
-  { label: "Overnight Itineraries", href: "/overnight-itineraries" },
+  { label: "Crewed Yachts", href: "/yacht-carter-phuket" },
+  { label: "Bareboat Yachts", href: "/bareboat-charter-thailand" },
+  { label: "Day Trip Yachts", href: "/yacht-carter-phuket" },
+  { label: "Luxury Yachts", href: "bareboat-charter-thailand" },
+  { label: "Overnight Itineraries", href: "magical-destinations-with-private-yacht-in-phuket" },
 ];
 
 const usefulLinks = [
@@ -48,30 +48,51 @@ const Footer = () => {
         <div className="lg:col-span-3 xl:col-span-4">
           <h3 className={heading}>Faraway Yachting Co. Ltd.</h3>
           <div className="flex items-start gap-3 mb-2">
-            <FaPhoneAlt className={`mt-1 ${iconClass}`} />
-            <span className={textclass}>+66 61 234 5623</span>
+            <a
+              href="tel:66612345623"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <FaPhoneAlt className={`mt-1 ${iconClass}`} />
+              <span className={textclass}>+66 61 234 5623</span>
+            </a>
           </div>
           <div className="flex items-start gap-3 mb-2">
             <FaRegEnvelope className={`mt-1 ${iconClass}`} />
             <span className={textclass}>info@far-away.net</span>
           </div>
           <div className="flex items-start gap-3">
-            <RiMap2Line size={20} className={`mt-1 ${iconClass}`} />
-            <span className="text-[16px] font-normal max-w-xs">
-              40/1 Chaofa Road, Moo 9 Tambon Chalong, Amphoe Mueang Phuket,
-              Chang Wat Phuket 83130
-            </span>
+            <a
+              href="https://www.google.com/maps/place/Faraway+Yachting+Phuket,+Thailand/@7.8229322,98.344313,15z/data=!4m6!3m5!1s0x3050257bffffffff:0x937eaf99ed7fa6b7!8m2!3d7.8235296!4d98.3451594!16s%2Fg%2F12hp6d07j?entry=ttu&g_ep=EgoyMDI1MDgxMS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+               className="flex items-center gap-2"
+            >
+              <RiMap2Line size={20} className={`mt-1 ${iconClass}`} />
+              <span className="text-[16px] font-normal max-w-xs">
+                40/1 Chaofa Road, Moo 9 Tambon Chalong, Amphoe Mueang Phuket,
+                Chang Wat Phuket 83130
+              </span>
+            </a>
           </div>
 
           <div className="flex gap-3 mt-6 flex-wrap">
-            {[FaFacebookF, FaInstagram, FaWhatsapp, FaLine].map((Icon, idx) => (
-              <p
+            {[
+              { Icon: FaFacebookF, href: "https://www.facebook.com/FarawayYachting" },
+              { Icon: FaInstagram, href: "https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Ffarawayyachting%2F%3Ffbclid%3DIwAR0iAzKhJjfT0NVO5X5tKjjJ-uwaWQ4m6DQ03l9vQiGxJ8Q7OJQQByekk54&is_from_rle" },
+              { Icon: FaWhatsapp, href: "https://tel:66612345623" },
+              { Icon: FaLine, href: "https://line.me/ti/p/@farawayyachting" }
+            ].map(({ Icon, href }, idx) => (
+              <a
                 key={idx}
-                href="#"
-                className="border border-white p-3 hover:bg-[#37ABC0] text-white rounded-full"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-white p-3 hover:bg-[#37ABC0] text-white rounded-full transition-colors duration-300"
               >
                 <Icon className={iconClass} />
-              </p>
+              </a>
             ))}
           </div>
         </div>

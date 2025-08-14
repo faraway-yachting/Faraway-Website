@@ -1,5 +1,5 @@
 import PngIcons from "@/icons/pngIcon";
-
+import Link from "next/link";
 const HeroContent = () => {
   return (
     <section className="relative w-full bg-[url('/images/homeimg1.png')] bg-cover bg-end bg-no-repeat overflow-hidden min-h-[45vh] md:min-h-[80vh] lg:min-h-[72vh] xl:min-h-[82vh] flex justify-center">
@@ -28,9 +28,11 @@ const HeroContent = () => {
             <p className="text-[18px] md:text-[22px] font-normal font-sourceSanspro text-center my-5 md:max-w-2xl lg:max-w-4xl xl:max-w-4xl">
               Experience luxury and adventure with the best Phuket Yacht Charter Operator. Sail the stunning waters & best Islands of Phuket in style and make unforgettable memories.
             </p>
-            <button className="mt-4 bg-transparent border border-white px-8 py-2 text-white text-lg font-medium hover:bg-[#D6AB61]">
-              Contact Us Now
-            </button>
+            <Link href="/contact">
+              <button className="mt-4 bg-transparent border border-white px-8 py-2 text-white text-lg font-medium hover:bg-[#D6AB61]">
+                Contact Us Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>
