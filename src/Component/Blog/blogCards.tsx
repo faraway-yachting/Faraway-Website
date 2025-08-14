@@ -28,11 +28,10 @@ const slugify = (text: string | undefined | null): string => {
         .trim();
 };
 
-const limitWords = (text: string, wordLimit: number): string => {
+const limitCharacters = (text: string, charLimit: number): string => {
     if (!text) return "";
-    const words = text.split(" ");
-    return words.length > wordLimit 
-        ? words.slice(0, wordLimit).join(" ") + "..."
+    return text.length > charLimit 
+        ? text.slice(0, charLimit) + "..."
         : text;
 };
 
@@ -112,8 +111,8 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                                     />
                                 </div>
                                 <div className="px-4 pt-4">
-                                    <h3 className="text-[25px] md:text-[27px] lg:text-[29px] xl:text-[28px] font-semibold font-playfair text-zink mb-2">
-                                        {limitWords(blog.title, 4)}
+                                    <h3 className="text-[25px] md:text-[27px] lg:text-[29px] xl:text-[31px] font-semibold font-playfair text-zink mb-2">
+                                        {limitCharacters(blog.title, 22)}
                                     </h3>
                                     <p className="md:text-lg text-black font-normal font-sourceSanspro">
                                         {blog.shortDescription}

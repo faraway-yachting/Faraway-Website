@@ -37,9 +37,11 @@ const Cards = () => {
                       Read More
                     </p>
                   </Link>
-                  <button className="border font-poppins bg-white text-base lg:text-[17px] xl:text-[19px] border-mustard text-zink px-3 lg:px-4 xl:px-5 py-2 rounded-lg hover:bg-[#034250] hover:text-white transition">
+                <Link href="/contact">
+                <p className="border font-poppins bg-white text-base lg:text-[17px] xl:text-[19px] border-mustard text-zink px-3 lg:px-4 xl:px-5 py-2 rounded-lg hover:bg-[#034250] hover:text-white transition">
                     Contact Us
-                  </button>
+                  </p>
+                  </Link>
                 </div>
               </div>
             </div>

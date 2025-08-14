@@ -1,4 +1,5 @@
 import { FiPhone } from "react-icons/fi";
+import Link from "next/link";
 
 interface SetSailProps {
     id?: string;
@@ -43,10 +44,12 @@ const SetSail: React.FC<SetSailProps> = ({
                 <p className="text-white text-base md:text-lg lg:text-xl font-normal font-inter max-w-3xl px-4 py-3 lg:py-5 leading-relaxed lg:leading-tight">
                     Luxury, adventure, and unforgettable views—all aboard your private yacht. Discover hidden coves, island gems, and the beauty of Phuket.
                 </p>
+                <Link href="/contact">
                 <button className="bg-mustard cursor-pointer text-white text-base md:text-xl font-bold font-poppins px-5 py-2 md:py-3 rounded-lg flex items-center mx-auto mt-5 lg:mt-6 hover:bg-[#034250]">
                     <FiPhone className="mr-2" />
                     Contact Us Now
                 </button>
+                </Link>
             </div>
         </section>
     );
