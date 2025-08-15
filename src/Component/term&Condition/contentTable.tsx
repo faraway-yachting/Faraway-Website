@@ -33,7 +33,8 @@ const TableOfContents: React.FC = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Absolute Top Right Image */}
-      <div className="absolute top-0 right-0 w-[500px] md:w-[950px] h-[450px] overflow-hidden">
+      <div
+        className="relative w-[500px] md:w-[730px] lg:w-[600px] xl:w-[950px] h-auto aspect-[2.17/1] md:aspect-[2.61/1] lg:aspect-[1.82/1] xl:aspect-[2.11/1] overflow-hidden" >
         <div className="w-full h-full clip-custom-shape relative">
           {/* Image */}
           <Image
@@ -41,6 +42,7 @@ const TableOfContents: React.FC = () => {
             alt="Decorative"
             fill
             className="object-cover"
+            sizes="(max-width: 768px) 500px, (max-width: 1024px) 730px, (max-width: 1280px) 600px, 950px"
           />
           {/* Color overlay ABOVE image */}
           <div className="absolute inset-0 bg-[#034250]/30 z-10"></div>
@@ -53,13 +55,14 @@ const TableOfContents: React.FC = () => {
   `}</style>
       </div>
 
+
       <div className="max-w-[78.5rem] mx-auto bg-white rounded-xl">
         {/* Top Section with Purple Circle */}
         <div className="relative z-10 p-8 flex items-start gap-6 ms-6">
-          <div className="w-50 h-50 bg-zink rounded-full border-3 border-mustard flex items-center justify-center shadow-lg shrink-0">
+          <div className="w-29 md:w-37 lg:w-45 xl:w-50 h-29 md:h-37 lg:h-45 xl:h-50 bg-zink rounded-full border-3 border-mustard flex items-center justify-center shadow-lg shrink-0">
             <div className="text-center text-white font-bold">
-              <p className="text-2xl leading-tight">Table of</p>
-              <p className="text-3xl leading-tight">Contents</p>
+              <p className="text-lg md:text-lg lg:text-xl xl:text-2xl  leading-tight">Table of</p>
+              <p className="text-xlmd:text-xl lg:text-2xl xl:text-3xl leading-tight">Contents</p>
             </div>
           </div>
         </div>

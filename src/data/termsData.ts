@@ -76,7 +76,7 @@ export const termsData: TermSection[] = [
     subsections: [
       {
         id: "2.1",
-        title: "",
+        title: "2.1",
         content: "Minor alterations are usually free of charge, provided they do not interfere with our schedules. Major alterations that interfere with our booking schedules may be treated as cancellations and re-bookings, and the relevant charges may apply."
       }
     ]
@@ -125,7 +125,7 @@ export const termsData: TermSection[] = [
     subsections: [
       {
         id: "4.1",
-        title: "",
+        title: "4.1",
         content: "No compensation will be paid in the case of unforeseeable and unusual circumstances beyond our control, the consequences of which could not have been avoided even if all due care had been exercised. Such circumstances or events include, but are not limited to, war or threat of war, riot, civil strife, industrial dispute, unavoidable technical problems with transport, closure or congestion of airports, terrorist activity, natural or nuclear disaster, fire, pandemic, and adverse weather conditions."
       }
     ]
@@ -267,7 +267,7 @@ export const termsData: TermSection[] = [
     subsections: [
       {
         id: "10.1",
-        title: "",
+        title: "10.1",
         content: "The information we provide regarding the yachts, itineraries, crew, sites, transfers, arrival/departures, prices, and all other aspects of the charters is correct to the best of our knowledge. However, we reserve the right to change any of the above as circumstances dictate without prior notice."
       }
     ]
