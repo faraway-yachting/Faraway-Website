@@ -1,85 +1,7 @@
 "use client";
-import { useState, useRef } from "react";
-import { formFields, contactDetails } from "@/data/contact";
+import { contactDetails } from "@/data/contact";
         
 const ContactSection = () => {
-    const [formValues, setFormValues] = useState<Record<string, string>>({});
-    const [errors, setErrors] = useState<Record<string, boolean>>({});
-    const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
-
-    const handleChange = (id: string, value: string) => {
-        setFormValues((prev) => ({ ...prev, [id]: value }));
-        setErrors((prev) => ({ ...prev, [id]: false }));
-    };
-    const setInputRef = (el: HTMLInputElement | null, index: number) => {
-        inputRefs.current[index] = el;
-    };
-
-    const handleBlur = (id: string, required: boolean) => {
-        if (required) {
-            setErrors((prev) => ({
-                ...prev,
-                [id]: !formValues[id]?.trim(),
-            }));
-        }
-    };
-
-    const handleKeyDown = (
-        e: React.KeyboardEvent,
-        index: number,
-        id: string,
-        required: boolean
-    ) => {
-        if (e.key === "Enter" || e.key === "Tab") {
-            const currentValue = formValues[id]?.trim() || "";
-            if (required && !currentValue) {
-                e.preventDefault();
-                setErrors((prev) => ({ ...prev, [id]: true }));
-                return;
-            }
-
-            e.preventDefault();
-            const next = inputRefs.current[index + 1];
-            if (next) {
-                next.focus();
-            } else {
-                const textarea = document.getElementById("message") as HTMLTextAreaElement | null;
-                textarea?.focus();
-            }
-        }
-    };
-
-    const inputFieldBase =
-        "peer w-full border-b-2 py-[14px] px-1 placeholder-transparent focus:outline-none";
-    const labelStyle = `
-  absolute left-1 top-[14px] text-[16px] transition-all duration-200
-  peer-placeholder-shown:top-[14px] peer-placeholder-shown:text-[16px] text-zink
-  peer-focus:top-[-10px] peer-focus:text-[14px]
-  peer-valid:top-[-10px] peer-valid:text-[14px]
-  peer-empty:top-[14px] peer-empty:text-[16px] peer-empty:text-zinc-400
-  bg-white px-1 text-zink
-`;
-
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        let valid = true;
-        const newErrors: Record<string, boolean> = {};
-
-        formFields.forEach((field) => {
-            if (field.required && !formValues[field.id]?.trim()) {
-                newErrors[field.id] = true;
-                valid = false;
-            }
-        });
-
-        setErrors(newErrors);
-        if (!valid) return;
-
-        console.log("Form Submitted", formValues);
-        // Add actual submission logic here
-    };
-
     return (
         <div className="">
             <div className="bg-[url('/images/Cimage1.png')] bg-cover bg-center bg-no-repeat min-h-[24vh] md:min-h-[30vh] lg:min-h-[40vh] w-full flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 text-center">
@@ -90,98 +12,36 @@ const ContactSection = () => {
 
             <section className="bg-white py-12 px-4 lg:px-6 ">
                 <div className="max-w-7xl mx-auto bg-white p-0 xl:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-12">
-                    {/* Left Side - Form */}
+                    {/* Left Side - Form (Replaced with iframe) */}
                     <div className="col-span-12 lg:col-span-7">
                         <h2 className="text-[28px] lg:text-[32px] xl:text-[36px] font-playfair font-bold text-[#034250] mb-4">
                             Get In Touch
                         </h2>
-                        <form
-                            onSubmit={handleSubmit}
-                            className="grid grid-cols-1 md:grid-cols-2 gap-6 text-[18px] font-inter text-zink"
-                        >
-                            {formFields.map((field, index) => {
-                                const hasError = errors[field.id];
-                                return (
-                                    <div key={field.id} className="relative">
-                                        <input
-                                            type={field.type}
-                                            id={field.id}
-                                            ref={(el) => setInputRef(el, index)}
-                                            placeholder=" " // still needed for peer-placeholder-shown fallback
-                                            value={formValues[field.id] || ""}
-                                            onChange={(e) => handleChange(field.id, e.target.value)}
-                                            onBlur={() => handleBlur(field.id, field.required)}
-                                            onKeyDown={(e) =>
-                                                handleKeyDown(e, index, field.id, field.required)
-                                            }
-                                            required={field.required}
-                                            className={`${inputFieldBase} ${hasError
-                                                ? "border-red-500 focus:border-red-500"
-                                                : "border-[#81A1A8] focus:border-[#034250] text-zink"
-                                                } ${field.type === "date" ? "peer-empty" : ""}`}
-                                        />
-
-                                        <label
-                                            htmlFor={field.id}
-                                            className={`${labelStyle} ${hasError
-                                                ? "text-red-500 peer-focus:text-red-500"
-                                                : "text-zinc-400 peer-focus:text-[#034250]"
-                                                }`}
-                                        >
-                                            {field.label}
-                                            {field.required && (
-                                                <span className="text-red-500 ml-1">*</span>
-                                            )}
-                                        </label>
-                                        {hasError && (
-                                            <p className="text-sm text-red-500 absolute -bottom-5 left-0">
-                                                This field is required.
-                                            </p>
-                                        )}
-                                    </div>
-                                );
-                            })}
-
-                            {/* Textarea */}
-                            <div className="relative md:col-span-2">
-                                <textarea
-                                    id="message"
-                                    placeholder=" "
-                                    value={formValues["message"] || ""}
-                                    onChange={(e) => handleChange("message", e.target.value)}
-                                    onBlur={() => handleBlur("message", false)}
-                                    onKeyDown={(e) => {
-                                        if (e.key === "Enter" && !e.shiftKey) e.preventDefault();
-                                    }}
-                                    required
-                                    className={`peer w-full text-zink border-b-2 
-      ${errors.message ? "border-red-500 focus:border-red-500" : "border-[#81A1A8] focus:border-[#034250]"} 
-      focus:outline-none py-[14px] px-1 placeholder-transparent resize-none h-[80px]`}
-                                />
-
-                                <label
-                                    htmlFor="message"
-                                    className={`absolute left-1 top-2.5 text-sm transition-all duration-200 
-      peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 
-      peer-focus:top-0.5 peer-focus:text-sm 
-      ${errors.message ? "text-red-500 peer-focus:text-red-500" : "text-zinc-400 peer-focus:text-[#034250]"}`}
-                                >
-                                    Locations you want to visit or any questions?
-                                </label>
-
-                                {errors.message && (
-                                    <p className="text-red-500 text-sm mt-1">This field is required.</p>
-                                )}
-                            </div>
-
-                            {/* Submit Button */}
-                            <button
-                                type="submit"
-                                className="bg-[#034250] text-white text-sm font-semibold px-6 py-2 rounded-md w-fit md:col-span-2"
+                        
+                        {/* Replaced form with iframe */}
+                        <div className="w-full h-[745px]">
+                            <iframe
+                                src="https://api.leadconnectorhq.com/widget/form/YBBUmegk6BkzfkI9GcOV"
+                                style={{width:'100%',height:'100%',border:'none',borderRadius:'3px'}}
+                                id="inline-YBBUmegk6BkzfkI9GcOV" 
+                                data-layout="{'id':'INLINE'}"
+                                data-trigger-type="alwaysShow"
+                                data-trigger-value=""
+                                data-activation-type="alwaysActivated"
+                                data-activation-value=""
+                                data-deactivation-type="neverDeactivate"
+                                data-deactivation-value=""
+                                data-form-name="Contact Us"
+                                data-height="745"
+                                data-layout-iframe-id="inline-YBBUmegk6BkzfkI9GcOV"
+                                data-form-id="YBBUmegk6BkzfkI9GcOV"
+                                title="Contact Us"
                             >
-                                Submit
-                            </button>
-                        </form>
+                            </iframe>
+                        </div>
+                        
+                        {/* Script tag for the iframe */}
+                        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
                     </div>
 
                     {/* Right Side - Contact Info */}

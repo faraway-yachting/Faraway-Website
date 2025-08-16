@@ -116,24 +116,31 @@ const Footer = () => {
             Subscribe to our newsletter to stay up-to-date with the latest
             news, promotions, and insider tips on Phuket yacht charters!
           </p>
-          <form className="space-y-3">
-            <input
-              type="text"
-              placeholder="Name"                         
-              className="w-full p-2 rounded bg-white text-black placeholder:text-gray-600"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full p-2 rounded bg-white text-black placeholder:text-gray-600"
-            />
-            <button
-              type="submit"
-              className="w-full p-2 rounded bg-[#D6AB61] hover:bg-yellow-600 text-black font-semibold"
-            >        
-              Send
-            </button>
-          </form>         
+          
+          {/* Replaced form with iframe */}
+          <div className="w-full h-[402px]">
+            <iframe
+                src="https://api.leadconnectorhq.com/widget/form/Buv1sv97px6C05DeraPW"
+                style={{width:'100%',height:'90%',border:'none',borderRadius:'3px'}}
+                id="inline-Buv1sv97px6C05DeraPW" 
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Subscribe"
+                data-height="402"
+                data-layout-iframe-id="inline-Buv1sv97px6C05DeraPW"
+                data-form-id="Buv1sv97px6C05DeraPW"
+                title="Subscribe"
+            >
+            </iframe>
+          </div>
+          
+          {/* Script tag for the iframe */}
+          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
         </div>
       </div>
 
