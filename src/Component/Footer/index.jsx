@@ -15,7 +15,7 @@ const quickLinks = [
   { label: "Bareboat Yachts", href: "/bareboat-charter-thailand" },
   { label: "Day Trip Yachts", href: "/yacht-carter-phuket" },
   { label: "Luxury Yachts", href: "bareboat-charter-thailand" },
-  { label: "Overnight Itineraries", href: "magical-destinations-with-private-yacht-in-phuket" },
+  { label: "Overnight Itineraries", href: "magical-destinations-with-private-yacht-in-phuket#overnightitineraries" },
 ];
 
 const usefulLinks = [

@@ -11,6 +11,7 @@ const ItinerarySection = () => {
 
   const renderItem = (item: ItineraryItem) => {
     return (
+      
       <div
         key={item.id}
         className="bg-[#F9FAFB] border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition duration-200"

@@ -1,5 +1,5 @@
 const Destinations_Section = () => {
-//  Array Data
+  //  Array Data
   const data = [
     {
       label: "Private yacht in Private yacht in phuket",
@@ -34,9 +34,8 @@ const Destinations_Section = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 xl:px-4 my-6 md:py-3 lg:py-10 xl:py-12">
-      {/* Outer grid container with 2 columns and spacing */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-8 lg:gap-x-10 xl:gap-x-12 gap-y-8 md:gap-y-10 lg:gap-y-12 xl:gap-y-14">
+    <div className="max-w-7xl mx-auto px-4 py-6 lg:py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
         {data.map((item, index) => (
           <div key={index} className="max-w-xl">
             <h3 className="text-[25px] md:text-[28px] lg:text-[30px] xl:text-[32px] font-semibold text-zink font-playfair mb-3">

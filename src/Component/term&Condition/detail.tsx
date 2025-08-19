@@ -141,13 +141,13 @@ export default function TermsWithTable() {
                 </div>
                 {/* Title & Points */}
                 <div className="flex-1">
-                  <h3 className="text-[20px] md:text-[22px] lg:text-[24px] xl:text-[26px] font-semibold text-zink">{section.title}</h3>
+                  <h3 className="text-[20px] md:text-[22px] lg:text-[24px] xl:text-[26px] font-semibold text-zink hover:text-[#D6AB62]">{section.title}</h3>
                   {section.points && section.points.length > 0 && (
                     <ul className="mt-2 list-disc list-inside text-base text-zink font-medium">
                       {section.points.map((point, idx) => (
                         <li 
                           key={idx} 
-                          className="cursor-pointer hover:text-mustard transition-colors duration-200"
+                          className="cursor-pointer hover:text-[#D6AB62] transition-colors duration-200"
                           onClick={(e) => {
                             e.stopPropagation();
                             handleScroll(point.id);

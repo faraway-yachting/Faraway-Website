@@ -8,10 +8,10 @@ const AboutSection = () => {
                     <div className="flex items-center">
                         <p className="w-13 md:w-15 lg:w-18 xl:w-21 border-b-3 border-mustard z-10"></p>
                         <p className="text-mustard font-semibold text-base lg:text-[18px] xl:text-[20px] font-inter uppercase relative z-10 ms-3">
-                            From Anchors to Adventures    </p>
+                            From Anchors to Adventures </p>
                     </div>
-                    <p className="text-[26px] lg:text-[34px] xl:text-[40px] font-bold font-playfair text-zink mb-3 uppercase">Our Story</p>
-                    <p className="text-base lg:text-lg xl:text-[22px] text-zink font-normal text-inter">Faraway Yachting began in 1996 when four passionate sailors from Austria, Norway, Australia, and the Netherlands met by chance at Kata Beach. What started as a sunset chat turned into a bold venture—offering sailing and scuba trips across Thailand, Myanmar, and even the remote Andaman Islands.<br />
+                    <p className="text-[26px] lg:text-[34px] xl:text-[36px] font-bold font-playfair text-zink mb-3 uppercase">Our Story</p>
+                    <p className="text-base lg:text-lg xl:text-[19px] text-zink font-normal text-inter text-relaxed">Faraway Yachting began in 1996 when four passionate sailors from Austria, Norway, Australia, and the Netherlands met by chance at Kata Beach. What started as a sunset chat turned into a bold venture—offering sailing and scuba trips across Thailand, Myanmar, and even the remote Andaman Islands.<br />
 
                         From diving with elephants to exploring volcanic reefs, we pioneered unforgettable expeditions across Southeast Asia. Today, 25+ years later, Faraway Yachting is still owned by one of the original founders, Wolfgang from Austria.<br />
 
@@ -34,8 +34,8 @@ const AboutSection = () => {
                         <p className="text-mustard font-semibold text-base lg:text-[18px] xl:text-[20px] font-inter uppercase relative z-10 ms-3">
                             Beyond the Horizon  </p>
                     </div>
-                    <p className="text-[26px] lg:text-[34px] xl:text-[40px] font-bold font-playfair text-zink mb-3 uppercase"> Our Mission</p>
-                    <p className="text-base lg:text-lg xl:text-[22px] text-zink font-normal text-inter">At Faraway Yachting, our mission is simple — create unforgettable, safe, and sustainable yacht adventures that bring joy to our guests and pride to our crew.<br />
+                    <p className="text-[26px] lg:text-[34px] xl:text-[36px] font-bold font-playfair text-zink uppercase mb-3"> Our Mission</p>
+                    <p className="text-base lg:text-lg xl:text-[19px] text-zink font-normal text-inter leading-relaxed">At Faraway Yachting, our mission is simple — create unforgettable, safe, and sustainable yacht adventures that bring joy to our guests and pride to our crew.<br />
                         We believe a happy crew means happy guests, so we invest in team spirit, personalized service, and thoughtful touches—from birthday surprises to tailor-made charters.<br />
                         Safety is our anchor. We exceed industry standards with rigorous maintenance and hands-on crew training, never compromising when it comes to protecting lives and vessels. <br />
                         As Thailand’s leading sustainable yacht company, we minimize fuel use, protect marine beauty, and champion eco-conscious innovation.<br />

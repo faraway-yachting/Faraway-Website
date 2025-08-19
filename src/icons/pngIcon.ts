@@ -194,6 +194,24 @@ var PngIcons = {
     crewedimg2: "/images/crewedadv2.png",
     crewedimg3: "/images/crewedadv3.png",
     crewedimg4: "/images/crewedadv4.png",
+
+    //Policy Page
+    policyimg2: "/images/policyimg2.png",
+    policyimg3: "/images/policyimg3.png",
+    picon1: "/images/policyicon1.png",
+    picon2: "/images/policyicon2.png",
+    picon3: "/images/policyicon3.png",
+    picon4: "/images/policyicon4.png",
+    picon5: "/images/policyicon5.png",
+    picon6: "/images/policyicon6.png",
+    picon7: "/images/policyicon7.png",
+    picon8: "/images/policyicon8.png",
+    picon9: "/images/policyicon9.png",
+    picon10: "/images/policyicon10.png",
+    picon11: "/images/policyicon11.png",
+    picon12: "/images/policyicon12.png",
 }
+
+
 
 export default PngIcons

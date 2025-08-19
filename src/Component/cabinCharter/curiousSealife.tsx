@@ -7,9 +7,7 @@ import { RefObject } from "react";
 interface SealifeFAQProps {
     sectionRef: RefObject<HTMLDivElement | null>; 
 }
-
 const SealifeFAQ = ({ sectionRef }: SealifeFAQProps) => {
-
   const [activeId, setActiveId] = useState<number | null>(0);
   const faqArray = Sealife || [];
   const firstColumn = faqArray.filter((_, i) => i % 2 === 0);

@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import Slider from "react-slick";
@@ -123,7 +122,7 @@ const FunMoments: React.FC = () => {
                   width={56}
                   height={56}
                   className="rounded-full w-10 md:w-14 lg:w-17 xl:w-20 h-10 md:h-14 lg:h-17 xl:h-20" />
-                <p className="text-sm md:text-baselg:text-xl font-bold text-mustard font-sourceSansPro">
+                <p className="text-sm md:text-base lg:text-xl font-bold text-mustard font-sourceSansPro">
                   {item.author}
                 </p>
               </div>

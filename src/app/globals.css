@@ -69,7 +69,11 @@
     border-color: var(--mustard);
   }
 }
-
+/* @layer components {
+  .btn-primary {
+    @apply text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-bold font-playfair;
+  }
+} */
 body {
   background: white;
   color: var(--foreground);
@@ -117,3 +121,4 @@ body {
   font-size: var(--text-base);
   color: var(--color-gray-700);
 }
+

@@ -11,9 +11,8 @@ const HeroContent = () => {
         <img 
           src="/images/batch1.png"
           alt="Batch"
-          className="absolute top-3 md:top-4 lg:top-5 xl:top-6 w-[80px] md:w-[100px] lg:w-[120px] xl:w-[150px] h-auto z-10"
+          className="absolute top-3 md:top-4 lg:top-5 xl:top-6 w-20 md:w-24 lg:w-32 xl:w-36 h-auto z-10"
         />
-
         {/* Content on top */}
         <div className="flex items-center justify-center h-full text-center text-white px-4 relative z-10">
           <div className="flex flex-col justify-center items-center max-w-4xl mx-auto">
