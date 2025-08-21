@@ -52,7 +52,7 @@ const ItinerarySection = () => {
   );
 
   return (
-    <section className="bg-white py-12 px-4 lg:px-8">
+    <section className="bg-white py-12 px-4 lg:px-8" id="overnightitineraries">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 xl:gap-16">
           <SeasonSection 
