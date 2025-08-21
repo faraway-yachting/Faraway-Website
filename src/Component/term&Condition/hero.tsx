@@ -17,7 +17,6 @@ const HeroSection = () => {
                         Valid for all charters booked after the 1st of January 2025
                     </p>
                 </div>
-
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import PngIcons from "@/icons/pngIcon";
 
 type HeroSectionProps = {
   heading: string;
-  breadcrumb: string;
+  breadcrumb?: string;
   backgroundImage?: string;
   dividerImage?: string;
 };

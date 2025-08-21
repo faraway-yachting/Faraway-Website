@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import SetSail from "@/common/yarchtcharter";
 import PngIcons from "@/icons/pngIcon";
@@ -7,7 +6,6 @@ import PngIcons from "@/icons/pngIcon";
 interface ChartersAdventureProps {
   id: string;
 }
-
 const backgroundMap: Record<string, string> = {
   "phang-nga-bay": PngIcons.bg_5,
   "racha-islands": PngIcons.bg_6,
@@ -25,5 +23,4 @@ const ChartersAdventure: React.FC<ChartersAdventureProps> = ({ id }) => {
 
   return <SetSail id={id} bgImage={bg} />;
 };
-
 export default ChartersAdventure;

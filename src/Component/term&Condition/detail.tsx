@@ -7,9 +7,8 @@ import { MdCreditCard, MdOutlinePrivacyTip, MdSchedule, MdCancel, MdWarning, MdS
 import { LuFileTerminal } from "react-icons/lu";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { BiSolidCommentDetail } from "react-icons/bi";
-import { termsData, insuranceRecommendation, finalMessage } from "../../data/termsData";
+import { termsData, insuranceRecommendation, finalMessage } from "../../data/terms/termsData";
 import HeadingContent from "@/common/heading";
-
 // Icon mapping
 const iconMap = {
   MdCreditCard,
@@ -79,7 +78,7 @@ export default function TermsWithTable() {
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
-      const targetId = hash.substring(1); // Remove the # symbol
+      const targetId = hash.substring(1); 
       
       // Check if it's a section ID
       const section = sections.find(s => s.id === targetId);
@@ -210,7 +209,6 @@ export default function TermsWithTable() {
                 </div>
               );
             })}
-
             {/* Final Message */}
             <div className="bg-gradient-to-r from-[#046B7A] to-[#034250] text-white p-8 text-center rounded-lg border-3 border-mustard mt-16">
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4">{finalMessage.title}</h3>

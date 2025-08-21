@@ -1,23 +1,16 @@
 import Image from "next/image";
 import PngIcons from "@/icons/pngIcon";
 import { FaCheckCircle } from "react-icons/fa";
+import { broadboatValues } from "@/data/destination/broadboatData";
 
-const values = [
-    { title: "Choose Your Vessel", description: "From sleek monohulls to spacious catamarans, our well-maintained fleet is ready for your comman" },
-    { title: "Explore Hidden Gems", description: "Discover secluded bays, vibrant reefs, and untouched coves—Phuket’s islands are yours to uncover." },
-    { title: "Live the Journey", description: "Swim in crystal-clear waters, snorkel vibrant coral reefs, and soak in epic sunsets—every day is a new chapter." },
-    { title: "Iconic Destinations", description: "Sail to Phi Phi’s limestone cliffs, glide through Phang Nga Bay, or anchor at remote tropical paradises." },
- 
-
-];
-
+const values = broadboatValues;
 const BroadBoat = () => (
     <section className="relative bg-white pb-13 md:pb-16 lg:pb-20 pt-7 md:pt-9 overflow-hidden">
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-12 md:mb-16">
                 <h2 className="text-2xl sm:text-3xl md:text-[40px] font-playfair font-bold text-mustard mb-4">Bareboat Charter Phuket</h2>
-                <p className="text-base sm:text-xl md:text-[22px] font-normal font-sourceSanspro max-w-6xl text-zink mx-auto text-gray-700">
+                <p className="text-base sm:text-xl md:text-[22px] font-sourceSanspro max-w-5xl text-zink mx-auto text-gray-700">
                     At Faraway Yachting, we believe your holiday should be more than a getaway—it should be an unforgettable escape.
                 </p>
             </div>
@@ -36,7 +29,6 @@ const BroadBoat = () => (
                         ))}
                     </ul>
                 </div>
-
                 <div className="w-full">
                     <Image src={PngIcons.bareboat} alt="Mission" width={590} height={590} className="w-full h-auto object-cover" />
                 </div>

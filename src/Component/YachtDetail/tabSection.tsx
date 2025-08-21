@@ -12,7 +12,6 @@ import { Yacht } from "../YachtDetail/hero";
 type Props = {
   data: Yacht | null;
 };
-
 const TabSection: React.FC<Props> = ({ data }) => {
   const features = [
     { title: "Length", value: `${data?.length} ft`, icon: RxRulerSquare },
@@ -22,7 +21,6 @@ const TabSection: React.FC<Props> = ({ data }) => {
     { title: "Day Charter Capacity", value: data?.passengerDayTrip, icon: FiSun },
     { title: "Overnight Charter Capacity", value: data?.passengerOvernight, icon: IoMoonOutline },
   ];
-
   const dayTripCards = [
     { icon: IoBoatOutline, label: "About Boat" },
     { icon: FiSun, label: "Day Charter" },
@@ -65,9 +63,7 @@ const TabSection: React.FC<Props> = ({ data }) => {
           </div>
         ))}
       </div>
-      {/* 
-
-
+      
       {/* Tabs */}
       <div className="flex flex-wrap gap-2 sm:gap-4 md:gap-5 lg:gap-7 overflow-x-auto mt-6">
         {dayTripCards.map(({ label, icon: Icon }) => (
@@ -86,7 +82,6 @@ const TabSection: React.FC<Props> = ({ data }) => {
           </button>
         ))}
       </div>
-
       {/* Render Tab Content */}
       <div className="mt-6">{renderContent()}</div>
     </div>

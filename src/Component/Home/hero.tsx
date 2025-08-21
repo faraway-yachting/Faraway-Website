@@ -5,7 +5,6 @@ const HeroContent = () => {
     <section className="relative w-full bg-[url('/images/homeimg1.png')] bg-cover bg-end bg-no-repeat overflow-hidden min-h-[57vh] md:min-h-[80vh] lg:min-h-[72vh] xl:min-h-[82vh] flex justify-center">
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#034250]/50 z-0" />
-
       {/* Batch Image Top-Left inside container */}
       <div className="relative max-w-6xl mx-auto w-full ">
         <img 

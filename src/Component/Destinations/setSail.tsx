@@ -10,5 +10,4 @@ const Setsail = () => {
     </Fragment>
   );
 };
-
 export default Setsail;

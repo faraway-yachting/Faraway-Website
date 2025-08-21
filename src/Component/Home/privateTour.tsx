@@ -21,6 +21,8 @@ const PrivateYacht_Tour = () => {
                     </div>
                 </div>
             </div>
+
+            
         </div>
     )
 }

@@ -12,7 +12,6 @@ export interface AboutData {
     line1: string;
   };
 }
-
 // ✅ Keys with hyphens must be in quotes
 export const aboutPages: Record<string, AboutData> = {
   "phi-phi-island": {

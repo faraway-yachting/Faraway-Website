@@ -3,63 +3,16 @@ import { LuAnchor } from "react-icons/lu";
 import { GoCheckCircle } from "react-icons/go";
 import HeadingContent from "@/common/heading";
 import { RefObject } from "react";
-
-const pricingOptions = [
-  {
-    title: "Oceanview Duo – Ensuite Cabin",
-    price: "€1,199",
-    per: "per person",
-    type: "Double Occupancy",
-    features: [
-      "Private ensuite bathroom",
-      "Ideal for couples or friends",
-      "Wake up to the sea every morning",
-    ],
-  },
-  {
-    title: "Solo Serenity – Ensuite Cabin",
-    price: "€1,599",
-    per: "per person",
-    type: "Single Occupancy",
-    features: [
-      "Enjoy your own ensuite space",
-      "No sharing, just serenity",
-      "Premium comfort for solo travelers",
-    ],
-  },
-  {
-    title: "Shared Bliss – Non-Ensuite Cabin",
-    price: "€1,099",
-    per: "per person",
-    type: "Double Occupancy",
-    features: [
-      "Budget-friendly comfort",
-      "Shared facilities",
-      "Great for easy-going duos",
-    ],
-  },
-  {
-    title: "Private Retreat – Non-Ensuite Cabin",
-    price: "€1,499",
-    per: "per person",
-    type: "Single Occupancy",
-    features: [
-      "Simple and peaceful stay",
-      "Shared facilities, personal space",
-      "Ideal for quiet solo explorers",
-    ],
-  },
-];
+import { pricingOptions } from "@/data/cabincharter/momentsData";
 
 interface PricingSectionProps {
-    sectionRef: RefObject<HTMLDivElement | null>; // <-- fixed
+    sectionRef: RefObject<HTMLDivElement | null>;
 }
 
 const PricingSection = ({ sectionRef }: PricingSectionProps) => {
   return (
-    <section ref={sectionRef}  className="bg-[#E6ECED1A] py-5 md:py-8 px-14 md:px-16 lg:px-4 xl:px-0">
+    <section ref={sectionRef} className="bg-[#E6ECED1A] py-5 md:py-8 px-14 md:px-16 lg:px-4 xl:px-0">
       <div className="max-w-[78.2rem] mx-auto">
-        {/* Heading */}
         <div className="text-center mb-12">
           <HeadingContent
             heading="Pricing"
@@ -88,7 +41,6 @@ const PricingSection = ({ sectionRef }: PricingSectionProps) => {
                   </p>
                 </div>
 
-
                 <ul className="space-y-2 text-[16px] font-sourceSansPro text-zink font-normal">
                   {option.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2">
@@ -110,5 +62,4 @@ const PricingSection = ({ sectionRef }: PricingSectionProps) => {
     </section>
   );
 };
-
 export default PricingSection;

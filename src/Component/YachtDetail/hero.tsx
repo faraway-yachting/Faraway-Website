@@ -11,7 +11,6 @@ import YachtAdventure from "../Charter/yachtAdventure";
 interface HeroProps {
   slug: string;
 }
-
 export interface Yacht {
   _id: string;
   slug: string;
@@ -46,7 +45,6 @@ const slugify = (text: string | undefined | null): string => {
     .replace(/\s+/g, "-")
     .trim();
 };
-
 const HeroSection: React.FC<HeroProps> = ({ slug }) => {
   const [data, setData] = useState<Yacht | null>(null);
   const [loading, setLoading] = useState(true);
@@ -74,7 +72,6 @@ const HeroSection: React.FC<HeroProps> = ({ slug }) => {
         setLoading(false);
       }
     };
-
     fetchData();
   }, [slug]);
 
@@ -89,28 +86,25 @@ const HeroSection: React.FC<HeroProps> = ({ slug }) => {
   if (error || !data) {
     return <div className="text-red-500 text-center mt-10">{error}</div>;
   }
-
   return (
-    <div className="max-w-[78.2rem] mx-auto px-4 xl:px-0">
-      <p className="text-[32px] font-playfair font-bold text-zink mt-3">{data.title}</p>
-
-      <div className="flex flex-col md:flex-row gap-5 mt-6">
-        <div className="w-full md:w-[70%]">
-          <Gallery data={data} />
-          <TabSection data={data} />
+    <div>
+      <div className="max-w-[78.2rem] mx-auto px-4 xl:px-0">
+        <p className="text-[32px] font-playfair font-bold text-zink mt-3">{data.title}</p>
+        <div className="flex flex-col md:flex-row gap-5 mt-6">
+          <div className="w-full md:w-[70%]">
+            <Gallery data={data} />
+            <TabSection data={data} />
+          </div>
+          <div className="w-full md:w-[30%] sticky top-[8rem]">
+            <ContactDetail data={data} />
+          </div>
         </div>
-        <div className="w-full md:w-[30%] sticky top-[8rem]">
-          <ContactDetail data={data} />
+        <div className="mt-6">
+          <VideoSection data={data} />
         </div>
       </div>
-
-      <div className="mt-6">
-        <VideoSection data={data} />
-      </div>
-
       <YachtAdventure />
     </div>
   );
 };
-
 export default HeroSection;

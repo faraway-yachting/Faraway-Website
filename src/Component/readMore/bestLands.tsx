@@ -1,6 +1,6 @@
 "use client";
 import PngIcons from "@/icons/pngIcon";
-import { islandsById } from "@/data/bestlandData";
+import { islandsById } from "@/data/readmore/bestlandData";
 
 type Land = {
   id: string;

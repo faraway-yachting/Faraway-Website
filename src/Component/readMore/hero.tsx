@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { heroPages, HeroConfig } from "@/data/heroData";
+import { heroPages, HeroConfig } from "@/data/readmore/heroData";
 interface HeroSectionProps {
   id: string;
 }

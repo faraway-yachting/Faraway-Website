@@ -1,5 +1,4 @@
 "use client";
-
 import DOMPurify from "dompurify";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -14,11 +13,9 @@ interface BlogData {
   image: string;
   status: string;
 }
-
 interface BlogProps {
   slug: string;
 }
-
 const slugify = (text: string | undefined | null): string => {
   if (!text) return "";
   return text
@@ -28,7 +25,6 @@ const slugify = (text: string | undefined | null): string => {
     .replace(/\s+/g, "-")
     .trim();
 };
-
 const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
   const [data, setData] = useState<BlogData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -46,17 +42,14 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
           "https://awais.thedevapp.online/blog/all-blogs"
         );
         const allBlogs: BlogData[] = res.data?.data?.blogs || [];
-
         // Only published blogs
         const publishedBlogs = allBlogs.filter(
           (blog) => blog.status?.toLowerCase().trim() === "published"
         );
-
         // Match by slug
         const matchingBlog = publishedBlogs.find(
           (blog) => slugify(blog.slug) === slugify(slug)
         );
-
         if (matchingBlog) {
           setData(matchingBlog);
         }
@@ -66,7 +59,6 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
         setLoading(false);
       }
     };
-
     fetchBlog();
   }, [slug]);
 
@@ -77,7 +69,6 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
       </div>
     );
   }
-
   if (!data) {
     return (
       <div className="max-w-7xl mx-auto py-10 px-4 text-center">
@@ -93,7 +84,6 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
       </div>
     );
   }
-
   return (
     <div>
       <div className="relative">
@@ -106,7 +96,6 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
           </div>
         </div>
       </div>
-
       <div className="max-w-5xl mx-auto py-10 px-4">
         <img
           src={data.image || "/images/default-blog.jpg"}

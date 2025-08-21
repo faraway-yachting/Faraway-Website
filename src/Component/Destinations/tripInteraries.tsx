@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { dayTripCards } from "@/data/sliderData";
+import { dayTripCards } from "@/data/destination/sliderData";
 
 const DayTripSlider = () => {
   const [activeTab, setActiveTab] = useState<string | null>(null);
@@ -38,7 +38,7 @@ const DayTripSlider = () => {
               onClick={() => setActiveTab(label)}
               className={`py-1 text-[15px] md:text-lg xl:text-xl font-poppins font-medium flex items-center gap-2 transition ${activeTab === label
                 ? "text-mustard border-b-2 border-mustard"
-                : "text-[#034250] border-b-2 border-b-zink"
+                : "text-zink border-b-2 border-b-zink"
                 }`}
             >
               <span>
@@ -58,12 +58,12 @@ const DayTripSlider = () => {
                 alt={currentCard.category}
                 width={400}
                 height={400}
-                className="object-cover w-full h-[300px] md:h-[490px] lg:h-[565px] xl:h-[600px]"
+                className="object-cover w-full h-[300px] md:h-[485px] lg:h-[560px] xl:h-[580px]"
               />
 
             </div>
             <div className="p-4 lg:p-6 text-left w-full sm:w-1/2">
-              <h3 className="text-[25px] lg:[36px] xl:text-[40px] leading-tight font-playfair font-semibold text-blue mb-3">
+              <h3 className="text-[25px] lg:[36px] xl:text-[36px] leading-tight font-playfair font-semibold text-blue mb-3">
                 {currentCard.category}
               </h3>
               <p className="text-sm md:text-[16px] lg:text-[20px] font-medium text-zink font-inter mb-2"> {currentCard.text}
@@ -84,7 +84,6 @@ const DayTripSlider = () => {
                   ))}
                 </ul>
               )}
-
               {/* Description */}
               <div className="text-sm md:text-[16px] lg:text-[20px] font-medium text-zink font-inter space-y-2 ">
                 {currentCard.description.map((desc, idx) => (

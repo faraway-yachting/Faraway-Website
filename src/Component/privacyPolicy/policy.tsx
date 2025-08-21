@@ -1,7 +1,7 @@
 "use client"
 import HeadingContent from "@/common/heading";
 import PngIcons from "@/icons/pngIcon";
-import { privacyPolicySections } from "@/data/privacyPolicyData";
+import { privacyPolicySections } from "@/data/privacypolicy/privacyPolicyData";
 import SetSail from "@/common/yarchtcharter";
 // Reusable components
 const SectionHeading = ({ children, icon }: { children: string; icon?: string }) => (

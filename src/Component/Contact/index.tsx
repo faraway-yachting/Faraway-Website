@@ -1,5 +1,5 @@
 "use client";
-import { contactDetails } from "@/data/contact";
+import { contactDetails } from "@/data/contact/contact";
         
 const ContactSection = () => {
     return (

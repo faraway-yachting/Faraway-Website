@@ -17,7 +17,6 @@ export const AboutContent: FAQS[] = [
     {
         place: "How do I book a charter yacht?",
         description: `Submit a charter inquiry via our website, email us at info@far-away.net, or call +66 81 895 1826.
-
 The more details you share, the better we can tailor suggestions.
 
 – Once confirmed, we hold your yacht for 7 days  

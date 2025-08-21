@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AboutContent } from "@/data/abouFAQS";
+import { AboutContent } from "@/data/about/abouFAQS";
 import SetSail from "@/common/yarchtcharter";
 
 const AboutSection_FAQs = () => {
@@ -13,22 +13,19 @@ const AboutSection_FAQs = () => {
   const toggleItem = (index: number) => {
     setActiveId((prev) => (prev === index ? null : index));
   };
- 
   return (
-    <section className="bg-white"  id="faq">
+    <section className="bg-white" id="faq">
       <div className="max-w-7xl mx-auto px-4 xl:px-0">
         {/* Heading */}
         <div className="mb-8 lg:mb-10 xl:mb-12 flex justify-center flex-col items-center">
           <h2 className="text-[24px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-playfair text-zink font-semibold mb-1">
             FAQs
           </h2>
-          <img
-            src="/images/rframe.png"
+          <img src="/images/rframe.png"
             alt="Divider"
             className="w-[500px] my-3 mx-auto"
           />
         </div>
-
         {/* Accordion */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 xl:gap-8">
           {[firstColumn, secondColumn].map((column, columnIndex) => (
@@ -36,7 +33,6 @@ const AboutSection_FAQs = () => {
               {column.map((item, index) => {
                 const actualIndex = columnIndex === 0 ? index * 2 : index * 2 + 1;
                 const isOpen = activeId === actualIndex;
-
                 return (
                   <div
                     key={actualIndex}
@@ -86,5 +82,4 @@ const AboutSection_FAQs = () => {
     </section>
   );
 };
-
 export default AboutSection_FAQs;

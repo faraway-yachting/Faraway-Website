@@ -1,10 +1,8 @@
 "use client";
-
 import { useRef, useState } from "react";
 import { LuShipWheel, LuAnchor, LuBadgeEuro } from "react-icons/lu";
 import { SlCalender } from "react-icons/sl";
 import { IoBoatOutline } from "react-icons/io5";
-
 import PngIcons from "@/icons/pngIcon";
 import ContactUs from "./contactUs";
 import Sailing_Itinerary from "./sailing_Itineraries";
@@ -18,8 +16,6 @@ import Price_Details from "@/Component/cabinCharter/pricingDetail";
 import FunMoments from "@/Component/cabinCharter/moments";
 import ComparisonChart from "@/Component/cabinCharter/moments2Remember";
 import FounderNote from "@/Component/cabinCharter/ourFounder";
-
-
 const SeaSide_Sixdays = () => {
   // Section Refs
   const contactRef = useRef<HTMLDivElement | null>(null);
@@ -27,7 +23,6 @@ const SeaSide_Sixdays = () => {
   const pricingRef = useRef<HTMLDivElement | null>(null);
   const cruiseRef = useRef<HTMLDivElement | null>(null);
   const faqRef = useRef<HTMLDivElement | null>(null);
-
   const sectionTabs = [
     { icon: LuAnchor, label: "Book Now", targetRef: contactRef },
     { icon: IoBoatOutline, label: "Sailing Itinerary", targetRef: itineraryRef },
@@ -35,16 +30,12 @@ const SeaSide_Sixdays = () => {
     { icon: SlCalender, label: "Cruise Dates", targetRef: cruiseRef },
     { icon: LuShipWheel, label: "FAQ", targetRef: faqRef },
   ];
-
   const [activeTab, setActiveTab] = useState(sectionTabs[0].label);
-
   return (
     <div >
-
       <div className="relative my-6 sm:my-8 md:my-10">
         {/* Faint Background Map */}
         <div className="absolute inset-0 bg-[url('/images/map.png')] bg-no-repeat bg-center bg-cover opacity-10 z-0" />
-
         <div className="relative bg-white/80 z-10 py-0 sm:py-10 md:py-12 px-2 sm:px-4 md:px-4 lg:px-4 xl:px-8">
           <div className="max-w-7xl mx-auto">
             {/* Tabs */}
@@ -66,7 +57,6 @@ const SeaSide_Sixdays = () => {
                 </button>
               ))}
             </div>
-
             {/* Intro */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-8 md:mt-10 pt-5 items-center">
               <div className="flex flex-col items-center md:items-start text-center md:text-start">

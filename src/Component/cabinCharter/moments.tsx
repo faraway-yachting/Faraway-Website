@@ -4,55 +4,8 @@ import Image, { StaticImageData } from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import PngIcons from "@/icons/pngIcon";
 import HeadingContent from "@/common/heading";
-
-// Type for testimonials
-interface Testimonial {
-  id: string;
-  image1: string;
-  image2: string;
-  image3: string;
-  desp: string;
-  author: string;
-}
-
-// Testimonials data
-const testimonials: Testimonial[] = [
-  {
-    id: "1",
-    image1: PngIcons.quote,
-    image2: PngIcons.star,
-    image3: PngIcons.profile1,
-    desp: "It was my first experience on a yacht and the most unforgettable in my life. Thanks to Flo and Captain Sunee for that! We spent 7 days at the sea and, to be honest, we really didn’t want it to end. We visited many beautiful islands, snorkeled and peered into the starry sky and met the best sunrises in my life. Looking forward to our next adventure with Captain Sunee and Faraway",
-    author: "Анастасия Ткаченко",
-  },
-  {
-    id: "2",
-    image1: PngIcons.quote,
-    image2: PngIcons.star,
-    image3: PngIcons.profile2,
-    desp: "6 of us booked a 1 week private Cat charter on Amadeus with Faraway, and it was the best holiday ever. We came from Finland and Canada and from the moment we were picked up from our hotel in Rawai to the final disembarking in Chalong, we were totally spoiled by the amazing crew, top notch food, spacious Mumby cat and detailed planning/logistics and of course all the beautiful",
-    author: "Peter Koning",
-  },
-  {
-    id: "3",
-    image1: PngIcons.quote,
-    image2: PngIcons.star,
-    image3: PngIcons.profile3,
-    desp: "Lifetime   memories!!! We spent 6 days and 5 nights on the Mozart with our friends and had the privilege of experiencing this unforgettable sailing trip in the Andaman Sea with Flo and Oil. Starting with the welcome, everything was great. We drove to the most beautiful beaches. Everything without stress and we were always a little ahead of many tourists",
-    author: "Ulrike Zahn",
-  },
-  {
-    id: "4",
-    image1: PngIcons.quote,
-    image2: PngIcons.star,
-    image3: PngIcons.profile4,
-    desp: "We just returned from an exceptional 6 day boat trip aboard the Amadeus to the islands around Phuket. I highly recommend this trip for anyone who is an avid snorkeler, enjoys delicious Thai food and loves watching sunsets and sunrises in beautiful coves with new friends. The crew - Sunee, Milk and Bus - were truly and absolutely outstanding. We booked a double cabin",
-    // imageperson: Person_two,
-    author: "Claudia Williams",
-  },
-];
+import { momentsTestimonials, Testimonial } from "@/data/cabincharter/momentsData";
 
 const FunMoments: React.FC = () => {
   const [readMore, setReadMore] = useState(false);
@@ -81,7 +34,7 @@ const FunMoments: React.FC = () => {
         />
       </div>
       <Slider {...settings}>
-        {testimonials.map((item, index) => (
+        {momentsTestimonials.map((item, index) => (
           <div
             key={item.id}
             className={`transition-all duration-300 px-2 sm:px-2 md:px-3 lg:px-4 mt-[47px] ${currentSlide === index ? "scale-105 xl:scale-97 z-10" : "scale-85 "
@@ -134,5 +87,4 @@ const FunMoments: React.FC = () => {
     </div >
   );
 };
-
 export default FunMoments;

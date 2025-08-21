@@ -1,12 +1,11 @@
 "use client";
 
 import { FiPhone } from "react-icons/fi";
-import { aboutPages, AboutData } from "@/data/aboutData";
+import { aboutPages, AboutData } from "@/data/readmore/aboutData";
 
 interface AboutProps {
   id: string;
 }
-
 const About: React.FC<AboutProps> = ({ id }) => {
   const normalizedId = id.toLowerCase();
   const data: AboutData | undefined = aboutPages[normalizedId];
@@ -14,7 +13,6 @@ const About: React.FC<AboutProps> = ({ id }) => {
   if (!data) {
     return <p className="p-8 text-center text-red-500">Content not found for "{id}".</p>;
   }
-
   const {
     preTitle,
     title,

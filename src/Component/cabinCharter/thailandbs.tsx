@@ -11,12 +11,10 @@ const islands = [
     { title: "Phi Phi Viewpoint", image: PngIcons.thPlace_3 },
     { title: "Koh Muk", image: PngIcons.thPlace_4 },
     { title: "Koh Lanta", image: PngIcons.thPlace_5 },
-    { title: "Rok Nok", image: PngIcons.thPlace_6},
+    { title: "Rok Nok", image: PngIcons.thPlace_6 },
     { title: "Koh Racha", image: PngIcons.thPlace_7 },
-    { title: "Emerald Cave", image: PngIcons.thPlace_8},
-
+    { title: "Emerald Cave", image: PngIcons.thPlace_8 },
 ];
-
 const Thailand_BestLands = () => {
     const settings = {
         infinite: true,
@@ -32,7 +30,6 @@ const Thailand_BestLands = () => {
             { breakpoint: 640, settings: { slidesToShow: 1 } },
         ],
     };
-
     return (
         <section className="py-8 md:py-10 lg:py-13 xl:py-16 px-4 bg-white relative overflow-hidden">
             <div className="mx-auto mb-12 sm:mb-16">
@@ -47,7 +44,6 @@ const Thailand_BestLands = () => {
                     alt=""
                     className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-full"
                 />
-
                 <Slider {...settings}>
                     {islands.map((island, index) => (
                         <div key={index} className="px-3 lg:px-2 xl:px-3">
@@ -67,15 +63,12 @@ const Thailand_BestLands = () => {
                         </div>
                     ))}
                 </Slider>
-
                 {/* Bottom Ellipse - Single overlay for all images */}
                 <img
                     src="/images/Ellipse 2.png"
                     alt=""
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 w-full"
-                />
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 w-full" />
             </div>
-
             {/* Text Box - Centered with max-width */}
             <div className="flex justify-center mt-12 ">
                 <div className="max-w-[78.2rem] w-full bg-[#E6ECED33] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 px-4 md:px-6 py-0 xl:py-6 border-l-[7px] border-l-[#034250]">
@@ -95,5 +88,4 @@ const Thailand_BestLands = () => {
         </section>
     );
 };
-
 export default Thailand_BestLands;

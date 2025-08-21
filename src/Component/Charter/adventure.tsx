@@ -1,5 +1,4 @@
 "use client";
-
 import JoinUs from "@/common/joinUs";
 import { Fragment } from "react";
 import { usePathname } from "next/navigation";

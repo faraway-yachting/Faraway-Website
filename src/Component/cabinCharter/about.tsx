@@ -1,7 +1,6 @@
 "use client";
 
 import { FiPhone } from "react-icons/fi";
-
 // Common styles
 const commonText = "text-center font-normal font-inter text-zink text-base"
 const spacing = "py-4 md:py-9 lg:py-12"

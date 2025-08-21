@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { attractionsMap, Attraction } from "@/data/detailcard";
+import { attractionsMap, Attraction } from "@/data/readmore/detailcard";
 import { LuSailboat } from "react-icons/lu";
 import { IoWarningOutline } from "react-icons/io5";
 interface AttractionsProps {

@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
@@ -13,7 +12,6 @@ interface BlogData {
     image: string;
     status: string;
 }
-
 interface BlogProps {
     slug?: string;
 }
@@ -27,14 +25,12 @@ const slugify = (text: string | undefined | null): string => {
         .replace(/\s+/g, "-")
         .trim();
 };
-
 const limitCharacters = (text: string, charLimit: number): string => {
     if (!text) return "";
-    return text.length > charLimit 
+    return text.length > charLimit
         ? text.slice(0, charLimit) + "..."
         : text;
 };
-
 const BlogCards: React.FC<BlogProps> = ({ slug }) => {
     const router = useRouter();
     const [data, setData] = useState<BlogData[]>([]);
@@ -45,7 +41,6 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-
                 const res = await axios.get("https://awais.thedevapp.online/blog/all-blogs");
                 const allBlogs: BlogData[] = res.data?.data?.blogs || [];
 
@@ -55,7 +50,6 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                 const filteredBlogs = slug
                     ? publishedBlogs.filter((blog) => slugify(blog.slug) === slug)
                     : publishedBlogs;
-
                 setData(filteredBlogs);
             } catch (err: any) {
                 console.error("Error fetching blogs:", err);
@@ -64,7 +58,6 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                 setLoading(false);
             }
         };
-
         fetchBlogs();
     }, [slug]);
 
@@ -75,22 +68,18 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
             </div>
         );
     }
-
     if (error) {
         return (
             <p className="text-center text-red-500 text-xl py-10">{error}</p>
         );
     }
-
     if (data.length === 0) {
         return (
             <p className="text-center text-gray-500 text-xl py-10">No blogs found.</p>
         );
     }
-
     const visibleBlogs = data.slice(0, visibleCount);
     const hasMore = visibleCount < data.length;
-
     return (
         <div className="px-3">
             <div className="max-w-7xl mx-auto py-10 px-4">
@@ -115,14 +104,13 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                                         {limitCharacters(blog.title, 22)}
                                     </h3>
                                     <p className="md:text-lg text-black font-normal font-sourceSanspro">
-                                        {blog.shortDescription}
+                                        {blog.shortDescription.length > 200 ? blog.shortDescription.slice(0, 200) + "..." : blog.shortDescription}
                                     </p>
                                 </div>
                             </div>
                         );
                     })}
                 </div>
-
                 {hasMore && (
                     <div className="flex justify-center mt-10">
                         <button

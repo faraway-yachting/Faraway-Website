@@ -1,13 +1,12 @@
 "use client";
 import { useState } from "react";
-import { highSeason, ItineraryItem } from "@/data/sailingData";
+import { highSeason, ItineraryItem } from "@/data/cabincharter/sailingData";
 import HeadingContent from "@/common/heading";
 import { RefObject } from "react";
 
 interface SailingItineraryProps {
-    sectionRef: RefObject<HTMLDivElement | null>; // <-- fixed
+    sectionRef: RefObject<HTMLDivElement | null>; 
 }
-
 const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
     const [activeId, setActiveId] = useState<string | null>(null);
 
@@ -20,16 +19,10 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
         const hasItinerary = item.itinerary && item.itinerary.length > 0;
 
         return (
-            <div
-                key={item.id}
-                className={`border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition duration-200`}
-            >
+            <div key={item.id} className={`border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition duration-200`}>
                 {/* Accordion Header */}
-                <button
-                    type="button"
-                    onClick={() => toggleItem(item.id)}
-                    className="flex justify-between items-center w-full p-4 cursor-pointer text-left"
-                >
+                <button type="button" onClick={() => toggleItem(item.id)}
+                    className="flex justify-between items-center w-full p-4 cursor-pointer text-left">
                     <div className="flex items-center gap-4 justify-center">
                         <div className="bg-[#034250] text-white font-poppins text-[15px] xl:text-[16px] font-semibold px-3 py-1 rounded-lg">
                             <p>
@@ -114,7 +107,6 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
                     </div>
                 </div>
             </section>
-
             <section className="max-w-[78.2rem] mx-auto px-4 lg:px-5 xl:px-0 mt-10">
                 <div className="flex justify-center">
                     <div className="relative w-full h-[400px] md:h-[450px] lg:h-[490px] xl:h-[520px] overflow-hidden shadow-lg">
@@ -133,5 +125,4 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
         </div>
     );
 };
-
 export default Sailing_Itinerary;

@@ -4,7 +4,6 @@ import { Yacht } from "../YachtDetail/hero";
 type Props = {
   data: Yacht | null;
 };
-
 // Utility function to convert YouTube watch URLs to embed URLs
 const getEmbedLink = (url: string): string => {
   try {
@@ -22,7 +21,6 @@ const getEmbedLink = (url: string): string => {
     return url;
   }
 };
-
 const VideoSection: React.FC<Props> = ({ data }) => {
   if (!data?.videoLink) return null;
 
@@ -30,7 +28,7 @@ const VideoSection: React.FC<Props> = ({ data }) => {
   const embedUrl = getEmbedLink(data.videoLink);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-6">
+    <section className="max-w-7xl mx-auto px-4 py-14">
       <div className="flex justify-center">
         {data.videoLink && (
           <div className="relative w-full max-w-7xl h-[300px] md:h-[360px] lg:h-[400px] xl:h-[550px] overflow-hidden shadow-lg rounded-lg">

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Yacht } from "../YachtDetail/hero";
 
 type Props = {
-  data: Yacht | null;
+    data: Yacht | null;
 };
 
 const ContactDetail: React.FC<Props> = ({ data }) => {
@@ -27,12 +27,11 @@ const ContactDetail: React.FC<Props> = ({ data }) => {
             });
         }
     }, []);
-
     return (
         <div className="bg-white sticky rounded-lg p-3 max-w-[500px] w-full border-2 border-zink">
             <div className="flex flex-col items-center justify-center text-center">
                 <p className="text-lg md:text-xl lg:text-[22px] xl:text-[24px] font-playfair text-[#034250] font-bold">
-                    {data?.title} 
+                    {data?.title}
                 </p>
                 <p className="text-zink font-inter text-sm lg:text-[16px] mt-1">
                     Looking for a yacht charter?
@@ -40,12 +39,12 @@ const ContactDetail: React.FC<Props> = ({ data }) => {
                 <p className="text-[#034250] font-inter text-sm lg:text-[16px] mt-1">+66 61 234 5623</p>
                 <p className="text-[#034250] font-inter text-sm lg:text-[16px]">+66 61 234 5623</p>
             </div>
-            
+
             {/* Dynamic iframe based on URL */}
             <div className="mt-3 lg:mt-4 xl:mt-2 w-full h-[820px]">
                 <iframe
                     src={`${iframeConfig.src}?yacht_title=${encodeURIComponent(data?.title || '')}`}
-                    style={{width:'100%',height:'100%',border:'none',borderRadius:'3px'}}
+                    style={{ width: '100%', height: '100%', border: 'none', borderRadius: '3px' }}
                     id={iframeConfig.id}
                     data-layout="{'id':'INLINE'}"
                     data-trigger-type="alwaysShow"
@@ -62,11 +61,9 @@ const ContactDetail: React.FC<Props> = ({ data }) => {
                 >
                 </iframe>
             </div>
-            
             {/* Script tag for the iframe */}
             <script src="https://link.msgsndr.com/js/form_embed.js"></script>
         </div>
     );
 };
-
 export default ContactDetail;

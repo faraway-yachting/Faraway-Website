@@ -19,14 +19,12 @@ const Gallery: React.FC<Props> = ({ data }) => {
   if (!data) return null;
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const openLightbox = (idx: number) => {
     setCurrentIndex(idx);
     setIsOpen(true);
   };
 
   const closeLightbox = () => setIsOpen(false);
-
   const showPrev = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setCurrentIndex((prevIndex) => (prevIndex + data.galleryImages.length - 1) % data.galleryImages.length);
@@ -38,7 +36,6 @@ const Gallery: React.FC<Props> = ({ data }) => {
   };
 
   const maxImages = 9;
-
   return (
     <div className="w-full pb-7">
       <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-5 gap-2">
@@ -57,28 +54,24 @@ const Gallery: React.FC<Props> = ({ data }) => {
             >
               <IoMdClose />
             </button>
-
             <button
               className="absolute left-4 text-white text-4xl p-2"
               onClick={showPrev}
             >
               <MdOutlineKeyboardArrowLeft size={40} />
             </button>
-
             <img
               src={data.galleryImages[currentIndex] || ""}
               alt={data.galleryImages[currentIndex] ?? `Slide ${currentIndex + 1}`}
               className="max-h-[70vh] max-w-[50rem] w-full"
               onClick={(e) => e.stopPropagation()}
             />
-
             <button
               className="absolute right-4 text-white text-4xl p-2"
               onClick={showNext}
             >
               <MdOutlineKeyboardArrowRight size={40} />
             </button>
-
             <div className="absolute bottom-4 right-4 text-white text-sm">
               {currentIndex + 1} / {data.galleryImages.length}
             </div>
@@ -97,8 +90,6 @@ const Gallery: React.FC<Props> = ({ data }) => {
             />
           </div>
         )}
-
-
         {/* 2 Tall Images */}
         <div className="hidden lg:grid grid-rows-2 gap-2">
           {data?.galleryImages.slice(1, 3).map((img, idx) => (
@@ -113,7 +104,6 @@ const Gallery: React.FC<Props> = ({ data }) => {
             />
           ))}
         </div>
-
         {/* 2 Tall Images */}
         <div className="grid grid-rows-2 gap-2">
           {data?.galleryImages.slice(3, 5).map((img, idx) => (
@@ -128,7 +118,6 @@ const Gallery: React.FC<Props> = ({ data }) => {
             />
           ))}
         </div>
-
         {/* 4 Small Images */}
         <div className="grid grid-rows-3 gap-2">
           {data?.galleryImages.slice(5, 9).map((img, index) => (
@@ -153,5 +142,4 @@ const Gallery: React.FC<Props> = ({ data }) => {
     </div>
   );
 };
-
 export default Gallery;

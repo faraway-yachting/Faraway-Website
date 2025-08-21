@@ -1,5 +1,5 @@
 import HeadingContent from "@/common/heading";
-import { definitionsData } from "@/data/privacyPolicyData";
+import { definitionsData } from "@/data/privacypolicy/privacyPolicyData";
 
 const InfoSection = () => {
     return (

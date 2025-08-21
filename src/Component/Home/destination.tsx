@@ -32,7 +32,6 @@ const Destinations_Section = () => {
         "Phuket, a jewel in the Andaman Sea, is a renowned yachting destination. With its stunning scenery, abundant marine life, and luxurious amenities, Phuket offers an unforgettable experience for boat lovers. From secluded coves to bustling marinas, there’s something for everyone to discover on a Phuket yachting charter. Explore hidden coves and beaches, visit idyllic islands, and experience the vibrant marine life. Indulge in luxury and relaxation on a Phuket yachting charter. Enjoy spacious cabins, gourmet meals, and attentive service provided by your experienced crew. Spend your days exploring the island’s hidden gems and your nights unwinding on deck under the stars. Plan your trip with us now !",
     },
   ];
-
   return (
     <div className="max-w-7xl mx-auto px-4 py-6 lg:py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
@@ -51,5 +50,4 @@ const Destinations_Section = () => {
     </div>
   );
 };
-
 export default Destinations_Section;

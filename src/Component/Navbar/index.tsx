@@ -14,7 +14,6 @@ const navItems = [
 
 const Drawer = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
     const pathname = usePathname();
-
     return (
         <>
             <div
@@ -115,7 +114,6 @@ const Navbar = () => {
                         </button>
                     </Link>
                 </div>
-
                 {/* Mobile Menu Icon */}
                 <button onClick={() => setIsOpen(true)} className="md:hidden block">
                     <svg className="w-6 h-6 text-[#333]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -123,11 +121,9 @@ const Navbar = () => {
                     </svg>
                 </button>
             </div>
-
             {/* Mobile Drawer */}
             <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)} />
         </header>
     );
 };
-
 export default Navbar

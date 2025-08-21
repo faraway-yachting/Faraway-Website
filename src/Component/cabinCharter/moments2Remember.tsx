@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
 import React from "react";
-
 const Moments2Remember: React.FC = () => {
   return (
     <section className="bg-white py-4 md:py-9 lg:py-12 xl:py-16 px-4 xl:px-0">

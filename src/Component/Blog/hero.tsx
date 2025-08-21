@@ -5,8 +5,7 @@ const HeroSection = () => {
   heading="Blog"
   breadcrumb="Blog"
   backgroundImage="/images/blogimg1.png"
-/>
+/>  
     )
-
 }
 export default HeroSection;

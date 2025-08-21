@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { cruiseDates } from "@/data/cruiseDates";
+import { cruiseDates } from "@/data/cabincharter/cruiseDates";
 import { RefObject } from "react";
 
 interface CruiseDatesProps {

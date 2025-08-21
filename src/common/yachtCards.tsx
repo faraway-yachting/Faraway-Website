@@ -65,7 +65,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
           const yachtType = yacht.type?.toLowerCase().trim() || "";
 
           if (normalizedPath === "/") {
-            return yachtStatus === "published";
+            return yachtStatus === "published" && yachtType === "crewed";
           }
 
           if (normalizedPath === "/bareboat-charter-thailand") {

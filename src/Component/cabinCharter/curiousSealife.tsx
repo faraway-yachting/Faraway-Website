@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Sealife } from "@/data/saelife";
+import { Sealife } from "@/data/cabincharter/saelife";
 import { RefObject } from "react";
 
 interface SealifeFAQProps {

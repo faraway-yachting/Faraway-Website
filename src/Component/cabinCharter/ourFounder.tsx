@@ -1,5 +1,4 @@
 import React from "react";
-
 export default function FounderNote() {
     const commonTextStyle = "text-base lg:text-lg xl:text-xl";
     const commonHeadingStyle = "text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-playfair text-zink font-bold";

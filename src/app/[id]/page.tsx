@@ -18,7 +18,6 @@ export default async function Page({ params }: NewsDetailPageProps) {
       <Attractions id={id} />
       <BestLands id={id} />
       <StartAdventure id={id} />
-      {/* <YachtSlider id={id} /> */}
       <ChartersAdventure id={id} />
     </Fragment>
   );
