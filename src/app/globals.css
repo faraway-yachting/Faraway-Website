@@ -77,12 +77,15 @@
 body {
   background: white;
   color: var(--foreground);
-  font-family: var(--font-geist-sans);
-
+  font-family: var(--font-dm-serif-display);
 }
 
-.font-quattrocento {
-  font-family: var(--font-quattrocento);
+.font-dm-serif {
+  font-family: var(--font-dm-serif-display), serif;
+}
+
+.font-dm-serif-display {
+  font-family: var(--font-dm-serif-display), serif;
 }
 
 .font-playfair {
@@ -105,10 +108,6 @@ body {
   font-family: var(--font-Open-Sans);
 }
 
-.font-open_sans {
-  font-family: var(--font-Open-Sans);
-}
-
 .font-great-vibes {
   font-family: var(--font-Great_Vibes);
 }
@@ -116,7 +115,6 @@ body {
 .font-oswald {
   font-family: var(--font-Oswald);
 }
-
 .typography p {
   font-size: var(--text-base);
   color: var(--color-gray-700);
