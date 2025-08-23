@@ -6,7 +6,7 @@ type HeadingContentProps = {
 const HeadingContent = ({ heading, description }: HeadingContentProps) => {
     return (
         <div className="max-w-7xl mx-auto">
-            <p className="px-4 font-playfair capitalize text-zink font-extrabold text-[24px] md:text-[29px] lg:text-[32px] xl:text-[36px] text-center text-green" style={{ boxShadow: "#00000040" }}>
+            <p className="px-4 font-playfair capitalize text-zink font-extrabold text-[24px] md:text-[29px] lg:text-[32px] xl:text-[40px] text-center text-green" style={{ boxShadow: "#00000040" }}>
                 {heading}
             </p>
 

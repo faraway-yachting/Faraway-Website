@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import axios from "axios";
 import { LuDoorOpen, LuToilet, LuMapPin } from "react-icons/lu";
 import { GiCaptainHatProfile } from "react-icons/gi";
+import HeadingContent from "./heading";
 
 interface Yacht {
   _id: string;
@@ -42,8 +43,8 @@ const slugify = (text: string | undefined | null): string => {
 
 const gridWrapperClasses = {
   1: "grid-cols-1",
-  2: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
-  3: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+  2: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3",
+  3: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3",
 };
 
 const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
@@ -112,8 +113,14 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
   const hasMore = visibleCount < data.length;
 
   return (
-    <div className="px-3">
-      <div className={`grid ${gridCols} gap-6 md:gap-8 lg:gap-10`}>
+    <div className="mb-8 mx-4 lg:mx-0">
+<div className="mb-10">
+      <HeadingContent
+        heading="Featured Yachts"
+        description="Let the waves guide you to elegance, adventure, and pure relaxation!"
+      />
+      </div>
+      <div className={`grid ${gridCols} gap-6 md:gap-8 lg:gap-4 xl:gap-10`}>
         {visibleYachts.map((boat) => (
           <div
             key={boat._id}
@@ -135,9 +142,9 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
                 <img src={boat.primaryImage} alt={boat.title} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
               {/* Key Specs Overlay */}
-              <div className="absolute top-[14.7rem] left-10 right-10 bg-white rounded-md" style={{ boxShadow: "0px 4px 24px 0px #B5B5B540" }}>
+              <div className="absolute top-[14.7rem] left-10 right-10 lg:left-6 lg:right-6 xl:left-10 xl:right-10 bg-white rounded-md" style={{ boxShadow: "0px 4px 24px 0px #B5B5B540" }}>
                 <div className="bg-white bg-opacity-60 backdrop-blur-sm rounded-lg px-3 py-1 flex justify-center">
-                  <div className="flex items-center text-[13px] text-gray-600">
+                  <div className="flex items-center text-[12px] xl:text-[13px] text-gray-600">
                     {[
                       { icon: "/images/icon1.png", value: `${boat.length.replace(/[<>]/g, "")} ft` },
                       { icon: "/images/icon2.png", value: boat.passengerDayTrip },
@@ -145,9 +152,9 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
                     ].map(({ icon, value }, i) => (
                       <div
                         key={i}
-                        className="flex items-center space-x-1 border-r last:border-r-0 border-[#E8E8E8] py-1 ps-5 pe-5 first:ps-2"
+                        className="flex items-center space-x-1 border-r last:border-r-0 border-[#E8E8E8] py-1 ps-3 pe-3 xl:ps-5 xl:pe-5 first:ps-2"
                       >
-                        <img src={icon} alt="" className="w-7" />
+                        <img src={icon} alt="" className="w-6 xl:w-7" />
                         <span>{value}</span>
                       </div>
                     ))}
@@ -160,13 +167,13 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
             <div className="p-4 space-y-3">
               {/* Title and Rating */}
               <div className="flex items-start">
-                <h3 className="text-[28px] mt-4 font-semibold text-zink group-hover:text-[#D6AB62] transition-colors">
+                <h3 className="text-xl lg:text-[24px] xl:text-[28px] mt-4 font-semibold text-zink group-hover:text-[#D6AB62] transition-colors">
                   {boat.title}
                 </h3>
               </div>
 
               {/* Amenities */}
-              <div className="flex items-center text-sm text-zink">
+              <div className="flex items-center text-sm lg:text-[12px] xl:text-sm text-zink">
                 {[
                   { icon: GiCaptainHatProfile, value: `With skipper` },
                   { icon: LuDoorOpen, value: `${boat.cabins} Cabins` },
@@ -174,7 +181,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
                 ].map(({ icon: IconComponent, value }, i) => (
                   <div
                     key={i}
-                    className="flex items-center justify-center space-x-1 border-r last:border-r-0 border-[#E8E8E8] py-1 ps-4 pe-4 first:ps-0 last-pe-0 text-zink"
+                    className="flex items-center justify-center space-x-1 border-r last:border-r-0 border-[#E8E8E8] py-1 ps-2 pe-2 xl:ps-4 xl:pe-4 first:ps-0 last:pe-0 text-zink"
                   >
                     <IconComponent className="w-4 h-4 text-zink" />
                     <span>{value}</span>
@@ -183,17 +190,17 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
               </div>
 
               {/* Location */}
-              <div className="flex items-center space-x-1 text-lg text-zink font-semibold mt-2">
+              <div className="flex items-center space-x-1 text-base xl:text-lg text-zink font-semibold mt-2">
                 <LuMapPin className="w-4 h-4 text-zink font-normal" />
                 <span>Chalong Pier Phuket</span>
               </div>
 
               {/* Price and Action Button */}
               <div className="flex items-center justify-between pt-2">
-                <div className="text-2xl font-semibold text-zink">
+                <div className=" text-xl xl:text-2xl font-semibold text-zink">
                   From ${(boat.daytripPriceEuro)}
                 </div>
-                <button className="px-10 py-2 bg-zink text-white text-lg font-medium rounded-lg hover:bg-[#D6AB62] transition-colors">
+                <button className="px-7 xl:px-10 py-2 bg-zink text-white text-base xl:text-lg font-medium rounded-lg hover:bg-[#D6AB62] transition-colors">
                   Detail
                 </button>
               </div>

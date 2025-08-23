@@ -35,7 +35,7 @@ const YachtMatchmaker: React.FC = () => {
         return "";
     };
     return (
-        <div className="py-12 bg-gray-50 px-4 xl:px-0">
+        <div className="py-12 bg-gray-50">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-8 xl:gap-10 max-w-7xl mx-auto xl:px-0 lg:px-4">
                 {/* Left column: Form */}
                 {/* <div className="md:col-span-4"> */}

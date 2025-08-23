@@ -6,7 +6,7 @@ const cardClass =
 
 const ContactBanner = () => {
   return (
-    <div className="mx-4 my-10">
+    <div className="mx-4 mt-10">
       <div className="bg-gray-100 rounded-lg max-w-[78.2rem] mx-auto px-6 md:px-12 py-10">
         <div className=" items-center lg:items-start gap-8">
           {/* Left Text */}
