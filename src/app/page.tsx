@@ -5,9 +5,13 @@ import ExploreThailand from "@/Component/Home/exploreThailand";
 import HeroSection from "@/Component/Home/hero";
 import PrivateYacht_Tour from "@/Component/Home/privateTour";
 import TodaysAdventure from "@/Component/Home/todaysAdventure";
-import FunMoments from "@/Component/cabinCharter/moments";
 import Sailingyacht_Phuket from "@/Component/Home/yachtinPhuket";
 import { Fragment } from "react";
+import dynamic from "next/dynamic";
+
+const FunMoments = dynamic(() => import("@/Component/cabinCharter/moments"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (

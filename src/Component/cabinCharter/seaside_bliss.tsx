@@ -10,12 +10,20 @@ import PricingSection from "./pricing";
 import CruiseDates from "./cruiseDates";
 import SealifeFAQ from "./curiousSealife";
 import SeaEscape from "@/Component/cabinCharter/seaEscape";
-import Thailand_BestLands from "@/Component/cabinCharter/thailandbs";
 import SailingDetails from "@/Component/cabinCharter/oursailsDetail";
 import Price_Details from "@/Component/cabinCharter/pricingDetail";
-import FunMoments from "@/Component/cabinCharter/moments";
 import ComparisonChart from "@/Component/cabinCharter/moments2Remember";
 import FounderNote from "@/Component/cabinCharter/ourFounder";
+import dynamic from "next/dynamic";
+
+const FunMoments = dynamic(() => import("@/Component/cabinCharter/moments"), {
+  ssr: false,
+});
+
+const Thailand_BestLands = dynamic(() => import("@/Component/cabinCharter/thailandbs"), {
+  ssr: false,
+});
+
 const SeaSide_Sixdays = () => {
   // Section Refs
   const contactRef = useRef<HTMLDivElement | null>(null);
