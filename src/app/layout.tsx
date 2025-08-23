@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 
-import {Plus_Jakarta_Sans} from "next/font/google";
+import {
+  Plus_Jakarta_Sans,
+  Playfair_Display,
+  Source_Sans_Pro,
+  Inter,
+  Poppins,
+  DM_Serif_Display,
+  Open_Sans,
+  Great_Vibes,
+  Oswald
+} from "next/font/google";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
@@ -15,13 +25,53 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-// Keep existing variables but use the main Plus Jakarta Sans font
-const geistSans = plusJakartaSans;
-const geistMono = plusJakartaSans;
-const playfairDisplay = plusJakartaSans;
-const source_Sans_Pro = plusJakartaSans;
-const inter = plusJakartaSans;
-const poppins = plusJakartaSans;
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const sourceSansPro = Source_Sans_Pro({
+  variable: "--font-source-sans-pro",
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "600", "700", "900"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const dmSerifDisplay = DM_Serif_Display({
+  variable: "--font-dm-serif-display",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
+const greatVibes = Great_Vibes({
+  variable: "--font-great-vibes",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+const oswald = Oswald({
+  variable: "--font-oswald",
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -36,7 +86,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${source_Sans_Pro.variable}  ${inter.variable}  ${poppins.variable}  antialiased`}
+        className={`${plusJakartaSans.variable} ${playfairDisplay.variable} ${sourceSansPro.variable} ${inter.variable} ${poppins.variable} ${dmSerifDisplay.variable} ${openSans.variable} ${greatVibes.variable} ${oswald.variable} font-plus-jakarta-sans antialiased`}
       >
         <div className="fixed top-0 z-40 w-full">
           <Header />
