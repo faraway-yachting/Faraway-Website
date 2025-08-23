@@ -5,17 +5,9 @@ import { MdOutlineMail } from "react-icons/md";
 
 const ContactBanner = () => {
   return (
-
-    <div className="mx-4 mt-10">
-      <div className="bg-gray-100 rounded-lg max-w-[78.2rem] mx-auto px-6 md:px-12 py-10">
-        <div className=" items-center lg:items-start gap-8">
-          {/* Left Text */}
-          <div className="text-center lg:text-left">
-            <p className="text-2xl md:text-3xl font-semibold leading-snug text-zink mb-6">
-              Contact us now to 
-              book your private yacht <br /> charter in Phuket!
-            </p>
-          </div>
+    <section className="py-16 px-4  from-slate-50 to-blue-50">
+      <div className="max-w-7xl mx-auto">
+     
 
         {/* Contact Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
