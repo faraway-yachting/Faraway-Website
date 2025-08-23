@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import {
   Plus_Jakarta_Sans,
   Playfair_Display,
-  Source_Sans_Pro,
+  Source_Sans_3,
   Inter,
   Poppins,
   DM_Serif_Display,
@@ -31,7 +31,7 @@ const playfairDisplay = Playfair_Display({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const sourceSansPro = Source_Sans_Pro({
+const sourceSans3 = Source_Sans_3({
   variable: "--font-source-sans-pro",
   subsets: ["latin"],
   weight: ["200", "300", "400", "600", "700", "900"],
@@ -86,7 +86,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${plusJakartaSans.variable} ${playfairDisplay.variable} ${sourceSansPro.variable} ${inter.variable} ${poppins.variable} ${dmSerifDisplay.variable} ${openSans.variable} ${greatVibes.variable} ${oswald.variable} font-plus-jakarta-sans antialiased`}
+        className={`${plusJakartaSans.variable} ${playfairDisplay.variable} ${sourceSans3.variable} ${inter.variable} ${poppins.variable} ${dmSerifDisplay.variable} ${openSans.variable} ${greatVibes.variable} ${oswald.variable} font-plus-jakarta-sans antialiased`}
       >
         <div className="fixed top-0 z-40 w-full">
           <Header />
