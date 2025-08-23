@@ -5,6 +5,7 @@ import ExploreThailand from "@/Component/Home/exploreThailand";
 import HeroSection from "@/Component/Home/hero";
 import PrivateYacht_Tour from "@/Component/Home/privateTour";
 import TodaysAdventure from "@/Component/Home/todaysAdventure";
+import FunMoments from "@/Component/cabinCharter/moments";
 import Sailingyacht_Phuket from "@/Component/Home/yachtinPhuket";
 import { Fragment } from "react";
 
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroSection />
       <About />
       <TodaysAdventure />
+       <FunMoments />
       <PrivateYacht_Tour />
       <Sailingyacht_Phuket />
       <ExploreThailand />

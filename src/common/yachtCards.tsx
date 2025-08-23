@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import axios from "axios";
+import { LuDoorOpen, LuToilet, LuMapPin } from "react-icons/lu";
+import { GiCaptainHatProfile } from "react-icons/gi";
 
 interface Yacht {
   _id: string;
@@ -11,6 +13,8 @@ interface Yacht {
   daytripPriceEuro: string;
   lengthRange: string;
   title: string;
+  bathrooms: string;
+  cabins: string;
   guests: string;
   length: string;
   passengerDayTrip: string;
@@ -109,47 +113,90 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
 
   return (
     <div className="px-3">
-      <div className={`grid ${gridCols} gap-4 md:gap-6 lg:gap-7 xl:gap-9`}>
+      <div className={`grid ${gridCols} gap-6 md:gap-8 lg:gap-10`}>
         {visibleYachts.map((boat) => (
           <div
-            key={boat._id} //
+            key={boat._id}
             onClick={() => {
               const base = boat.type === "bareboat" ? "bareboat" : "crewed_boats";
               const slug = slugify(boat.slug);
               console.log("slug:", slug);
               const fullPath = `/${base}/${slug}`;
-              console.log("Navigating to:", fullPath); 
+              console.log("Navigating to:", fullPath);
               if (slug) {
                 router.push(fullPath);
               }
             }}
-
-            className="group cursor-pointer mb-3 pb-5 border border-gray-300 rounded-tl-3xl rounded-b-lg overflow-hidden bg-white hover:shadow-2xl hover:scale-[1.03] transition-transform duration-300"
+            className="group cursor-pointer bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
           >
-
-            <div className="overflow-hidden rounded-tl-3xl rounded-br-3xl">
-              <img src={boat.primaryImage} alt={boat.title} className="w-full h-64 object-cover" />
-            </div>
-            <div className="mt-3 space-y-1 xl:space-y-2 px-3">
-              <p className="text-base md:text-xl text-red-500 font-medium font-poppins">
-                from {boat.daytripPriceEuro} EUR
-              </p>
-              <p className="text-[25px] md:text-[27px] lg:text-[29px] xl:text-[32px] font-semibold font-playfair text-zink">
-                {boat.title}
-              </p>
-              <p className="text-xl text-black font-normal font-sourceSanspro">{boat.capacity}</p>
-            </div>
-            <div className="mt-4 px-3 pt-3 flex justify-between border-t border-gray-300 text-gray-700 font-semibold text-base md:text-xl">
-              {[
-                { icon: "/images/icon1.png", value: `${boat.length.replace(/[<>]/g, "")} ft` },
-                { icon: "/images/icon2.png", value: boat.passengerDayTrip },
-                { icon: "/images/icon3.png", value: boat.passengerOvernight },
-              ].map(({ icon, value }, i) => (
-                <div key={i} className="flex items-center space-x-1">
-                  <img src={icon} alt="" className="w-8" />
-                  <span>{value}</span>
+            {/* Image Section - Unchanged */}
+            <div className="relative">
+              <div className="overflow-hidden">
+                <img src={boat.primaryImage} alt={boat.title} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              {/* Key Specs Overlay */}
+              <div className="absolute top-[14.7rem] left-10 right-10 bg-white rounded-md" style={{ boxShadow: "0px 4px 24px 0px #B5B5B540" }}>
+                <div className="bg-white bg-opacity-60 backdrop-blur-sm rounded-lg px-3 py-1 flex justify-center">
+                  <div className="flex items-center text-[13px] text-gray-600">
+                    {[
+                      { icon: "/images/icon1.png", value: `${boat.length.replace(/[<>]/g, "")} ft` },
+                      { icon: "/images/icon2.png", value: boat.passengerDayTrip },
+                      { icon: "/images/icon3.png", value: boat.passengerOvernight },
+                    ].map(({ icon, value }, i) => (
+                      <div
+                        key={i}
+                        className="flex items-center space-x-1 border-r last:border-r-0 border-[#E8E8E8] py-1 ps-5 pe-5 first:ps-2"
+                      >
+                        <img src={icon} alt="" className="w-7" />
+                        <span>{value}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
+              </div>
+            </div>
+
+            {/* Content Section - Redesigned */}
+            <div className="p-4 space-y-3">
+              {/* Title and Rating */}
+              <div className="flex items-start">
+                <h3 className="text-[28px] mt-4 font-semibold text-zink group-hover:text-[#D6AB62] transition-colors">
+                  {boat.title}
+                </h3>
+              </div>
+
+              {/* Amenities */}
+              <div className="flex items-center text-sm text-zink">
+                {[
+                  { icon: GiCaptainHatProfile, value: `With skipper` },
+                  { icon: LuDoorOpen, value: `${boat.cabins} Cabins` },
+                  { icon: LuToilet, value: `${boat.bathrooms} Bathrooms` },
+                ].map(({ icon: IconComponent, value }, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center justify-center space-x-1 border-r last:border-r-0 border-[#E8E8E8] py-1 ps-4 pe-4 first:ps-0 last-pe-0 text-zink"
+                  >
+                    <IconComponent className="w-4 h-4 text-zink" />
+                    <span>{value}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Location */}
+              <div className="flex items-center space-x-1 text-lg text-zink font-semibold mt-2">
+                <LuMapPin className="w-4 h-4 text-zink font-normal" />
+                <span>Chalong Pier Phuket</span>
+              </div>
+
+              {/* Price and Action Button */}
+              <div className="flex items-center justify-between pt-2">
+                <div className="text-2xl font-semibold text-zink">
+                  From ${(boat.daytripPriceEuro)}
+                </div>
+                <button className="px-10 py-2 bg-zink text-white text-lg font-medium rounded-lg hover:bg-[#D6AB62] transition-colors">
+                  Detail
+                </button>
+              </div>
             </div>
           </div>
         ))}

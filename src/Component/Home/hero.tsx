@@ -15,7 +15,7 @@ const HeroContent = () => {
         {/* Content on top */}
         <div className="flex items-center justify-center h-full text-center text-white px-4 relative z-10">
           <div className="flex flex-col justify-center items-center max-w-4xl mx-auto">
-            <p className="text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-bold font-playfair mb-3 md:mb-4 leading-tight md:max-w-2xl lg:max-w-2xl w-full">
+            <p className="text-[28px] md:text-[32px] lg:text-[38px] xl:text-[48px] font-bold font-playfair mb-3 md:mb-4 leading-tight md:max-w-2xl lg:max-w-2xl w-full">
               Phuket Yacht Charter
             </p>
             <img

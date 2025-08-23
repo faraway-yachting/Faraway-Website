@@ -15,6 +15,10 @@ const config: Config = {
         seagreen: '#81A1A8',
         green: '#03425080',
       },
+      fontFamily: {
+        'dm-serif': ['var(--font-dm-serif-display)', 'serif'],
+        'dm-serif-display': ['var(--font-dm-serif-display)', 'serif'],
+      },
     },
   },
   plugins: [],
