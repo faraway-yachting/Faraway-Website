@@ -1,7 +1,7 @@
 import HeadingContent from "@/common/heading"
 const PrivateYacht_Tour = () => {
     return (
-        <div className="my-10 md:my-14 lg:my-16 xl:my-18">
+        <div className="mb-10 md:mb-14 lg:mb-16 xl:mb-18 mt-5 lg:mt-7">
             <HeadingContent
                 heading="Private Yacht tour with local experts"
                 description="Experience the best of Phuket’s stunning coastline and hidden gems on a private yacht tour with local experts. With a dedicated crew and captain at your disposal, you can customize your itinerary to explore the islands, beaches and coves that interest you most around the Phuket."
