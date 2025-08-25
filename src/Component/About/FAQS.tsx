@@ -44,7 +44,7 @@ const AboutSection_FAQs = () => {
                       onClick={() => toggleItem(actualIndex)}
                       className="flex justify-between items-center w-full py-2 lg:py-3 xl:py-4 px-2 lg:px-3 xlpx-4 cursor-pointer text-left"
                     >
-                      <p className="font-bold text-base lg:text-xl text-zink font-sourceSanspro max-w-lg">
+                      <p className="font-bold text-base lg:text-xl text-zink font-sourceSanspro max-w-lg ">
                         {item.place}
                       </p>
                       <span className="text-2xl font-bold text-gray-400">
@@ -64,7 +64,7 @@ const AboutSection_FAQs = () => {
                           return (
                             <p
                               key={i}
-                              className="text-zink font-sourceSanspro text-base lg:text-lg mb-2"
+                              className="text-zink font-sourceSanspro text-base lg:text-lg mb-2 font-sourceSansPro"
                               dangerouslySetInnerHTML={{ __html: withDashSpan }}
                             />
                           );

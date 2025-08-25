@@ -28,7 +28,7 @@ const usefulLinks = [
 
 const iconClass = "text-[#D6AB61]";
 const textclass = "text-[16px] font-[400]";
-const heading = "text-[22px] lg:text-[24px] xl:text-[28px] font-[600] mb-4";
+const heading = "text-[22px] lg:text-[24px] xl:text-[28px] font-[400] mb-4 font-playfair";
 
 const Footer = () => {
   const renderLinks = (links) =>
@@ -42,8 +42,8 @@ const Footer = () => {
     ));
 
   return (
-    <footer className="bg-[#004D5C] text-white pt-10">
-      <div className="px-4 sm:px-6 lg:px-8 xl:px-0 lg:max-w-[78.2rem] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 py-8 mb-14">
+    <footer className="bg-zink text-white pt-10">
+      <div className="px-4 sm:px-6 lg:px-8 xl:px-0 lg:max-w-[78.2rem] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 py-8 mb-14 font-sourceSansPro">
         {/* Column 1 */}
         <div className="lg:col-span-3 xl:col-span-4">
           <h3 className={heading}>Faraway Yachting Co. Ltd.</h3>
@@ -70,7 +70,7 @@ const Footer = () => {
                className="flex items-center gap-2"
             >
               <RiMap2Line size={20} className={`mt-1 ${iconClass}`} />
-              <span className="text-[16px] font-normal max-w-xs">
+              <span className="text-[16px] font-normal max-w-xs font-sourceSansPro">
                 40/1 Chaofa Road, Moo 9 Tambon Chalong, Amphoe Mueang Phuket,
                 Chang Wat Phuket 83130
               </span>

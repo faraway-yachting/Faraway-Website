@@ -55,10 +55,10 @@ const Attractions: React.FC<AttractionsProps> = ({ id }) => {
                         {item.label}
                       </p>
                     </div>
-                    <h3 className="text-[24px] md:text-[26px] lg:text-[36px] xl:text-[46px] font-semibold font-sourceSanspro text-zink relative z-10 ms-11">
+                    <h3 className="text-[24px] md:text-[26px] lg:text-[36px] xl:text-[46px] font-semibold font-playfair text-zink relative z-10 ms-11">
                       {item.title}
                     </h3>
-                    <p className="text-zink text-sm sm:text-base font-normal relative z-10">
+                    <p className="text-zink text-sm sm:text-base font-normal relative font-sourceSansPro z-10">
                       {item.description}
                     </p>
                   </div>
@@ -66,9 +66,9 @@ const Attractions: React.FC<AttractionsProps> = ({ id }) => {
                   <div className="flex gap-2 mt-4 flex-col">
                     <div className="flex">
                       <span className="w-8 h-8 bg-mustard rounded-full flex items-center justify-center me-1"><LuSailboat className="text-white " size={20} /></span>
-                      <p className="font-semibold text-[20px] lg:text-[24px] font-sourceSanspro text-zink">{item.heading}</p>
+                      <p className="font-semibold text-[20px] lg:text-[24px] font-sourceSansPro text-zink">{item.heading}</p>
                     </div>
-                    <ul className="list-disc pl-4 text-base text-zink font-semibold font-sourceSanspro space-y-1">
+                    <ul className="list-disc pl-4 text-base text-zink font-semibold font-sourceSansPro space-y-1">
                       {item.highlights.map((point, i) => (
                         <li key={i}>{point}</li>
                       ))}
@@ -95,10 +95,10 @@ const Attractions: React.FC<AttractionsProps> = ({ id }) => {
                         {item.label}
                       </p>
                     </div>
-                    <h3 className="text-[24px] md:text-[26px] lg:text-[36px] xl:text-[46px] font-semibold font-sourceSanspro text-zink relative z-10 ms-11">
+                    <h3 className="text-[24px] md:text-[26px] lg:text-[36px] xl:text-[46px] font-semibold font-playfair text-zink relative z-10 ms-11">
                       {item.title}
                     </h3>
-                    <p className="text-zink text-sm sm:text-base font-normal relative z-10">
+                    <p className="text-zink text-sm sm:text-base font-normal relative font-sourceSansPro z-10">
                       {item.description}
                     </p>
                   </div>
@@ -106,9 +106,9 @@ const Attractions: React.FC<AttractionsProps> = ({ id }) => {
                   <div className="flex gap-2 mt-4 flex-col">
                     <div className="flex">
                       <span className="w-8 h-8 bg-mustard rounded-full flex items-center justify-center me-1"><LuSailboat className="text-white " size={20} /></span>
-                      <p className="font-semibold text-[20px] lg:text-[24px] font-sourceSanspro text-zink">{item.heading}</p>
+                      <p className="font-semibold text-[20px] lg:text-[24px] font-sourceSansPro text-zink">{item.heading}</p>
                     </div>
-                    <ul className="list-disc pl-4 text-base text-zink font-semibold font-sourceSanspro space-y-1">
+                    <ul className="list-disc pl-4 text-base text-zink font-semibold font-sourceSansPro space-y-1">
                       {item.highlights.map((point, i) => (
                         <li key={i}>{point}</li>
                       ))}

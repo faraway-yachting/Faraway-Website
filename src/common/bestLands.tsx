@@ -1,5 +1,6 @@
 "use client";
 import PngIcons from "@/icons/pngIcon";
+import { styles, combine } from "@/styles/common";
 
 type Land = {
   id: string;
@@ -15,10 +16,10 @@ type Props = {
 
 const BestLands: React.FC<Props> = ({ data }) => {
   return (
-    <section className="relative py-12 px-4 xl:px-0 max-w-7xl mx-auto bg-[#FCFCFC]">
+    <section className={combine("relative py-12 bg-[#FCFCFC]", styles.px1, styles.container)}>
       {/* Title */}
       <div>
-        <p className="text-[28px] md:[30px] lg:text-[36px] xl:text-[40px] font-playfair text-zink font-extrabold md:mb-5 lg:mb-8 text-center">
+        <p className={combine(styles.h2, "font-playfair text-zink font-extrabold md:mb-5 lg:mb-8 text-center")}>
           Phuket Yacht Charter Adventures
         </p>
       </div>
@@ -36,7 +37,7 @@ const BestLands: React.FC<Props> = ({ data }) => {
 
       {/* Cards */}
       <div className="relative mt-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 lg:gap-25 xl:gap-30 max-w-6xl mx-auto">
+        <div className={combine(styles.grid2Col, "gap-8 md:gap-14 lg:gap-25 xl:gap-30 max-w-6xl mx-auto")}>
           {data.map((isle, idx) => (
             <div
               key={isle.id}
@@ -50,19 +51,19 @@ const BestLands: React.FC<Props> = ({ data }) => {
                   alt={isle.title}
                   className="w-full xl:w-[600px] h-[230px] md:h-[270px] lg:h-[330px] xl:h-[350px] object-cover rounded-lg"
                 />
-                <div className="absolute bottom-2 left-2 text-[28px] md:text-[28px] lg:text-[36px] xl:text-[36px] font-extrabold font-playfair text-white bg-opacity-50 px-3 py-1 rounded-lg">
+                <div className={combine("absolute bottom-2 left-2 font-extrabold text-white bg-opacity-50 px-3 py-1 rounded-lg", styles.h3)}>
                   {isle.title}
                 </div>
               </div>
               <div className="min-h-[170px] shadow-lg">
                 <div className="p-4 space-y-2 max-w-[30rem]">
-                  <p className="font-sourceSanspro text-mustard text-lg md:text-[20px] lg:text-[22px] xl:text-[24px] font-bold ">
+                  <p className={combine("font-sourceSanspro text-mustard font-bold", styles.h4)}>
                     {isle.subtitle}
                   </p>
                   {isle.description.map((line, i) => (
                     <p
                       key={i}
-                      className="text-zink font-normal font-inter text-base lg:text-[18px] leading-relaxed"
+                      className={combine("text-zink font-normal font-inter leading-relaxed", styles.p2)}
                     >
                       {line}
                     </p>

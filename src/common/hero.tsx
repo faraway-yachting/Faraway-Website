@@ -1,4 +1,5 @@
 import PngIcons from "@/icons/pngIcon";
+import { styles, combine } from "@/styles/common";
 
 type HeroSectionProps = {
   heading: string;
@@ -18,31 +19,31 @@ const HeroContent: React.FC<HeroSectionProps> = ({
 }) => {
   return (
     <section
-      className={`relative w-full bg-cover bg-center bg-no-repeat overflow-hidden min-h-[45vh] md:min-h-[80vh] lg:min-h-[72vh] xl:min-h-[82vh] flex items-center justify-center`}
+      className={combine(styles.bgImage, "bg-center", styles.minH2, styles.flexCenter)}
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#034250]/60 z-0" />
 
       {/* Content on top */}
-      <div className="flex items-center justify-center h-full text-center text-white px-4 relative z-10">
-        <div className="flex flex-col justify-center items-center max-w-4xl mx-auto">
+      <div className={combine(styles.flexCenter, "h-full text-center text-white relative z-10", styles.px1)}>
+        <div className={combine(styles.flexCol, "justify-center items-center max-w-4xl mx-auto")}>
           {/* Title Text */}
-          <p className="text-[28px] md:text-[36px] lg:text-[36px] xl:text-[40px] font-bold font-playfair mb-4 leading-tight md:max-w-2xl lg:max-w-2xl w-full">
+          <h2 className={combine(styles.h2, "font-semibold font-playfair mb-4 leading-tight md:max-w-2xl lg:max-w-2xl w-full")}>
             {heading}
-          </p>
+          </h2>
           {dividerImage && (
             <img
               src={dividerImage}
               alt="Divider"
-              className="w-[150px] md:w-[300px] lg:w-[450px] xl:w-[500px] flex justify-center text-center mx-auto"
+              className={combine(styles.w2, "flex justify-center text-center mx-auto")}
             />
           )}
-          <p className="text-[18px] md:text-[22px] font-normal font-sourceSanspro text-center mt-2 md:max-w-2xl lg:max-w-4xl xl:max-w-7xl">
+          <p className={combine(styles.p1, "font-normal font-sourceSansPro text-center mt-2 md:max-w-2xl lg:max-w-4xl xl:max-w-7xl")}>
             {subheading}
           </p>
           {button && (
-            <button className="mt-4 bg-transparent border border-white px-3 py-2 text-white text-base font-medium hover:bg-[#D6AB61]">
+            <button className={combine("mt-4 bg-transparent font-sourceSansPro border border-white px-3 py-2 text-white font-medium hover:bg-[#D6AB61]", styles.p2)}>
               Contact Us Now
             </button>
           )}

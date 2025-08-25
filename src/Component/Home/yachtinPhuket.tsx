@@ -1,5 +1,6 @@
 import HeadingContent from "@/common/heading"
 import ContactBanner from "@/common/contactbanner"
+
 const Sailingyacht_Phuket = () => {
     return (
         <div>

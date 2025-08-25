@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import {DM_Serif_Display} from "next/font/google";
 import {Plus_Jakarta_Sans} from "next/font/google";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,18 +10,23 @@ import Header from "@/Component/Header";
 import Licence from "@/Component/Licence";
 import Footer from "@/Component/Footer";
 
+const DMSerifDisplay = DM_Serif_Display({
+  variable: "--font-dm-serif-display",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: "400",
 });
-
 // Keep existing variables but use the main Plus Jakarta Sans font
 const geistSans = plusJakartaSans;
 const geistMono = plusJakartaSans;
-const playfairDisplay = plusJakartaSans;
+const playfairDisplay = DMSerifDisplay;
 const source_Sans_Pro = plusJakartaSans;
-const inter = plusJakartaSans;
+const inter =  plusJakartaSans;
 const poppins = plusJakartaSans;
 
 export const metadata: Metadata = {

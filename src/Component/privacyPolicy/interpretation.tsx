@@ -15,7 +15,7 @@ const InfoSection = () => {
 
                 {/* Privacy Policy Definitions */}
                 <div className="bg-white rounded-lg ">
-                    <h2 className="text-[20px] md:text-[22px] lg:text-[28px] font-bold text-zink mb-6 font-sourceSansPro">
+                    <h2 className="text-[20px] md:text-[22px] lg:text-[28px] font-bold text-zink mb-6 font-playfair">
                         Privacy Policy:
                     </h2>
 
