@@ -29,7 +29,7 @@ const ItinerarySection = () => {
           {item.itinerary.map((day, idx) => (
             <div key={idx}>
               <h5 className="font-semibold text-zink text-base sm:text-lg mb-2">{day.title}</h5>
-              <ul className="space-y-1 list-disc list-inside text-gray-700">
+              <ul className="space-y-1 list-disc list-inside text-gray-700 font-sourceSansPro">
                 {day.description.map((point, i) => <li key={i}>{point}</li>)}
               </ul>
             </div>
@@ -44,7 +44,7 @@ const ItinerarySection = () => {
       <h2 className="text-xl md:text-2xl lg:text-3xl font-playfair text-zink font-bold mb-1 text-center lg:text-left">
         {title}
       </h2>
-      <p className="text-mustard text-base lg:text-lg mb-6 font-sourceSanspro text-center lg:text-left">
+      <p className="text-mustard text-base lg:text-lg mb-6 font-sourceSansPro text-center lg:text-left">
         {subtitle}
       </p>
       <div className="space-y-4">{data.map(renderItem)}</div>

@@ -102,11 +102,11 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
           alt={data.title}
           className="w-full h-94 object-cover mb-4"
         />
-        <p className="text-lg text-black font-normal font-sourceSanspro leading-relaxed">
+        <p className="text-lg text-black font-normal font-sourceSansPro leading-relaxed">
           {data.shortDescription}
         </p>
         <div
-          className="text-lg text-black font-normal font-sourceSanspro leading-relaxed"
+          className="text-lg text-black font-normal font-sourceSansPro leading-relaxed"
           dangerouslySetInnerHTML={{
             __html: DOMPurify.sanitize(data.detailDescription || ""),
           }}

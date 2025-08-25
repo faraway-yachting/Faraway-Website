@@ -9,7 +9,7 @@ const PrivateYacht = () => (
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
       <div className="text-center mb-12 md:mb-16">
         <h2 className="text-3xl md:text-[32px] lg:text-[36px] xl:text-[40px] font-playfair font-bold text-mustard mb-4">Private Yacht in Phuket</h2>
-        <p className="text-base md:text-xl xl:text-[22px] font-normal font-sourceSanspro max-w-5xl text-zink mx-auto text-gray-700">
+        <p className="text-base md:text-xl xl:text-[22px] font-normal font-sourceSansPro max-w-5xl text-zink mx-auto text-gray-700">
           At Faraway Yachting, we believe your holiday should be more than a getaway—it should be an unforgettable escape.
         </p>
       </div>
@@ -24,7 +24,7 @@ const PrivateYacht = () => (
                 <FaCheckCircle className="text-[#F9B233] mt-1 flex-shrink-0 text-xl sm:text-2xl" />
                 <div>
                   <p className="font-bold md:text-lg lg:text-xl text-zink">{v.title}</p>
-                  <p className="text-zink text-base lg:text-lg">{v.description}</p>
+                  <p className="text-zink text-base lg:text-lg font-sourceSansPro">{v.description}</p>
                 </div>
               </li>
             ))}

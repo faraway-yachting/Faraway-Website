@@ -1,5 +1,6 @@
 import React from "react";
 import PngIcons from "@/icons/pngIcon";
+import { styles, combine } from "@/styles/common";
 
 type HeroSectionProps = {
   heading: string;
@@ -16,24 +17,24 @@ const HeroSection2: React.FC<HeroSectionProps> = ({
 }) => {
   return (
     <section
-      className="relative w-full bg-[#0061B1]/25 bg-cover bg-center bg-no-repeat overflow-hidden min-h-[52vh] md:min-h-[62vh] lg:min-h-[72vh] xl:min-h-[70vh] flex items-center justify-center"
+      className={combine(styles.bgImage, "bg-[#0061B1]/25 bg-center min-h-[52vh] md:min-h-[62vh] lg:min-h-[72vh] xl:min-h-[70vh]", styles.flexCenter)}
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-[#034250]/50 z-0" />
 
       {/* Content */}
-      <div className="relative z-10 text-white text-center px-4 max-w-7xl mx-auto">
-        <div className="flex flex-col justify-center items-center max-w-3xl mx-auto">
-          <p className="text-[32px] md:text-[38px] lg:text-[48px] xl:text-[48px] font-bold font-playfair mb-4 leading-tight md:max-w-2xl lg:max-w-2xl w-full">
+      <div className={combine("relative z-10 text-white text-center", styles.px1, styles.container)}>
+        <div className={combine(styles.flexCol, "justify-center items-center max-w-3xl mx-auto")}>
+          <p className={combine(styles.h1, "font-bold font-playfair mb-4 leading-tight md:max-w-2xl lg:max-w-2xl w-full")}>
             {heading}
           </p>
           <img
             src={dividerImage}
             alt="Divider"
-            className="w-[320px] md:w-[380px] lg:w-[420px] xl:w-[450px] mx-auto my-1 md:my-2"
+            className={combine("mx-auto my-1 md:my-2", styles.w3)}
           />
-          <p className="text-base text-white md:text-xl lg:text-[22px] font-normal font-sourceSanspro text-center mt-2 md:max-w-xl lg:max-w-2xl xl:max-w-5xl">
+          <p className={combine("text-base text-white font-normal font-sourceSansPro text-center mt-2 md:max-w-xl lg:max-w-2xl xl:max-w-5xl", styles.p1)}>
             <span className="text-red-500">Home </span> – {breadcrumb}
           </p>
         </div>

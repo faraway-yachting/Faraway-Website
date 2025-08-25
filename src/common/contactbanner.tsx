@@ -5,7 +5,7 @@ import { MdOutlineMail } from "react-icons/md";
 
 const ContactBanner = () => {
   return (
-    <section className="py-16 px-4  from-slate-50 to-blue-50">
+    <section className="pt-16 px-4  from-slate-50 to-blue-50">
       <div className="max-w-7xl mx-auto">
      
 
@@ -18,8 +18,8 @@ const ContactBanner = () => {
                 <FaPhoneAlt size={24} className="text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-slate-800 mb-1">Call Us</h3>
-                <p className="text-slate-600 text-sm font-medium">+66 61 234 5623</p>
+                <h3 className="font-semibold text-zink text-lg mb-1 font-sourceSansPro">Call Us</h3>
+                <p className="text-zink text-base font-medium font-sourceSansPro">+66 61 234 5623</p>
               </div>
             </div>
           </div>
@@ -36,8 +36,8 @@ const ContactBanner = () => {
                 <FaWhatsapp size={24} className="text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-slate-800 mb-1">WhatsApp</h3>
-                <p className="text-slate-600 text-sm font-medium">+66 61 234 5623</p>
+                <h3 className="font-semibold text-zink text-lg font-sourceSansPro mb-1">WhatsApp</h3>
+                <p className="text-zink text-base font-medium font-sourceSansPro">+66 61 234 5623</p>
               </div>
             </div>
           </a>
@@ -54,8 +54,8 @@ const ContactBanner = () => {
                 <MdOutlineMail size={24} className="text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-slate-800 mb-1">Email Us</h3>
-                <p className="text-slate-600 text-sm font-medium">info@far-away.net</p>
+                <h3 className="font-semibold text-zink text-lg font-sourceSansPro mb-1">Email Us</h3>
+                <p className="text-zink text-base font-medium font-sourceSansPro">info@far-away.net</p>
               </div>
             </div>
           </a>
@@ -72,8 +72,8 @@ const ContactBanner = () => {
                 <FaLine size={24} className="text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-slate-800 mb-1">Line App</h3>
-                <p className="text-slate-600 text-sm font-medium">Connect Now</p>
+                <h3 className="font-semibold text-zink text-lg font-sourceSansPro mb-1">Line App</h3>
+                <p className="text-zink text-base font-medium font-sourceSansPro">Connect Now</p>
               </div>
             </div>
           </a>

@@ -1,10 +1,12 @@
+import { styles, combine } from "@/styles/common";
+
 const Destinations_Section = () => {
   //  Array Data
   const data = [
     {
       label: "Private yacht in Private yacht in phuket",
       Description:
-        "At Faraway Yachting Co. Ltd., we understand that your holiday is a special time, and we want to make it as unique and unforgettable as possible. That’s why we offer a wide range of private yacht charters in Phuket, tailored to your individual needs and interests. Our private yacht charters are the perfect way to explore the stunning islands and coastline of Phuket. With our experienced and knowledgeable crew, you can be sure that you’re in good hands every step of the way."
+        "At Faraway Yachting Co. Ltd., we understand that your holiday is a special time, and we want to make it as unique and unforgettable as possible. That's why we offer a wide range of private yacht charters in Phuket, tailored to your individual needs and interests. Our private yacht charters are the perfect way to explore the stunning islands and coastline of Phuket. With our experienced and knowledgeable crew, you can be sure that you're in good hands every step of the way."
     },
     {
       label: "Bareboat charter phuket",
@@ -19,29 +21,29 @@ const Destinations_Section = () => {
     {
       label: "Luxury yacht in Phuket",
       Description:
-        "Imagine sailing through the crystal-clear waters of the Andaman Sea, surrounded by lush green islands and breathtaking scenery. On board your own luxury yacht, you’ll enjoy the ultimate in relaxation and comfort, with every detail taken care of by your experienced crew. No matter what you choose to do, a luxury yacht charter Phuket is an unforgettable experience. It’s the perfect way to celebrate a special occasion, or simply to indulge in the ultimate vacation.",
+        "Imagine sailing through the crystal-clear waters of the Andaman Sea, surrounded by lush green islands and breathtaking scenery. On board your own luxury yacht, you'll enjoy the ultimate in relaxation and comfort, with every detail taken care of by your experienced crew. No matter what you choose to do, a luxury yacht charter Phuket is an unforgettable experience. It's the perfect way to celebrate a special occasion, or simply to indulge in the ultimate vacation.",
     },
     {
       label: "Phuket Boat Rental: Your Gateway to Unforgettable Adventures",
       Description:
-        "Phuket is a boater’s paradise, with its stunning coastline, secluded islands, and vibrant marine life. A boat rental is the perfect way to explore all that Phuket has to offer, at your own pace and on your own terms. With a boat rental, you can customize your itinerary to suit your interests, whether you’re looking for a relaxing getaway or an action-packed adventure. Visit popular tourist destinations like Phang Nga Bay and Phi Phi Islands, or discover hidden gems off the beaten path. Book your Phuket boat rental today with us and start planning your unforgettable maritime adventure!",
+        "Phuket is a boater's paradise, with its stunning coastline, secluded islands, and vibrant marine life. A boat rental is the perfect way to explore all that Phuket has to offer, at your own pace and on your own terms. With a boat rental, you can customize your itinerary to suit your interests, whether you're looking for a relaxing getaway or an action-packed adventure. Visit popular tourist destinations like Phang Nga Bay and Phi Phi Islands, or discover hidden gems off the beaten path. Book your Phuket boat rental today with us and start planning your unforgettable maritime adventure!",
     },
     {
       label: "Phuket Yachting: A Luxurious and Unforgettable Experience",
       Description:
-        "Phuket, a jewel in the Andaman Sea, is a renowned yachting destination. With its stunning scenery, abundant marine life, and luxurious amenities, Phuket offers an unforgettable experience for boat lovers. From secluded coves to bustling marinas, there’s something for everyone to discover on a Phuket yachting charter. Explore hidden coves and beaches, visit idyllic islands, and experience the vibrant marine life. Indulge in luxury and relaxation on a Phuket yachting charter. Enjoy spacious cabins, gourmet meals, and attentive service provided by your experienced crew. Spend your days exploring the island’s hidden gems and your nights unwinding on deck under the stars. Plan your trip with us now !",
+        "Phuket, a jewel in the Andaman Sea, is a renowned yachting destination. With its stunning scenery, abundant marine life, and luxurious amenities, Phuket offers an unforgettable experience for boat lovers. From secluded coves to bustling marinas, there's something for everyone to discover on a Phuket yachting charter. Explore hidden coves and beaches, visit idyllic islands, and experience the vibrant marine life. Indulge in luxury and relaxation on a Phuket yachting charter. Enjoy spacious cabins, gourmet meals, and attentive service provided by your experienced crew. Spend your days exploring the island's hidden gems and your nights unwinding on deck under the stars. Plan your trip with us now !",
     },
   ];
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6 lg:py-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+    <div className={combine(styles.px5, styles.py4, styles.container)}>
+      <div className={combine(styles.gap1, styles.grid2Col)}>
         {data.map((item, index) => (
           <div key={index} className="max-w-xl">
-            <h3 className="text-[25px] md:text-[28px] lg:text-[30px] xl:text-[32px] font-semibold text-zink font-playfair mb-3">
+            <h3 className={combine(styles.h4, "font-semibold text-zink font-playfair mb-3")}>
               {item.label}
             </h3>
             <img src="/images/rframe4.png" alt="" className="w-[150px] my-3" />
-            <p className="text-base md:text-lg font-inter text-zink leading-relaxed">
+            <p className={combine(styles.p3, "font-inter text-zink leading-relaxed")}>
               {item.Description}
             </p>
           </div>

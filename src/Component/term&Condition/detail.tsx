@@ -142,7 +142,7 @@ export default function TermsWithTable() {
                 <div className="flex-1">
                   <h3 className="text-[20px] md:text-[22px] lg:text-[24px] xl:text-[26px] font-semibold text-zink hover:text-[#D6AB62]">{section.title}</h3>
                   {section.points && section.points.length > 0 && (
-                    <ul className="mt-2 list-disc list-inside text-base text-zink font-medium">
+                    <ul className="mt-2 list-disc list-inside text-base text-zink font-medium font-sourceSansPro">
                       {section.points.map((point, idx) => (
                         <li 
                           key={idx} 
@@ -187,7 +187,7 @@ export default function TermsWithTable() {
                     {section.subsections.map((subsection) => (
                       <div key={subsection.id} id={subsection.id} className="mb-4 scroll-mt-24">
                         {subsection.title && (
-                          <p className="font-semibold text-lg md:text-xl text-zink mb-2 me-3">{subsection.title}<span className="text-zink text-sm md:text-base font-normal ms-2">{subsection.content}</span>
+                          <p className="font-semibold text-lg md:text-xl text-zink mb-2 me-3">{subsection.title}<span className="text-zink text-sm md:text-base font-normal ms-2 font-sourceSansPro">{subsection.content}</span>
                           </p>
                         )}
                       </div>
@@ -198,7 +198,7 @@ export default function TermsWithTable() {
                       <div className="bg-[#E6ECED33] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 px-4 md:px-6 py-0 xl:py-6 border-l-[7px] border-l-[#034250]">
                         <div className="flex-1 text-left py-3">
                           <p className="text-zink text-base font-medium">{insuranceRecommendation.title}</p>
-                          <p className="text-zink text-sm md:text-base mt-2">{insuranceRecommendation.content}</p>
+                          <p className="text-zink text-sm md:text-base mt-2 font-sourceSansPro">{insuranceRecommendation.content}</p>
                         </div>
                         <div className="flex-shrink-0 w-[150px] sm:w-[180px] md:w-[200px] hidden md:block">
                           <img src="/images/slideText.png" alt="" />
@@ -210,7 +210,7 @@ export default function TermsWithTable() {
               );
             })}
             {/* Final Message */}
-            <div className="bg-gradient-to-r from-[#046B7A] to-[#034250] text-white p-8 text-center rounded-lg border-3 border-mustard mt-16">
+            <div className="bg-gradient-to-r from-[#046B7A] to-[#034250] font-sourceSansPro text-white p-8 text-center rounded-lg border-3 border-mustard mt-16">
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4">{finalMessage.title}</h3>
               <p className="text-white text-basemd:text-lg">{finalMessage.subtitle}</p>
               <p className="text-white text-lg lg:text-xl font-semibold mt-2">{finalMessage.signature}</p>

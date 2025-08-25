@@ -103,7 +103,7 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                                     <h3 className="text-[25px] md:text-[27px] lg:text-[29px] xl:text-[31px] font-semibold font-playfair text-zink mb-2">
                                         {limitCharacters(blog.title, 22)}
                                     </h3>
-                                    <p className="md:text-lg text-black font-normal font-sourceSanspro">
+                                    <p className="md:text-lg text-black font-normal font-sourceSansPro">
                                         {blog.shortDescription.length > 200 ? blog.shortDescription.slice(0, 200) + "..." : blog.shortDescription}
                                     </p>
                                 </div>
@@ -115,7 +115,7 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                     <div className="flex justify-center mt-10">
                         <button
                             onClick={() => setVisibleCount((prev) => prev + 6)}
-                            className="px-7 lg:px-9 xl:px-11 py-2 rounded-lg text-white bg-zink hover:bg-[#D6AB62] text-lg font-medium transition"
+                            className="px-7 lg:px-9 xl:px-11 py-2 font-sourceSansPro rounded-lg text-white bg-zink hover:bg-[#D6AB62] text-lg font-medium transition"
                         >
                             Show More
                         </button>

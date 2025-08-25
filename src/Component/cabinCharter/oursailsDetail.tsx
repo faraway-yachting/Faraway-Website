@@ -18,7 +18,7 @@ const SailingDetails = () => {
     <div key={index} className="border border-gray-200 px-3 py-2 rounded-md text-center bg-[#FFFDF8]">
       <div className="flex flex-col items-center gap-1 text-[#9BA6B2]">
         <img src={image} alt={title} />
-        <p className="text-lg lg:text-[20px] font-bold font-sourceSansPro text-zink">{title}</p>
+        <p className="text-lg lg:text-[20px] font-semibold font-playfar text-zink">{title}</p>
       </div>
       <p className="text-zink text-lg lg:text-[20px] font-medium font-sourceSansPro">{value}</p>
     </div>
@@ -87,7 +87,7 @@ const SailingDetails = () => {
                 <tbody>
                   {catamaranDetails.map((item, idx) => (
                     <tr key={idx} className="bg-white">
-                      <td className="font-bold text-[24px] font-sourceSansPro text-zink px-4 py-3 w-[80px] align-top">
+                      <td className="font-bold text-[24px] font-playfair text-zink px-4 py-3 w-[80px] align-top">
                         {item.label}:
                       </td>
                       <td className="px-4 py-3 text-zink font-normal font-sourceSansPro text-[20px] leading-relaxed">

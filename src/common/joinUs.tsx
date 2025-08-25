@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { styles, combine } from "@/styles/common";
 
 interface JoinUsProps {
   id?: string;
@@ -20,7 +21,7 @@ const JoinUs: React.FC<JoinUsProps> = ({
 
   return (
     <div
-      className="relative min-h-[60vh] md:min-h-[60vh] lg:min-h-[70vh] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8"
+      className={combine("relative flex flex-col justify-center items-center", "min-h-[60vh] md:min-h-[60vh] lg:min-h-[70vh]", styles.px3)}
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
@@ -34,16 +35,16 @@ const JoinUs: React.FC<JoinUsProps> = ({
       />
 
       <div className="relative z-20 text-center">
-        <p className="  text-white font-inter text-[24px] sm:text-[30px] lg:text-[33px] font-extrabold">
+        <p className={combine("text-white font-playfair font-extrabold", styles.h3)}>
           WHAT ARE YOU WAITING FOR?
         </p>
-        <p className="text-white font-sourceSansPro text-[15px] sm:text-[18px] md:text-[20px] lg:text-[23px] pt-5 sm:pt-6 max-w-4xl mx-auto font-medium leading-relaxed">
+        <p className={combine("text-white  pt-5 sm:pt-6 max-w-4xl mx-auto font-medium leading-relaxed", styles.p1)}>
           Secure your private yacht in Phuket today and dive into the heart of
-          the mesmerizing Phuket islands. With Faraway Yachting Co. Ltd., you’re
+          the mesmerizing Phuket islands. With Faraway Yachting Co. Ltd., you're
           not just setting sail but embarking on an unforgettable Phuket
-          adventure.
+          adventure
         </p>
-        <button className="bg-white text-[16px] font-poppins sm:text-[18px] lg:text-[20px] text-[#034250] rounded-lg px-5 py-2 mt-8 sm:mt-10 hover:bg-[#034250] hover:text-white transition duration-300">
+        <button className={combine("bg-white text-[#034250] rounded-lg px-5 py-2 mt-8 sm:mt-10 hover:bg-[#034250] hover:text-white transition duration-300", styles.p3)}>
           Start Your Adventure
         </button>
       </div>

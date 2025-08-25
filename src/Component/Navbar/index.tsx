@@ -46,7 +46,7 @@ const Drawer = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =
                                     <Link
                                         href={href}
                                         onClick={onClose}
-                                        className={`relative inline-block text-sm lg:text-base transition duration-200 group ${isActive ? "text-[#034250] font-semibold" : "text-[#118A92] hover:text-[#034250]"
+                                        className={`relative inline-block text-sm lg:text-base text-zink font-sourceSansPro transition duration-200 group ${isActive ? "text-[#034250] font-semibold" : "text-[#118A92] hover:text-[#034250]"
                                             }`}
                                     >
                                         {label}
@@ -60,7 +60,7 @@ const Drawer = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =
                         })}
                         <li>
                             <Link href="/contact" onClick={onClose}>
-                                <button className="bg-[#034250] text-white text-base font-bold px-5 py-2 rounded-lg hover:bg-[#D6AB61] transition">
+                                <button className="bg-mustard text-white text-base font-sourceSansPro font-bold px-5 py-2 rounded-lg hover:bg-[#D6AB61] transition">
                                     Start Your Adventure
                                 </button>
                             </Link>
@@ -93,12 +93,12 @@ const Navbar = () => {
                             <Link
                                 key={href}
                                 href={href}
-                                className={`relative inline-block text-sm lg:text-base transition duration-200 group ${isActive ? "text-[#034250] font-semibold" : "text-[#118A92] hover:text-[#034250]"
+                                className={`relative inline-block font-sourceSansPro text-zink text-sm lg:text-base transition duration-200 group ${isActive ? "text-[#034250] font-semibold" : "text-[#118A92] hover:text-[#034250]"
                                     }`}
                             >
                                 {label}
                                 <span
-                                    className={`absolute left-0 bottom-0 h-[2px] w-full transition-all duration-300 transform group-hover:scale-x-100 origin-left ${isActive ? "bg-[#D6AB61] scale-x-100" : "bg-[#D6AB61] scale-x-0"
+                                    className={`absolute left-0 bottom-0 h-[2px] w-full transition-all font-sourceSansPro duration-300 transform group-hover:scale-x-100 origin-left ${isActive ? "bg-[#D6AB61] scale-x-100" : "bg-[#D6AB61] scale-x-0"
                                         }`}
                                 ></span>
                             </Link>
@@ -109,7 +109,7 @@ const Navbar = () => {
                 {/* Contact Button */}
                 <div className="hidden md:block">
                     <Link href="/contact">
-                        <button className="bg-[#034250] text-white md:text-xs lg:text-base font-bold px-2 lg:px-5 py-2 rounded-lg hover:bg-[#D6AB61] transition hover:cursor-pointer">
+                        <button className="bg-mustard text-white md:text-xs lg:text-base font-sourceSansPro font-bold px-2 lg:px-5 py-2 rounded-lg hover:bg-[#D6AB61] transition hover:cursor-pointer">
                             Start Your Adventure
                         </button>
                     </Link>

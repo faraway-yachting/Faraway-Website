@@ -19,7 +19,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
           {config.title}
         </p>
         <Image src={config.frame} alt="" width={400} height={200} />
-        <p className="text-white font-sourceSanspro font-extrabold text-[20px] md:text-[22px] lg:text-[25px]xl:text-[28px] mt-2">
+        <p className="text-white font-sourceSansPro font-extrabold text-[20px] md:text-[22px] lg:text-[25px]xl:text-[28px] mt-2">
           {config.subtitle}
         </p>
       </div>

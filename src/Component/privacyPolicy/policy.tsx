@@ -23,7 +23,7 @@ const BulletList = ({ items, columns = 2 }: { items: string[]; columns?: number 
                     {columnItems.map((item, index) => (
                         <div key={startIndex + index} className="flex items-start space-x-3">
                             <div className="w-2 h-2 bg-zink rounded-full mt-2 flex-shrink-0"></div>
-                            <p className="text-zink">{item}</p>
+                            <p className="text-zink font-sourceSansPro">{item}</p>
                         </div>
                     ))}
                 </div>
@@ -47,7 +47,7 @@ const InfoCard = ({ title, description, icon }: { title: string; description: st
             </div>
             <div>
                 <p className="font-semibold text-blue text-lg mb-2">{title}</p>
-                <p className="text-zink max-w-3xs">{description}</p>
+                <p className="text-zink max-w-3xs font-sourceSansPro">{description}</p>
             </div>
         </div>
     </div>
@@ -65,7 +65,7 @@ const PolicyInfo = () => {
         switch (section.type) {
             case 'cards':
                 return (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 font-sourceSansPro">
                         {(section.data as any[]).map((item: any, index: number) => (
                             <InfoCard key={index} {...item} />
                         ))}
@@ -75,7 +75,7 @@ const PolicyInfo = () => {
             case 'bullets':
                 return (
                     <>
-                        {section.subtitle && <p className="text-lg text-zink font-semibold mb-6">{section.subtitle}</p>}
+                        {section.subtitle && <p className="text-lg text-zink font-sourceSansPro font-semibold mb-6">{section.subtitle}</p>}
                         <BulletList items={section.data as string[]} />
                     </>
                 );
@@ -84,13 +84,13 @@ const PolicyInfo = () => {
                 return (
                     <div className="">
                         {Array.isArray(section.data) ? (
-                            <div className="space-y-4">
+                            <div className="space-y-4 font-sourceSansPro">
                                 {(section.data as string[]).map((item, index) => (
-                                    <p key={index} className="text-zink leading-relaxed">{item}</p>
+                                    <p key={index} className="text-zink leading-relaxed font-sourceSansPro">{item}</p>
                                 ))}
                             </div>
                         ) : (
-                            <p className="text-zink leading-relaxed">{section.data as string}</p>
+                            <p className="text-zink leading-relaxed font-sourceSansPro">{section.data as string}</p>
                         )}
                     </div>
                 );
@@ -99,7 +99,7 @@ const PolicyInfo = () => {
                 const contactData = section.data as any;
                 return (
                     <div className="bg-white rounded-lg">
-                        <p className="text-zink leading-relaxed mb-4">{contactData.description}</p>
+                        <p className="text-zink leading-relaxed mb-4 font-sourceSansPro">{contactData.description}</p>
                         <p className="text-zink">
                             <span className="font-semibold text-lg me-2">By Email: </span>
                             <a

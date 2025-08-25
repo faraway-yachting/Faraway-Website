@@ -9,7 +9,7 @@ const AboutSection = () => {
         line: "w-13 md:w-15 lg:w-18 xl:w-21 border-b-3 border-mustard z-10",
         subtitle: "text-mustard font-semibold text-base lg:text-lg xl:text-xl font-inter uppercase relative z-10 ms-3",
         title: "text-[26px] lg:text-[34px] xl:text-[36px] font-bold font-playfair text-zink uppercase",
-        description: "text-base lg:text-lg xl:text-[19px] text-zink font-normal text-inter"
+        description: "text-base lg:text-lg xl:text-[19px] text-zink font-normal font-sourceSansPro"
     }
 
     return (
