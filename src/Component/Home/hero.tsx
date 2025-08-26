@@ -1,6 +1,7 @@
 import PngIcons from "@/icons/pngIcon";
-import Link from "next/link";
 import { styles, combine } from "@/styles/common";
+import Button from "@/Component/common/Button";
+import { FiPhone } from "react-icons/fi";
 
 const HeroContent = () => {
   const { bgImage, minH1, top1, w1, w2, flexCenter, flexCol, h1, my1, containerXl, btnPrimary, mt2, px4, py2, text1, flexBetween, p1 } = styles;
@@ -35,11 +36,17 @@ const HeroContent = () => {
               Experience luxury and adventure with the best Phuket Yacht Charter Operator. Sail the stunning waters & best Islands of Phuket in style and make unforgettable memories.
             </p>
 
-            <Link href="/contact">
-              <button className={combine(btnPrimary, mt2, "bg-gradient-to-r font-sourceSansPro from-[#D6AB61] to-[#B8954A] hover:from-[#E8BD73] hover:to-[#D6AB61] border-2 border-[#D6AB61] hover:border-[#E8BD73]", px4, py2, text1, "font-semibold rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 ease-out backdrop-blur-sm")}>
-                Contact Us Now
-              </button>
-            </Link>
+            <div className="flex justify-center">
+              <Button
+                href="/contact"
+                variant="primary"
+              >
+                <div className="flex items-center">
+                  <FiPhone className="mr-2" />
+                  Contact Us Now
+                </div>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

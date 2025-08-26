@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         zink: '#034250',
-        mustard: '#D6AB61',
+        mustard: 'linear-gradient(to right, #FF512F 0%, #F09819 51%, #FF512F 100%)',
         blue: '#012A50',
         seagreen: '#81A1A8',
         green: '#03425080',

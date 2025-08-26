@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { styles, combine } from "@/styles/common";
+import Button from "@/Component/common/Button";
 
 interface JoinUsProps {
   id?: string;
@@ -44,9 +45,13 @@ const JoinUs: React.FC<JoinUsProps> = ({
           not just setting sail but embarking on an unforgettable Phuket
           adventure
         </p>
-        <button className={combine("bg-white text-[#034250] rounded-lg px-5 py-2 mt-8 sm:mt-10 hover:bg-[#034250] hover:text-white transition duration-300", styles.p3)}>
-          Start Your Adventure
-        </button>
+        <div className="flex justify-center items-center mt-6">
+        <Button 
+            variant="outline"
+        >
+            Start Your Adventure
+        </Button>
+        </div>
       </div>
     </div>
   );

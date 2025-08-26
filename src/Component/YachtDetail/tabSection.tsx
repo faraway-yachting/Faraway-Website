@@ -44,6 +44,8 @@ const TabSection: React.FC<Props> = ({ data }) => {
 
   return (
     <div>
+      {/* Test bg-mustard gradient */}
+      
       {/* Features */}
       <div className="flex flex-wrap gap-4 mt-3 md:mt-4 lg:mt-6 xl:mt-8 justify-center md:justify-start">
         {features.map(({ title, value, icon: Icon }, index) => (
@@ -51,9 +53,9 @@ const TabSection: React.FC<Props> = ({ data }) => {
             key={index}
             className="border border-mustard px-2 lg:px-3 xl:px-4 py-2 xl:py-3 rounded-md bg-white text-center inline-flex flex-col items-center shadow-sm"
           >
-            <div className="text-mustard flex flex-col items-center gap-2">
+            <div className="text-zink flex flex-col items-center gap-2">
               <Icon size={24} />
-              <p className="text-sm lg:text-[32px] font-bold font-sourceSansPro text-zink leading-snug text-center">
+              <p className="text-sm lg:text-[15px] font-bold font-sourceSansPro text-zink leading-snug text-center">
                 {title}
               </p>
             </div>
@@ -69,12 +71,13 @@ const TabSection: React.FC<Props> = ({ data }) => {
         {dayTripCards.map(({ label, icon: Icon }) => (
           <button
             key={label}
+
             onClick={() => setActiveTab(label)}
-            className={`flex items-center gap-2 whitespace-nowrap transition-all font-poppins font-medium
-              py-1 px-1 sm:px-3 text-[12px] md:text-sm lg:text-base lg:text-lg
+            className={`flex items-center gap-2 transition-all font-poppins font-medium
+              py-1 px-1 sm:px-3 text-[12px] md:text-sm lg:text-base xl:text-lg border
               ${activeTab === label
-                ? "text-mustard border-b-2 border-mustard"
-                : "text-[#034250] border-b-2 border-transparent hover:border-zinc-400"
+                ? "text-mustard border-zink hover:text-mustard"
+                : "text-zink border-transparent hover:border-zink"
               }`}
           >
             <Icon size={20} />

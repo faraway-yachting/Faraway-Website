@@ -17,9 +17,6 @@ h4:"text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] font-medium font-so
   p4: "text-[12px] md:text-[14px] lg:text-[16px] xl:text-[16px] font-normal font-inter",
 
   // Buttons - Same styling everywhere
-  btnPrimary: "bg-zink text-white px-6 py-3 cursor-pointer rounded-lg font-semibold font-sourceSansPro hover:bg-mustard transition-colors duration-300",
-  btnSecondary: "bg-mustard text-white px-6 py-3 rounded-lg font-semibold font-inter hover:bg-opacity-90 transition-all duration-300",
-  btnOutline: "border-2 border-zink text-zink px-6 py-3 rounded-lg font-semibold font-inter hover:bg-zink hover:text-white transition-all duration-300",
 
   // bg Styling
   bgImage: "relative w-full bg-cover bg-end bg-no-repeat overflow-hidden",

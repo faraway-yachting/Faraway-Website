@@ -60,7 +60,7 @@ const Drawer = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =
                         })}
                         <li>
                             <Link href="/contact" onClick={onClose}>
-                                <button className="bg-mustard text-white text-base font-sourceSansPro font-bold px-5 py-2 rounded-lg hover:bg-[#D6AB61] transition">
+                                <button className="btn-grad text-white text-base font-sourceSansPro font-bold px-5 py-2 rounded-lg transition">
                                     Start Your Adventure
                                 </button>
                             </Link>
@@ -109,7 +109,7 @@ const Navbar = () => {
                 {/* Contact Button */}
                 <div className="hidden md:block">
                     <Link href="/contact">
-                        <button className="bg-mustard text-white md:text-xs lg:text-base font-sourceSansPro font-bold px-2 lg:px-5 py-2 rounded-lg hover:bg-[#D6AB61] transition hover:cursor-pointer">
+                        <button className="btn-grad text-white md:text-xs lg:text-base font-sourceSansPro font-bold px-2 lg:px-5 py-2 rounded-lg transition hover:cursor-pointer">
                             Start Your Adventure
                         </button>
                     </Link>
