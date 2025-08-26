@@ -1,6 +1,6 @@
 import { FiPhone } from "react-icons/fi";
-import Link from "next/link";
 import { styles, combine } from "@/styles/common";
+import Button from "@/Component/common/Button";
 
 interface SetSailProps {
     id?: string;
@@ -42,15 +42,21 @@ const SetSail: React.FC<SetSailProps> = ({
                 <h2 className={combine("text-white uppercase font-extrabold font-playfair max-w-2xl mx-auto leading-tight", styles.h3)}>
                     Set Sail for Luxury and Adventure with Far Away Yacht Charters
                 </h2>
-                <p className={combine("text-white max-w-3xl px-4 py-3 lg:py-5 leading-relaxed lg:leading-tight", styles.p2)}>
+                <p className="text-white text-base md:text-lg lg:text-xl font-normal font-inter max-w-3xl px-4 py-3 lg:py-5 leading-relaxed lg:leading-tight">
                     Luxury, adventure, and unforgettable views—all aboard your private yacht. Discover hidden coves, island gems, and the beauty of Phuket.
                 </p>
-                <Link href="/contact">
-                <button className={combine(styles.btnSecondary, "text-base md:text-xl font-bold font-poppins px-5 py-2 md:py-3 rounded-lg flex items-center mx-auto mt-5 lg:mt-6 hover:bg-zink")}>
-                    <FiPhone className="mr-2" />
-                    Contact Us Now
-                </button>
-                </Link>
+
+                <div className="flex justify-center mt-4">
+                    <Button 
+                        href="/contact"
+                        variant="primary"
+                    >
+                        <div className="flex items-center">
+                            <FiPhone className="mr-2" />
+                            Contact Us Now
+                        </div>
+                    </Button>
+                </div>
             </div>
         </section>
     );

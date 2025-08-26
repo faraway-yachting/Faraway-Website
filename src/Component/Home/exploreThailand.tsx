@@ -2,6 +2,7 @@ import HeadingContent from "@/common/heading"
 import Cards from "../Destinations/cards"
 import SetSail from "@/common/yarchtcharter"
 import { styles, combine } from "@/styles/common";
+import Button from "@/Component/common/Button";
 
 const ExploreThailand = () => {
     return (
@@ -13,7 +14,11 @@ const ExploreThailand = () => {
             {/* Destination Cards */}
             <Cards />
             <div className={combine(styles.my2, styles.flexCenter)}>
-                <button className={combine(styles.btnPrimary, "font-semibold", styles.margin4, "text-base px-5 py-3 rounded-lg hover:bg-[#D6AB61]")}>View More Destinations</button>
+                <Button 
+                    variant="primary"
+                >
+                    View More Destinations
+                </Button>
             </div>
             {/* Book Your Trip */}
             <SetSail

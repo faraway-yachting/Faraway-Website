@@ -37,7 +37,7 @@ const Why = () => {
                                             <item.icon size={32} />
                                         </div>
                                     </div>
-                                    <h3 className={combine(h5, "font-semiboldtext-mustard")}>
+                                    <h3 className={combine(h5, "font-semibold text-mustard")}>
                                         {item.label}
                                     </h3>
                                     <p className={combine(p2, "text-gray-600", "text-center")}>

@@ -6,6 +6,7 @@ import axios from "axios";
 import { LuDoorOpen, LuToilet, LuMapPin } from "react-icons/lu";
 import { GiCaptainHatProfile } from "react-icons/gi";
 import HeadingContent from "./heading";
+import Button from "@/Component/common/Button";
 
 interface Yacht {
   _id: string;
@@ -100,7 +101,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[40rem]">
-        <div className="w-10 h-10 border-4 border-t-transparent border-[#2185D0] rounded-full animate-spin" />
+        <div className="w-10 h-10 border-4 border-t-transparent border-mustard rounded-full animate-spin" />
       </div>
     );
   }
@@ -114,11 +115,11 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
 
   return (
     <div className="mb-8 mx-4 lg:mx-0">
-<div className="mb-10">
-      <HeadingContent
-        heading="Featured Yachts"
-        description="Let the waves guide you to elegance, adventure, and pure relaxation!"
-      />
+      <div className="mb-10">
+        <HeadingContent
+          heading="Featured Yachts"
+          description="Let the waves guide you to elegance, adventure, and pure relaxation!"
+        />
       </div>
       <div className={`grid ${gridCols} gap-6 md:gap-8 lg:gap-4 xl:gap-10`}>
         {visibleYachts.map((boat) => (
@@ -167,7 +168,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
             <div className="p-4 space-y-3">
               {/* Title and Rating */}
               <div className="flex items-start">
-                <h3 className="text-xl lg:text-[24px] xl:text-[28px] font-playfair mt-5 font-semibold text-zink group-hover:text-[#D6AB62] transition-colors">
+                <h3 className="text-xl lg:text-[24px] xl:text-[28px] font-playfair mt-5 font-semibold text-zink group-hover:text-mustard transition-colors">
                   {boat.title}
                 </h3>
               </div>
@@ -194,9 +195,11 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
                 <div className=" text-xl xl:text-[22px] font-semibold text-zink font-sourceSansPro">
                   From ${(boat.daytripPriceEuro)}
                 </div>
-                <button className="px-7 xl:px-10 py-2 font-sourceSansPro bg-zink text-white text-base xl:text-lg font-medium rounded-lg hover:bg-[#D6AB62] transition-colors">
+                <Button
+                  variant="outline"
+                >
                   Detail
-                </button>
+                </Button>
               </div>
             </div>
           </div>
@@ -205,12 +208,12 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
 
       {hasMore && (
         <div className="flex justify-center mt-10">
-          <button
+          <Button
             onClick={() => setVisibleCount((prev) => prev + 6)}
-            className="px-7 lg:px-9 xl:px-11 py-2 rounded-lg font-sourceSansPro text-white bg-zink hover:bg-[#D6AB62] text-lg font-medium transition"
+            variant="secondary"
           >
             Show More
-          </button>
+          </Button>
         </div>
       )}
     </div>

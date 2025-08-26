@@ -1,4 +1,5 @@
 import { styles, combine } from "@/styles/common";
+import Button from "@/Component/common/Button";
 
 const Destinations_Section = () => {
   //  Array Data
@@ -35,21 +36,26 @@ const Destinations_Section = () => {
     },
   ];
   return (
-    <div className={combine(styles.px5, styles.py4, styles.container)}>
-      <div className={combine(styles.gap1, styles.grid2Col)}>
-        {data.map((item, index) => (
-          <div key={index} className="max-w-xl">
-            <h3 className={combine(styles.h4, "font-semibold text-zink font-playfair mb-3")}>
-              {item.label}
-            </h3>
-            <img src="/images/rframe4.png" alt="" className="w-[150px] my-3" />
-            <p className={combine(styles.p3, "font-inter text-zink leading-relaxed")}>
-              {item.Description}
-            </p>
-          </div>
-        ))}
+    <section className="bg-white py-16 px-4 xl:px-0">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+          {data.map((item, index) => (
+            <div key={index} className="max-w-xl bg-white rounded-lg">
+              <h3 className="text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px] font-normal text-zink font-playfair mb-3 leading-tight">
+                {item.label}
+              </h3>
+              <div className="mb-2">
+                <img src="/images/rframe4.png" alt="" />
+              </div>
+              <p className="text-[15px] md:text-[17px] lg:text-[18px] xl:text-[19px] font-inter text-zink leading-relaxed">
+                {item.Description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section >
   );
-};
+}
+
 export default Destinations_Section;
