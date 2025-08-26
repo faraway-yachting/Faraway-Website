@@ -4,7 +4,7 @@ import Button from "@/Component/common/Button";
 import { FiPhone } from "react-icons/fi";
 
 const HeroContent = () => {
-  const { bgImage, minH1, top1, w1, w2, flexCenter, flexCol, h1, my1, containerXl, btnPrimary, mt2, px4, py2, text1, flexBetween, p1 } = styles;
+  const { bgImage, minH1, top1, w1, w2, flexCenter, flexCol, h1, my1, containerXl, mt2, px4, py2, text1, flexBetween, p1 } = styles;
 
   return (
     <section className={combine(bgImage, "bg-[url('/images/homeimg1.png')]", minH1, "flex justify-center")}>
