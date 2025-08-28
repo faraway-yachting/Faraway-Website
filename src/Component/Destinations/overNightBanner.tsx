@@ -1,3 +1,5 @@
+import Button from "@/Component/common/Button";
+
 const Banner = () => {
   return (
     <div className="relative">
@@ -23,9 +25,11 @@ const Banner = () => {
               <p className="text-white font-inter text-[18px] font-normal mb-4">
                 Want something unique? We customize every trip to fit your style, pace, and preferences.
               </p>
-              <button className="font-poppins font-semibold text-[18px] text-black bg-white border border-[#034250] px-6 py-2 rounded hover:bg-[#034250] hover:text-white transition">
+                <div className="flex items-center justify-center">
+              <Button variant="outline" href="/contact">
                 Contact Us
-              </button>
+              </Button>
+              </div>
             </div>
           </div>
         </div>

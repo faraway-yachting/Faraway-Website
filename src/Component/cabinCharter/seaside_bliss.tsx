@@ -5,6 +5,7 @@ import { SlCalender } from "react-icons/sl";
 import { IoBoatOutline } from "react-icons/io5";
 import PngIcons from "@/icons/pngIcon";
 import ContactUs from "./contactUs";
+import Button from "@/Component/common/Button";
 import Sailing_Itinerary from "./sailing_Itineraries";
 import PricingSection from "./pricing";
 import CruiseDates from "./cruiseDates";
@@ -69,9 +70,12 @@ const SeaSide_Sixdays = () => {
                 <p className="font-normal text-[15px] sm:text-[16px] md:text-[17px] lg:text-[20px] font-inter text-zink pt-3 sm:pt-4 max-w-lg leading-relaxed">
                   Sail through Thailand's island gems on a 6-day luxury cabin charter—discover hidden lagoons, vibrant reefs, and serene beaches from Phuket to Koh Rok and Phi Phi Leh.
                 </p>
-                <button className="text-xs sm:text-sm md:text-base lg:text-lg font-bold font-poppins bg-zink px-3 py-2 md:px-5 md:py-3 text-white rounded-lg mt-3 md:mt-6 flex items-center gap-2 hover:bg-opacity-90 transition">
+                <Button 
+                  variant="primary"
+                  className="mt-3 md:mt-6 flex items-center gap-2"
+                >
                   Detail Itinerary
-                </button>
+                </Button>
               </div>
               <div className="flex justify-center md:justify-end">
                 <img

@@ -192,8 +192,8 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
 
               {/* Price and Action Button */}
               <div className="flex items-center justify-between pt-2">
-                <div className=" text-xl xl:text-[22px] font-semibold text-zink font-sourceSansPro">
-                  From ${(boat.daytripPriceEuro)}
+                <div className=" text-xl xl:text-[20px] font-semibold text-zink font-sourceSansPro">
+                  From &nbsp; €{(boat.daytripPriceEuro)}
                 </div>
                 <Button
                   variant="outline"

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { cruiseDates } from "@/data/cabincharter/cruiseDates";
 import { RefObject } from "react";
+import Button from "@/Component/common/Button";
 
 interface CruiseDatesProps {
     sectionRef: RefObject<HTMLDivElement | null>; // <-- fixed
@@ -74,9 +75,9 @@ const CruiseDates = ({ sectionRef }: CruiseDatesProps) => {
                                             {data.nonEnsuitCabin[index] || "-"}
                                         </td>
                                         <td className={`${baseCellClasses} ${index !== data.dates.length - 1 ? "border-b" : ""}`}>
-                                            <button className="text-dark hover:text-[#D6AB62]">
+                                            <Button variant="outline" className="text-dark hover:text-[#D6AB62]">
                                                 {data.bookNow[index] || "Book"}
-                                            </button>
+                                            </Button>
                                         </td>
                                     </tr>
                                 ))}

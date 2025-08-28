@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HeadingContent from "@/common/heading";
 import { momentsTestimonials, Testimonial } from "@/data/cabincharter/momentsData";
+import Button from "@/Component/common/Button";
 
 const FunMoments: React.FC = () => {
   const [readMore, setReadMore] = useState(false);
@@ -59,11 +60,13 @@ const FunMoments: React.FC = () => {
 
                 {/* Read More / Read Less button - only show if text is long */}
                 <div className="px-2 md:px-3 lg:px-6 mt-0 md:mt-1 block lg:hidden">
-                  <button
+                  <Button
+                    variant="outline"
                     onClick={() => setReadMore(!readMore)}
-                    className="text-zink pb-1 underline text-[12px] md:text-sm font-medium hover:text-[#D6AB61]" >
+                    className="text-zink pb-1 underline text-[12px] md:text-sm font-medium hover:text-[#D6AB61]"
+                  >
                     {readMore ? "Read Less" : "Read More"}
-                  </button>
+                  </Button>
                 </div>
 
               </div>
