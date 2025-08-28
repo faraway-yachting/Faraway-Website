@@ -74,12 +74,13 @@ const TabSection: React.FC<Props> = ({ data }) => {
 
             onClick={() => setActiveTab(label)}
             className={`flex items-center gap-2 transition-all font-poppins font-medium
-              py-1 px-1 sm:px-3 text-[12px] md:text-sm lg:text-base xl:text-lg border
+              py-1 px-1 sm:px-3 text-[12px] md:text-sm lg:text-base xl:text-lg
               ${activeTab === label
-                ? "text-mustard border-zink hover:text-mustard"
-                : "text-zink border-transparent hover:border-zink"
+                ? "text-mustard border-b-2 border-[#D6AB62]"
+                : "text-zink border-b-2 border-transparent hover:border-zink"
               }`}
-          >
+            >
+            
             <Icon size={20} />
             {label}
           </button>

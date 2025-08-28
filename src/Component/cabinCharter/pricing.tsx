@@ -4,6 +4,7 @@ import { GoCheckCircle } from "react-icons/go";
 import HeadingContent from "@/common/heading";
 import { RefObject } from "react";
 import { pricingOptions } from "@/data/cabincharter/momentsData";
+import Button from "@/Component/common/Button";
 
 interface PricingSectionProps {
     sectionRef: RefObject<HTMLDivElement | null>;
@@ -50,10 +51,15 @@ const PricingSection = ({ sectionRef }: PricingSectionProps) => {
                   ))}
                 </ul>
               </div>
-              <div className="flex flex-col items-center justify-center">
-                <button className="mt-6 border flex items-center  border-zink text-zink font-poppins font-semibold text-[16px] px-7 py-2 rounded-lg hover:bg-[#034250] hover:text-white transition duration-200">
+              <div className="flex items-center justify-center">
+            <Button 
+                  variant="outline" 
+                  className="mt-6 flex items-center"
+                >
+                  <div className="flex items-center">
                   <span className="me-2"><LuAnchor /></span>  Book Now
-                </button>
+                  </div>
+                </Button>
               </div>
             </div>
           ))}

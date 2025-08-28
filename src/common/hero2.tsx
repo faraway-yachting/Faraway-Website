@@ -21,7 +21,7 @@ const HeroSection2: React.FC<HeroSectionProps> = ({
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-[#034250]/50 z-0" />
+      <div className="absolute inset-0 bg-[#012A50]/50 z-0" />
 
       {/* Content */}
       <div className={combine("relative z-10 text-white text-center", styles.px1, styles.container)}>

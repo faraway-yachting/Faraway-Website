@@ -4,8 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --zink: #012A50;
-  --mustard: linear-gradient(to right, #FF512F 0%, #F09819 51%, #FF512F 100%);
-  --mustard-solid: #F09819;
+  --mustard: #D6AB62;
   --blue: #012A50;
   --seagreen: #81A1A8;
   --Green: #03425080;
@@ -62,10 +61,7 @@ button.btn-grad:hover {
   }
 
   .text-mustard {
-    background: var(--mustard);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--mustard);
   }
 
   .text-blue {
@@ -82,7 +78,7 @@ button.btn-grad:hover {
 
   .border-zink {
     border-color: var(--zink);
-  }
+  } 
 
   .border-seagreen {
     border-color: var(--seagreen);
@@ -93,7 +89,7 @@ button.btn-grad:hover {
   }
 
   .border-mustard {
-    border: 2px solid var(--mustard);
+    border-color: var(--mustard);
   }
 }
 

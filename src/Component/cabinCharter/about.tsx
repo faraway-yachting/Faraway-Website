@@ -1,6 +1,7 @@
 "use client";
 
 import { FiPhone } from "react-icons/fi";
+import Button from "@/Component/common/Button";
 // Common styles
 const commonText = "text-center font-normal font-inter text-zink text-base"
 const spacing = "py-4 md:py-9 lg:py-12"
@@ -43,10 +44,16 @@ const About = () => {
                                 With Far Away Yachting, your dream adventure is just a booking away. From luxury yachts to expert crews, we craft tailored, stress-free escapes just for you.
                             </p>
                             <div className="flex justify-center">
-                                <button className="text-xs sm:text-sm md:text-base lg:text-lg font-poppins bg-zink px-3 py-2 lg:px-5 lg:py-3 text-white rounded-lg mt-3 sm:mt-4 lg:mt-6 flex items-center gap-2 hover:bg-opacity-90 transition">
-                                    <FiPhone />
+                                <Button 
+                                    variant="primary"
+                                    className="mt-3 sm:mt-4 lg:mt-6 flex items-center gap-2"
+                                >
+                                    <div className="flex items-center">
+                                    <FiPhone className="me-2" />
                                     Contact Us
-                                </button>
+                                    </div>
+                                </Button>
+
                             </div>
                         </div>
                     </div>
