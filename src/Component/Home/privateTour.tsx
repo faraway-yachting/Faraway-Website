@@ -1,9 +1,7 @@
 import HeadingContent from "@/common/heading"
-import { styles, combine } from "@/styles/common";
+import { styles, combine } from "@/styles";
 
 const PrivateYacht_Tour = () => {
-    const {mb2 ,mt3, container, mt6, flexCenter, } = styles;
-
     return (
         <div className={combine(styles.mb2, styles.mt3)}>
             <HeadingContent
@@ -12,7 +10,7 @@ const PrivateYacht_Tour = () => {
             />
             {/* Video Section */}
             <div className={combine(styles.container)}>
-                <div className={combine("max-w-5xl mx-auto", styles.mt6, styles.flexCenter)}>
+                <div className={combine("max-w-5xl mx-auto mt-6", styles.flexCenter)}>
                     <div className={combine("relative w-full overflow-hidden shadow-lg", styles.height1)}>
                         <iframe
                             className="w-full h-full"

@@ -2,8 +2,7 @@
 import CardData from "../../data/destination/destinationCards";
 import Image from "next/image";
 import Link from "next/link";
-import { styles, combine } from "@/styles/common";
-import Button from "../common/Button";
+import { styles, combine, Button } from "@/styles";
 
 const Cards = () => {
   return (
@@ -15,7 +14,7 @@ const Cards = () => {
               key={index}
               className={combine(
                 "group overflow-hidden transition-transform duration-300 border border-gray-300 rounded-tl-3xl rounded-b-lg hover:shadow-2xl hover:scale-[1.03] bg-white",
-                styles.mt10
+                
               )}
             >
               {/* IMAGE */}

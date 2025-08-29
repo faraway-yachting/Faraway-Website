@@ -1,6 +1,4 @@
-import { styles, combine } from "@/styles/common";
-import Button from "@/Component/common/Button";
-
+import { styles, combine } from "@/styles";
 const Destinations_Section = () => {
   //  Array Data
   const data = [
@@ -36,18 +34,18 @@ const Destinations_Section = () => {
     },
   ];
   return (
-    <section className="bg-white py-16 px-4 xl:px-0">
+    <section className={combine("bg-white py-16 ",styles.px1)}>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           {data.map((item, index) => (
             <div key={index} className="max-w-xl bg-white rounded-lg">
-              <h3 className="text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px] font-normal text-zink font-playfair mb-3 leading-tight">
+              <h3 className={combine("mb-3 leading-tight text-zink",styles.h3)}>
                 {item.label}
               </h3>
               <div className="mb-2">
                 <img src="/images/rframe4.png" alt="" />
               </div>
-              <p className="text-[15px] md:text-[17px] lg:text-[18px] xl:text-[19px] font-inter text-zink leading-relaxed">
+              <p className={combine("text-zink leading-relaxed",styles.p3)}>
                 {item.Description}
               </p>
             </div>

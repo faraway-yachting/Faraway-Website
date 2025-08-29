@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import { styles, combine } from "@/styles/common";
-import Button from "@/Component/common/Button";
+import { styles, combine, Button } from "@/styles";
 
 interface JoinUsProps {
   id?: string;
@@ -9,7 +8,6 @@ interface JoinUsProps {
   bgColor?: string;
   overlayOpacity?: number;
 }
-
 const JoinUs: React.FC<JoinUsProps> = ({
   bgImage,
   bgColor = "#034250",
@@ -30,10 +28,7 @@ const JoinUs: React.FC<JoinUsProps> = ({
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div
-        className="absolute inset-0 z-10"
-        style={{ backgroundColor: overlayRGBA }}
-      />
+      <div className="absolute inset-0 bg-[#012A50]/40 z-0" />
 
       <div className="relative z-20 text-center">
         <p className={combine("text-white font-playfair font-extrabold", styles.h3)}>
@@ -46,11 +41,11 @@ const JoinUs: React.FC<JoinUsProps> = ({
           adventure
         </p>
         <div className="flex justify-center items-center mt-6">
-        <Button 
+          <Button
             variant="outline"
-        >
+          >
             Start Your Adventure
-        </Button>
+          </Button>
         </div>
       </div>
     </div>

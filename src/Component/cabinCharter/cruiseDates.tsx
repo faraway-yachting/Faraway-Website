@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { cruiseDates } from "@/data/cabincharter/cruiseDates";
 import { RefObject } from "react";
-import Button from "@/Component/common/Button";
+import { Button } from "@/styles";
 
 interface CruiseDatesProps {
     sectionRef: RefObject<HTMLDivElement | null>; // <-- fixed

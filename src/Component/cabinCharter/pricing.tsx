@@ -4,7 +4,7 @@ import { GoCheckCircle } from "react-icons/go";
 import HeadingContent from "@/common/heading";
 import { RefObject } from "react";
 import { pricingOptions } from "@/data/cabincharter/momentsData";
-import Button from "@/Component/common/Button";
+import { Button } from "@/styles";
 
 interface PricingSectionProps {
     sectionRef: RefObject<HTMLDivElement | null>;

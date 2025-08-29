@@ -1,6 +1,6 @@
 import React from "react";
 import PngIcons from "@/icons/pngIcon";
-import { styles, combine } from "@/styles/common";
+import { styles, combine } from "@/styles/style";
 
 type HeroSectionProps = {
   heading: string;

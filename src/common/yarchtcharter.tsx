@@ -1,6 +1,5 @@
 import { FiPhone } from "react-icons/fi";
-import { styles, combine } from "@/styles/common";
-import Button from "@/Component/common/Button";
+import { styles, combine, Button } from "@/styles";
 
 interface SetSailProps {
     id?: string;
@@ -29,10 +28,7 @@ const SetSail: React.FC<SetSailProps> = ({
             />
 
             {/* Overlay */}
-            <div
-                className="absolute inset-0 z-10"
-                style={{ backgroundColor: overlayRGBA }}
-            />
+            <div className="absolute inset-0 bg-[#012A50]/40 z-0" />
 
             {/* Content */}
             <div className={combine("relative z-20 text-center max-w-screen-xl", styles.px3)}>

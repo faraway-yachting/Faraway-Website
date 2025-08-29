@@ -210,6 +210,9 @@ var PngIcons = {
     picon10: "/images/policyicon10.png",
     picon11: "/images/policyicon11.png",
     picon12: "/images/policyicon12.png",
+
+    super2:"/images/super3.png",
+    super3:"/images/super2.png",
 }
 
 
