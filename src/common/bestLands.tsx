@@ -1,6 +1,5 @@
-"use client";
 import PngIcons from "@/icons/pngIcon";
-import { styles, combine } from "@/styles/common";
+import { styles, combine } from "@/styles/style";
 
 type Land = {
   id: string;
@@ -51,15 +50,15 @@ const BestLands: React.FC<Props> = ({ data }) => {
                   alt={isle.title}
                   className="w-full xl:w-[600px] h-[230px] md:h-[270px] lg:h-[330px] xl:h-[350px] object-cover rounded-lg"
                 />
-                <div className={combine("absolute bottom-2 left-2 font-extrabold text-white bg-opacity-50 px-3 py-1 rounded-lg", styles.h3)}>
+                <h3 className={combine("absolute bottom-2 left-2 font-extrabold text-white bg-opacity-50 px-3 py-1 rounded-lg", styles.h3)}>
                   {isle.title}
-                </div>
+                </h3>
               </div>
               <div className="min-h-[170px] shadow-lg">
                 <div className="p-4 space-y-2 max-w-[30rem]">
-                  <p className={combine("font-sourceSanspro text-mustard font-bold", styles.h4)}>
+                  <h4 className={combine("text-mustard font-bold", styles.h4)}>
                     {isle.subtitle}
-                  </p>
+                  </h4>
                   {isle.description.map((line, i) => (
                     <p
                       key={i}

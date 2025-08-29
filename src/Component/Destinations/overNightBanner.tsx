@@ -1,4 +1,4 @@
-import Button from "@/Component/common/Button";
+import Button from "../../../common/Button";
 
 const Banner = () => {
   return (

@@ -1,5 +1,6 @@
 import PngIcons from "@/icons/pngIcon";
-import { styles, combine } from "@/styles/common";
+import { styles, combine } from "@/styles/style";
+import Button from "@/styles/Button";
 
 type HeroSectionProps = {
   heading: string;
@@ -7,6 +8,7 @@ type HeroSectionProps = {
   backgroundImage: string;
   dividerImage?: string;
   button?: string;
+  buttontext?: string;
 };
 
 const HeroContent: React.FC<HeroSectionProps> = ({
@@ -15,7 +17,7 @@ const HeroContent: React.FC<HeroSectionProps> = ({
   backgroundImage,
   dividerImage = PngIcons.rframe2,
   button,
-
+  buttontext,
 }) => {
   return (
     <section
@@ -23,7 +25,7 @@ const HeroContent: React.FC<HeroSectionProps> = ({
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#034250]/60 z-0" />
+      <div className="absolute inset-0 bg-[#012A50]/50 z-0" />
 
       {/* Content on top */}
       <div className={combine(styles.flexCenter, "h-full text-center text-white relative z-10", styles.px1)}>
@@ -36,16 +38,18 @@ const HeroContent: React.FC<HeroSectionProps> = ({
             <img
               src={dividerImage}
               alt="Divider"
-              className={combine(styles.w2, "flex justify-center text-center mx-auto")}
+              className={combine(styles.w2, "flex justify-center text-center mx-auto my-2")}
             />
           )}
           <p className={combine(styles.p1, "font-normal font-sourceSansPro text-center mt-2 md:max-w-2xl lg:max-w-4xl xl:max-w-7xl")}>
             {subheading}
           </p>
-          {button && (
-            <button className={combine("mt-4 bg-transparent font-sourceSansPro border border-white px-3 py-2 text-white font-medium hover:bg-[#D6AB61]", styles.p2)}>
-              Contact Us Now
-            </button>
+          {button && buttontext && (
+            <div className="mt-9">
+              <Button variant="primary">
+                {buttontext}
+              </Button>
+            </div>
           )}
         </div>
       </div>

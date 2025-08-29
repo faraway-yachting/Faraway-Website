@@ -1,8 +1,7 @@
 import HeadingContent from "@/common/heading"
 import Cards from "../Destinations/cards"
 import SetSail from "@/common/yarchtcharter"
-import { styles, combine } from "@/styles/common";
-import Button from "@/Component/common/Button";
+import { styles, combine, Button } from "@/styles";
 
 const ExploreThailand = () => {
     return (

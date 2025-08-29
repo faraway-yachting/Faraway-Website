@@ -5,7 +5,7 @@ import { SlCalender } from "react-icons/sl";
 import { IoBoatOutline } from "react-icons/io5";
 import PngIcons from "@/icons/pngIcon";
 import ContactUs from "./contactUs";
-import Button from "@/Component/common/Button";
+import { Button } from "@/styles";
 import Sailing_Itinerary from "./sailing_Itineraries";
 import PricingSection from "./pricing";
 import CruiseDates from "./cruiseDates";

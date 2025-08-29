@@ -1,7 +1,7 @@
 "use client";
 
 import { FiPhone } from "react-icons/fi";
-import Button from "@/Component/common/Button";
+import { Button } from "@/styles";
 // Common styles
 const commonText = "text-center font-normal font-inter text-zink text-base"
 const spacing = "py-4 md:py-9 lg:py-12"
@@ -19,9 +19,7 @@ const About = () => {
             {/* Main Section */}
             <div className={spacing}>
                 <div className="relative h-auto md:h-[500px] lg:h-[600px] w-full overflow-hidden">
-                    {/* Background image */}
                     <div className="absolute inset-0 hidden md:block bg-[url('/images/cabout_1.png')] bg-no-repeat bg-right z-[-1]" />
-                    
                     {/* Content */}
                     <div className={container}>
                         <div className={content}>

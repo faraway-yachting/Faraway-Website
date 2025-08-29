@@ -1,4 +1,4 @@
-import { styles, combine } from "@/styles/common";
+import { styles, combine } from "@/styles";
 
 type HeadingContentProps = {
     heading: string;

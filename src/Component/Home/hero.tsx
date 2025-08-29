@@ -1,10 +1,9 @@
 import PngIcons from "@/icons/pngIcon";
-import { styles, combine } from "@/styles/common";
-import Button from "@/Component/common/Button";
+import { styles, combine, Button } from "@/styles";
 import { FiPhone } from "react-icons/fi";
 
 const HeroContent = () => {
-  const { bgImage, minH1, top1, w1, w2, flexCenter, flexCol, h1, my1, containerXl, mt2, px4, py2, text1, flexBetween, p1 } = styles;
+  const { bgImage, minH1, top1, w1, w2, flexCenter, flexCol, h1, my1, containerXl, flexBetween, p1 } = styles;
 
   return (
     <section className={combine(bgImage, "bg-[url('/images/homeimg1.png')]", minH1, "flex justify-center")}>

@@ -2,13 +2,13 @@ import HeadingContent from "@/common/heading";
 import { WhyData } from "@/data/why";
 import Image from "next/image";
 import PngIcons from "@/icons/pngIcon";
-import { styles, combine } from "@/styles/common";
+import { styles, combine } from "@/styles";
 
 const Why = () => {
-    const { mb16, w3, py3, px5, h5,container, containerLarge, grid3Col, mt10, flexCenter, h3, p2 } = styles;
+    const { w3, px5, h5,container, containerLarge, grid3Col, flexCenter, h3, p2 } = styles;
 
     return (
-        <div className={combine("relative bg-white ", mb16)}>
+        <div className={combine("relative bg-white mb-16")}>
             <div className={combine(
                 "absolute top-0 left-0 z-10 ", w3,
               
@@ -16,7 +16,7 @@ const Why = () => {
                 <img src={PngIcons.line3} alt="" className="w-auto h-auto" />
             </div>
             <div className={combine(
-                "relative bg-gray-100", py3, px5,
+                "relative bg-gray-100 py-12", px5,
             )}>
                 <div className="absolute bottom-0 right-0 z-0">
                     <img src={PngIcons.frame1} alt="" className="w-auto h-auto" />
@@ -26,7 +26,7 @@ const Why = () => {
                         heading="Why Book With Us"
                         description="Enjoy AI-powered yacht recommendations, real-time availability, and secure bookings for a seamless luxury experience." />
                     <div className={containerLarge}>
-                        <div className={combine(grid3Col, mt10)}>
+                        <div className={combine(grid3Col, "mt-10")}>
                             {WhyData.map((item) => (
                                 <div
                                     key={item.id}

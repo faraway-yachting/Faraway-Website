@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HeadingContent from "@/common/heading";
 import { momentsTestimonials, Testimonial } from "@/data/cabincharter/momentsData";
-import Button from "@/Component/common/Button";
+import { Button } from "@/styles";
 
 const FunMoments: React.FC = () => {
   const [readMore, setReadMore] = useState(false);

@@ -1,6 +1,6 @@
 import ContactBanner from "@/common/contactbanner";
 import HeadingContent from "@/common/heading"
-import { styles, combine } from "@/styles/common";
+import { styles, combine } from "@/styles";
 
 const About = () => {
     return (
@@ -9,7 +9,7 @@ const About = () => {
             <HeadingContent
                 heading="Book Your Private Yacht In Phuket"
                 description="Book your private yacht in Phuket for a luxurious and unforgettable sailing experience! Explore the stunning islands, crystal-clear waters and hidden gems of this tropical paradise in style. Book Now!" />
-            <div className={styles.mt4}>
+            <div className="mt-4">
                 {/* Contact Detail section */}
                 <ContactBanner />
             </div>
