@@ -30,7 +30,7 @@ const Cards = () => {
                   )}
                 />
                 <div className="absolute bottom-0 bg-opacity-40 w-full text-white px-4 py-2">
-                  <h4 className={combine("text-foreground font-playfair font-extrabold transition-all duration-300", styles.h2)}>
+                  <h4 className={combine("text-foreground font-extrabold transition-all duration-300", styles.h2)}>
                     {item.title}
                   </h4>
                 </div>
@@ -38,10 +38,10 @@ const Cards = () => {
 
               {/* TEXT & BUTTON */}
               <div className={combine("px-4 py-4 flex flex-col justify-between", "min-h-[150px] md:min-h-[180px] lg:min-h-[200px]")}>
-                <p className={combine("font-sourceSansPro text-black", styles.p2)}>{item.description}</p>
-                <div className={combine("flex justify-between items-center gap-4", styles.mt4)}>
+                <p className={combine("text-black", styles.p2)}>{item.description}</p>
+                <div className={combine("flex justify-between items-center gap-4", styles.mt1)}>
                   <Link href={`/${item.id}`}>
-                    <p className={combine("text-zink font-poppins font-extrabold underline cursor-pointer hover:text-mustard", styles.h6)}>
+                    <p className={combine("text-zink font-extrabold underline cursor-pointer hover:text-mustard", styles.h6)}>
                       Read More
                     </p>
                   </Link>

@@ -1,4 +1,4 @@
-import Button from "../../../common/Button";
+import Button from "../../styles/Button";
 
 const Banner = () => {
   return (
@@ -12,23 +12,23 @@ const Banner = () => {
           <div className="flex flex-col lg:flex-row justify-between items-center gap-4 md:gap-6 lg:gap-8 xl:gap-10 py-10">
             {/* LEFT SIDE - Heading & Subheading */}
             <div className="max-w-xl text-center lg:text-left">
-              <p className="text-white font-extrabold font-playfair text-[24px] md:text-[36px] xl:text-[40px] leading-snug">
+              <h1 className="text-white font-extrabold text-[24px] md:text-[36px] xl:text-[40px] leading-snug">
                 Overnight Itineraries
-              </p>
-              <p className="text-white font-normal font-inter pt-4 text-[18px] md:text-[20px] leading-relaxed">
+              </h1>
+              <p className="text-white font-normal pt-4 text-[18px] md:text-[20px] leading-relaxed">
                 Whether you're dreaming of hidden coves, vibrant coral reefs, or quiet beach nights — we'll make it happen. Enjoy sunset sails, star-lit dinners, and waking up to paradise.
               </p>
             </div>
 
             {/* RIGHT SIDE - Description + Button */}
             <div className="max-w-sm text-center">
-              <p className="text-white font-inter text-[18px] font-normal mb-4">
+              <p className="text-white text-[18px] font-normal mb-4">
                 Want something unique? We customize every trip to fit your style, pace, and preferences.
               </p>
-                <div className="flex items-center justify-center">
-              <Button variant="outline" href="/contact">
-                Contact Us
-              </Button>
+              <div className="flex items-center justify-center">
+                <Button variant="outline" href="/contact">
+                  Contact Us
+                </Button>
               </div>
             </div>
           </div>
