@@ -148,10 +148,71 @@ export const superYacht: FAQItem[] = [
 ]
 
 
+import { TbSailboat } from "react-icons/tb";
+import { LuShieldQuestion } from "react-icons/lu";
+import { IoCheckmarkDoneCircleSharp } from "react-icons/io5";
+import { IconType } from "react-icons";
 
+interface WhyItem {
+  id: number;
+  icon: IconType;
+  label: string;
+  description: string;
+}
 
+export const WhyData: WhyItem[] = [
+  {
+    id: 1,
+    icon: TbSailboat,
+    label: "Island Exploration",
+    description:
+      "Discover untouched gems like Koh Hong, Koh Yao Noi, and the famous Phi Phi Islands.",
+  },
+  {
+    id: 2,
+    icon: IoCheckmarkDoneCircleSharp,
+    label: "Tailored Itineraries",
+    description:
+      "From beaches and snorkeling to fine dining—your dream yacht journey, your way.",
+  },
+  {
+    id: 3,
+    icon: LuShieldQuestion,
+    label: "Celebrations at Sea ",
+    description:
+      "Host birthdays, weddings, or anniversaries in true luxury and style.",
+  },
+  {
+    id: 4,
+    icon: LuShieldQuestion,
+    label: "Exclusive Experiences",
+    description:
+      "Enjoy sunset cruises, island hopping, luxury sailing, or overnight yacht stays.",
+  },
+];
 
-
+export const whatWeCollectData: WhatWeCollectItem[] = [
+    {
+        icon: PngIcons.picon1,
+        title: "Unmatched Comfort:",
+        description: "Premium services that guarantee comfort & relaxation"
+    },
+    {
+        icon: PngIcons.picon2,
+        title: "Insider Expertise:",
+        description: "Local insights combined with world-class service"
+    },
+    {
+        icon: PngIcons.picon3,
+        title: "Flexible Choices:",
+        description: "Various yacht charter options are available"
+    },
+    {
+        icon: PngIcons.picon3,
+        title: "Tailored Journeys:",
+        description: "Customizable experiences to your unique preferences"
+    }
+];
 
 
 

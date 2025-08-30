@@ -92,13 +92,11 @@ const RentalYacht = () => {
                             {/* CTA Button */}
                             <div className="text-center lg:text-left flex justify-center">
                                 <Button 
-                                    variant="outline" 
+                                    variant="primary" 
                                     href="/contact" 
-                                    className="bg-gradient-to-r from-[#F9B233] to-[#F4A261] text-white border-0 px-12 py-5 text-xl font-bold rounded-2xl hover:from-[#F4A261] hover:to-[#F9B233] transform hover:scale-110 hover:rotate-1 transition-all duration-500 shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(249,178,51,0.4)] relative overflow-hidden group w-full md:w-auto"
+                                    className="w-full md:w-auto"
                                 >
-                                    <span className="relative z-10">Check Availability</span>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-[#F4A261] to-[#F9B233] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                                    <div className="absolute -inset-1 bg-gradient-to-r from-[#F9B233] to-[#F4A261] rounded-2xl blur opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                    Check Availability
                                 </Button>
                             </div>
                         </div>

@@ -6,6 +6,8 @@ import YachtIslandSlider from "@/Component/superYacht/yachtIsland"
 import FunMomentsComponent from "@/Component/superYacht/funMoments"
 import RentalYacht from "@/Component/superYacht/rentalYacht"
 import SuperYachtFAQ from "@/Component/superYacht/FAQs"
+import DreamyYacht from "@/Component/superYacht/dreamYacht"
+import PrivateYacht from "@/Component/superYacht/privateYacht"
 
 const SuperYacht = () => {
     return (
@@ -13,10 +15,12 @@ const SuperYacht = () => {
             <HeroSection />
             <SuperYachtCards />
             <LuxuryYacht id="phi-phi-island" />
+            <PrivateYacht />
             <YachtIslandSlider />
             <FunMomentsComponent />
             <RentalYacht />
             <SuperYachtFAQ />
+            <DreamyYacht />
         </Fragment>
     )
 }

@@ -1,16 +1,16 @@
+
 import HeadingContent from "@/common/heading";
-import { WhyData } from "@/data/why";
+import { WhyData } from "@/data/superyacht/cardData";
 import PngIcons from "@/icons/pngIcon";
 import { styles, combine } from "@/styles";
 
-const Why = () => {
-    const { w3, px5, h5,container, containerLarge, grid3Col, flexCenter, h3, p2 } = styles;
-
+const PrivateYacht = () => {
+    const { w3, px5, p3, container, containerLarge, grid3Col, flexCenter, h3, p2 } = styles;
     return (
         <div className={combine("relative bg-white mb-16")}>
             <div className={combine(
                 "absolute top-0 left-0 z-10 ", w3,
-              
+
             )}>
                 <img src={PngIcons.line3} alt="" className="w-auto h-auto" />
             </div>
@@ -25,7 +25,7 @@ const Why = () => {
                         heading="Why Book With Us"
                         description="Enjoy AI-powered yacht recommendations, real-time availability, and secure bookings for a seamless luxury experience." />
                     <div className={containerLarge}>
-                        <div className={combine(grid3Col, "mt-10")}>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
                             {WhyData.map((item) => (
                                 <div
                                     key={item.id}
@@ -36,7 +36,7 @@ const Why = () => {
                                             <item.icon size={32} />
                                         </div>
                                     </div>
-                                    <h3 className={combine(h5, "font-semibold text-mustard")}>
+                                    <h3 className={combine(p3, "font-semibold text-mustard")}>
                                         {item.label}
                                     </h3>
                                     <p className={combine(p2, "text-gray-600", "text-center")}>
@@ -49,7 +49,6 @@ const Why = () => {
                 </div>
             </div>
         </div>
-    );
-};
-
-export default Why;
+    )
+}
+export default PrivateYacht
