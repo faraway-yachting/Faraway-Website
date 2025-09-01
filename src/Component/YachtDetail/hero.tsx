@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { fetchYachts } from "@/lib/api";
 import Gallery from "./gallery";
 import VideoSection from "./videoSection";
 import TabSection from "./tabSection";
@@ -53,8 +53,8 @@ const HeroSection: React.FC<HeroProps> = ({ slug }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("https://awais.thedevapp.online/yacht/all-yachts");
-        const allYachts: Yacht[] = res.data.data.yachts;
+        const res = await fetchYachts();
+        const allYachts: Yacht[] = res.data.yachts;
 
         const matched = allYachts.find(
           (boat) => slugify(boat.slug) === slugify(slug)

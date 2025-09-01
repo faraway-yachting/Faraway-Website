@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import axios from "axios";
+import { fetchBlogs } from "@/lib/api";
 import { styles, combine } from "@/styles";
 
 interface BlogData {
@@ -40,10 +40,10 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
     const [visibleCount, setVisibleCount] = useState(9);
 
     useEffect(() => {
-        const fetchBlogs = async () => {
+        const fetchBlogsData = async () => {
             try {
-                const res = await axios.get("https://awais.thedevapp.online/blog/all-blogs");
-                const allBlogs: BlogData[] = res.data?.data?.blogs || [];
+                const res = await fetchBlogs();
+                const allBlogs: BlogData[] = res.data?.blogs || [];
 
                 const publishedBlogs = allBlogs.filter(
                     (blog) => blog.status?.toLowerCase().trim() === "published"
@@ -59,7 +59,7 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                 setLoading(false);
             }
         };
-        fetchBlogs();
+        fetchBlogsData();
     }, [slug]);
 
     if (loading) {
