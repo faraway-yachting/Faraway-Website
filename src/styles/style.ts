@@ -67,6 +67,9 @@ export const styles = {
   mt5: "mt-5 lg:mt-0",
   my2: "my-6 md:my-8",
   my3: "xl:my-14 lg:my-10 md:my-8 my-7",
+
+  // Loading spinner
+  loadingSpinner: "w-12 h-12 border-4 border-gray-200 border-t-zink rounded-full animate-spin",
 };
 
 // Simple function to combine classes
