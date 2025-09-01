@@ -10,7 +10,7 @@ const TodaysAdventure = () => {
             <div className={combine(styles.bgImage, "bg-[url('/images/homeimg5.png')]", styles.px2, styles.flexCenter, styles.minH2, styles.mt1)}>
                 <div className="flex justify-start items-center max-w-5xl mx-auto w-full">
                     <div className={combine("bg-[#012A50]/83 max-w-[30rem] w-full", styles.padding1, "ml-0")}>
-                        <h2 className={combine("text-white mt-0 xl:mt-2 leading-tight", styles.h2)}>
+                        <h2 className={combine("text-white mt-0 xl:mt-2 leading-tight", styles.h3)}>
                             Book Your Phuket Sailing Adventure Today
                         </h2>
                         <p className={combine("text-center max-w-[26rem] text-white leading-[1.4rem]font-sourceSansPro", styles.p2, styles.mt3,)}>

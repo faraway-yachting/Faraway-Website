@@ -88,8 +88,11 @@ const HeroSection: React.FC<HeroProps> = ({ slug }) => {
   }
   return (
     <div>
+
       <div className="max-w-[78.2rem] mx-auto px-4 xl:px-0">
-        <p className="text-[32px] font-playfair font-bold text-zink mt-3">{data.title}</p>
+      <p className="text-base md:text-lg text-mustard font-semibold mt-6">{data.slug}</p>
+
+        <p className="text-[32px] font-playfair font-bold text-zink ">{data.title}</p>
         <div className="flex flex-col md:flex-row gap-5 mt-6">
           <div className="w-full md:w-[70%]">
             <Gallery data={data} />

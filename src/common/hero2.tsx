@@ -4,12 +4,14 @@ import { styles, combine } from "@/styles/style";
 
 type HeroSectionProps = {
   heading: string;
+  title?: string;
   breadcrumb?: string;
   backgroundImage?: string;
   dividerImage?: string;
 };
 
 const HeroSection2: React.FC<HeroSectionProps> = ({
+  title,
   heading,
   breadcrumb,
   backgroundImage,
@@ -26,6 +28,7 @@ const HeroSection2: React.FC<HeroSectionProps> = ({
       {/* Content */}
       <div className={combine("relative z-10 text-white text-center", styles.px1, styles.container)}>
         <div className={combine(styles.flexCol, "justify-center items-center max-w-3xl mx-auto")}>
+          {title && <p className={combine(styles.p2,"font-semibold text-white")} >{title}</p>}
           <p className={combine(styles.h1, "font-bold font-playfair mb-4 leading-tight md:max-w-2xl lg:max-w-2xl w-full")}>
             {heading}
           </p>

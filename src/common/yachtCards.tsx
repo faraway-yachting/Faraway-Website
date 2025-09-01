@@ -31,15 +31,9 @@ interface YachtCardsProps {
   columns?: number;
 }
 
-// ✅ Safe Slugify Function
 const slugify = (text: string | undefined | null): string => {
   if (!text) return "";
-  return text
-    .toLowerCase()
-    .replace(/ *\([^)]*\) */g, "")
-    .replace(/[^a-z0-9 ]/g, "")
-    .replace(/\s+/g, "-")
-    .trim();
+  return text;
 };
 
 const gridWrapperClasses = {
@@ -128,9 +122,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
             onClick={() => {
               const base = boat.type === "bareboat" ? "bareboat" : "crewed_boats";
               const slug = slugify(boat.slug);
-              console.log("slug:", slug);
               const fullPath = `/${base}/${slug}`;
-              console.log("Navigating to:", fullPath);
               if (slug) {
                 router.push(fullPath);
               }
@@ -169,7 +161,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
               {/* Title and Rating */}
               <div className="flex items-start">
                 <h3 className="text-xl lg:text-[24px] xl:text-[28px] font-playfair mt-5 font-semibold text-zink group-hover:text-mustard transition-colors">
-                  {boat.title}
+                  {boat.title.length > 22 ? `${boat.title.substring(0, 25)}...` : boat.title}
                 </h3>
               </div>
 
