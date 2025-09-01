@@ -11,7 +11,7 @@ const InfoCard = ({ title, description, icon: Icon }: { title: string; descripti
                 <Icon className="w-full h-full text-white" />
             </div>
             <div className="space-y-3">
-                <h3 className={combine(styles.p1, "hover:text-mustard transition-colors duration-300")}>{title}</h3>
+                <h3 className={combine(styles.p1, "text-mustard font-semibold transition-colors duration-300")}>{title}</h3>
                 <p className={combine(styles.p4, "text-zink text-center")}>{description}</p>
             </div>
         </div>
@@ -34,7 +34,7 @@ const DreamyYacht = () => (
                 </div>
                 
                 <div className={styles.containerLarge}>
-                    <div className={combine(styles.grid3Col, "mt-12")}>
+                    <div className={combine(styles.grid4Col, "mt-12")}>
                         {whatWeCollectData.map((item) => (
                             <InfoCard
                                 key={item.title}

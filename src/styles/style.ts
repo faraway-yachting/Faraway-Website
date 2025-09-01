@@ -21,6 +21,7 @@ export const styles = {
   // bg Styling
   bgImage: "relative w-full bg-cover bg-end bg-no-repeat overflow-hidden",
   grid3Col: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-15",
+  grid4Col: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-15",
   grid2Col: "grid grid-cols-1 md:grid-cols-2 gap-8",
 
   // Layout - Same containers everywhere

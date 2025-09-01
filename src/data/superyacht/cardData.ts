@@ -204,22 +204,22 @@ export const WhyData: WhyItem[] = [
 export const whatWeCollectData: WhatWeCollectItem[] = [
     {
         icon: PiCrown ,
-        title: "Unmatched Comfort:",
+        title: "Unmatched Comfort",
         description: "Premium services that guarantee comfort & relaxation"
     },
     {
         icon: IoMdGlobe,
-        title: "Insider Expertise:",
+        title: "Insider Expertise",
         description: "Local insights combined with world-class service"
     },
     {
         icon:FaShuffle,
-        title: "Flexible Choices:",
+        title: "Flexible Choices",
         description: "Various yacht charter options are available"
     },
     {
         icon:GrCompass,
-        title: "Tailored Journeys:",
+        title: "Tailored Journeys",
         description: "Customizable experiences to your unique preferences"
     }
 ];

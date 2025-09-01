@@ -23,7 +23,7 @@ const PrivateYacht = () => {
                         heading="Private Yacht in Phuket"
                         description="Discover Thailand's islands at your pace with a private yacht charter—bespoke experiences tailored to your desires and style." />
                     <div className={styles.containerLarge}>
-                        <div className={combine(styles.grid3Col, "gap-4 mt-10")}>
+                        <div className={combine("grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10")}>
                             {WhyData.map((item) => (
                                 <div
                                     key={item.id}
