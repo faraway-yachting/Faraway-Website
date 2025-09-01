@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import axios from "axios";
+import { fetchYachts } from "@/lib/api";
 import { LuDoorOpen, LuToilet, LuMapPin } from "react-icons/lu";
 import { GiCaptainHatProfile } from "react-icons/gi";
 import HeadingContent from "./heading";
@@ -52,10 +52,10 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
   const [visibleCount, setVisibleCount] = useState(9);
 
   useEffect(() => {
-    const fetchYachts = async () => {
+    const fetchYachtsData = async () => {
       try {
-        const res = await axios.get("https://awais.thedevapp.online/yacht/all-yachts");
-        const allYachts: Yacht[] = res.data.data.yachts;
+        const res = await fetchYachts();
+        const allYachts: Yacht[] = res.data.yachts;
 
         const normalizedPath = pathname?.replace(/\/+$/, "").trim() || "/";
         let filteredYachts: Yacht[] = [];
@@ -87,7 +87,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
       }
     };
 
-    fetchYachts();
+    fetchYachtsData();
   }, [pathname]);
 
   const gridCols = gridWrapperClasses[columns as 1 | 2 | 3] || gridWrapperClasses[3];

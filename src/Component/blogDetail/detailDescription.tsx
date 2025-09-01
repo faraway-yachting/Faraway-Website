@@ -2,7 +2,7 @@
 import DOMPurify from "dompurify";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import axios from "axios";
+import { fetchBlogs } from "@/lib/api";
 import { styles, combine } from "@/styles";
 
 interface BlogData {
@@ -39,10 +39,8 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
 
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(
-          "https://awais.thedevapp.online/blog/all-blogs"
-        );
-        const allBlogs: BlogData[] = res.data?.data?.blogs || [];
+        const res = await fetchBlogs();
+        const allBlogs: BlogData[] = res.data?.blogs || [];
         // Only published blogs
         const publishedBlogs = allBlogs.filter(
           (blog) => blog.status?.toLowerCase().trim() === "published"
