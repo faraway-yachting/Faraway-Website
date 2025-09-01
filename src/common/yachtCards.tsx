@@ -7,7 +7,7 @@ import { LuDoorOpen, LuToilet, LuMapPin } from "react-icons/lu";
 import { GiCaptainHatProfile } from "react-icons/gi";
 import HeadingContent from "./heading";
 import { Button } from "@/styles";
-//
+
 interface Yacht {
   _id: string;
   capacity: string;
