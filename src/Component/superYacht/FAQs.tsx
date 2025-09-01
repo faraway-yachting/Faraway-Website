@@ -24,15 +24,15 @@ const SuperYachtFAQ = () => {
       <div className={styles.containerLarge}>
         {/* Heading */}
         <div className={combine("mb-12", styles.flexCol,styles.flexCenter)}>
-          <h2 className={combine(styles.h2, "text-zink mb-1")}>
+          <h2 className={combine(styles.h2, "text-zink text-center mb-1")}>
           FAQs For Your Super Yacht Charter in Phuket, Thailand
           </h2>
           <img
             src="/images/rframe.png"
             alt="Divider"
-            className="w-[500px] my-3 mx-auto"
+            className="w-[300px] md:w-[400px] lg:w-[500px] my-3 mx-auto"
           />
-          <p className={combine(styles.h5, "text-zink font-sourceSanspro text-center md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto")}>
+          <p className={combine(styles.h5, "text-zink font-sourceSanspro text-center max-w-sm md:max-w-md lg:max-w-xl xl:max-w-2xl mx-auto")}>
             Frequently asked questions about your sailing adventure
           </p>
         </div>

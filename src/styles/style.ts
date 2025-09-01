@@ -14,14 +14,14 @@ export const styles = {
   
   p1: "text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] font-inter",
   p2: "text-[14px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-inter",
-  p3: "text-[15px] md:text-[17px] lg:text-[18px] xl:text-[19px]  font-inter",
+  p3: "text-[15px] md:text-[14px] lg:text-[18px] xl:text-[19px] font-inter",
   p4: "text-[12px] md:text-[14px] lg:text-[16px] xl:text-[16px]  font-inter",
   text1: "text-sm md:text-base lg:text-lg",
   gap1: "gap-8 lg:gap-12",
   // bg Styling
   bgImage: "relative w-full bg-cover bg-end bg-no-repeat overflow-hidden",
   grid3Col: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-15",
-  grid4Col: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-15",
+  grid4Col: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-8 xl:gap-15",
   grid2Col: "grid grid-cols-1 md:grid-cols-2 gap-8",
 
   // Layout - Same containers everywhere

@@ -13,7 +13,7 @@ const FunMomentsComponent = () => {
   <div className={combine("relative z-10", styles.container)}>
     <div className={combine("text-center", styles.mb2)}>
       <h2 className={combine(styles.h2, "font-bold text-mustard mb-4")}>Celebrate & Explore in Style</h2>
-      <p className={combine(styles.p1, "font-normal font-sourceSansPro max-w-5xl text-zink mx-auto text-gray-700")}>
+      <p className={combine(styles.p1, "font-normal max-w-5xl text-zink mx-auto text-gray-700")}>
       From unforgettable yacht weddings and private parties to tailor-made island-hopping itineraries, our luxury charters in Phuket deliver personalized experiences on the open sea.
       </p>
     </div>
@@ -31,9 +31,9 @@ const FunMomentsComponent = () => {
             <ul className="space-y-4 lg:space-y-6">
               {item.heading.map((heading, index) => (
                 <li key={index} className="flex items-start gap-3 max-w-lg">
-                  <FaCheckCircle className="text-[#F9B233] mt-1 flex-shrink-0 text-xl sm:text-2xl" />
+                  <FaCheckCircle className="text-mustard mt-1 flex-shrink-0 text-xl sm:text-2xl" />
                   <div>
-                    <p className={combine("font-bold md:text-lg lg:text-xl text-zink")}>{heading}</p>
+                    <p className={combine("font-bold md:text-lg lg:text-[22px] text-zink")}>{heading}</p>
                     <p className={combine("text-zink",styles.p2)}>{item.description[index]}</p>
                   </div>
                 </li>

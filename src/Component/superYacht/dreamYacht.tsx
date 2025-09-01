@@ -5,7 +5,7 @@ import { styles, combine } from "@/styles";
 import { IconType } from "react-icons";
 
 const InfoCard = ({ title, description, icon: Icon }: { title: string; description: string; icon: IconType }) => (
-    <div className="bg-white rounded-xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 group relative overflow-hidden">
+    <div className="bg-white rounded-xl p-5 lg:p-3 xl:p-5 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 group relative overflow-hidden">
         <div className={combine(styles.flexCol, "items-center text-center gap-4")}>
             <div className="w-14 h-14 bg-mustard rounded-xl flex items-center justify-center p-3 shadow-md">
                 <Icon className="w-full h-full text-white" />

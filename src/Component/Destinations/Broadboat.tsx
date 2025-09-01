@@ -21,7 +21,7 @@ const BroadBoat = () => (
                     <ul className="space-y-4 lg:space-y-6">
                         {values.map((v, i) => (
                             <li key={i} className="flex items-start gap-3 max-w-lg">
-                                <FaCheckCircle className="text-[#F9B233] mt-1 flex-shrink-0 text-xl sm:text-2xl" />
+                                <FaCheckCircle className="text-mustard mt-1 flex-shrink-0 text-xl sm:text-2xl" />
                                 <div>
                                     <p className={combine("font-bold text-zink", styles.p3)}>{v.title}</p>
                                     <p className={combine("text-zink font-sourceSansPro", styles.p2)}>{v.description}</p>
