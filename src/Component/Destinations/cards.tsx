@@ -2,7 +2,13 @@
 import CardData from "../../data/destination/destinationCards";
 import Image from "next/image";
 import Link from "next/link";
-import { styles, combine, Button } from "@/styles";
+import { styles, combine, Button} from "../../styles";
+
+// Function to truncate description text
+const truncateDescription = (text: string, maxLength: number = 112) => {
+  if (text.length <= maxLength) return text;
+  return text.substring(0, maxLength).trim() + "...";
+};
 
 const Cards = () => {
   return (
@@ -14,7 +20,7 @@ const Cards = () => {
               key={index}
               className={combine(
                 "group overflow-hidden transition-transform duration-300 border border-gray-300 rounded-tl-3xl rounded-b-lg hover:shadow-2xl hover:scale-[1.03] bg-white",
-                
+                styles.mt1
               )}
             >
               {/* IMAGE */}
@@ -38,7 +44,7 @@ const Cards = () => {
 
               {/* TEXT & BUTTON */}
               <div className={combine("px-4 py-4 flex flex-col justify-between", "min-h-[150px] md:min-h-[180px] lg:min-h-[200px]")}>
-                <p className={combine("text-black", styles.p2)}>{item.description}</p>
+                <p className={combine("text-black", styles.p2)}>{truncateDescription(item.description, 112)}</p>
                 <div className={combine("flex justify-between items-center gap-4", styles.mt1)}>
                   <Link href={`/${item.id}`}>
                     <p className={combine("text-zink font-extrabold underline cursor-pointer hover:text-mustard", styles.h6)}>

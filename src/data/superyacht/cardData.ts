@@ -1,4 +1,13 @@
 import PngIcons from "@/icons/pngIcon";
+import { GiPalmTree } from "react-icons/gi";
+import { PiMapPinAreaFill } from "react-icons/pi";
+import { MdCelebration } from "react-icons/md";
+import { FaAnchor } from "react-icons/fa";
+import { IconType } from "react-icons";
+import { PiCrown } from "react-icons/pi";
+import { IoMdGlobe } from "react-icons/io";
+import { FaShuffle } from "react-icons/fa6";
+import { GrCompass } from "react-icons/gr";
 
 export interface Attraction {
     id: string;
@@ -9,6 +18,7 @@ export interface Attraction {
     description: string;
     highlights: string[];
     tip: string;
+    
 }
 
 export interface SuperYachtAttractions {
@@ -147,12 +157,6 @@ export const superYacht: FAQItem[] = [
     },
 ]
 
-
-import { TbSailboat } from "react-icons/tb";
-import { LuShieldQuestion } from "react-icons/lu";
-import { IoCheckmarkDoneCircleSharp } from "react-icons/io5";
-import { IconType } from "react-icons";
-
 interface WhyItem {
   id: number;
   icon: IconType;
@@ -160,31 +164,37 @@ interface WhyItem {
   description: string;
 }
 
+interface WhatWeCollectItem {
+  icon: IconType;
+  title: string;
+  description: string;
+}
+
 export const WhyData: WhyItem[] = [
   {
     id: 1,
-    icon: TbSailboat,
+    icon: GiPalmTree,
     label: "Island Exploration",
     description:
       "Discover untouched gems like Koh Hong, Koh Yao Noi, and the famous Phi Phi Islands.",
   },
   {
     id: 2,
-    icon: IoCheckmarkDoneCircleSharp,
+    icon:  PiMapPinAreaFill,
     label: "Tailored Itineraries",
     description:
       "From beaches and snorkeling to fine dining—your dream yacht journey, your way.",
   },
   {
     id: 3,
-    icon: LuShieldQuestion,
+    icon: MdCelebration,
     label: "Celebrations at Sea ",
     description:
       "Host birthdays, weddings, or anniversaries in true luxury and style.",
   },
   {
     id: 4,
-    icon: LuShieldQuestion,
+    icon: FaAnchor,
     label: "Exclusive Experiences",
     description:
       "Enjoy sunset cruises, island hopping, luxury sailing, or overnight yacht stays.",
@@ -193,22 +203,22 @@ export const WhyData: WhyItem[] = [
 
 export const whatWeCollectData: WhatWeCollectItem[] = [
     {
-        icon: PngIcons.picon1,
+        icon: PiCrown ,
         title: "Unmatched Comfort:",
         description: "Premium services that guarantee comfort & relaxation"
     },
     {
-        icon: PngIcons.picon2,
+        icon: IoMdGlobe,
         title: "Insider Expertise:",
         description: "Local insights combined with world-class service"
     },
     {
-        icon: PngIcons.picon3,
+        icon:FaShuffle,
         title: "Flexible Choices:",
         description: "Various yacht charter options are available"
     },
     {
-        icon: PngIcons.picon3,
+        icon:GrCompass,
         title: "Tailored Journeys:",
         description: "Customizable experiences to your unique preferences"
     }

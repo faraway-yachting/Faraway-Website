@@ -5,41 +5,39 @@ import PngIcons from "@/icons/pngIcon";
 import { styles, combine } from "@/styles";
 
 const PrivateYacht = () => {
-    const { w3, px5, p3, container, containerLarge, grid3Col, flexCenter, h3, p2 } = styles;
     return (
-        <div className={combine("relative bg-white mb-16")}>
+        <div className={combine("relative bg-white", styles.mb2)}>
             <div className={combine(
-                "absolute top-0 left-0 z-10 ", w3,
-
+                "absolute top-0 left-0 z-10", styles.w3
             )}>
                 <img src={PngIcons.line3} alt="" className="w-auto h-auto" />
             </div>
             <div className={combine(
-                "relative bg-gray-100 py-12", px5,
+                "relative bg-gray-100 py-12", styles.px5
             )}>
                 <div className="absolute bottom-0 right-0 z-0">
                     <img src={PngIcons.frame1} alt="" className="w-auto h-auto" />
                 </div>
-                <div className={combine("relative py-[50px]", container)}>
+                <div className={combine("relative py-[50px]", styles.container)}>
                     <HeadingContent
-                        heading="Why Book With Us"
-                        description="Enjoy AI-powered yacht recommendations, real-time availability, and secure bookings for a seamless luxury experience." />
-                    <div className={containerLarge}>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+                        heading="Private Yacht in Phuket"
+                        description="Discover Thailand's islands at your pace with a private yacht charter—bespoke experiences tailored to your desires and style." />
+                    <div className={styles.containerLarge}>
+                        <div className={combine(styles.grid3Col, "gap-4 mt-10")}>
                             {WhyData.map((item) => (
                                 <div
                                     key={item.id}
                                     className="text-center space-y-3 px-2 mt-5 lg:mt-0"
                                 >
-                                    <div className={flexCenter}>
+                                    <div className={styles.flexCenter}>
                                         <div className="bg-zink text-white w-15 h-15 flex items-center justify-center rounded-full">
                                             <item.icon size={32} />
                                         </div>
                                     </div>
-                                    <h3 className={combine(p3, "font-semibold text-mustard")}>
+                                    <h3 className={combine(styles.p3, "font-semibold text-mustard")}>
                                         {item.label}
                                     </h3>
-                                    <p className={combine(p2, "text-gray-600", "text-center")}>
+                                    <p className={combine(styles.p2, "text-gray-600", "text-center")}>
                                         {item.description}
                                     </p>
                                 </div>

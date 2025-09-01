@@ -24,7 +24,7 @@ const Price_Details = () => {
                     onClick={() => toggleItem(item.id)}
                     className="flex justify-between items-center w-full p-4 text-left">
                     <div className="flex items-center gap-4">
-                        <div className="bg-[#034250] text-white p-2 rounded-lg flex items-center justify-center">
+                        <div className="bg-zink text-white p-2 rounded-lg flex items-center justify-center">
                             <Icon className="w-5 h-5" />
                         </div>
                         <p className="font-bold text-[17px] md:text-[19px] lg:text-[22px] text-zink font-sourceSanspro">{item.place}</p>

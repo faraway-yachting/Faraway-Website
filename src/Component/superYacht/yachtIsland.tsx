@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import PngIcons from "@/icons/pngIcon";
 import HeadingContent from "@/common/heading";
+import { styles, combine } from "@/styles";
 
 const islands = [
   { title: "Koh Phi Phi", image: PngIcons.thPlace_1 },
@@ -28,8 +29,8 @@ const Thailand_BestLands = () => {
     ],
   };
   return (
-    <section className="py-8 md:py-10 lg:py-13 xl:py-16 px-4 bg-white relative overflow-hidden">
-      <div className="mx-auto mb-12 sm:mb-16">
+    <section className={combine("px-4 bg-white relative overflow-hidden", styles.py4)}>
+      <div className={combine("mx-auto", styles.mb2)}>
         <HeadingContent
           heading="Phuket Island Hopping by Yacht"
           description='Discover turquoise waters, hidden lagoons, limestone cliffs, and vibrant coral reefs on a private yacht adventure.' />
@@ -52,7 +53,7 @@ const Thailand_BestLands = () => {
                     alt={island.title}
                     className="w-full h-[300px] md:h-[350px] lg:h-[350px] xl:h-[440px] object-cover rounded-lg"
                   />
-                  <div className="absolute bottom-11 md:bottom-13 lg:bottom-17 xl:bottom-20 left-5 text-white text-[25px] md:text-[28px] lg:text-[32px] xl:text-[36px] font-playfair font-extrabold drop-shadow-lg">
+                  <div className={combine("absolute bottom-11 md:bottom-13 lg:bottom-17 xl:bottom-20 left-5 text-white font-playfair font-extrabold drop-shadow-lg", styles.h3)}>
                     {island.title}
                   </div>
                 </div>
@@ -68,12 +69,12 @@ const Thailand_BestLands = () => {
       </div>
       {/* Text Box - Centered with max-width */}
       <div className="flex justify-center mt-12 ">
-        <div className="max-w-[78.2rem] w-full bg-[#E6ECED33] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 px-4 md:px-6 py-0 xl:py-6 border-l-[7px] border-l-[#034250]">
+        <div className={combine("w-full bg-[#E6ECED33] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 px-4 md:px-6 py-0 xl:py-6 border-l-[7px] border-l-[#034250]", styles.containerLarge)}>
           <div className="flex-1 text-left py-3">
-            <p className="text-zink font-sourceSansPro font-semibold text-[16px] md:text-[18px] lg:text-[20px] mb-2">
+            <p className={combine("text-zink font-sourceSansPro font-semibold mb-2", styles.p4)}>
               <span className="font-semibold text-mustard font-playfair me-2">Info:</span>Adventure Your Way!
             </p>
-            <p className="text-zink font-sourceSansPro font-semibold text-base max-w-3xl">
+            <p className={combine("text-zink font-sourceSansPro font-semibold max-w-3xl", styles.p2)}>
               Choose a full-day rental or a multi-day charter—custom itineraries designed for ultimate relaxation, adventure, and stunning views.
             </p>
           </div>

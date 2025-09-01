@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AboutContent } from "@/data/about/abouFAQS";
 import SetSail from "@/common/yarchtcharter";
+import { styles, combine } from "@/styles";
 
 const AboutSection_FAQs = () => {
   const [activeId, setActiveId] = useState<number | null>(0);
@@ -14,11 +15,11 @@ const AboutSection_FAQs = () => {
     setActiveId((prev) => (prev === index ? null : index));
   };
   return (
-    <section className="bg-white" id="faq">
-      <div className="max-w-7xl mx-auto px-4 xl:px-0">
+    <section className="bg-white mb-14" id="faq">
+      <div className={combine("mb-15",styles.container)}>
         {/* Heading */}
-        <div className="mb-8 lg:mb-10 xl:mb-12 flex justify-center flex-col items-center">
-          <h2 className="text-[24px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-playfair text-zink font-semibold mb-1">
+        <div className={combine("mb-8 lg:mb-10 xl:mb-12", styles.flexCenter, styles.flexCol)}>
+          <h2 className={combine(styles.h2, "text-zink mb-1")}>
             FAQs
           </h2>
           <img src="/images/rframe.png"
@@ -27,7 +28,7 @@ const AboutSection_FAQs = () => {
           />
         </div>
         {/* Accordion */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 xl:gap-8">
+        <div className={styles.grid2Col}>
           {[firstColumn, secondColumn].map((column, columnIndex) => (
             <div className="space-y-3 lg:space-y-4 xl:space-y-6" key={columnIndex}>
               {column.map((item, index) => {
@@ -42,9 +43,9 @@ const AboutSection_FAQs = () => {
                     <button
                       type="button"
                       onClick={() => toggleItem(actualIndex)}
-                      className="flex justify-between items-center w-full py-2 lg:py-3 xl:py-4 px-2 lg:px-3 xlpx-4 cursor-pointer text-left"
+                      className="flex justify-between items-center w-full py-2 lg:py-3 xl:py-4 px-2 lg:px-3 xl:px-4 cursor-pointer text-left"
                     >
-                      <p className="font-bold text-base lg:text-xl text-zink font-sourceSanspro max-w-lg ">
+                      <p className={combine("font-bold text-zink max-w-lg", styles.p3)}>
                         {item.place}
                       </p>
                       <span className="text-2xl font-bold text-gray-400">
@@ -64,7 +65,7 @@ const AboutSection_FAQs = () => {
                           return (
                             <p
                               key={i}
-                              className="text-zink font-sourceSanspro text-base lg:text-lg mb-2 font-sourceSansPro"
+                              className={combine("text-zink mb-2 text-[15px] lg:text-[16px] xl:text-[17px] font-inter")}
                               dangerouslySetInnerHTML={{ __html: withDashSpan }}
                             />
                           );

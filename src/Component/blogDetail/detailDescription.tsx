@@ -3,6 +3,7 @@ import DOMPurify from "dompurify";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { styles, combine } from "@/styles";
 
 interface BlogData {
   _id: string;
@@ -64,14 +65,14 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-[40rem]">
+      <div className={combine(styles.flexCenter, "min-h-[40rem]")}>
         <div className="w-10 h-10 border-4 border-t-transparent border-[#2185D0] rounded-full animate-spin" />
       </div>
     );
   }
   if (!data) {
     return (
-      <div className="max-w-7xl mx-auto py-10 px-4 text-center">
+      <div className={combine(styles.container, "py-10 text-center")}>
         <p className="text-red-500 text-lg font-semibold mb-4">
           Blog not found
         </p>
@@ -87,10 +88,10 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
   return (
     <div>
       <div className="relative">
-        <div className="bg-[url('/images/blogimg1.png')] bg-cover bg-center bg-no-repeat min-h-[30vh] md:min-h-[40vh] lg:min-h-[58vh] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
-          <div className="absolute inset-0 bg-[#034250]/40 z-0" />
+        <div className={combine(styles.bgImage, "bg-[url('/images/blogimg1.png')] min-h-[30vh] md:min-h-[40vh] lg:min-h-[58vh]", styles.flexCol, "justify-center items-center", styles.px4)}>
+          <div className="absolute inset-0 bg-[#012A50]/40 z-0" />
           <div className="relative z-10">
-            <p className="text-[40px] font-playfair font-bold mb-4 text-white max-w-2xl mx-auto text-center">
+            <p className={combine(styles.h2, "mb-4 text-white max-w-2xl mx-auto text-center")}>
               {data.title}
             </p>
           </div>
@@ -102,11 +103,11 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
           alt={data.title}
           className="w-full h-94 object-cover mb-4"
         />
-        <p className="text-lg text-black font-normal font-sourceSansPro leading-relaxed">
+        <p className={combine(styles.p3, "text-zink leading-relaxed")}>
           {data.shortDescription}
         </p>
         <div
-          className="text-lg text-black font-normal font-sourceSansPro leading-relaxed"
+          className={combine(styles.p1, "text-zink leading-relaxed")}
           dangerouslySetInnerHTML={{
             __html: DOMPurify.sanitize(data.detailDescription || ""),
           }}

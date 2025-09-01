@@ -1,19 +1,20 @@
- import Image from "next/image";
+import Image from "next/image";
 import PngIcons from "@/icons/pngIcon";
 import { FaCheckCircle } from "react-icons/fa";
 import { privateYachtValues } from "@/data/destination/broadboatData";
+import { styles, combine } from "@/styles";
 
 const PrivateYacht = () => (
-  <section className="relative bg-white py-7 lg:py-10 overflow-hidden">
+  <section className={combine("relative bg-white overflow-hidden", styles.py4)}>
   
-    <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-      <div className="text-center mb-12 md:mb-16">
-        <h2 className="text-3xl md:text-[32px] lg:text-[36px] xl:text-[40px] font-playfair font-bold text-mustard mb-4">Private Yacht in Phuket</h2>
-        <p className="text-base md:text-xl xl:text-[22px] font-normal font-sourceSansPro max-w-5xl text-zink mx-auto text-gray-700">
+    <div className={combine("relative z-10 max-w-7xl mx-auto", styles.px3,styles.container)}>
+      <div className={combine("text-center", styles.mb2)}>
+        <h2 className={combine("text-mustard mb-4", styles.h2)}>Private Yacht in Phuket</h2>
+        <p className={combine("font-normal font-sourceSansPro max-w-5xl text-zink mx-auto text-gray-700", styles.p1)}>
           At Faraway Yachting, we believe your holiday should be more than a getaway—it should be an unforgettable escape.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 lg:gap-11 xl:gap-14 items-center">
+      <div className={combine("grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 lg:gap-11 xl:gap-14 items-center", styles.gap1)}>
         <div className="w-full">
           <Image src={PngIcons.privateyact} alt="Mission" width={590} height={590} className="w-full h-[350px] md:h-auto object-cover" />
         </div>
@@ -23,8 +24,8 @@ const PrivateYacht = () => (
               <li key={i} className="flex items-start gap-3 max-w-lg">
                 <FaCheckCircle className="text-[#F9B233] mt-1 flex-shrink-0 text-xl sm:text-2xl" />
                 <div>
-                  <p className="font-bold md:text-lg lg:text-xl text-zink">{v.title}</p>
-                  <p className="text-zink text-base lg:text-lg font-sourceSansPro">{v.description}</p>
+                  <p className={combine("font-bold text-zink", styles.p3)}>{v.title}</p>
+                  <p className={combine("text-zink", styles.p2)}>{v.description}</p>
                 </div>
               </li>
             ))}

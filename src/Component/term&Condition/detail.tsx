@@ -9,6 +9,7 @@ import { IoMdInformationCircleOutline } from "react-icons/io";
 import { BiSolidCommentDetail } from "react-icons/bi";
 import { termsData, insuranceRecommendation, finalMessage } from "../../data/terms/termsData";
 import HeadingContent from "@/common/heading";
+import { styles, combine } from "@/styles";
 // Icon mapping
 const iconMap = {
   MdCreditCard,
@@ -50,7 +51,7 @@ export default function TermsWithTable() {
     {
       number: "03", title: "Cancellations and Insurance", id: "cancellations-and-insurance", points: [
         { text: "3.2.1 Day charter cancellation", id: "day-charter-cancellation" },
-        { text: "3.2.2 Overnight charter cancellation", id: "overnight-charter-cancellation"} ],
+        { text: "3.2.2 Overnight charter cancellation", id: "overnight-charter-cancellation" }],
     },
     { number: "04", title: "Force Majeure", id: "force-majeure" },
     { number: "05", title: "Safety", id: "safety" },
@@ -78,15 +79,15 @@ export default function TermsWithTable() {
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
-      const targetId = hash.substring(1); 
-      
+      const targetId = hash.substring(1);
+
       // Check if it's a section ID
       const section = sections.find(s => s.id === targetId);
       if (section) {
         setTimeout(() => handleScroll(section.id), 100);
         return;
       }
-      
+
       // Check if it's a subsection ID by looking through all sections
       for (const section of sections) {
         if (section.points) {
@@ -106,7 +107,7 @@ export default function TermsWithTable() {
       <div className="absolute top-0 right-0 w-[370px] md:w-[520px] lg:w-[700px] xl:w-[950px] h-[290px] md:h-[260px] lg:h-[350px] xl:h-[450px] overflow-hidden hidden md:block">
         <div className="w-full h-full clip-custom-shape relative">
           <Image src="/images/term1.png" alt="Decorative" fill className="object-cover" />
-          <div className="absolute inset-0 bg-[#034250]/30 z-10"></div>
+          <div className="absolute inset-0 bg-[#012A50]/30 z-10"></div>
         </div>
         <style jsx>{`
           .clip-custom-shape {
@@ -115,12 +116,12 @@ export default function TermsWithTable() {
         `}</style>
       </div>
 
-      <div className="max-w-7xl mx-auto bg-white rounded-xl">
+      <div className={combine(styles.container, "bg-white rounded-xl")}>
         {/* Table of Contents */}
         <div className="relative z-10 p-8 flex items-start gap-6 ms-0 xl:ms-6">
           <div className="w-32 md:w-33 lg:w-38 xl:w-50 h-32 md:h-33 lg:h-38 xl:h-50 bg-zink rounded-full border-3 border-mustard flex items-center justify-center shadow-lg shrink-0">
             <div className="text-center text-white font-bold">
-              <p className="text-lg md:text-lg lg:text-xl xl:text-2xl  leading-tight">Table of</p>
+              <p className="text-lg md:text-lg lg:text-xl xl:text-2xl leading-tight">Table of</p>
               <p className="text-xl md:text-xl lg:text-2xl xl:text-3xl leading-tight">Contents</p>
             </div>
           </div>
@@ -136,16 +137,16 @@ export default function TermsWithTable() {
               >
                 {/* Number Circle */}
                 <div className="w-11 lg:w-14 h-11 lg:h-14 bg-zink rounded-full flex items-center justify-center shadow-md border-3 border-mustard shrink-0">
-                  <span className="text-white font-bold text-base lg:text-xl">{section.number}</span>
+                  <span className={combine("text-white font-bold", styles.p3)}>{section.number}</span>
                 </div>
                 {/* Title & Points */}
                 <div className="flex-1">
                   <h3 className="text-[20px] md:text-[22px] lg:text-[24px] xl:text-[26px] font-semibold text-zink hover:text-[#D6AB62]">{section.title}</h3>
                   {section.points && section.points.length > 0 && (
-                    <ul className="mt-2 list-disc list-inside text-base text-zink font-medium font-sourceSansPro">
+                    <ul className={combine("mt-2 list-disc list-inside text-zink font-medium font-sourceSansPro", styles.p3)}>
                       {section.points.map((point, idx) => (
-                        <li 
-                          key={idx} 
+                        <li
+                          key={idx}
                           className="cursor-pointer hover:text-[#D6AB62] transition-colors duration-200"
                           onClick={(e) => {
                             e.stopPropagation();
@@ -164,7 +165,7 @@ export default function TermsWithTable() {
         </div>
 
         {/* Terms & Conditions */}
-        <div className="max-w-7xl mx-auto bg-white rounded-lg overflow-hidden px-4 my-14">
+        <div className={combine(styles.container, "bg-white rounded-lg overflow-hidden", styles.px1, "my-14")}>
           {/* Header */}
           <div className="mb-10">
             <HeadingContent
@@ -178,7 +179,7 @@ export default function TermsWithTable() {
                 <div key={section.id} id={section.id} className="space-y-4 scroll-mt-24">
                   {/* Section Header */}
                   <div className="flex items-center space-x-3 border-b border-zink pb-3">
-                    {IconComponent && <IconComponent className="w-8 h-8 text-zink" />}
+                    {IconComponent && <IconComponent className="w-8 h-8 text-mustard" />}
                     <h2 className="text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] font-bold text-zink">{section.title}</h2>
                   </div>
 
@@ -197,8 +198,8 @@ export default function TermsWithTable() {
                     {section.id === "insurance" && (
                       <div className="bg-[#E6ECED33] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 px-4 md:px-6 py-0 xl:py-6 border-l-[7px] border-l-[#034250]">
                         <div className="flex-1 text-left py-3">
-                          <p className="text-zink text-base font-medium">{insuranceRecommendation.title}</p>
-                          <p className="text-zink text-sm md:text-base mt-2 font-sourceSansPro">{insuranceRecommendation.content}</p>
+                          <p className={combine("text-zink font-medium", styles.p4)}>{insuranceRecommendation.title}</p>
+                          <p className={combine("text-zink mt-2 ", styles.p4)}>{insuranceRecommendation.content}</p>
                         </div>
                         <div className="flex-shrink-0 w-[150px] sm:w-[180px] md:w-[200px] hidden md:block">
                           <img src="/images/slideText.png" alt="" />
@@ -210,10 +211,10 @@ export default function TermsWithTable() {
               );
             })}
             {/* Final Message */}
-            <div className="bg-gradient-to-r from-[#046B7A] to-[#034250] font-sourceSansPro text-white p-8 text-center rounded-lg border-3 border-mustard mt-16">
-              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4">{finalMessage.title}</h3>
-              <p className="text-white text-basemd:text-lg">{finalMessage.subtitle}</p>
-              <p className="text-white text-lg lg:text-xl font-semibold mt-2">{finalMessage.signature}</p>
+            <div className="bg-gradient-to-r from-[#012A50] to-[#034250] font-sourceSansPro text-white p-8 text-center rounded-lg border-3 border-mustard mt-16">
+              <h3 className={combine("font-bold mb-4", styles.h5)}>{finalMessage.title}</h3>
+              <p className={combine("text-white", styles.p3)}>{finalMessage.subtitle}</p>
+              <p className={combine("text-white font-semibold mt-2", styles.p3)}>{finalMessage.signature}</p>
             </div>
           </div>
         </div>

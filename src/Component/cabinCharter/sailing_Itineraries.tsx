@@ -24,14 +24,14 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
                 <button type="button" onClick={() => toggleItem(item.id)}
                     className="flex justify-between items-center w-full p-4 cursor-pointer text-left">
                     <div className="flex items-center gap-4 justify-center">
-                        <div className="bg-[#034250] text-white font-poppins text-[15px] xl:text-[16px] font-semibold px-3 py-1 rounded-lg">
+                        <div className="bg-zink text-white font-poppins text-[15px] xl:text-[16px] font-semibold px-3 py-1 rounded-lg">
                             <p>
                                 {item.days}
                             </p>
                             <p className="text-center">{item.id}</p>
                             {/* ID below day */}
                         </div>
-                        <p className="font-bold text-[18px] lg:text-[20px] xl:[23px] text-zink font-sourceSanspro">{item.place}</p>
+                        <p className="font-bold text-[18px] lg:text-[20px] xl:[21px] text-zink font-inter">{item.place}</p>
                     </div>
                     <span className="text-2xl font-bold text-gray-400">
                         {isActive ? "−" : "+"}
@@ -53,10 +53,10 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
                                                 key={`${idx}-${i}`}
                                                 className="text-sm md:text-base odd:bg-white even:bg-[#F5F5F5] odd:hover:bg-[#F5F5F5]"
                                             >
-                                                <td className="border border-gray-300 font-sourceSansPro text-[18px] lg:text-[23px] px-2 md:px-2 lg:px-4 py-3 font-bold text-black align-top">
+                                                <td className="border border-gray-300 font-sourceSansPro text-[18px] lg:text-[23px] px-2 md:px-2 lg:px-4 py-3 font-bold text-zink align-top">
                                                     {title}
                                                 </td>
-                                                <td className="border border-gray-300 font-sourceSansPro font-normal text-[18px] lg:text-[22px] px-2 md:px-2 lg:px-4 py-3 text-black">
+                                                <td className="border border-gray-300 font-sourceSansPro font-normal text-[18px] lg:text-[22px] px-2 md:px-2 lg:px-4 py-3 text-zink">
                                                     {descriptions[i] || "-"}
                                                 </td>
                                             </tr>

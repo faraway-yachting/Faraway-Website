@@ -1,5 +1,6 @@
 "use client";
 import { RefObject } from "react";
+import { styles, combine } from "@/styles";
 
 interface ContactUsProps {
     sectionRef: RefObject<HTMLDivElement | null>; // <-- fixed
@@ -7,11 +8,11 @@ interface ContactUsProps {
 const ContactUs = ({ sectionRef }: ContactUsProps) => {
     return (
         <div ref={sectionRef}>
-            <section className="bg-white py-7 lg:py-9 xl:py-12 px-4 lg:px-6 ">
-                <div className="max-w-7xl mx-auto bg-white">
+            <section className={combine("bg-white", styles.py4, styles.px3)}>
+                <div className={combine(" bg-white", styles.container)}>
                     {/* Left Side - Form (Replaced with iframe) */}
                     <div className="col-span-12 lg:col-span-7">
-                        <h2 className="text-[32px] sm:text-[36px] text-center font-playfair font-bold text-[#034250] mb-7">
+                        <h2 className={combine("text-center font-bold text-zink mb-7", styles.h2)}>
                             Booking Request
                         </h2>
                         

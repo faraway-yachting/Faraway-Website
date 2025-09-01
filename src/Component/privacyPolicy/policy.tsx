@@ -3,9 +3,11 @@ import HeadingContent from "@/common/heading";
 import PngIcons from "@/icons/pngIcon";
 import { privacyPolicySections } from "@/data/privacypolicy/privacyPolicyData";
 import SetSail from "@/common/yarchtcharter";
+import { styles, combine } from "@/styles";
+
 // Reusable components
 const SectionHeading = ({ children, icon }: { children: string; icon?: string }) => (
-    <h2 className="text-lg md:text-xl lg:text-2xl font-bold font-sourceSansPro text-zink mb-8 border-b-2 border-gray-300 pb-4">
+    <h2 className={combine(styles.h5, "text-zink font-semibold mb-8 border-b-2 border-gray-300 pb-4")}>
         {icon && <img src={icon} alt="" className="w-8 h-8 inline mr-3" />}
         {children}
     </h2>
@@ -23,7 +25,7 @@ const BulletList = ({ items, columns = 2 }: { items: string[]; columns?: number 
                     {columnItems.map((item, index) => (
                         <div key={startIndex + index} className="flex items-start space-x-3">
                             <div className="w-2 h-2 bg-zink rounded-full mt-2 flex-shrink-0"></div>
-                            <p className="text-zink font-sourceSansPro">{item}</p>
+                            <p className={combine("text-zink", styles.p3)}>{item}</p>
                         </div>
                     ))}
                 </div>
@@ -46,8 +48,8 @@ const InfoCard = ({ title, description, icon }: { title: string; description: st
                 />
             </div>
             <div>
-                <p className="font-semibold text-blue text-lg mb-2">{title}</p>
-                <p className="text-zink max-w-3xs font-sourceSansPro">{description}</p>
+                <p className={combine("font-semibold text-zink mb-2", styles.p3)}>{title}</p>
+                <p className={combine("text-zink max-w-3xs", styles.p4)}>{description}</p>
             </div>
         </div>
     </div>
@@ -75,7 +77,7 @@ const PolicyInfo = () => {
             case 'bullets':
                 return (
                     <>
-                        {section.subtitle && <p className="text-lg text-zink font-sourceSansPro font-semibold mb-6">{section.subtitle}</p>}
+                        {section.subtitle && <p className={combine("text-zink font-sourceSansPro font-semibold mb-6", styles.p2)}>{section.subtitle}</p>}
                         <BulletList items={section.data as string[]} />
                     </>
                 );
@@ -86,11 +88,11 @@ const PolicyInfo = () => {
                         {Array.isArray(section.data) ? (
                             <div className="space-y-4 font-sourceSansPro">
                                 {(section.data as string[]).map((item, index) => (
-                                    <p key={index} className="text-zink leading-relaxed font-sourceSansPro">{item}</p>
+                                    <p key={index} className={combine("text-zink leading-relaxed", styles.p4)}>{item}</p>
                                 ))}
                             </div>
                         ) : (
-                            <p className="text-zink leading-relaxed font-sourceSansPro">{section.data as string}</p>
+                            <p className={combine("text-zink leading-relaxed", styles.p4)}>{section.data as string}</p>
                         )}
                     </div>
                 );
@@ -101,7 +103,7 @@ const PolicyInfo = () => {
                     <div className="bg-white rounded-lg">
                         <p className="text-zink leading-relaxed mb-4 font-sourceSansPro">{contactData.description}</p>
                         <p className="text-zink">
-                            <span className="font-semibold text-lg me-2">By Email: </span>
+                            <span className={combine("font-semibold me-2", styles.p2)}>By Email: </span>
                             <a
                                 href="https://mail.google.com/mail/?view=cm&to=info@far-away.net"
                                 target="_blank"
@@ -120,7 +122,7 @@ const PolicyInfo = () => {
 
     return (
         <div>
-            <div className="max-w-[78.5rem] mx-auto my-12 md:my-14 lg:my-16 xl:my-18 px-4 xl:px-0">
+            <div className={combine(styles.container, "my-12 md:my-14 lg:my-16 xl:my-18")}>
                 {/* Main Heading */}
                 <div className="mb-7 md:mb-10 lg:mb-16">
                     <HeadingContent heading="Privacy Policy – Your Data, Your Trust" />

@@ -56,7 +56,7 @@ const BestLands: React.FC<Props> = ({ data }) => {
               </div>
               <div className="min-h-[170px] shadow-lg">
                 <div className="p-4 space-y-2 max-w-[30rem]">
-                  <h4 className={combine("text-mustard font-bold", styles.h4)}>
+                  <h4 className={combine("text-mustard font-bold", styles.h5)}>
                     {isle.subtitle}
                   </h4>
                   {isle.description.map((line, i) => (

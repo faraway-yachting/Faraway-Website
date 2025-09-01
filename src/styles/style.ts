@@ -5,16 +5,17 @@ export const styles = {
   // H tags - Same styling everywhere
   h1: "text-[30px] md:text-[34px] lg:text-[38px] xl:text-[48px] font-bold font-playfair",
   h2: "text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-semibold font-playfair",
-  h3: "text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px] font-normal font-playfair ",
-  h4: "text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] font-medium font-sourceSansPro",
-  h5: "text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-normal font-sourceSansPro",
+  h3: "text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px] font-playfair ",
+  h4: "text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] font-sourceSansPro",
+  h5: "text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-sourceSansPro",
   h6: "text-[18px] md:text-[20px] lg:text-[22px] font-normal font-playfair",
 
   // P tags - Same styling everywhere (3 sizes with responsiveness)
-  p1: "text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] font-normal font-inter",
-  p2: "text-[14px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-normal font-inter",
-  p3: "text-[15px] md:text-[17px] lg:text-[18px] xl:text-[19px] font-normal font-inter",
-  p4: "text-[12px] md:text-[14px] lg:text-[16px] xl:text-[16px] font-normal font-inter",
+  
+  p1: "text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] font-inter",
+  p2: "text-[14px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-inter",
+  p3: "text-[15px] md:text-[17px] lg:text-[18px] xl:text-[19px]  font-inter",
+  p4: "text-[12px] md:text-[14px] lg:text-[16px] xl:text-[16px]  font-inter",
   text1: "text-sm md:text-base lg:text-lg",
   gap1: "gap-8 lg:gap-12",
   // bg Styling
@@ -51,8 +52,6 @@ export const styles = {
   minH2: "min-h-[70vh] md:min-h-[73vh] lg:min-h-[79vh] xl:min-h-[85vh]",
   top1: "top-3 md:top-4 lg:top-5 xl:top-6",
 
-
-
   w1: "w-20 md:w-24 lg:w-32 xl:w-36",
   w2: "w-[150px] md:w-[300px] lg:w-[450px] xl:w-[500px]",
   w3: "w-[100px] sm:w-[150px] md:w-[180px] lg:w-[220px] xl:w-[250px]",
@@ -68,8 +67,6 @@ export const styles = {
   mt5: "mt-5 lg:mt-0",
   my2: "my-6 md:my-8",
   my3: "xl:my-14 lg:my-10 md:my-8 my-7",
-
-
 };
 
 // Simple function to combine classes

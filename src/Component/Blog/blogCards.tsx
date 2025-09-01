@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { styles, combine } from "@/styles";
 
 interface BlogData {
     _id: string;
@@ -63,8 +64,8 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
 
     if (loading) {
         return (
-            <div className="flex items-center justify-center min-h-[40rem]">
-                <div className="w-10 h-10 border-4 border-t-transparent border-[#2185D0] rounded-full animate-spin" />
+            <div className={combine(styles.flexCenter, "min-h-[40rem]")}>
+                <div className={styles.loadingSpinner} />
             </div>
         );
     }
@@ -100,10 +101,10 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                                     />
                                 </div>
                                 <div className="px-4 pt-4">
-                                    <h3 className="text-[25px] md:text-[27px] lg:text-[29px] xl:text-[31px] font-semibold font-playfair text-zink mb-2">
+                                    <h3 className={combine(styles.h4, "text-zink mb-2 font-semibold")}>
                                         {limitCharacters(blog.title, 22)}
                                     </h3>
-                                    <p className="md:text-lg text-black font-normal font-sourceSansPro">
+                                    <p className={combine ("font-normal text-zink",styles.p2)}>
                                         {blog.shortDescription.length > 200 ? blog.shortDescription.slice(0, 200) + "..." : blog.shortDescription}
                                     </p>
                                 </div>

@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Yacht } from "../YachtDetail/hero";
+import { styles, combine } from "@/styles";
 
 type Props = {
     data: Yacht | null;
@@ -30,14 +31,14 @@ const ContactDetail: React.FC<Props> = ({ data }) => {
     return (
         <div className="bg-white sticky rounded-lg p-3 max-w-[500px] w-full border-2 border-zink">
             <div className="flex flex-col items-center justify-center text-center">
-                <p className="text-lg md:text-xl lg:text-[22px] xl:text-[24px] font-playfair text-[#034250] font-bold">
+                <h5 className={combine("font-playfair text-[#034250] font-bold", styles.h5)}>
                     {data?.title}
-                </p>
-                <p className="text-zink font-inter text-sm lg:text-[16px] mt-1">
+                </h5>
+                <p className={combine("text-zink mt-1", styles.p4)}>
                     Looking for a yacht charter?
                 </p>
-                <p className="text-[#034250] font-inter text-sm lg:text-[16px] mt-1">+66 61 234 5623</p>
-                <p className="text-[#034250] font-inter text-sm lg:text-[16px]">+66 61 234 5623</p>
+                <p className={combine("text-zink font-inter mt-1", styles.p4)}>+66 61 234 5623</p>
+                <p className={combine("text-zink font-inter", styles.p4)}>+66 61 234 5623</p>
             </div>
 
             {/* Dynamic iframe based on URL */}

@@ -1,8 +1,10 @@
+import { styles, combine } from "@/styles";
+
 const HeroSection = () => {
   return (
     <div>
       {/* HERO IMAGE SECTION */}
-      <div className="bg-[url('/images/hero.png')] bg-cover bg-center bg-no-repeat min-h-[30vh] md:min-h-[40vh] lg:min-h-[58vh] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
+      <div className={combine("bg-[url('/images/hero.png')]", styles.minH3, styles.px1,styles.flexCol,styles.flexCenter,styles.bgImage)}>
         <div className="text-center flex flex-col justify-center items-center">
           <p className="text-white font-extrabold font-playfair text-[18px] md:text-[24px] xl:text-[28px]">
             DESTINATIONS

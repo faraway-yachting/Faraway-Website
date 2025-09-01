@@ -1,18 +1,19 @@
 import { FunMoments } from "@/data/superyacht/cardData";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
+import { styles, combine } from "@/styles";
 
 const FunMomentsComponent = () => {
     const funMomentsData = FunMoments["fun-moments"].items;
     
     return(
    
-<section className="relative bg-white py-7 lg:py-10 overflow-hidden">
+<section className={combine("relative bg-white overflow-hidden", styles.py4)}>
  
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-    <div className="text-center mb-12 md:mb-16">
-      <h2 className="text-3xl md:text-[32px] lg:text-[36px] xl:text-[40px] font-playfair font-bold text-mustard mb-4">Celebrate & Explore in Style</h2>
-      <p className="text-base md:text-xl xl:text-[22px] font-normal font-sourceSansPro max-w-5xl text-zink mx-auto text-gray-700">
+  <div className={combine("relative z-10", styles.container)}>
+    <div className={combine("text-center", styles.mb2)}>
+      <h2 className={combine(styles.h2, "font-bold text-mustard mb-4")}>Celebrate & Explore in Style</h2>
+      <p className={combine(styles.p1, "font-normal font-sourceSansPro max-w-5xl text-zink mx-auto text-gray-700")}>
       From unforgettable yacht weddings and private parties to tailor-made island-hopping itineraries, our luxury charters in Phuket deliver personalized experiences on the open sea.
       </p>
     </div>
@@ -32,8 +33,8 @@ const FunMomentsComponent = () => {
                 <li key={index} className="flex items-start gap-3 max-w-lg">
                   <FaCheckCircle className="text-[#F9B233] mt-1 flex-shrink-0 text-xl sm:text-2xl" />
                   <div>
-                    <p className="font-bold md:text-lg lg:text-xl text-zink">{heading}</p>
-                    <p className="text-zink text-base lg:text-lg font-sourceSansPro">{item.description[index]}</p>
+                    <p className={combine("font-bold md:text-lg lg:text-xl text-zink")}>{heading}</p>
+                    <p className={combine("text-zink",styles.p2)}>{item.description[index]}</p>
                   </div>
                 </li>
               ))}
