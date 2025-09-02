@@ -36,7 +36,7 @@ const SetSail: React.FC<SetSailProps> = ({
                     Set Sail With Us
                 </p>
                 <h2 className={combine("text-white uppercase font-extrabold font-playfair max-w-2xl mx-auto leading-tight", styles.h3)}>
-                    Set Sail for Luxury and Adventure with Far Away Yacht Charters
+                    Set Sail for Luxury and Adventure with Faraway Yacht Charters
                 </h2>
                 <p className="text-white text-base md:text-lg lg:text-xl font-normal font-inter max-w-3xl px-4 py-3 lg:py-5 leading-relaxed lg:leading-tight">
                     Luxury, adventure, and unforgettable views—all aboard your private yacht. Discover hidden coves, island gems, and the beauty of Phuket.

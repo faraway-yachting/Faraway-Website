@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Yacht } from "../YachtDetail/hero";
 import { styles, combine } from "@/styles";
-
+import {FaPhoneAlt, FaWhatsapp} from "react-icons/fa";
 type Props = {
     data: Yacht | null;
 };
@@ -37,12 +37,20 @@ const ContactDetail: React.FC<Props> = ({ data }) => {
                 <p className={combine("text-zink mt-1", styles.p4)}>
                     Looking for a yacht charter?
                 </p>
-                <p className={combine("text-zink font-inter mt-1", styles.p4)}>+66 61 234 5623</p>
-                <p className={combine("text-zink font-inter", styles.p4)}>+66 61 234 5623</p>
+                <a
+                href="tel:+66612345623"
+                target="_blank"
+                rel="noopener noreferrer"
+                 className={combine("text-zink font-inter mt-2 flex items-center hover:text-[#D6AB62] ", styles.p4)}><span className="text-base font-semibold me-2"><FaPhoneAlt /></span>+66 61 234 5623</a>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=66612345623&text&type=phone_number&app_absent=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                 className={combine("text-zink font-inter flex items-center mt-1 hover:text-[#D6AB62] ", styles.p4)}><span className="text-xl font-semibold me-2"><FaWhatsapp /></span>+66 61 234 5623</a>
             </div>
 
             {/* Dynamic iframe based on URL */}
-            <div className="mt-3 lg:mt-4 xl:mt-2 w-full h-[820px]">
+            <div className="mt-3 lg:mt-4 xl:mt-2 w-full h-[750px]">
                 <iframe
                     src={`${iframeConfig.src}?yacht_title=${encodeURIComponent(data?.title || '')}`}
                     style={{ width: '100%', height: '100%', border: 'none', borderRadius: '3px' }}
@@ -55,7 +63,7 @@ const ContactDetail: React.FC<Props> = ({ data }) => {
                     data-deactivation-type="neverDeactivate"
                     data-deactivation-value=""
                     data-form-name={iframeConfig.formName}
-                    data-height="820"
+                    data-height="700"
                     data-layout-iframe-id={iframeConfig.id}
                     data-form-id={iframeConfig.dataFormId}
                     title={iframeConfig.title}

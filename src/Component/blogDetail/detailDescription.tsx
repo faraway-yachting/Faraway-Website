@@ -19,12 +19,7 @@ interface BlogProps {
 }
 const slugify = (text: string | undefined | null): string => {
   if (!text) return "";
-  return text
-    .toLowerCase()
-    .replace(/ *\([^)]*\) */g, "")
-    .replace(/[^a-z0-9 ]/g, "")
-    .replace(/\s+/g, "-")
-    .trim();
+  return text;
 };
 const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
   const [data, setData] = useState<BlogData | null>(null);

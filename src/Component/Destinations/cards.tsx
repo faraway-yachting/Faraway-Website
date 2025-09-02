@@ -3,6 +3,7 @@ import CardData from "../../data/destination/destinationCards";
 import Image from "next/image";
 import Link from "next/link";
 import { styles, combine, Button} from "../../styles";
+import { GiH2O } from "react-icons/gi";
 
 // Function to truncate description text
 const truncateDescription = (text: string, maxLength: number = 112) => {
@@ -12,9 +13,9 @@ const truncateDescription = (text: string, maxLength: number = 112) => {
 
 const Cards = () => {
   return (
-    <div className={combine("bg-white", styles.px1)}>
+    <div className="bg-white">
       <div className={styles.container}>
-        <div className={combine(styles.grid3Col, "gap-4 md:gap-6 lg:gap-8", styles.px1)}>
+        <div className= "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-8">
           {CardData.map((item, index) => (
             <div
               key={index}
@@ -32,13 +33,13 @@ const Cards = () => {
                   height={300}
                   className={combine(
                     "object-cover w-full rounded-tl-3xl rounded-br-3xl",
-                    "h-[270px] sm:h-[300px] md:h-[270px] lg:h-[280px] xl:h-[330px]"
+                    "h-[240px] sm:h-[230px] md:h-[245px] lg:h-[250px] xl:h-[330px]"
                   )}
                 />
                 <div className="absolute bottom-0 bg-opacity-40 w-full text-white px-4 py-2">
-                  <h4 className={combine("text-foreground font-extrabold transition-all duration-300", styles.h2)}>
+                  <h2 className={combine("text-foreground font-extrabold transition-all duration-300", styles.h2)}>
                     {item.title}
-                  </h4>
+                  </h2>
                 </div>
               </div>
 
