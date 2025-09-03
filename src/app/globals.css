@@ -12,7 +12,7 @@
 }
 
 /* Floating animation for particles */
-@keyframes fl
+@keyframes float {
 
   0%,
   100% {
