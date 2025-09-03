@@ -41,6 +41,14 @@ const slugify = (text: string | undefined | null): string => {
   if (!text) return "";
   return text;  
 };
+
+const formatSlug = (slug: string): string => {
+  if (!slug) return "";
+  return slug
+    .split('-') // Split by hyphens
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // Capitalize first letter of each word
+    .join(' '); 
+};
 const HeroSection: React.FC<HeroProps> = ({ slug }) => {
   const [data, setData] = useState<Yacht | null>(null);
   const [loading, setLoading] = useState(true);
@@ -85,11 +93,11 @@ const HeroSection: React.FC<HeroProps> = ({ slug }) => {
   return (
     <div>
       <div className="max-w-[78.2rem] mx-auto px-4 xl:px-0">
-        <p className="text-[32px] font-playfair font-bold text-zink mt-6 ">{data.title}</p>
+        <h3 className="text-[32px] font-playfair font-bold text-zink mt-6 ">{data.title}</h3>
         <div className="flex flex-col md:flex-row gap-5 mt-6">
           <div className="w-full md:w-[70%]">
             <Gallery data={data} />
-            <p className={combine(" text-zink font-semibold",styles.h1)}>{data.slug}</p>
+            <h2 className={combine(" text-zink font-semibold",styles.h3)}>{formatSlug(data.slug)}</h2>
             <TabSection data={data} />
           </div>
           <div className="w-full md:w-[30%] sticky top-[8rem]">

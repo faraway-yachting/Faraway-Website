@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import PngIcons from "@/icons/pngIcon";
 import HeadingContent from "@/common/heading";
+import { styles, combine } from "@/styles/style";
 
 const islands = [
     { title: "Koh Maithon", image: PngIcons.thPlace_1 },
@@ -55,7 +56,7 @@ const Thailand_BestLands = () => {
                                         alt={island.title}
                                         className="w-full h-[300px] md:h-[350px] lg:h-[350px] xl:h-[440px] object-cover rounded-lg"
                                     />
-                                    <div className="absolute bottom-11 md:bottom-13 lg:bottom-17 xl:bottom-20 left-5 text-white text-[25px] md:text-[28px] lg:text-[32px] xl:text-[36px] font-playfair font-extrabold drop-shadow-lg">
+                                    <div className={combine("absolute bottom-11 md:bottom-13 lg:bottom-17 xl:bottom-20 left-5 text-white font-extrabold drop-shadow-lg", styles.h3)}>
                                         {island.title}
                                     </div>
                                 </div>
@@ -73,10 +74,10 @@ const Thailand_BestLands = () => {
             <div className="flex justify-center mt-12 ">
                 <div className="max-w-[78.2rem] w-full bg-[#E6ECED33] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 px-4 md:px-6 py-0 xl:py-6 border-l-[7px] border-l-[#034250]">
                     <div className="flex-1 text-left py-3">
-                        <p className="text-zink font-sourceSansPro font-semibold text-[16px] md:text-[18px] lg:text-[20px] mb-2">
+                        <p className={combine("text-zink font-semibold mb-2", styles.p3)}>
                             <span className="font-semibold text-mustard font-playfair">Info:</span> Island time runs on nature's clock!
                         </p>
-                        <p className="text-zink font-sourceSansPro font-semibold text-base max-w-3xl">
+                        <p className={combine("text-zink font-semibold max-w-3xl", styles.p4)}>
                             Our schedule may shift with the wind, waves, and weather—so while departure and return times are set, daily timings may ebb and flow.
                         </p>
                     </div>

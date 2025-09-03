@@ -2,6 +2,7 @@ import PngIcons from "@/icons/pngIcon";
 import { styles, combine } from "@/styles/style";
 import Button from "@/styles/Button";
 import { FiPhone } from "react-icons/fi";
+import { LuAnchor } from "react-icons/lu";
 import { RefObject } from "react";
 
 type HeroSectionProps = {
@@ -56,29 +57,29 @@ const HeroContent: React.FC<HeroSectionProps> = ({
                 <div className="flex items-center">
                   <FiPhone className="mr-2" />
                   {buttontext}
-                  </div>
+                </div>
               </Button>
             </div>
           )}
           {showContactButton && contactRef && (
             <div className="mt-9">
-              <Button 
+              <Button
                 variant="primary"
                 onClick={() => {
-                  contactRef?.current?.scrollIntoView({ 
-                    behavior: "smooth", 
-                    block: "start" 
+                  contactRef?.current?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
                   });
                 }}
               >
                 <div className="flex items-center">
-                  <FiPhone className="mr-4" />
-                  Book Us
+                  <LuAnchor className="mr-2" />
+                  Get  Aboard
                 </div>
               </Button>
             </div>
           )}
-    </div>
+        </div>
       </div >
     </section >
   );

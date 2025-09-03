@@ -59,8 +59,15 @@ const Footer = () => {
             </a>
           </div>
           <div className="flex items-start gap-3 mb-2">
-            <FaRegEnvelope className={`mt-1 ${iconClass}`} />
-            <span className={textclass}>info@far-away.net</span>
+            <a
+              href="mailto:booking@faraway-yachting.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <FaRegEnvelope className={`mt-1 ${iconClass}`} />
+              <span className={`${textclass} hover:text-[#D6AB61] transition`}>booking@faraway-yachting.com</span>
+            </a>
           </div>
           <div className="flex items-start gap-3">
             <a

@@ -19,12 +19,12 @@ const Header = () => {
                         <FaPhoneAlt /> +66 61 2345623
                     </a>
                     <a
-                        href="https://mail.google.com/mail/?view=cm&to=info@far-away.net"
+                        href="https://mail.google.com/mail/?view=cm&to=booking@faraway-yachting.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center text-sm gap-2"
                     >
-                        <MdOutlineEmail /> info@far-away.net
+                        <MdOutlineEmail />booking@faraway-yachting.com
                     </a>
                     <a
                         href="https://www.google.com/maps/place/Faraway+Yachting+Phuket,+Thailand/@7.8231625,98.3437787,15z/data=!4m6!3m5!1s0x3050257bffffffff:0x937eaf99ed7fa6b7!8m2!3d7.8235296!4d98.3451594!16s%2Fg%2F12hp6d07j?entry=ttu&g_ep=EgoyMDI1MDgxMS4wIKXMDSoASAFQAw%3D%3D"

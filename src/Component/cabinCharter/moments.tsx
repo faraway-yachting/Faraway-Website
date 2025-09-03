@@ -6,7 +6,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HeadingContent from "@/common/heading";
 import { momentsTestimonials, Testimonial } from "@/data/cabincharter/momentsData";
-import { Button } from "@/styles";
+import Button from "@/styles/Button";
+import { styles, combine } from "@/styles/style";
 
 const FunMoments: React.FC = () => {
   const [readMore, setReadMore] = useState(false);
@@ -27,7 +28,7 @@ const FunMoments: React.FC = () => {
     },
   };
   return (
-    <div className="max-w-7xl mx-auto pb-6 md:pb-8 lg:pb-12">
+    <div className={combine(styles.container, "pb-6 md:pb-8 lg:pb-12")}>
       <div>
         <HeadingContent
           heading="Moments That Made Waves"
@@ -52,8 +53,7 @@ const FunMoments: React.FC = () => {
                 </div>
                 {/* Description immediately below */}
                 <p
-                  className={`pt-3 md:pt-0 px-3 md:px-4 vmd:pt-0 text-[12px] md:text-base lg:text-[19px] font-normal leading-[19px] md:leading-[22px] lg:leading-[24px] xl:leading-[26px] text-zinc-800 font-inter italic transition-all duration-300 ${!readMore ? "line-clamp-5 lg:line-clamp-none" : ""
-                    }`}
+                  className={combine("pt-3 md:pt-0 px-3 md:px-4  font-normal text-zinc-800 italic transition-all duration-300", styles.p3, !readMore ? "line-clamp-5 lg:line-clamp-none" : "")}
                 >
                   {item.desp}
                 </p>
@@ -78,7 +78,7 @@ const FunMoments: React.FC = () => {
                   width={56}
                   height={56}
                   className="rounded-full w-10 md:w-14 lg:w-17 xl:w-20 h-10 md:h-14 lg:h-17 xl:h-20" />
-                <p className="text-sm md:text-base lg:text-xl font-bold text-mustard font-sourceSansPro">
+                <p className={combine("font-bold text-mustard", styles.p3)}>
                   {item.author}
                 </p>
               </div>

@@ -5,7 +5,8 @@ import { SlCalender } from "react-icons/sl";
 import { IoBoatOutline } from "react-icons/io5";
 import PngIcons from "@/icons/pngIcon";
 import ContactUs from "./contactUs";
-import { Button } from "@/styles";
+import Button from "@/styles/Button";
+import { styles, combine } from "@/styles/style";
 import Sailing_Itinerary from "./sailing_Itineraries";
 import PricingSection from "./pricing";
 import CruiseDates from "./cruiseDates";
@@ -43,7 +44,7 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
         {/* Faint Background Map */}
         <div className="absolute inset-0 bg-[url('/images/map.png')] bg-no-repeat bg-center bg-cover opacity-10 z-0" />
         <div className="relative bg-white/80 z-10 py-0 sm:py-10 md:py-12 px-2 sm:px-4 md:px-4 lg:px-4 xl:px-8">
-          <div className="max-w-7xl mx-auto">
+          <div className={styles.container}>
             {/* Tabs */}
             <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-5 lg:gap-7 overflow-x-auto">
               {sectionTabs.map(({ label, icon: Icon, targetRef }) => (
@@ -66,21 +67,29 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
             {/* Intro */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-8 md:mt-10 pt-5 items-center">
               <div className="flex flex-col items-center md:items-start text-center md:text-start">
-                <p className="font-normal text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] font-sourceSanspro text-mustard">
+                <p className={combine("text-mustard font-playfair", styles.h5)}>
                   Island Odyssey
                 </p>
-                <p className="text-[26px] sm:text-[30px] md:text-[35px] lg:text-[48px] font-bold font-playfair text-zink py-2 sm:py-3 max-w-xl leading-snug">
+                <p className={combine(styles.h1, "font-bold text-zink py-2 sm:py-3 max-w-xl leading-snug")}>
                   6 Days of Seaside Bliss
                 </p>
-                <p className="font-normal text-[15px] sm:text-[16px] md:text-[17px] lg:text-[20px] font-inter text-zink pt-3 sm:pt-4 max-w-lg leading-relaxed">
+                <p className={combine("text-zink pt-3 sm:pt-4 max-w-lg leading-relaxed", styles.p3)}>
                   Sail through Thailand's island gems on a 6-day luxury cabin charter—discover hidden lagoons, vibrant reefs, and serene beaches from Phuket to Koh Rok and Phi Phi Leh.
                 </p>
-                <Button 
-                  variant="primary"
-                  className="mt-3 md:mt-6 flex items-center gap-2"
-                >
-                  Detail Itinerary
-                </Button>
+                <div className="flex justify-center">
+                  <Button
+                    variant="primary"
+                    onClick={() => {
+                      contactRef?.current?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                      });
+                    }}
+                    className="mt-3 md:mt-6 flex items-center gap-2"
+                  >
+                    Detail Itinerary
+                  </Button>
+                </div>
               </div>
               <div className="flex justify-center md:justify-end">
                 <img
@@ -97,9 +106,13 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
       <Thailand_BestLands />
       <Sailing_Itinerary sectionRef={itineraryRef} />
       <SailingDetails />
-      <PricingSection sectionRef={pricingRef} />
+      <PricingSection 
+        sectionRef={pricingRef} 
+        showContactButton={true} 
+        contactRef={contactRef} 
+      />
       <Price_Details />
-      <CruiseDates sectionRef={cruiseRef} />
+      <CruiseDates sectionRef={cruiseRef} contactRef={contactRef} />
       <FunMoments />
       <ComparisonChart />
       <FounderNote />

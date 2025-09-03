@@ -3,9 +3,10 @@ import { useState } from "react";
 import { priceDetail, ItineraryItem } from "@/data/cabincharter/priceDetail";
 import { IconType } from "react-icons";
 import HeadingContent from "@/common/heading";
+import { styles, combine } from "@/styles/style";
 
 const Price_Details = () => {
-    const [activeId, setActiveId] = useState<string | null>(null);
+    const [activeId, setActiveId] = useState<string | null>("1");
 
     const toggleItem = (id: string) => {
         setActiveId(prev => (prev === id ? null : id));
@@ -27,7 +28,7 @@ const Price_Details = () => {
                         <div className="bg-zink text-white p-2 rounded-lg flex items-center justify-center">
                             <Icon className="w-5 h-5" />
                         </div>
-                        <p className="font-bold text-[17px] md:text-[19px] lg:text-[22px] text-zink font-sourceSanspro">{item.place}</p>
+                        <p className={combine("font-bold text-zink", styles.p1)}>{item.place}</p>
                     </div>
                     <span className="text-2xl font-bold text-gray-400">{isActive ? "−" : "+"}</span>
                 </button>
@@ -37,7 +38,7 @@ const Price_Details = () => {
                         {item.itinerary?.map((entry, idx) =>
                             entry.description.map((desc, i) => (
                                 <p key={`${idx}-${i}`}
-                                    className="ms-3 text-base lg:text-lg xl:text-xl text-[#333333] font-normal font-sourceSansPro leading-tight flex items-start gap-2">
+                                    className={combine("ms-3 text-[#333333] leading-tight flex items-start gap-2", styles.p3)}>
                                     <span className="text-black font-bold">•</span>
                                     {desc}
                                 </p>
@@ -53,12 +54,12 @@ const Price_Details = () => {
     const rightColumn = priceDetail.filter(item => ["4", "5", "6"].includes(item.id));
     return (
         <section className="bg-[#E6ECED1A] py-12 px-4 lg:px-4 xl:px-8">
-            <div className="max-w-[78.2rem] mx-auto">
+            <div className={styles.containerLarge}>
                 {/* Heading */}
                 <div className="mb-12 ">
                     <HeadingContent
                         heading="Sailing Itinerary"
-                        description="A seamless route through the Andaman’s most iconic and secret escapes" />
+                        description="A seamless route through the Andaman's most iconic and secret escapes" />
                 </div>
                 {/* Itinerary Columns */}
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-5">

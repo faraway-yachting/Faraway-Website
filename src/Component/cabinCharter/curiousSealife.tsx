@@ -3,9 +3,10 @@
 import { useState } from "react";
 import { Sealife } from "@/data/cabincharter/saelife";
 import { RefObject } from "react";
+import { styles, combine } from "@/styles/style";
 
 interface SealifeFAQProps {
-    sectionRef: RefObject<HTMLDivElement | null>; 
+  sectionRef: RefObject<HTMLDivElement | null>;
 }
 const SealifeFAQ = ({ sectionRef }: SealifeFAQProps) => {
   const [activeId, setActiveId] = useState<number | null>(0);
@@ -19,10 +20,10 @@ const SealifeFAQ = ({ sectionRef }: SealifeFAQProps) => {
 
   return (
     <section ref={sectionRef} className="bg-white py-8 md:py-10 lg:py-12 px-4 lg:px-5 xl:px-8">
-      <div className="max-w-[78.2rem] mx-auto">
+      <div className={styles.containerLarge}>
         {/* Heading */}
-        <div className="mb-12 flex justify-center flex-col items-center">
-          <h2 className="text-[24px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-playfair text-zink font-semibold mb-1">
+        <div className="flex justify-center flex-col items-center mb-12">
+          <h2 className={combine(styles.h2, "text-zink font-semibold mb-1")}>
             FAQS About Sailing
           </h2>
           <img
@@ -30,7 +31,7 @@ const SealifeFAQ = ({ sectionRef }: SealifeFAQProps) => {
             alt="Divider"
             className="w-[500px] my-3 mx-auto"
           />
-          <p className="text-zink text-[18px] md:text-[20px] lg:text-[24px] font-normal font-sourceSanspro text-center md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto">
+          <p className={combine(styles.p3, "text-zink text-center font-normal md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto")}>
             Frequently asked questions about your sailing adventure
           </p>
         </div>
@@ -51,9 +52,9 @@ const SealifeFAQ = ({ sectionRef }: SealifeFAQProps) => {
                     <button
                       type="button"
                       onClick={() => toggleItem(acutalIndex)}
-                      className="flex justify-between items-center w-full p-2 md:p-3 lg:p-4 cursor-pointer text-left"
+                      className="flex justify-between items-center w-full pb-3 pt-3 px-2 md:px-3 lg:px-4 cursor-pointer text-left"
                     >
-                      <p className="font-bold text-base lg:text-xl text-zink font-sourceSanspro max-w-lg h-auto md:h-10 lg:h-14">
+                      <p className={combine("font-semibold text-zink max-w-lg", styles.p1)}>
                         {item.place}
                       </p>
                       <span className="text-2xl font-bold text-gray-400">
@@ -63,7 +64,7 @@ const SealifeFAQ = ({ sectionRef }: SealifeFAQProps) => {
 
                     {isOpen && (
                       <div className="px-4 pb-6">
-                        <p className="text-zink font-sourceSansPro text-base lg:text-lg">
+                        <p className={combine("text-zink", styles.p2)}>
                           {item.description}
                         </p>
                       </div>
@@ -78,5 +79,4 @@ const SealifeFAQ = ({ sectionRef }: SealifeFAQProps) => {
     </section>
   );
 };
-
 export default SealifeFAQ;

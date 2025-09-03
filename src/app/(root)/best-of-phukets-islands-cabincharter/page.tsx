@@ -10,7 +10,7 @@ const CabinCharter = () => {
   return (
     <Fragment>
       <HeroSection contactRef={contactRef} />
-      <About />
+      <About showContactButton={true} contactRef={contactRef} />
       <SeaSide_Sixdays contactRef={contactRef} />
     </Fragment>
   );
