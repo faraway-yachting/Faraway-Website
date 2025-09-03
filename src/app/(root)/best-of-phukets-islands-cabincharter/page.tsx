@@ -5,11 +5,13 @@ import About from "@/Component/cabinCharter/about";
 import SeaSide_Sixdays from "@/Component/cabinCharter/seaside_bliss";
 
 const CabinCharter = () => {
+  const contactRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <Fragment>
-      <HeroSection />
+      <HeroSection contactRef={contactRef} />
       <About />
-      <SeaSide_Sixdays />
+      <SeaSide_Sixdays contactRef={contactRef} />
     </Fragment>
   );
 };

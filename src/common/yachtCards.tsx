@@ -111,7 +111,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
     <div className="mb-8 mx-4 lg:mx-0">
       <div className="mb-10">
         <HeadingContent
-          heading="Featured Yachts"
+          heading="Featured Yachts in Phuket"
           description="Let the waves guide you to elegance, adventure, and pure relaxation!"
         />
       </div>

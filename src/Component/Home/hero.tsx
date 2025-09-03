@@ -6,7 +6,7 @@ const HeroContent = () => {
   const { bgImage, minH1, top1, w1, w2, flexCenter, flexCol, h1, my1, containerXl, flexBetween, p1 } = styles;
 
   return (
-    <section className={combine(bgImage, "bg-[url('/images/homeimg1.png')]", minH1, "flex justify-center")}>
+    <section className={combine(bgImage, "bg-[url('/images/homeimg1.png')] min-h-[57vh] md:min-h-[80vh] lg:min-h-[72vh] xl:min-h-[82vh] flex justify-center")}>
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#034250]/50 z-0" />
 

@@ -31,9 +31,9 @@ const JoinUs: React.FC<JoinUsProps> = ({
       <div className="absolute inset-0 bg-[#012A50]/40 z-0" />
 
       <div className="relative z-20 text-center">
-        <p className={combine("text-white font-playfair font-extrabold", styles.h3)}>
+        <h2 className={combine("text-white font-playfair font-extrabold", styles.h3)}>
           WHAT ARE YOU WAITING FOR?
-        </p>
+        </h2>
         <p className={combine("text-white  pt-5 sm:pt-6 max-w-4xl mx-auto font-medium leading-relaxed", styles.p1)}>
           Secure your private yacht in Phuket today and dive into the heart of
           the mesmerizing Phuket islands. With Faraway Yachting Co. Ltd., you're

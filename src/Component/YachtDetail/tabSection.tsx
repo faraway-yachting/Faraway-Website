@@ -53,7 +53,7 @@ const TabSection: React.FC<Props> = ({ data }) => {
             key={index}
             className="border border-mustard px-2 lg:px-3 xl:px-4 py-2 xl:py-3 rounded-md bg-white text-center inline-flex flex-col items-center shadow-sm"
           >
-            <div className="text-zink flex flex-col items-center gap-2">
+            <div className="text-mustard flex flex-col items-center gap-2">
               <Icon size={24} />
               <p className="text-sm lg:text-[15px] font-bold font-sourceSansPro text-zink leading-snug text-center">
                 {title}

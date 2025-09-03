@@ -19,7 +19,7 @@ export const styles = {
   text1: "text-sm md:text-base lg:text-lg",
   gap1: "gap-8 lg:gap-12",
   // bg Styling
-  bgImage: "relative w-full bg-cover bg-end bg-no-repeat overflow-hidden",
+  bgImage: "relative w-full bg-cover bg-center bg-no-repeat overflow-hidden",
   grid3Col: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-15",
   grid4Col: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-8 xl:gap-15",
   grid2Col: "grid grid-cols-1 md:grid-cols-2 gap-8",
