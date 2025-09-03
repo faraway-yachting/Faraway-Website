@@ -3,7 +3,7 @@ import { WhyData } from "@/data/why";
 import PngIcons from "@/icons/pngIcon";
 import { styles, combine } from "@/styles";
 
-const Why = () => {
+const BookwithUs = () => {
     const { w3, px5, h5,container, containerLarge, grid3Col, flexCenter, h3, p2 } = styles;
 
     return (
@@ -22,7 +22,7 @@ const Why = () => {
                 </div>
                 <div className={combine("relative py-[50px]", container)}>
                     <HeadingContent
-                        heading="Why Book With Us"
+                        heading="Why to book a yacht with us in Phuket?"
                         description="Enjoy AI-powered yacht recommendations, real-time availability, and secure bookings for a seamless luxury experience." />
                     <div className={containerLarge}>
                         <div className={combine(grid3Col, "mt-10")}>
@@ -52,4 +52,4 @@ const Why = () => {
     );
 };
 
-export default Why;
+export default BookwithUs;

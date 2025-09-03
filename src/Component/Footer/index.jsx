@@ -46,7 +46,7 @@ const Footer = () => {
       <div className="px-4 sm:px-6 lg:px-8 xl:px-0 lg:max-w-[78.2rem] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 py-8 mb-14 font-sourceSansPro">
         {/* Column 1 */}
         <div className="lg:col-span-3 xl:col-span-4">
-          <h3 className={heading}>Faraway Yachting Co. Ltd.</h3>
+          <p className={heading}>Faraway Yachting Co. Ltd.</p>
           <div className="flex items-start gap-3 mb-2">
             <a
               href="tel:66612345623"
@@ -99,19 +99,19 @@ const Footer = () => {
 
         {/* Column 2: Quick Links */}
         <div className="lg:col-span-3 xl:col-span-2">
-          <h3 className={heading}>Quick Links</h3>
+          <p className={heading}>Quick Links</p>
           <ul className="space-y-3">{renderLinks(quickLinks)}</ul>
         </div>
 
         {/* Column 3: Useful Links */}
         <div className="lg:col-span-3 xl:col-span-2">
-          <h3 className={heading}>Useful Links</h3>
+          <p className={heading}>Useful Links</p>
           <ul className="space-y-3">{renderLinks(usefulLinks)}</ul>
         </div>
 
         {/* Column 4: Subscribe */}
         <div className="lg:col-span-3 xl:col-span-4">
-          <h3 className={heading}>Subscribe</h3>
+          <p className={heading}>Subscribe</p>
           <p className="text-[16px] font-normal mb-4">
             Subscribe to our newsletter to stay up-to-date with the latest
             news, promotions, and insider tips on Phuket yacht charters!

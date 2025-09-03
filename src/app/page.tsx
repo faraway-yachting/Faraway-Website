@@ -8,7 +8,7 @@ import TodaysAdventure from "@/Component/Home/todaysAdventure";
 import FunMoments from "@/Component/cabinCharter/moments";
 import Sailingyacht_Phuket from "@/Component/Home/yachtinPhuket";
 import { Fragment } from "react";
-import Why from "@/Component/Home/setDeal";
+import BookwithUs from "@/Component/Home/setDeal";
 
 export default function Home() {
   return (
@@ -16,13 +16,12 @@ export default function Home() {
       <HeroSection />
       <About />
       <TodaysAdventure />
-     <Why />
+      <BookwithUs />
       <PrivateYacht_Tour />
       <Sailingyacht_Phuket />
       <ExploreThailand />
       <FunMoments />
       <Destinations_Section />
-      
     </Fragment>
   );
 }

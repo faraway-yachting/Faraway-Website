@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fetchYachts } from "@/lib/api";
+import axios from "axios";
 import Gallery from "./gallery";
 import VideoSection from "./videoSection";
 import TabSection from "./tabSection";
 import ContactDetail from "./contactDetail";
 import YachtAdventure from "../Charter/yachtAdventure";
+import { combine, styles } from "@/styles";
 
 interface HeroProps {
   slug: string;
@@ -38,12 +39,7 @@ export interface Yacht {
 
 const slugify = (text: string | undefined | null): string => {
   if (!text) return "";
-  return text
-    .toLowerCase()
-    .replace(/ *\([^)]*\) */g, "")
-    .replace(/[^a-z0-9 ]/g, "")
-    .replace(/\s+/g, "-")
-    .trim();
+  return text;  
 };
 const HeroSection: React.FC<HeroProps> = ({ slug }) => {
   const [data, setData] = useState<Yacht | null>(null);
@@ -53,8 +49,8 @@ const HeroSection: React.FC<HeroProps> = ({ slug }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetchYachts();
-        const allYachts: Yacht[] = res.data.yachts;
+        const res = await axios.get("https://awais.thedevapp.online/yacht/all-yachts");
+        const allYachts: Yacht[] = res.data.data.yachts;
 
         const matched = allYachts.find(
           (boat) => slugify(boat.slug) === slugify(slug)
@@ -88,14 +84,12 @@ const HeroSection: React.FC<HeroProps> = ({ slug }) => {
   }
   return (
     <div>
-
       <div className="max-w-[78.2rem] mx-auto px-4 xl:px-0">
-      <p className="text-base md:text-lg text-mustard font-semibold mt-6">{data.slug}</p>
-
-        <p className="text-[32px] font-playfair font-bold text-zink ">{data.title}</p>
+        <p className="text-[32px] font-playfair font-bold text-zink mt-6 ">{data.title}</p>
         <div className="flex flex-col md:flex-row gap-5 mt-6">
           <div className="w-full md:w-[70%]">
             <Gallery data={data} />
+            <p className={combine(" text-zink font-semibold",styles.h1)}>{data.slug}</p>
             <TabSection data={data} />
           </div>
           <div className="w-full md:w-[30%] sticky top-[8rem]">

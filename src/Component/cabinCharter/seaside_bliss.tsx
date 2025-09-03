@@ -17,9 +17,14 @@ import Price_Details from "@/Component/cabinCharter/pricingDetail";
 import FunMoments from "@/Component/cabinCharter/moments";
 import ComparisonChart from "@/Component/cabinCharter/moments2Remember";
 import FounderNote from "@/Component/cabinCharter/ourFounder";
-const SeaSide_Sixdays = () => {
+
+interface SeaSide_SixdaysProps {
+  contactRef?: React.RefObject<HTMLDivElement | null>;
+}
+
+const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) => {
   // Section Refs
-  const contactRef = useRef<HTMLDivElement | null>(null);
+  const contactRef = propContactRef || useRef<HTMLDivElement | null>(null);
   const itineraryRef = useRef<HTMLDivElement | null>(null);
   const pricingRef = useRef<HTMLDivElement | null>(null);
   const cruiseRef = useRef<HTMLDivElement | null>(null);

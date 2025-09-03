@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-
 import {DM_Serif_Display} from "next/font/google";
 import {Plus_Jakarta_Sans} from "next/font/google";
 import "slick-carousel/slick/slick.css";
@@ -9,6 +8,7 @@ import Navbar from "@/Component/Navbar";
 import Header from "@/Component/Header";
 import Licence from "@/Component/Licence";
 import Footer from "@/Component/Footer";
+import WhatsAppIcon from "@/Component/WhatsAppIcon";
 
 const DMSerifDisplay = DM_Serif_Display({
   variable: "--font-dm-serif-display",
@@ -53,6 +53,7 @@ export default function RootLayout({
         </main>
         <Licence />
         <Footer />
+        <WhatsAppIcon />
       </body>
     </html>
   );

@@ -1,6 +1,8 @@
 import PngIcons from "@/icons/pngIcon";
 import { styles, combine } from "@/styles/style";
 import Button from "@/styles/Button";
+import { FiPhone } from "react-icons/fi";
+import { RefObject } from "react";
 
 type HeroSectionProps = {
   heading: string;
@@ -9,6 +11,8 @@ type HeroSectionProps = {
   dividerImage?: string;
   button?: string;
   buttontext?: string;
+  contactRef?: RefObject<HTMLDivElement | null>;
+  showContactButton?: boolean;
 };
 
 const HeroContent: React.FC<HeroSectionProps> = ({
@@ -18,6 +22,8 @@ const HeroContent: React.FC<HeroSectionProps> = ({
   dividerImage = PngIcons.rframe2,
   button,
   buttontext,
+  contactRef,
+  showContactButton = false,
 }) => {
   return (
     <section
@@ -31,9 +37,9 @@ const HeroContent: React.FC<HeroSectionProps> = ({
       <div className={combine(styles.flexCenter, "h-full text-center text-white relative z-10", styles.px1)}>
         <div className={combine(styles.flexCol, "justify-center items-center max-w-4xl mx-auto")}>
           {/* Title Text */}
-          <h2 className={combine(styles.h2, "font-semibold font-playfair mb-4 leading-tight md:max-w-2xl lg:max-w-2xl w-full")}>
+          <h1 className={combine(styles.h1, "font-semibold font-playfair mb-4 leading-tight md:max-w-2xl lg:max-w-2xl w-full")}>
             {heading}
-          </h2>
+          </h1>
           {dividerImage && (
             <img
               src={dividerImage}
@@ -47,13 +53,34 @@ const HeroContent: React.FC<HeroSectionProps> = ({
           {button && buttontext && (
             <div className="mt-9">
               <Button variant="primary">
-                {buttontext}
+                <div className="flex items-center">
+                  <FiPhone className="mr-2" />
+                  {buttontext}
+                  </div>
               </Button>
             </div>
           )}
-        </div>
-      </div>
-    </section>
+          {showContactButton && contactRef && (
+            <div className="mt-9">
+              <Button 
+                variant="primary"
+                onClick={() => {
+                  contactRef?.current?.scrollIntoView({ 
+                    behavior: "smooth", 
+                    block: "start" 
+                  });
+                }}
+              >
+                <div className="flex items-center">
+                  <FiPhone className="mr-4" />
+                  Book Us
+                </div>
+              </Button>
+            </div>
+          )}
+    </div>
+      </div >
+    </section >
   );
 };
 

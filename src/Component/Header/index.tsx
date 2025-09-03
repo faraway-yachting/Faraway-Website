@@ -10,7 +10,7 @@ const Header = () => {
             <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto text-white text-sm px-4 xl:px-3 py-4">
                 <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 lg:gap-6">
                     <a
-                        href="tel:66612345623"
+                        href="tel:+66612345623"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center text-sm gap-2"

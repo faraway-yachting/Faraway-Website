@@ -194,7 +194,7 @@ var PngIcons = {
     crewedimg2: "/images/crewedadv2.png",
     crewedimg3: "/images/crewedadv3.png",
     crewedimg4: "/images/crewedadv4.png",
-
+    crewedimg5: "/images/crewedadv5.png",
     //Policy Page
     policyimg2: "/images/policyimg2.png",
     policyimg3: "/images/policyimg3.png",
