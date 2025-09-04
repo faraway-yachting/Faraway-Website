@@ -80,6 +80,13 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
         });
 
         setData(filteredYachts);
+        
+        // Set visible count based on page - only limit on home page
+        if (normalizedPath === "/") {
+          setVisibleCount(9);
+        } else {
+          setVisibleCount(filteredYachts.length);
+        }
       } catch (err: any) {
         setError(err?.response?.data?.message || "Failed to fetch yachts.");
       } finally {
@@ -203,7 +210,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
             onClick={() => router.push("/yacht-charter-phuket")}
             variant="primary"
           >
-            Show More
+            Explore All Yachts
           </Button>
         </div>
       )}
