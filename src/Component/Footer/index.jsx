@@ -88,7 +88,7 @@ const Footer = () => {
             {[
               { Icon: FaFacebookF, href: "https://www.facebook.com/FarawayYachting" },
               { Icon: FaInstagram, href: "https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Ffarawayyachting%2F%3Ffbclid%3DIwAR0iAzKhJjfT0NVO5X5tKjjJ-uwaWQ4m6DQ03l9vQiGxJ8Q7OJQQByekk54&is_from_rle" },
-              { Icon: FaWhatsapp, href: "https://tel:66612345623" },
+              { Icon: FaWhatsapp, href: "https://api.whatsapp.com/send/?phone=66612345623&text&type=phone_number&app_absent=0" },
               { Icon: FaLine, href: "https://line.me/ti/p/@farawayyachting" }
             ].map(({ Icon, href }, idx) => (
               <a
