@@ -3,9 +3,8 @@ const Destinations_Section = () => {
   //  Array Data
   const data = [
     {
-      label: "Private yacht in Private yacht in phuket",
-      Description:
-        "At Faraway Yachting Co. Ltd., we understand that your holiday is a special time, and we want to make it as unique and unforgettable as possible. That's why we offer a wide range of private yacht charters in Phuket, tailored to your individual needs and interests. Our private yacht charters are the perfect way to explore the stunning islands and coastline of Phuket. With our experienced and knowledgeable crew, you can be sure that you're in good hands every step of the way."
+      label: "Private yacht in phuket",
+      Description: "At Faraway Yachting Co. Ltd., we understand that your holiday is a special time, and we want to make it as unique and unforgettable as possible. That's why we offer a wide range of private yacht charters in Phuket, tailored to your individual needs and interests. Our private yacht charters are the perfect way to explore the stunning islands and coastline of Phuket. With our experienced and knowledgeable crew, you can be sure that you're in good hands every step of the way."
     },
     {
       label: "Bareboat charter phuket",
