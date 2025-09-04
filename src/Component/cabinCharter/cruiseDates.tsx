@@ -9,11 +9,9 @@ interface CruiseDatesProps {
     sectionRef: RefObject<HTMLDivElement | null>;
     contactRef?: RefObject<HTMLDivElement | null>;
 }
-
 const CruiseDates = ({ sectionRef, contactRef }: CruiseDatesProps) => {
     const [activeTab, setActiveTab] = useState<"1" | "2">("1");
     const data = cruiseDates.find((c) => c.id === activeTab);
-
     const tabs = [
         { id: "1", label: "Two Person in Double Cabin" },
         { id: "2", label: "Single Person in Double Cabin" }
@@ -43,7 +41,7 @@ const CruiseDates = ({ sectionRef, contactRef }: CruiseDatesProps) => {
                             onClick={() => setActiveTab(tab.id as "1" | "2")}
                             className={`${baseTabClasses} ${activeTab === tab.id ? activeTabClasses : inactiveTabClasses}`}
                         >
-                            {tab.label}
+                          <h5 className="text-zink"> {tab.label} </h5> 
                             <p className={priceLabelClasses}>(price per person)</p>
                         </button>
                     ))}

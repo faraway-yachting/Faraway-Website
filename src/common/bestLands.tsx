@@ -18,9 +18,9 @@ const BestLands: React.FC<Props> = ({ data }) => {
     <section className={combine("relative py-12 bg-[#FCFCFC]", styles.px1, styles.container)}>
       {/* Title */}
       <div>
-        <p className={combine(styles.h2, "font-playfair text-zink font-extrabold md:mb-5 lg:mb-8 text-center")}>
+        <h2 className={combine(styles.h2, "font-playfair text-zink font-extrabold md:mb-5 lg:mb-8 text-center")}>
           Phuket Yacht Charter Adventures
-        </p>
+        </h2>
       </div>
 
       {/* Decorative Images */}

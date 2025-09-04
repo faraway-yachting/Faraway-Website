@@ -197,7 +197,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
           </div>
         ))}
       </div>
-      {pathname === "/" && (
+      {data.length >= 9 && (
         <div className="flex justify-center mt-10">
           <Button
             onClick={() => router.push("/yacht-charter-phuket")}

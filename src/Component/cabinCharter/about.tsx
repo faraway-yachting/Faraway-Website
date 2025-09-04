@@ -28,9 +28,9 @@ const About = ({ showContactButton = true, contactRef }: AboutProps) => {
                             <p className="text-center font-normal text-[16px] sm:text-[18px] md:text-[20px] font-sourceSanspro uppercase text-[#B4C7CB]">
                                 Sail Into Serenity
                             </p>
-                            <p className={combine(styles.h2, "text-zink uppercase", styles.py2)}>
+                            <h2 className={combine(styles.h2, "text-zink uppercase", styles.py2)}>
                                 The best cabin charter in Thailand
-                            </p>
+                            </h2>
                             <p className={combine(styles.h5, "font-playfair text-mustard uppercase font-semibold")}>
                                 Escape. Unwind. Explore
                             </p>

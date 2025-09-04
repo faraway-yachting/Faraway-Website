@@ -9,9 +9,9 @@ const HeroSection = () => {
           <p className="text-white font-extrabold font-playfair text-[18px] md:text-[24px] xl:text-[28px]">
             DESTINATIONS
           </p>
-          <p className="text-white font-normal font-playfair pt-4 text-[28px] md:text-[44px] lg:text-[48px] xl:text-[56px] leading-tight">
+          <h1 className="text-white font-normal font-playfair pt-4 text-[28px] md:text-[44px] lg:text-[48px] xl:text-[56px] leading-tight">
             Our Destinations In Phuket
-          </p>
+          </h1>
         </div>
       </div>
 

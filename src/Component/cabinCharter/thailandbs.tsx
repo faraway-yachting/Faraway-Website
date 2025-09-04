@@ -56,9 +56,9 @@ const Thailand_BestLands = () => {
                                         alt={island.title}
                                         className="w-full h-[300px] md:h-[350px] lg:h-[350px] xl:h-[440px] object-cover rounded-lg"
                                     />
-                                    <div className={combine("absolute bottom-11 md:bottom-13 lg:bottom-17 xl:bottom-20 left-5 text-white font-extrabold drop-shadow-lg", styles.h3)}>
+                                    <h3 className={combine("absolute bottom-11 md:bottom-13 lg:bottom-17 xl:bottom-20 left-5 text-white font-extrabold drop-shadow-lg", styles.h3)}>
                                         {island.title}
-                                    </div>
+                                    </h3>
                                 </div>
                             </div>
                         </div>

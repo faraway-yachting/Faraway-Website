@@ -5,6 +5,9 @@ import HeroSection from "@/Component/Charter/hero";
 import YachtMatchmaker from "@/Component/Charter/matchMark";
 import YachtAdventure from "@/Component/Charter/yachtAdventure";
 import { Fragment } from "react";
+import { bareboatMetadata } from "@/lib/metadata";
+
+export const metadata = bareboatMetadata;
 
 export default function bareBoat_Charter() {
   return (

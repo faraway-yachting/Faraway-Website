@@ -1,17 +1,17 @@
-"use client";
-import { Fragment, useRef } from "react";
+import { Fragment } from "react";
 import HeroSection from "@/Component/cabinCharter/hero";
 import About from "@/Component/cabinCharter/about";
 import SeaSide_Sixdays from "@/Component/cabinCharter/seaside_bliss";
+import { cabinCharterMetadata } from "@/lib/metadata";
+
+export const metadata = cabinCharterMetadata;
 
 const CabinCharter = () => {
-  const contactRef = useRef<HTMLDivElement | null>(null);
-
   return (
     <Fragment>
-      <HeroSection contactRef={contactRef} />
-      <About showContactButton={true} contactRef={contactRef} />
-      <SeaSide_Sixdays contactRef={contactRef} />
+      <HeroSection />
+      <About showContactButton={true} />
+      <SeaSide_Sixdays />
     </Fragment>
   );
 };

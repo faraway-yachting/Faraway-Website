@@ -30,12 +30,12 @@ const PricingSection = ({ sectionRef, showContactButton, contactRef }: PricingSe
               className="border border-gray-200 bg-white p-3 xl:p-6 rounded-xl shadow-sm hover:shadow-md hover:border-[#D6AB62] transition duration-200 flex flex-col justify-between"
             >
               <div>
-                <h3 className={combine( "text-[13px] lg:text-[14px] xl:text-[15px] font-medium text-mustard mb-2 leading-tight")}>
+                <p className={combine( "text-[13px] lg:text-[14px] xl:text-[15px] font-medium text-mustard mb-2 leading-tight")}>
                   {option.title}
-                </h3>
-                <p className={combine("text-zink font-bold leading-none text-[20px] md:text-[22px] lg:text-[24px] xl:text-[28px]")}>
-                  From {option.price}
                 </p>
+                <h4 className={combine("text-zink font-bold leading-none text-[20px] md:text-[22px] lg:text-[24px] xl:text-[28px]")}>
+                  From {option.price}
+                </h4>
                 <p className={combine(styles.p4, "text-zink font-semibold", styles.mb1)}>{option.per}</p>
                 <div className={combine("flex items-center gap-2", styles.mb1)}>
                   <p className="w-8 border-b-2 border-mustard"></p>

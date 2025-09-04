@@ -43,7 +43,7 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
       <div className="relative my-6 sm:my-8 md:my-10">
         {/* Faint Background Map */}
         <div className="absolute inset-0 bg-[url('/images/map.png')] bg-no-repeat bg-center bg-cover opacity-10 z-0" />
-        <div className="relative bg-white/80 z-10 py-0 sm:py-10 md:py-12 px-2 sm:px-4 md:px-4 lg:px-4 xl:px-8">
+        <div className="relative bg-white/80 z-10 py-0 sm:py-10 md:py-10 px-2 sm:px-4 md:px-4 lg:px-4 xl:px-8">
           <div className={styles.container}>
             {/* Tabs */}
             <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-5 lg:gap-7 overflow-x-auto">
@@ -70,9 +70,9 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
                 <p className={combine("text-mustard font-playfair", styles.h5)}>
                   Island Odyssey
                 </p>
-                <p className={combine(styles.h1, "font-bold text-zink py-2 sm:py-3 max-w-xl leading-snug")}>
+                <h2 className={combine(styles.h2, "font-bold text-zink py-2 sm:py-2 max-w-xl leading-snug")}>
                   6 Days of Seaside Bliss
-                </p>
+                </h2>
                 <p className={combine("text-zink pt-3 sm:pt-4 max-w-lg leading-relaxed", styles.p3)}>
                   Sail through Thailand's island gems on a 6-day luxury cabin charter—discover hidden lagoons, vibrant reefs, and serene beaches from Phuket to Koh Rok and Phi Phi Leh.
                 </p>
@@ -95,7 +95,7 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
                 <img
                   src={PngIcons.sixPlaces}
                   alt="Charter Map"
-                  className="w-full max-w-xs sm:max-w-sm md:max-w-sm lg:max-w-md xl:max-w-xl max-h-[390px] md:max-h-[410px] lg:max-h-[470px] xl:max-h-[580px]"
+                  className="w-full max-w-xs sm:max-w-sm md:max-w-sm lg:max-w-md xl:max-w-xl max-h-[390px] md:max-h-[410px] lg:max-h-[470px] xl:max-h-[550px]"
                 />
               </div>
             </div>
