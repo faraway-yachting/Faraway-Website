@@ -1,35 +1,31 @@
 import React from "react";
+import { styles, combine } from "@/styles/style";
+
 export default function FounderNote() {
-    const commonTextStyle = "text-base lg:text-lg xl:text-xl";
-    const commonHeadingStyle = "text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-playfair text-zink font-bold";
-    const commonSubtitleStyle = "text-lg md:text-xl lg:text-2xl font-normal";
-    const commonMarginStyle = "mb-2 lg:mb-4 xl:mb-6";
-    const commonContainerStyle = "flex-1 max-w-2xl text-center md:text-left";
-    
     return (
-        <section className="bg-white py-16 px-4 xl:px-0">
-            <div className="max-w-[78.2rem] mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+        <section className={combine("bg-white py-16", styles.px1)}>
+            <div className={combine(styles.containerLarge, "grid grid-cols-1 md:grid-cols-2 items-center gap-10")}>
                 {/* Left: Text */}
-                <div className={commonContainerStyle}>
-                    <div className="flex items-center justify-center md:justify-start gap-2 mb-2 xl:mb-4">
+                <div className="flex-1 max-w-2xl text-center md:text-left">
+                    <div className={combine("flex items-center justify-center md:justify-start gap-2", styles.mb1)}>
                         <div className="w-8 border-b-2 border-mustard hidden md:block"></div>
-                        <p className={`text-mustard ${commonSubtitleStyle} sourceSansPro`}>
+                        <p className={combine("text-mustard", styles.h5)}>
                             Why We Sail Differently
                         </p>
                     </div>
-                    <h2 className={`${commonHeadingStyle} mb-3 md:mb-4 text-center md:text-left`}>
+                    <h2 className={combine(styles.h2, styles.mb1, "text-center text-zink md:text-left")}>
                         A Note from Our Founder
                     </h2>
-                    <p className={`text-zink font-inter font-normal ${commonTextStyle} ${commonMarginStyle}`}>
+                    <p className={combine("text-zink", styles.p2, styles.mb1)}>
                         Skip the crowds, sail smarter. With 20+ years at sea and a passion for hidden gems, I created this itinerary to give you the best of Thailand's islands—clear waters, quiet beaches, and golden hours without the speedboat rush.
                     </p>
-                    <p className={`text-zink font-inter font-normal ${commonTextStyle} ${commonMarginStyle}`}>
+                    <p className={combine("text-zink mb-2 lg:mb-4 xl:mb-6", styles.p2)}>
                         While others stick close to shore, we go further for unforgettable views and a truly exclusive experience. I look forward to welcoming you aboard!
                     </p>
-                    <p className={`text-mustard font-inter font-bold mb-1 ${commonTextStyle} `}>
+                    <p className={combine("text-mustard font-bold mb-1", styles.p2)}>
                         Sunny regards from Phuket
                     </p>
-                    <p className={`text-zink font-inter font-bold font-poppins ${commonTextStyle} `}>
+                    <p className={combine("text-zink font-bold", styles.p2)}>
                         Wolfgang Riessbacher
                     </p>
                 </div>

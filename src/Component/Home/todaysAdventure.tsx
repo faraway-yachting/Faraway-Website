@@ -13,11 +13,11 @@ const TodaysAdventure = () => {
                         <h2 className={combine("text-white mt-0 xl:mt-2 leading-tight", styles.h3)}>
                             Book Your Phuket Sailing Adventure Today
                         </h2>
-                        <p className={combine("text-center max-w-[26rem] text-white leading-[1.4rem]font-sourceSansPro", styles.p2, styles.mt3,)}>
+                        <p className={combine("text-left max-w-[26rem] text-white leading-[1.4rem]font-sourceSansPro", styles.p2, styles.mt3,)}>
                             Embark on an extraordinary journey in Phuket's breathtaking waters with Far Away Yacht Charters, experiencing the pinnacle of luxury. Explore their lavish
                             fleet of luxury yacht phuket and delight in unparalleled beauty and elegance. Call us now !
                         </p>
-                        <div className={combine(styles.flexCenter, styles.mt2)}>
+                        <div className={combine("flex items-center", styles.mt2)}>
                             <Button
                                 variant="primary"
                             >

@@ -7,12 +7,12 @@ export const styles = {
   h2: "text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-semibold font-playfair",
   h3: "text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px] font-playfair ",
   h4: "text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] font-sourceSansPro",
-  h5: "text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-sourceSansPro",
+  h5: "text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] ",
   h6: "text-[18px] md:text-[20px] lg:text-[22px] font-normal font-playfair",
 
   // P tags - Same styling everywhere (3 sizes with responsiveness)
-  
-  p1: "text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] font-inter",
+
+  p1: "text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px]",
   p2: "text-[14px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-inter",
   p3: "text-[15px] md:text-[14px] lg:text-[18px] xl:text-[19px] font-inter",
   p4: "text-[12px] md:text-[14px] lg:text-[16px] xl:text-[16px]  font-inter",

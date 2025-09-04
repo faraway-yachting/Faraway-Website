@@ -4,7 +4,7 @@ import { highSeason, greenSeason, ItineraryItem } from "@/data/destination/itine
 import { styles, combine } from "@/styles";
 
 const ItinerarySection = () => {
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState<string | null>("high-1");
 
   const toggleItem = (id: string) => setActiveId(prev => prev === id ? null : id);
 

@@ -18,10 +18,10 @@ const Licence = () => {
       <div className="flex flex-col justify-center items-center text-center mb-6 px-4">
         <Link href="/terms-and-conditions">
           <p className="text-[21px] font-bold mb-2 underline text-zink xl:text-[24px] uppercase">
-            Booking terms and conditions
+            Booking terms and conditions          
           </p>
         </Link>
-        <Image
+        <Image                                                 
           src={PngIcons.Certificate1}
           height={100}
           width={150}

@@ -197,12 +197,11 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
           </div>
         ))}
       </div>
-
-      {hasMore && (
+      {pathname === "/" && (
         <div className="flex justify-center mt-10">
           <Button
-            onClick={() => setVisibleCount((prev) => prev + 6)}
-            variant="secondary"
+            onClick={() => router.push("/yacht-charter-phuket")}
+            variant="primary"
           >
             Show More
           </Button>
@@ -211,5 +210,4 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
     </div>
   );
 };
-
 export default YachtCards;

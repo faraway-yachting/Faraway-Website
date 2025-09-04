@@ -2,18 +2,20 @@
 import { LuAnchor } from "react-icons/lu";
 import { GoCheckCircle } from "react-icons/go";
 import HeadingContent from "@/common/heading";
-import { RefObject } from "react";
 import { pricingOptions } from "@/data/cabincharter/momentsData";
-import { Button } from "@/styles";
+import Button from "@/styles/Button";
+import { styles, combine } from "@/styles/style";
 
 interface PricingSectionProps {
-    sectionRef: RefObject<HTMLDivElement | null>;
+  sectionRef?: React.RefObject<HTMLElement | null>;
+  showContactButton?: boolean;
+  contactRef?: React.RefObject<HTMLElement | null>;
 }
 
-const PricingSection = ({ sectionRef }: PricingSectionProps) => {
+const PricingSection = ({ sectionRef, showContactButton, contactRef }: PricingSectionProps) => {
   return (
     <section ref={sectionRef} className="bg-[#E6ECED1A] py-5 md:py-8 px-14 md:px-16 lg:px-4 xl:px-0">
-      <div className="max-w-[78.2rem] mx-auto">
+      <div className={styles.containerLarge}>
         <div className="text-center mb-12">
           <HeadingContent
             heading="Pricing"
@@ -28,21 +30,20 @@ const PricingSection = ({ sectionRef }: PricingSectionProps) => {
               className="border border-gray-200 bg-white p-3 xl:p-6 rounded-xl shadow-sm hover:shadow-md hover:border-[#D6AB62] transition duration-200 flex flex-col justify-between"
             >
               <div>
-                <h3 className="text-[16px] xl:text-[15px] font-semiboldfont-sourceSansPro text-mustard mb-2 leading-tight">
+                <h3 className={combine( "text-[13px] lg:text-[14px] xl:text-[15px] font-medium text-mustard mb-2 leading-tight")}>
                   {option.title}
                 </h3>
-                <p className="text-zink md:text-[26px] lg:text-[28px] text-[32px] font-sourceSansPro font-bold leading-none">
+                <p className={combine("text-zink font-bold leading-none text-[20px] md:text-[22px] lg:text-[24px] xl:text-[28px]")}>
                   From {option.price}
                 </p>
-                <p className="text-zink text-[16px] font-sourceSansPro font-semibold mb-3">{option.per}</p>
-                <div className="flex items-center gap-2 mb-4">
+                <p className={combine(styles.p4, "text-zink font-semibold", styles.mb1)}>{option.per}</p>
+                <div className={combine("flex items-center gap-2", styles.mb1)}>
                   <p className="w-8 border-b-2 border-mustard"></p>
-                  <p className="text-zink text-[16px] font-sourceSansPro font-semibold italic">
+                  <p className={combine(styles.p4, "text-zink font-semibold italic")}>
                     {option.type}
                   </p>
                 </div>
-
-                <ul className="space-y-2 text-[16px] font-sourceSansPro text-zink font-normal">
+                <ul className={combine("space-y-2 text-zink text-[15px] font-inter")}>
                   {option.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <span className="text-mustard text-xl mt-1"><GoCheckCircle /></span>
@@ -51,15 +52,22 @@ const PricingSection = ({ sectionRef }: PricingSectionProps) => {
                   ))}
                 </ul>
               </div>
-              <div className="flex items-center justify-center">
-            <Button 
-                  variant="outline" 
-                  className="mt-6 flex items-center"
-                >
-                  <div className="flex items-center">
-                  <span className="me-2"><LuAnchor /></span>  Book Now
-                  </div>
-                </Button>
+              <div className={combine(styles.flexCenter,"mt-4")}>
+                {showContactButton && contactRef && (
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      contactRef?.current?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                      });
+                    }}
+                  >
+                    <div className="flex items-center">
+                      <span className="me-2"><LuAnchor /></span>Book Now
+                    </div>
+                  </Button>
+                )}
               </div>
             </div>
           ))}

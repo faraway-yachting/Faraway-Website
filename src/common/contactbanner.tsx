@@ -19,7 +19,7 @@ const ContactBanner = () => {
                 <FaPhoneAlt size={24} className="text-white" />
               </div>
               <div>
-                <p className={combine("font-semibold text-zink mb-1", styles.h5)}>Call Us</p>
+                <p className={combine("font-semibold text-zink mb-1", styles.p1)}>Call Us</p>
                 <p className={combine("text-zink font-medium", styles.p4)}>+66 61 234 5623</p>
               </div>
             </div>
@@ -37,7 +37,7 @@ const ContactBanner = () => {
                 <FaWhatsapp size={24} className="text-white" />
               </div>
               <div>
-                <p className={combine("font-semibold text-zink mb-1", styles.p4)}>WhatsApp</p>
+                <p className={combine("font-semibold text-zink mb-1", styles.p1)}>WhatsApp</p>
                 <p className={combine("text-zink font-medium", styles.p4)}>+66 61 234 5623</p>
               </div>
             </div>
@@ -45,7 +45,7 @@ const ContactBanner = () => {
 
           {/* Email Card */}
           <a
-            href="https://mail.google.com/mail/?view=cm&to=info@far-away.net"
+            href="https://mail.google.com/mail/?view=cm&to=booking@faraway-yachting.com"
             target="_blank"
             rel="noopener noreferrer"
             className="group bg-white rounded-2xl p-4 lg:p-6 xl:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-100 cursor-pointer"
@@ -55,8 +55,8 @@ const ContactBanner = () => {
                 <MdOutlineMail size={24} className="text-white" />
               </div>
               <div>
-                <p className={combine("font-semibold text-zink mb-1", styles.p4)}>Email Us</p>
-                <p className={combine("text-zink font-medium", styles.p4)}>info@far-away.net</p>
+                <p className={combine("font-semibold text-zink mb-1", styles.p1)}>Email Us</p>
+                <p className={combine("text-zink font-medium", styles.p4)}>booking@faraway-yachting.com</p>
               </div>
             </div>
           </a>
@@ -73,7 +73,7 @@ const ContactBanner = () => {
                 <FaLine size={24} className="text-white" />
               </div>
               <div>
-                <p className={combine("font-semibold text-zink mb-1", styles.p2)}>Line App</p>
+                <p className={combine("font-semibold text-zink mb-1", styles.p1)}>Line App</p>
                 <p className={combine("text-zink font-medium", styles.p4)}>Connect Now</p>
               </div>
             </div>

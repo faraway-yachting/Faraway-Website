@@ -2,13 +2,15 @@
 import { useState } from "react";
 import { cruiseDates } from "@/data/cabincharter/cruiseDates";
 import { RefObject } from "react";
-import { Button } from "@/styles";
+import Button from "@/styles/Button";
+import { styles, combine } from "@/styles/style";
 
 interface CruiseDatesProps {
-    sectionRef: RefObject<HTMLDivElement | null>; // <-- fixed
+    sectionRef: RefObject<HTMLDivElement | null>;
+    contactRef?: RefObject<HTMLDivElement | null>;
 }
 
-const CruiseDates = ({ sectionRef }: CruiseDatesProps) => {
+const CruiseDates = ({ sectionRef, contactRef }: CruiseDatesProps) => {
     const [activeTab, setActiveTab] = useState<"1" | "2">("1");
     const data = cruiseDates.find((c) => c.id === activeTab);
 
@@ -16,20 +18,20 @@ const CruiseDates = ({ sectionRef }: CruiseDatesProps) => {
         { id: "1", label: "Two Person in Double Cabin" },
         { id: "2", label: "Single Person in Double Cabin" }
     ];
-    const baseTabClasses = "px-3 md:px-4 lg:px-6 py-2 border font-playfair text-[15px] md:text-[20px] lg:text-[23px] xl:text-[25px] text-black font-bold transition duration-300";
+    const baseTabClasses = combine("px-3 md:px-4 lg:px-6 py-2 border text-zink font-bold transition duration-300", styles.h5);
     const activeTabClasses = "border-gray-400 bg-[#E6ECED33] py-2 md:py-4 rounded-xl";
     const inactiveTabClasses = "border-transparent";
     const baseCellClasses = "px-4 py-3 text-zink border-black";
-    const priceLabelClasses = "text-[13px] md:text-lg lg:text-[20px] font-sourceSansPro font-semibold text-mustard";
+    const priceLabelClasses = combine(styles.p3, "font-semibold text-mustard");
     const thClasses = "py-3 px-4 border-b border-black";
     return (
-        <section ref={sectionRef} className="bg-white pt-4 pb-13 lg:pb-16 px-4 xl:px-0">
-            <div className="max-w-[78.2rem] mx-auto">
-                <div className="text-center mb-10">
-                    <h2 className="text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-playfair text-zink font-semibold">
+        <section ref={sectionRef} className={combine("bg-whitept-4 pb-13 lg:pb-16", styles.px1)}>
+            <div className={styles.containerLarge}>
+            <div className="text-center mb-10">
+                    <h2 className={combine(styles.h2,"text-zink font-semibold")}>
                         Cruise Dates
                     </h2>
-                    <p className="text-zink font-sourceSansPro mt-2 font-normal text-xl md:text-[24px] lg:text-[28px] xl:text-[32px]">
+                    <p className={combine(styles.h5, "font-playfair text-zink mt-2")}>
                         Prices start from 999 € per person
                     </p>
                 </div>
@@ -75,9 +77,17 @@ const CruiseDates = ({ sectionRef }: CruiseDatesProps) => {
                                             {data.nonEnsuitCabin[index] || "-"}
                                         </td>
                                         <td className={`${baseCellClasses} ${index !== data.dates.length - 1 ? "border-b" : ""}`}>
-                                            <Button variant="outline" className="text-dark hover:text-[#D6AB62]">
+                                            <button 
+                                                onClick={() => {
+                                                    contactRef?.current?.scrollIntoView({
+                                                        behavior: "smooth",
+                                                        block: "start"
+                                                    });
+                                                }}
+                                                className="text-lg text-zink underline underline-offset-3 text-center cursor-pointer hover:text-[#D6AB62] transition-colors duration-200"
+                                            >
                                                 {data.bookNow[index] || "Book"}
-                                            </Button>
+                                            </button>
                                         </td>
                                     </tr>
                                 ))}
