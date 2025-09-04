@@ -7,6 +7,7 @@ export const homeMetadata: Metadata = {
   openGraph: {
     title: "Yacht Charter Phuket – 30 Years & 750+ ★★★★★ Reviews",
     description: "Book your Yacht Charter Phuket in style with Faraway Yachting. 30 years of excellence, 750+ ★★★★★ reviews. Luxury catamarans, crew & island adventures await.",
+    url: "https://dev-faraway-psi.vercel.app/",
     images: [
       {
         url: "/images/homeimg1.png",
@@ -33,6 +34,7 @@ export const bareboatMetadata: Metadata = {
   openGraph: {
     title: "Bareboat Charter Thailand – Freedom to Sail Anywhere",
     description: "Discover total independence on the seas of Thailand. No crew, no limits—just you, your yacht, and endless island adventures. Start your bareboat journey today.",
+    url: "https://dev-faraway-psi.vercel.app/bareboat-charter-thailand",
     images: [
       {
         url: "/images/boatimg1.png",
@@ -48,7 +50,7 @@ export const bareboatMetadata: Metadata = {
     card: "summary_large_image",
     title: "Bareboat Charter Thailand – Freedom to Sail Anywhere",
     description: "Discover total independence on the seas of Thailand. No crew, no limits—just you, your yacht, and endless island adventures. Start your bareboat journey today.",
-    images: ["/images/bareboart.png"],
+    images: ["/images/boatimg1.png"],
   },
 };
 
@@ -59,6 +61,7 @@ export const cabinCharterMetadata: Metadata = {
   openGraph: {
     title: "Cabin Charter Phuket – Relax, Explore & Sail in Style",
     description: "Escape the crowds with a Phuket cabin charter. Discover hidden islands, savor Thai cuisine, and enjoy a friendly crew on your unforgettable journey",
+    url: "https://dev-faraway-psi.vercel.app/best-of-phukets-islands-cabincharter",
     images: [
       {
         url: "/images/cabout_1.png",
@@ -74,7 +77,7 @@ export const cabinCharterMetadata: Metadata = {
     card: "summary_large_image",
     title: "Cabin Charter Phuket – Relax, Explore & Sail in Style",
     description: "Escape the crowds with a Phuket cabin charter. Discover hidden islands, savor Thai cuisine, and enjoy a friendly crew on your unforgettable journey",
-    images: ["/images/cabin-charter.png"],
+    images: ["/images/cabout_1.png"],
   },
 };
 
@@ -85,6 +88,7 @@ export const crewedYachtMetadata: Metadata = {
   openGraph: {
     title: "Yacht Charter Phuket – Book Your Luxury Escape Today",
     description: "Experience Phuket in style with private yacht charters, full crew, and custom island-hopping adventures. Reserve your luxury escape now.",
+    url: "https://dev-faraway-psi.vercel.app/yacht-charter-phuket",
     images: [
       {
         url: "/images/crewedimg.png",
@@ -111,6 +115,7 @@ export const contactMetadata: Metadata = {
   openGraph: {
     title: "Contact Faraway Yachting – Your Luxury Charter Experts",
     description: "Contact Faraway Yachting today. With 30 years in business and over 750 ★★★★★ reviews, we're Phuket's trusted yacht charter experts. Let's plan your journey.",
+    url: "https://dev-faraway-psi.vercel.app/contact",
     images: [
       {
         url: "/images/contactbg.png",

@@ -9,7 +9,7 @@ import { FaRegEnvelope } from "react-icons/fa";
 import { RiMap2Line } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
- 
+
 const quickLinks = [
   { label: "Crewed Yachts", href: "/yacht-charter-phuket" },
   { label: "Bareboat Yachts", href: "/bareboat-charter-thailand" },
@@ -23,7 +23,7 @@ const usefulLinks = [
   { label: "Mission Statement", href: "/aboutus#mission" },
   { label: "FAQ", href: "/aboutus#faq" },
   { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Blog", href: "/blog" },   
+  { label: "Blog", href: "/blog" },
 ];
 
 const iconClass = "text-[#D6AB61]";
@@ -74,7 +74,7 @@ const Footer = () => {
               href="https://www.google.com/maps/place/Faraway+Yachting+Phuket,+Thailand/@7.8229322,98.344313,15z/data=!4m6!3m5!1s0x3050257bffffffff:0x937eaf99ed7fa6b7!8m2!3d7.8235296!4d98.3451594!16s%2Fg%2F12hp6d07j?entry=ttu&g_ep=EgoyMDI1MDgxMS4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
-               className="flex items-center gap-2"
+              className="flex items-center gap-2"
             >
               <RiMap2Line size={20} className={`mt-1 ${iconClass}`} />
               <span className="text-[16px] font-normal max-w-xs font-sourceSansPro">
@@ -83,12 +83,12 @@ const Footer = () => {
               </span>
             </a>
           </div>
-
+          {/* socail icons */}
           <div className="flex gap-3 mt-6 flex-wrap">
             {[
               { Icon: FaFacebookF, href: "https://www.facebook.com/FarawayYachting" },
               { Icon: FaInstagram, href: "https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Ffarawayyachting%2F%3Ffbclid%3DIwAR0iAzKhJjfT0NVO5X5tKjjJ-uwaWQ4m6DQ03l9vQiGxJ8Q7OJQQByekk54&is_from_rle" },
-              { Icon: FaWhatsapp, href: "https://tel:66612345623" },
+              { Icon: FaWhatsapp, href: "https://api.whatsapp.com/send/?phone=66612345623&text&type=phone_number&app_absent=0" },
               { Icon: FaLine, href: "https://line.me/ti/p/@farawayyachting" }
             ].map(({ Icon, href }, idx) => (
               <a
@@ -123,29 +123,29 @@ const Footer = () => {
             Subscribe to our newsletter to stay up-to-date with the latest
             news, promotions, and insider tips on Phuket yacht charters!
           </p>
-          
+
           {/* Replaced form with iframe */}
           <div className="w-full h-[402px]">
             <iframe
-                src="https://api.leadconnectorhq.com/widget/form/Buv1sv97px6C05DeraPW"
-                style={{width:'100%',height:'90%',border:'none',borderRadius:'3px'}}
-                id="inline-Buv1sv97px6C05DeraPW" 
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="Subscribe"
-                data-height="402"
-                data-layout-iframe-id="inline-Buv1sv97px6C05DeraPW"
-                data-form-id="Buv1sv97px6C05DeraPW"
-                title="Subscribe"
+              src="https://api.leadconnectorhq.com/widget/form/Buv1sv97px6C05DeraPW"
+              style={{ width: '100%', height: '90%', border: 'none', borderRadius: '3px' }}
+              id="inline-Buv1sv97px6C05DeraPW"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Subscribe"
+              data-height="402"
+              data-layout-iframe-id="inline-Buv1sv97px6C05DeraPW"
+              data-form-id="Buv1sv97px6C05DeraPW"
+              title="Subscribe"
             >
             </iframe>
           </div>
-          
+
           {/* Script tag for the iframe */}
           <script src="https://link.msgsndr.com/js/form_embed.js"></script>
         </div>

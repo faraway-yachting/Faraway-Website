@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import {DM_Serif_Display} from "next/font/google";
 import {Plus_Jakarta_Sans} from "next/font/google";
 import "slick-carousel/slick/slick.css";
