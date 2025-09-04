@@ -26,11 +26,11 @@ export const API_ENDPOINTS = {
 } as const;
 
 /**
- * Fetch all yachts
+ * Fetch all yachts with pagination
  */
-export const fetchYachts = async () => {
+export const fetchYachts = async (page: number = 1, limit: number = 9) => {
   try {
-    const response = await apiClient.get(API_ENDPOINTS.YACHTS);
+    const response = await apiClient.get(`${API_ENDPOINTS.YACHTS}?page=${page}&limit=${limit}`);
     return response.data;
   } catch (error) {
     console.error('Error fetching yachts:', error);

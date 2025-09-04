@@ -29,6 +29,9 @@ interface Yacht {
 
 interface YachtCardsProps {
   columns?: number;
+  showLoadMore?: boolean;
+  initialLoadCount?: number;
+  loadMoreCount?: number;
 }
 
 const slugify = (text: string | undefined | null): string => {
@@ -42,51 +45,81 @@ const gridWrapperClasses = {
   3: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3",
 };
 
-const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
+const YachtCards: React.FC<YachtCardsProps> = ({ 
+  columns = 3, 
+  showLoadMore = false, 
+  initialLoadCount = 9, 
+  loadMoreCount = 9 
+}) => {
   const router = useRouter();
   const pathname = usePathname();
   const [data, setData] = useState<Yacht[]>([]);
-  console.log(data, "data from yacht cards");
+  const [allYachts, setAllYachts] = useState<Yacht[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadMoreLoading, setLoadMoreLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [visibleCount, setVisibleCount] = useState(9);
+  const [visibleCount, setVisibleCount] = useState(initialLoadCount);
+  const [hasMore, setHasMore] = useState(true);
 
+  // Optimized data fetching and filtering
   useEffect(() => {
-    const fetchYachtsData = async () => {
+    const fetchYachtData = async () => {
       try {
-        const res = await fetchYachts();
-        const allYachts: Yacht[] = res.data.yachts;
-
+        setLoading(true);
+        setError(null);
+        
+        // Fetch all yachts at once
+        const res = await fetchYachts(1, 100);
+        const yachts: Yacht[] = res.data.yachts || [];
+        
         const normalizedPath = pathname?.replace(/\/+$/, "").trim() || "/";
-        let filteredYachts: Yacht[] = [];
-
-        filteredYachts = allYachts.filter((yacht) => {
+        
+        // Filter yachts based on page type
+        const filteredYachts = yachts.filter((yacht) => {
           const yachtStatus = yacht.status?.toLowerCase().trim() || "";
           const yachtType = yacht.type?.toLowerCase().trim() || "";
 
+          // Only show published yachts
+          if (yachtStatus !== "published") return false;
+
+          // Home page: show only crewed yachts
           if (normalizedPath === "/") {
-            return yachtStatus === "published" && yachtType === "crewed";
+            return yachtType === "crewed";
           }
 
+          // Bareboat page: show only bareboat yachts
           if (normalizedPath === "/bareboat-charter-thailand") {
-            return yachtStatus === "published" && yachtType === "bareboat";
+            return yachtType === "bareboat";
           }
 
+          // Crewed page: show only crewed yachts
           if (normalizedPath === "/yacht-charter-phuket") {
-            return yachtStatus === "published" && yachtType === "crewed";
+            return yachtType === "crewed";
           }
 
-          return yachtStatus === "published";
+          // Other pages: show all published yachts
+          return true;
         });
 
-        setData(filteredYachts);
+        setAllYachts(filteredYachts);
         
-        // Set visible count based on page - only limit on home page
+        // Set display data based on page type
         if (normalizedPath === "/") {
-          setVisibleCount(9);
+          // Home page: show only 9 crewed yachts
+          setData(filteredYachts.slice(0, 9));
+          setHasMore(false);
         } else {
-          setVisibleCount(filteredYachts.length);
+          // Other pages: show all filtered yachts or with load more
+          if (showLoadMore) {
+            setData(filteredYachts.slice(0, initialLoadCount));
+            setHasMore(filteredYachts.length > initialLoadCount);
+            setVisibleCount(initialLoadCount);
+          } else {
+            setData(filteredYachts);
+            setHasMore(false);
+          }
         }
+        
       } catch (err: any) {
         setError(err?.response?.data?.message || "Failed to fetch yachts.");
       } finally {
@@ -94,8 +127,8 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
       }
     };
 
-    fetchYachtsData();
-  }, [pathname]);
+    fetchYachtData();
+  }, [pathname, showLoadMore, initialLoadCount]);
 
   const gridCols = gridWrapperClasses[columns as 1 | 2 | 3] || gridWrapperClasses[3];
 
@@ -111,8 +144,34 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
     return <p className="text-center text-gray-500 text-xl py-10">No yachts found for this page.</p>;
   }
 
-  const visibleYachts = data.slice(0, visibleCount);
-  const hasMore = visibleCount < data.length;
+  // Optimized load more function
+  const handleLoadMore = () => {
+    if (!hasMore || loadMoreLoading) return;
+    
+    setLoadMoreLoading(true);
+    
+    // Use requestAnimationFrame for smooth performance
+    requestAnimationFrame(() => {
+      const newVisibleCount = visibleCount + loadMoreCount;
+      const newData = allYachts.slice(0, newVisibleCount);
+      
+      setData(newData);
+      setVisibleCount(newVisibleCount);
+      setHasMore(newVisibleCount < allYachts.length);
+      setLoadMoreLoading(false);
+      
+      // Smooth scroll to newly loaded content
+      setTimeout(() => {
+        const yachtCardsSection = document.querySelector('[data-yacht-cards]');
+        if (yachtCardsSection) {
+          yachtCardsSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+          });
+        }
+      }, 100);
+    });
+  };
 
   return (
     <div className="mb-8 mx-4 lg:mx-0">
@@ -122,8 +181,8 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
           description="Let the waves guide you to elegance, adventure, and pure relaxation!"
         />
       </div>
-      <div className={`grid ${gridCols} gap-6 md:gap-8 lg:gap-4 xl:gap-10`}>
-        {visibleYachts.map((boat) => (
+      <div className={`grid ${gridCols} gap-6 md:gap-8 lg:gap-4 xl:gap-10`} data-yacht-cards>
+        {data.map((boat) => (
           <div
             key={boat._id}
             onClick={() => {
@@ -204,7 +263,9 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
           </div>
         ))}
       </div>
-      {data.length >= 9 && pathname === "/" && (
+      
+      {/* Show More Button for Home Page */}
+      {!showLoadMore && data.length >= 9 && pathname === "/" && (
         <div className="flex justify-center mt-10">
           <Button
             onClick={() => router.push("/yacht-charter-phuket")}
@@ -212,6 +273,31 @@ const YachtCards: React.FC<YachtCardsProps> = ({ columns = 3 }) => {
           >
             Explore All Yachts
           </Button>
+        </div>
+      )}
+      
+      {/* Load More Button for Detail Pages */}
+      {showLoadMore && (
+        <div className="flex justify-center mt-10">
+          {hasMore ? (
+            <Button
+              onClick={handleLoadMore}
+              variant="primary"
+              disabled={loadMoreLoading}
+              className="min-w-[150px]"
+            >
+              {loadMoreLoading ? (
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <span>Loading...</span>
+                </div>
+              ) : (
+                `Load More (${allYachts.length - data.length} remaining)`
+              )}
+            </Button>
+          ) : (
+            <p className="text-gray-500">No more yachts to load</p>
+          )}
         </div>
       )}
     </div>
