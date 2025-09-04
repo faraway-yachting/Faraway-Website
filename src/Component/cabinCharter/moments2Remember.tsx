@@ -6,9 +6,9 @@ const Moments2Remember: React.FC = () => {
     <section className={combine("bg-white py-4 md:py-9 lg:py-12 xl:py-16", styles.px1)}>
       {/* Heading */}
       <div className="text-center mb-[40px] flex flex-col items-center">
-        <p className={combine(styles.h2, "text-zink text-green font-extrabold")}>
+        <h2 className={combine(styles.h2, "text-zink text-green font-extrabold")}>
           Sailing Moments to Remember
-        </p>
+        </h2>
 
         {/* Gold underline decoration */}
         <img

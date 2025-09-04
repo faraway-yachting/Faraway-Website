@@ -9,7 +9,9 @@ import FunMoments from "@/Component/cabinCharter/moments";
 import Sailingyacht_Phuket from "@/Component/Home/yachtinPhuket";
 import { Fragment } from "react";
 import BookwithUs from "@/Component/Home/setDeal";
+import { homeMetadata } from "@/lib/metadata";
 
+export const metadata = homeMetadata;
 export default function Home() {
   return (
     <Fragment>
