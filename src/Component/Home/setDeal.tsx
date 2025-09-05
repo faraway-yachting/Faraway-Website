@@ -1,5 +1,5 @@
 import HeadingContent from "@/common/heading";
-import { WhyData } from "@/data/why";
+import { WhyData } from "@/data/home/why";
 import PngIcons from "@/icons/pngIcon";
 import { styles, combine } from "@/styles";
 

@@ -208,7 +208,7 @@ export const termsData: TermSection[] = [
         id: "7.2",
         title: "7.2",
         content: "Please note that there will be no refunds by Faraway Yachting in case of any kind of cancellation. We highly recommend taking holiday cancellation insurance for any charter."
-      }
+      },
     ]
   },
   {
@@ -381,7 +381,7 @@ export const cancellationDetails = {
 };
 
 export const insuranceRecommendation = {
-  title: "💡 Insurance Recommendation",
+  title: "💡 Travel Insurance Recommendation",
   content: "Considering travel insurance for your trip? World Nomads offers coverage for more than 150 adventure activities as well as emergency medical, lost luggage, trip cancellation, and more."
 };
 

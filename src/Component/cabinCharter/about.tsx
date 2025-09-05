@@ -5,11 +5,11 @@ import Button from "@/styles/Button";
 import { styles, combine } from "@/styles/style";
 
 interface AboutProps {
+    sectionRef?: React.RefObject<HTMLElement | null>;
     showContactButton?: boolean;
     contactRef?: React.RefObject<HTMLElement | null>;
 }
-
-const About = ({ showContactButton = true, contactRef }: AboutProps) => {
+const About = ({ sectionRef, showContactButton, contactRef }: AboutProps) => {
     return (
         <div>
             {/* Decorative line */}
@@ -47,7 +47,7 @@ const About = ({ showContactButton = true, contactRef }: AboutProps) => {
                                 {showContactButton && contactRef && (
                                     <div className="">
                                         <Button
-                                            variant="primary"
+                                            variant="outline"
                                             onClick={() => {
                                                 contactRef?.current?.scrollIntoView({
                                                     behavior: "smooth",

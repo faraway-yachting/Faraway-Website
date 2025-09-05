@@ -195,14 +195,19 @@ export default function TermsWithTable() {
                     ))}
 
                     {/* Special Insurance Box */}
-                    {section.id === "insurance" && (
-                      <div className="bg-[#E6ECED33] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 px-4 md:px-6 py-0 xl:py-6 border-l-[7px] border-l-[#034250]">
-                        <div className="flex-1 text-left py-3">
-                          <p className={combine("text-zink font-medium", styles.p4)}>{insuranceRecommendation.title}</p>
-                          <p className={combine("text-zink mt-2 ", styles.p4)}>{insuranceRecommendation.content}</p>
+                    {section.id === "holiday&cancellation-insurance" && (
+                      <div className="bg-white flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 px-4 md:px-6 py-6 border-l-[7px] border-l-[#012A50] shadow-sm">
+                        <div className="flex-1 text-left">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-mustard font-bold text-lg">Info:</span>
+                            <span className="text-zink font-bold text-lg">Travel Insurance Recommendation</span>
+                          </div>
+                          <a href="https://far-away.net/world-nomads-travel-insurance/" target="_blank" rel="noopener">
+                          <p className="text-zink text-base font-inter leading-relaxed hover:text-[#D6AB62]">{insuranceRecommendation.content}</p>
+                          </a>
                         </div>
                         <div className="flex-shrink-0 w-[150px] sm:w-[180px] md:w-[200px] hidden md:block">
-                          <img src="/images/slideText.png" alt="" />
+                          <img src="/images/slideText.png" alt="Travel insurance illustration" />
                         </div>
                       </div>
                     )}
@@ -215,6 +220,10 @@ export default function TermsWithTable() {
               <h3 className={combine("font-bold mb-4", styles.h5)}>{finalMessage.title}</h3>
               <p className={combine("text-white", styles.p3)}>{finalMessage.subtitle}</p>
               <p className={combine("text-white font-semibold mt-2", styles.p3)}>{finalMessage.signature}</p>
+              <p className={combine("text-white font-semibold mt-3 underline",styles.p3)}>
+                <a href="https://far-away.net/wp-content/uploads/2025/01/Terms-and-Conditions-2024-1.pdf" target="_blank" rel="noopener noreferrer">
+                Terms and Conditions: &nbsp; For all charters booked before the 1st of January 2025
+                </a></p>
             </div>
           </div>
         </div>

@@ -64,7 +64,7 @@ export const cabinCharterMetadata: Metadata = {
     url: "https://dev-faraway-psi.vercel.app/best-of-phukets-islands-cabincharter",
     images: [
       {
-        url: "/images/cabout_1.png",
+        url: "/images/charterimg_1.png",
         width: 1200,
         height: 630,
         alt: "Cabin Charter Phuket - Luxury Catamaran Cruise",
@@ -118,7 +118,7 @@ export const contactMetadata: Metadata = {
     url: "https://dev-faraway-psi.vercel.app/contact",
     images: [
       {
-        url: "/images/contactbg.png",
+        url: "/images/Cimage1.png",
         width: 1200,
         height: 630,
         alt: "Contact Faraway Yachting - Phuket Yacht Charter",

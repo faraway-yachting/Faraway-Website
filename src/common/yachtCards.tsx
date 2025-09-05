@@ -227,7 +227,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({
               {/* Title and Rating */}
               <div className="flex items-start">
                 <h3 className="text-xl lg:text-[24px] xl:text-[28px] font-playfair mt-5 font-semibold text-zink group-hover:text-mustard transition-colors">
-                  {boat.title.length > 22 ? `${boat.title.substring(0, 25)}...` : boat.title}
+                  {boat.title.length > 22 ? `${boat.title.substring(0, 23)}...` : boat.title}
                 </h3>
               </div>
 

@@ -20,6 +20,7 @@ const TodaysAdventure = () => {
                         <div className={combine("flex items-center", styles.mt2)}>
                             <Button
                                 variant="primary"
+                                href="/contact"
                             >
                                 Start Your Adventure
                             </Button>
