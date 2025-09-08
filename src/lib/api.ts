@@ -40,7 +40,11 @@ export const fetchYachts = async (page: number = 1, limit: number = 9) => {
 };
 
 /**
+<<<<<<< Updated upstream
  * Fetch single yacht by slug
+=======
+ * Fetch yacht by slug
+>>>>>>> Stashed changes
  */
 export const fetchYachtBySlug = async (slug: string) => {
   try {
