@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import Image from "next/image";
 import { fetchYachts } from "@/lib/api";
 import { LuDoorOpen, LuToilet, LuMapPin } from "react-icons/lu";
 import { GiCaptainHatProfile } from "react-icons/gi";
@@ -70,18 +69,11 @@ const YachtCards: React.FC<YachtCardsProps> = ({
         setLoading(true);
         setError(null);
         
-        const normalizedPath = pathname?.replace(/\/+$/, "").trim() || "/";
-        
-        // Optimize: Fetch only what we need based on page type
-        let fetchLimit = 100; // Default for pages that need all yachts
-        if (normalizedPath === "/") {
-          fetchLimit = 12; // Home page only needs 9, fetch 12 for buffer
-        } else if (showLoadMore) {
-          fetchLimit = initialLoadCount + 6; // Fetch a bit more for load more
-        }
-        
-        const res = await fetchYachts(1, fetchLimit);
+        // Fetch all yachts at once
+        const res = await fetchYachts(1, 100);
         const yachts: Yacht[] = res.data.yachts || [];
+        
+        const normalizedPath = pathname?.replace(/\/+$/, "").trim() || "/";
         
         // Filter yachts based on page type
         const filteredYachts = yachts.filter((yacht) => {
@@ -109,6 +101,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({
 
           // Super yacht charter page: show only yachts with "Super Yacht" in tags array
           if (normalizedPath === "/super-yacht-charter-phuket") {
+            console.log("Super yacht filter - Yacht:", yacht.title, "Type:", yachtType, "Length:", yacht.length, "Tags:", yachtTags);
             // Check if tags array contains "Super Yacht"
             return yachtTags.includes("super yacht");
           }
@@ -152,32 +145,8 @@ const YachtCards: React.FC<YachtCardsProps> = ({
 
   if (loading) {
     return (
-      <div className="mb-8">
-        <div className="mb-10">
-          <HeadingContent
-            heading="Featured Yachts in Phuket"
-            description="Let the waves guide you to elegance, adventure, and pure relaxation!"
-          />
-        </div>
-        <div className={`grid ${gridCols} gap-6 md:gap-8 lg:gap-4 xl:gap-10`}>
-          {Array.from({ length: 9 }).map((_, i) => (
-            <div key={i} className="animate-pulse bg-white rounded-xl overflow-hidden shadow-lg">
-              <div className="bg-gray-300 h-64 w-full"></div>
-              <div className="p-4 space-y-3">
-                <div className="h-6 bg-gray-300 rounded w-3/4"></div>
-                <div className="flex space-x-2">
-                  <div className="h-4 bg-gray-300 rounded w-20"></div>
-                  <div className="h-4 bg-gray-300 rounded w-16"></div>
-                  <div className="h-4 bg-gray-300 rounded w-20"></div>
-                </div>
-                <div className="flex justify-between items-center pt-2">
-                  <div className="h-5 bg-gray-300 rounded w-24"></div>
-                  <div className="h-8 bg-gray-300 rounded w-16"></div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="flex items-center justify-center min-h-[40rem]">
+        <div className="w-10 h-10 border-4 border-t-transparent border-mustard rounded-full animate-spin" />
       </div>
     );
   }
@@ -216,7 +185,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({
   };
 
   return (
-    <div className="mb-8">
+    <div className="mb-8 mx-4 lg:mx-0">
       <div className="mb-10">
         <HeadingContent
           heading="Featured Yachts in Phuket"
@@ -224,7 +193,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({
         />
       </div>
       <div className={`grid ${gridCols} gap-6 md:gap-8 lg:gap-4 xl:gap-10`} data-yacht-cards>
-        {data.map((boat, index) => (
+        {data.map((boat) => (
           <div
             key={boat._id}
             onClick={() => {
@@ -237,21 +206,10 @@ const YachtCards: React.FC<YachtCardsProps> = ({
             }}
             className="group cursor-pointer bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
           >
-            {/* Image Section - Optimized with Next.js Image */}
+            {/* Image Section - Unchanged */}
             <div className="relative">
               <div className="overflow-hidden">
-                <Image 
-                  src={boat.primaryImage} 
-                  alt={boat.title} 
-                  width={400}
-                  height={256}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                  priority={index < 6} // Prioritize first 6 images for better LCP
-                  loading={index < 6 ? "eager" : "lazy"}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                />
+                <img src={boat.primaryImage} alt={boat.title} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
               {/* Key Specs Overlay */}
               <div className="absolute top-[14.7rem] left-10 right-10 lg:left-6 lg:right-6 xl:left-10 xl:right-10 bg-white rounded-md" style={{ boxShadow: "0px 4px 24px 0px #B5B5B540" }}>
@@ -266,7 +224,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({
                         key={i}
                         className="flex items-center space-x-1 border-r font-sourceSansPro last:border-r-0 border-[#E8E8E8] py-1 ps-3 pe-3 xl:ps-5 xl:pe-5 first:ps-2"
                       >
-                        <Image src={icon} alt="" width={28} height={28} className="w-6 xl:w-7" />
+                        <img src={icon} alt="" className="w-6 xl:w-7" />
                         <span>{value}</span>
                       </div>
                     ))}
