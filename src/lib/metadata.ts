@@ -188,7 +188,7 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
     ];
     
     // Select a random starting phrase based on yacht title for consistency
-    const titleHash = yacht.title.split('').reduce((a, b: string) => a + b.charCodeAt(0), 0);
+    const titleHash = yacht.title.split('').reduce((a: number, b: string) => a + b.charCodeAt(0), 0);
     const selectedPhrase = startingPhrases[titleHash % startingPhrases.length];
     
     // Create dynamic description with yacht details
