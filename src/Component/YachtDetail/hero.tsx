@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import axios from "axios";
 import Gallery from "./gallery";
 import VideoSection from "./videoSection";
 import TabSection from "./tabSection";
 import ContactDetail from "./contactDetail";
 import YachtAdventure from "../Charter/yachtAdventure";
 import { combine, styles } from "@/styles";
+import { fetchYachtBySlug } from "@/lib/api";
 
 interface HeroProps {
   slug: string;
@@ -57,19 +57,14 @@ const HeroSection: React.FC<HeroProps> = ({ slug }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("https://awais.thedevapp.online/yacht/all-yachts");
-        const allYachts: Yacht[] = res.data.data.yachts;
-
-        const matched = allYachts.find(
-          (boat) => slugify(boat.slug) === slugify(slug)
-        );
-
-        if (!matched) {
+        const res = await fetchYachtBySlug(slug);
+        
+        if (!res.success || !res.data) {
           setError("Yacht not found.");
           return;
         }
 
-        setData(matched);
+        setData(res.data);
       } catch {
         setError("Failed to load yacht data.");
       } finally {

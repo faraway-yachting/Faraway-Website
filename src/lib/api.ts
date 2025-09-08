@@ -22,6 +22,7 @@ const apiClient = axios.create({
  */
 export const API_ENDPOINTS = {
   YACHTS: '/yacht/all-yachts',
+  YACHT_BY_SLUG: '/yacht/by-slug',
   BLOGS: '/blog/all-blogs',
 } as const;
 
@@ -43,7 +44,7 @@ export const fetchYachts = async (page: number = 1, limit: number = 9) => {
  */
 export const fetchYachtBySlug = async (slug: string) => {
   try {
-    const response = await apiClient.get(`${API_ENDPOINTS.YACHTS}?slug=${slug}`);
+    const response = await apiClient.get(`${API_ENDPOINTS.YACHT_BY_SLUG}?slug=${slug}`);
     return response.data;
   } catch (error) {
     console.error('Error fetching yacht by slug:', error);
