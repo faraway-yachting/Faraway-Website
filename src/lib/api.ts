@@ -39,6 +39,19 @@ export const fetchYachts = async (page: number = 1, limit: number = 9) => {
 };
 
 /**
+ * Fetch single yacht by slug
+ */
+export const fetchYachtBySlug = async (slug: string) => {
+  try {
+    const response = await apiClient.get(`${API_ENDPOINTS.YACHTS}?slug=${slug}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching yacht by slug:', error);
+    throw error;
+  }
+};
+
+/**
  * Fetch all blogs
  */
 export const fetchBlogs = async () => {
