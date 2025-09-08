@@ -35,6 +35,7 @@ export interface Yacht {
   lengthRange: string;
   status: string;
   type: string;
+  tags?: string[];
 }
 
 const slugify = (text: string | undefined | null): string => {

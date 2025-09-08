@@ -25,6 +25,7 @@ interface Yacht {
   type: string;
   status: string;
   slug: string;
+  tags?: string[];
 }
 
 interface YachtCardsProps {
@@ -78,6 +79,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({
         const filteredYachts = yachts.filter((yacht) => {
           const yachtStatus = yacht.status?.toLowerCase().trim() || "";
           const yachtType = yacht.type?.toLowerCase().trim() || "";
+          const yachtTags = yacht.tags || [];
 
           // Only show published yachts
           if (yachtStatus !== "published") return false;
@@ -97,9 +99,17 @@ const YachtCards: React.FC<YachtCardsProps> = ({
             return yachtType === "crewed";
           }
 
+          // Super yacht charter page: show only yachts with "Super Yacht" in tags array
+          if (normalizedPath === "/super-yacht-charter-phuket") {
+            // Check if tags array contains "Super Yacht"
+            return yachtTags.includes("super yacht");
+          }
+
           // Other pages: show all published yachts
           return true;
         });
+        
+        console.log("Filtered yachts count:", filteredYachts.length);
 
         setAllYachts(filteredYachts);
         
