@@ -35,7 +35,7 @@ const SailingDetails = () => {
   );
 
   return (
-    <section className="bg-white py-10 lg:py-12 xl:py-14 px-4 md:px-0 lg:px-8">
+    <section className="bg-white py-10 lg:py-12 xl:py-14 px-4 md:px-4 xl:px-8">
       <div className={styles.containerLarge}>
         {/* Title */}
         <div className="text-center mb-10">
@@ -47,7 +47,7 @@ const SailingDetails = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-10 items-center justify-center lg:justify-start lg:items-start">
           {/* Left: Image Slider (5 of 12 columns) */}
           <div className="md:col-span-5">
-            <div className="relative w-full h-[400px] rounded-tl-3xl rounded-br-3xl overflow-hidden mb-4">
+            <div className="relative w-full h-[290px] md:h-[320px] lg:h-[350px] xl:h-[400px] rounded-tl-3xl rounded-br-3xl overflow-hidden mb-4">
               <Image
                 src={yachtThumbnails[currentIndex]}
                 alt="Sailing Catamaran"
@@ -100,7 +100,7 @@ const SailingDetails = () => {
               </table>
             </div>
             {/* Mobile Details */}
-            <div className="block md:hidden space-y-4">
+            <div className="block md:hidden space-y-2 lg:space-y-3 xl:space-y-4">
               {catamaranDetails.map(renderDetail)}
             </div>
           </div>

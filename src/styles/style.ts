@@ -14,7 +14,7 @@ export const styles = {
 
   p1: "text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px]",
   p2: "text-[14px] md:text-[16px] lg:text-[17px] xl:text-[18px] font-inter",
-  p3: "text-[15px] md:text-[14px] lg:text-[18px] xl:text-[19px] font-inter",
+  p3: "text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] font-inter",
   p4: "text-[12px] md:text-[14px] lg:text-[16px] xl:text-[16px] font-inter",
   text1: "text-sm md:text-base lg:text-lg",
   gap1: "gap-8 lg:gap-12",

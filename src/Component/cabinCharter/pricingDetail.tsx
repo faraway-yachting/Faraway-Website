@@ -23,7 +23,7 @@ const Price_Details = () => {
                 <button
                     type="button"
                     onClick={() => toggleItem(item.id)}
-                    className="flex justify-between items-center w-full p-4 text-left">
+                    className="flex justify-between items-center w-full p-2 md:p-3 lg:p-4 text-left">
                     <div className="flex items-center gap-4">
                         <div className="bg-zink text-white p-2 rounded-lg flex items-center justify-center">
                             <Icon className="w-5 h-5" />
@@ -34,7 +34,7 @@ const Price_Details = () => {
                 </button>
                 {/* Accordion Body */}
                 {isActive && (
-                    <div className="px-4 pb-6 space-y-2">
+                    <div className="px-2 md:px-4 pb-6 space-y-2">
                         {item.itinerary?.map((entry, idx) =>
                             entry.description.map((desc, i) => (
                                 <p key={`${idx}-${i}`}

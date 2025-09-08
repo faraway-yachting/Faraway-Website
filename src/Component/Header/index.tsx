@@ -65,7 +65,7 @@ const Header = () => {
                     ><FaLinkedin size={20} className="cursor-pointer hover:text-gray-300" />
                     </a>
                     <a
-                        href="https://line.me/ti/p/IF91DcUiYa"
+                        href="https://x.com/FarawayYachting"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center text-sm gap-2"

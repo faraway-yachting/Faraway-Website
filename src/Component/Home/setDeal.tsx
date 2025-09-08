@@ -4,7 +4,7 @@ import PngIcons from "@/icons/pngIcon";
 import { styles, combine } from "@/styles";
 
 const BookwithUs = () => {
-    const { w3, px5, h5,container, containerLarge, grid3Col, flexCenter, h3, p2 } = styles;
+    const { w3, px5, h5,container, containerLarge, flexCenter,p2 } = styles;
 
     return (
         <div className={combine("relative bg-white mb-16")}>
@@ -25,7 +25,7 @@ const BookwithUs = () => {
                         heading="Why to book a yacht with us in Phuket?"
                         description="Enjoy AI-powered yacht recommendations, real-time availability, and secure bookings for a seamless luxury experience." />
                     <div className={containerLarge}>
-                        <div className={combine(grid3Col, "mt-10")}>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 md:gap-9 lg:gap-12 xl:gap-15 mt-10">
                             {WhyData.map((item) => (
                                 <div
                                     key={item.id}

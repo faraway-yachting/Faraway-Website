@@ -14,7 +14,7 @@ interface PricingSectionProps {
 
 const PricingSection = ({ sectionRef, showContactButton, contactRef }: PricingSectionProps) => {
   return (
-    <section ref={sectionRef} className="bg-[#E6ECED1A] py-5 md:py-8 px-14 md:px-16 lg:px-4 xl:px-0">
+    <section ref={sectionRef} className="bg-[#E6ECED1A] py-5 md:py-8 px-9 md:px-16 lg:px-4 xl:px-0">
       <div className={styles.containerLarge}>
         <div className="text-center mb-12">
           <HeadingContent

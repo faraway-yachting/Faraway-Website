@@ -11,7 +11,7 @@ export const homeMetadata: Metadata = {
     title: "Yacht Charter Phuket – 30 Years & 750+ ★★★★★ Reviews",
     description: "Book your Yacht Charter Phuket in style with Faraway Yachting. 30 years of excellence, 750+ ★★★★★ reviews. Luxury catamarans, crew & island adventures await.",
     url: `${BASE_URL}/`,
-    siteName: "Faraway Yachting",
+    // siteName: "Faraway Yachting",
     images: [
       {
         url: `${BASE_URL}/images/homeimg1.png`,
@@ -39,7 +39,7 @@ export const bareboatMetadata: Metadata = {
     title: "Bareboat Charter Thailand – Freedom to Sail Anywhere",
     description: "Discover total independence on the seas of Thailand. No crew, no limits—just you, your yacht, and endless island adventures. Start your bareboat journey today.",
     url: `${BASE_URL}/bareboat-charter-thailand`,
-    siteName: "Faraway Yachting",
+    // siteName: "Faraway Yachting",
     images: [
       {
         url: `${BASE_URL}/images/boatimg1.png`,
@@ -67,7 +67,7 @@ export const cabinCharterMetadata: Metadata = {
     title: "Cabin Charter Phuket – Relax, Explore & Sail in Style",
     description: "Escape the crowds with a Phuket cabin charter. Discover hidden islands, savor Thai cuisine, and enjoy a friendly crew on your unforgettable journey",
     url: `${BASE_URL}/best-of-phukets-islands-cabincharter`,
-    siteName: "Faraway Yachting",
+    // siteName: "Faraway Yachting",
     images: [
       {
         url: `${BASE_URL}/images/charterimg_1.png`,
@@ -95,7 +95,7 @@ export const crewedYachtMetadata: Metadata = {
     title: "Yacht Charter Phuket – Book Your Luxury Escape Today",
     description: "Experience Phuket in style with private yacht charters, full crew, and custom island-hopping adventures. Reserve your luxury escape now.",
     url: `${BASE_URL}/yacht-charter-phuket`,
-    siteName: "Faraway Yachting",
+    // siteName: "Faraway Yachting",
     images: [
       {
         url: `${BASE_URL}/images/crewedimg.png`,
@@ -123,7 +123,7 @@ export const contactMetadata: Metadata = {
     title: "Contact Faraway Yachting – Your Luxury Charter Experts",
     description: "Contact Faraway Yachting today. With 30 years in business and over 750 ★★★★★ reviews, we're Phuket's trusted yacht charter experts. Let's plan your journey.",
     url: `${BASE_URL}/contact`,
-    siteName: "Faraway Yachting",
+    // siteName: "Faraway Yachting",
     images: [
       {
         url: `${BASE_URL}/images/Cimage1.png`,
@@ -146,14 +146,18 @@ export const contactMetadata: Metadata = {
 // Dynamic Yacht Metadata Generation
 export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' | 'bareboat'): Promise<Metadata> {
   try {
+    // Check if BACKEND_URL is available
+    if (!process.env.BACKEND_URL) {
+      console.warn('BACKEND_URL not found, using fallback metadata');
+      return generateFallbackMetadata(slug, yachtType);
+    }
+
     const response = await fetchYachtBySlug(slug);
     const yacht = response.data?.yachts?.[0] || response.data?.yachts;
     
     if (!yacht) {
-      return {
-        title: "Yacht Charter Phuket – Far Away Phuket Yachts Charters",
-        description: "Discover luxury yacht charters in Phuket with Far Away Phuket Yachts Charters. Experience the beauty of Thailand's waters with our premium yacht services.",
-      };
+      console.warn(`No yacht found for slug: ${slug}, using fallback metadata`);
+      return generateFallbackMetadata(slug, yachtType);
     }
 
     // Determine yacht type and appropriate URL
@@ -162,7 +166,7 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
     const url = `${BASE_URL}/${baseUrl}/${slug}`;
 
     // Generate dynamic title
-    const title = `${yacht.title} – Far Away Phuket Yachts Charters`;
+    const title = `${yacht.title} – FarAway Phuket Yachts Charters`;
     
     // Generate fully dynamic description with varied starting phrases
     const charterType = type === 'bareboat' ? 'bareboat charter' : 'yacht charter';
@@ -216,7 +220,7 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
         title,
         description,
         url,
-        siteName: "Faraway Yachting",
+        // siteName: "Faraway Yachting",
         images: [
           {
             url: yacht.primaryImage,
@@ -237,9 +241,51 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
     };
   } catch (error) {
     console.error('Error generating yacht metadata:', error);
-    return {
-      title: "Yacht Charter Phuket – Far Away Phuket Yachts Charters",
-      description: "Discover luxury yacht charters in Phuket with Far Away Phuket Yachts Charters. Experience the beauty of Thailand's waters with our premium yacht services.",
-    };
+    return generateFallbackMetadata(slug, yachtType);
   }
+}
+
+// Fallback metadata generation when API is not available
+function generateFallbackMetadata(slug: string, yachtType?: 'crewed' | 'bareboat'): Metadata {
+  const type = yachtType || 'crewed';
+  const baseUrl = type === 'bareboat' ? 'bareboat' : 'crewed_boats';
+  const url = `${BASE_URL}/${baseUrl}/${slug}`;
+  
+  // Generate title from slug
+  const yachtName = slug
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+  
+  const title = `${yachtName} – FarAway Phuket Yachts Charters`;
+  
+  // Generate description based on yacht type
+  const charterType = type === 'bareboat' ? 'bareboat charter' : 'yacht charter';
+  const description = `Experience luxury ${charterType} aboard ${yachtName} in Phuket. Book your premium sailing adventure with Far Away Phuket Yachts Charters - 30 years of excellence, 750+ ★★★★★ reviews.`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      images: [
+        {
+          url: `${BASE_URL}/images/homeimg1.png`,
+          width: 1200,
+          height: 630,
+          alt: `${yachtName} - Luxury Yacht Charter Phuket`,
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${BASE_URL}/images/homeimg1.png`],
+    },
+  };
 }

@@ -7,21 +7,21 @@ import { styles, combine } from "@/styles";
 
 // Reusable components
 const SectionHeading = ({ children, icon }: { children: string; icon?: string }) => (
-    <h2 className={combine(styles.h5, "text-zink font-semibold mb-8 border-b-2 border-gray-300 pb-4")}>
+    <h2 className={combine(styles.h5, "text-zink font-semibold mb-5 border-b-2 border-gray-300 pb-4")}>
         {icon && <img src={icon} alt="" className="w-8 h-8 inline mr-3" />}
         {children}
     </h2>
 );
 
 const BulletList = ({ items, columns = 2 }: { items: string[]; columns?: number }) => (
-    <div className={`grid grid-cols-1 md:grid-cols-${columns} gap-8`}>
+    <div className={`grid grid-cols-1 md:grid-cols-${columns} go-0 md:gap-8`}>
         {Array.from({ length: columns }, (_, colIndex) => {
             const startIndex = Math.ceil(items.length / columns) * colIndex;
             const endIndex = Math.min(startIndex + Math.ceil(items.length / columns), items.length);
             const columnItems = items.slice(startIndex, endIndex);
 
             return (
-                <div key={colIndex} className="space-y-4">
+                <div key={colIndex} className="space-y-2">
                     {columnItems.map((item, index) => (
                         <div key={startIndex + index} className="flex items-start space-x-3">
                             <div className="w-2 h-2 bg-zink rounded-full mt-2 flex-shrink-0"></div>
@@ -77,7 +77,7 @@ const PolicyInfo = () => {
             case 'bullets':
                 return (
                     <>
-                        {section.subtitle && <p className={combine("text-zink font-sourceSansPro font-semibold mb-6", styles.p2)}>{section.subtitle}</p>}
+                        {section.subtitle && <p className={combine("text-zink font-sourceSansPro font-semibold mb-3 md:mb-6", styles.p2)}>{section.subtitle}</p>}
                         <BulletList items={section.data as string[]} />
                     </>
                 );

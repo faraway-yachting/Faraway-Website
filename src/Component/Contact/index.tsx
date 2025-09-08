@@ -11,7 +11,7 @@ const ContactSection = () => {
                 </p>
             </div>
 
-            <section className={combine("bg-white", styles.py4, styles.px1)}>
+            <section className={combine("bg-white", styles.py4)}>
                 <div className={combine("bg-white p-0 xl:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-12",styles.container)}>
                     {/* Left Side - Form (Replaced with iframe) */}
                     <div className="col-span-12 lg:col-span-7">

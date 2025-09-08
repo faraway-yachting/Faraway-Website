@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
           <div className="flex items-start gap-3 mb-2">
             <a
-              href="mailto:booking@faraway-yachting.com"
+             href="https://mail.google.com/mail/?view=cm&to=booking@faraway-yachting.com"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2"
@@ -89,7 +89,7 @@ const Footer = () => {
               { Icon: FaFacebookF, href: "https://www.facebook.com/FarawayYachting" },
               { Icon: FaInstagram, href: "https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Ffarawayyachting%2F%3Ffbclid%3DIwAR0iAzKhJjfT0NVO5X5tKjjJ-uwaWQ4m6DQ03l9vQiGxJ8Q7OJQQByekk54&is_from_rle" },
               { Icon: FaWhatsapp, href: "https://api.whatsapp.com/send/?phone=66612345623&text&type=phone_number&app_absent=0" },
-              { Icon: FaLine, href: "https://line.me/ti/p/@farawayyachting" }
+              { Icon: FaLine, href: "https://line.me/ti/p/IF91DcUiYa" }
             ].map(({ Icon, href }, idx) => (
               <a
                 key={idx}

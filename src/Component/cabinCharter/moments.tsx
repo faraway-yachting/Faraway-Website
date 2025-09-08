@@ -5,13 +5,27 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HeadingContent from "@/common/heading";
-import { momentsTestimonials, Testimonial } from "@/data/cabincharter/momentsData";
-import Button from "@/styles/Button";
+import { momentsTestimonials } from "@/data/cabincharter/momentsData";
 import { styles, combine } from "@/styles/style";
 
 const FunMoments: React.FC = () => {
-  const [readMore, setReadMore] = useState(false);
+  const [readMoreStates, setReadMoreStates] = useState<{ [key: string]: boolean }>({});
   const [currentSlide, setCurrentSlide] = useState(0);
+  
+  // Function to truncate text by word count
+  const truncateByWords = (text: string, wordLimit: number): string => {
+    const words = text.split(' ');
+    if (words.length <= wordLimit) return text;
+    return words.slice(0, wordLimit).join(' ') + '...';
+  };
+
+  // Function to toggle read more state for individual slides
+  const toggleReadMore = (slideId: string) => {
+    setReadMoreStates(prev => ({
+      ...prev,
+      [slideId]: !prev[slideId]
+    }));
+  };
   const settings = {
     dots: false,
     infinite: true,
@@ -39,7 +53,7 @@ const FunMoments: React.FC = () => {
         {momentsTestimonials.map((item, index) => (
           <div
             key={item.id}
-            className={`transition-all duration-300 px-2 sm:px-2 md:px-3 lg:px-4 mt-[47px] ${currentSlide === index ? "scale-105 xl:scale-97 z-10" : "scale-85 "
+            className={`transition-all duration-300 mt-[47px] ${currentSlide === index ? "scale-105 xl:scale-97 z-10" : "scale-85 "
               }`}>
             <div className="bg-white border border-gray-200 rounded-tl-3xl rounded-br-3xl shadow-md h-full flex flex-col justify-between min-h-[183px] md:min-h-[230px] lg:min-h-[250px] xl::min-h-[270px] max-w-7xl w-full ">
 
@@ -52,21 +66,34 @@ const FunMoments: React.FC = () => {
                   </div>
                 </div>
                 {/* Description immediately below */}
-                <p
-                  className={combine("pt-3 md:pt-0 px-3 md:px-4  font-normal text-zinc-800 italic transition-all duration-300", styles.p3, !readMore ? "line-clamp-5 lg:line-clamp-none" : "")}
-                >
-                  {item.desp}
-                </p>
-
-                {/* Read More / Read Less button - only show if text is long */}
-                <div className="px-2 md:px-3 lg:px-6 mt-0 md:mt-1 block lg:hidden">
-                  <Button
-                    variant="outline"
-                    onClick={() => setReadMore(!readMore)}
-                    className="text-zink pb-1 underline text-[12px] md:text-sm font-medium hover:text-[#D6AB61]"
+                <div className="pt-3 md:pt-0 px-3 md:px-4">
+                  <p
+                    className={combine("font-normal text-zinc-800 italic transition-all duration-300", styles.p3)}
                   >
-                    {readMore ? "Read Less" : "Read More"}
-                  </Button>
+                    {/* Mobile view - show truncated text with read more */}
+                    <span className="block md:hidden">
+                      {!readMoreStates[item.id] ? (
+                        <>
+                          {truncateByWords(item.desp, 33).replace('...', '')}
+                          <span className="text-zink underline text-[12px] font-medium hover:text-[#D6AB61] cursor-pointer ml-1" onClick={() => toggleReadMore(item.id)}>
+                            Read More
+                          </span>
+                        </>
+                      ) : (
+                        <>
+                          {item.desp}
+                          <span className="text-zink underline text-[12px] font-medium hover:text-[#D6AB61] cursor-pointer ml-1 block" onClick={() => toggleReadMore(item.id)}>
+                            Read Less
+                          </span>
+                        </>
+                      )}
+                    </span>
+                    
+                    {/* Medium screens and larger - show full description */}
+                    <span className="hidden md:block">
+                      {item.desp}
+                    </span>
+                  </p>
                 </div>
 
               </div>

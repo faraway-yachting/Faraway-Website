@@ -50,11 +50,11 @@ const Thailand_BestLands = () => {
                         <div key={index} className="px-3 lg:px-2 xl:px-3">
                             <div className="relative">
                                 {/* Image Box */}
-                                <div className="relative overflow-hidden z-20 rounded-lg">
+                                <div className="relative overflow-hidden z-20">
                                     <img
                                         src={island.image}
                                         alt={island.title}
-                                        className="w-full h-[300px] md:h-[350px] lg:h-[350px] xl:h-[440px] object-cover rounded-lg"
+                                        className="w-full h-[285px] md:h-[350px] lg:h-[350px] xl:h-[440px] object-cover"
                                     />
                                     <h3 className={combine("absolute bottom-11 md:bottom-13 lg:bottom-17 xl:bottom-20 left-5 text-white font-extrabold drop-shadow-lg", styles.h3)}>
                                         {island.title}
