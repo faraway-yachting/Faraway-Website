@@ -127,7 +127,7 @@ export default function TermsWithTable() {
           </div>
         </div>
 
-        <div className="relative z-10 px-8 pb-8">
+        <div className="relative z-10 pb-8">
           <div className="space-y-6">
             {sections.map((section) => (
               <div
@@ -165,7 +165,7 @@ export default function TermsWithTable() {
         </div>
 
         {/* Terms & Conditions */}
-        <div className={combine(styles.container, "bg-white rounded-lg overflow-hidden", styles.px1, "my-14")}>
+        <div className={combine("bg-white rounded-lg overflow-hidden my-14")}>
           {/* Header */}
           <div className="mb-10">
             <HeadingContent
@@ -184,7 +184,7 @@ export default function TermsWithTable() {
                   </div>
 
                   {/* Section Content */}
-                  <div className="pl-9">
+                  <div className="pl-6 md:pl-7 lg:pl-8 xl:pl-9">
                     {section.subsections.map((subsection) => (
                       <div key={subsection.id} id={subsection.id} className="mb-4 scroll-mt-24">
                         {subsection.title && (
@@ -196,7 +196,7 @@ export default function TermsWithTable() {
 
                     {/* Special Insurance Box */}
                     {section.id === "holiday&cancellation-insurance" && (
-                      <div className="bg-white flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 px-4 md:px-6 py-6 border-l-[7px] border-l-[#012A50] shadow-sm">
+                      <div className="bg-white flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 py-6 border-l-[7px] border-l-[#012A50] shadow-sm">
                         <div className="flex-1 text-left">
                           <div className="flex items-center gap-2 mb-2">
                             <span className="text-mustard font-bold text-lg">Info:</span>

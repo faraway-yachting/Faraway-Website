@@ -26,7 +26,7 @@ const About = () => {
                         </p>
                     </div>
 
-                    <div className="flex items-center justify-end">
+                    <div className="flex items-center justify-center md:justify-end">
                         <img
                             src={PngIcons.policyimg2}
                             alt="Policy"

@@ -25,10 +25,8 @@ const WhatsAppIcon: React.FC = () => {
     setIsClicked(true);
     setTimeout(() => {
       setIsClicked(false);                                                 
-      // Replace with your WhatsApp number
-      const phoneNumber = '+66 61 2345623'; // Add your WhatsApp number here
-      const message = 'Hello! I would like to know more about your yacht charter services.';
-      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      // WhatsApp URL with specific format to ensure chat opens
+      const whatsappUrl = 'https://api.whatsapp.com/send/?phone=66612345623&text&type=phone_number&app_absent=0';
       window.open(whatsappUrl, '_blank');
     }, 200);
   };

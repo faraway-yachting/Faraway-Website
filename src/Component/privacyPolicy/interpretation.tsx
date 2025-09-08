@@ -8,7 +8,7 @@ const InfoSection = () => {
             {/* First Section - Interpretation and Definitions */}
             <div className="mb-8 md:mb-10 lg:mb-16">
                 {/* Main Heading with Icon */}
-                <div className="text-center mb-6 md:mb-8 lg:mb-10">
+                <div className="text-center mb-4 md:mb-8 lg:mb-10">
                     <HeadingContent
                         heading="Interpretation and Definitions"
                     />

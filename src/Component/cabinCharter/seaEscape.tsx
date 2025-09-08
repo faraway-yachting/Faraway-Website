@@ -32,7 +32,7 @@ const SeaEscape = () => {
                     </p>
                 </div>
 
-                <div className={combine("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-5 xl:gap-10 py-3 mb-7", styles.container)}>
+                <div className={combine("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-5 xl:gap-10 py-3 mb-7", styles.container)}>
                     {seaEscapeFeatures.map(({ icon, title, desc }) => {
                         const IconComponent = iconMap[icon as keyof typeof iconMap];
                         return (

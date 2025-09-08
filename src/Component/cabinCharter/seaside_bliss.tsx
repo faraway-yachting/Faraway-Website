@@ -43,7 +43,7 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
       <div className="relative my-6 sm:my-8 md:my-10">
         {/* Faint Background Map */}
         <div className="absolute inset-0 bg-[url('/images/map.png')] bg-no-repeat bg-center bg-cover opacity-10 z-0" />
-        <div className="relative bg-white/80 z-10 py-0 sm:py-10 md:py-10 px-2 sm:px-4 md:px-4 lg:px-4 xl:px-8">
+        <div className="relative bg-white/80 z-10 py-0 sm:py-10 md:py-10 ">
           <div className={styles.container}>
             {/* Tabs */}
             <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-5 lg:gap-7 overflow-x-auto">
@@ -54,7 +54,7 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
                     setActiveTab(label);
                     targetRef?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
                   }}
-                  className={`py-1 px-2 sm:px-3 text-xs sm:text-sm md:text-base lg:text-[18px] xl:text-[20px] font-poppins font-medium flex items-center gap-2 transition whitespace-nowrap ${activeTab === label
+                  className={`py-1 px-2 sm:px-3 text-[16px] md:text-base lg:text-[18px] xl:text-[20px] font-poppins font-medium flex items-center gap-2 transition whitespace-nowrap ${activeTab === label
                     ? "text-mustard border-b-2 border-b-mustard"
                     : "text-[#034250] border-b-2 border-b-zink"
                     }`}

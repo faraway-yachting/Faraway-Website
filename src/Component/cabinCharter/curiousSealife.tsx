@@ -63,7 +63,7 @@ const SealifeFAQ = ({ sectionRef }: SealifeFAQProps) => {
                     </button>
 
                     {isOpen && (
-                      <div className="px-4 pb-6">
+                      <div className="px-3 lg:px-4 pb-3 lg:pb-4 xl:pb-6">
                         <p className={combine("text-zink", styles.p2)}>
                           {item.description}
                         </p>

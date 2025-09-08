@@ -23,7 +23,7 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
             <div key={item.id} className={`border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition duration-200`}>
                 {/* Accordion Header */}
                 <button type="button" onClick={() => toggleItem(item.id)}
-                    className="flex justify-between items-center w-full p-4 cursor-pointer text-left">
+                    className="flex justify-between items-center w-full p-2 lg:p-3 xl:p-4 cursor-pointer text-left">
                     <div className="flex items-center gap-4 justify-center">
                         <div className={combine("bg-zink text-white font-semibold px-3 py-1 rounded-lg", styles.p4)}>
                             <p>
@@ -41,7 +41,7 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
 
                 {/* Table Body */}
                 {isActive && hasItinerary && item.itinerary && (
-                    <div className="px-4 pb-6">
+                    <div className="px-2 lg:px-4 pb-3 lg:pb-4 xl:pb-6">
                         <div className="overflow-x-auto">
                             <table className="w-full border border-gray-300 text-left text-zink table-auto">
 
@@ -54,7 +54,7 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
                                                 key={`${idx}-${i}`}
                                                 className="text-sm md:text-base odd:bg-white even:bg-[#F5F5F5] odd:hover:bg-[#F5F5F5]"
                                             >
-                                                <td className={combine("border border-gray-300  px-2 md:px-2 lg:px-4 py-3 font-bold text-zink align-top", styles.p2)}>
+                                                <td className={combine("border border-gray-300 px-2 md:px-2 lg:px-4 py-3 font-bold text-zink align-top", styles.p2)}>
                                                     {title}
                                                 </td>
                                                 <td className={combine("border border-gray-300 px-2 md:px-2 lg:px-4 py-3 text-zink", styles.p4)}>
@@ -87,7 +87,7 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
     const rightColumn = highSeason.filter(item => item.id === "4" || item.id === "5" || item.id === "6");
     return (
         <div ref={sectionRef} className={styles.py2}>
-            <section className={combine("bg-white", styles.px3)}>
+            <section className={combine("bg-white", styles.px1)}>
                 <div className={styles.containerLarge}>
                     {/* Fetch Heading  */}
                     <div className="mb-12">
@@ -96,7 +96,7 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
                             description='A simple word with a big promise — "Koh" means island, and your journey is filled with the best of them' />
                     </div>
                     {/* Two Columns */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-5">
                         {/* Left Column */}
                         <div className="space-y-3">
                             {leftColumn.map(item => renderItem(item))}

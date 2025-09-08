@@ -53,7 +53,7 @@ const ItinerarySection = () => {
   );
 
   return (
-    <section className={combine("bg-white", styles.py4, styles.px4)} id="overnightitineraries">
+    <section className={combine("bg-white", styles.py4, )} id="overnightitineraries">
       <div className={styles.container}>
         <div className={combine("grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 xl:gap-16", styles.gap1)}>
           <SeasonSection 
