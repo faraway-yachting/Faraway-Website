@@ -1,31 +1,53 @@
+"use client";
 import { FaPhoneAlt, FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { BsFillSendFill } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa6";
 import { IoLogoTwitter } from "react-icons/io";
+import { useState } from "react";
 
 const Header = () => {
+    const [emailCopied, setEmailCopied] = useState(false);
+    const [phoneCopied, setPhoneCopied] = useState(false);
+
+    const copyEmailToClipboard = async () => {
+        try {
+            await navigator.clipboard.writeText('booking@faraway-yachting.com');
+            setEmailCopied(true);
+            setTimeout(() => setEmailCopied(false), 2000); 
+        } catch (err) {
+            console.error('Failed to copy email: ', err);
+        }
+    };
+
+    const copyPhoneToClipboard = async () => {
+        try {
+            await navigator.clipboard.writeText('+66 61 2345623');
+            setPhoneCopied(true);
+            setTimeout(() => setPhoneCopied(false), 2000);
+        } catch (err) {
+            console.error('Failed to copy phone: ', err);
+        }
+    };
+
     return (
         <div className="bg-zink hidden md:block">
             <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto text-white text-sm px-4 xl:px-3 py-4">
                 <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 lg:gap-6">
-                    <a
-                        href="tel:+66612345623"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-sm gap-2"
+                    <button
+                        onClick={copyPhoneToClipboard}
+                        className="flex items-center text-sm gap-2 cursor-pointer hover:text-gray-300 transition-colors"
                     >
-
-                        <FaPhoneAlt /> +66 61 2345623
-                    </a>
-                    <a
-                        href="https://mail.google.com/mail/?view=cm&to=booking@faraway-yachting.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-sm gap-2"
+                        <FaPhoneAlt />
+                        {phoneCopied ? 'Phone No. Copied!' : '+66 61 2345623'}
+                    </button>
+                    <button
+                        onClick={copyEmailToClipboard}
+                        className="flex items-center text-sm gap-2 cursor-pointer hover:text-gray-300 transition-colors"
                     >
-                        <MdOutlineEmail />booking@faraway-yachting.com
-                    </a>
+                        <MdOutlineEmail />
+                        {emailCopied ? 'Email Copied!' : 'booking@faraway-yachting.com'}
+                    </button>
                     <a
                         href="https://www.google.com/maps/place/Faraway+Yachting+Phuket,+Thailand/@7.8231625,98.3437787,15z/data=!4m6!3m5!1s0x3050257bffffffff:0x937eaf99ed7fa6b7!8m2!3d7.8235296!4d98.3451594!16s%2Fg%2F12hp6d07j?entry=ttu&g_ep=EgoyMDI1MDgxMS4wIKXMDSoASAFQAw%3D%3D"
                         target="_blank"

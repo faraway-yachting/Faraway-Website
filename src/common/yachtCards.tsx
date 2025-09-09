@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { fetchYachts } from "@/lib/api";
@@ -186,12 +185,14 @@ const YachtCards: React.FC<YachtCardsProps> = ({
 
   return (
     <div className="mb-8 mx-4 lg:mx-0">
-      <div className="mb-10">
-        <HeadingContent
-          heading="Featured Yachts in Phuket"
-          description="Let the waves guide you to elegance, adventure, and pure relaxation!"
-        />
-      </div>
+      {pathname === "/" && (
+        <div className="mb-10">
+          <HeadingContent
+            heading="Featured Yachts in Phuket"
+            description="Let the waves guide you to elegance, adventure, and pure relaxation!"
+          />
+        </div>
+      )}
       <div className={`grid ${gridCols} gap-6 md:gap-8 lg:gap-4 xl:gap-10`} data-yacht-cards>
         {data.map((boat) => (
           <div
@@ -232,7 +233,6 @@ const YachtCards: React.FC<YachtCardsProps> = ({
                 </div>
               </div>
             </div>
-
             {/* Content Section - Redesigned */}
             <div className="p-4 space-y-3">
               {/* Title and Rating */}
@@ -267,7 +267,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({
                 <Button
                   variant="outline"
                 >
-                  Detail
+                  Details
                 </Button>
               </div>
             </div>

@@ -78,7 +78,7 @@ const Footer = () => {
               className="flex items-center gap-2 cursor-pointer hover:text-[#D6AB61] transition-colors"
             >
               <FaPhoneAlt className={`mt-1 ${iconClass}`} />
-              <span className={`${textclass} ${phoneCopied ? 'text-white' : ''}`}>
+              <span className={`${textclass} ${phoneCopied ? 'text-green-400' : ''}`}>
                 {phoneCopied ? 'Copied!' : '+66 61 234 5623'}
               </span>
             </button>
@@ -89,7 +89,7 @@ const Footer = () => {
               className="flex items-center gap-2 cursor-pointer hover:text-[#D6AB61] transition-colors"
             >
               <FaRegEnvelope className={`mt-1 ${iconClass}`} />
-              <span className={`${textclass} ${emailCopied ? 'text-white' : ''}`}>
+              <span className={`${textclass} ${emailCopied ? 'text-green-400' : ''}`}>
                 {emailCopied ? 'Copied!' : 'booking@faraway-yachting.com'}
               </span>
             </button>

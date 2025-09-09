@@ -11,10 +11,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
 
   return (
     <div
-      className="bg-cover bg-center bg-no-repeat min-h-[60vh] md:min-h-[70vh] lg:min-h-[70vh] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8"
-      style={{ backgroundImage: `url(${config.bg})` }}
-    >
-      <div className="text-center flex flex-col justify-center items-center">
+      className="relative bg-cover bg-center bg-no-repeat min-h-[60vh] md:min-h-[70vh] lg:min-h-[70vh] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8"
+      style={{ backgroundImage: `url(${config.bg})` }} >
+      <div className="absolute inset-0 bg-[#012A50]/40 z-0" />
+      <div className="relative text-center flex flex-col justify-center items-center z-10">
         <p className="text-white font-playfair font-normal pt-4 text-[30px] md:text-[36px] lg:text-[44px] xl:text-[56px] leading-tight">
           {config.title}
         </p>
