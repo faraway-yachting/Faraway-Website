@@ -1,3 +1,4 @@
+"use client";
 import {
   FaPhoneAlt,
   FaFacebookF,
@@ -9,6 +10,7 @@ import { FaRegEnvelope } from "react-icons/fa";
 import { RiMap2Line } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
+import { useState } from "react";
 
 const quickLinks = [
   { label: "Crewed Yachts", href: "/yacht-charter-phuket" },
@@ -31,6 +33,29 @@ const textclass = "text-[16px] font-[400]";
 const heading = "text-[22px] lg:text-[24px] xl:text-[28px] font-[400] mb-4 font-playfair";
 
 const Footer = () => {
+  const [emailCopied, setEmailCopied] = useState(false);
+  const [phoneCopied, setPhoneCopied] = useState(false);
+
+  const copyEmailToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText('booking@faraway-yachting.com');
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000); 
+    } catch (err) {
+      console.error('Failed to copy email: ', err);
+    }
+  };
+
+  const copyPhoneToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText('+66 61 234 5623');
+      setPhoneCopied(true);
+      setTimeout(() => setPhoneCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy phone: ', err);
+    }
+  };
+
   const renderLinks = (links) =>
     links.map((link, index) => (
       <li key={index} className="flex items-center gap-2 text-[16px] font-normal">
@@ -48,26 +73,26 @@ const Footer = () => {
         <div className="lg:col-span-3 xl:col-span-4">
           <p className={heading}>Faraway Yachting Co. Ltd.</p>
           <div className="flex items-start gap-3 mb-2">
-            <a
-              href="tel:66612345623"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
+            <button
+              onClick={copyPhoneToClipboard}
+              className="flex items-center gap-2 cursor-pointer hover:text-[#D6AB61] transition-colors"
             >
               <FaPhoneAlt className={`mt-1 ${iconClass}`} />
-              <span className={textclass}>+66 61 234 5623</span>
-            </a>
+              <span className={`${textclass} ${phoneCopied ? 'text-white' : ''}`}>
+                {phoneCopied ? 'Copied!' : '+66 61 234 5623'}
+              </span>
+            </button>
           </div>
           <div className="flex items-start gap-3 mb-2">
-            <a
-             href="https://mail.google.com/mail/?view=cm&to=booking@faraway-yachting.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
+            <button
+              onClick={copyEmailToClipboard}
+              className="flex items-center gap-2 cursor-pointer hover:text-[#D6AB61] transition-colors"
             >
               <FaRegEnvelope className={`mt-1 ${iconClass}`} />
-              <span className={`${textclass} hover:text-[#D6AB61] transition`}>booking@faraway-yachting.com</span>
-            </a>
+              <span className={`${textclass} ${emailCopied ? 'text-white' : ''}`}>
+                {emailCopied ? 'Copied!' : 'booking@faraway-yachting.com'}
+              </span>
+            </button>
           </div>
           <div className="flex items-start gap-3">
             <a

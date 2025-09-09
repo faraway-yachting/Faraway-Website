@@ -1,14 +1,52 @@
 "use client";
 import { contactDetails } from "@/data/contact/contact";
 import { styles, combine } from "@/styles";
+import { useState } from "react";
         
 const ContactSection = () => {
+    const [copiedItems, setCopiedItems] = useState<Set<string>>(new Set());
+
+    const copyToClipboard = async (text: string, itemType: string) => {
+        try {
+            await navigator.clipboard.writeText(text);
+            setCopiedItems(prev => new Set(prev).add(itemType));
+            
+            // Reset the copied state after 2 seconds
+            setTimeout(() => {
+                setCopiedItems(prev => {
+                    const newSet = new Set(prev);
+                    newSet.delete(itemType);
+                    return newSet;
+                });
+            }, 2000);
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+    };
+
+    const isCopyableItem = (title: string) => {
+        return title === "Email" || title === "Call us";
+    };
+
+    const getLinkForItem = (title: string, text: string) => {
+        switch (title) {
+            case "Whatsapp":
+                return `https://api.whatsapp.com/send/?phone=66612345623&text&type=phone_number&app_absent=0`;
+            case "Line":
+                return "https://line.me/ti/p/IF91DcUiYa";
+            case "Our Location":
+                return "https://www.google.com/maps/place/Faraway+Yachting+Phuket,+Thailand/@7.8231625,98.3437787,15z/data=!4m6!3m5!1s0x3050257bffffffff:0x937eaf99ed7fa6b7!8m2!3d7.8235296!4d98.3451594!16s%2Fg%2F12hp6d07j?entry=ttu&g_ep=EgoyMDI1MDgxMS4wIKXMDSoASAFQAw%3D%3D";
+            default:
+                return null;
+        }
+    };
+
     return (
         <div className="">
             <div className={combine("bg-[url('/images/Cimage1.png')] bg-cover bg-center bg-no-repeat w-full flex flex-col text-center min-h-[40vh]", styles.px1,styles.flexCenter)}>
-                <p className={combine("text-white drop-shadow-md", styles.h1)}>
+                <h1 className={combine("text-white drop-shadow-md", styles.h1)}>
                     Contact Us
-                </p>
+                </h1>
             </div>
 
             <section className={combine("bg-white", styles.py4)}>
@@ -17,8 +55,7 @@ const ContactSection = () => {
                     <div className="col-span-12 lg:col-span-7">
                         <h2 className={combine("text-zink font-bold mb-4", styles.h3)}>
                             Get In Touch
-                        </h2>
-                        
+                        </h2>    
                         {/* Replaced form with iframe */}
                         <div className="w-full h-[745px]">
                             <iframe
@@ -58,6 +95,11 @@ const ContactSection = () => {
                         <ul className={combine("space-y-3 mt-3", styles.text1)}>
                             {contactDetails.map((item, index) => {
                                 const Icon = item.icon;
+                                const isCopyable = isCopyableItem(item.title);
+                                const isCopied = copiedItems.has(item.title);
+                                const linkUrl = getLinkForItem(item.title, item.text);
+                                const isLinkable = linkUrl !== null;
+                                
                                 return (
                                     <li key={index} className="flex items-start gap-3 mt-4 lg:mt-0">
                                         <div className="flex flex-row items-start sm:items-center gap-4 sm:gap-6">
@@ -68,12 +110,37 @@ const ContactSection = () => {
                                                 <p className={combine("font-sourceSanspro font-semibold text-zink", styles.h5)}>
                                                     {item.title}
                                                 </p>
-                                                <p className={combine("font-sourceSanspro text-zink", styles.p2)}>
-                                                    {item.text}
-                                                </p>
+                                                {isLinkable ? (
+                                                    <a
+                                                        href={linkUrl}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className={combine(
+                                                            "font-sourceSanspro text-zink hover:text-[#d6ab62] transition-colors duration-200",
+                                                            styles.p2
+                                                        )}
+                                                    >
+                                                        {item.text}
+                                                    </a>
+                                                ) : (
+                                                    <p 
+                                                        className={combine(
+                                                            "font-sourceSanspro text-zink", 
+                                                            styles.p2,
+                                                            isCopyable ? "cursor-pointer hover:text-[#d6ab62] transition-colors duration-200" : ""
+                                                        )}
+                                                        onClick={isCopyable ? () => copyToClipboard(item.text, item.title) : undefined}
+                                                        title={isCopyable ? `Click to copy ${item.title}` : undefined}
+                                                    >
+                                                        {isCopyable && isCopied ? (
+                                                            <span className="text-mustard font-semibold">Copied!</span>
+                                                        ) : (
+                                                            item.text
+                                                        )}
+                                                    </p>
+                                                )}
                                             </div>
                                         </div>
-
                                     </li>
                                 );
                             })}

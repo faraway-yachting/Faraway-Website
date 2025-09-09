@@ -34,7 +34,7 @@ const BookwithUs = () => {
                                     <div className={flexCenter}>
                                         <div className="bg-zink text-white w-15 h-15 flex items-center justify-center rounded-full">
                                             <item.icon size={32} />
-                                        </div>
+                                        </div>             
                                     </div>
                                     <h3 className={combine(h5, "font-semibold text-mustard")}>
                                         {item.label}

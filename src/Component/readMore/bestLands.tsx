@@ -33,7 +33,6 @@ const BestLands: React.FC<Props> = ({ id }) => {
           Phuket Yacht Charter Adventures
         </p>
       </div>
-
       {/* Decorative Images */}
       <div className="absolute left-10 top-0 z-0 hidden lg:block">
         <img src="/images/seashell.png" alt="" />
@@ -44,7 +43,6 @@ const BestLands: React.FC<Props> = ({ id }) => {
       <div className="absolute bottom-0 left-0 z-0">
         <img src={PngIcons.line2} alt="" />
       </div>
-
       {/* Cards */}
       <div className="relative mt-14">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-14 lg:gap-x-25 py-8 xl:gap-y-10 max-w-[69rem] mx-auto">
@@ -52,7 +50,8 @@ const BestLands: React.FC<Props> = ({ id }) => {
             <div
               key={`${island.id}-${idx}`}
               className={`overflow-hidden p-0 xl:p-6 ${idx === 1 ? "mt-0 md:mt-30 lg:mt-36 xl:mt-40" : ""
-                } ${idx === 2 ? "-mt-[190px]" : ""}`}
+                } ${idx === 2 ? "-mt-0 md:-mt-[90px] lg:-mt-[150px] xl:-mt-[190px]" : ""} ${idx === 3 ? "mt-0 md:mt-7 lg:mt-10 xl:mt-0" : ""
+                }`}
             >
               <div className="relative">
                 <img
@@ -64,8 +63,8 @@ const BestLands: React.FC<Props> = ({ id }) => {
                   {island.title}
                 </div>
               </div>
-              <div className="min-h-[170px] shadow-lg">
-                <div className="p-4 space-y-2 max-w-[30rem]">
+              <div className="min-h-[170px] ">
+                <div className="p-4 space-y-2 shadow-lg">
                   <p className="font-sourceSanspro text-mustard text-lg md:text-[20px] lg:text-[22px] xl:text-[24px] font-bold">
                     {island.subtitle}
                   </p>
