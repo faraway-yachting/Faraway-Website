@@ -6,6 +6,7 @@ import { LuDoorOpen, LuToilet, LuMapPin } from "react-icons/lu";
 import { GiCaptainHatProfile } from "react-icons/gi";
 import HeadingContent from "./heading";
 import { Button } from "@/styles";
+import Image from "next/image";
 
 interface Yacht {
   _id: string;
@@ -210,7 +211,17 @@ const YachtCards: React.FC<YachtCardsProps> = ({
             {/* Image Section - Unchanged */}
             <div className="relative">
               <div className="overflow-hidden">
-                <img src={boat.primaryImage} alt={boat.title} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+                <Image 
+                  src={boat.primaryImage || "/images/homeimg1.png"} 
+                  alt={boat.title || "Yacht Image"} 
+                  width={400}
+                  height={256}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" 
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/images/homeimg1.png";
+                  }}
+                />
               </div>
               {/* Key Specs Overlay */}
               <div className="absolute top-[14.7rem] left-10 right-10 lg:left-6 lg:right-6 xl:left-10 xl:right-10 bg-white rounded-md" style={{ boxShadow: "0px 4px 24px 0px #B5B5B540" }}>
@@ -225,7 +236,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({
                         key={i}
                         className="flex items-center space-x-1 border-r font-sourceSansPro last:border-r-0 border-[#E8E8E8] py-1 ps-3 pe-3 xl:ps-5 xl:pe-5 first:ps-2"
                       >
-                        <img src={icon} alt="" className="w-6 xl:w-7" />
+                        <Image src={icon} alt="" width={28} height={28} className="w-6 xl:w-7" />
                         <span>{value}</span>
                       </div>
                     ))}

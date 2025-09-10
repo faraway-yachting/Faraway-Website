@@ -221,7 +221,7 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
         // siteName: "Faraway Yachting",
         images: [
           {
-            url: yacht.primaryImage,
+            url: yacht.primaryImage || `${BASE_URL}/images/homeimg1.png`,
             width: 800,
             height: 600,
             alt: `${yacht.title} - Luxury Yacht Charter Phuket`,
@@ -234,7 +234,7 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
         card: "summary_large_image",
         title,
         description,
-        images: [yacht.primaryImage],
+        images: [yacht.primaryImage || `${BASE_URL}/images/homeimg1.png`],
       },
     };
   } catch (error) {
