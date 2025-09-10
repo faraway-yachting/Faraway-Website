@@ -28,7 +28,7 @@ const iconMap = {
 
 interface Point {
   text: string;
-  id: string;
+  id?: string;
 }
 
 interface Section {
@@ -48,11 +48,11 @@ export default function TermsWithTable() {
     { number: "02", title: "Altering a Booking", id: "altering-a-booking" },
     {
       number: "03", title: "Payments", id: "payments", points: [
-        { text: "3.1 Payment Methods & Accepted Currencies", id: "day-charter-cancellation" },
-        { text: "3.2 Service & Administration Fee", id: "overnight-charter-cancellation" },
-        { text: "3.3 Payment Deadlines", id: "overnight-charter-cancellation" },
-        { text: "3.4 Clearance Responsibility", id: "overnight-charter-cancellation" },
-        { text: "3.5 Late or Non-Payment Consequences", id: "overnight-charter-cancellation" }]
+        { text: "3.1 Payment Methods & Accepted Currencies"},
+        { text: "3.2 Service & Administration Fee",},
+        { text: "3.3 Payment Deadlines", },
+        { text: "3.4 Clearance Responsibility"},
+        { text: "3.5 Late or Non-Payment Consequences"}]
     },
     {
       number: "04", title: "Cancellations and Insurance", id: "cancellations-and-insurance",
@@ -96,15 +96,7 @@ export default function TermsWithTable() {
       }
 
       // Check if it's a subsection ID by looking through all sections
-      for (const section of sections) {
-        if (section.points) {
-          const point = section.points.find(p => p.id === targetId);
-          if (point) {
-            setTimeout(() => handleScroll(point.id), 100);
-            return;
-          }
-        }
-      }
+      // Note: Points no longer trigger scrolling
     }
   }, []);
 
@@ -157,7 +149,6 @@ export default function TermsWithTable() {
                           className="cursor-pointer hover:text-[#D6AB62] transition-colors duration-200"
                           onClick={(e) => {
                             e.stopPropagation();
-                            handleScroll(point.id);
                           }}
                         >
                           {point.text}

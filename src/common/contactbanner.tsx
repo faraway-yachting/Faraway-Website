@@ -103,8 +103,8 @@ const ContactBanner = () => {
                 <FaLine size={24} className="text-white" />
               </div>
               <div>
-                <p className={combine("font-semibold text-zink mb-1 hover:text-[#d6ab62]", styles.p1)}>Line App</p>
-                <p className={combine("text-zink font-medium", styles.p4)}>Connect Now</p>
+                <p className={combine("font-semibold text-zink mb-1 ", styles.p1)}>Line App</p>
+                <p className={combine("text-zink font-medium hover:text-[#d6ab62]", styles.p4)}>Connect Now</p>
               </div>
             </div>
           </a>
