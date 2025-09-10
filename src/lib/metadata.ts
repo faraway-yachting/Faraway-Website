@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { fetchYachtBySlug } from "./api";
 
 const BASE_URL = "https://faraway-psi.vercel.app";
-
 // Home Page Metadata
 export const homeMetadata: Metadata = {
   title: "Yacht Charter Phuket – 30 Years & 750+ ★★★★★ Reviews",
@@ -12,14 +11,14 @@ export const homeMetadata: Metadata = {
     description: "Book your Yacht Charter Phuket in style with Faraway Yachting. 30 years of excellence, 750+ ★★★★★ reviews. Luxury catamarans, crew & island adventures await.",
     url: `${BASE_URL}/`,
     // siteName: "Faraway Yachting",
-    images: [
-      {
-        url: `${BASE_URL}/images/homeimg1.png`,
-        width: 1200,
-        height: 630,
-        alt: "Phuket Yacht Charter - Luxury Yacht Experience",
-      },
-    ],
+        images: [
+          {
+            url: `${BASE_URL}/images/homeimg1.png`,
+            width: 800,
+            height: 600,
+            alt: "Phuket Yacht Charter - Luxury Yacht Experience",
+          },
+        ],
     locale: "en_US",
     type: "website",
   },
@@ -43,8 +42,8 @@ export const bareboatMetadata: Metadata = {
     images: [
       {
         url: `${BASE_URL}/images/boatimg1.png`,
-        width: 1200,
-        height: 630,
+        width: 800,
+        height: 600,
         alt: "Bareboat Charter Thailand - Self-Skippered Yacht",
       },
     ],
@@ -70,9 +69,9 @@ export const cabinCharterMetadata: Metadata = {
     // siteName: "Faraway Yachting",
     images: [
       {
-        url: `${BASE_URL}/images/charterimg_1.png`,
-        width: 1200,
-        height: 630,
+        url: `${BASE_URL}/images/charterimg.png`,
+        width: 800,
+        height: 600,
         alt: "Cabin Charter Phuket - Luxury Catamaran Cruise",
       },
     ],
@@ -83,7 +82,7 @@ export const cabinCharterMetadata: Metadata = {
     card: "summary_large_image",
     title: "Cabin Charter Phuket – Relax, Explore & Sail in Style",
     description: "Escape the crowds with a Phuket cabin charter. Discover hidden islands, savor Thai cuisine, and enjoy a friendly crew on your unforgettable journey",
-    images: [`${BASE_URL}/images/cabout_1.png`],
+    images: [`${BASE_URL}/images/charterimg.png`],
   },
 };
 
@@ -99,8 +98,8 @@ export const crewedYachtMetadata: Metadata = {
     images: [
       {
         url: `${BASE_URL}/images/crewedimg.png`,
-        width: 1200,
-        height: 630,
+        width: 800,
+        height: 600,
         alt: "Crewed Yacht Charter Phuket - Professional Crew",
       },
     ],
@@ -114,7 +113,6 @@ export const crewedYachtMetadata: Metadata = {
     images: [`${BASE_URL}/images/crewedimg.png`],
   },
 };
-
 // Contact Page Metadata
 export const contactMetadata: Metadata = {
   title: "Contact Faraway Yachting – Your Luxury Charter Experts",
@@ -126,9 +124,9 @@ export const contactMetadata: Metadata = {
     // siteName: "Faraway Yachting",
     images: [
       {
-        url: `${BASE_URL}/images/Cimage1.png`,
-        width: 1200,
-        height: 630,
+        url: `${BASE_URL}/images/cimg2.png`,
+        width: 800,
+        height: 600,
         alt: "Contact Faraway Yachting - Phuket Yacht Charter",
       },
     ],
@@ -139,7 +137,7 @@ export const contactMetadata: Metadata = {
     card: "summary_large_image",
     title: "Contact Faraway Yachting – Your Luxury Charter Experts",
     description: "Contact Faraway Yachting today. With 30 years in business and over 750 ★★★★★ reviews, we're Phuket's trusted yacht charter experts. Let's plan your journey.",
-    images: [`${BASE_URL}/images/contactbg.png`],
+    images: [`${BASE_URL}/images/cimg2.png`],
   },
 };
 
@@ -224,8 +222,8 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
         images: [
           {
             url: yacht.primaryImage,
-            width: 1200,
-            height: 630,
+            width: 800,
+            height: 600,
             alt: `${yacht.title} - Luxury Yacht Charter Phuket`,
           },
         ],
@@ -273,8 +271,8 @@ function generateFallbackMetadata(slug: string, yachtType?: 'crewed' | 'bareboat
       images: [
         {
           url: `${BASE_URL}/images/homeimg1.png`,
-          width: 1200,
-          height: 630,
+          width: 800,
+          height: 600,
           alt: `${yachtName} - Luxury Yacht Charter Phuket`,
         },
       ],
