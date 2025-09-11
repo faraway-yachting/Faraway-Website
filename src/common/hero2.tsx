@@ -24,7 +24,6 @@ const HeroSection2: React.FC<HeroSectionProps> = ({
     >
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-[#012A50]/50 z-0" />
-
       {/* Content */}
       <div className={combine("relative z-10 text-white text-center", styles.px1, styles.container)}>
         <div className={combine(styles.flexCol, "justify-center items-center max-w-3xl mx-auto")}>

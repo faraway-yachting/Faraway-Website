@@ -48,7 +48,6 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
           setData(matchingBlog);
         }
       } catch (err) {
-        console.error("Error fetching blog detail:", err);
       } finally {
         setLoading(false);
       }

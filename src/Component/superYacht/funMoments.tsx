@@ -7,9 +7,7 @@ const FunMomentsComponent = () => {
     const funMomentsData = FunMoments["fun-moments"].items;
     
     return(
-   
 <section className={combine("relative bg-white overflow-hidden", styles.py4)}>
- 
   <div className={combine("relative z-10", styles.container)}>
     <div className={combine("text-center", styles.mb2)}>
       <h2 className={combine(styles.h2, "font-bold text-mustard mb-4")}>Celebrate & Explore in Style</h2>
@@ -45,8 +43,6 @@ const FunMomentsComponent = () => {
     </div>
   </div>
 </section>
-
-
     )
 }
 export default FunMomentsComponent

@@ -48,7 +48,6 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                     : publishedBlogs;
                 setData(filteredBlogs);
             } catch (err: any) {
-                console.error("Error fetching blogs:", err);
                 setError(err?.response?.data?.message || "Failed to fetch blogs.");
             } finally {
                 setLoading(false);

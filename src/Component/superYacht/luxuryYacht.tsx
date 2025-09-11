@@ -86,5 +86,4 @@ const LuxuryYacht = ({ id }: LuxuryYachtProps) => {
         </div>
     )
 }
-
 export default LuxuryYacht;
