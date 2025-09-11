@@ -40,7 +40,7 @@ export interface ContactDetail {
 export const contactDetails: ContactDetail[] = [
     {
         icon: FaRegEnvelope,
-        text: "info@sail-away.net",
+        text: "booking@faraway-yachting.com",
         title: "Email",
     },
     {

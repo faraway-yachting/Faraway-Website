@@ -16,7 +16,7 @@ const HeroSection = () => {
                         className="w-[150px] md:w-[300px] lg:w-[450px] xl:w-[500px] flex justify-center text-center mx-auto my-4"
                     />
                     <p className="text-white font-semibold font-sourceSansPro text-[18px] md:text-[24px] xl:text-[28px]">
-                        Valid for all charters booked after the 1st of January 2025
+                        Valid for all charters booked after the 1st of September 2025
                     </p>
                 </div>
             </div>
