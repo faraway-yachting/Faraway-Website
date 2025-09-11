@@ -3,12 +3,9 @@ export const getBackendUrl = (): string => {
 };
 
 export const getFrontendUrl = (): string => {
-  // In production, use the environment variable or fallback to production URL
-  if (process.env.NODE_ENV === 'production') {
+
     return process.env.FRONTEND_URL || "https://faraway-psi.vercel.app";
-  }
-  // In development, use localhost
-  return process.env.FRONTEND_URL || "http://localhost:3000";
+  
 };
 
 export const isDevelopment = (): boolean => {
