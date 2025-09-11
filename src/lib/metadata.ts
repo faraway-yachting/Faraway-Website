@@ -141,6 +141,60 @@ export const contactMetadata: Metadata = {
   },
 };
 
+// Terms and Conditions Page Metadata
+export const termsAndConditionsMetadata: Metadata = {
+  title: "Terms and Conditions – Faraway Yachting Charter Policies",
+  description: "Read our comprehensive terms and conditions for yacht charter services in Phuket. Clear policies on bookings, cancellations, safety, and your rights as our valued customer.",
+  openGraph: {
+    title: "Terms and Conditions – Faraway Yachting Charter Policies",
+    description: "Read our comprehensive terms and conditions for yacht charter services in Phuket. Clear policies on bookings, cancellations, safety, and your rights as our valued customer.",
+    url: `${BASE_URL}/terms-and-conditions`,
+    images: [
+      {
+        url: `${BASE_URL}/images/logo.png`,
+        width: 800,
+        height: 600,
+        alt: "Terms and Conditions - Faraway Yachting Phuket",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms and Conditions – Faraway Yachting Charter Policies",
+    description: "Read our comprehensive terms and conditions for yacht charter services in Phuket. Clear policies on bookings, cancellations, safety, and your rights as our valued customer.",
+    images: [`${BASE_URL}/images/logo.png`],
+  },
+};
+
+// Destinations Page Metadata
+export const destinationsMetadata: Metadata = {
+  title: "Phuket Yacht Destinations – Discover Thailand's Hidden Gems",
+  description: "Explore the most beautiful destinations accessible by yacht from Phuket. From pristine beaches to hidden coves, discover where your luxury yacht charter can take you in Thailand.",
+  openGraph: {
+    title: "Phuket Yacht Destinations – Discover Thailand's Hidden Gems",
+    description: "Explore the most beautiful destinations accessible by yacht from Phuket. From pristine beaches to hidden coves, discover where your luxury yacht charter can take you in Thailand.",
+    url: `${BASE_URL}/magical-destinations-with-private-yacht-in-phuket`,
+    images: [
+      {
+        url: `${BASE_URL}/images/hero.png`,
+        width: 800,
+        height: 600,
+        alt: "Phuket Yacht Destinations - Thailand Island Hopping",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Phuket Yacht Destinations – Discover Thailand's Hidden Gems",
+    description: "Explore the most beautiful destinations accessible by yacht from Phuket. From pristine beaches to hidden coves, discover where your luxury yacht charter can take you in Thailand.",
+    images: [`${BASE_URL}/images/hero.png`],
+  },
+};
+
 // Dynamic Yacht Metadata Generation
 export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' | 'bareboat'): Promise<Metadata> {
   try {

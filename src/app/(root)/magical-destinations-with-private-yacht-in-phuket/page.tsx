@@ -8,20 +8,22 @@ import ItinerarySection from "@/Component/Destinations/seasonInteraries";
 import SetSail from "@/Component/Destinations/setSail";
 import DayTripSlider from "@/Component/Destinations/tripInteraries";
 import { Fragment } from "react"
+import { destinationsMetadata } from "@/lib/metadata";
 
-const Destinations= () => {
+export const metadata = destinationsMetadata;
+const Destinations = () => {
     return (
-     <Fragment>
-        <HeroSection />
-        <Cards />
-        <JoinUs />
-        <DayTripSlider />
-        <Banner />
-        <ItinerarySection />
-        <PrivateYacht />
-        <BroadBoat />
-        <SetSail />
-     </Fragment>
+        <Fragment>
+            <HeroSection />
+            <Cards />
+            <JoinUs />
+            <DayTripSlider />
+            <Banner />
+            <ItinerarySection />
+            <PrivateYacht />
+            <BroadBoat />
+            <SetSail />
+        </Fragment>
 
     )
 
