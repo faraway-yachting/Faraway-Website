@@ -4,88 +4,14 @@ import { getFrontendUrl } from "./env";
 
 const BASE_URL = getFrontendUrl();
 
-// Helper function to optimize Cloudinary URLs for social media
-const optimizeImageForSocialMedia = (imageUrl: string): string => {
-  if (!imageUrl || !imageUrl.includes('res.cloudinary.com')) {
-    return imageUrl;
-  }
-  
-  // Add Cloudinary transformations for better social media display
-  // This ensures the image is optimized for social media previews
-  if (imageUrl.includes('/upload/')) {
-    const parts = imageUrl.split('/upload/');
-    if (parts.length === 2) {
-      // Add transformations: width=1200, height=630, crop=fill, quality=auto
-      return `${parts[0]}/upload/w_1200,h_630,c_fill,q_auto,f_auto/${parts[1]}`;
-    }
-  }
-  
-  return imageUrl;
-};
-
 // Helper function to get the best available image for a yacht
 const getYachtImage = (yacht: any): string => {
-  // Debug logging to see what data we have
-  console.log('=== YACHT IMAGE DEBUG ===');
-  console.log('Yacht title:', yacht?.title);
-  console.log('Primary image:', yacht?.primaryImage);
-  console.log('Gallery images:', yacht?.galleryImages);
-  console.log('Yacht type:', yacht?.type);
-  console.log('Yacht tags:', yacht?.tags);
-  console.log('BASE_URL:', BASE_URL);
-  
   // Check if primary image exists and is not empty
-  if (yacht?.primaryImage && yacht.primaryImage.trim() !== '') {
-    console.log('✅ Using primary image:', yacht.primaryImage);
-    // Test if the image URL is accessible
-    try {
-      const url = new URL(yacht.primaryImage);
-      console.log('✅ Primary image URL is valid:', url.href);
-      // Optimize Cloudinary URL for social media
-      const optimizedUrl = optimizeImageForSocialMedia(yacht.primaryImage);
-      console.log('✅ Optimized image URL:', optimizedUrl);
-      return optimizedUrl;
-    } catch (error) {
-      console.log('❌ Primary image URL is invalid:', error);
-      // If URL is invalid, fall through to gallery/fallback logic
-    }
+  if (yacht?.primaryImage) {
+    return yacht.primaryImage;
   }
-  
-  // Check if gallery has images
-  if (yacht?.galleryImages && Array.isArray(yacht.galleryImages) && yacht.galleryImages.length > 0) {
-    const firstGalleryImage = yacht.galleryImages[0];
-    if (firstGalleryImage && firstGalleryImage.trim() !== '') {
-      console.log('✅ Using gallery image:', firstGalleryImage);
-      return firstGalleryImage;
-    }
-  }
-  
-  // Use yacht-type specific fallback
-  const yachtType = yacht?.type?.toLowerCase()?.trim();
-  const yachtTags = yacht?.tags || [];
-  
-  let fallbackImage = `${BASE_URL}/images/yacht.png`;
-  
-  // Check for super yacht first
-  if (yachtTags.includes("super yacht")) {
-    fallbackImage = `${BASE_URL}/images/yacht.png`;
-  } else {
-    // Check yacht type
-    switch (yachtType) {
-      case "bareboat":
-        fallbackImage = `${BASE_URL}/images/bareboart.png`;
-        break;
-      case "crewed":
-        fallbackImage = `${BASE_URL}/images/crewedimg.png`;
-        break;
-      default:
-        fallbackImage = `${BASE_URL}/images/yacht.png`;
-    }
-  }
-  
-  console.log('⚠️ Using fallback image:', fallbackImage);
-  console.log('=== END DEBUG ===');
-  return fallbackImage;
+  return `${BASE_URL}/images/homeimg1.png`;
+
 };
 // Home Page Metadata
 export const homeMetadata: Metadata = {
@@ -236,14 +162,7 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
     }
 
     const response = await fetchYachtBySlug(slug);
-    console.log('=== API RESPONSE DEBUG ===');
-    console.log('Response:', response);
-    console.log('Response data:', response.data);
-    
-    // The yacht data is directly in response.data, not in response.data.yachts
-    const yacht = response.data;
-    console.log('Selected yacht:', yacht);
-    console.log('=== END API DEBUG ===');
+    const yacht = response.data?.yachts?.[0] || response.data?.yachts;
     
     if (!yacht) {
       console.warn(`No yacht found for slug: ${slug}, using fallback metadata`);
@@ -318,13 +237,6 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
             height: 600,
             alt: `${yacht.title} - Luxury Yacht Charter Phuket`,
           },
-          // Add fallback image for social media platforms that might not access Cloudinary
-          {
-            url: `${BASE_URL}/images/crewedimg.png`,
-            width: 800,
-            height: 600,
-            alt: `${yacht.title} - Luxury Yacht Charter Phuket`,
-          },
         ],
         locale: "en_US",
         type: "website",
@@ -333,7 +245,7 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
         card: "summary_large_image",
         title,
         description,
-        images: [getYachtImage(yacht), `${BASE_URL}/images/crewedimg.png`],
+        images: [yacht.primaryImage || `${BASE_URL}/images/homeimg1.png`],
       },
     };
   } catch (error) {
