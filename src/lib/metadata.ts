@@ -6,12 +6,23 @@ const BASE_URL = getFrontendUrl();
 
 // Helper function to get the best available image for a yacht
 const getYachtImage = (yacht: any): string => {
+  console.log('=== YACHT IMAGE DEBUG ===');
+  console.log('Yacht data:', yacht);
+  console.log('Primary image:', yacht?.primaryImage);
+  console.log('BASE_URL:', BASE_URL);
+  
   // Check if primary image exists and is not empty
-  if (yacht?.primaryImage) {
+  if (yacht?.primaryImage && yacht.primaryImage.trim() !== '') {
+    console.log('✅ Using primary image:', yacht.primaryImage);
     return yacht.primaryImage;
   }
-  return `${BASE_URL}/images/homeimg1.png`;
 
+  
+  // Use fallback image
+  const fallbackImage = `${BASE_URL}/images/homeimg1.png`;
+  console.log('⚠️ Using fallback image:', fallbackImage);
+  console.log('=== END DEBUG ===');
+  return fallbackImage;
 };
 // Home Page Metadata
 export const homeMetadata: Metadata = {
@@ -162,7 +173,14 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
     }
 
     const response = await fetchYachtBySlug(slug);
-    const yacht = response.data?.yachts?.[0] || response.data?.yachts;
+    console.log('=== API RESPONSE DEBUG ===');
+    console.log('Response:', response);
+    console.log('Response data:', response.data);
+    
+    // The yacht data is directly in response.data, not in response.data.yachts
+    const yacht = response.data;
+    console.log('Selected yacht:', yacht);
+    console.log('=== END API DEBUG ===');
     
     if (!yacht) {
       console.warn(`No yacht found for slug: ${slug}, using fallback metadata`);
@@ -245,7 +263,7 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
         card: "summary_large_image",
         title,
         description,
-        images: [yacht.primaryImage || `${BASE_URL}/images/homeimg1.png`],
+        images: [getYachtImage(yacht)],
       },
     };
   } catch (error) {
