@@ -1,7 +1,23 @@
 import type { Metadata } from "next";
 import { fetchYachtBySlug } from "./api";
+import { getFrontendUrl } from "./env";
 
-const BASE_URL = "https://faraway-psi.vercel.app";
+const BASE_URL = getFrontendUrl();
+
+// Helper function to get the best available image for a yacht
+const getYachtImage = (yacht: any): string => {
+
+  
+  // Check if primary image exists and is not empty
+  if (yacht?.primaryImage && yacht.primaryImage.trim() !== '') {
+    console.log('Using primary image:', yacht.primaryImage);
+    return yacht.primaryImage;
+  }
+  
+  const fallbackImage = `${BASE_URL}/images/homeimg1.png`;
+  console.log('Using fallback image:', fallbackImage);
+  return fallbackImage;
+};
 // Home Page Metadata
 export const homeMetadata: Metadata = {
   title: "Yacht Charter Phuket – 30 Years & 750+ ★★★★★ Reviews",
@@ -221,7 +237,7 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
         // siteName: "Faraway Yachting",
         images: [
           {
-            url: yacht.primaryImage || `${BASE_URL}/images/homeimg1.png`,
+            url: getYachtImage(yacht),
             width: 800,
             height: 600,
             alt: `${yacht.title} - Luxury Yacht Charter Phuket`,
@@ -234,7 +250,7 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
         card: "summary_large_image",
         title,
         description,
-        images: [yacht.primaryImage || `${BASE_URL}/images/homeimg1.png`],
+        images: [getYachtImage(yacht)],
       },
     };
   } catch (error) {
