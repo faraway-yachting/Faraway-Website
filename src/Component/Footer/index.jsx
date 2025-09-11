@@ -150,25 +150,26 @@ const Footer = () => {
           </p>
 
           {/* Replaced form with iframe */}
-          <div className="w-full h-[402px]">
-            <iframe
-              src="https://api.leadconnectorhq.com/widget/form/Buv1sv97px6C05DeraPW"
-              style={{ width: '100%', height: '90%', border: 'none', borderRadius: '3px' }}
-              id="inline-Buv1sv97px6C05DeraPW"
-              data-layout="{'id':'INLINE'}"
-              data-trigger-type="alwaysShow"
-              data-trigger-value=""
-              data-activation-type="alwaysActivated"
-              data-activation-value=""
-              data-deactivation-type="neverDeactivate"
-              data-deactivation-value=""
-              data-form-name="Subscribe"
-              data-height="402"
-              data-layout-iframe-id="inline-Buv1sv97px6C05DeraPW"
-              data-form-id="Buv1sv97px6C05DeraPW"
-              title="Subscribe"
-            >
-            </iframe>
+          <div className="">
+          <iframe
+    src="https://api.leadconnectorhq.com/widget/form/xkQihe7gv1EoPJiKH3Jx"
+    style={{width: '100%', height: '100%', border: 'none', borderRadius: '3px'}}
+    id="inline-xkQihe7gv1EoPJiKH3Jx" 
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Form 8"
+    data-height="402"
+    data-layout-iframe-id="inline-xkQihe7gv1EoPJiKH3Jx"
+    data-form-id="xkQihe7gv1EoPJiKH3Jx"
+    title="Form 8"
+        >
+</iframe>
+
           </div>
 
           {/* Script tag for the iframe */}
