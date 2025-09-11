@@ -6,16 +6,54 @@ const BASE_URL = getFrontendUrl();
 
 // Helper function to get the best available image for a yacht
 const getYachtImage = (yacht: any): string => {
-
+  // Debug logging to see what data we have
+  console.log('=== YACHT IMAGE DEBUG ===');
+  console.log('Yacht title:', yacht?.title);
+  console.log('Primary image:', yacht?.primaryImage);
+  console.log('Gallery images:', yacht?.galleryImages);
+  console.log('Yacht type:', yacht?.type);
+  console.log('Yacht tags:', yacht?.tags);
   
   // Check if primary image exists and is not empty
   if (yacht?.primaryImage && yacht.primaryImage.trim() !== '') {
-    console.log('Using primary image:', yacht.primaryImage);
+    console.log('✅ Using primary image:', yacht.primaryImage);
     return yacht.primaryImage;
   }
   
-  const fallbackImage = `${BASE_URL}/images/homeimg1.png`;
-  console.log('Using fallback image:', fallbackImage);
+  // Check if gallery has images
+  if (yacht?.galleryImages && Array.isArray(yacht.galleryImages) && yacht.galleryImages.length > 0) {
+    const firstGalleryImage = yacht.galleryImages[0];
+    if (firstGalleryImage && firstGalleryImage.trim() !== '') {
+      console.log('✅ Using gallery image:', firstGalleryImage);
+      return firstGalleryImage;
+    }
+  }
+  
+  // Use yacht-type specific fallback
+  const yachtType = yacht?.type?.toLowerCase()?.trim();
+  const yachtTags = yacht?.tags || [];
+  
+  let fallbackImage = `${BASE_URL}/images/yacht.png`;
+  
+  // Check for super yacht first
+  if (yachtTags.includes("super yacht")) {
+    fallbackImage = `${BASE_URL}/images/yacht.png`;
+  } else {
+    // Check yacht type
+    switch (yachtType) {
+      case "bareboat":
+        fallbackImage = `${BASE_URL}/images/bareboart.png`;
+        break;
+      case "crewed":
+        fallbackImage = `${BASE_URL}/images/crewedimg.png`;
+        break;
+      default:
+        fallbackImage = `${BASE_URL}/images/yacht.png`;
+    }
+  }
+  
+  console.log('⚠️ Using fallback image:', fallbackImage);
+  console.log('=== END DEBUG ===');
   return fallbackImage;
 };
 // Home Page Metadata
@@ -167,7 +205,14 @@ export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' |
     }
 
     const response = await fetchYachtBySlug(slug);
-    const yacht = response.data?.yachts?.[0] || response.data?.yachts;
+    console.log('=== API RESPONSE DEBUG ===');
+    console.log('Response:', response);
+    console.log('Response data:', response.data);
+    
+    // The yacht data is directly in response.data, not in response.data.yachts
+    const yacht = response.data;
+    console.log('Selected yacht:', yacht);
+    console.log('=== END API DEBUG ===');
     
     if (!yacht) {
       console.warn(`No yacht found for slug: ${slug}, using fallback metadata`);
