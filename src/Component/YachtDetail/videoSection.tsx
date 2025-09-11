@@ -17,7 +17,6 @@ const getEmbedLink = (url: string): string => {
     // Add more conditions for other platforms if needed
     return url;
   } catch (error) {
-    console.warn("Invalid video URL:", url);
     return url;
   }
 };

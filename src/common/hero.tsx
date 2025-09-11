@@ -15,7 +15,6 @@ type HeroSectionProps = {
   contactRef?: RefObject<HTMLDivElement | null>;
   showContactButton?: boolean;
 };
-
 const HeroContent: React.FC<HeroSectionProps> = ({
   heading,
   subheading,
@@ -33,7 +32,6 @@ const HeroContent: React.FC<HeroSectionProps> = ({
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#012A50]/50 z-0" />
-
       {/* Content on top */}
       <div className={combine(styles.flexCenter, "h-full text-center text-white relative z-10", styles.px1)}>
         <div className={combine(styles.flexCol, "justify-center items-center max-w-4xl mx-auto")}>

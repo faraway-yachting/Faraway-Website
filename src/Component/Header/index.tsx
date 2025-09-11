@@ -16,7 +16,6 @@ const Header = () => {
             setEmailCopied(true);
             setTimeout(() => setEmailCopied(false), 2000); 
         } catch (err) {
-            console.error('Failed to copy email: ', err);
         }
     };
 
@@ -26,7 +25,6 @@ const Header = () => {
             setPhoneCopied(true);
             setTimeout(() => setPhoneCopied(false), 2000);
         } catch (err) {
-            console.error('Failed to copy phone: ', err);
         }
     };
 
