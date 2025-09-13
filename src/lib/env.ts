@@ -4,7 +4,7 @@ export const getBackendUrl = (): string => {
 
 export const getFrontendUrl = (): string => {
 
-    return process.env.FRONTEND_URL || "https://faraway-psi.vercel.app";
+    return process.env.FRONTEND_URL ;
   
 };
 

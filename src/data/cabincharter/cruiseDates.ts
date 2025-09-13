@@ -160,7 +160,7 @@ export const cruiseDates: CruiseDate[] = [
         id: "2",
         dates: [
             "26-31 Oct 2025",
-            "02-07 NOov 2025",
+            "02-07 Nov 2025",
             "09-14 Nov 2025",
             "16-21 Nov 2025",
             "23-28 Nov 2025",

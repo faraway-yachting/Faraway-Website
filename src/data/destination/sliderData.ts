@@ -47,7 +47,7 @@ export const dayTripCards: DayTripCardType[] = [
     },
     {
         icon: LuSunset,
-        category: "Such a romantic dude you might think…",
+        category: "Such a romantic soul, you might think…",
         label: "Sunset Cruises",
         text: "Enjoy romantic ocean views with cocktails at sea.",
         image: PngIcons.category3,
