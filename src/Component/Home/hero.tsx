@@ -3,13 +3,12 @@ import { styles, combine, Button } from "@/styles";
 import { FiPhone } from "react-icons/fi";
 
 const HeroContent = () => {
-  const { bgImage, minH1, top1, w1, w2, flexCenter, flexCol, h1, my1, containerXl, flexBetween, p1 } = styles;
+  const { bgImage, top1, w1, w2, flexCenter, flexCol, h1, my1, containerXl, flexBetween, p1 } = styles;
 
   return (
     <section className={combine(bgImage, "bg-[url('/images/homeimg1.png')] min-h-[57vh] md:min-h-[80vh] lg:min-h-[72vh] xl:min-h-[82vh] flex justify-center")}>
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#034250]/50 z-0" />
-
       {/* Batch Image Top-Left inside container */}
       <div className="relative max-w-6xl mx-auto w-full">
         <a 
@@ -30,17 +29,15 @@ const HeroContent = () => {
             <h1 className={combine(h1, "leading-tight md:max-w-2xl lg:max-w-2xl w-full")}>
               Phuket Yacht Charter
             </h1>
-
             <img
               src={PngIcons.rframe2}
               alt="Divider"
-              className={combine(w2, flexBetween, "mx-auto drop-shadow-lg opacity-90")}
+              className={combine(w2, flexBetween, "mx-auto my-3 drop-shadow-lg opacity-90")}
             />
 
-            <p className={combine(p1, "font-light font-sourceSansPro text-center", my1, containerXl, "drop-shadow-lg text-white/95")}>
+            <p className={combine(p1, "font-light font-sourceSansPro text-center mb-4 md:mb-6", containerXl, "drop-shadow-lg text-white/95")}>
               Experience luxury and adventure with the best Phuket Yacht Charter Operator. Sail the stunning waters & best Islands of Phuket in style and make unforgettable memories.
             </p>
-
             <div className="flex justify-center">
               <Button
                 href="/contact"

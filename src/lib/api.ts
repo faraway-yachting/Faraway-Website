@@ -34,7 +34,6 @@ export const fetchYachts = async (page: number = 1, limit: number = 9) => {
     const response = await apiClient.get(`${API_ENDPOINTS.YACHTS}?page=${page}&limit=${limit}`);
     return response.data;
   } catch (error) {
-    console.error('Error fetching yachts:', error);
     throw error;
   }
 };
@@ -44,7 +43,6 @@ export const fetchYachtBySlug = async (slug: string) => {
     const response = await apiClient.get(`${API_ENDPOINTS.YACHT_BY_SLUG}?slug=${slug}`);
     return response.data;
   } catch (error) {
-    console.error('Error fetching yacht by slug:', error);
     throw error;
   }
 };
@@ -57,7 +55,6 @@ export const fetchBlogs = async () => {
     const response = await apiClient.get(API_ENDPOINTS.BLOGS);
     return response.data;
   } catch (error) {
-    console.error('Error fetching blogs:', error);
     throw error;
   }
 };

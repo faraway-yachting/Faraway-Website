@@ -60,7 +60,7 @@ const Drawer = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =
                         })}
                         <li>
                             <Link href="/contact" onClick={onClose}>
-                                <button className="btn-grad text-white text-base font-sourceSansPro font-bold px-5 py-2 rounded-lg transition">
+                                <button className="btn-grad text-white text-base font-sourceSansPro font-bold lg:px-5 px-3 py-2 rounded-lg transition">
                                     Start Your Adventure
                                 </button>
                             </Link>
@@ -84,7 +84,7 @@ const Navbar = () => {
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center space-x-4 lg:space-x-5 xl:space-x-6 text-[#333]">
+                <nav className="hidden md:flex items-center space-x-3 lg:space-x-5 xl:space-x-6 text-[#333]">
                     {navItems.map(({ label, href }) => {
                         const isActive =
                             (href === "/" && pathname === "/") ||
@@ -109,7 +109,7 @@ const Navbar = () => {
                 {/* Contact Button */}
                 <div className="hidden md:block">
                     <Link href="/contact">
-                        <button className="btn-grad text-white md:text-xs lg:text-base font-sourceSansPro font-bold px-2 lg:px-5 py-2 rounded-lg transition hover:cursor-pointer">
+                        <button className="btn-grad text-white md:text-xs lg:text-base font-sourceSansPro font-bold px-3 lg:px-5 py-2 rounded-lg transition hover:cursor-pointer">
                             Start Your Adventure
                         </button>
                     </Link>

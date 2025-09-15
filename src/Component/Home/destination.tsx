@@ -38,7 +38,7 @@ const Destinations_Section = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           {data.map((item, index) => (
             <div key={index} className="max-w-xl bg-white rounded-lg">
-              <h3 className={combine("mb-3 leading-tight text-zink",styles.h3)}>
+              <h3 className={combine("mb-3 leading-tight font-semibold text-zink",styles.h3)}>
                 {item.label}
               </h3>
               <div className="mb-2">

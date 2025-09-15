@@ -50,7 +50,7 @@ export const styles = {
   // Height REsponsive classes
   minH1: "min-h-[57vh] md:min-h-[80vh] lg:min-h-[72vh] xl:min-h-[82vh]",
   minH3: "bg-center min-h-[52vh] md:min-h-[62vh] lg:min-h-[72vh] xl:min-h-[70vh]",
-  minH2: "min-h-[70vh] md:min-h-[73vh] lg:min-h-[79vh] xl:min-h-[85vh]",
+  minH2: "min-h-[65vh] md:min-h-[73vh] lg:min-h-[79vh] xl:min-h-[85vh]",
   top1: "top-3 md:top-4 lg:top-5 xl:top-6",
 
   w1: "w-20 md:w-24 lg:w-32 xl:w-36",
@@ -59,7 +59,7 @@ export const styles = {
 
   height1: "h-[320px] md:h-[410px] lg:h-[440px] xl:h-[450px]",
 
-  mb1: "mb-3 md:mb-4",
+  mb1: "mb-2 md:mb-4",
   my1: "my-4 md:my-6",
   mt2: "mt-6 md:mt-8",
   mb2: "mb-10 md:mb-14 lg:mb-16 xl:mb-18",

@@ -13,7 +13,7 @@ export default function FounderNote() {
                             Why We Sail Differently
                         </p>
                     </div>
-                    <h2 className={combine(styles.h2, styles.mb1, "text-center text-zink md:text-left")}>
+                    <h2 className={combine(styles.mb1, "text-[26px] md:text-[30px] lg:text-[36px] xl:text-[40px] font-playfair font-semibold text-center text-zink md:text-left")}>
                         A Note from Our Founder
                     </h2>
                     <p className={combine("text-zink", styles.p2, styles.mb1)}>
