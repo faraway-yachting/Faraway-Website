@@ -78,7 +78,7 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
     return (
         <div className="">
             <div className="max-w-7xl mx-auto py-10 px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-7 xl:gap-9">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-5 xl:gap-9">
                     {visibleBlogs.map((blog) => {
                         const slugLink = slugify(blog.slug);
                         return (
@@ -96,7 +96,7 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                                 </div>
                                 <div className="px-4 pt-4">
                                     <h3 className={combine(styles.h4, "text-zink mb-2 font-semibold")}>
-                                        {limitCharacters(blog.title, 22)}
+                                        {limitCharacters(blog.title, 18)}
                                     </h3>
                                     <p className={combine ("font-normal text-zink",styles.p2)}>
                                         {blog.shortDescription.length > 214 ? (

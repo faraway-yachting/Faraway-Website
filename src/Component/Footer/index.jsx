@@ -40,7 +40,7 @@ const Footer = () => {
     try {
       await navigator.clipboard.writeText('booking@faraway-yachting.com');
       setEmailCopied(true);
-      setTimeout(() => setEmailCopied(false), 2000); 
+      setTimeout(() => setEmailCopied(false), 2000);
     } catch (err) {
     }
   };
@@ -53,7 +53,6 @@ const Footer = () => {
     } catch (err) {
     }
   };
-
   const renderLinks = (links) =>
     links.map((link, index) => (
       <li key={index} className="flex items-center gap-2 text-[16px] font-normal">
@@ -66,7 +65,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-zink text-white pt-10">
-      <div className="px-4 sm:px-6 lg:px-8 xl:px-0 lg:max-w-[78.2rem] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 py-8 mb-14 font-sourceSansPro">
+      <div className="px-4 xl:px-0 lg:max-w-[78.2rem] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 py-8 mb-14 font-sourceSansPro">
         {/* Column 1 */}
         <div className="lg:col-span-3 xl:col-span-4">
           <p className={heading}>Faraway Yachting Co. Ltd.</p>
@@ -149,24 +148,25 @@ const Footer = () => {
 
           {/* Replaced form with iframe */}
           <div className="">
-          <iframe
-    src="https://api.leadconnectorhq.com/widget/form/xkQihe7gv1EoPJiKH3Jx"
-    style={{width: '100%', height: '100%', border: 'none', borderRadius: '3px'}}
-    id="inline-xkQihe7gv1EoPJiKH3Jx" 
-    data-layout="{'id':'INLINE'}"
-    data-trigger-type="alwaysShow"
-    data-trigger-value=""
-    data-activation-type="alwaysActivated"
-    data-activation-value=""
-    data-deactivation-type="neverDeactivate"
-    data-deactivation-value=""
-    data-form-name="Form 8"
-    data-height="402"
-    data-layout-iframe-id="inline-xkQihe7gv1EoPJiKH3Jx"
-    data-form-id="xkQihe7gv1EoPJiKH3Jx"
-    title="Form 8"
-        >
-</iframe>
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/xkQihe7gv1EoPJiKH3Jx"
+              style={{ width: '100%', height: '100%', border: 'none', borderRadius: '3px' }}
+              id="inline-xkQihe7gv1EoPJiKH3Jx"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Form 8"
+              data-height="402"
+              data-layout-iframe-id="inline-xkQihe7gv1EoPJiKH3Jx"
+              data-form-id="xkQihe7gv1EoPJiKH3Jx"
+              title="Form 8"
+              loading="lazy"
+            >
+            </iframe>
 
           </div>
 

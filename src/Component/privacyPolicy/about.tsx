@@ -16,7 +16,7 @@ const About = () => {
                     <div>
                         <div className="flex items-center">
                             <p className="w-13 md:w-15 lg:w-18 xl:w-21 border-b-3 border-mustard z-10"></p>
-                            <p className={combine("text-mustard font-semibold font-inter uppercase relative z-10 ms-3", styles.p3)}>
+                            <p className={combine("text-mustard font-semibold font-inter uppercase relative z-10 ms-3 text-[13px] md:text-[16px] lg:text-[16px] xl:text-[19px] font-inter")}>
                                 Your privacy and security matter most </p>
                         </div>
                         <p className={combine(styles.h2, "mb-3 font-bold text-zink uppercase")}>Privacy Policy</p>

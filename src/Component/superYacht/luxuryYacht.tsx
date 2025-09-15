@@ -37,7 +37,7 @@ const LuxuryYacht = ({ id }: LuxuryYachtProps) => {
                                         alt={item.title}
                                         width={300}
                                         height={200}
-                                        className="w-[320px] md:w-[320px] lg:w-[420px] xl:w-[470px] h-auto border-4 border-[#D6AB62] rounded-tl-3xl rounded-br-3xl "
+                                        className="w-[390px] md:w-[320px] lg:w-[420px] xl:w-[470px] h-auto border-4 border-[#D6AB62] rounded-tl-3xl rounded-br-3xl "
                                     />
                                 </div>
 
@@ -49,11 +49,11 @@ const LuxuryYacht = ({ id }: LuxuryYachtProps) => {
                                         </span>
                                         <div className="flex items-center ms-11">
                                             <p className="w-13 md:w-15 lg:w-18 xl:w-21 border-b-3 border-mustard z-10"></p>
-                                            <p className="text-mustard font-semibold text-sm lg:text-lg xl:text-xl font-inter uppercase relative z-10 ms-3">
+                                            <p className="text-mustard font-semibold text-sm lg:tex[15px] xl:text-xl font-inter uppercase relative z-10 ms-3">
                                                 {item.label}
                                             </p>
                                         </div>
-                                        <h3 className={combine(styles.h2, "text-zink relative z-10 ms-11")}>
+                                        <h3 className={combine(styles.h2, "text-zink relative z-10 xl:ms-11")}>
                                             {item.title}
                                         </h3>
                                         <p className={combine(styles.p4, "text-zink relative z-10")}>
@@ -66,7 +66,7 @@ const LuxuryYacht = ({ id }: LuxuryYachtProps) => {
                                             <span className="w-8 h-8 bg-mustard rounded-full flex items-center justify-center me-1"><LuSailboat className="text-white " size={20} /></span>
                                             <p className={combine("font-semibold text-zink",styles.h5)}>{item.heading}</p>
                                         </div>
-                                        <ul className="list-disc pl-4 text-base text-zink font-semibold font-sourceSansPro space-y-1">
+                                        <ul className="list-disc pl-4 text-base text-zink font-medium font-sourceSansPro space-y-1">
                                             {item.highlights.map((point, i) => (
                                                 <li key={i}>{point}</li>
                                             ))}
@@ -75,7 +75,7 @@ const LuxuryYacht = ({ id }: LuxuryYachtProps) => {
 
                                     <div className="flex items-start mt-3">
                                         <IoWarningOutline className="text-zink" size={24} />
-                                        <p className={combine("text-base text-zink font-inter font-semibold")}><span className="font-bold text-mustard text-base font-inter me-2 ">Tip:</span>{item.tip}</p>
+                                        <p className={combine("text-base text-zink font-inter font-medium")}><span className="font-bold text-mustard text-base font-inter me-2 ">Tip:</span>{item.tip}</p>
                                     </div>
                                 </div>
                             </div>

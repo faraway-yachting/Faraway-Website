@@ -43,7 +43,7 @@ export const highSeason: ItineraryItem[] = [
     {
         id: "2",
         days: "Day",
-        place: "-Tonsai Bay, Koh Phi Phi -> Kantiang beach, Koh Lanta",
+        place: "-Tonsai Bay, Koh Phi Phi — Kantiang beach, Koh Lanta",
         itinerary: [
             {
                 title: [
@@ -69,7 +69,7 @@ export const highSeason: ItineraryItem[] = [
     {
         id: "3",
         days: "Day ",
-        place: "- Kantiang beach, Koh Lanta A—> Koh Muk and Koh Rok",
+        place: "- Kantiang beach, Koh Lanta A — Koh Muk and Koh Rok",
         itinerary: [
             {
                 title: [
@@ -91,7 +91,7 @@ export const highSeason: ItineraryItem[] = [
     {
         id: "4",
         days: "Day ",
-        place: "- Koh Rok —> Koh Ha and Phi Phi Leh",
+        place: "- Koh Rok — Koh Ha and Phi Phi Leh",
         itinerary: [
             {
                 title: [
@@ -114,7 +114,7 @@ export const highSeason: ItineraryItem[] = [
     {
         id: "5",
         days: "Day ",
-        place: "- Koh Phi Phi Leh -> Koh Racha Yai",
+        place: "- Koh Phi Phi Leh — Koh Racha Yai",
         itinerary: [
             {
                 title: [
@@ -136,7 +136,7 @@ export const highSeason: ItineraryItem[] = [
     {
         id: "6",
         days: "Day ",
-        place: "- Koh Racha Yai -> Chalong Pier, Phuket",
+        place: "- Koh Racha Yai — Chalong Pier, Phuket",
         itinerary: [
             {
                 title: [
