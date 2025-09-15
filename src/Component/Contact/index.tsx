@@ -73,6 +73,7 @@ const ContactSection = () => {
                                 data-layout-iframe-id="inline-YBBUmegk6BkzfkI9GcOV"
                                 data-form-id="YBBUmegk6BkzfkI9GcOV"
                                 title="Contact Us"
+                                loading="lazy"
                             >
                             </iframe>
                         </div>

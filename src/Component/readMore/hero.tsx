@@ -18,7 +18,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
         <p className="text-white font-playfair font-normal pt-4 text-[30px] md:text-[36px] lg:text-[44px] xl:text-[56px] leading-tight">
           {config.title}
         </p>
-        <Image src={config.frame} alt="" width={400} height={200} />
+        <Image src={config.frame} alt="" width={400} height={200} style={{ width: 'auto', height: 'auto' }} />
         <p className="text-white font-sourceSansPro font-extrabold text-[20px] md:text-[22px] lg:text-[25px]xl:text-[28px] mt-2">
           {config.subtitle}
         </p>

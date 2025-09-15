@@ -10,7 +10,7 @@ const AboutSection = () => {
                         <p className="w-13 md:w-15 lg:w-18 xl:w-21 border-b-3 border-mustard z-10"></p>
                         <p className={combine("text-mustard font-semibold font-inter uppercase relative z-10 ms-3", styles.p3)}>From Anchors to Adventures</p>
                     </div>
-                    <p className={combine(styles.h3, "mb-3 text-zink uppercase")}>Our Story</p>
+                    <p className={combine(styles.h3, "mb-3 font-semibold text-zink uppercase")}>Our Story</p>
                     <p className={combine(styles.p3, "text-zink leading-relaxed")}>Faraway Yachting began in 1996 when four passionate sailors from Austria, Norway, Australia, and the Netherlands met by chance at Kata Beach. What started as a sunset chat turned into a bold venture—offering sailing and scuba trips across Thailand, Myanmar, and even the remote Andaman Islands.<br />
                         From diving with elephants to exploring volcanic reefs, we pioneered unforgettable expeditions across Southeast Asia. Today, 25+ years later, Faraway Yachting is still owned by one of the original founders, Wolfgang from Austria.<br />
                         With five personally managed catamarans and deep local knowledge, we offer more than just a yacht—it's your gateway to adventure, backed by decades of hands-on experience and heart.</p>

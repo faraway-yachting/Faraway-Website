@@ -15,7 +15,7 @@ const islands = [
     { title: "Rok Nok", image: PngIcons.thPlace_6 },
     { title: "Koh Racha", image: PngIcons.thPlace_7 },
     { title: "Emerald Cave", image: PngIcons.thPlace_8 },
-];
+]; 
 const Thailand_BestLands = () => {
     const settings = {
         infinite: true,

@@ -31,7 +31,7 @@ const Header = () => {
     return (
         <div className="bg-zink hidden md:block">
             <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto text-white text-sm px-4 xl:px-3 py-4">
-                <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 lg:gap-6">
+                <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-6">
                     <button
                         onClick={copyPhoneToClipboard}
                         className="flex items-center text-sm gap-2 cursor-pointer hover:text-gray-300 transition-colors"
@@ -55,7 +55,7 @@ const Header = () => {
                         <BsFillSendFill /> 40/1 Moo 9 Chalong Phuket
                     </a>
                 </div>
-                <div className="flex items-center gap-4 mt-2 md:mt-0">
+                <div className="flex items-center gap-2 lg:gap-4 mt-2 md:mt-0">
                     <a
                         href="https://www.facebook.com/FarawayYachting"
                         target="_blank"

@@ -13,12 +13,16 @@ const DMSerifDisplay = DM_Serif_Display({
   variable: "--font-dm-serif-display",
   subsets: ["latin"],
   weight: "400",
+  display: "swap",
+  preload: true,
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
   weight: "400",
+  display: "swap",
+  preload: true,
 });
 // Keep existing variables but use the main Plus Jakarta Sans font
 const geistSans = plusJakartaSans;
