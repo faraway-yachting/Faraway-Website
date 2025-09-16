@@ -1,85 +1,74 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { FaAnchor, FaChevronUp, FaFileContract, FaDownload, FaEnvelope, FaPhone, FaShip, FaWater, FaStar, FaHandshake, FaCheckCircle, FaGlobe, FaUsers, FaAward, FaClock } from 'react-icons/fa';
-import { styles, combine } from '@/styles/style';
+import React, { useState, useEffect } from "react";
+import {
+  FaAnchor,
+  FaChevronUp,
+  FaFileContract,
+  FaDownload,
+  FaEnvelope,
+  FaPhone,
+  FaShip,
+  FaWater,
+  FaStar,
+  FaHandshake,
+  FaCheckCircle,
+  FaGlobe,
+  FaUsers,
+  FaAward,
+  FaClock,
+} from "react-icons/fa";
+import { styles, combine } from "@/styles/style";
 
 const Agent = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Boat list data
   const boats = [
-    { name: "MY Hot Chilli 38 ft.", type: "Motor Yacht", link: "https://drive.google.com/drive/folders/1M-OzS6gWi0i2FhXjsZcWTgMqn9eL0E7q?usp=drive_link"},
-    { name: "SY Mozart 48 ft.", type: "Sailing Yacht", link: "https://drive.google.com/drive/folders/140ErRc-9ntOILE-X1anLGEB_xfFoxvyp"},
-    { name: "SY Shindig 48 ft.", type: "Sailing Yacht", link: "https://drive.google.com/drive/folders/1xFjE68Tk-yGJlNwiZra_fkSDibNwMamW?usp=drive_link"},
-    { name: "MY Sail La Vie 51 ft.", type: "Motor Yacht", link: "https://drive.google.com/drive/folders/1CBA_PKwPJcQe6xAWzyjjWkqP4TMel8wx?usp=drive_link"},
-    { name: "SY Amadeus 48 ft.", type: "Sailing Yacht", link: "https://drive.google.com/drive/folders/1LZSegN6GmT90benf4whmJO2cC2P3bwJc?usp=drive_link"},
-    { name: "SY Nauti By Nature", type: "Sailing Yacht", link: "https://drive.google.com/drive/folders/10idqkq1CEsqJE-k2pQSu48lP0JpLs9i8?usp=drive_link"}
+    {
+      name: "MY Hot Chilli 38 ft.",
+      type: "Motor Yacht",
+      link: "https://drive.google.com/drive/folders/1M-OzS6gWi0i2FhXjsZcWTgMqn9eL0E7q?usp=drive_link",
+    },
+    {
+      name: "SY Mozart 48 ft.",
+      type: "Sailing Yacht",
+      link: "https://drive.google.com/drive/folders/140ErRc-9ntOILE-X1anLGEB_xfFoxvyp",
+    },
+    {
+      name: "SY Shindig 48 ft.",
+      type: "Sailing Yacht",
+      link: "https://drive.google.com/drive/folders/1xFjE68Tk-yGJlNwiZra_fkSDibNwMamW?usp=drive_link",
+    },
+    {
+      name: "MY Sail La Vie 51 ft.",
+      type: "Motor Yacht",
+      link: "https://drive.google.com/drive/folders/1CBA_PKwPJcQe6xAWzyjjWkqP4TMel8wx?usp=drive_link",
+    },
+    {
+      name: "SY Amadeus 48 ft.",
+      type: "Sailing Yacht",
+      link: "https://drive.google.com/drive/folders/1LZSegN6GmT90benf4whmJO2cC2P3bwJc?usp=drive_link",
+    },
+    {
+      name: "SY Nauti By Nature",
+      type: "Sailing Yacht",
+      link: "https://drive.google.com/drive/folders/10idqkq1CEsqJE-k2pQSu48lP0JpLs9i8?usp=drive_link",
+    },
   ];
 
-  // Contract data
-  const contracts = [
-    {
-      title: "ALL CONTRACTS 25-26",
-      subtitle: "(need to be filled only once to receive all contracts)",
-      isMain: true,
-      icon: FaFileContract,
-      color: "bg-zink"
-    },
-    {
-      title: "AMADEUS CABIN CHARTER CONTRACT 25-26",
-      subtitle: "Cabin Charter Agreement",
-      isMain: false,
-      icon: FaUsers,
-      color: "bg-blue-700"
-    },
-    {
-      title: "AMADEUS PRIVATE CHARTER CONTRACT 25-26", 
-      subtitle: "Private Charter Agreement",
-      isMain: false,
-      icon: FaStar,
-      color: "bg-teal-700"
-    },
-    {
-      title: "HOT CHILLI CONTRACT 25-26",
-      subtitle: "Motor Yacht Agreement",
-      isMain: false,
-      icon: FaShip,
-      color: "bg-green-700"
-    },
-    {
-      title: "MOZART CONTRACT 25-26",
-      subtitle: "Sailing Yacht Agreement",
-      isMain: false,
-      icon: FaWater,
-      color: "bg-emerald-700"
-    },
-    {
-      title: "SHINDIG CONTRACT 25-26",
-      subtitle: "Sailing Yacht Agreement",
-      isMain: false,
-      icon: FaWater,
-      color: "bg-cyan-700"
-    },
-    {
-      title: "SAIL LA VIE CONTRACT 25-26",
-      subtitle: "Motor Yacht Agreement",
-      isMain: false,
-      icon: FaShip,
-      color: "bg-indigo-700"
-    }
-  ];
+  
 
   // Scroll to top functionality
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleContractClick = (contractTitle: string) => {
@@ -97,12 +86,15 @@ const Agent = () => {
           <div className="absolute bottom-20 left-1/4 w-12 h-12 border-2 border-mustard rounded-full"></div>
           <div className="absolute top-1/2 right-1/3 w-8 h-8 border-2 border-zink rounded-full"></div>
         </div>
-        
+
         {/* Floating Elements */}
         <div className="absolute top-20 right-10 animate-float">
           <FaShip className="text-4xl text-mustard opacity-20" />
         </div>
-        <div className="absolute bottom-20 left-10 animate-float" style={{animationDelay: '1s'}}>
+        <div
+          className="absolute bottom-20 left-10 animate-float"
+          style={{ animationDelay: "1s" }}
+        >
           <FaWater className="text-3xl text-zink opacity-20" />
         </div>
 
@@ -113,7 +105,7 @@ const Agent = () => {
                 <FaHandshake className="text-4xl text-white" />
               </div>
               <h1 className="text-6xl md:text-7xl font-bold mb-6 text-white">
-                Agent Portal
+                Agent Contracts
               </h1>
               <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed">
                 Welcome to Faraway Yachting's Exclusive Partner Portal
@@ -152,40 +144,49 @@ const Agent = () => {
               </h2>
               <div className="w-32 h-1 bg-mustard mx-auto rounded-full"></div>
             </div>
-            
+
             <div className={`${styles.grid2Col} items-center`}>
               <div className="space-y-6">
                 <p className={`${styles.p1} text-gray-700 leading-relaxed`}>
-                  Thank you for your interest in our boat operation services and for considering us as a potential partner for your valuable guests.
+                  Thank you for your interest in our boat operation services and
+                  for considering us as a potential partner for your valuable
+                  guests.
                 </p>
                 <p className={`${styles.p1} text-gray-700 leading-relaxed`}>
-                  We are pleased to provide you with the contracts for our boats, which can be found below.
+                  We are pleased to provide you with the contracts for our
+                  boats, which can be found below.
                 </p>
-                
+
                 {/* Commission Highlight */}
                 <div className="bg-mustard text-white rounded-2xl p-6 shadow-lg">
                   <div className="flex items-center space-x-3">
                     <FaAward className="text-3xl" />
                     <div>
                       <h3 className="text-2xl font-bold">15% Commission</h3>
-                      <p className="text-yellow-100">Included for all boats in the contract</p>
+                      <p className="text-yellow-100">
+                        Included for all boats in the contract
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-zink mb-6 text-center">Contract Process</h3>
+                <h3 className="text-2xl font-bold text-zink mb-6 text-center">
+                  Contract Process
+                </h3>
                 <div className="space-y-4">
                   {[
                     "Carefully read our terms and conditions and confirm your acceptance of them.",
                     "Fill in all of your details and sign the contract digitally.",
                     "The finished contract, which will be signed by our director and affixed with our company stamp will be sent to you via mail as PDF.",
-                    "We receive the contract in CC."
+                    "We receive the contract in CC.",
                   ].map((step, index) => (
                     <div key={index} className="flex items-start space-x-4">
                       <div className="flex-shrink-0 w-8 h-8 bg-mustard rounded-full flex items-center justify-center">
-                        <span className="text-white font-bold text-sm">{index + 1}</span>
+                        <span className="text-white font-bold text-sm">
+                          {index + 1}
+                        </span>
                       </div>
                       <p className="text-gray-700 leading-relaxed">{step}</p>
                     </div>
@@ -198,9 +199,13 @@ const Agent = () => {
               <div className="flex items-start space-x-4">
                 <FaCheckCircle className="text-2xl text-green-600 mt-1" />
                 <div>
-                  <h4 className="text-lg font-semibold text-zink mb-2">Digital Contract Acceptance</h4>
+                  <h4 className="text-lg font-semibold text-zink mb-2">
+                    Digital Contract Acceptance
+                  </h4>
                   <p className="text-gray-700">
-                    We fully accept digital contracts. We encourage you to help us save the environment by avoiding printing unless it is absolutely necessary.
+                    We fully accept digital contracts. We encourage you to help
+                    us save the environment by avoiding printing unless it is
+                    absolutely necessary.
                   </p>
                 </div>
               </div>
@@ -216,7 +221,7 @@ const Agent = () => {
             <h2 className={`${styles.h2} text-zink mb-6`}>Media</h2>
             <div className="w-32 h-1 bg-mustard mx-auto rounded-full"></div>
           </div>
-          
+
           <div className={styles.grid3Col}>
             {boats.map((boat, index) => (
               <a
@@ -231,14 +236,16 @@ const Agent = () => {
                     <FaAnchor className="text-white text-xl" />
                   </div>
                   <div className="text-left">
-                    <h3 className={combine(styles.h5,"font-semibold")}>{boat.name}</h3>
+                    <h3 className={combine(styles.h5, "font-semibold")}>
+                      {boat.name}
+                    </h3>
                     <p className={styles.p4}>{boat.type}</p>
                   </div>
                 </div>
               </a>
             ))}
           </div>
-          
+
           <div className="mt-16 border-t-2 border-dashed border-gray-300"></div>
         </div>
       </div>
@@ -247,117 +254,176 @@ const Agent = () => {
       <div className={`${styles.py4} bg-white`}>
         <div className={styles.container}>
           <div className="text-center mb-16">
-            <h2 className={`${styles.h2} text-zink mb-6`}>SEASON 25-26 CONTRACTS</h2>
+            <h2 className={`${styles.h2} text-zink mb-6`}>
+              SEASON 25-26 CONTRACTS
+            </h2>
             <div className="w-32 h-1 bg-mustard mx-auto rounded-full"></div>
           </div>
 
           <div className={styles.grid2Col}>
             {/* ALL CONTRACTS 25-26 */}
-            <button
-              onClick={() => handleContractClick("ALL CONTRACTS 25-26")}
-              className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            <a
+              href="https://sendlink.co/documents/doc-form/68b53602355b332ea13c54b3?locale=en-US"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <div className="flex items-center space-x-4">
-                <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                <div className="text-left">
-                  <h3 className={styles.h5}>
-                    ALL CONTRACTS 25-26
-                  </h3>
+              <button
+                onClick={() => handleContractClick("ALL CONTRACTS 25-26")}
+                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="flex items-center space-x-4">
+                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
+                  <div className="text-left">
+                    <h3 className={styles.h5}>ALL CONTRACTS 25-26</h3>
+                  </div>
                 </div>
-              </div>
-            </button>
-
+              </button>
+            </a>
             {/* AMADEUS CABIN CHARTER CONTRACT 25-26 */}
-            <button
-              onClick={() => handleContractClick("AMADEUS CABIN CHARTER CONTRACT 25-26")}
-              className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            <a
+              href="https://sendlink.co/documents/doc-form/68b96d08fac8341820e78b49?locale=en-US"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <div className={`flex items-center space-x-4`}>
-                <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                <div className="text-left">
-                  <h3 className={styles.h5}>
-                    AMADEUS CABIN CHARTER CONTRACT 25-26
-                  </h3>
+              <button
+                onClick={() =>
+                  handleContractClick("AMADEUS CABIN CHARTER CONTRACT 25-26")
+                }
+                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              >
+                <div className={`flex items-center space-x-4`}>
+                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
+                  <div className="text-left">
+                    <h3 className={styles.h5}>
+                      AMADEUS CABIN CHARTER CONTRACT 25-26
+                    </h3>
+                  </div>
                 </div>
-              </div>
-            </button>
-
+              </button>
+            </a>
             {/* AMADEUS PRIVATE CHARTER CONTRACT 25-26 */}
-            <button
-              onClick={() => handleContractClick("AMADEUS PRIVATE CHARTER CONTRACT 25-26")}
-              className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            <a
+              href="https://sendlink.co/documents/doc-form/68b930bf654223cf029f98db?locale=en-US"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <div className={`flex items-center space-x-4`}>
-                <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                <div className="text-left">
-                  <h3 className={styles.h5}>
-                    AMADEUS PRIVATE CHARTER CONTRACT 25-26
-                  </h3>
+              <button
+                onClick={() =>
+                  handleContractClick("AMADEUS PRIVATE CHARTER CONTRACT 25-26")
+                }
+                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              >
+                <div className={`flex items-center space-x-4`}>
+                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
+                  <div className="text-left">
+                    <h3 className={styles.h5}>
+                      AMADEUS PRIVATE CHARTER CONTRACT 25-26
+                    </h3>
+                  </div>
                 </div>
-              </div>
-            </button>
-
+              </button>
+            </a>
             {/* HOT CHILLI CONTRACT 25-26 */}
-      
-            <button
-              onClick={() => handleContractClick("HOT CHILLI CONTRACT 25-26")}
-              className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            <a
+              href="https://sendlink.co/documents/doc-form/68b94360fac834e09ee6c668?locale=en-US"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <div className={`flex items-center space-x-4`}>
-                <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                <div className="text-left">
-                  <h3 className={styles.h5}>
-                    HOT CHILLI CONTRACT 25-26
-                  </h3>
+              <button
+                onClick={() => handleContractClick("HOT CHILLI CONTRACT 25-26")}
+                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              >
+                <div className={`flex items-center space-x-4`}>
+                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
+                  <div className="text-left">
+                    <h3 className={styles.h5}>HOT CHILLI CONTRACT 25-26</h3>
+                  </div>
                 </div>
-              </div>
-            </button>
-           
+              </button>
+            </a>
 
             {/* MOZART CONTRACT 25-26 */}
-            <button
-              onClick={() => handleContractClick("MOZART CONTRACT 25-26")}
-              className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            <a
+              href="https://sendlink.co/documents/doc-form/68ba5e1f0cb4b8c5dbeae59c?locale=en-US"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <div className={`flex items-center space-x-4`}>
-                <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                <div className="text-left">
-                  <h3 className={styles.h5}>
-                    MOZART CONTRACT 25-26
-                  </h3>
+              <button
+                onClick={() => handleContractClick("MOZART CONTRACT 25-26")}
+                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              >
+                <div className={`flex items-center space-x-4`}>
+                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
+                  <div className="text-left">
+                    <h3 className={styles.h5}>MOZART CONTRACT 25-26</h3>
+                  </div>
                 </div>
-              </div>
-            </button>
-
+              </button>
+            </a>
             {/* SHINDIG CONTRACT 25-26 */}
-            <button
-              onClick={() => handleContractClick("SHINDIG CONTRACT 25-26")}
-              className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            <a
+              href="https://sendlink.co/documents/doc-form/68ba75dcd427e85dbf5ff990?locale=en-US"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <div className={`flex items-centerspace-x-4`}>
-                <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                <div className="text-left">
-                  <h3 className={styles.h5}>
-                    SHINDIG CONTRACT 25-26
-                  </h3>
+              <button
+                onClick={() => handleContractClick("SHINDIG CONTRACT 25-26")}
+                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              >
+                <div className={`flex items-centerspace-x-4`}>
+                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
+                  <div className="text-left">
+                    <h3 className={styles.h5}>SHINDIG CONTRACT 25-26</h3>
+                  </div>
                 </div>
-              </div>
-            </button>
-
+              </button>
+            </a>
             {/* SAIL LA VIE CONTRACT 25-26 */}
-            <button
-              onClick={() => handleContractClick("SAIL LA VIE CONTRACT 25-26")}
-              className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            <a
+              href="https://sendlink.co/documents/doc-form/68ba59c7fac8342daaf3d482?locale=en-US"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <div className={`flex items-center space-x-4`}>
-                <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                <div className="text-left">
-                  <h3 className={styles.h5}>
-                    SAIL LA VIE CONTRACT 25-26
-                  </h3>
+              <button
+                onClick={() =>
+                  handleContractClick("SAIL LA VIE CONTRACT 25-26")
+                }
+                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              >
+                <div className={`flex items-center space-x-4`}>
+                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
+                  <div className="text-left">
+                    <h3 className={styles.h5}>SAIL LA VIE CONTRACT 25-26</h3>
+                  </div>
                 </div>
-              </div>
-            </button>
+              </button>
+            </a>
+
+
+               {/* Nauti By Nature CONTRACT 2025-2026 */}
+               <a
+              href="https://sendlink.co/documents/doc-form/68ba70cf0cb4b8768ceb3bc6?locale=en-US"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button
+                onClick={() =>
+                  handleContractClick("AMADEUS CABIN CHARTER CONTRACT 25-26")
+                }
+                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              >
+                <div className={`flex items-center space-x-4`}>
+                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
+                  <div className="text-left">
+                    <h3 className={styles.h5}>
+                    Nauti By Nature CONTRACT 2025-2026 
+                    </h3>
+                  </div>
+                </div>
+              </button>
+            </a>
+
+
           </div>
         </div>
       </div>
@@ -370,11 +436,14 @@ const Agent = () => {
               <h2 className={`${styles.h2} text-zink mb-6`}>Get In Touch</h2>
               <div className="w-32 h-1 bg-mustard mx-auto rounded-full"></div>
             </div>
-            
-            <p className={`${styles.p1} text-gray-700 text-center mb-12 max-w-4xl mx-auto leading-relaxed`}>
-              Should you have any questions, require assistance, or wish to make changes to the contract, please do not hesitate to contact us:
+
+            <p
+              className={`${styles.p1} text-gray-700 text-center mb-12 max-w-4xl mx-auto leading-relaxed`}
+            >
+              Should you have any questions, require assistance, or wish to make
+              changes to the contract, please do not hesitate to contact us:
             </p>
-            
+
             <div className={`${styles.grid2Col} mb-12`}>
               <div className="group bg-zink rounded-2xl p-8 text-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                 <div className={`flex items-center space-x-7`}>
@@ -387,7 +456,7 @@ const Agent = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="group bg-zink rounded-2xl p-8 text-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                 <div className={`flex items-center space-x-7`}>
                   <div className="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -403,9 +472,12 @@ const Agent = () => {
 
             <div className="text-center bg-gray-50 rounded-2xl p-8">
               <p className={`${styles.p1} text-gray-700 mb-6 leading-relaxed`}>
-                Thank you again for considering us as your boat operator, and we look forward to the opportunity to work with you.
+                Thank you again for considering us as your boat operator, and we
+                look forward to the opportunity to work with you.
               </p>
-              <div className={`${styles.flexCenter} space-x-4 text-2xl font-bold text-zink`}>
+              <div
+                className={`${styles.flexCenter} space-x-4 text-2xl font-bold text-zink`}
+              >
                 <FaGlobe className="text-mustard" />
                 <span>Sunny regards from Phuket,</span>
               </div>
@@ -426,7 +498,7 @@ const Agent = () => {
           <FaChevronUp className="text-xl group-hover:scale-110 transition-transform duration-300" />
         </button>
       )}
-</div>
+    </div>
   );
 };
 
