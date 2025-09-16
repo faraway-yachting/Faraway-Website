@@ -21,6 +21,8 @@ import { styles, combine } from "@/styles/style";
 
 const Agent = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [phoneCopied, setPhoneCopied] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
 
   // Boat list data
   const boats = [
@@ -56,6 +58,42 @@ const Agent = () => {
     },
   ];
 
+  // Contracts data
+  const contracts = [
+    {
+      title: "ALL CONTRACTS 25-26",
+      href: "https://sendlink.co/documents/doc-form/68b53602355b332ea13c54b3?locale=en-US",
+    },
+    {
+      title: "AMADEUS CABIN CHARTER CONTRACT 25-26",
+      href: "https://sendlink.co/documents/doc-form/68b96d08fac8341820e78b49?locale=en-US",
+    },
+    {
+      title: "AMADEUS PRIVATE CHARTER CONTRACT 25-26",
+      href: "https://sendlink.co/documents/doc-form/68b930bf654223cf029f98db?locale=en-US",
+    },
+    {
+      title: "HOT CHILLI CONTRACT 25-26",
+      href: "https://sendlink.co/documents/doc-form/68b94360fac834e09ee6c668?locale=en-US",
+    },
+    {
+      title: "MOZART CONTRACT 25-26",
+      href: "https://sendlink.co/documents/doc-form/68ba5e1f0cb4b8c5dbeae59c?locale=en-US",
+    },
+    {
+      title: "SHINDIG CONTRACT 25-26",
+      href: "https://sendlink.co/documents/doc-form/68ba75dcd427e85dbf5ff990?locale=en-US",
+    },
+    {
+      title: "SAIL LA VIE CONTRACT 25-26",
+      href: "https://sendlink.co/documents/doc-form/68ba59c7fac8342daaf3d482?locale=en-US",
+    },
+    {
+      title: "Nauti By Nature CONTRACT 2025-2026",
+      href: "https://sendlink.co/documents/doc-form/68ba70cf0cb4b8768ceb3bc6?locale=en-US",
+    },
+  ];
+
   
 
   // Scroll to top functionality
@@ -73,6 +111,26 @@ const Agent = () => {
 
   const handleContractClick = (contractTitle: string) => {
     console.log(`Opening contract: ${contractTitle}`);
+  };
+
+  const copyPhoneToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText('+66 123 456 789');
+      setPhoneCopied(true);
+      setTimeout(() => setPhoneCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy phone number:', err);
+    }
+  };
+
+  const copyEmailToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText('info@farawayyachting.com');
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy email:', err);
+    }
   };
 
   return (
@@ -261,169 +319,27 @@ const Agent = () => {
           </div>
 
           <div className={styles.grid2Col}>
-            {/* ALL CONTRACTS 25-26 */}
-            <a
-              href="https://sendlink.co/documents/doc-form/68b53602355b332ea13c54b3?locale=en-US"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                onClick={() => handleContractClick("ALL CONTRACTS 25-26")}
-                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            {contracts.map((contract, index) => (
+              <a
+                key={index}
+                href={contract.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
               >
-                <div className="flex items-center space-x-4">
-                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                  <div className="text-left">
-                    <h3 className={styles.h5}>ALL CONTRACTS 25-26</h3>
+                <button
+                  onClick={() => handleContractClick(contract.title)}
+                  className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 w-full h-19 flex items-center"
+                >
+                  <div className="flex items-center space-x-4 w-full">
+                    <div className="w-4 h-4 bg-mustard rounded-full flex-shrink-0"></div>
+                    <div className="text-left flex-1">
+                      <h3 className={`text-[21px] leading-tight`}>{contract.title}</h3>
+                    </div>
                   </div>
-                </div>
-              </button>
-            </a>
-            {/* AMADEUS CABIN CHARTER CONTRACT 25-26 */}
-            <a
-              href="https://sendlink.co/documents/doc-form/68b96d08fac8341820e78b49?locale=en-US"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                onClick={() =>
-                  handleContractClick("AMADEUS CABIN CHARTER CONTRACT 25-26")
-                }
-                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-              >
-                <div className={`flex items-center space-x-4`}>
-                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                  <div className="text-left">
-                    <h3 className={styles.h5}>
-                      AMADEUS CABIN CHARTER CONTRACT 25-26
-                    </h3>
-                  </div>
-                </div>
-              </button>
-            </a>
-            {/* AMADEUS PRIVATE CHARTER CONTRACT 25-26 */}
-            <a
-              href="https://sendlink.co/documents/doc-form/68b930bf654223cf029f98db?locale=en-US"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                onClick={() =>
-                  handleContractClick("AMADEUS PRIVATE CHARTER CONTRACT 25-26")
-                }
-                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-              >
-                <div className={`flex items-center space-x-4`}>
-                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                  <div className="text-left">
-                    <h3 className={styles.h5}>
-                      AMADEUS PRIVATE CHARTER CONTRACT 25-26
-                    </h3>
-                  </div>
-                </div>
-              </button>
-            </a>
-            {/* HOT CHILLI CONTRACT 25-26 */}
-            <a
-              href="https://sendlink.co/documents/doc-form/68b94360fac834e09ee6c668?locale=en-US"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                onClick={() => handleContractClick("HOT CHILLI CONTRACT 25-26")}
-                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-              >
-                <div className={`flex items-center space-x-4`}>
-                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                  <div className="text-left">
-                    <h3 className={styles.h5}>HOT CHILLI CONTRACT 25-26</h3>
-                  </div>
-                </div>
-              </button>
-            </a>
-
-            {/* MOZART CONTRACT 25-26 */}
-            <a
-              href="https://sendlink.co/documents/doc-form/68ba5e1f0cb4b8c5dbeae59c?locale=en-US"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                onClick={() => handleContractClick("MOZART CONTRACT 25-26")}
-                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-              >
-                <div className={`flex items-center space-x-4`}>
-                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                  <div className="text-left">
-                    <h3 className={styles.h5}>MOZART CONTRACT 25-26</h3>
-                  </div>
-                </div>
-              </button>
-            </a>
-            {/* SHINDIG CONTRACT 25-26 */}
-            <a
-              href="https://sendlink.co/documents/doc-form/68ba75dcd427e85dbf5ff990?locale=en-US"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                onClick={() => handleContractClick("SHINDIG CONTRACT 25-26")}
-                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-              >
-                <div className={`flex items-centerspace-x-4`}>
-                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                  <div className="text-left">
-                    <h3 className={styles.h5}>SHINDIG CONTRACT 25-26</h3>
-                  </div>
-                </div>
-              </button>
-            </a>
-            {/* SAIL LA VIE CONTRACT 25-26 */}
-            <a
-              href="https://sendlink.co/documents/doc-form/68ba59c7fac8342daaf3d482?locale=en-US"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                onClick={() =>
-                  handleContractClick("SAIL LA VIE CONTRACT 25-26")
-                }
-                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-              >
-                <div className={`flex items-center space-x-4`}>
-                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                  <div className="text-left">
-                    <h3 className={styles.h5}>SAIL LA VIE CONTRACT 25-26</h3>
-                  </div>
-                </div>
-              </button>
-            </a>
-
-
-               {/* Nauti By Nature CONTRACT 2025-2026 */}
-               <a
-              href="https://sendlink.co/documents/doc-form/68ba70cf0cb4b8768ceb3bc6?locale=en-US"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                onClick={() =>
-                  handleContractClick("AMADEUS CABIN CHARTER CONTRACT 25-26")
-                }
-                className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-              >
-                <div className={`flex items-center space-x-4`}>
-                  <div className="w-4 h-4 bg-mustard rounded-full"></div>
-                  <div className="text-left">
-                    <h3 className={styles.h5}>
-                    Nauti By Nature CONTRACT 2025-2026 
-                    </h3>
-                  </div>
-                </div>
-              </button>
-            </a>
-
-
+                </button>
+              </a>
+            ))}
           </div>
         </div>
       </div>
@@ -436,7 +352,6 @@ const Agent = () => {
               <h2 className={`${styles.h2} text-zink mb-6`}>Get In Touch</h2>
               <div className="w-32 h-1 bg-mustard mx-auto rounded-full"></div>
             </div>
-
             <p
               className={`${styles.p1} text-gray-700 text-center mb-12 max-w-4xl mx-auto leading-relaxed`}
             >
@@ -452,7 +367,12 @@ const Agent = () => {
                   </div>
                   <div>
                     <h5 className={styles.h5}>Email Us</h5>
-                    <p className="text-white">info@farawayyachting.com</p>
+                    <button
+                      onClick={copyEmailToClipboard}
+                      className="text-gray-200 hover:text-mustard transition-colors duration-300 cursor-pointer hover:text-[#D6AB62]"
+                    >
+                      {emailCopied ? 'Copied!' : 'info@farawayyachting.com'}
+                    </button>
                   </div>
                 </div>
               </div>
@@ -464,7 +384,12 @@ const Agent = () => {
                   </div>
                   <div>
                     <h5 className={styles.h5}>Call Us</h5>
-                    <p className="text-gray-200">+66 123 456 789</p>
+                    <button
+                      onClick={copyPhoneToClipboard}
+                      className="text-gray-200 hover:text-mustard transition-colors duration-300 cursor-pointer hover:text-[#D6AB62]"
+                    >
+                      {phoneCopied ? 'Copied!' : '+66 123 456 789'}
+                    </button>
                   </div>
                 </div>
               </div>

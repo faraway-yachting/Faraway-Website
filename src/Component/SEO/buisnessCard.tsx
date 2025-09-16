@@ -5,12 +5,12 @@ import { SiLine } from 'react-icons/si';
 
 const BusinessCard = () => {
   const contactCards = [
-    { icon: FaWhatsapp, title: "WHATS APP", subtitle: "for Bookings" },
-    { icon: FaPhoneAlt, title: "PHONE & MAIL", subtitle: "for Bookings" },
-    { icon: SiLine, title: "LINE", subtitle: "for Bookings" },
-    { icon: FaGlobe, title: "WEBSITE", subtitle: "" },
-    { icon: FaFacebook, title: "FACEBOOK", subtitle: "" },
-    { icon: FaInstagram, title: "INSTAGRAM", subtitle: "" }
+    { icon: FaWhatsapp, title: "WHATS APP", subtitle: "for Bookings", href:"https://api.whatsapp.com/send/?phone=66612345623&text&type=phone_number&app_absent=0" },
+    { icon: FaPhoneAlt, title: "PHONE & MAIL", subtitle: "for Bookings", href: "tel:+66612345623" },
+    { icon: SiLine, title: "LINE", subtitle: "for Bookings", href:"https://line.me/ti/p/IF91DcUiYa" },
+    { icon: FaGlobe, title: "WEBSITE", subtitle: "" ,href:"https://faraway-yachting.com"},
+    { icon: FaFacebook, title: "FACEBOOK", subtitle: "", href:"https://www.facebook.com/FarawayYachting"},
+    { icon: FaInstagram, title: "INSTAGRAM", subtitle: "" ,href:"https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Ffarawayyachting%2F%3Ffbclid%3DIwAR0iAzKhJjfT0NVO5X5tKjjJ-uwaWQ4m6DQ03l9vQiGxJ8Q7OJQQByekk54&is_from_rle"}
   ];
 
   const teamCards = [
@@ -41,15 +41,17 @@ const BusinessCard = () => {
             {contactCards.map((card, index) => {
               const IconComponent = card.icon;
               return (
-                <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group cursor-pointer">
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-mustard rounded-xl flex items-center justify-center group-hover:bg-zink transition-colors duration-300">
-                      <IconComponent className="text-white text-2xl" />
+                <a key={index} href={card.href} target={card.href?.startsWith('tel:') ? '_self' : '_blank'} rel="noopener noreferrer" className="block">
+                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group cursor-pointer">
+                    <div className="text-center">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-mustard rounded-xl flex items-center justify-center group-hover:bg-zink transition-colors duration-300">
+                        <IconComponent className="text-white text-2xl" />
+                      </div>
+                      <h3 className="font-bold text-lg text-zink mb-2">{card.title}</h3>
+                      {card.subtitle && <p className="text-sm text-gray-600">{card.subtitle}</p>}
                     </div>
-                    <h3 className="font-bold text-lg text-zink mb-2">{card.title}</h3>
-                    {card.subtitle && <p className="text-sm text-gray-600">{card.subtitle}</p>}
                   </div>
-                </div>
+                </a>
               );
             })}
           </div>

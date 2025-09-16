@@ -5,7 +5,6 @@ import { styles, combine } from '@/styles/style';
 
 const ReviewUs = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
-
   // Scroll to top functionality
   useEffect(() => {
     const handleScroll = () => {
@@ -20,8 +19,17 @@ const ReviewUs = () => {
   };
 
   const handleReviewClick = (platform: string) => {
-    console.log(`Opening review on: ${platform}`);
-    // Add actual review links here
+    const reviewLinks = {
+      Google: "https://www.google.com/maps/place/Faraway+Yachting+Phuket,+Thailand/@7.8235296,98.3451594,17z/data=!3m1!4b1!4m6!3m5!1s0x3050257bffffffff:0x937eaf99ed7fa6b7!8m2!3d7.8235296!4d98.3451594!16s%2Fg%2F12hp6d07j?entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D",
+      Tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g1389361-d4747123-Reviews-Faraway_Yachting_Co_Ltd-Chalong_Phuket_Town_Phu",
+      Facebook: "https://www.facebook.com/FarawayYachting/reviews",
+      Trustpilot: "https://www.trustpilot.com/evaluate/wordpress-858394-5855488.cloudwaysapps.com?utm_medium=trustbox&utm_source=TrustBoxReviewCollector"
+    };
+    
+    const link = reviewLinks[platform as keyof typeof reviewLinks];
+    if (link) {
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
@@ -50,7 +58,7 @@ const ReviewUs = () => {
               <div className="inline-flex items-center justify-center w-24 h-24 bg-mustard rounded-full mb-8 shadow-2xl">
                 <FaStar className="text-4xl text-white" />
               </div>
-              <h1 className="text-6xl md:text-7xl font-bold mb-6 text-white">
+              <h1 className={combine(styles.h2 ,"font-bold mb-6 text-white")}>
                 Review Us
               </h1>
               <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed">
@@ -83,9 +91,9 @@ const ReviewUs = () => {
       {/* Main Content Section */}
       <div className={`${styles.py4} bg-white`}>
         <div className={styles.container}>
-          <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
             {/* Thank You Message */}
-            <div className="bg-white border-2 border-dashed border-gray-300 rounded-3xl p-12 shadow-xl">
+            <div className="bg-white border-2 border-dashed border-gray-300 rounded-3xl p-4 md:p-7 lg:p-9 xl:p-12 shadow-xl">
               <div className="text-center mb-8">
                 <h2 className={`${styles.h2} text-zink mb-6`}>
                   Dear valued yacht charter guest,
