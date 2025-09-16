@@ -8,11 +8,12 @@ const Agent = () => {
 
   // Boat list data
   const boats = [
-    { name: "MY Hot Chilli 38 ft.", type: "Motor Yacht", capacity: "8 guests" },
-    { name: "SY Mozart 48 ft.", type: "Sailing Yacht", capacity: "10 guests" },
-    { name: "SY Shindig 48 ft.", type: "Sailing Yacht", capacity: "10 guests" },
-    { name: "MY Sail La Vie 51 ft.", type: "Motor Yacht", capacity: "12 guests" },
-    { name: "SY Amadeus 48 ft.", type: "Sailing Yacht", capacity: "10 guests" }
+    { name: "MY Hot Chilli 38 ft.", type: "Motor Yacht", link: "https://drive.google.com/drive/folders/1M-OzS6gWi0i2FhXjsZcWTgMqn9eL0E7q?usp=drive_link"},
+    { name: "SY Mozart 48 ft.", type: "Sailing Yacht", link: "https://drive.google.com/drive/folders/140ErRc-9ntOILE-X1anLGEB_xfFoxvyp"},
+    { name: "SY Shindig 48 ft.", type: "Sailing Yacht", link: "https://drive.google.com/drive/folders/1xFjE68Tk-yGJlNwiZra_fkSDibNwMamW?usp=drive_link"},
+    { name: "MY Sail La Vie 51 ft.", type: "Motor Yacht", link: "https://drive.google.com/drive/folders/1CBA_PKwPJcQe6xAWzyjjWkqP4TMel8wx?usp=drive_link"},
+    { name: "SY Amadeus 48 ft.", type: "Sailing Yacht", link: "https://drive.google.com/drive/folders/1LZSegN6GmT90benf4whmJO2cC2P3bwJc?usp=drive_link"},
+    { name: "SY Nauti By Nature", type: "Sailing Yacht", link: "https://drive.google.com/drive/folders/10idqkq1CEsqJE-k2pQSu48lP0JpLs9i8?usp=drive_link"}
   ];
 
   // Contract data
@@ -212,27 +213,29 @@ const Agent = () => {
       <div className={`${styles.py4} bg-gray-50`}>
         <div className={styles.container}>
           <div className="text-center mb-12">
-            <h2 className={`${styles.h2} text-zink mb-6`}>Our Premium Fleet</h2>
+            <h2 className={`${styles.h2} text-zink mb-6`}>Media</h2>
             <div className="w-32 h-1 bg-mustard mx-auto rounded-full"></div>
           </div>
           
           <div className={styles.grid3Col}>
             {boats.map((boat, index) => (
-              <div key={index} className="group text-zink bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div className="flex items-center space-x-4 mb-4">
+              <a
+                key={index}
+                href={boat.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group text-zink bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 block"
+              >
+                <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-mustard rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <FaAnchor className="text-white text-xl" />
-.                  </div>
+                  </div>
                   <div className="text-left">
                     <h3 className={combine(styles.h5,"font-semibold")}>{boat.name}</h3>
                     <p className={styles.p4}>{boat.type}</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-2 text-gray-600">
-                  <FaUsers className="text-mustard" />
-                  <span className={styles.p4}>{boat.capacity}</span>
-                </div>
-              </div>
+              </a>
             ))}
           </div>
           
@@ -295,6 +298,7 @@ const Agent = () => {
             </button>
 
             {/* HOT CHILLI CONTRACT 25-26 */}
+      
             <button
               onClick={() => handleContractClick("HOT CHILLI CONTRACT 25-26")}
               className="group relative overflow-hidden bg-zink text-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
@@ -308,6 +312,7 @@ const Agent = () => {
                 </div>
               </div>
             </button>
+           
 
             {/* MOZART CONTRACT 25-26 */}
             <button
