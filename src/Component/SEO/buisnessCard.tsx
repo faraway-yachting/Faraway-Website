@@ -2,6 +2,7 @@
 import React from 'react';
 import { FaWhatsapp,  FaPhoneAlt , FaGlobe, FaFacebook, FaInstagram, FaUser, FaUserTie, FaCalculator } from 'react-icons/fa';
 import { SiLine } from 'react-icons/si';
+import { styles, combine } from "@/styles/style";
 
 const BusinessCard = () => {
   const contactCards = [
@@ -28,27 +29,29 @@ const BusinessCard = () => {
             <div className="w-40 h-15 mx-auto mb-4 flex items-center justify-center">
               <img src="/images/logo.png" alt="Faraway Yachting Logo" className="w-full h-full object-contain" />
             </div>
-            <h1 className="text-4xl font-bold text-zink mb-3 tracking-tight">
+            <h2 className={combine(styles.h2, "text-zink mb-3 tracking-tight")}>
               Faraway Yachting Co. Ltd.
-            </h1>
+            </h2>
             <div className="w-24 h-1 bg-mustard mx-auto rounded-full"></div>
           </div>
 
         {/* Contact Cards Grid */}
         <div className="mb-16">
-          <h2 className="text-2xl font-bold text-zink text-center mb-8">Contact Us</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h3 className={combine(styles.h3, "text-zink text-center font-semibold mb-8")}>Contact Us</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-7 xl:gap-10">
             {contactCards.map((card, index) => {
               const IconComponent = card.icon;
+              const isWebsiteCard = card.title === "WEBSITE";
+              const isSocialCard = card.title === "FACEBOOK" || card.title === "INSTAGRAM";
               return (
                 <a key={index} href={card.href} target={card.href?.startsWith('tel:') ? '_self' : '_blank'} rel="noopener noreferrer" className="block">
-                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group cursor-pointer">
+                  <div className={`bg-white rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group cursor-pointer ${(isWebsiteCard || isSocialCard) ? 'min-h-[163px] md:min-h-0' : ''}`}>
                     <div className="text-center">
-                      <div className="w-16 h-16 mx-auto mb-4 bg-mustard rounded-xl flex items-center justify-center group-hover:bg-zink transition-colors duration-300">
+                      <div className={`${styles.flexCenter} w-16 h-16 mx-auto mb-4 bg-mustard rounded-xl group-hover:bg-zink transition-colors duration-300`}>
                         <IconComponent className="text-white text-2xl" />
                       </div>
-                      <h3 className="font-bold text-lg text-zink mb-2">{card.title}</h3>
-                      {card.subtitle && <p className="text-sm text-gray-600">{card.subtitle}</p>}
+                      <h5 className={combine(styles.h5, "font-bold text-zink mb-2")}>{card.title}</h5>
+                      {card.subtitle && <p className={combine(styles.p4,"text-zink font-inter")}>{card.subtitle}</p>}
                     </div>
                   </div>
                 </a>
@@ -59,18 +62,18 @@ const BusinessCard = () => {
 
         {/* Team Cards Grid */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-zink text-center mb-8">Our Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <h3 className={combine(styles.h3, "text-zink text-center font-semibold mb-8")}>Our Team</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-7 xl:gap-10">
             {teamCards.map((card, index) => {
               const IconComponent = card.icon;
               return (
-                <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group cursor-pointer">
+                <div key={index} className="bg-white rounded-2xl p-4 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group cursor-pointer">
                   <div className="text-center">
                     <div className="w-16 h-16 mx-auto mb-4 bg-mustard rounded-xl flex items-center justify-center group-hover:bg-zink transition-colors duration-300">
                       <IconComponent className="text-white text-2xl" />
                     </div>
-                    <h3 className="font-bold text-lg text-zink mb-2">{card.title}</h3>
-                    <p className="text-sm text-gray-600">{card.subtitle}</p>
+                    <h5 className={combine(styles.h5, "font-bold text-zink mb-2")}>{card.title}</h5>
+                    <p className={combine(styles.p4,"text-zink font-inter")}>{card.subtitle}</p>
                   </div>
                 </div>
               );

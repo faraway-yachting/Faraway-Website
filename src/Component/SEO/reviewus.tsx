@@ -102,22 +102,22 @@ const ReviewUs = () => {
               </div>
               
               <div className="space-y-6 text-gray-700 leading-relaxed">
-                <p className={`${styles.p1} text-center`}>
+                <p className={`${styles.p1} text-center font-inter`}>
                   Thank you for choosing <strong>Faraway Yachting</strong> for your unforgettable yacht charter experience.
                 </p>
                 
-                <p className={`${styles.p1}`}>
+                <p className={`${styles.p1} font-inter`}>
                   We are incredibly grateful for your trust in us and would love to hear about your experience. 
                   Your feedback is invaluable to us and helps us ensure that every guest receives the amazing 
                   experience they deserve.
                 </p>
                 
-                <div className="bg-mustard bg-opacity-10 border-l-4 border-mustard rounded-r-2xl p-6 my-8">
-                  <div className="flex items-start space-x-4">
+                <div className="bg-mustard bg-opacity-10 border-l-4 border-mustard rounded-r-2xl p-3 lg:p-6 my-8">
+                  <div className="flex items-start space-x-0 md:space-x-2 lg:space-x-4">
                     <FaGift className="text-2xl text-mustard mt-1" />
                     <div>
                       <h4 className="text-lg font-semibold text-zink mb-2">Exclusive Benefits</h4>
-                      <p className="text-gray-700">
+                      <p className="text-gray-700 font-inter">
                         By leaving a review, you'll be eligible for exclusive benefits including a 
                         <strong> repeater discount on future charters</strong> or a 
                         <strong> referral commission</strong> for introducing new clients to our services.
@@ -126,7 +126,7 @@ const ReviewUs = () => {
                   </div>
                 </div>
                 
-                <p className={`${styles.p1}`}>
+                <p className={`${styles.p1} font-inter`}>
                   Please note that during our peak season, from Christmas to the end of February, 
                   big discounts are unavailable. However, outside of this period, we offer more 
                   exclusive benefits to our valued guests.
@@ -245,9 +245,9 @@ const ReviewUs = () => {
             </div>
 
             {/* Additional Information */}
-            <div className="mt-16 bg-gray-50 rounded-3xl p-8">
+            <div className="mt-16 bg-gray-50 rounded-3xl p-6 lg:p-8">
               <div className="text-center">
-                <h3 className={`${styles.h4} text-zink mb-6`}>
+                <h3 className={`${styles.h4} text-zink mb-6 font-semibold`}>
                   Why Your Review Matters
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -255,8 +255,8 @@ const ReviewUs = () => {
                     <div className="w-16 h-16 bg-mustard rounded-full mx-auto mb-4 flex items-center justify-center">
                       <FaHeart className="text-white text-2xl" />
                     </div>
-                    <h4 className={`${styles.h6} text-zink mb-2`}>Help Others</h4>
-                    <p className={`${styles.p4} text-gray-600`}>
+                    <h4 className={`${styles.h6} text-zink mb-2 font-semibold`}>Help Others</h4>
+                    <p className={`${styles.p4} text-gray-600 font-inter`}>
                       Your review helps future guests make informed decisions
                     </p>
                   </div>
@@ -264,8 +264,8 @@ const ReviewUs = () => {
                     <div className="w-16 h-16 bg-mustard rounded-full mx-auto mb-4 flex items-center justify-center">
                       <FaGift className="text-white text-2xl" />
                     </div>
-                    <h4 className={`${styles.h6} text-zink mb-2`}>Earn Benefits</h4>
-                    <p className={`${styles.p4} text-gray-600`}>
+                    <h4 className={`${styles.h6} text-zink mb-2 font-semibold`}>Earn Benefits</h4>
+                    <p className={`${styles.p4} text-gray-600 font-inter`}>
                       Get exclusive discounts and referral commissions
                     </p>
                   </div>
@@ -273,8 +273,8 @@ const ReviewUs = () => {
                     <div className="w-16 h-16 bg-mustard rounded-full mx-auto mb-4 flex items-center justify-center">
                       <FaCheckCircle className="text-white text-2xl" />
                     </div>
-                    <h4 className={`${styles.h6} text-zink mb-2`}>Improve Service</h4>
-                    <p className={`${styles.p4} text-gray-600`}>
+                    <h4 className={`${styles.h6} text-zink mb-2 font-semibold`}>Improve Service</h4>
+                    <p className={`${styles.p4} text-gray-600 font-inter`}>
                       Help us enhance our yacht charter experiences
                     </p>
                   </div>

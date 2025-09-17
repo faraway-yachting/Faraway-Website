@@ -23,19 +23,19 @@ const NightCharter_Meeting = () => {
             {/* Main Container */}
             <div className={combine(styles.container, "py-12")}>
                 {/* Hero Section */}
-                <div className="text-center mb-16">
-                    <h2 className={combine(styles.h2, "font-semibold text-zink mb-6")}>
+                <div className="text-center mb-7 md:mb-9 lg:mb-13">
+                    <h2 className={combine(styles.h2, "font-semibold text-zink mb-3")}>
                         Meeting Location  Overnight Charter
                     </h2>
 
-                    <img src="/images/rframe.png" alt="" className={combine(styles.w2, "my-3 mx-auto")} />
+                    <img src="/images/rframe.png" alt="" className={combine(styles.w2, "my-3 pb-2 mx-auto")} />
 
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                         Welcome aboard! Your adventure begins here at our office location.
                     </p>
                 </div>
                 {/* Content Cards - Three in One Row */}
-                <div className={combine(styles.grid3Col, "mb-16")}>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-5 xl:gap-15 mb-5 lg:mb-7 xl:mb-9">
                     {/* Office Location Card */}
                     <div className="bg-white rounded-xl shadow-lg border-l-4 border-mustard p-6 hover:shadow-xl transition-shadow duration-300">
                         <div className="flex items-center mb-4">
@@ -150,7 +150,7 @@ const NightCharter_Meeting = () => {
                     </div>
                 </div>
                 {/* Static Images */}
-                <div className={combine(styles.container, "space-y-12 mb-16")}>
+                <div className="space-y-8 lg:space-y-10 xl:space-y-12 mb-7 md:mb-9 lg:mb-13">
                     {/* Image 1 */}
                     <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-shadow duration-300">
                         <div className="h-[500px] relative">

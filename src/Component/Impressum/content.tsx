@@ -39,10 +39,10 @@ const ImpressumContent = () => {
             </p>
           </div>
           {/* Company Details Card */}
-          <div className="bg-white rounded-3xl p-12 shadow-2xl border border-gray-100 relative overflow-hidden">
+          <div className="bg-white rounded-3xl p-4 md:p-9 lg:p-12 shadow-2xl border border-gray-100 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full -translate-y-32 translate-x-32"></div>
-            <div className="relative z-10">
+            <div className="relative z-10 my-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Company Name */}
                 <div className="flex items-start space-x-4">

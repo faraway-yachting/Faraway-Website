@@ -1,5 +1,5 @@
 "use client";
-import { FaMapMarkerAlt, FaClock, FaPhone, FaWhatsapp, FaLine, FaShip, FaAnchor } from "react-icons/fa";
+import { FaMapMarkerAlt, FaClock, FaPhone, FaWhatsapp, FaLine} from "react-icons/fa";
 import { styles, combine } from "@/styles/style";
 import { useState } from "react";
 const DayCharterMeetig = () => {
@@ -16,24 +16,20 @@ const DayCharterMeetig = () => {
     };
     return (
         <div className="min-h-screen bg-white">
-
             {/* Main Container */}
             <div className={combine(styles.container, "py-12")}>
-
                 {/* Hero Section */}
-                <div className="text-center mb-16">
-                    <h2 className={combine(styles.h2, "font-semibold text-zink mb-6")}>
+                <div className="text-center mb-7 md:mb-9 lg:mb-13">
+                    <h2 className={combine(styles.h2,"font-semibold text-zink mb-3")}>
                         Meeting Location Day Charter
                     </h2>
-
-                    <img src="/images/rframe.png" alt="" className={combine(styles.w2, "my-3 mx-auto")} />
-
+                    <img src="/images/rframe.png" alt="" className={combine(styles.w2, "my-3 pb-2 mx-auto")} />
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                         Please meet our team member with the blue shirt under the white tent at this location</p>
                 </div>
 
                 {/* Content Cards - Three in One Row */}
-                <div className={combine(styles.grid3Col, "mb-16")}>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-5 xl:gap-15 mb-5 lg:mb-7 xl:mb-9">
                     {/* Office Location Card */}
                     <div className="bg-white rounded-xl shadow-lg border-l-4 border-mustard p-6 hover:shadow-xl transition-shadow duration-300">
                         <div className="flex items-center mb-4">
