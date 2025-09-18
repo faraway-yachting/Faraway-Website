@@ -8,6 +8,7 @@ import Header from "@/Component/Header";
 import Licence from "@/Component/Licence";
 import Footer from "@/Component/Footer";
 import WhatsAppIcon from "@/Component/WhatsAppIcon";
+import GoogleAnalyticsComponent from "@/Component/GoogleAnalytics";
 
 const DMSerifDisplay = DM_Serif_Display({
   variable: "--font-dm-serif-display",
@@ -39,6 +40,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-RVTYFBSDC6"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-RVTYFBSDC6');
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${source_Sans_Pro.variable}  ${inter.variable}  ${poppins.variable}  antialiased`}
       >
@@ -52,6 +69,7 @@ export default function RootLayout({
         <Licence />
         <Footer />
         <WhatsAppIcon />
+        <GoogleAnalyticsComponent />
       </body>
     </html>
   );

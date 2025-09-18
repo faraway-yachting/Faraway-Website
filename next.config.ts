@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
     env: {
         BACKEND_URL: process.env.BACKEND_URL,
         FRONTEND_URL: process.env.FRONTEND_URL,
+        NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
     },
 };
 
