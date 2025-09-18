@@ -1,6 +1,7 @@
 "use client";
-import { FaMapMarkerAlt, FaClock, FaPhone, FaWhatsapp, FaLine} from "react-icons/fa";
+import { FaMapMarkerAlt, FaClock, FaPhone, FaWhatsapp, FaLine } from "react-icons/fa";
 import { styles, combine } from "@/styles/style";
+import  Image from "next/image";
 import { useState } from "react";
 const DayCharterMeetig = () => {
     const [phoneCopied, setPhoneCopied] = useState(false);
@@ -20,7 +21,7 @@ const DayCharterMeetig = () => {
             <div className={combine(styles.container, "py-12")}>
                 {/* Hero Section */}
                 <div className="text-center mb-7 md:mb-9 lg:mb-13">
-                    <h2 className={combine(styles.h2,"font-semibold text-zink mb-3")}>
+                    <h2 className={combine(styles.h2, "font-semibold text-zink mb-3")}>
                         Meeting Location Day Charter
                     </h2>
                     <img src="/images/rframe.png" alt="" className={combine(styles.w2, "my-3 pb-2 mx-auto")} />
@@ -45,14 +46,14 @@ const DayCharterMeetig = () => {
                         </p>
 
                         <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                        <a
+                            <a
                                 href="https://www.google.com/maps/place/Faraway+Yachting+Phuket,+Thailand/@7.8231625,98.3437787,15z/data=!4m6!3m5!1s0x3050257bffffffff:0x937eaf99ed7fa6b7!8m2!3d7.8235296!4d98.3451594!16s%2Fg%2F12hp6d07j?entry=ttu&g_ep=EgoyMDI1MDgxMS4wIKXMDSoASAFQAw%3D%3D"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                            <h4 className={combine(styles.p3, "font-semibold text-zink mb-3 hover:text-[#D6AB62]")}>
-                            CHALONG PIER MEETING POINT 
-                            </h4>
+                                <h4 className={combine(styles.p3, "font-semibold text-zink mb-3 hover:text-[#D6AB62]")}>
+                                    CHALONG PIER MEETING POINT
+                                </h4>
                             </a>
                             <div className="space-y-1 text-gray-700">
                                 <p className={styles.p4}>12 Sunrise Rd,</p>
@@ -143,8 +144,22 @@ const DayCharterMeetig = () => {
                     </div>
 
                 </div>
+                <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-shadow duration-300">
+                    <div className="h-[500px] relative">
+                        <Image
+                            src="/images/daycharter.png"
+                            alt="Meeting Information"
+                            fill
+                            className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        <div className="absolute bottom-6 left-6 text-white">
+                            <h3 className={combine(styles.h3, "mb-2")}>Meeting Point</h3>
+                        </div>
+                    </div>
+                </div>
                 {/* Closing Message */}
-                <div>
+                <div className="mt-4 md:mt-6">
                     <h4 className={combine(styles.h4, "text-zink font-semibold mb-1")}>
                         We wish you a great time onboard!
                     </h4>

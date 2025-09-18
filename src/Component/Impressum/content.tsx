@@ -110,8 +110,8 @@ const ImpressumContent = () => {
                         onClick={copyEmailToClipboard}
                         className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-200 cursor-pointer hover:underline text-left"
                       >
-                        <span className="block">info@wordpress-858394-</span>
-                        <span className="block">5855488.cloudwaysapps.com</span>
+                        <span className="block">booking@faraway-yachting.com</span>
+
                       </button>
                       {emailCopied && (
                         <span className="ml-2 text-green-600 text-sm font-medium mt-1">✓ Copied!</span>

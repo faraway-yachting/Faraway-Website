@@ -337,7 +337,7 @@ const Agent = () => {
                       onClick={copyPhoneToClipboard}
                       className="text-gray-200 hover:text-mustard transition-colors duration-300 cursor-pointer text-sm md:text-base"
                     >
-                      {phoneCopied ? 'Copied!' : '+66 123 456 789'}
+                      {phoneCopied ? 'Copied!' : '+66612345623'}
                     </button>
                   </div>
                 </div>
