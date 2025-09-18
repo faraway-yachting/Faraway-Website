@@ -140,10 +140,72 @@ const YachtCards: React.FC<YachtCardsProps> = ({
 
   const gridCols = gridWrapperClasses[columns as 1 | 2 | 3] || gridWrapperClasses[3];
 
+  // Skeleton Loading Component
+  const SkeletonCard = () => (
+    <div className="bg-white rounded-xl overflow-hidden shadow-lg animate-pulse">
+      {/* Image Skeleton */}
+      <div className="relative">
+        <div className="w-full h-64 bg-gray-200"></div>
+        {/* Key Specs Overlay Skeleton */}
+        <div className="absolute top-[14.7rem] left-10 right-10 lg:left-6 lg:right-6 xl:left-10 xl:right-10 bg-white rounded-md" style={{ boxShadow: "0px 4px 24px 0px #B5B5B540" }}>
+          <div className="bg-white bg-opacity-60 backdrop-blur-sm rounded-lg px-3 py-1 flex justify-center">
+            <div className="flex items-center">
+              {[1, 2, 3].map((i) => (
+                <div
+                  key={i}
+                  className="flex items-center space-x-1 border-r last:border-r-0 border-[#E8E8E8] py-1 ps-3 pe-3 xl:ps-5 xl:pe-5 first:ps-2"
+                >
+                  <div className="w-6 xl:w-7 h-6 xl:h-7 bg-gray-200 rounded"></div>
+                  <div className="w-12 h-4 bg-gray-200 rounded"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Content Skeleton */}
+      <div className="p-4 space-y-3">
+        {/* Title Skeleton */}
+        <div className="flex items-start">
+          <div className="w-48 h-8 bg-gray-200 rounded mt-5"></div>
+        </div>
+        {/* Amenities Skeleton */}
+        <div className="flex items-center">
+          {[1, 2, 3].map((i) => (
+            <div
+              key={i}
+              className="flex items-center justify-center space-x-1 border-r last:border-r-0 border-[#E8E8E8] py-1 ps-2 pe-2 xl:ps-4 xl:pe-4 first:ps-0 last:pe-0"
+            >
+              <div className="w-4 h-4 bg-gray-200 rounded"></div>
+              <div className="w-16 h-4 bg-gray-200 rounded"></div>
+            </div>
+          ))}
+        </div>
+        {/* Price and Button Skeleton */}
+        <div className="flex items-center justify-between pt-2">
+          <div className="w-24 h-6 bg-gray-200 rounded"></div>
+          <div className="w-20 h-10 bg-gray-200 rounded"></div>
+        </div>
+      </div>
+    </div>
+  );
+
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-[40rem]">
-        <div className="w-10 h-10 border-4 border-t-transparent border-mustard rounded-full animate-spin" />
+      <div className="mb-8 mx-4 lg:mx-0">
+        {pathname === "/" && (
+          <div className="mb-10">
+            <HeadingContent
+              heading="Featured Yachts in Phuket"
+              description="Let the waves guide you to elegance, adventure, and pure relaxation!"
+            />
+          </div>
+        )}
+        <div className={`grid ${gridCols} gap-6 md:gap-8 lg:gap-4 xl:gap-10`}>
+          {Array.from({ length: initialLoadCount }).map((_, index) => (
+            <SkeletonCard key={index} />
+          ))}
+        </div>
       </div>
     );
   }

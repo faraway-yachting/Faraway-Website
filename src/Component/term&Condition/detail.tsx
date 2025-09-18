@@ -200,7 +200,7 @@ export default function TermsWithTable() {
                             <span className="text-mustard font-bold text-lg">Info:</span>
                             <span className="text-zink font-bold text-lg">Travel Insurance Recommendation</span>
                           </div>
-                          <a href="https://far-away.net/world-nomads-travel-insurance/" target="_blank" rel="noopener">
+                          <a href="/world-nomads-travel-insurance" target="_blank" rel="noopener">
                             <p className="text-zink text-base font-inter leading-relaxed hover:text-[#D6AB62]">{insuranceRecommendation.content}</p>
                           </a>
                         </div>
