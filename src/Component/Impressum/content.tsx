@@ -83,9 +83,19 @@ const ImpressumContent = () => {
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <FaPhone className="text-white text-xl" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">Telephone</h3>
-                    <p className="text-xl font-bold text-gray-900">+66 61 234 5623</p>
+                    <div className="flex items-center">
+                      <button 
+                        onClick={copyPhoneToClipboard}
+                        className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-200 cursor-pointer hover:underline"
+                      >
+                        +66 61 234 5623
+                      </button>
+                      {phoneCopied && (
+                        <span className="ml-2 text-green-600 text-sm font-medium">✓ Copied!</span>
+                      )}
+                    </div>
                   </div>
                 </div>
                 {/* Email */}
@@ -93,9 +103,20 @@ const ImpressumContent = () => {
                   <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <FaEnvelope className="text-white text-xl" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">Email Address</h3>
-                    <p className="text-xl font-bold text-gray-900">booking@faraway-yachting.com</p>
+                    <div className="flex items-start">
+                      <button 
+                        onClick={copyEmailToClipboard}
+                        className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-200 cursor-pointer hover:underline text-left"
+                      >
+                        <span className="block">info@wordpress-858394-</span>
+                        <span className="block">5855488.cloudwaysapps.com</span>
+                      </button>
+                      {emailCopied && (
+                        <span className="ml-2 text-green-600 text-sm font-medium mt-1">✓ Copied!</span>
+                      )}
+                    </div>
                   </div>
                 </div>
                 {/* Website */}
