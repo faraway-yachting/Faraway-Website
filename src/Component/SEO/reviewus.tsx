@@ -20,10 +20,9 @@ const ReviewUs = () => {
 
   const handleReviewClick = (platform: string) => {
     const reviewLinks = {
-      Google: "https://www.google.com/maps/place/Faraway+Yachting+Phuket,+Thailand/@7.8235296,98.3451594,17z/data=!3m1!4b1!4m6!3m5!1s0x3050257bffffffff:0x937eaf99ed7fa6b7!8m2!3d7.8235296!4d98.3451594!16s%2Fg%2F12hp6d07j?entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D",
-      Tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g1389361-d4747123-Reviews-Faraway_Yachting_Co_Ltd-Chalong_Phuket_Town_Phu",
-      Facebook: "https://www.facebook.com/FarawayYachting/reviews",
-      Trustpilot: "https://www.trustpilot.com/evaluate/wordpress-858394-5855488.cloudwaysapps.com?utm_medium=trustbox&utm_source=TrustBoxReviewCollector"
+      Google: "https://www.google.com/maps/place/Faraway+Yachting+Phuket,+Thailand/@7.8254214,98.3448494,18z/data=!4m6!3m5!1s0x3050257bffffffff:0x937eaf99ed7fa6b7!8m2!3d7.8235296!4d98.3451594!16s%2Fg%2F12hp6d07j?entry=ttu&g_ep=EgoyMDI1MDkxNS4wIKXMDSoASAFQAw%3D%3D",
+      Tripadvisor: "https://www.tripadvisor.com/UserReviewEdit-g1389361-d4747123-Faraway_Yachting-Chalong_Phuket_Town_Phuket.html",
+      Facebook: "https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2FFarawayYachting%2Freviews%2F",
     };
     
     const link = reviewLinks[platform as keyof typeof reviewLinks];
@@ -154,7 +153,7 @@ const ReviewUs = () => {
                 <div className="w-32 h-1 bg-mustard mx-auto rounded-full"></div>
               </div>
               
-               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg: xl:gap-13 max-w-[78.2rem] mx-auto">
                  {/* Google Review Button */}
                  <button
                    onClick={() => handleReviewClick("Google")}
@@ -222,25 +221,6 @@ const ReviewUs = () => {
                    </div>
                  </button>
 
-                 {/* Trustpilot Review Button */}
-                 <button
-                   onClick={() => handleReviewClick("Trustpilot")}
-                   className="group relative overflow-hidden bg-gradient-to-br from-white to-emerald-50 border-2 border-emerald-200 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:border-emerald-400 hover:bg-gradient-to-br hover:from-emerald-50 hover:to-white"
-                 >
-                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full transform translate-x-8 -translate-y-8 opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
-                   <div className="relative text-center">
-                     <div className="mb-6">
-                       <h4 className={`${styles.h5} text-zink mb-3 font-semibold`}>Review us on</h4>
-                       <div className="text-emerald-600 font-bold text-2xl tracking-wide">Trustpilot</div>
-                     </div>
-                     <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-2xl mx-auto flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
-                       <FaStar className="text-white text-3xl drop-shadow-lg" />
-                     </div>
-                     <div className="mt-4 text-sm text-gray-600 group-hover:text-emerald-600 transition-colors duration-300">
-                       Trusted Reviews
-                     </div>
-                   </div>
-                 </button>
                </div>
             </div>
 

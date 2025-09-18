@@ -89,7 +89,7 @@ const ContactSection = () => {
                         </h3>
                         <p className={combine("text-zink mb-4 font-semibold", styles.p1)}>
                             Want help planning your adventure? </p>
-                        <p className={combine("text-zink", styles.p3)}> <span className="font-bold">Fill out </span>Fill out the form and one of our
+                        <p className={combine("text-zink", styles.p3)}> <span className="font-bold">Fill out </span>the form and one of our
                             friendly experts will get back to you soon!
                         </p>
                         <ul className={combine("space-y-3 mt-3", styles.text1)}>
