@@ -9,6 +9,7 @@ import Licence from "@/Component/Licence";
 import Footer from "@/Component/Footer";
 import WhatsAppIcon from "@/Component/WhatsAppIcon";
 import GoogleAnalyticsComponent from "@/Component/GoogleAnalytics";
+import GoogleSearchConsole from "@/Component/GoogleSearchConsole";
 
 const DMSerifDisplay = DM_Serif_Display({
   variable: "--font-dm-serif-display",
@@ -41,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <GoogleSearchConsole />
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-RVTYFBSDC6"
