@@ -101,14 +101,12 @@ const ReviewUs = () => {
               </div>
               
               <div className="space-y-6 text-gray-700 leading-relaxed">
-                <p className={`${styles.p1} text-center font-inter`}>
-                  Thank you for choosing <strong>Faraway Yachting</strong> for your unforgettable yacht charter experience.
+                <p className={`${styles.p1} text-center font-inter text-zink`}>
+                  Thank you for choosing <strong>Faraway Yachting</strong> for your adventure!.
                 </p>
                 
-                <p className={`${styles.p1} font-inter`}>
-                  We are incredibly grateful for your trust in us and would love to hear about your experience. 
-                  Your feedback is invaluable to us and helps us ensure that every guest receives the amazing 
-                  experience they deserve.
+                <p className={`${styles.p1} font-inter text-zink`}>
+                We are thrilled to have you on board and want to show our appreciation by offering you a repeater discount on future charters or a referral commission if you introduce us to your loved ones.
                 </p>
                 
                 <div className="bg-mustard bg-opacity-10 border-l-4 border-mustard rounded-r-2xl p-3 lg:p-6 my-8">
@@ -116,19 +114,15 @@ const ReviewUs = () => {
                     <FaGift className="text-2xl text-mustard mt-1" />
                     <div>
                       <h4 className="text-lg font-semibold text-zink mb-2">Exclusive Benefits</h4>
-                      <p className="text-gray-700 font-inter">
-                        By leaving a review, you'll be eligible for exclusive benefits including a 
-                        <strong> repeater discount on future charters</strong> or a 
-                        <strong> referral commission</strong> for introducing new clients to our services.
+                      <p className="text-zink font-inter">
+                      Your feedback is important to us, and a review will help us ensure that your experience with us was nothing short of amazing and also shows us that you are eligible for our exclusive benefits.
                       </p>
                     </div>
                   </div>
                 </div>
                 
-                <p className={`${styles.p1} font-inter`}>
-                  Please note that during our peak season, from Christmas to the end of February, 
-                  big discounts are unavailable. However, outside of this period, we offer more 
-                  exclusive benefits to our valued guests.
+                <p className={`${styles.p1} font-inter text-zink`}>
+                Please be informed that during our peak season, from Christmas to the end of February, we are unable to provide big discounts, but outside of this period, we are delighted to offer some more exclusive benefits.
                 </p>
                 
                 <p className={`${styles.p1} text-center font-semibold text-zink`}>
@@ -147,7 +141,7 @@ const ReviewUs = () => {
             {/* Review Platform Buttons */}
             <div className="mt-16">
               <div className="text-center mb-12">
-                <h3 className={`${styles.h3} text-zink mb-6`}>
+                <h3 className={`${styles.h3} text-zink font-semibold mb-6`}>
                   Share Your Experience
                 </h3>
                 <div className="w-32 h-1 bg-mustard mx-auto rounded-full"></div>
