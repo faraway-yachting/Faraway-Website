@@ -26,6 +26,7 @@ const usefulLinks = [
   { label: "FAQ", href: "/aboutus#faq" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Blog", href: "/blog" },
+  { label: "Sitemap", href: "/sitemap" },
 ];
 
 const iconClass = "text-[#D6AB61]";

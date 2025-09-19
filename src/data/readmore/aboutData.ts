@@ -33,7 +33,7 @@ export const aboutPages: Record<string, AboutData> = {
     title: "NAUTICAL WONDERS",
     subtitle: "SAILING THROUGH THAILAND’S MAJESTIC WONDERS",
     description: [
-      "Phang Nga Bay is a tropical paradise. Nestled in the Andaman Sea between Phuket and the southern Thailand mainland, Phang Nga Bay captivates visitors with its stunning limestone karsts and rich marine life. ",
+      "Phang Nga Bay is a tropical paradise. Nestled in the Andaman Sea between Phuket and the southern Thailand mainland, Phang Nga Bay captivates visitors with its stunning limestone cliffs and rich marine life. ",
       "While the waters in Phang Nga Bay may not always be crystal clear due to natural silt and runoff, the bay remains a picturesque destination. Phang Nga Bay can be reached by boat from the mainland. Visitors can take a boat tour from Phuket or Krabi to explore the bay and its surrounding islands.",
     ],
     buttonText: "Learn More",
