@@ -15,7 +15,7 @@ const BusinessCard = () => {
       icon: FaPhoneAlt, 
       title: "PHONE & MAIL", 
       subtitle: "for Bookings", 
-      email: "flo@faraway-yachting.com", 
+      email: "booking@faraway-yachting.com", 
       phone: "+66612345623", 
       website:"https://www.faraway-yachting.com/", 
       showPopup: true,
@@ -45,9 +45,9 @@ const BusinessCard = () => {
     },
     { 
       icon: FaUserTie, 
-      title: "Reservations Team", 
+      title: "General Manager Steve", 
       subtitle: "for Bookings",
-      email: "flo@faraway-yachting.com",
+      email: "steve@faraway-yachting.com",
       phone: "+66950151680",
       website:"https://www.faraway-yachting.com/", 
     },
@@ -209,7 +209,7 @@ const BusinessCard = () => {
                         href={selectedTeamMember.website} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className={combine(styles.p4, "text-blue-600 hover:text-blue-800 underline")}
+                        className={combine(styles.p4, "text-blue-700 hover:text-blue-800 underline")}
                       >
                         {selectedTeamMember.website}
                       </a>

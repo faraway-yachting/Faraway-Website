@@ -15,3 +15,7 @@ export const isDevelopment = (): boolean => {
 export const isProduction = (): boolean => {
   return process.env.NODE_ENV === 'production';
 };
+
+export const getGoogleAnalyticsId = (): string => {
+  return process.env.NEXT_PUBLIC_GA_ID || 'G-RVTYFBSDC6';
+};
