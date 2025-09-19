@@ -41,10 +41,8 @@ const DayCharterMeetig = () => {
                             </h5>
                         </div>
                         <p className={combine(styles.p4, "text-gray-700 mb-4 leading-relaxed")}>
-                            Please meet our team at our office, which is located right behind the{" "}
-                            <span className="font-bold text-base text-mustard">"Arch 39" Hotel</span>:
+                        Meet our team in the blue shirt under the white tent
                         </p>
-
                         <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                             <a
                                 href="https://www.google.com/maps/place/Faraway+Yachting+Phuket,+Thailand/@7.8231625,98.3437787,15z/data=!4m6!3m5!1s0x3050257bffffffff:0x937eaf99ed7fa6b7!8m2!3d7.8235296!4d98.3451594!16s%2Fg%2F12hp6d07j?entry=ttu&g_ep=EgoyMDI1MDgxMS4wIKXMDSoASAFQAw%3D%3D"
