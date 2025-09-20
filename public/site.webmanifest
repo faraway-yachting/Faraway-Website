@@ -4,9 +4,14 @@
   "description": "Luxury Yacht Charter Phuket",
   "icons": [
     {
-      "src": "/favicon.ico",
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
       "sizes": "any",
-      "type": "image/x-icon"
+      "type": "image/png"
     }
   ],
   "theme_color": "#D6AB61",
