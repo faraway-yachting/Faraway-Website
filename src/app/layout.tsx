@@ -43,10 +43,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Title and Meta */}
+        <title>Faraway Yachting - Luxury Yacht Charter Phuket</title>
+        <meta name="description" content="Experience luxury yacht charter in Phuket with Faraway Yachting. 30 years of excellence, 750+ ★★★★★ reviews. Bareboat, crewed, and super yacht charters available." />
+        
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/favicon.png" sizes="any" />
+        <link rel="shortcut icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <meta name="theme-color" content="#D6AB61" />
         <link rel="manifest" href="/site.webmanifest" />
         
