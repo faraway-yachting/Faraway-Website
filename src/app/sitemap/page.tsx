@@ -1,13 +1,38 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { fetchYachts } from '@/lib/api';
 
 export const metadata: Metadata = {
   title: 'Sitemap - Faraway Yachting',
   description: 'Complete sitemap of Faraway Yachting website with all pages and sections.',
 };
 
-const SitemapPage = () => {
+interface Yacht {
+  _id: string;
+  slug: string;
+  title: string;
+  type: string;
+  status: string;
+  tags?: string[];
+}
+
+const SitemapPage = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://faraway-yachting.com';
+  
+  // Fetch yacht data
+  let yachts: Yacht[] = [];
+  try {
+    const yachtResponse = await fetchYachts(1, 100);
+    yachts = yachtResponse.data.yachts || [];
+  } catch (error) {
+    console.error('Failed to fetch yachts:', error);
+  }
+  
+  // Filter published yachts and organize by type
+  const publishedYachts = yachts.filter(yacht => yacht.status?.toLowerCase() === 'published');
+  const bareboatYachts = publishedYachts.filter(yacht => yacht.type?.toLowerCase() === 'bareboat');
+  const crewedYachts = publishedYachts.filter(yacht => yacht.type?.toLowerCase() === 'crewed');
+  const superYachts = publishedYachts.filter(yacht => yacht.tags?.includes('super yacht'));
   
   // Static pages organized by category
   const pageCategories = {
@@ -24,6 +49,18 @@ const SitemapPage = () => {
       { name: 'Crewed Boats', url: '/crewed_boats' },
       { name: 'Best of Phuket Islands Cabin Charter', url: '/best-of-phukets-islands-cabincharter' },
     ],
+    'Bareboat Yachts': bareboatYachts.map(yacht => ({
+      name: yacht.title,
+      url: `/bareboat/${yacht.slug}`
+    })),
+    'Crewed Yachts': crewedYachts.map(yacht => ({
+      name: yacht.title,
+      url: `/crewed_boats/${yacht.slug}`
+    })),
+    'Super Yachts': superYachts.map(yacht => ({
+      name: yacht.title,
+      url: yacht.type?.toLowerCase() === 'bareboat' ? `/bareboat/${yacht.slug}` : `/crewed_boats/${yacht.slug}`
+    })),
     'Destinations & Itineraries': [
       { name: 'Magical Destinations with Private Yacht in Phuket', url: '/magical-destinations-with-private-yacht-in-phuket' },
     ],
@@ -93,10 +130,32 @@ const SitemapPage = () => {
               Our website also includes dynamic content that may not be listed above:
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6">
-              <li>Individual yacht details (bareboat/[slug] and crewed_boats/[slug])</li>
+              <li>Individual yacht details (bareboat/[slug] and crewed_boats/[slug]) - {publishedYachts.length} yachts available</li>
               <li>Blog posts (blog/[slug])</li>
               <li>Dynamic content pages ([id])</li>
             </ul>
+            
+            <div className="mb-6">
+              <h4 className="text-lg font-semibold text-gray-800 mb-3">Yacht Statistics</h4>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div className="bg-white p-3 rounded border">
+                  <div className="font-semibold text-gray-800">Total Yachts</div>
+                  <div className="text-[#D6AB61] text-xl">{publishedYachts.length}</div>
+                </div>
+                <div className="bg-white p-3 rounded border">
+                  <div className="font-semibold text-gray-800">Bareboat</div>
+                  <div className="text-[#D6AB61] text-xl">{bareboatYachts.length}</div>
+                </div>
+                <div className="bg-white p-3 rounded border">
+                  <div className="font-semibold text-gray-800">Crewed</div>
+                  <div className="text-[#D6AB61] text-xl">{crewedYachts.length}</div>
+                </div>
+                <div className="bg-white p-3 rounded border">
+                  <div className="font-semibold text-gray-800">Super Yachts</div>
+                  <div className="text-[#D6AB61] text-xl">{superYachts.length}</div>
+                </div>
+              </div>
+            </div>
             
             <h3 className="text-xl font-semibold text-gray-800 mb-3 font-playfair">
               XML Sitemap
