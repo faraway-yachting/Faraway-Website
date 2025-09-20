@@ -1,0 +1,16 @@
+{
+  "name": "Faraway Yachting",
+  "short_name": "Faraway Yachting",
+  "description": "Luxury Yacht Charter Phuket",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ],
+  "theme_color": "#D6AB61",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}
