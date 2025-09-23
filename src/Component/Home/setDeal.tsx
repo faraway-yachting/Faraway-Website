@@ -30,7 +30,7 @@ const BookwithUs = () => {
                             {WhyData.map((item) => (
                                 <div
                                     key={item.id}
-                                    className="text-center space-y-3 px-2 mt-5 lg:mt-0"
+                                    className="text-center space-y-3 px-2 mt-5 lg:mt-0 min-h-[200px]"
                                 >
                                     <div className={flexCenter}>
                                         <div className="bg-zink text-white w-15 h-15 flex items-center justify-center rounded-full">

@@ -20,12 +20,6 @@ const ExploreThailand = () => {
                     View More Destinations
                 </Button>
             </div>
-            {/* Book Your Trip */}
-            {/* <SetSail
-                bgImage="/images/homeimg6.png"
-                bgColor="#034250"
-                overlayOpacity={0.5}
-            /> */}
         </div>
     )
 }
