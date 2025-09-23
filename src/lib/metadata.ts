@@ -102,10 +102,10 @@ export const cabinCharterMetadata: Metadata = {
 
 // Crewed Yacht Page Metadata
 export const crewedYachtMetadata: Metadata = {
-  title: "Yacht Charter Phuket – Book Your Luxury Escape Today",
+  title: "Yacht Rental Phuket – Book Your Luxury Escape Today",
   description: "Experience Phuket in style with private yacht charters, full crew, and custom island-hopping adventures. Reserve your luxury escape now.",
   openGraph: {
-    title: "Yacht Charter Phuket – Book Your Luxury Escape Today",
+    title: "Yacht Rental Phuket – Book Your Luxury Escape Today",
     description: "Experience Phuket in style with private yacht charters, full crew, and custom island-hopping adventures. Reserve your luxury escape now.",
     url: `${BASE_URL}/yacht-charter-phuket`,
     // siteName: "Faraway Yachting",
@@ -122,7 +122,7 @@ export const crewedYachtMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yacht Charter Phuket – Book Your Luxury Escape Today",
+    title: "Yacht Rental Phuket – Book Your Luxury Escape Today",
     description: "Experience Phuket in style with private yacht charters, full crew, and custom island-hopping adventures. Reserve your luxury escape now.",
     images: [`${BASE_URL}/images/crewedimg.png`],
   },
