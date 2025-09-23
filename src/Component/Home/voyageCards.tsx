@@ -76,7 +76,7 @@ const VoyageCards: React.FC = () => {
   };
 
   return (
-    <section className="py-20 lg:py-24">
+    <section className="pt-9 pb-18">
       <div className={combine(styles.container)}>
         {/* Section Header */}
         <div className="text-center mb-16">

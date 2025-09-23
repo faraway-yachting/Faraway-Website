@@ -1,6 +1,6 @@
 import HeadingContent from "@/common/heading"
 import HomeDestinationCards from "./homeDestinationCards"
-import SetSail from "@/common/yarchtcharter"
+// import SetSail from "@/common/yarchtcharter"
 import { styles, combine, Button } from "@/styles";
 
 const ExploreThailand = () => {
@@ -20,11 +20,11 @@ const ExploreThailand = () => {
                 </Button>
             </div>
             {/* Book Your Trip */}
-            <SetSail
+            {/* <SetSail
                 bgImage="/images/homeimg6.png"
                 bgColor="#034250"
                 overlayOpacity={0.5}
-            />
+            /> */}
         </div>
     )
 }

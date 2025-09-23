@@ -17,7 +17,7 @@ const HomeDestinationData: HomeDestinationItem[] = [
     description: "Home to James Bond Island, hidden lagoons, and dramatic cliffs."
   },
   {
-    id: "phi-phi-islands",
+    id: "phi-phi-island",
     title: "Phi Phi Islands", 
     image: PngIcons.image1,
     description: "Iconic Maya Bay, crystal waters, and vibrant marine life."
@@ -29,25 +29,25 @@ const HomeDestinationData: HomeDestinationItem[] = [
     description: "Clear water, soft sand, and excellent snorkeling."
   },
   {
-    id: "similan-islands",
+    id: "phang-nga-bay",
     title: "Similan Islands",
     image: PngIcons.image4,
     description: "A diver's paradise, perfect for multi-day charters."
   },
   {
-    id: "butang-islands",
+    id: "phang-nga-bay",
     title: "Butang Islands",
     image: PngIcons.image5,
     description: "Remote and untouched beauty, near the Malaysian border."
   },
   {
-    id: "koh-rok-koh-ha",
+    id: "koh-rok",
     title: "Koh Rok & Koh Ha",
     image: PngIcons.image6,
     description: "Part of a national park, famous for turquoise lagoons and coral reefs."
   },
   {
-    id: "koh-muk-emerald-cave",
+    id: "koh-muk",
     title: "Koh Muk (Emerald Cave)",
     image: PngIcons.image7,
     description: "Swim through a secret cave to find a hidden beach once used by pirates."

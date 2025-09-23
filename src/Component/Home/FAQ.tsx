@@ -39,7 +39,7 @@ const AboutSection_FAQs = () => {
   };
 
   return (
-    <section className="bg-white mb-14" id="faq">
+    <section className="bg-white my-16" id="faq">
       <div className={combine("mb-15", styles.container)}>
         {/* Heading */}
         <div className={combine("mb-8 lg:mb-10 xl:mb-12", styles.flexCenter, styles.flexCol)}>
@@ -75,12 +75,12 @@ const AboutSection_FAQs = () => {
                       onClick={() => toggleItem(actualIndex)}
                       className="flex justify-between items-start w-full py-4 lg:py-5 xl:py-6 px-4 lg:px-5 xl:px-6 cursor-pointer text-left group"
                     >
-                      <p className={combine(
+                      <h3 className={combine(
                         "font-semibold text-zink pr-4 transition-colors duration-200 group-hover:text-zink/80",
-                        styles.p3
+                        styles.p1
                       )}>
                         {item.place}
-                      </p>
+                      </h3>
                       <div className={combine(
                         "flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center transition-all duration-200 group-hover:bg-zink/10",
                         isOpen ? "bg-zink/10" : ""

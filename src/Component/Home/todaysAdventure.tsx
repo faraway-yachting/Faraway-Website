@@ -11,7 +11,11 @@ const TodaysAdventure = () => {
                 <YachtCards columns={2} />
             </div>
             <div>
+               
                 <FAQ />
+                <div className="mb-8">
+                <FunMoments />
+                </div>
                 <BoatTypes />
             </div>
             <div>
@@ -41,7 +45,7 @@ const TodaysAdventure = () => {
                 </div>
             </div>
             <div className="my-12">
-            <FunMoments />
+          
             </div>
         </div>
     )
