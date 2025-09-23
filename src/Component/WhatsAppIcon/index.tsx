@@ -45,21 +45,21 @@ const WhatsAppIcon: React.FC = () => {
         onMouseLeave={() => setIsHovered(false)}
         onClick={handleWhatsAppClick}
         style={{
-          animation: isVisible ? 'bounceIn 0.8s ease-out, float 3s ease-in-out infinite 1s' : 'none'
+          animation: isVisible ? 'bounceIn 0.8s ease-out, float 6s ease-in-out infinite 1s' : 'none'
         }}
       >
         {/* Multiple pulsing rings with different delays */}
-        <div className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-20" style={{ animationDelay: '0s' }}></div>
-        <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-30" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute inset-0 rounded-full bg-green-600 animate-ping opacity-40" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute inset-0 rounded-full bg-green-400 opacity-20" style={{ animationDelay: '0s', animation: 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite' }}></div>
+        <div className="absolute inset-0 rounded-full bg-green-500 opacity-30" style={{ animationDelay: '1s', animation: 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite' }}></div>
+        <div className="absolute inset-0 rounded-full bg-green-600 opacity-40" style={{ animationDelay: '2s', animation: 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite' }}></div>
         
         {/* Rotating gradient ring */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400 via-green-500 to-green-600 animate-spin opacity-20" style={{ animationDuration: '4s' }}></div>
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400 via-green-500 to-green-600 animate-spin opacity-20" style={{ animationDuration: '8s' }}></div>
         
         {/* Floating particles */}
-        <div className="absolute -top-2 -right-2 w-2 h-2 bg-green-400 rounded-full animate-ping opacity-60" style={{ animationDelay: '0.2s' }}></div>
-        <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-green-300 rounded-full animate-ping opacity-50" style={{ animationDelay: '0.8s' }}></div>
-        <div className="absolute top-1 -left-2 w-1 h-1 bg-green-500 rounded-full animate-ping opacity-40" style={{ animationDelay: '1.4s' }}></div>
+        <div className="absolute -top-2 -right-2 w-2 h-2 bg-green-400 rounded-full opacity-60" style={{ animationDelay: '0.2s', animation: 'ping 4s cubic-bezier(0, 0, 0.2, 1) infinite' }}></div>
+        <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-green-300 rounded-full opacity-50" style={{ animationDelay: '1.5s', animation: 'ping 4s cubic-bezier(0, 0, 0.2, 1) infinite' }}></div>
+        <div className="absolute top-1 -left-2 w-1 h-1 bg-green-500 rounded-full opacity-40" style={{ animationDelay: '2.8s', animation: 'ping 4s cubic-bezier(0, 0, 0.2, 1) infinite' }}></div>
         
         {/* Main WhatsApp icon with enhanced effects */}
         <div className={`relative bg-gradient-to-br from-green-400 via-green-500 to-green-600 hover:from-green-500 hover:via-green-600 hover:to-green-700 rounded-full p-4 shadow-2xl transition-all duration-500 transform ${

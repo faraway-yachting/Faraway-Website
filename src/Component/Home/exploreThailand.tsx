@@ -14,6 +14,7 @@ const ExploreThailand = () => {
             <HomeDestinationCards />
             <div className={combine(styles.my2, styles.flexCenter)}>
                 <Button 
+                href="/magical-destinations-with-private-yacht-in-phuket"
                     variant="primary"
                 >
                     View More Destinations

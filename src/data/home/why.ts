@@ -32,7 +32,22 @@ export const WhyData: WhyItem[] = [
       "Every charter is private and customized.",
   },
   {
-    id: 3,
+    id:3,
+    icon: RiServiceFill,
+    label: "Full Service  " ,
+    description:
+      "From itinerary planning to catering, everything is taken care of.",
+  },
+  {
+    id: 4,
+    icon: HiMapPin,
+    label: "Local Knowledge" ,
+    description:
+      "Expert crew with deep experience in Thailand's waters.",
+  },
+
+  {
+    id: 5,
     icon: MdStars,
     label: "Proven Reputation " ,
     description:
@@ -46,20 +61,5 @@ export const WhyData: WhyItem[] = [
         "https://www.tripadvisor.com/Attraction_Review-g1389361-d4747123-Reviews-Faraway_Yachting_Co_Ltd-Chalong_Phuket_Town_Phuket.html"
       ]
   },
-  {
-    id: 4,
-    icon: HiMapPin,
-    label: "Local Knowledge" ,
-    description:
-      "Expert crew with deep experience in Thailand's waters.",
-  },
-  {
-    id:5,
-    icon: RiServiceFill,
-    label: "Full Service  " ,
-    description:
-      "From itinerary planning to catering, everything is taken care of.",
-  },
-
 
 ];

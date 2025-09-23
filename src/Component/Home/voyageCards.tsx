@@ -12,11 +12,6 @@ import {
   IoMapOutline, 
   IoHomeOutline, 
   IoGiftOutline,
-  IoStarOutline,
-  IoWaterOutline,
-  IoCompassOutline,
-  IoBedOutline,
-  IoSparklesOutline
 } from "react-icons/io5";
 
 interface VoyageCard {
