@@ -17,5 +17,9 @@ export const isProduction = (): boolean => {
 };
 
 export const getGoogleAnalyticsId = (): string => {
-  return process.env.NEXT_PUBLIC_GA_ID || 'G-RVTYFBSDC6';
+  return process.env.NEXT_PUBLIC_GA_ID || '';
+};
+
+export const getGoogleTagManagerId = (): string => {
+  return process.env.NEXT_PUBLIC_GTM_ID || '';
 };
