@@ -1,5 +1,5 @@
 import HeadingContent from "@/common/heading"
-import Cards from "../Destinations/cards"
+import HomeDestinationCards from "./homeDestinationCards"
 import SetSail from "@/common/yarchtcharter"
 import { styles, combine, Button } from "@/styles";
 
@@ -11,7 +11,7 @@ const ExploreThailand = () => {
                 heading="Explore Thailand with a private Yacht"
                 description="Explore Thailand's remote islands with a private yacht, enjoy exclusive dining onboard and unwind with sunset yoga on white sandy beaches. Swim in sparkling waters and create lasting memories. Book your private yacht in Phuket." />
             {/* Destination Cards */}
-            <Cards />
+            <HomeDestinationCards />
             <div className={combine(styles.my2, styles.flexCenter)}>
                 <Button 
                     variant="primary"

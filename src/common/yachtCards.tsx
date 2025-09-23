@@ -283,7 +283,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({
                 />
               </div>
               {/* Key Specs Overlay */}
-              <div className="absolute top-[14.7rem] left-10 right-10 lg:left-6 lg:right-6 xl:left-10 xl:right-10 bg-white rounded-md" style={{ boxShadow: "0px 4px 24px 0px #B5B5B540" }}>
+              <div className="absolute top-[14.7rem] left-8 right-8 lg:left-6 lg:right-6 xl:left-10 xl:right-10 bg-white rounded-md" style={{ boxShadow: "0px 4px 24px 0px #B5B5B540" }}>
                 <div className="bg-white bg-opacity-60 backdrop-blur-sm rounded-lg px-3 py-1 flex justify-center">
                   <div className="flex items-center font-sourceSansPro text-xs text-zink">
                     {[
@@ -313,7 +313,7 @@ const YachtCards: React.FC<YachtCardsProps> = ({
               </div>
 
               {/* Amenities */}
-              <div className="flex items-center text-sm font-sourceSansPro lg:text-[12px] xl:text-sm text-zink">
+              <div className="flex items-center text-xs sm:text-sm md:text-sm font-sourceSansPro lg:text-[12px] xl:text-sm text-zink">
                 {[
                   { icon: GiCaptainHatProfile, value: `With skipper` },
                   { icon: LuDoorOpen, value: `${boat.cabins} Cabins` },
