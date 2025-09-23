@@ -98,7 +98,7 @@ const ContactBanner = () => {
             rel="noopener noreferrer"
             className="group bg-white rounded-2xl p-4 lg:p-6 xl:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-100 cursor-pointer"
           >
-            <div className="flex flex-col items-center text-center space- y-4">
+            <div className="flex flex-col items-center text-center space-y-4">
               <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                 <FaLine size={24} className="text-white" />
               </div>

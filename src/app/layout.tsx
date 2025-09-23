@@ -9,6 +9,7 @@ import Licence from "@/Component/Licence";
 import Footer from "@/Component/Footer";
 import WhatsAppIcon from "@/Component/WhatsAppIcon";
 import GoogleAnalyticsComponent from "@/Component/GoogleAnalytics";
+
 import GoogleTagManager from "@/Component/GoogleTagManager";
 import { getGoogleAnalyticsId, getGoogleTagManagerId } from "@/lib/env";
 
@@ -19,7 +20,6 @@ const DMSerifDisplay = DM_Serif_Display({
   display: "swap",
   preload: true,
 });
-
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
@@ -34,7 +34,6 @@ const playfairDisplay = DMSerifDisplay;
 const source_Sans_Pro = plusJakartaSans;
 const inter =  plusJakartaSans;
 const poppins = plusJakartaSans;
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,18 +42,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Title and Meta */}
-        <title>Faraway Yachting - Luxury Yacht Charter Phuket</title>
-        <meta name="description" content="Experience luxury yacht charter in Phuket with Faraway Yachting. 30 years of excellence, 750+ ★★★★★ reviews. Bareboat, crewed, and super yacht charters available." />
-        
-        {/* Favicon */}
-        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
-        <link rel="icon" type="image/png" href="/favicon.png" sizes="any" />
-        <link rel="shortcut icon" href="/favicon.png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
-        <meta name="theme-color" content="#D6AB61" />
-        <link rel="manifest" href="/site.webmanifest" />
-        
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{

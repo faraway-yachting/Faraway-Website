@@ -2,6 +2,7 @@ import HeadingContent from "@/common/heading";
 import { WhyData } from "@/data/home/why";
 import PngIcons from "@/icons/pngIcon";
 import { styles, combine } from "@/styles";
+import Link from "next/link";
 
 const BookwithUs = () => {
     const { w3, px5, h5,container, containerLarge, flexCenter,p2 } = styles;
@@ -25,11 +26,11 @@ const BookwithUs = () => {
                         heading="Why to book a yacht with us in Phuket?"
                         description="Enjoy AI-powered yacht recommendations, real-time availability, and secure bookings for a seamless luxury experience." />
                     <div className={containerLarge}>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 md:gap-9 lg:gap-12 xl:gap-15 mt-10">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-7 md:gap-x-7 lg:gap-x-8 xl:gap-x-10 mt-10">
                             {WhyData.map((item) => (
                                 <div
                                     key={item.id}
-                                    className="text-center space-y-3 px-2 mt-5 lg:mt-0"
+                                    className="text-center space-y-3 px-2 mt-5 lg:mt-0 min-h-[200px]"
                                 >
                                     <div className={flexCenter}>
                                         <div className="bg-zink text-white w-15 h-15 flex items-center justify-center rounded-full">
@@ -42,6 +43,19 @@ const BookwithUs = () => {
                                     <p className={combine(p2, "text-gray-600", "text-center")}>
                                         {item.description}
                                     </p>
+                                    {item.link && item.href && (
+                                        <div className="flex justify-center gap-4 mt-3">
+                                            {item.link.map((linkText, index) => (
+                                                <Link
+                                                    key={index}
+                                                    href={item.href![index]}
+                                                    className="text-mustard text-base font-semibold font-playfair underline transition-all duration-200 hover:text-[#012A50]"
+                                                >
+                                                    {linkText}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
                             ))}
                         </div>

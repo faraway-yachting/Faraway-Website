@@ -8,7 +8,7 @@ const About = () => {
             {/* The Heading Section fetch from Common file */}
             <HeadingContent
                 heading="Book Your Private Yacht In Phuket"
-                description="Book your private yacht in Phuket for a luxurious and unforgettable sailing experience! Explore the stunning islands, crystal-clear waters and hidden gems of this tropical paradise in style. Book Now!" />
+                description="We specialize in private yacht charters — from luxury day trips to Phi Phi and Phang Nga Bay to exclusive overnight and cabin charters across Thailand’s most beautiful islands." />
             <div className="mt-4">
                 {/* Contact Detail section */}
                 <ContactBanner />

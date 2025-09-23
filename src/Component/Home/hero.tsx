@@ -3,7 +3,7 @@ import { styles, combine, Button } from "@/styles";
 import { FiPhone } from "react-icons/fi";
 
 const HeroContent = () => {
-  const { bgImage, top1, w1, w2, flexCenter, flexCol, h1, my1, containerXl, flexBetween, p1 } = styles;
+  const { bgImage, w1, w2, flexCenter, flexCol, h1, containerXl, flexBetween, p1 ,} = styles;
 
   return (
     <section className={combine(bgImage, "bg-[url('/images/homeimg1.png')] min-h-[57vh] md:min-h-[80vh] lg:min-h-[72vh] xl:min-h-[82vh] flex justify-center")}>
@@ -20,11 +20,11 @@ const HeroContent = () => {
           <img
             src="/images/batch1.png"
             alt="Batch"
-            className={combine(top1, w1, "h-auto mt-5 drop-shadow-lg hover:opacity-90 transition-opacity")}
+            className={combine( w1, "h-auto mt-2 md:mt-5 top-0 md:top-4 lg:top-5 xl:top-6 drop-shadow-lg hover:opacity-90 transition-opacity")}
           />
         </a>
         {/* Content on top */}
-        <div className={combine(flexCenter, "h-full text-center text-white px-4 relative z-10")}>
+        <div className={combine(flexCenter, "h-full text-center text-white px-4 relative z-10 mt-4 md:mt-0")}>
           <div className={combine(flexCol, "justify-center items-center max-w-4xl mx-auto")}>
             <h1 className={combine(h1, "leading-tight md:max-w-2xl lg:max-w-2xl w-full")}>
               Phuket Yacht Charter
@@ -34,9 +34,9 @@ const HeroContent = () => {
               alt="Divider"
               className={combine(w2, flexBetween, "mx-auto my-3 drop-shadow-lg opacity-90")}
             />
-
+            <p className={combine("font-playfair font-semibold text-center mb-4 text-[21px] md:text-[24px] lg:text-[27px] xl:text-[30px]")}>Private Yacht Charters, Catamarans & Luxury Cruises in Phuket</p>
             <p className={combine(p1, "font-light font-sourceSansPro text-center mb-4 md:mb-6", containerXl, "drop-shadow-lg text-white/95")}>
-              Experience luxury and adventure with the best Phuket Yacht Charter Operator. Sail the stunning waters & best Islands of Phuket in style and make unforgettable memories.
+            Faraway Yachting is a leading <span className="font-semibold">Phuket yacht charter operator</span> , creating unforgettable experiences at sea. 
             </p>
             <div className="flex justify-center">
               <Button
