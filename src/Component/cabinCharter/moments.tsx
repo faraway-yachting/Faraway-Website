@@ -45,8 +45,8 @@ const FunMoments: React.FC = () => {
     <div className={combine(styles.container, "pb-6 md:pb-8 lg:pb-12")}>
       <div>
         <HeadingContent
-          heading="Moments That Made Waves"
-          description="From sunset dinners to secret lagoons — hear what made it unforgettable"
+          heading="Guest Reviews from our Phuket Yacht Charters"
+          description="At Faraway Yachting, we’re proud to have received over 750 verified ★★★★★ reviews from guests around the world. Travelers highlight our professional crew, delicious meals, and the unforgettable memories they made at sea. Whether it’s a honeymoon, birthday, or family holiday, our reviews show that your Phuket yacht charter is in the best possible hands"
         />
       </div>
       <Slider {...settings}>

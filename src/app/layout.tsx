@@ -9,6 +9,7 @@ import Licence from "@/Component/Licence";
 import Footer from "@/Component/Footer";
 import WhatsAppIcon from "@/Component/WhatsAppIcon";
 import GoogleAnalyticsComponent from "@/Component/GoogleAnalytics";
+
 import GoogleTagManager from "@/Component/GoogleTagManager";
 import { getGoogleAnalyticsId, getGoogleTagManagerId } from "@/lib/env";
 
@@ -19,7 +20,6 @@ const DMSerifDisplay = DM_Serif_Display({
   display: "swap",
   preload: true,
 });
-
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
@@ -34,7 +34,6 @@ const playfairDisplay = DMSerifDisplay;
 const source_Sans_Pro = plusJakartaSans;
 const inter =  plusJakartaSans;
 const poppins = plusJakartaSans;
-
 export default function RootLayout({
   children,
 }: Readonly<{
