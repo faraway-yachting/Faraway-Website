@@ -1,7 +1,30 @@
 import { NextResponse } from 'next/server';
+import { fetchYachts } from '@/lib/api';
 
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://faraway-yachting.com';
+  
+  // Fetch yacht data
+  let yachtPages: Array<{ url: string; priority: string; changefreq: string }> = [];
+  try {
+    const yachtResponse = await fetchYachts(1, 100);
+    const yachts = yachtResponse.data.yachts || [];
+    
+    // Filter published yachts and create pages
+    const publishedYachts = yachts.filter((yacht: any) => yacht.status?.toLowerCase() === 'published');
+    
+    yachtPages = publishedYachts.map((yacht: any) => {
+      const yachtType = yacht.type?.toLowerCase();
+      const url = yachtType === 'bareboat' ? `/bareboat/${yacht.slug}` : `/crewed_boats/${yacht.slug}`;
+      return {
+        url,
+        priority: '0.8',
+        changefreq: 'weekly'
+      };
+    });
+  } catch (error) {
+    console.error('Failed to fetch yachts for sitemap:', error);
+  }
   
   // Static pages from the project structure with priorities
   const staticPages = [
@@ -33,10 +56,13 @@ export async function GET() {
     { url: '/sitemap', priority: '0.3', changefreq: 'monthly' },
   ];
 
+  // Combine static pages and yacht pages
+  const allPages = [...staticPages, ...yachtPages];
+  
   // Generate sitemap XML
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  ${staticPages.map(page => `
+  ${allPages.map(page => `
   <url>
     <loc>${baseUrl}${page.url}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>

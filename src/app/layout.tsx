@@ -9,6 +9,10 @@ import Licence from "@/Component/Licence";
 import Footer from "@/Component/Footer";
 import WhatsAppIcon from "@/Component/WhatsAppIcon";
 import GoogleAnalyticsComponent from "@/Component/GoogleAnalytics";
+
+import GoogleTagManager from "@/Component/GoogleTagManager";
+import { getGoogleAnalyticsId, getGoogleTagManagerId } from "@/lib/env";
+
 const DMSerifDisplay = DM_Serif_Display({
   variable: "--font-dm-serif-display",
   subsets: ["latin"],
@@ -38,9 +42,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','${getGoogleTagManagerId()}');
+            `,
+          }}
+        />
+        {/* Google Analytics */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-RVTYFBSDC6"
+          src={`https://www.googletagmanager.com/gtag/js?id=${getGoogleAnalyticsId()}`}
         ></script>
         <script
           dangerouslySetInnerHTML={{
@@ -48,7 +65,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-RVTYFBSDC6');
+              gtag('config', '${getGoogleAnalyticsId()}');
             `,
           }}
         />
@@ -56,6 +73,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${source_Sans_Pro.variable}  ${inter.variable}  ${poppins.variable}  antialiased`}
       >
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${getGoogleTagManagerId()}`}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          ></iframe>
+        </noscript>
         <div className="fixed top-0 z-40 w-full">
           <Header />
           <Navbar />
@@ -67,6 +93,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppIcon />
         <GoogleAnalyticsComponent />
+        <GoogleTagManager gtmId={getGoogleTagManagerId()} />
       </body>
     </html>
   );
