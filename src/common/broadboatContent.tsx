@@ -17,11 +17,12 @@ interface BroadboatContentProps {
 }
 
 const BroadboatContent = ({ title, description, values, imageSrc, imageAlt }: BroadboatContentProps) => (
-    <section className={combine("relative bg-white overflow-hidden", styles.pb1, "pt-7 md:pt-9")}>
+    <section className={combine("relative bg-white overflow-hidden my-5 lg:my-8", styles.pb1, "pt-7 md:pt-9")}>
         <div className={combine("relative z-10", styles.px3, styles.container)}>
             <div className={combine("text-center", styles.mb2)}>
-                <h2 className={combine("text-mustard mb-4", styles.h2)}>{title}</h2>
-                <p className={combine("font-sourceSansPro max-w-5xl text-zink mx-auto text-gray-700", styles.p1)}>
+                <h2 className={combine("text-zink mb-4", styles.h2)}>{title}</h2>
+                <img src="/images/rframe.png" alt="" className={combine(styles.w2, "my-3 mx-auto")} />
+                <p className={combine("font-sourceSansPro max-w-5xl text-zink mx-auto text-zink", styles.p1)}>
                     {description}
                 </p>
             </div>

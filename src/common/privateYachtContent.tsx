@@ -23,11 +23,12 @@ const PrivateYachtContent = ({
   className = ""
 }: PrivateYachtContentProps) => {
   return (
-    <section className={combine("relative bg-white overflow-hidden", styles.py4, className)}>
+    <section className={combine("relative bg-white overflow-hidden my-5 lg:my-8", styles.py4, className)}>
       <div className={combine("relative z-10 max-w-7xl mx-auto", styles.px3, styles.container)}>
         <div className={combine("text-center", styles.mb2)}>
-          <h2 className={combine("text-mustard mb-4", styles.h2)}>{title}</h2>
-          <p className={combine("font-normal font-sourceSansPro max-w-5xl text-zink mx-auto text-gray-700", styles.p1)}>
+          <h2 className={combine("text-zink mb-4", styles.h2)}>{title}</h2>
+          <img src="/images/rframe.png" alt="" className={combine(styles.w2, "my-3 mx-auto")} />
+          <p className={combine("font-normal font-sourceSansPro max-w-5xl text-zink mx-auto text-zink", styles.p1)}>
             {description}
           </p>
         </div>

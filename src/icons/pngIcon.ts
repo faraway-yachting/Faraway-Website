@@ -213,6 +213,16 @@ var PngIcons = {
 
     super2:"/images/super3.png",
     super3:"/images/super2.png",
+
+    // Sustainability Page
+    sustainabilityHero: "/images/sustainability-hero.jpg",
+    sustainabilityBg: "/images/sustainability-bg.jpg",
+    solarIcon: "/images/solar-icon.png",
+    batteryIcon: "/images/battery-icon.png",
+    waterIcon: "/images/water-icon.png",
+    recyclingIcon: "/images/recycling-icon.png",
+    oceanIcon: "/images/ocean-icon.png",
+    fuelIcon: "/images/fuel-icon.png",
 }
 
 

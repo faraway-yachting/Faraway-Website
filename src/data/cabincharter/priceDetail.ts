@@ -10,8 +10,12 @@ export interface ItineraryItem {
     id: string;
     icon: IconType;
     place: string;
+    link?: string;
+    href?: string;
     itinerary: {
-        description: string[];
+        description?: string[];
+        link?: string;
+        href?: string;
     }[];
 }
 
@@ -115,12 +119,9 @@ export const priceDetail: ItineraryItem[] = [
         place: "Drinks on board (pay what you consume)",
         itinerary: [
             {
-
-                description: [
-                    "Soft drinks 40 THB per can",
-                    "Local beers (Leo, Singha or Chang) 100 THB per can",
-                    "Wine (white or red) = 950 THB per bottle",
-                ],
+link:"Beverage-Menu",
+href: "/beverage-menu",
+               
             }
         ]
     },

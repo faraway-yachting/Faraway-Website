@@ -1,6 +1,8 @@
 import { chooseYachtData } from "@/data/charter/chooseYachtData";
 import { styles, combine } from "@/styles";
 import { FaUsers, FaStar, FaCrown, FaCheckCircle } from "react-icons/fa";
+import HeadingContent from "@/common/heading";
+import Link from "next/link";
 
 const ChooseYacht = () => {
   const getYachtIcon = (index: number) => {
@@ -42,6 +44,31 @@ const ChooseYacht = () => {
     }
   };
 
+  const renderDescriptionWithLinks = (description: string, href?: string) => {
+    if (!href) return <span>{description}</span>;
+    
+    // Define yacht names to make clickable
+    const yachtNames = ['Hot Chilli', 'Sail La Vie', 'Mia Kai'];
+    
+    // Find which yacht name is in the description
+    const yachtName = yachtNames.find(name => description.includes(name));
+    
+    if (!yachtName) return <span>{description}</span>;
+    
+    // Split the description by the yacht name
+    const parts = description.split(yachtName);
+    
+    return (
+      <span>
+        {parts[0]}
+        <Link href={href} className="text-mustard hover:text-mustard/80 font-semibold underline transition-colors duration-200">
+          {yachtName}
+        </Link>
+        {parts[1]}
+      </span>
+    );
+  };
+
   return (
     <section className={combine("relative bg-gradient-to-br from-slate-50 via-white to-gray-50 overflow-hidden", styles.py4)}>
       {/* Background Pattern */}
@@ -49,16 +76,15 @@ const ChooseYacht = () => {
         <div className="absolute top-20 left-10 w-72 h-72 bg-mustard/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
       </div>
-      
-      <div className={combine("relative z-10 max-w-7xl mx-auto", styles.px3, styles.container)}>
+
+      <div className={combine("relative z-10 max-w-7xl mx-auto mb-6", styles.px3, styles.container)}>
         {/* Header Section */}
-        <div className={combine("text-center", styles.mb2)}>
-          <h2 className={combine("text-mustard mb-4", styles.h2)}>
-            {chooseYachtData.title}
-          </h2>
-          <p className={combine("font-normal font-sourceSansPro max-w-4xl text-zink mx-auto text-gray-700", styles.p1)}>
-            {chooseYachtData.description}
-          </p>
+        <div className="mb-8">
+          <HeadingContent
+            heading="Choosing the Right Yacht for Your Phuket Rental"
+            description="Every group has different needs, so we recommend the best vessel for your occasion
+"
+          />
         </div>
 
         {/* Yacht Cards Grid */}
@@ -89,7 +115,7 @@ const ChooseYacht = () => {
 
                 {/* Description */}
                 <p className={combine("text-gray-600 mb-2 leading-relaxed flex-grow", styles.p2)}>
-                  {yacht.description}
+                  {renderDescriptionWithLinks(yacht.description, yacht.href)}
                 </p>
 
                 {/* Capacity and Price Info */}
@@ -102,7 +128,7 @@ const ChooseYacht = () => {
                       Capacity: {yacht.capacity}
                     </span>
                   </div>
-               
+
                 </div>
 
                 {/* Hover Effect Border */}

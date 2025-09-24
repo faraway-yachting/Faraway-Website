@@ -1,8 +1,10 @@
 'use client';
+import HeadingContent from "@/common/heading";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { rentalRoutesData, type RouteCard } from '@/data/charter/rentalRoutesData';
 import { styles } from '@/styles/style';
+import { IoIosArrowDown } from "react-icons/io";
 import Image from 'next/image';
 
 const RentalRoutes: React.FC = () => {
@@ -10,15 +12,12 @@ const RentalRoutes: React.FC = () => {
     <section className="py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-blue-50">
       <div className={styles.container}>
         {/* Header */}
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className={`${styles.h2} text-gray-900 mb-4`}>
-            Best Yacht Rental Routes from Phuket
-          </h2>
-          <p className={`${styles.p2} text-gray-600 max-w-3xl mx-auto`}>
-            Phuket's location allows for endless possibilities, from quick day trips to week-long expeditions. 
-            Discover the perfect route for your adventure.
-          </p>
-        </div>
+        <div className="text-center mb-7 lg:mb-10">
+         <HeadingContent 
+         heading="Best Yacht Rental Routes from Phuket"
+         description="Phuket’s location allows for endless possibilities, from quick day trips to week-long expeditions."
+        />
+         </div>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
@@ -36,89 +35,148 @@ interface RouteCardProps {
 }
 
 const RouteCard: React.FC<RouteCardProps> = ({ route }) => {
-  return (
-    <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-gray-200 hover:-translate-y-1">
-      {/* Header with Gradient Background */}
-      <div className={`relative h-32 bg-gradient-to-r ${route.gradient} p-6 flex flex-col justify-between`}>
-        {/* Duration Badge */}
-        <div className="flex justify-between items-start">
-          <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1.5 flex items-center gap-1.5 text-sm font-medium text-white">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12,6 12,12 16,14"/>
-            </svg>
-            {route.duration}
-          </div>
-        </div>
+  const [isExpanded, setIsExpanded] = useState(false);
 
-        {/* Title */}
-        <h3 className="text-2xl font-bold text-white drop-shadow-sm">
-          {route.title}
-        </h3>
+  const getDetailedContent = (routeId: string) => {
+    switch (routeId) {
+      case 'half-day':
+        return {
+          yachtTypes: [
+            {
+              type: 'Sailing yachts',
+              description: 'Coral Island or Promthep Cape for a relaxed cruise.'
+            },
+            {
+              type: 'Power yachts',
+              description: 'Koh Mai Thon or Racha Yai for a fast-paced escape.'
+            }
+          ]
+        };
+      case 'full-day':
+        return {
+          yachtTypes: [
+            {
+              type: 'Catamarans',
+              description: 'Snorkel and swim at Koh Mai Thon or Racha Yai.'
+            },
+            {
+              type: 'Power vessels',
+              description: 'Explore Phi Phi Islands or Phang Nga Bay in one day.'
+            }
+          ]
+        };
+      case 'multi-day':
+        return {
+          yachtTypes: [
+            {
+              type: '2–3 nights',
+              description: 'Sleep under the stars at Racha Noi, Phi Phi, or Phang Nga Bay.'
+            },
+            {
+              type: '5+ nights',
+              description: 'From five nights onward you\'ll enjoy the best value experience, with access to more remote and less crowded areas.'
+            }
+          ]
+        };
+      default:
+        return { yachtTypes: [] };
+    }
+  };
+
+  const detailedContent = getDetailedContent(route.id);
+
+  return (
+    <div className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden border-0 hover:-translate-y-1">
+      {/* Image Container - Completely hidden when expanded */}
+      <div className={`relative h-64 overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-0 opacity-0' : 'max-h-64 opacity-100'}`}>
+        <Image
+          src={route.image}
+          alt={route.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none';
+          }}
+        />
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-[#012A50]/20 group-hover:bg-[#012A50]/20 transition-all duration-300" />
+        
+        {/* Duration Badge */}
+        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 flex items-center gap-1.5 text-xs font-semibold text-gray-800">
+          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12,6 12,12 16,14"/>
+          </svg>
+          {route.duration}
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="p-6">
+      {/* Content Container */}
+      <div className="p-6 pb-16">
+        {/* Title */}
+        <h3 className="text-2xl font-bold text-zink mb-2 transition-colors duration-300">
+          {route.title}
+        </h3>
+
         {/* Description */}
-        <p className="text-gray-600 mb-5 leading-relaxed text-sm">
+        <p className="text-zink text-base mb-4 leading-relaxed">
           {route.description}
         </p>
 
-        {/* Destinations */}
-        <div className="mb-5">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-              <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-            </div>
-            <span className="text-sm font-semibold text-gray-800">Destinations</span>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {route.destinations.slice(0, 3).map((destination, index) => (
-              <span
+        {/* Expanded Content - Slides up from image area */}
+        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className="space-y-5">
+            {detailedContent.yachtTypes.map((yacht, index) => (
+              <div
                 key={index}
-                className="bg-gray-50 text-gray-700 text-xs px-3 py-1.5 rounded-full border border-gray-200 font-medium hover:bg-gray-100 transition-colors"
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:bg-white group cursor-pointer"
               >
-                {destination}
-              </span>
+                {/* Card Layout: Left Icon Section + Right Content Section */}
+                <div className="flex">
+                  {/* Left Icon Section */}
+                  <div className="w-20 bg-zink flex items-center justify-center flex-shrink-0 group-hover:bg-[#d6ab62] transition-colors duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path d="M3 21l18-9L3 3v18z"/>
+                      <path d="M3 3l18 9L3 21"/>
+                    </svg>
+                  </div>
+
+                  {/* Right Content Section */}
+                  <div className="flex-1 p-4">
+                    <h4 className="text-lg text-zink font-semibold mb-2">
+                      {yacht.type}
+                    </h4>
+                    
+                    <p className="text-base text-zink leading-tight">
+                      {yacht.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
             ))}
-            {route.destinations.length > 3 && (
-              <span className="text-gray-500 text-xs px-3 py-1.5 font-medium">
-                +{route.destinations.length - 3} more
-              </span>
+            {route.id === 'multi-day' && (
+              <div className="mt-4 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                <p className="text-xs text-gray-600 italic">
+                  For travelers seeking more than a quick Phuket boat rental, longer charters unlock hidden bays and remote coral reefs far from the crowds.
+                </p>
+              </div>
             )}
           </div>
         </div>
+      </div>
 
-        {/* Highlights */}
-        <div className="mb-6">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
-              <svg className="w-4 h-4 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-            </div>
-            <span className="text-sm font-semibold text-gray-800">Highlights</span>
-          </div>
-          <ul className="space-y-2">
-            {route.highlights.slice(0, 2).map((highlight, index) => (
-              <li key={index} className="text-sm text-gray-600 flex items-center gap-3">
-                <div className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0" />
-                {highlight}
-              </li>
-            ))}
-          </ul>
+      {/* See More/Less Button - Fixed Position at Bottom of Card */}
+      <div 
+        className="flex items-center gap-2 cursor-pointer group absolute bottom-6 left-6"
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
+        <div className="w-6 h-6 bg-zink rounded-full flex items-center justify-center hover:bg-[#d6ab62] transition-colors duration-300">
+          <IoIosArrowDown className={`text-white transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
         </div>
-
-        {/* Button */}
-        <button className={`w-full bg-gradient-to-r ${route.gradient} text-white font-semibold py-3 px-4 rounded-xl hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105 text-sm`}>
-          <span>{route.buttonText}</span>
-          <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path d="M7 17L17 7M17 7H7M17 7V17"/>
-          </svg>
-        </button>
+        <span className="text-zink font-semibold text-base hover:text-[#d6ab62] transition-colors duration-300">
+          {isExpanded ? 'See less' : 'See more'}
+        </span>
       </div>
     </div>
   );
