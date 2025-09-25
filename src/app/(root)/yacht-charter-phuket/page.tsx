@@ -5,7 +5,6 @@ import TodaysAdventure from "@/common/todayAdventure"
 import YachtMatchmaker from "@/Component/Charter/matchMark";
 import About from "@/Component/Home/about";
 import ChooseFarway from "@/Component/Charter/chooseFarway";
-import YachtAdventure from "@/Component/Charter/yachtAdventure";
 import RentalCost from "@/Component/Charter/rentalCost"
 import PriceRange from "@/Component/Charter/priceRange"
 import { crewedYachtMetadata } from "@/lib/metadata";
@@ -37,7 +36,6 @@ export default function crewed_Charter() {
       <EcoFriendly />
       <BestLands />
       <AboutSection_FAQs />
-      <YachtAdventure />
     </Fragment>
   );
 }
