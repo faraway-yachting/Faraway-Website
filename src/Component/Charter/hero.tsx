@@ -10,13 +10,18 @@ const HeroSection = () => {
   const heading =
     pathname === "/bareboat-charter-thailand"
       ? "Bareboat Charter Thailand"
-      : "Yacht Charter Phuket";
+      : "Phuket Yacht Rental – Your Gateway to Luxury and Adventure";
 
-  const subHeading =
+  const description =
     pathname === "/bareboat-charter-thailand"
       ? "Experience a luxurious Phuket getaway with our all-inclusive yacht rentals, featuring gourmet cuisine, refreshing drinks, and a professional crew. Wherever you wish to go, we’ll take you there in style and comfort."
-      : "Sail Phuket in style with our all-inclusive luxury yacht rentals—complete with gourmet dining, drinks, and a pro crew. Wherever you want to go, we’ll take you there in comfort and class.";
+      : "A Phuket yacht rental lets you escape the crowds and enjoy the Andaman Sea in total privacy. With Faraway Yachting, every trip is tailored for comfort, luxury, and unforgettable memories.";
 
+      const subHeading =
+      pathname === "/bareboat-charter-thailand"
+        ? "Discover the Best Phuket Yacht Rental Options"
+        : "Discover the Best Phuket Yacht Rental Options";
+        
       const BgImage=
       pathname === "/bareboat-charter-thailand"
       ? "/images/boatimg1.png"
@@ -24,6 +29,7 @@ const HeroSection = () => {
   return (
     <HeroContent
       heading={heading}
+      description={description}
       subheading={subHeading}
       backgroundImage={BgImage}
       dividerImage={PngIcons.rframe2}

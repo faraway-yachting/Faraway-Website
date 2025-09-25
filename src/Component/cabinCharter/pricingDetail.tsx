@@ -35,15 +35,28 @@ const Price_Details = () => {
                 {/* Accordion Body */}
                 {isActive && (
                     <div className="px-2 md:px-4 pb-6 space-y-2">
-                        {item.itinerary?.map((entry, idx) =>
-                            entry.description.map((desc, i) => (
-                                <p key={`${idx}-${i}`}
-                                    className={combine("ms-3 text-[#333333] leading-tight flex items-start gap-2", styles.p3)}>
-                                    <span className="text-black font-bold">•</span>
-                                    {desc}
-                                </p>
-                            ))
-                        )}
+                        {item.itinerary?.map((entry, idx) => (
+                            <div key={idx}>
+                                {entry.description?.map((desc, i) => (
+                                    <p key={`${idx}-${i}`}
+                                        className={combine("ms-3 text-[#333333] leading-tight flex items-start gap-2", styles.p3)}>
+                                        <span className="text-black font-bold">•</span>
+                                        {desc}
+                                    </p>
+                                ))}
+                                {entry.link && entry.href && (
+                                    <a 
+                                        href={entry.href}
+                                        className={combine("flex items-center", styles.p3)}
+                                    >
+                                      <span className="text-black font-bold mx-3">•</span>
+                                      <p className="text-zink hover:text-[#d6ab62] underline">
+                                        {entry.link}
+                                        </p>
+                                    </a>
+                                )}
+                            </div>
+                        ))}
                     </div>
                 )}
             </div>
