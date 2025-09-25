@@ -6,7 +6,6 @@ import HeroSection from "@/Component/Home/hero";
 import PrivateYacht_Tour from "@/Component/Home/privateTour";
 import TodaysAdventure from "@/Component/Home/todaysAdventure";
 import VoyageCards from "@/Component/Home/voyageCards";
-
 import Sailingyacht_Phuket from "@/Component/Home/yachtinPhuket";
 import { Fragment } from "react";
 import BookwithUs from "@/Component/Home/setDeal";

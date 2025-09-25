@@ -7,10 +7,11 @@ import { RefObject } from "react";
 
 type HeroSectionProps = {
   heading: string;
-  subheading: string;
+  subheading?: string;
   backgroundImage: string;
   dividerImage?: string;
   button?: string;
+  description: string;
   buttontext?: string;
   contactRef?: RefObject<HTMLDivElement | null>;
   showContactButton?: boolean;
@@ -22,6 +23,7 @@ const HeroContent: React.FC<HeroSectionProps> = ({
   dividerImage = PngIcons.rframe2,
   button,
   buttontext,
+  description,
   contactRef,
   showContactButton = false,
 }) => {
@@ -36,7 +38,7 @@ const HeroContent: React.FC<HeroSectionProps> = ({
       <div className={combine(styles.flexCenter, "h-full text-center text-white relative z-10", styles.px1)}>
         <div className={combine(styles.flexCol, "justify-center items-center max-w-4xl mx-auto")}>
           {/* Title Text */}
-          <h1 className={combine(styles.h1, "font-semibold font-playfair mb-2 leading-tight md:max-w-2xl lg:max-w-2xl w-full")}>
+          <h1 className={combine(styles.h1, "font-semibold font-playfair mb-2 leading-tight md:max-w-2xl lg:max-w-3xl w-full")}>
             {heading}
           </h1>
           {dividerImage && (
@@ -46,8 +48,12 @@ const HeroContent: React.FC<HeroSectionProps> = ({
               className={combine(styles.w2, "flex justify-center text-center mx-auto my-1 md:my-2")}
             />
           )}
+           {subheading && (
+             <p className={combine("font-playfair font-semibold text-center mb-4 text-[21px] md:text-[24px] lg:text-[27px] xl:text-[30px]")}>{subheading}</p>
+
+           )}
           <p className={combine(styles.p1, "font-normal font-sourceSansPro text-center mt-2 md:max-w-2xl lg:max-w-4xl xl:max-w-7xl")}>
-            {subheading}
+            {description}
           </p>
           {button && buttontext && (
             <div className="mt-9">

@@ -219,8 +219,8 @@ export default function TermsWithTable() {
               <p className={combine("text-white", styles.p3)}>{finalMessage.subtitle}</p>
               <p className={combine("text-white font-semibold mt-2", styles.p3)}>{finalMessage.signature}</p>
               <p className={combine("text-white font-semibold mt-3 underline", styles.p3)}>
-                <a href="https://far-away.net/wp-content/uploads/2025/01/Terms-and-Conditions-2024-1.pdf" target="_blank" rel="noopener noreferrer">
-                  Terms and Conditions: &nbsp; For all charters booked before the 1st of January 2025
+                <a href="https://docs.google.com/document/d/16-8JaAk47nyyuGdzU_-rua_Cu-957W-8bztGRNKuFdE/edit?tab=t.0#heading=h.53qzf1ct146v" target="_blank" rel="noopener noreferrer">
+                  Terms and Conditions: &nbsp; For all charters booked before the 1st of September 2025
                 </a></p>
             </div>
           </div>
