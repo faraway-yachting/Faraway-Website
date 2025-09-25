@@ -120,7 +120,7 @@ const RouteCard: React.FC<RouteCardProps> = ({ route }) => {
         </h3>
 
         {/* Description */}
-        <p className="text-zink text-base mb-4 leading-relaxed">
+        <p className="text-zink font-inter text-base mb-4 leading-relaxed">
           {route.description}
         </p>
 
@@ -148,7 +148,7 @@ const RouteCard: React.FC<RouteCardProps> = ({ route }) => {
                       {yacht.type}
                     </h4>
                     
-                    <p className="text-base text-zink leading-tight">
+                    <p className="text-base font-inter text-zink leading-tight">
                       {yacht.description}
                     </p>
                   </div>

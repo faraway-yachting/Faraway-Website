@@ -1,6 +1,6 @@
 
 import About from "@/Component/Home/about";
-// import Destinations_Section from "@/Component/Home/destination";
+
 import ExploreThailand from "@/Component/Home/exploreThailand";
 import HeroSection from "@/Component/Home/hero";
 import PrivateYacht_Tour from "@/Component/Home/privateTour";
