@@ -22,7 +22,7 @@ const YachtTips: React.FC = () => {
                             {title}
                         </h2>
                     </div>
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
 
                         {/* Left Side - Beach Scene */}
                         <div className="relative">
