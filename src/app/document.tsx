@@ -4,24 +4,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* Favicon configuration */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-
-        {/* PNG favicons in multiple sizes */}
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
-
-        {/* Apple devices */}
-        <link rel="apple-touch-icon" href="/favicon-192x192.png" />
-
-        {/* Windows tiles */}
-        <meta name="msapplication-TileImage" content="/favicon-192x192.png" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-
-        {/* Theme color for browsers */}
-        <meta name="theme-color" content="#012A50" />
-        
         {/* Font optimization */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
