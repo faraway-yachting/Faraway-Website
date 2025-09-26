@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { fetchYachts } from '@/lib/api';
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://faraway-yachting.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.faraway-yachting.com';
   
   // Fetch yacht data
   let yachtPages: Array<{ url: string; priority: string; changefreq: string }> = [];
