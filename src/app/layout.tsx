@@ -9,7 +9,6 @@ import Licence from "@/Component/Licence";
 import Footer from "@/Component/Footer";
 import WhatsAppIcon from "@/Component/WhatsAppIcon";
 import GoogleAnalyticsComponent from "@/Component/GoogleAnalytics";
-
 import GoogleTagManager from "@/Component/GoogleTagManager";
 import { getGoogleAnalyticsId, getGoogleTagManagerId } from "@/lib/env";
 
