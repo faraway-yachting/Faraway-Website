@@ -17,7 +17,7 @@ interface Yacht {
 }
 
 const SitemapPage = async () => {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://faraway-yachting.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.faraway-yachting.com';
   
   // Fetch yacht data
   let yachts: Yacht[] = [];

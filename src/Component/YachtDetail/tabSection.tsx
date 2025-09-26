@@ -77,7 +77,7 @@ const TabSection: React.FC<Props> = ({ data }) => {
               py-1 px-1 sm:px-3 text-[12px] md:text-sm lg:text-base xl:text-lg
               ${activeTab === label
                 ? "text-mustard border-b-2 border-[#D6AB62]"
-                : "text-zink border-b-2 border-transparent hover:border-zink"
+                : "text-zink border-b-2 border-transparent hover:border-zink hover:text-[#d6ab62]"
               }`}
             >
             
