@@ -12,6 +12,7 @@ import GoogleAnalyticsComponent from "@/Component/GoogleAnalytics";
 
 import GoogleTagManager from "@/Component/GoogleTagManager";
 import { getGoogleAnalyticsId, getGoogleTagManagerId } from "@/lib/env";
+import type { Metadata } from 'next';
 
 const DMSerifDisplay = DM_Serif_Display({
   variable: "--font-dm-serif-display",
@@ -34,6 +35,61 @@ const playfairDisplay = DMSerifDisplay;
 const source_Sans_Pro = plusJakartaSans;
 const inter =  plusJakartaSans;
 const poppins = plusJakartaSans;
+
+export const metadata: Metadata = {
+  title: 'Faraway Yachting - Luxury Yacht Charter in Phuket, Thailand',
+  description: 'Experience luxury yacht charter in Phuket, Thailand with Faraway Yachting. Bareboat, crewed, and cabin charters available. Book your dream sailing adventure today.',
+  keywords: 'yacht charter phuket, luxury yacht rental, bareboat charter thailand, crewed yacht charter, sailing phuket',
+  authors: [{ name: 'Faraway Yachting' }],
+  creator: 'Faraway Yachting',
+  publisher: 'Faraway Yachting',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://faraway-psi.vercel.app'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Faraway Yachting - Luxury Yacht Charter in Phuket, Thailand',
+    description: 'Experience luxury yacht charter in Phuket, Thailand with Faraway Yachting. Bareboat, crewed, and cabin charters available.',
+    url: 'https://faraway-psi.vercel.app',
+    siteName: 'Faraway Yachting',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Faraway Yachting - Luxury Yacht Charter in Phuket, Thailand',
+    description: 'Experience luxury yacht charter in Phuket, Thailand with Faraway Yachting.',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/favicon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'apple-touch-icon-precomposed',
+        url: '/favicon.png',
+      },
+    ],
+  },
+  manifest: '/manifest.json',
+  other: {
+    'msapplication-TileImage': '/favicon.png',
+    'msapplication-TileColor': '#012A50',
+    'theme-color': '#012A50',
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
