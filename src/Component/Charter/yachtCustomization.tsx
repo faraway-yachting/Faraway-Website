@@ -40,9 +40,9 @@ const YachtCustomization: React.FC = () => {
                             <div className="absolute -bottom-6 md:-bottom-8 -right-6 md:-right-8 w-20 md:w-24 h-20 md:h-24 border-2 border-[#F4A261]/20 rounded-full"></div>
 
                             {/* Main Heading */}
-                            <h1 className={combine("text-white font-extrabold font-playfair leading-tight mb-6 text-shadow-lg", styles.h1)}>
+                            <h2 className={combine("text-white font-extrabold font-playfair leading-tight mb-6 text-shadow-lg", styles.h1)}>
                                 Customizing Your Phuket Yacht Experience
-                            </h1>
+                            </h2>
                             {/* Description */}
                             <p className={combine("text-white/80 font-normal font-inter leading-relaxed mb-10", styles.p2)}>
                                 Make your yacht rental truly unique with custom add-ons and personalized experiences. We create unforgettable moments tailored to your desires.

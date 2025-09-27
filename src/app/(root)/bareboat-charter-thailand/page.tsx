@@ -15,8 +15,8 @@ export default function bareBoat_Charter() {
       <HeroSection />
       <YachtMatchmaker />
       <Adventure />
-      <BestLands />
-      <YachtAdventure />
+      {/* <BestLands />
+      <YachtAdventure /> */}
     </Fragment>
   );
 }
