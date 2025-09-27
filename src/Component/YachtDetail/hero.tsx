@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Gallery from "./gallery";
 import VideoSection from "./videoSection";
 import TabSection from "./tabSection";
@@ -54,6 +55,7 @@ const HeroSection: React.FC<HeroProps> = ({ slug }) => {
   const [data, setData] = useState<Yacht | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -100,11 +102,12 @@ const HeroSection: React.FC<HeroProps> = ({ slug }) => {
             <ContactDetail data={data} />
           </div>
         </div>
-        <div className="mt-6">
+        <div className="mt-6"> 
           <VideoSection data={data} />
         </div>
       </div>
-      <YachtAdventure />
+      {/* Hide YachtAdventure component for all bareboat pages */}
+      {!pathname.startsWith("/bareboat/") && <YachtAdventure />}
     </div>
   );
 };

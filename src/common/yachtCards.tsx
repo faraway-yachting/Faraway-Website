@@ -101,6 +101,8 @@ const YachtCards: React.FC<YachtCardsProps> = ({
 
           // Super yacht charter page: show only yachts with "Super Yacht" in tags array
           if (normalizedPath === "/super-yacht-charter-phuket") {
+
+            console.log(yachtTags,"yachtTags",yacht.length);
             // Check if tags array contains "Super Yacht"
             return yachtTags.includes("super yacht");
           }
