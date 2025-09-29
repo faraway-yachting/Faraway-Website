@@ -24,9 +24,11 @@ export default function crewed_Charter() {
       <About />
       <YachtMatchmaker />
       <ChooseFarway />
+      <About />
       <RentalCost  />
       <PriceRange />
       <ChooseYacht />
+      <About />
       <SpecialOccasions />
       <YachtTipsSection />
       <RentalRoutes />
