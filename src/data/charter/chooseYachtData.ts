@@ -37,7 +37,7 @@ export const yachtChoiceValues: YachtChoiceFeature[] = [
         title: "Ultimate Luxury Superyachts", 
         description: "For the pinnacle of indulgence, Mia Kai offers VIP service at USD 10,000+ per day. Perfect for weddings, corporate events, or luxury escapes.",
         capacity: "VIP Service",
-        href: "/crewed_boats/mia-kai"
+        href: "https://www.faraway-yachting.com/crewed_boats/yacht-charter-phuket"
     },
 ];
 

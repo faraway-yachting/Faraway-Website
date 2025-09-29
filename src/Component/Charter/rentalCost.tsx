@@ -6,6 +6,7 @@ const RentalCost = () => {
   const rentalCostInfo = {
     title: rentalCostData.title,
     description: rentalCostData.description,
+    heading: rentalCostData.heading,
     imageSrc: PngIcons.privateyact,
     imageAlt: "Phuket Yacht Rental Cost",
     features: rentalCostData.features
