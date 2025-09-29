@@ -53,7 +53,7 @@ const EcoFriendly: React.FC = () => {
                                                     2
                                                 </div>
                                                 <p className={combine("text-zink", styles.p2)}>
-                                                    Lightweight aluminum catamarans are among the most fuel-efficient in Phuket
+                                                    Our Lightweight aluminum catamarans are among the most fuel-efficient in Phuket
                                                 </p>
                                             </div>
                                         </div>
@@ -105,6 +105,8 @@ const EcoFriendly: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
+                            <p className={combine("text-zink font-semibold",styles.p1)}>By choosing us, you’re helping preserve Phuket’s marine beauty for the future.
+                            </p>
                         </div>
                     </div>
                 </div>

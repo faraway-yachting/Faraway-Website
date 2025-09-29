@@ -1,7 +1,6 @@
 
 import BestLands from "@/Component/Charter/bestLands";
 import HeroSection from "@/Component/Charter/hero";
-import TodaysAdventure from "@/common/todayAdventure"
 import YachtMatchmaker from "@/Component/Charter/matchMark";
 import About from "@/Component/Home/about";
 import ChooseFarway from "@/Component/Charter/chooseFarway";
@@ -25,10 +24,11 @@ export default function crewed_Charter() {
       <About />
       <YachtMatchmaker />
       <ChooseFarway />
+      <About />
       <RentalCost  />
-      <TodaysAdventure />
       <PriceRange />
       <ChooseYacht />
+      <About />
       <SpecialOccasions />
       <YachtTipsSection />
       <RentalRoutes />

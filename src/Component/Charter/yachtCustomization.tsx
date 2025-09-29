@@ -5,17 +5,19 @@ import Button from '../../styles/Button';
 const YachtCustomization: React.FC = () => {
     // Customization options data array
     const customizations = [
-        "Water Activities: Snorkeling, scuba diving, fishing, kayaking, paddleboarding, jet skiing, parasailing",
-        "Onboard Entertainment: DJs, live bands, dancers, and themed parties",
-        "Dining & Drinks: Fresh seafood BBQs, gourmet menus, and custom cake"
+        "Water Activities:",
+        "Onboard Entertainment:",
+        "Dining & Drinks:"
     ];
-    
+    const description = [
+        "Snorkeling, scuba diving, fishing, kayaking, paddleboarding, jet skiing, parasailing",
+        " DJs, live bands, dancers, and themed parties",
+        " Fresh seafood BBQs, gourmet menus, and custom cake. Special alcohol selections can be arranged with advance notice."
+    ]
     // Additional services data array
     const additionalServices = [
-        "Special Occasion Celebrations",
-        "Private Chef Services", 
-        "Luxury Water Sports Equipment",
-        "Custom Itinerary Planning"
+        "With early planning, nearly anything is possible—if it’s legal and feasible, we’ll make it happen.",
+
     ];
 
     return (
@@ -29,7 +31,7 @@ const YachtCustomization: React.FC = () => {
                 <div className="absolute bottom-16 md:bottom-24 right-16 md:right-24 w-16 md:w-24 h-16 md:h-24 bg-[#F4A261]/20 rounded-full animate-bounce"></div>
                 <div className="absolute top-1/3 right-1/4 w-16 md:w-20 h-16 md:h-20 border-2 border-[#F9B233]/20 transform rotate-12 animate-pulse"></div>
                 <div className="absolute bottom-1/3 left-1/3 w-12 md:w-16 h-12 md:h-16 bg-[#F4A261]/15 rounded-full animate-ping"></div>
-                
+
                 {/* Content */}
                 <div className={combine("relative z-10 w-full", styles.container)}>
                     <div className="flex flex-col md:flex-row justify-between gap-12 md:gap-6 lg:gap-16 xl:gap-32 py-16 md:py-24 lg:py-24">
@@ -45,7 +47,7 @@ const YachtCustomization: React.FC = () => {
                             </h2>
                             {/* Description */}
                             <p className={combine("text-white/80 font-normal font-inter leading-relaxed mb-10", styles.p2)}>
-                                Make your yacht rental truly unique with custom add-ons and personalized experiences. We create unforgettable moments tailored to your desires.
+                                Make your yacht rental truly unique with custom add-ons
                             </p>
 
                             {/* Customization Options Grid */}
@@ -53,12 +55,12 @@ const YachtCustomization: React.FC = () => {
                                 {customizations.map((customization, index) => (
                                     <div key={index} className="flex items-center gap-3 group">
                                         <div className="w-3 h-3 bg-mustard rounded-full shadow-sm"></div>
-                                        <span className={combine("text-white font-semibold", styles.p2)}>{customization}</span>
+                                        <h5 className={combine("text-white font-semibold", styles.p2)}>{customization} <span className='font-normal'>{description[index]}</span></h5>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                        
+
                         {/* RIGHT SIDE - Additional Services & CTA */}
                         <div className="max-w-lg text-center md:text-left relative">
                             {/* Services Card */}
@@ -71,19 +73,17 @@ const YachtCustomization: React.FC = () => {
 
                                 <div className="relative z-10">
                                     {/* Services List */}
-                                    <h6 className={combine("text-white font-bold mb-6", styles.h6)}>Additional Services</h6>
                                     <div className="space-y-3">
                                         {additionalServices.map((service, index) => (
                                             <div key={index} className="flex items-center gap-3">
-                                                <div className="w-2 h-2 bg-mustard rounded-full"></div>
-                                                <span className={combine("text-white font-medium", styles.p4)}>{service}</span>
+                                                <span className={combine("text-white font-medium max-w-[200px]", styles.p4)}>{service}</span>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
                             </div>
-                      
-                            
+
+
                             {/* CTA Button */}
                             <div className="text-center md:text-left flex justify-center md:justify-start">
                                 <Button

@@ -44,7 +44,7 @@ const AboutSection_FAQs = () => {
         {/* Heading */}
         <div className={combine("mb-8 lg:mb-10 xl:mb-12", styles.flexCenter, styles.flexCol)}>
           <h2 className={combine(styles.h2, "text-zink mb-1")}>
-            Frequently Asked Questions
+          Frequently Asked Questions – Phuket Yacht Rental
           </h2>
           <img 
             src="/images/rframe.png"

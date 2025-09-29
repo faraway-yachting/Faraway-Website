@@ -183,7 +183,14 @@ var PngIcons = {
   picon10: "/images/policyicon10.png",
   picon11: "/images/policyicon11.png",
   picon12: "/images/policyicon12.png",
-  super2:"/images/super3.png",
-  super3:"/images/super2.png",
+  super2: "/images/super3.png",
+  super3: "/images/super2.png",
+
+  review1: "/images/review1.png",
+  review2: "/images/review2.png",
+  review3: "/images/review3.png",
+  review4: "/images/review4.png",
+  review5: "/images/review5.png",
+  review6: "/images/review6.png",
 }
 export default PngIcons
