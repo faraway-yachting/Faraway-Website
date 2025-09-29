@@ -8,6 +8,7 @@ interface PrivateYachtContentProps {
   description: string;
   imageSrc: string;
   imageAlt: string;
+  heading?: string;
   features: Array<{
     title: string;
     description: string;
@@ -19,6 +20,7 @@ const PrivateYachtContent = ({
   description,
   imageSrc,
   imageAlt,
+  heading,
   features,
   className = ""
 }: PrivateYachtContentProps) => {
@@ -43,6 +45,9 @@ const PrivateYachtContent = ({
             />
           </div>
           <div>
+            {heading &&(
+            <h3 className={combine("text-zink font-semibold mb-3",styles.h3)}>{heading}</h3>
+          )}
             <ul className="space-y-4 lg:space-y-6">
               {features.map((feature, i) => (
                 <li key={i} className="flex items-start gap-3 max-w-lg">
