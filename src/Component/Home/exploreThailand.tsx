@@ -8,8 +8,8 @@ const ExploreThailand = () => {
         <div>
             {/* Heading Section */}
             <HeadingContent
-                heading="Explore Thailand with a private Yacht"
-                description="Explore Thailand's remote islands with a private yacht, enjoy exclusive dining onboard and unwind with sunset yoga on white sandy beaches. Swim in sparkling waters and create lasting memories. Book your private yacht in Phuket." />
+                heading="Destinations in the Andaman Sea"
+                description="A Phuket yacht charter gives you access to some of the world’s most iconic islands and hidden gems" />
             {/* Destination Cards */}
             <HomeDestinationCards />
             <div className={combine(styles.my2, styles.flexCenter)}>

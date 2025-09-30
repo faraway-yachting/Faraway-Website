@@ -10,29 +10,28 @@ const ContactBanner = () => {
   const [phoneCopied, setPhoneCopied] = useState(false);
 
   const copyEmailToClipboard = async () => {
-      try {
-          await navigator.clipboard.writeText('booking@faraway-yachting.com');
-          setEmailCopied(true);
-          setTimeout(() => setEmailCopied(false), 2000); 
-      } catch (err) {
-          // Error handling - could implement user feedback here if needed
-      }
+    try {
+      await navigator.clipboard.writeText('booking@faraway-yachting.com');
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+    } catch (err) {
+      // Error handling - could implement user feedback here if needed
+    }
   };
 
   const copyPhoneToClipboard = async () => {
-      try {
-          await navigator.clipboard.writeText('+66 61 2345623');
-          setPhoneCopied(true);
-          setTimeout(() => setPhoneCopied(false), 2000);
-      } catch (err) {
-          // Error handling - could implement user feedback here if needed
-      }
+    try {
+      await navigator.clipboard.writeText('+66 61 2345623');
+      setPhoneCopied(true);
+      setTimeout(() => setPhoneCopied(false), 2000);
+    } catch (err) {
+      // Error handling - could implement user feedback here if needed
+    }
   };
 
   return (
-    <section className={combine("pt-6 md:pt-10 lg:pt-13 xl:pt-16 from-slate-50 to-blue-50")}>
+    <section className={combine("pt-4 md:pt-3 lg:pt-4 xl:pt-5 from-slate-50 to-blue-50")}>
       <div className={styles.container}>
-
         {/* Contact Cards Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:gap-7 xl:gap-8">
           {/* Phone Card */}

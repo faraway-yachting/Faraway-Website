@@ -6,11 +6,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { styles, combine } from '@/styles/style';
-import { 
-  IoBoatOutline, 
-  IoMoonOutline, 
-  IoMapOutline, 
-  IoHomeOutline, 
+import {
+  IoBoatOutline,
+  IoMoonOutline,
+  IoMapOutline,
+  IoHomeOutline,
   IoGiftOutline,
 } from "react-icons/io5";
 
@@ -29,7 +29,7 @@ const voyageData: VoyageCard[] = [
   },
   {
     id: "overnight-cruises",
-    title: "Overnight Cruises", 
+    title: "Overnight Cruises",
     description: "Spend nights under the stars and wake up in quiet bays.",
   },
   {
@@ -51,7 +51,7 @@ const voyageData: VoyageCard[] = [
 
 const VoyageCards: React.FC = () => {
   const [activeCard, setActiveCard] = useState(0);
-  
+
   const settings = {
     infinite: true,
     autoplay: true,
@@ -75,9 +75,9 @@ const VoyageCards: React.FC = () => {
       <div className={combine(styles.container)}>
         {/* Section Header */}
         <div className="text-center mb-16">
-  <HeadingContent
-  heading="Phuket Yacht Charter Experiences"
-  description="Your journey with Faraway Yachting is completely private and fully tailored. Our most popular charter experiences include" />
+          <HeadingContent
+            heading="Phuket Yacht Charter Experiences"
+            description="Your journey with Faraway Yachting is completely private and fully tailored. Our most popular charter experiences include" />
         </div>
 
         {/* Slider Container */}
@@ -85,7 +85,7 @@ const VoyageCards: React.FC = () => {
           <Slider {...settings}>
             {voyageData.map((voyage, index) => (
               <div key={voyage.id} className="px-3 lg:px-2 xl:px-3 h-full">
-                <div 
+                <div
                   className="bg-white rounded-lg p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 h-full flex flex-col min-h-[285px]"
                 >
                   {/* Icon Badge */}
@@ -137,7 +137,7 @@ const VoyageCards: React.FC = () => {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed flex-grow">
+                  <p className="text-gray-600 font-inter text-sm leading-relaxed flex-grow">
                     {voyage.description}
                   </p>
 
@@ -147,6 +147,8 @@ const VoyageCards: React.FC = () => {
               </div>
             ))}
           </Slider>
+          <p className={combine("text-center text-zink font-medium font-inter pt-5 md:pt-7", styles.p1)}>Every charter is designed to make your holiday unforgettable.
+          </p>
         </div>
       </div>
     </section>

@@ -45,7 +45,7 @@ export const FAQContent: FAQS[] = [
 
 –  Day sailing catamarans: Nearby islands like Koh Racha, Koh Mai Thon, or Coral Island.
 –  Day power catamarans: Longer range — Phi Phi, Phang Nga Bay, Racha Noi.
-–  Overnight trips: Similan Islands, Butang Islands, even up to Myanmar when conditions allow.`,
+–  Overnight trips: Similan Islands, Butang Islands, even up to Myanmar when conditions allow. Discover more about our Phuket yacht charter destinations.`,
     },    
     {
         id: '7',

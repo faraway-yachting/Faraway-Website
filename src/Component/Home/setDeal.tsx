@@ -61,6 +61,7 @@ const BookwithUs = () => {
                         </div>
                     </div>
                 </div>
+                <p className={combine("text-center text-zink font-medium font-inter",styles.p1)}>With Faraway Yachting, your Phuket yacht charter is seamless, safe, and unforgettable.</p>
             </div>
         </div>
     );

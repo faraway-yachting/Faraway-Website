@@ -19,10 +19,10 @@ export default function Home() {
       <About />
       <TodaysAdventure />
       <VoyageCards />
-      <BookwithUs />
-      <PrivateYacht_Tour />
-      <Sailingyacht_Phuket />
       <ExploreThailand />
+      <BookwithUs />
+      {/* <PrivateYacht_Tour /> */}
+      <Sailingyacht_Phuket />
       <AboutFaraway/>
     </Fragment>
   );
