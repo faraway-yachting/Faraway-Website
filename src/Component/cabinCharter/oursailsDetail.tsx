@@ -35,13 +35,12 @@ const SailingDetails = () => {
   );
 
   return (
-    <section className="bg-white py-10 lg:py-12 xl:py-14 px-4 md:px-4 xl:px-8">
+    <section className="bg-white pb-10 lg:pb-12 xl:pb-14 px-4 md:px-4 xl:px-8">
       <div className={styles.containerLarge}>
         {/* Title */}
         <div className="text-center mb-10">
           <HeadingContent
-            heading="Details of Our Sailing Catamaran"
-            description="Discover the features that make our catamaran the ultimate escape vessel"
+            heading="Details of Sailing Yacht Amadeus "
           />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-10 items-center justify-center lg:justify-start lg:items-start">

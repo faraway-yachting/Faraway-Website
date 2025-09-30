@@ -1,8 +1,7 @@
 "use client";
-
+import About from "@/Component/Home/about";
 import { Fragment, useRef } from "react";
 import HeroSection from "@/Component/cabinCharter/hero";
-import About from "@/Component/cabinCharter/about";
 import SeaSide_Sixdays from "@/Component/cabinCharter/seaside_bliss";
 
 const CabinCharterClient = () => {
@@ -11,9 +10,7 @@ const CabinCharterClient = () => {
   return (
     <Fragment>
       <HeroSection contactRef={contactRef} />
-      <About sectionRef={contactRef}
-        showContactButton={true}
-        contactRef={contactRef} />
+      <About />
       <SeaSide_Sixdays contactRef={contactRef} />
     </Fragment>
   );

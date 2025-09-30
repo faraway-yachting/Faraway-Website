@@ -34,7 +34,6 @@ export default function crewed_Charter() {
       <RentalRoutes />
       <YachtCustomization />
       <EcoFriendly />
-      {/* <BestLands /> */}
       <AboutSection_FAQs />
     </Fragment>
   );

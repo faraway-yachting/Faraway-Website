@@ -18,8 +18,11 @@ const PricingSection = ({ sectionRef, showContactButton, contactRef }: PricingSe
       <div className={styles.containerLarge}>
         <div className="text-center mb-12">
           <HeadingContent
-            heading="Pricing"
-            description="Premium island-hopping experiences at crystal-clear prices!" />
+            heading="Cabin Charter Thailand Prices "
+            description="Prices start from 999 € per person" />
+        </div>
+        <div>
+        <h4 className={combine("text-zink font-semibold font-inter mb-4",styles.p3)}>We offer two cabin categories to suit different travelers:</h4>
         </div>
 
         {/* Pricing Cards */}

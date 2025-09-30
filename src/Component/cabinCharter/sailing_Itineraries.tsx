@@ -92,8 +92,8 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
                     {/* Fetch Heading  */}
                     <div className="mb-12">
                         <HeadingContent
-                            heading="Visit The Best Islands Of Thailand"
-                            description='A simple word with a big promise — "Koh" means island, and your journey is filled with the best of them' />
+                            heading="Island Hopping Phuket – The 6-Day Cabin Charter Itinerary"
+                            description='Your journey combines adventure, relaxation, and the very best of Thailand’s islands. Each day brings something new: hidden caves, snorkeling, kayaking, sunset sails, and stunning beaches.' />
                     </div>
                     {/* Two Columns */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-5">
