@@ -22,10 +22,10 @@ const AboutSection_FAQs = () => {
       // Handle bold text formatting
       const withBold = trimmedLine.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
       
-      // Handle dash formatting for lists
+      // Handle dash formatting for lists and make point names semibold
       const withDashSpan = withBold.replace(
-        /^–\s?/,
-        '<span class="text-zinc-800 font-semibold">–</span> '
+        /^–\s?([^:]+):/,
+        '<span class="text-zinc-800 font-semibold">–</span> <span class="font-semibold">$1:</span>'
       );
       
       return (
@@ -44,16 +44,13 @@ const AboutSection_FAQs = () => {
         {/* Heading */}
         <div className={combine("mb-8 lg:mb-10 xl:mb-12", styles.flexCenter, styles.flexCol)}>
           <h2 className={combine(styles.h2, "text-zink mb-1")}>
-            Frequently Asked Questions
+          Frequently Asked Questions – Phuket Yacht Charter
           </h2>
           <img 
             src="/images/rframe.png"
             alt="Divider"
             className="w-[500px] my-3 mx-auto"
           />
-          <p className={combine(styles.p2, "text-gray-600 text-center max-w-2xl mt-4")}>
-            Everything you need to know about our yacht charter services in Phuket
-          </p>
         </div>
 
         {/* Accordion */}
@@ -103,8 +100,8 @@ const AboutSection_FAQs = () => {
                               <a 
                                 href={item.href || "#"} 
                                 className={combine(
-                                  "inline-flex items-center underline text-zink font-medium hover:text-[#d6ab62] hover:font-bold transition-colors duration-200",
-                                  styles.p4
+                                  "inline-flex items-center underline text-zink font-semibold hover:text-[#d6ab62] hover:font-bold transition-colors duration-200",
+                                  styles.p2
                                 )}
                               >
                                 {item.link}

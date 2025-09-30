@@ -19,7 +19,7 @@ const TodaysAdventure = () => {
             </div>
             <div>
             </div>
-            <div className={combine(styles.px1)}>
+            {/* <div className={combine(styles.px1)}>
                 <div className={combine(styles.bgImage, "bg-[url('/images/homeimg5.png')]", styles.px2, styles.flexCenter, styles.minH2,)}>
                     <div className="flex justify-start items-center max-w-5xl mx-auto w-full">
                         <div className={combine("bg-[#012A50]/83 max-w-[30rem] w-full", styles.padding1, "ml-0")}>
@@ -43,7 +43,7 @@ const TodaysAdventure = () => {
                 </div>
             </div>
             <div className="my-12">
-            </div>
+            </div> */}
         </div>
     )
 }

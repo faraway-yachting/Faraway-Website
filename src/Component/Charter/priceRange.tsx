@@ -37,7 +37,7 @@ const BroadboatContent = () => (
                     </ul>
                 </div>
                 <div className="w-full">
-                    <Image src={PngIcons.privateyact} alt="Price Range" width={590} height={590} className="w-full h-auto object-cover" />
+                    <Image src={PngIcons.bareboat} alt="Price Range" width={590} height={590} className="w-full h-auto object-cover" />
                 </div>
             </div>
             <p className="text-zink text-lg font-semibold font-inter max-w-5xl mb-2">Whether you’re planning a private boat rental in Phuket for just a day or a week-long luxury yacht charter, we offer flexible packages to match your budget and style. By understanding these factors, you can plan a Phuket yacht rental that perfectly balances your budget and expectations. </p>

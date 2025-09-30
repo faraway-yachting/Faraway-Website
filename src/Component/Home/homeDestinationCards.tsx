@@ -59,6 +59,8 @@ const HomeDestinationCards = () => {
             </div>
           ))}
         </div>
+        <p className={combine("text-zink font-semibold  text-center mt-5 font-inter",styles.p1)}>Each itinerary is fully flexible — your private yacht takes you exactly where you want to go.
+        </p>
       </div>
     </div>
   );
