@@ -54,7 +54,7 @@ const BookYourCharter = ({ contactRef }: BookYourCharterProps) => {
                                 >
                                     <div className="flex items-center">
                                     <LuAnchor className="w-5 h-5 mr-2" /> 
-                                    Secure your cabin now
+                                    Secure your Cabin Now
                                     </div>
                                 </Button>
                             </div>

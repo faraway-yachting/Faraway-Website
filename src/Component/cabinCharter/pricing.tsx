@@ -22,7 +22,7 @@ const PricingSection = ({ sectionRef, showContactButton, contactRef }: PricingSe
             description="Prices start from 999 € per person" />
         </div>
         <div>
-        <h3 className={combine("text-zink font-semibold font-inter mb-4",styles.p3)}>We offer two cabin categories to suit different travelers:</h3>
+        <p className={combine("text-zink font-semibold font-inter mb-4",styles.p3)}>We offer two cabin categories to suit different travelers:</p>
         </div>
 
         {/* Pricing Cards */}
