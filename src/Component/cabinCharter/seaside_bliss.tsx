@@ -1,23 +1,25 @@
 "use client";
 import { useRef, useState } from "react";
-import { LuShipWheel, LuAnchor, LuBadgeEuro } from "react-icons/lu";
+import { LuShipWheel, LuAnchor, LuBadgeEuro, LuInfo } from "react-icons/lu";
 import { SlCalender } from "react-icons/sl";
 import { IoBoatOutline } from "react-icons/io5";
-import PngIcons from "@/icons/pngIcon";
+import { LuSailboat } from "react-icons/lu";
 import ContactUs from "./contactUs";
-import Button from "@/styles/Button";
 import { styles, combine } from "@/styles/style";
+import RenterTips from "./renterTips"
+import About from "@/Component/Home/about";
 import Sailing_Itinerary from "./sailing_Itineraries";
 import PricingSection from "./pricing";
 import CruiseDates from "./cruiseDates";
 import SealifeFAQ from "./curiousSealife";
-import SeaEscape from "@/Component/cabinCharter/seaEscape";
-import Thailand_BestLands from "@/Component/cabinCharter/thailandbs";
 import SailingDetails from "@/Component/cabinCharter/oursailsDetail";
 import Price_Details from "@/Component/cabinCharter/pricingDetail";
-import FunMoments from "@/Component/cabinCharter/moments";
-import ComparisonChart from "@/Component/cabinCharter/moments2Remember";
-import FounderNote from "@/Component/cabinCharter/ourFounder";
+import ChooseCharter from "./chooseCharter";
+import OurCrew from "@/Component/cabinCharter/ourCrew";
+import SpecialOccasionsCard from "./specailOcassions"
+import ChooseFaraway from "./choseFaraway";
+import BookYourCharter from "./charterbooking"
+import Customization from "./customizeExperience";
 
 interface SeaSide_SixdaysProps {
   contactRef?: React.RefObject<HTMLDivElement | null>;
@@ -28,13 +30,18 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
   const contactRef = propContactRef || useRef<HTMLDivElement | null>(null);
   const itineraryRef = useRef<HTMLDivElement | null>(null);
   const pricingRef = useRef<HTMLDivElement | null>(null);
+  const pricingDetailsRef = useRef<HTMLDivElement | null>(null);
+  const yachtRef = useRef<HTMLDivElement | null>(null);
   const cruiseRef = useRef<HTMLDivElement | null>(null);
   const faqRef = useRef<HTMLDivElement | null>(null);
+  const generalInfoRef = useRef<HTMLDivElement | null>(null);
   const sectionTabs = [
-    { icon: LuAnchor, label: "Book Now", targetRef: contactRef },
-    { icon: IoBoatOutline, label: "Sailing Itinerary", targetRef: itineraryRef },
     { icon: LuBadgeEuro, label: "Pricing", targetRef: pricingRef },
+    { icon: LuAnchor, label: "Inclusions", targetRef: pricingDetailsRef },
+    { icon: IoBoatOutline, label: "Itinerary", targetRef: itineraryRef },
     { icon: SlCalender, label: "Cruise Dates", targetRef: cruiseRef },
+    { icon: LuSailboat, label: "The Yacht", targetRef: yachtRef },
+    { icon: LuInfo, label: "General information ", targetRef: generalInfoRef },
     { icon: LuShipWheel, label: "FAQ", targetRef: faqRef },
   ];
   const [activeTab, setActiveTab] = useState(sectionTabs[0].label);
@@ -42,11 +49,10 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
     <div >
       <div className="relative my-6 sm:my-8 md:my-10">
         {/* Faint Background Map */}
-        <div className="absolute inset-0 bg-[url('/images/map.png')] bg-no-repeat bg-center bg-cover opacity-10 z-0" />
         <div className="relative bg-white/80 z-10 py-0 sm:py-10 md:py-10 ">
           <div className={styles.container}>
             {/* Tabs */}
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-5 lg:gap-7 overflow-x-auto">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-5 lg:gap-7 overflow-x-auto max-w-3xl mx-auto">
               {sectionTabs.map(({ label, icon: Icon, targetRef }) => (
                 <button
                   key={label}
@@ -60,12 +66,12 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
                     }`}
                 >
                   <Icon size={20} />
-                  {label}
+                   {label}
                 </button>
               ))}
             </div>
             {/* Intro */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-8 md:mt-10 pt-5 items-center">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-8 md:mt-10 pt-5 items-center">
               <div className="flex flex-col items-center md:items-start text-center md:text-start">
                 <p className={combine("text-mustard font-playfair", styles.h5)}>
                   Island Odyssey
@@ -98,26 +104,40 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
                   className="w-full max-w-xs sm:max-w-sm md:max-w-sm lg:max-w-md xl:max-w-xl max-h-[390px] md:max-h-[410px] lg:max-h-[470px] xl:max-h-[550px]"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
-      <SeaEscape />
-      <Thailand_BestLands />
-      <Sailing_Itinerary sectionRef={itineraryRef} />
-      <SailingDetails />
-      <PricingSection 
-        sectionRef={pricingRef} 
-        showContactButton={true} 
-        contactRef={contactRef} 
+      {/* <SeaEscape /> */}
+      {/* <Thailand_BestLands /> */}
+      <PricingSection
+        sectionRef={pricingRef}
+        showContactButton={true}
+        contactRef={contactRef}
       />
-      <Price_Details />
+      <div ref={pricingDetailsRef}>
+        <Price_Details />
+      </div>
+      <Sailing_Itinerary sectionRef={itineraryRef} />
       <CruiseDates sectionRef={cruiseRef} contactRef={contactRef} />
-      <FunMoments />
-      <ComparisonChart />
-      <FounderNote />
+      <div ref={yachtRef}>
+        <SailingDetails />
+      </div>
+      <div ref={generalInfoRef}>
+        <ChooseFaraway />
+      </div>
+      <OurCrew />
+      <ChooseCharter />
+      <About />
+      <RenterTips />
+      <Customization />
+      <SpecialOccasionsCard />
+      {/* <ComparisonChart /> */}
+      {/* <FounderNote /> */}
       <SealifeFAQ sectionRef={faqRef} />
+      <BookYourCharter contactRef={contactRef}/>
       <ContactUs sectionRef={contactRef} />
+    
     </div>
   );
 };

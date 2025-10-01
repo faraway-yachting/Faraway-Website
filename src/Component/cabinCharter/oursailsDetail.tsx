@@ -27,7 +27,7 @@ const SailingDetails = () => {
 
   const renderDetail = ({ label, description }: any, idx: number) => (
     <div key={idx} className="bg-white">
-      <p className={combine("font-bold text-zink", styles.h5)}>{label}:</p>
+      <h3 className={combine("font-bold text-zink", styles.h5)}>{label}:</h3>
       <p className={combine("text-zink pt-1 pb-3 leading-relaxed md:py-3", styles.p3)}>
         {description}
       </p>
@@ -35,12 +35,12 @@ const SailingDetails = () => {
   );
 
   return (
-    <section className="bg-white py-10 lg:py-12 xl:py-14 px-4 md:px-4 xl:px-8">
+    <section className="bg-white pb-10 lg:pb-12 xl:pb-14 px-4 md:px-4 xl:px-8">
       <div className={styles.containerLarge}>
         {/* Title */}
         <div className="text-center mb-10">
           <HeadingContent
-            heading="Details of Our Sailing Catamaran"
+            heading="Details of Sailing Yacht Amadeus "
             description="Discover the features that make our catamaran the ultimate escape vessel"
           />
         </div>

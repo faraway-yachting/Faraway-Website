@@ -27,7 +27,7 @@ export const styles = {
   // Layout - Same containers everywhere
   container: "max-w-7xl mx-auto px-4",
   containerLarge: "max-w-[78.2rem] mx-auto",
-  containerXl: "md:max-w-xl lg:max-w-2xl xl:max-w-3xl leading-relaxed",
+  containerXl: "max-w-2xl md:max-w-xl lg:max-w-2xl xl:max-w-3xl leading-relaxed",
   // Flex - Same alignment everywhere
   flexCenter: "flex items-center justify-center",
   flexBetween: "flex items-center justify-between",
@@ -50,7 +50,7 @@ export const styles = {
   // Height REsponsive classes
   minH1: "min-h-[57vh] md:min-h-[80vh] lg:min-h-[72vh] xl:min-h-[82vh]",
   minH3: "bg-center min-h-[52vh] md:min-h-[62vh] lg:min-h-[72vh] xl:min-h-[70vh]",
-  minH2: "min-h-[65vh] md:min-h-[73vh] lg:min-h-[79vh] xl:min-h-[85vh]",
+  minH2: "min-h-[79vh] md:min-h-[79vh] lg:min-h-[79vh] xl:min-h-[85vh]",
   top1: "top-3 md:top-4 lg:top-5 xl:top-6",
 
   w1: "w-20 md:w-24 lg:w-32 xl:w-36",

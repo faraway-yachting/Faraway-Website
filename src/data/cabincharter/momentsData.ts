@@ -106,7 +106,7 @@ export const yachtThumbnails: string[] = [
   PngIcons.sailImage1,
   PngIcons.sailImage2,
   PngIcons.sailImage3,
-  PngIcons.sailImage3,
+
 ];
 
 // Type for pricing options

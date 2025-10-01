@@ -1,9 +1,8 @@
 'use client';
 import HeadingContent from "@/common/heading";
-
+import {combine, styles} from "@/styles/style"
 import React, { useState } from 'react';
 import { rentalRoutesData, type RouteCard } from '@/data/charter/rentalRoutesData';
-import { styles } from '@/styles/style';
 import { IoIosArrowDown } from "react-icons/io";
 import Image from 'next/image';
 
@@ -13,17 +12,28 @@ const RentalRoutes: React.FC = () => {
       <div className={styles.container}>
         {/* Header */}
         <div className="text-center mb-7 lg:mb-10">
-         <HeadingContent 
-         heading="Best Yacht Rental Routes from Phuket"
-         description="Phuket’s location allows for endless possibilities, from quick day trips to week-long expeditions."
-        />
-         </div>
+          <HeadingContent
+            heading="Best Yacht Rental Routes from Phuket"
+            description="Phuket’s location allows for endless possibilities, from quick day trips to week-long expeditions."
+          />
+        </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 xl:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+
           {rentalRoutesData.map((route) => (
             <RouteCard key={route.id} route={route} />
           ))}
+        </div>
+        <div className="max-w-[78.2rem] w-full bg-[#E6ECED33] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 px-4 md:px-6 py-0 xl:py-3 border-l-[7px] border-l-[#034250] mt-6">
+          <div className="flex-1 text-left py-3">
+            <p className={combine("text-zink font-semibold max-w-3xl", styles.p4)}>
+            For travelers seeking more than a quick Phuket boat rental, longer charters unlock hidden bays and remote coral reefs far from the crowds.
+            </p>
+          </div>
+          <div className="flex-shrink-0 w-[150px] sm:w-[180px] md:w-[200px] hidden md:block ">
+            <img src="/images/slideText.png" alt="" />
+          </div>
         </div>
       </div>
     </section>
@@ -98,15 +108,15 @@ const RouteCard: React.FC<RouteCardProps> = ({ route }) => {
             e.currentTarget.style.display = 'none';
           }}
         />
-        
+
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-[#012A50]/20 group-hover:bg-[#012A50]/20 transition-all duration-300" />
-        
+
         {/* Duration Badge */}
         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 flex items-center gap-1.5 text-xs font-semibold text-gray-800">
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12,6 12,12 16,14"/>
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12,6 12,12 16,14" />
           </svg>
           {route.duration}
         </div>
@@ -137,8 +147,8 @@ const RouteCard: React.FC<RouteCardProps> = ({ route }) => {
                   {/* Left Icon Section */}
                   <div className="w-20 bg-zink flex items-center justify-center flex-shrink-0 group-hover:bg-[#d6ab62] transition-colors duration-300">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path d="M3 21l18-9L3 3v18z"/>
-                      <path d="M3 3l18 9L3 21"/>
+                      <path d="M3 21l18-9L3 3v18z" />
+                      <path d="M3 3l18 9L3 21" />
                     </svg>
                   </div>
 
@@ -147,7 +157,7 @@ const RouteCard: React.FC<RouteCardProps> = ({ route }) => {
                     <h4 className="text-lg text-zink font-semibold mb-2">
                       {yacht.type}
                     </h4>
-                    
+
                     <p className="text-base font-inter text-zink leading-tight">
                       {yacht.description}
                     </p>
@@ -155,19 +165,13 @@ const RouteCard: React.FC<RouteCardProps> = ({ route }) => {
                 </div>
               </div>
             ))}
-            {route.id === 'multi-day' && (
-              <div className="mt-4 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
-                <p className="text-xs text-gray-600 italic">
-                  For travelers seeking more than a quick Phuket boat rental, longer charters unlock hidden bays and remote coral reefs far from the crowds.
-                </p>
-              </div>
-            )}
+
           </div>
         </div>
       </div>
 
       {/* See More/Less Button - Fixed Position at Bottom of Card */}
-      <div 
+      <div
         className="flex items-center gap-2 cursor-pointer group absolute bottom-6 left-6"
         onClick={() => setIsExpanded(!isExpanded)}
       >
@@ -178,6 +182,7 @@ const RouteCard: React.FC<RouteCardProps> = ({ route }) => {
           {isExpanded ? 'See less' : 'See more'}
         </span>
       </div>
+
     </div>
   );
 };

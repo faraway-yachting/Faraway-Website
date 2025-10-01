@@ -1,7 +1,8 @@
 import YachtCards from "@/common/yachtCards";
 import FAQ from "@/Component/Home/FAQ";
 import BoatTypes from "@/Component/Home/boatTypes";
-import FunMoments from "@/Component/cabinCharter/moments";
+import FunMoments from "@/common/moments";
+import { momentsTestimonials } from "@/data/cabincharter/momentsData";
 import { Button } from "@/styles";
 import { styles, combine } from "@/styles/style";
 const TodaysAdventure = () => {
@@ -13,7 +14,11 @@ const TodaysAdventure = () => {
             <div>
                 <FAQ />
                 <div className="mb-8">
-                <FunMoments />
+                <FunMoments 
+                  testimonials={momentsTestimonials}
+                  heading="Guest Reviews from our Phuket Yacht Charters"
+                  description="At Faraway Yachting, we're proud to have received over 750 verified ★★★★★ reviews from guests around the world. Travelers highlight our professional crew, delicious meals, and the unforgettable memories they made at sea. Whether it's a honeymoon, birthday, or family holiday, our reviews show that your Phuket yacht charter is in the best possible hands"
+                />
                 </div>
                 <BoatTypes />
             </div>

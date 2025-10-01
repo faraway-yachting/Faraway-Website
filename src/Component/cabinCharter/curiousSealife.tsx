@@ -24,16 +24,13 @@ const SealifeFAQ = ({ sectionRef }: SealifeFAQProps) => {
         {/* Heading */}
         <div className="flex justify-center flex-col items-center mb-12">
           <h2 className={combine(styles.h2, "text-zink font-semibold mb-1")}>
-            FAQS About Sailing
+          Frequently Asked Questions – Cabin Charter Phuket
           </h2>
           <img
             src="/images/rframe.png"
             alt="Divider"
             className="w-[500px] my-3 mx-auto"
           />
-          <p className={combine(styles.p3, "text-zink text-center font-normal md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto")}>
-            Frequently asked questions about your sailing adventure
-          </p>
         </div>
 
         {/* Accordion */}
@@ -54,9 +51,9 @@ const SealifeFAQ = ({ sectionRef }: SealifeFAQProps) => {
                       onClick={() => toggleItem(acutalIndex)}
                       className="flex justify-between items-center w-full pb-3 pt-3 px-2 md:px-3 lg:px-4 cursor-pointer text-left"
                     >
-                      <p className={combine("font-semibold text-zink max-w-lg", styles.p1)}>
+                      <h3 className={combine("font-semibold text-zink max-w-lg", styles.p1)}>
                         {item.place}
-                      </p>
+                      </h3>
                       <span className="text-2xl font-bold text-gray-400">
                         {isOpen ? "−" : "+"}
                       </span>

@@ -28,7 +28,7 @@ const Price_Details = () => {
                         <div className="bg-zink text-white p-2 rounded-lg flex items-center justify-center">
                             <Icon className="w-5 h-5" />
                         </div>
-                        <p className={combine("font-bold text-zink", styles.p1)}>{item.place}</p>
+                        <h3 className={combine("font-bold text-zink", styles.p1)}>{item.place}</h3>
                     </div>
                     <span className="text-2xl font-bold text-gray-400">{isActive ? "−" : "+"}</span>
                 </button>
@@ -63,16 +63,16 @@ const Price_Details = () => {
         );
     };
     // Divide items manually
-    const leftColumn = priceDetail.filter(item => ["1", "2", "3"].includes(item.id));
-    const rightColumn = priceDetail.filter(item => ["4", "5", "6"].includes(item.id));
+    const leftColumn = priceDetail.filter(item => ["1", "2", "3", ].includes(item.id));
+    const rightColumn = priceDetail.filter(item => ["4", "5", "6","7", "8", "9"].includes(item.id));
     return (
         <section className="bg-[#E6ECED1A] py-12 px-4 lg:px-4 xl:px-8">
             <div className={styles.containerLarge}>
                 {/* Heading */}
                 <div className="mb-12 ">
                     <HeadingContent
-                        heading="Sailing Itinerary"
-                        description="A seamless route through the Andaman's most iconic and secret escapes" />
+                        heading="What’s Included in Your Phuket Cabin Charter"
+                       />
                 </div>
                 {/* Itinerary Columns */}
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-5">

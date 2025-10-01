@@ -152,3 +152,47 @@ export const highSeason: ItineraryItem[] = [
     },
 
 ];
+
+// Define the interface for yacht tips items
+interface YachtTip {
+    number: string;
+    title: string;
+    description: string;
+    icon: string; // Icon image path
+}
+
+// Export the yacht tips data based on the Figma design
+export const yachtTipsData: YachtTip[] = [
+    {
+        number: "01",
+        title: "Pack smart:",
+        description: "Bring three swimsuits, a hat, sunscreen, sunglasses, and a camera. We provide towels and body soap, but bring your own shampoo, conditioner, and hairdryer if needed.",
+        icon: "/images/crewedimg15.png"
+    },
+    {
+        number: "02", 
+        title: "Know the routine:",
+        description: "On the first day, we’ll brief you on safety, itinerary, and onboard life. Everything is easy to follow.",
+        icon: "/images/cabintip2.png"
+    },
+    {
+        number: "03",
+        title: "Seasickness", 
+        description: " Tablets are available. Most guests feel comfortable after the first night.",
+        icon: "/images/cabintip3.png"
+    },
+    {
+        number: "04",
+        title: "Onboard etiquette:", 
+        description: "Smoking is only allowed at the stern, away from meal times. Shared spaces are for everyone’s enjoyment.",
+        icon: "/images/cabintip4.png"
+    }
+];
+
+// Export the main yacht tips data
+export const yachtTipsMainData = {
+    title: "Tips for First-Time Renters",
+    subtitle: "Renting a yacht for the first time?",
+    tips: yachtTipsData
+};
+

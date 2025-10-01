@@ -49,6 +49,7 @@ const BookwithUs = () => {
                                                 <Link
                                                     key={index}
                                                     href={item.href![index]}
+                                                    target="_blank"
                                                     className="text-mustard text-base font-semibold font-playfair underline transition-all duration-200 hover:text-[#012A50]"
                                                 >
                                                     {linkText}

@@ -18,8 +18,11 @@ const PricingSection = ({ sectionRef, showContactButton, contactRef }: PricingSe
       <div className={styles.containerLarge}>
         <div className="text-center mb-12">
           <HeadingContent
-            heading="Pricing"
-            description="Premium island-hopping experiences at crystal-clear prices!" />
+            heading="Cabin Charter Thailand Prices "
+            description="Prices start from 999 € per person" />
+        </div>
+        <div>
+        <p className={combine("text-zink font-semibold font-inter mb-4",styles.p3)}>We offer two cabin categories to suit different travelers:</p>
         </div>
 
         {/* Pricing Cards */}
@@ -33,9 +36,9 @@ const PricingSection = ({ sectionRef, showContactButton, contactRef }: PricingSe
                 <p className={combine( "text-[13px] lg:text-[14px] xl:text-[15px] font-medium text-mustard mb-2 leading-tight")}>
                   {option.title}
                 </p>
-                <h4 className={combine("text-zink font-bold leading-none text-[20px] md:text-[22px] lg:text-[24px] xl:text-[28px]")}>
+                <h3 className={combine("text-zink font-bold leading-none text-[20px] md:text-[22px] lg:text-[24px] xl:text-[28px]")}>
                   From {option.price}
-                </h4>
+                </h3>
                 <p className={combine(styles.p4, "text-zink font-semibold", styles.mb1)}>{option.per}</p>
                 <div className={combine("flex items-center gap-2", styles.mb1)}>
                   <p className="w-8 border-b-2 border-mustard"></p>

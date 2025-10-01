@@ -115,9 +115,8 @@ const FunMoments: React.FC = () => {
       setCurrentSlide(next);
     },
   };
-  
   return (
-    <div className={combine(styles.container, "pb-6 md:pb-8 lg:pb-12")}>
+    <div className={combine(styles.container, "")}>
       <Slider {...settings}>
         {momentsTestimonials.map((item, index) => (
           <div

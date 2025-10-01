@@ -60,7 +60,7 @@ const BoatTypes: React.FC = () => {
           ))}
         </div>
         <a href="/yacht-charter-phuket">
-        <p className={combine('font-medium text-zink text-center font-inter pt-7',styles.p1)}>We’ll match the perfect yacht to your group size, budget, and occasion.
+        <p className={combine('font-medium text-zink underline text-center font-inter pt-7 hover:text-[#d6ab62]',styles.p1)}>We’ll match the perfect yacht to your group size, budget, and occasion.
         </p>
         </a>
       </div>

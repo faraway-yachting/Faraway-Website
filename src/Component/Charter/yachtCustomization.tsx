@@ -76,7 +76,7 @@ const YachtCustomization: React.FC = () => {
                                     <div className="space-y-3">
                                         {additionalServices.map((service, index) => (
                                             <div key={index} className="flex items-center gap-3">
-                                                <span className={combine("text-white font-medium max-w-[200px]", styles.p4)}>{service}</span>
+                                                <span className={combine("text-white font-medium max-[] md:max-w-[200px]", styles.p4)}>{service}</span>
                                             </div>
                                         ))}
                                     </div>

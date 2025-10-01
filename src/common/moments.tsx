@@ -5,10 +5,29 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HeadingContent from "@/common/heading";
-import { momentsTestimonials } from "@/data/cabincharter/momentsData";
 import { styles, combine } from "@/styles/style";
 
-const FunMoments: React.FC = () => {
+// Type for testimonials
+export interface Testimonial {
+  id: string;
+  image1: string;
+  image2: string;
+  image3: string;
+  desp: string;
+  author: string;
+}
+
+interface FunMomentsProps {
+  testimonials: Testimonial[];
+  heading?: string;
+  description?: string;
+}
+
+const FunMoments: React.FC<FunMomentsProps> = ({ 
+  testimonials, 
+  heading,
+  description
+}) => {
   const [readMoreStates, setReadMoreStates] = useState<{ [key: string]: boolean }>({});
   const [currentSlide, setCurrentSlide] = useState(0);
   
@@ -43,14 +62,16 @@ const FunMoments: React.FC = () => {
   };
   return (
     <div className={combine(styles.container, "pb-6 md:pb-8 lg:pb-12")}>
-      <div>
-        <HeadingContent
-          heading="Guest Reviews from our Phuket Yacht Charters"
-          description="At Faraway Yachting, we’re proud to have received over 750 verified ★★★★★ reviews from guests around the world. Travelers highlight our professional crew, delicious meals, and the unforgettable memories they made at sea. Whether it’s a honeymoon, birthday, or family holiday, our reviews show that your Phuket yacht charter is in the best possible hands"
-        />
-      </div>
+      {heading && description && (
+        <div>
+          <HeadingContent
+            heading={heading}
+            description={description}
+          />
+        </div>
+      )}
       <Slider {...settings}>
-        {momentsTestimonials.map((item, index) => (
+        {testimonials.map((item, index) => (
           <div
             key={item.id}
             className={`transition-all duration-300 mt-[47px] ${currentSlide === index ? "scale-105 xl:scale-97 z-10" : "scale-85 "
