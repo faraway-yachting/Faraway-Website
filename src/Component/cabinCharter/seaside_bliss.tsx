@@ -66,7 +66,7 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
                     }`}
                 >
                   <Icon size={20} />
-                  {label}
+                   {label}
                 </button>
               ))}
             </div>

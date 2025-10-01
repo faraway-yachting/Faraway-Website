@@ -28,7 +28,7 @@ const Price_Details = () => {
                         <div className="bg-zink text-white p-2 rounded-lg flex items-center justify-center">
                             <Icon className="w-5 h-5" />
                         </div>
-                        <p className={combine("font-bold text-zink", styles.p1)}>{item.place}</p>
+                        <h3 className={combine("font-bold text-zink", styles.p1)}>{item.place}</h3>
                     </div>
                     <span className="text-2xl font-bold text-gray-400">{isActive ? "−" : "+"}</span>
                 </button>

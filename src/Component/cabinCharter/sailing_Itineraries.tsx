@@ -32,7 +32,7 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
                             <p className="text-center">{item.id}</p>
                             {/* ID below day */}
                         </div>
-                        <p className={combine("font-bold text-zink font-inter", styles.p3)}>{item.place}</p>
+                        <h3 className={combine("font-bold text-zink font-inter", styles.p3)}>{item.place}</h3>
                     </div>
                     <span className="text-2xl font-bold text-gray-400">
                         {isActive ? "−" : "+"}

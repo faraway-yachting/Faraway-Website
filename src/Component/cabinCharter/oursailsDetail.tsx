@@ -27,7 +27,7 @@ const SailingDetails = () => {
 
   const renderDetail = ({ label, description }: any, idx: number) => (
     <div key={idx} className="bg-white">
-      <p className={combine("font-bold text-zink", styles.h5)}>{label}:</p>
+      <h3 className={combine("font-bold text-zink", styles.h5)}>{label}:</h3>
       <p className={combine("text-zink pt-1 pb-3 leading-relaxed md:py-3", styles.p3)}>
         {description}
       </p>

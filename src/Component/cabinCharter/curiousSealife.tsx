@@ -51,9 +51,9 @@ const SealifeFAQ = ({ sectionRef }: SealifeFAQProps) => {
                       onClick={() => toggleItem(acutalIndex)}
                       className="flex justify-between items-center w-full pb-3 pt-3 px-2 md:px-3 lg:px-4 cursor-pointer text-left"
                     >
-                      <p className={combine("font-semibold text-zink max-w-lg", styles.p1)}>
+                      <h3 className={combine("font-semibold text-zink max-w-lg", styles.p1)}>
                         {item.place}
-                      </p>
+                      </h3>
                       <span className="text-2xl font-bold text-gray-400">
                         {isOpen ? "−" : "+"}
                       </span>
