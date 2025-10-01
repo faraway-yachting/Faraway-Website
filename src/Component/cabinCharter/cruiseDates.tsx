@@ -23,15 +23,13 @@ const CruiseDates = ({ sectionRef, contactRef }: CruiseDatesProps) => {
     const priceLabelClasses = combine(styles.p3, "font-semibold text-mustard");
     const thClasses = "py-3 px-4 border-b border-black";
     return (
-        <section ref={sectionRef} className={combine("bg-whitept-4 pb-13 lg:pb-16", styles.px1)}>
+        <section ref={sectionRef} className={combine("bg-white pb-13 lg:pb-16 pt-8 lg:pt-10 xl:pt-12", styles.px1)}>
             <div className={styles.containerLarge}>
             <div className="text-center mb-10">
                     <h2 className={combine(styles.h2,"text-zink font-semibold")}>
-                        Cruise Dates
+                    Cabin Charter Dates in Phuket 
                     </h2>
-                    <p className={combine(styles.h5, "font-playfair text-zink mt-2")}>
-                        Prices start from 999 € per person
-                    </p>
+                    <img src="/images/rframe.png" alt="" className={combine(styles.w2, "my-3 mx-auto")} />
                 </div>
 
                 <div className="flex justify-center mb-6 gap-4">

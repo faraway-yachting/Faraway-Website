@@ -6,14 +6,26 @@ export interface ItineraryItem {
 
 export const Sealife: ItineraryItem[] = [
     {
+        place:"How many people will be on board?",
+        description:" Our yacht takes a maximum of 8 guests in 4 double cabins, ensuring an intimate experience.",
+    },
+    {
+        place:"Can I book a Phuket cabin charter as a solo traveler?",
+        description:" Yes — solo cabins are available, or you can share a double. Many solo travelers join, and it’s a great way to meet new people.",
+    },
+    {
+        place:"What’s the difference between a cabin charter and a cabin cruise?",
+        description:" They’re essentially the same — but “cabin cruise” is often used by first-time sailors, while “cabin charter” is the industry term. Both describe booking an individual cabin on a shared yacht.",
+    },
+    {
         
         place: "Can we bring our own food and drinks on board?",
         description: "Yes, guests are welcome to bring their own food and drinks, and no corkage fee applies. Alcohol is allowed in reasonable amounts.",
     },
     {
         
-        place: "Is Wi-Fi available on board?",
-        description: "SIM card Wi-Fi is provided, covering approximately 80% of the sailing area.",
+        place: "Is there Wi-Fi on board?",
+        description: " Yes — we provide SIM-based Wi-Fi covering about 80% of the sailing route.",
     },
     {
         
@@ -68,7 +80,7 @@ export const Sealife: ItineraryItem[] = [
     {
         
         place: "What happens in case of bad weather?",
-        description: "Trips are only canceled if the Marine Department issues a sailing ban for vessels under 15 meters. In rare cases, we may adjust the route to more sheltered areas, though this happens only once or twice a year only.",
+        description: " We rarely cancel trips. If needed, we adjust the route to sheltered areas, always prioritizing safety and comfort.",
     },
     {
         

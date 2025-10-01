@@ -185,12 +185,22 @@ var PngIcons = {
   picon12: "/images/policyicon12.png",
   super2: "/images/super3.png",
   super3: "/images/super2.png",
-
+// Crewed Reviews
   review1: "/images/review1.png",
   review2: "/images/review2.png",
   review3: "/images/review3.png",
   review4: "/images/review4.png",
   review5: "/images/review5.png",
   review6: "/images/review6.png",
+// Cabin Charter
+cabinreview1: "/images/cabinreview.png",
+cabinreview2: "/images/cabinreview1.png",
+cabinreview3: "/images/cabinreview2.png",
+cabinreview4: "/images/cabinreview3.png",
+cabinreview5: "/images/cabinreview4.png",
+cabinreview6: "/images/cabinreview5.png",
+cabinreview7: "/images/cabinreview6.png",
+cabinreview8: "/images/cabinreview7.png",
+
 }
 export default PngIcons

@@ -92,8 +92,8 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
                     {/* Fetch Heading  */}
                     <div className="mb-12">
                         <HeadingContent
-                            heading="Visit The Best Islands Of Thailand"
-                            description='A simple word with a big promise — "Koh" means island, and your journey is filled with the best of them' />
+                            heading="Island Hopping Phuket – The 6-Day Cabin Charter Itinerary"
+                            description='Your journey combines adventure, relaxation, and the very best of Thailand’s islands. Each day brings something new: hidden caves, snorkeling, kayaking, sunset sails, and stunning beaches.' />
                     </div>
                     {/* Two Columns */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-5">
@@ -108,21 +108,6 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
                     </div>
                 </div>
             </section>
-            <section className={combine(styles.containerLarge, styles.px1, "mt-10")}>
-                <div className="flex justify-center">
-                    <div className="relative w-full h-[400px] md:h-[450px] lg:h-[490px] xl:h-[520px] overflow-hidden shadow-lg">
-                        <iframe
-                            className="w-full h-full"
-                            src="https://www.youtube.com/embed/jLTjbJ1TUg8?rel=0&modestbranding=1"
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        />
-                    </div>
-                </div>
-            </section>
-
         </div>
     );
 };

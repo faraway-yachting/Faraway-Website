@@ -1,27 +1,26 @@
 import React from 'react';
-import { yachtTipsMainData } from '../../data/charter/yachtTipsData';
+import { yachtTipsMainData } from '../../data/cabincharter/sailingData';
 import { styles, combine } from '../../styles/style';
 import HeadingContent from "@/common/heading";
 
-const YachtTips: React.FC = () => {
+const RenterTips: React.FC = () => {
     const { title,  tips } = yachtTipsMainData;
 
     return (
-        <section className={combine("relative mb-12")}>
+        <section className={combine("relative mt-10")}>
             <div className={combine(styles.container, "relative")}>
                 {/* Main Content Container */}
-                <div className='absolute top-50 lg:top-70 xl:top-60 left-40 lg:left-70 xl:left-100 z-10 hidden md:block'>
+                <div className='absolute top-40 lg:top-60 xl:top-60 left-40 lg:left-70 xl:left-100 z-10 hidden md:block'>
                     <img src="/images/crewedimg19.png" alt="Yacht tip icon" />
                 </div> 
 
                 <div >
-                    <img src="/images/crewedimg18.png" alt="Yacht tip icon" className='absolute top-30 right-0 lg:right-10 z-10 hidden md:block '  />
+                    <img src="/images/crewedimg18.png" alt="Yacht tip icon" className='absolute top-30 right-0 lg:right-10 z-10 hidden lg:block '  />
                 </div>
                 <div className={combine("relative bg-white p-0 lg:p-7")}>
                     <div className={combine("text-center", styles.mb2)}>
                       <HeadingContent 
-                      heading="Tips for First-Time Phuket Yacht Rentals"
-                      description="Renting a yacht for the first time? Here’s what you need to know"
+                      heading="Tips for First-Time Renters"
                       />
                     </div>
                     <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -29,9 +28,9 @@ const YachtTips: React.FC = () => {
                         {/* Left Side - Beach Scene */}
                         <div className="relative">
                             <img
-                                src="/images/crewedimg17.png"
+                                src="/images/cabinimg.png"
                                 alt="Beach scene with yacht rental items"
-                                className="w-full h-[380px] md:h-[490px] lg:h-[580px] rounded-2xl"
+                                className="w-full h-[340px] md:h-[520px] lg:h-[580px] rounded-2xl"
                             />
                         </div>
 
@@ -40,11 +39,11 @@ const YachtTips: React.FC = () => {
                             {tips.map((tip, index) => (
                                 <div key={index} className="flex items-start space-x-3 lg:space-x-6">
                                     {/* Tip Number and Icon */}
-                                    <div >
+                                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-25 lg:h-25 flex-shrink-0">
                                         <img
                                             src={tip.icon}
                                             alt={tip.title}
-                                            className="w-full h-full object-cover"
+                                            className="w-full h-full object-contain"
                                         />
                                     </div>
 
@@ -67,4 +66,4 @@ const YachtTips: React.FC = () => {
     );
 };
 
-export default YachtTips;
+export default RenterTips;

@@ -74,11 +74,11 @@ export const bareboatMetadata: Metadata = {
 
 // Cabin Charter Page Metadata
 export const cabinCharterMetadata: Metadata = {
-  title: "Cabin Charter Phuket – Relax, Explore & Sail in Style",
-  description: "Escape the crowds with a Phuket cabin charter. Discover hidden islands, savor Thai cuisine, and enjoy a friendly crew on your unforgettable journey",
+  title: "Phuket Cabin Charter – Luxury Sailing Made Affordable",
+  description: "Phuket Cabin Charter with 30 years of expertise. Luxury catamaran, private cabins, crew & meals included. Rated ★★★★★ by 750+ happy travelers.",
   openGraph: {
-    title: "Cabin Charter Phuket – Relax, Explore & Sail in Style",
-    description: "Escape the crowds with a Phuket cabin charter. Discover hidden islands, savor Thai cuisine, and enjoy a friendly crew on your unforgettable journey",
+    title: "Phuket Cabin Charter – Luxury Sailing Made Affordable",
+    description: "Phuket Cabin Charter with 30 years of expertise. Luxury catamaran, private cabins, crew & meals included. Rated ★★★★★ by 750+ happy travelers.",
     url: `${BASE_URL}/best-of-phukets-islands-cabincharter`,
     // siteName: "Faraway Yachting",
     images: [
@@ -94,8 +94,8 @@ export const cabinCharterMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cabin Charter Phuket – Relax, Explore & Sail in Style",
-    description: "Escape the crowds with a Phuket cabin charter. Discover hidden islands, savor Thai cuisine, and enjoy a friendly crew on your unforgettable journey",
+    title: "Phuket Cabin Charter – Luxury Sailing Made Affordable",
+    description: "Phuket Cabin Charter with 30 years of expertise. Luxury catamaran, private cabins, crew & meals included. Rated ★★★★★ by 750+ happy travelers.",
     images: [`${BASE_URL}/images/charterimg.png`],
   },
 };
