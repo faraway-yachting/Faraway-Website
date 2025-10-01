@@ -39,7 +39,7 @@ const CruiseDates = ({ sectionRef, contactRef }: CruiseDatesProps) => {
                             onClick={() => setActiveTab(tab.id as "1" | "2")}
                             className={`${baseTabClasses} ${activeTab === tab.id ? activeTabClasses : inactiveTabClasses}`}
                         >
-                          <h5 className="text-zink"> {tab.label} </h5> 
+                          <h3 className="text-zink"> {tab.label} </h3> 
                             <p className={priceLabelClasses}>(price per person)</p>
                         </button>
                     ))}

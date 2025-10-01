@@ -43,7 +43,7 @@ const AboutSection_FAQs = () => {
       <div className={combine("mb-15", styles.container)}>
         {/* Heading */}
         <div className={combine("mb-8 lg:mb-10 xl:mb-12", styles.flexCenter, styles.flexCol)}>
-          <h2 className={combine(styles.h2, "text-zink mb-1")}>
+          <h2 className={combine(styles.h2, "text-zink text-center mb-1")}>
           Frequently Asked Questions – Phuket Yacht Charter
           </h2>
           <img 

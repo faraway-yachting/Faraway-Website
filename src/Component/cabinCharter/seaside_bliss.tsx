@@ -37,7 +37,7 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
   const generalInfoRef = useRef<HTMLDivElement | null>(null);
   const sectionTabs = [
     { icon: LuBadgeEuro, label: "Pricing", targetRef: pricingRef },
-    { icon: LuAnchor, label: "Inclusion", targetRef: pricingDetailsRef },
+    { icon: LuAnchor, label: "Inclusions", targetRef: pricingDetailsRef },
     { icon: IoBoatOutline, label: "Itinerary", targetRef: itineraryRef },
     { icon: SlCalender, label: "Cruise Dates", targetRef: cruiseRef },
     { icon: LuSailboat, label: "The Yacht", targetRef: yachtRef },
@@ -66,7 +66,7 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
                     }`}
                 >
                   <Icon size={20} />
-                  {label}
+                   {label}
                 </button>
               ))}
             </div>

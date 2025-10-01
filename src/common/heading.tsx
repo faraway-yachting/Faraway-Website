@@ -8,11 +8,11 @@ type HeadingContentProps = {
 const HeadingContent = ({ heading, description }: HeadingContentProps) => {
     return (
         <div className={styles.container}>
-            <h2 className={combine(styles.h2, "font-extrabold text-zink text-center text-zink capitalize", styles.px1)} style={{ boxShadow: "#00000040" }}>
+            <h2 className={combine(styles.h2, "font-extrabold text-zink text-center text-zink capitalize")} style={{ boxShadow: "#00000040" }}>
                 {heading}
                </h2>
 
-            <img src="/images/rframe.png" alt="" className={combine(styles.w2, "my-3 mx-auto")} />
+            <img src="/images/rframe.png" alt="" className={combine(" md:max-w-4xl lg:max-w-3xl w-full my-3 mx-auto")} />
             {description &&(
             <p className={combine(styles.p3, "text-center font-inter text-zink", styles.px1, styles.containerXl, "mx-auto")}>
                 {description}
