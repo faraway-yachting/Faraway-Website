@@ -1,7 +1,7 @@
 "use client";
 import { FaStar, FaGoogle, FaTripadvisor } from "react-icons/fa";
 import FunMoments from "@/common/moments";
-import { momentsTestimonials } from "@/data/cabincharter/momentsData";
+import { momentsTestimonials } from "@/data/cabincharter/review";
 import { styles, combine } from "@/styles";
 const ChooseFaraway = () => {
     return (
@@ -19,7 +19,7 @@ const ChooseFaraway = () => {
                             <h3 className={combine(styles.h4, "font-bold text-zink font-playfair", styles.mb1)}>Our experience and expertise
                             </h3>
                             <p className={combine(styles.p2, "text-zink leading-relaxed  font-inter")}>
-                                With nearly 30 years in business and over 750 five-star reviews, Faraway Yachting is Phuket’s most trusted name in cabin charters Thailand.
+                                With nearly 30 years in business and over 750 five-star reviews, Faraway Yachting is Phuket’s most trusted name in <span className="font-bold"> cabin charters Thailand.</span>
                             </p>
                         </div>
 

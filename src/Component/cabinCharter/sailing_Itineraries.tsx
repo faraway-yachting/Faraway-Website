@@ -108,21 +108,6 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
                     </div>
                 </div>
             </section>
-            <section className={combine(styles.containerLarge, styles.px1, "mt-10")}>
-                <div className="flex justify-center">
-                    <div className="relative w-full h-[400px] md:h-[450px] lg:h-[490px] xl:h-[520px] overflow-hidden shadow-lg">
-                        <iframe
-                            className="w-full h-full"
-                            src="https://www.youtube.com/embed/jLTjbJ1TUg8?rel=0&modestbranding=1"
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        />
-                    </div>
-                </div>
-            </section>
-
         </div>
     );
 };

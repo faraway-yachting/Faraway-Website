@@ -78,7 +78,7 @@ const HeroContent: React.FC<HeroSectionProps> = ({
               >
                 <div className="flex items-center">
                   <LuAnchor className="mr-2" />
-                  Get  Aboard
+                  Get Aboard – Limited Availability
                 </div>
               </Button>
             </div>

@@ -6,15 +6,20 @@ import { IoBoatOutline } from "react-icons/io5";
 import { LuSailboat } from "react-icons/lu";
 import ContactUs from "./contactUs";
 import { styles, combine } from "@/styles/style";
+import RenterTips from "./renterTips"
+import About from "@/Component/Home/about";
 import Sailing_Itinerary from "./sailing_Itineraries";
 import PricingSection from "./pricing";
 import CruiseDates from "./cruiseDates";
 import SealifeFAQ from "./curiousSealife";
 import SailingDetails from "@/Component/cabinCharter/oursailsDetail";
 import Price_Details from "@/Component/cabinCharter/pricingDetail";
-import ComparisonChart from "@/Component/cabinCharter/moments2Remember";
-import FounderNote from "@/Component/cabinCharter/ourFounder";
+import ChooseCharter from "./chooseCharter";
+import OurCrew from "@/Component/cabinCharter/ourCrew";
+import SpecialOccasionsCard from "./specailOcassions"
 import ChooseFaraway from "./choseFaraway";
+import BookYourCharter from "./charterbooking"
+import Customization from "./customizeExperience";
 
 interface SeaSide_SixdaysProps {
   contactRef?: React.RefObject<HTMLDivElement | null>;
@@ -105,10 +110,10 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
       </div>
       {/* <SeaEscape /> */}
       {/* <Thailand_BestLands /> */}
-      <PricingSection 
-        sectionRef={pricingRef} 
-        showContactButton={true} 
-        contactRef={contactRef} 
+      <PricingSection
+        sectionRef={pricingRef}
+        showContactButton={true}
+        contactRef={contactRef}
       />
       <div ref={pricingDetailsRef}>
         <Price_Details />
@@ -121,10 +126,18 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
       <div ref={generalInfoRef}>
         <ChooseFaraway />
       </div>
-      <ComparisonChart />
-      <FounderNote />
+      <OurCrew />
+      <ChooseCharter />
+      <About />
+      <RenterTips />
+      <Customization />
+      <SpecialOccasionsCard />
+      {/* <ComparisonChart /> */}
+      {/* <FounderNote /> */}
       <SealifeFAQ sectionRef={faqRef} />
+      <BookYourCharter contactRef={contactRef}/>
       <ContactUs sectionRef={contactRef} />
+    
     </div>
   );
 };

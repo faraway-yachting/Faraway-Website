@@ -41,6 +41,7 @@ const SailingDetails = () => {
         <div className="text-center mb-10">
           <HeadingContent
             heading="Details of Sailing Yacht Amadeus "
+            description="Discover the features that make our catamaran the ultimate escape vessel"
           />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-10 items-center justify-center lg:justify-start lg:items-start">
