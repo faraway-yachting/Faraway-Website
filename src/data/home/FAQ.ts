@@ -24,7 +24,7 @@ export const FAQContent: FAQS[] = [
         place: "Can I book a private yacht charter in Phuket for just one day?",
         description: ` Yes, absolutely. Day charters are the most popular option and perfect for exploring destinations like Phi Phi, Racha, or Phang Nga Bay. Check our `,
         link:"Phuket day yacht charters.",
-        href:"/super-yacht-charter-phuket",
+        href:"/yacht-charter-phuket",
     },   
      {
         id:'4',
