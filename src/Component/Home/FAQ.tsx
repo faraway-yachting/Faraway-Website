@@ -19,8 +19,10 @@ const AboutSection_FAQs = () => {
       const trimmedLine = line.trim();
       if (!trimmedLine) return null;
       
-      // Handle bold text formatting
-      const withBold = trimmedLine.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+      // Handle bold text formatting (both markdown and HTML)
+      let withBold = trimmedLine.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+      // Also ensure existing <strong> tags are preserved
+      withBold = withBold.replace(/<strong>(.*?)<\/strong>/g, "<strong>$1</strong>");
       
       // Handle dash formatting for lists and make point names semibold
       const withDashSpan = withBold.replace(
@@ -31,7 +33,7 @@ const AboutSection_FAQs = () => {
       return (
         <p
           key={i}
-          className={combine("text-zink mb-3 text-[15px] lg:text-[16px] xl:text-[17px] font-inter leading-relaxed")}
+          className={combine("text-zink mb-3 text-[15px] lg:text-[16px] xl:text-[17px] font-inter leading-relaxed [&_strong]:font-semibold")}
           dangerouslySetInnerHTML={{ __html: withDashSpan }}
         />
       );

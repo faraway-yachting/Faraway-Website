@@ -5,7 +5,7 @@ import { momentsTestimonials } from "@/data/cabincharter/review";
 import { styles, combine } from "@/styles";
 const ChooseFaraway = () => {
     return (
-        <section className={combine("py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50")}>
+        <section className={combine("pt-15 pb-4 bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50")}>
             <div className={combine(styles.containerLarge, " px-4 sm:px-6 lg:px-8")}>
                 <h2 className={combine(styles.h2, "font-bold text-zink text-center font-playfair", styles.mb1)}>
                 Why Choose Faraway Yachting for Your Cabin Charter in Phuket

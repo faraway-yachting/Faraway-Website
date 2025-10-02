@@ -235,7 +235,7 @@ const BoatInfo = () => {
           >
             {/* Icon with unique styling */}
             <div className={`relative p-1.5 rounded-lg transition-all duration-300 ${
-              activeTab === "Contact Us" 
+              activeTab === "Booking Inquiry" 
                 ? "bg-white/25 shadow-inner" 
                 : "bg-gray-100 group-hover:bg-gradient-to-br group-hover:from-[#D6AB62]/20 group-hover:to-[#B8941F]/20 group-hover:shadow-inner"
             }`}>

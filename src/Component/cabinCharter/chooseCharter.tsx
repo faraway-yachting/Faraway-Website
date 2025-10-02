@@ -1,7 +1,7 @@
 import { styles, combine } from "@/styles";
 const ChooseCharter = () => {
     return (
-        <section className="relative py-17 px-4 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50">
+        <section className="relative pb-17 pt-12 px-4 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50">
             <div className={combine(styles.container, "relative")}>
                 {/* Enhanced Main Heading */}
                 <div className="text-center mb-9">
@@ -10,7 +10,7 @@ const ChooseCharter = () => {
                             <h2 className={combine(styles.h2, "text-zink mb-8 font-extrabold leading-tight")}>
                                 Why Choose a Cabin Charter in Phuket?
                             </h2>
-                            <div className="flex justify-center mb-8">
+                            <div className="flex justify-center mb-4 lg:mb-6 xl:mb-8">
                                 <img src="/images/rframe.png" alt="" className={combine(styles.w2, "mx-auto")} />
                             </div>
                         </div>
