@@ -39,7 +39,7 @@ const RenterTips: React.FC = () => {
                             {tips.map((tip, index) => (
                                 <div key={index} className="flex items-start space-x-3 lg:space-x-6">
                                     {/* Tip Number and Icon */}
-                                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-25 lg:h-25 flex-shrink-0">
+                                    <div className="w-14 h-14 md:w-16 md:h-16 lg:w-25 lg:h-25 flex-shrink-0">
                                         <img
                                             src={tip.icon}
                                             alt={tip.title}

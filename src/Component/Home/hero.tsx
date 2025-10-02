@@ -6,7 +6,7 @@ const HeroContent = () => {
   const { bgImage, w1, w2, flexCenter, flexCol, h1, containerXl, flexBetween, p1 ,} = styles;
 
   return (
-    <section className={combine(bgImage, "bg-[url('/images/homeimg1.png')] min-h-[79vh] md:min-h-[82vh] flex justify-center")}>
+    <section className={combine(bgImage, "bg-[url('/images/homeimg1.png')] min-h-[81vh] flex justify-center")}>
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#034250]/50 z-0" />
       {/* Batch Image Top-Left inside container */}

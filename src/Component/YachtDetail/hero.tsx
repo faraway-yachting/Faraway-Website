@@ -9,6 +9,7 @@ import ContactDetail from "./contactDetail";
 import YachtAdventure from "../Charter/yachtAdventure";
 import { combine, styles } from "@/styles";
 import { fetchYachtBySlug } from "@/lib/api";
+import BoatInfo from "./boatInfo"
 
 interface HeroProps {
   slug: string;
@@ -91,7 +92,8 @@ const HeroSection: React.FC<HeroProps> = ({ slug }) => {
   return (
     <div>
       <div className="max-w-[78.2rem] mx-auto px-4 xl:px-0">
-        <h3 className="text-[32px] font-playfair font-bold text-zink mt-6 ">{data.title}</h3>
+        <BoatInfo />
+        <h2 className="text-[32px] font-playfair font-bold text-zink mt-6 ">{data.title}</h2>
         <div className="flex flex-col md:flex-row gap-5 mt-6">
           <div className="w-full md:w-[70%]">
             <Gallery data={data} />
