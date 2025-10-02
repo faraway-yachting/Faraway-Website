@@ -93,7 +93,7 @@ const HeroSection: React.FC<HeroProps> = ({ slug }) => {
     <div>
       <div className="max-w-[78.2rem] mx-auto px-4 xl:px-0">
         <BoatInfo />
-        <h2 className="text-[32px] font-playfair font-bold text-zink mt-6 ">{data.title}</h2>
+        <h2 className="text-[24px] md:text-[26px] lg:text-[28px] xl:text-[32px] font-playfair font-bold text-zink mt-6 ">{data.title}</h2>
         <div className="flex flex-col md:flex-row gap-5 mt-6">
           <div className="w-full md:w-[70%]">
             <Gallery data={data} />

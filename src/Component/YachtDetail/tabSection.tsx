@@ -18,8 +18,6 @@ const TabSection: React.FC<Props> = ({ data }) => {
     { title: "Day Charter Capacity", value: data?.passengerDayTrip, icon: FiSun },
     { title: "Overnight Charter Capacity", value: data?.passengerOvernight, icon: IoMoonOutline },
   ];
- 
-
   return (
     <div>
   
@@ -32,7 +30,7 @@ const TabSection: React.FC<Props> = ({ data }) => {
           >
             <div className="text-mustard flex flex-col items-center gap-2">
               <Icon size={24} />
-              <p className="text-sm lg:text-[15px] font-bold font-sourceSansPro text-zink leading-snug text-center">
+              <p className="text-xs md:text-sm lg:text-[15px] font-bold font-sourceSansPro text-zink leading-snug text-center">
                 {title}
               </p>
             </div>
