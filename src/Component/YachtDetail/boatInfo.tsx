@@ -9,18 +9,20 @@ const BoatInfo = () => {
     { icon: FiSun, label: "Day Charter" },
     { icon: IoMoonOutline, label: "Overnight Charter" },
   ];
-  
+
   const [activeTab, setActiveTab] = useState("About Boat");
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId); 
+    const element = document.getElementById(sectionId);
     if (element) {
       // Add a small delay to ensure the element is rendered
       setTimeout(() => {
-        // Get the element's position and scroll to it with some offset for better visibility
-        const elementPosition = element.offsetTop;
-        const offsetPosition = elementPosition - 150; // 100px offset to show the title clearly
-        
+        // Use getBoundingClientRect for more accurate positioning, especially for sticky elements
+        const rect = element.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const elementPosition = rect.top + scrollTop;
+        const offsetPosition = elementPosition - 90; // 150px offset to show the title clearly
+
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
@@ -29,15 +31,17 @@ const BoatInfo = () => {
     } else {
       console.log(`Element with id "${sectionId}" not found`);
       // Try to find the element by class or other selectors
-      const alternativeElement = document.querySelector(`[data-section="${sectionId}"]`) || 
-                                document.querySelector(`.${sectionId}`) ||
-                                document.querySelector(`#${sectionId}-section`);
-      
+      const alternativeElement = document.querySelector(`[data-section="${sectionId}"]`) ||
+        document.querySelector(`.${sectionId}`) ||
+        document.querySelector(`#${sectionId}-section`);
+
       if (alternativeElement) {
         setTimeout(() => {
-          const elementPosition = (alternativeElement as HTMLElement).offsetTop;
-          const offsetPosition = elementPosition - 100;
-          
+          const rect = (alternativeElement as HTMLElement).getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const elementPosition = rect.top + scrollTop;
+          const offsetPosition = elementPosition - 90;
+
           window.scrollTo({
             top: offsetPosition,
             behavior: 'smooth'
@@ -61,9 +65,9 @@ const BoatInfo = () => {
         {/* First row - About Boat and Day Charter on small screens, all buttons on md+ */}
         <div className="flex gap-3 sm:gap-4 md:gap-5">
           {dayTripCards.slice(0, 2).map(({ label, icon: Icon }, index) => {
-            const sectionId = label === "About Boat" ? "about-boat" : 
-                             label === "Day Charter" ? "day-charter" : 
-                             "night-charter";
+            const sectionId = label === "About Boat" ? "about-boat" :
+              label === "Day Charter" ? "day-charter" :
+                "night-charter";
             return (
               <button
                 key={label}
@@ -80,31 +84,28 @@ const BoatInfo = () => {
                 }}
               >
                 {/* Icon with unique styling */}
-                <div className={`relative p-1.5 rounded-lg transition-all duration-300 hidden md:block ${
-                  activeTab === label 
-                    ? "bg-white/25 shadow-inner" 
+                <div className={`relative p-1.5 rounded-lg transition-all duration-300 hidden md:block ${activeTab === label
+                    ? "bg-white/25 shadow-inner"
                     : "bg-gray-100 group-hover:shadow-inner"
-                }`}>
-                  <Icon 
-                    size={16} 
-                    className={`transition-all duration-300 ${
-                      activeTab === label 
-                        ? "text-white drop-shadow-lg" 
+                  }`}>
+                  <Icon
+                    size={16}
+                    className={`transition-all duration-300 ${activeTab === label
+                        ? "text-white drop-shadow-lg"
                         : "text-gray-600 group-hover:text-[#D6AB62] group-hover:scale-110"
-                    }`} 
+                      }`}
                   />
-                  
+
                   {/* Icon glow effect */}
                   {activeTab === label && (
                     <div className="absolute inset-0 rounded-lg bg-white/30 animate-ping"></div>
                   )}
                 </div>
                 {/* Label with special effects */}
-                <span className={`relative whitespace-nowrap transition-all duration-300 ${
-                  activeTab === label 
-                    ? "text-white drop-shadow-md" 
+                <span className={`relative whitespace-nowrap transition-all duration-300 ${activeTab === label
+                    ? "text-white drop-shadow-md"
                     : "text-gray-800 group-hover:text-[#D6AB62]"
-                }`}>
+                  }`}>
                   {label}
                 </span>
                 {/* Unique active indicator */}
@@ -118,7 +119,7 @@ const BoatInfo = () => {
               </button>
             );
           })}
-          
+
           {/* Overnight Charter - show in first row on md+, second row on small screens */}
           {dayTripCards.slice(2).map(({ label, icon: Icon }, index) => {
             const sectionId = "night-charter";
@@ -138,31 +139,28 @@ const BoatInfo = () => {
                 }}
               >
                 {/* Icon with unique styling */}
-                <div className={`relative p-1.5 rounded-lg transition-all duration-300 hidden md:block ${
-                  activeTab === label 
-                    ? "bg-white/25 shadow-inner" 
+                <div className={`relative p-1.5 rounded-lg transition-all duration-300 hidden md:block ${activeTab === label
+                    ? "bg-white/25 shadow-inner"
                     : "bg-gray-100 group-hover:bg-gradient-to-br group-hover:from-[#D6AB62]/20 group-hover:to-[#B8941F]/20 group-hover:shadow-inner"
-                }`}>
-                  <Icon 
-                    size={16} 
-                    className={`transition-all duration-300 ${
-                      activeTab === label 
-                        ? "text-white drop-shadow-lg" 
+                  }`}>
+                  <Icon
+                    size={16}
+                    className={`transition-all duration-300 ${activeTab === label
+                        ? "text-white drop-shadow-lg"
                         : "text-gray-600 group-hover:text-[#D6AB62] group-hover:scale-110"
-                    }`} 
+                      }`}
                   />
-                  
+
                   {/* Icon glow effect */}
                   {activeTab === label && (
                     <div className="absolute inset-0 rounded-lg bg-white/30 animate-ping"></div>
                   )}
                 </div>
                 {/* Label with special effects */}
-                <span className={`relative whitespace-nowrap transition-all duration-300 ${
-                  activeTab === label 
-                    ? "text-white drop-shadow-md" 
+                <span className={`relative whitespace-nowrap transition-all duration-300 ${activeTab === label
+                    ? "text-white drop-shadow-md"
                     : "text-gray-800 group-hover:text-[#D6AB62]"
-                }`}>
+                  }`}>
                   {label}
                 </span>
                 {/* Unique active indicator */}
@@ -177,7 +175,7 @@ const BoatInfo = () => {
             );
           })}
         </div>
-        
+
         {/* Second row - Overnight Charter and Contact Us (only on small screens) */}
         <div className="flex gap-3 sm:gap-4 md:gap-5 md:hidden mt-3">
           {dayTripCards.slice(2).map(({ label, icon: Icon }, index) => {
@@ -198,31 +196,28 @@ const BoatInfo = () => {
                 }}
               >
                 {/* Icon with unique styling */}
-                <div className={`relative p-1.5 rounded-lg transition-all duration-300 hidden md:block ${
-                  activeTab === label 
-                    ? "bg-white/25 shadow-inner" 
+                <div className={`relative p-1.5 rounded-lg transition-all duration-300 hidden md:block ${activeTab === label
+                    ? "bg-white/25 shadow-inner"
                     : "bg-gray-100 group-hover:bg-gradient-to-br group-hover:from-[#D6AB62]/20 group-hover:to-[#B8941F]/20 group-hover:shadow-inner"
-                }`}>
-                  <Icon 
-                    size={16} 
-                    className={`transition-all duration-300 ${
-                      activeTab === label 
-                        ? "text-white drop-shadow-lg" 
+                  }`}>
+                  <Icon
+                    size={16}
+                    className={`transition-all duration-300 ${activeTab === label
+                        ? "text-white drop-shadow-lg"
                         : "text-gray-600 group-hover:text-[#D6AB62] group-hover:scale-110"
-                    }`} 
+                      }`}
                   />
-                  
+
                   {/* Icon glow effect */}
                   {activeTab === label && (
                     <div className="absolute inset-0 rounded-lg bg-white/30 animate-ping"></div>
                   )}
                 </div>
                 {/* Label with special effects */}
-                <span className={`relative whitespace-nowrap transition-all duration-300 ${
-                  activeTab === label 
-                    ? "text-white drop-shadow-md" 
+                <span className={`relative whitespace-nowrap transition-all duration-300 ${activeTab === label
+                    ? "text-white drop-shadow-md"
                     : "text-gray-800 group-hover:text-[#D6AB62]"
-                }`}>
+                  }`}>
                   {label}
                 </span>
                 {/* Unique active indicator */}
@@ -236,7 +231,7 @@ const BoatInfo = () => {
               </button>
             );
           })}
-          
+
           {/* Contact Us button - only on small screens */}
           <button
             onClick={() => {
@@ -255,32 +250,29 @@ const BoatInfo = () => {
             }}
           >
             {/* Icon with unique styling */}
-            <div className={`relative p-1.5 rounded-lg transition-all duration-300 hidden md:block ${
-              activeTab === "Booking Inquiry" 
-                ? "bg-white/25 shadow-inner" 
+            <div className={`relative p-1.5 rounded-lg transition-all duration-300 hidden md:block ${activeTab === "Booking Inquiry"
+                ? "bg-white/25 shadow-inner"
                 : "bg-gray-100 group-hover:bg-gradient-to-br group-hover:from-[#D6AB62]/20 group-hover:to-[#B8941F]/20 group-hover:shadow-inner"
-            }`}>
-              <IoCallOutline 
-                size={16} 
-                className={`transition-all duration-300 ${
-                  activeTab === "Booking Inquiry" 
-                    ? "text-white drop-shadow-lg" 
+              }`}>
+              <IoCallOutline
+                size={16}
+                className={`transition-all duration-300 ${activeTab === "Booking Inquiry"
+                    ? "text-white drop-shadow-lg"
                     : "text-gray-600 group-hover:text-[#D6AB62] group-hover:scale-110"
-                }`} 
+                  }`}
               />
-              
+
               {/* Icon glow effect */}
               {activeTab === "Booking Inquiry" && (
                 <div className="absolute inset-0 rounded-lg bg-white/30 animate-ping"></div>
               )}
             </div>
             {/* Label with special effects */}
-            <span className={`relative whitespace-nowrap transition-all duration-300 ${
-              activeTab === "Booking Inquiry" 
-                ? "text-white drop-shadow-md" 
+            <span className={`relative whitespace-nowrap transition-all duration-300 ${activeTab === "Booking Inquiry"
+                ? "text-white drop-shadow-md"
                 : "text-gray-800 group-hover:text-[#D6AB62]"
-            }`}>
-            Booking Inquiry
+              }`}>
+              Booking Inquiry
             </span>
             {/* Unique active indicator */}
             {activeTab === "Booking Inquiry" && (
