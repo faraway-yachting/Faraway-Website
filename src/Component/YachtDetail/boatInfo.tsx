@@ -17,14 +17,35 @@ const BoatInfo = () => {
     if (element) {
       // Add a small delay to ensure the element is rendered
       setTimeout(() => {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'center',
-          inline: 'nearest'
+        // Get the element's position and scroll to it with some offset for better visibility
+        const elementPosition = element.offsetTop;
+        const offsetPosition = elementPosition - 150; // 100px offset to show the title clearly
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
         });
       }, 100);
     } else {
       console.log(`Element with id "${sectionId}" not found`);
+      // Try to find the element by class or other selectors
+      const alternativeElement = document.querySelector(`[data-section="${sectionId}"]`) || 
+                                document.querySelector(`.${sectionId}`) ||
+                                document.querySelector(`#${sectionId}-section`);
+      
+      if (alternativeElement) {
+        setTimeout(() => {
+          const elementPosition = (alternativeElement as HTMLElement).offsetTop;
+          const offsetPosition = elementPosition - 100;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }, 100);
+      } else {
+        console.log(`No element found for section: ${sectionId}`);
+      }
     }
   };
 
