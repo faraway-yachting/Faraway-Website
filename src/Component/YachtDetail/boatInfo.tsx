@@ -219,13 +219,13 @@ const BoatInfo = () => {
           {/* Contact Us button - only on small screens */}
           <button
             onClick={() => {
-              setActiveTab("Contact Us");
+              setActiveTab("Booking Inquiry");
               scrollToSection("contact-detail");
             }}
             className={`group relative flex items-center gap-2 transition-all duration-300 font-poppins font-semibold
              py-2 px-4 lg:px-6 md:text-base lg:text-lg
               rounded-lg border-2 overflow-hidden
-              ${activeTab === "Contact Us"
+              ${activeTab === "Booking Inquiry"
                 ? "bg-gradient-to-br from-[#D6AB62] via-[#B8941F] to-[#9A7B1A] text-white transform scale-105"
                 : "bg-gradient-to-br from-white to-gray-50 text-gray-800 border-gray-300 hover:bg-gradient-to-br hover:from-[#D6AB62]/10 hover:to-[#B8941F]/10 hover:border-[#D6AB62] hover:text-[#7e7149] hover:shadow-lg hover:transform hover:scale-105"
               }`}
@@ -242,27 +242,27 @@ const BoatInfo = () => {
               <IoCallOutline 
                 size={16} 
                 className={`transition-all duration-300 ${
-                  activeTab === "Contact Us" 
+                  activeTab === "Booking Inquiry" 
                     ? "text-white drop-shadow-lg" 
                     : "text-gray-600 group-hover:text-[#D6AB62] group-hover:scale-110"
                 }`} 
               />
               
               {/* Icon glow effect */}
-              {activeTab === "Contact Us" && (
+              {activeTab === "Booking Inquiry" && (
                 <div className="absolute inset-0 rounded-lg bg-white/30 animate-ping"></div>
               )}
             </div>
             {/* Label with special effects */}
             <span className={`relative whitespace-nowrap transition-all duration-300 ${
-              activeTab === "Contact Us" 
+              activeTab === "Booking Inquiry" 
                 ? "text-white drop-shadow-md" 
                 : "text-gray-800 group-hover:text-[#D6AB62]"
             }`}>
-              Contact Us
+            Booking Inquiry
             </span>
             {/* Unique active indicator */}
-            {activeTab === "Contact Us" && (
+            {activeTab === "Booking Inquiry" && (
               <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 flex items-center gap-1">
                 <div className="w-2 h-2 bg-white rounded-full shadow-lg animate-bounce"></div>
                 <div className="w-1.5 h-1.5 bg-white/70 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
