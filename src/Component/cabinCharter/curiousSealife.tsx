@@ -23,7 +23,7 @@ const SealifeFAQ = ({ sectionRef }: SealifeFAQProps) => {
       <div className={styles.containerLarge}>
         {/* Heading */}
         <div className="flex justify-center flex-col items-center mb-12">
-          <h2 className={combine(styles.h2, "text-zink font-semibold mb-1")}>
+          <h2 className={combine(styles.h2, "text-zink text-center font-semibold mb-1")}>
           Frequently Asked Questions – Cabin Charter Phuket
           </h2>
           <img

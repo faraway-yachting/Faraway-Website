@@ -1,12 +1,9 @@
 "use client";
-import { useState } from "react";
 import { RxRulerSquare } from "react-icons/rx";
 import { LuSailboat, LuDoorOpen, LuToilet } from "react-icons/lu";
 import { FiSun } from "react-icons/fi";
-import { IoMoonOutline, IoBoatOutline } from "react-icons/io5";
-import About from "./about";
-import DayCharter from "./dayCharter";
-import NightCharter from "./nightCharter";
+import { IoMoonOutline} from "react-icons/io5";
+import CharterDetail from "./charterDetail";
 import { Yacht } from "../YachtDetail/hero";
 
 type Props = {
@@ -21,31 +18,9 @@ const TabSection: React.FC<Props> = ({ data }) => {
     { title: "Day Charter Capacity", value: data?.passengerDayTrip, icon: FiSun },
     { title: "Overnight Charter Capacity", value: data?.passengerOvernight, icon: IoMoonOutline },
   ];
-  const dayTripCards = [
-    { icon: IoBoatOutline, label: "About Boat" },
-    { icon: FiSun, label: "Day Charter" },
-    { icon: IoMoonOutline, label: "Overnight Charter" },
-  ];
-
-  const [activeTab, setActiveTab] = useState("About Boat");
-
-  const renderContent = () => {
-    switch (activeTab) {
-      case "About Boat":
-        return <About data={data} />;
-      case "Day Charter":
-        return <DayCharter data={data} />;
-      case "Overnight Charter":
-        return <NightCharter data={data} />;
-      default:
-        return null;
-    }
-  };
-
   return (
     <div>
-      {/* Test bg-mustard gradient */}
-      
+  
       {/* Features */}
       <div className="flex flex-wrap gap-4 mt-3 md:mt-4 lg:mt-6 xl:mt-8 justify-center md:justify-start">
         {features.map(({ title, value, icon: Icon }, index) => (
@@ -55,7 +30,7 @@ const TabSection: React.FC<Props> = ({ data }) => {
           >
             <div className="text-mustard flex flex-col items-center gap-2">
               <Icon size={24} />
-              <p className="text-sm lg:text-[15px] font-bold font-sourceSansPro text-zink leading-snug text-center">
+              <p className="text-xs md:text-sm lg:text-[15px] font-bold font-sourceSansPro text-zink leading-snug text-center">
                 {title}
               </p>
             </div>
@@ -65,29 +40,10 @@ const TabSection: React.FC<Props> = ({ data }) => {
           </div>
         ))}
       </div>
-      
-      {/* Tabs */}
-      <div className="flex flex-wrap gap-2 sm:gap-4 md:gap-5 lg:gap-7 overflow-x-auto mt-6">
-        {dayTripCards.map(({ label, icon: Icon }) => (
-          <button
-            key={label}
-
-            onClick={() => setActiveTab(label)}
-            className={`flex items-center gap-2 transition-all font-poppins font-medium
-              py-1 px-1 sm:px-3 text-[12px] md:text-sm lg:text-base xl:text-lg
-              ${activeTab === label
-                ? "text-mustard border-b-2 border-[#D6AB62]"
-                : "text-zink border-b-2 border-transparent hover:border-zink hover:text-[#d6ab62]"
-              }`}
-            >
-            
-            <Icon size={20} />
-            {label}
-          </button>
-        ))}
+      {/* Render Tab Content - Always show CharterDetail with all sections */}
+      <div className="mt-6">
+        <CharterDetail data={data} />
       </div>
-      {/* Render Tab Content */}
-      <div className="mt-6">{renderContent()}</div>
     </div>
   )
 }

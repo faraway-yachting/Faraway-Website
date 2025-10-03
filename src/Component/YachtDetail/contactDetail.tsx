@@ -29,14 +29,14 @@ const ContactDetail: React.FC<Props> = ({ data }) => {
         }
     }, []);
     return (
-        <div className="bg-white sticky rounded-lg p-3 max-w-[500px] w-full border-2 border-zink">
+        <div id="contact-detail" className="bg-white sticky rounded-lg p-3 w-full border-2 border-zink">
             <div className="flex flex-col items-center justify-center text-center">
-                <h5 className={combine("font-playfair text-[#034250] font-bold", styles.h5)}>
+                <h5 className={combine("font-playfair text-[#034250] font-bold text-[16px] md:text-[15px] lg:text-[18px] xl:text-[22px]")}>
                     {data?.title}
                 </h5>
-                <p className={combine("text-zink mt-1", styles.p4)}>
+                <h3 className={combine("text-zink mt-1", styles.p4)}>
                     Looking for a yacht charter?
-                </p>
+                </h3>
                 <a
                 href="tel:+66612345623"
                 target="_blank"
