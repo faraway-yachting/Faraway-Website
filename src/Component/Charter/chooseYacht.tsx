@@ -105,9 +105,9 @@ const ChooseYacht = () => {
               </div>
 
               {/* Card Content */}
-              <div className="p-6 lg:p-8 flex flex-col flex-grow">
+              <div className="p-6 lg:p-8 flex flex-col  flex-grow">
                 {/* Icon and Title */}
-                <div className="flex items-center gap-4 mb-4">
+                <div className="flex items-center gap-4 mt-2 mb-4">
                   <h3 className={combine("text-zink font-semibold mt-3", styles.h5)}>
                     {yacht.title}
                   </h3>

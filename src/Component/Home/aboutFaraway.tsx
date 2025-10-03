@@ -25,7 +25,7 @@ const AboutFaraway = () => {
                     {/* Content card with subtle backdrop */}
                     <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-white/20">
                         {/* Main heading with improved typography */}
-                        <h2 className={combine(styles.h2, "text-slate-900 font-bold mb-8 tracking-tight")}>
+                        <h2 className={combine(styles.h3, "text-slate-900 font-bold mb-8 tracking-tight")}>
                             About <span className="text-mustard bg-gradient-to-r from-mustard to-amber-600 bg-clip-text text-transparent">Faraway Yachting</span>
                         </h2>
                         {/* Content with better spacing and readability */}

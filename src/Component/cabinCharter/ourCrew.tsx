@@ -11,7 +11,7 @@ const OurCrew = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
                     <div className="relative">
                         <img
-                            src="/images/sunee.png"
+                            src="/images/Sunee.png"
                             alt="Captain Sunee"
                             className="w-full h-[320px] md:h-[370px] lg:h-[400px] xl:h-[450px] object-cover rounded-lg"
                         />
@@ -21,7 +21,7 @@ const OurCrew = () => {
                     </div>
                     <div className="relative">
                         <img
-                            src="/images/Em.png"
+                            src="/images/EM.png"
                             alt="Deckhand"
                             className="w-full h-[320px] md:h-[370px] lg:h-[400px] xl:h-[450px] object-cover rounded-lg"
                         />

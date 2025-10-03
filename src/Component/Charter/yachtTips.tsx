@@ -15,7 +15,7 @@ const YachtTips: React.FC = () => {
                     <img src="/images/crewedimg19.png" alt="Yacht tip icon" />
                 </div> 
 
-                <div >
+                <div>
                     <img src="/images/crewedimg18.png" alt="Yacht tip icon" className='absolute top-30 right-0 lg:right-10 z-10 hidden md:block '  />
                 </div>
                 <div className={combine("relative bg-white p-0 lg:p-7")}>
