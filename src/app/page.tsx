@@ -1,9 +1,7 @@
 
 import About from "@/Component/Home/about";
-
 import ExploreThailand from "@/Component/Home/exploreThailand";
 import HeroSection from "@/Component/Home/hero";
-import PrivateYacht_Tour from "@/Component/Home/privateTour";
 import TodaysAdventure from "@/Component/Home/todaysAdventure";
 import VoyageCards from "@/Component/Home/voyageCards";
 import Sailingyacht_Phuket from "@/Component/Home/yachtinPhuket";

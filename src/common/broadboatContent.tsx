@@ -1,5 +1,4 @@
 import Image from "next/image";
-import PngIcons from "@/icons/pngIcon";
 import { FaCheckCircle } from "react-icons/fa";
 import { styles, combine } from "@/styles";
 
@@ -17,9 +16,11 @@ interface BroadboatContentProps {
     imageSrc: any;
     imageAlt: string;
     showFrame?: boolean;
+    link?:string;
+    href?:string;
 }
 
-const BroadboatContent = ({ title, description, heading, values, imageSrc, imageAlt, showFrame = true }: BroadboatContentProps) => (
+const BroadboatContent = ({ title, description, heading, values, imageSrc,link, href, imageAlt, showFrame = true }: BroadboatContentProps) => (
     <section className={combine("relative bg-white overflow-hidden my-5 lg:my-8", styles.pb1, "pt-7 md:pt-9")}>
         <div className={combine("relative z-10", styles.px3, styles.container)}>
             <div className={combine("text-center", styles.mb2)}>
@@ -52,6 +53,7 @@ const BroadboatContent = ({ title, description, heading, values, imageSrc, image
                     <Image src={imageSrc} alt={imageAlt} width={590} height={590} className="w-full h-auto object-cover" />
                 </div>
             </div>
+            <p className={combine("text-zink underline hover:text-[#D6AB62}",styles.h6)}>{link}</p>
         </div>
     </section>
 );

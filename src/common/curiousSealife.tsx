@@ -1,16 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { Sealife } from "@/data/cabincharter/saelife";
+import { ItineraryItem } from "@/data/cabincharter/saelife";
 import { RefObject } from "react";
 import { styles, combine } from "@/styles/style";
 
 interface SealifeFAQProps {
   sectionRef: RefObject<HTMLDivElement | null>;
+  faqData: ItineraryItem[];
+  title: string;
 }
-const SealifeFAQ = ({ sectionRef }: SealifeFAQProps) => {
+const SealifeFAQ = ({ sectionRef, faqData, title }: SealifeFAQProps) => {
   const [activeId, setActiveId] = useState<number | null>(0);
-  const faqArray = Sealife || [];
+  const faqArray = faqData || [];
   const firstColumn = faqArray.filter((_, i) => i % 2 === 0);
   const secondColumn = faqArray.filter((_, i) => i % 2 !== 0);
 
@@ -24,7 +26,7 @@ const SealifeFAQ = ({ sectionRef }: SealifeFAQProps) => {
         {/* Heading */}
         <div className="flex justify-center flex-col items-center mb-12">
           <h2 className={combine(styles.h2, "text-zink text-center font-semibold mb-1")}>
-          Frequently Asked Questions – Cabin Charter Phuket
+          {title}
           </h2>
           <img
             src="/images/rframe.png"

@@ -15,6 +15,7 @@ type HeroSectionProps = {
   buttontext?: string;
   contactRef?: RefObject<HTMLDivElement | null>;
   showContactButton?: boolean;
+  contactButtonText?: string;
 };
 const HeroContent: React.FC<HeroSectionProps> = ({
   heading,
@@ -26,6 +27,7 @@ const HeroContent: React.FC<HeroSectionProps> = ({
   description,
   contactRef,
   showContactButton = false,
+  contactButtonText ,
 }) => {
   return (
     <section
@@ -78,7 +80,7 @@ const HeroContent: React.FC<HeroSectionProps> = ({
               >
                 <div className="flex items-center">
                   <LuAnchor className="mr-2" />
-                  Get Aboard – Limited Availability
+                  {contactButtonText}
                 </div>
               </Button>
             </div>

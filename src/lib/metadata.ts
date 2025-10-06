@@ -182,6 +182,31 @@ export const termsAndConditionsMetadata: Metadata = {
   },
 };
 
+export const overnightCharterMetadata: Metadata = {
+  title: "Overnight Boat Charter Phuket – Book Your Private Multi-Day Escape",
+  description: "Discover remote islands on an Overnight Boat Charter Phuket. Trusted by 750+ ★★★★★ reviews, we offer luxury yachts, private crews & tailored itineraries.",
+  openGraph: {
+    title: "Overnight Boat Charter Phuket – Book Your Private Multi-Day Escape",
+    description: "Discover remote islands on an Overnight Boat Charter Phuket. Trusted by 750+ ★★★★★ reviews, we offer luxury yachts, private crews & tailored itineraries.",
+    url: `${BASE_URL}/overnight-boat-charter-phuket`,
+    images: [
+      {
+        url: `${BASE_URL}/images/overnightimg1.png`,
+        width: 800,
+        height: 600,
+        alt: "Terms and Conditions - Faraway Yachting Phuket",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Overnight Boat Charter Phuket – Book Your Private Multi-Day Escape",
+    description: "Discover remote islands on an Overnight Boat Charter Phuket. Trusted by 750+ ★★★★★ reviews, we offer luxury yachts, private crews & tailored itineraries.",
+    images: [`${BASE_URL}/images/overnightimg1.png`],
+  },
+};
 // Destinations Page Metadata
 export const destinationsMetadata: Metadata = {
   title: "Phuket Yacht Destinations – Discover Thailand's Hidden Gems",

@@ -202,5 +202,23 @@ cabinreview6: "/images/cabinreview5.png",
 cabinreview7: "/images/cabinreview6.png",
 cabinreview8: "/images/cabinreview7.png",
 
+
+// Over boat charter Page
+nightCharterimg1:"/images/overnightimg2.png",
+nightCharterimg2:"/images/overnightimg3.png",
+nightCharterimg4:"/images/overnightimg4.png",
+nightCharterimg5:"/images/overnightimg5.png",
+nightCharterimg6:"/images/overnightimg6.png",
+nightCharterimg7:"/images/overnightimg7.png",
+nightCharterimg8:"/images/overnightimg8.png",
+nightCharterimg9:"/images/overnightimg9.png",
+nightCharterimg10:"/images/overnightimg10.png",
+nightCharterimg11:"/images/overnightimg11.png",
+nightCharterimg12:"/images/overnightimg12.png",
+nightCharterimg13:"/images/overnightimg13.png",
+nightCharterimg14:"/images/overnightimg14.png",
+nightCharterimg15:"/images/overnightimg15.png",
+
+
 }
 export default PngIcons
