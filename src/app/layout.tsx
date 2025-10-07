@@ -1,5 +1,6 @@
 import {DM_Serif_Display} from "next/font/google";
 import {Plus_Jakarta_Sans} from "next/font/google";
+import type { Metadata } from "next";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
@@ -33,6 +34,52 @@ const playfairDisplay = DMSerifDisplay;
 const source_Sans_Pro = plusJakartaSans;
 const inter =  plusJakartaSans;
 const poppins = plusJakartaSans;
+
+export const metadata: Metadata = {
+  title: 'Faraway Yachting - Luxury Yacht Charter in Phuket, Thailand',
+  description: 'Experience luxury yacht charter in Phuket, Thailand with Faraway Yachting. Bareboat, crewed, and cabin charters available. Book your dream sailing adventure today.',
+  keywords: 'yacht charter phuket, luxury yacht rental, bareboat charter thailand, crewed yacht charter, sailing phuket',
+  authors: [{ name: 'Faraway Yachting' }],
+  creator: 'Faraway Yachting',
+  publisher: 'Faraway Yachting',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://faraway-psi.vercel.app'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Faraway Yachting - Luxury Yacht Charter in Phuket, Thailand',
+    description: 'Experience luxury yacht charter in Phuket, Thailand with Faraway Yachting. Bareboat, crewed, and cabin charters available.',
+    url: 'https://faraway-psi.vercel.app',
+    siteName: 'Faraway Yachting',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Faraway Yachting - Luxury Yacht Charter in Phuket, Thailand',
+    description: 'Experience luxury yacht charter in Phuket, Thailand with Faraway Yachting.',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/manifest.json',
+  other: {
+    'msapplication-TileImage': '/faraway-logo-270x270.png',
+    'msapplication-TileColor': '#012A50',
+    'theme-color': '#012A50',
+  },
+};
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -68,15 +115,11 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Favicon Meta Tags - Optimized for Google Search */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        {/* Favicon Meta Tags - Clean and Optimized */}
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" href="/favicon-192x192.png" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="msapplication-TileImage" content="/faraway-logo-270x270.png" />
-        <meta name="msapplication-TileColor" content="#012A50" />
-        <meta name="theme-color" content="#012A50" />
         
         {/* Additional SEO and Favicon Optimization */}
         <meta name="robots" content="index, follow" />
