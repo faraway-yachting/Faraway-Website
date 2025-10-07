@@ -9,7 +9,7 @@ import Image, { StaticImageData } from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { momentsTestimonials } from "@/data/charter/sliderdata";
+import { overnightTestimonials } from "@/data/overnight-boat/review";
 const ChooseFarway = () => {
   return (
     <div>
@@ -121,7 +121,7 @@ const FunMoments: React.FC = () => {
 
     <div className={combine(styles.container, "")}>
       <Slider {...settings}>
-        {momentsTestimonials.map((item, index) => (
+        {overnightTestimonials.map((item, index) => (
           <div
             key={item.id}
             className={`transition-all duration-300 mt-[47px] ${currentSlide === index ? "scale-105 xl:scale-97 z-10" : "scale-85 "

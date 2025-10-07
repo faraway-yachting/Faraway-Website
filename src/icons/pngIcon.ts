@@ -219,6 +219,10 @@ nightCharterimg13:"/images/overnightimg13.png",
 nightCharterimg14:"/images/overnightimg14.png",
 nightCharterimg15:"/images/overnightimg15.png",
 
-
+nreview1: "/images/nreview.png",
+nreview2: "/images/nreview1.png",
+nreview3: "/images/nreview2.png",
+nreview4: "/images/nreview3.png",
+nreview5: "/images/nreview4.png",
 }
 export default PngIcons
