@@ -69,10 +69,11 @@ export default function RootLayout({
           }}
         />
         {/* Favicon Meta Tags */}
-        <link rel="icon" href="https://wordpress-858394-5855488.cloudwaysapps.com/wp-content/uploads/2021/06/cropped-Faraway-Yachting-Logo-192x192.png" sizes="192x192" />
-        <link rel="icon" href="https://wordpress-858394-5855488.cloudwaysapps.com/wp-content/uploads/2021/06/cropped-Faraway-Yachting-Logo-32x32.png" sizes="32x32" />
-        <meta name="msapplication-TileImage" content="https://wordpress-858394-5855488.cloudwaysapps.com/wp-content/uploads/2021/06/cropped-Faraway-Yachting-Logo-270x270.png" />
-        <link rel="apple-touch-icon" href="https://wordpress-858394-5855488.cloudwaysapps.com/wp-content/uploads/2021/06/cropped-Faraway-Yachting-Logo-180x180.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <meta name="msapplication-TileImage" content="/faraway-logo-270x270.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${source_Sans_Pro.variable}  ${inter.variable}  ${poppins.variable}  antialiased`}
