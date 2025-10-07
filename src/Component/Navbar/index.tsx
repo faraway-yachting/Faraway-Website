@@ -9,7 +9,7 @@ const navItems = [
     { label: "Bareboat Charter", href: "/bareboat-charter-thailand" },
     { label: "Cabin Charter", href: "/best-of-phukets-islands-cabincharter" },
     { label: "Destinations", href: "/magical-destinations-with-private-yacht-in-phuket" },
-    { label: "Contact", href: "/contact" },
+    { label: "Crewed Overnight Charter", href: "/overnight-boat-charter-phuket" },
 ];
 
 const Drawer = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
