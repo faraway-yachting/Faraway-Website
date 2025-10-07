@@ -11,7 +11,8 @@ import About from "@/Component/Home/about";
 import Sailing_Itinerary from "./sailing_Itineraries";
 import PricingSection from "./pricing";
 import CruiseDates from "./cruiseDates";
-import SealifeFAQ from "./curiousSealife";
+import SealifeFAQ from "../../common/curiousSealife";
+import { Sealife } from "@/data/cabincharter/saelife";
 import SailingDetails from "@/Component/cabinCharter/oursailsDetail";
 import Price_Details from "@/Component/cabinCharter/pricingDetail";
 import ChooseCharter from "./chooseCharter";
@@ -134,7 +135,7 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
       <SpecialOccasionsCard />
       {/* <ComparisonChart /> */}
       {/* <FounderNote /> */}
-      <SealifeFAQ sectionRef={faqRef} />
+      <SealifeFAQ sectionRef={faqRef} faqData={Sealife} title="Frequently Asked Questions – Cabin Charter Phuket" />
       <BookYourCharter contactRef={contactRef}/>
       <ContactUs sectionRef={contactRef} />
     

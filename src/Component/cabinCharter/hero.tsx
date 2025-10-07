@@ -15,6 +15,7 @@ const HeroSection = ({ contactRef }: HeroSectionProps) => {
       dividerImage={PngIcons.rframe2}
       contactRef={contactRef}
       showContactButton={true}
+      contactButtonText="Get Aboard – Limited Availability"
     />
   );
 };

@@ -13,8 +13,10 @@ type HeroSectionProps = {
   button?: string;
   description: string;
   buttontext?: string;
+  href?: string;
   contactRef?: RefObject<HTMLDivElement | null>;
   showContactButton?: boolean;
+  contactButtonText?: string;
 };
 const HeroContent: React.FC<HeroSectionProps> = ({
   heading,
@@ -24,8 +26,10 @@ const HeroContent: React.FC<HeroSectionProps> = ({
   button,
   buttontext,
   description,
+  href,
   contactRef,
   showContactButton = false,
+  contactButtonText ,
 }) => {
   return (
     <section
@@ -57,30 +61,52 @@ const HeroContent: React.FC<HeroSectionProps> = ({
           </p>
           {button && buttontext && (
             <div className="mt-9">
-              <Button variant="primary">
-                <div className="flex items-center">
-                  <FiPhone className="mr-2" />
-                  {buttontext}
-                </div>
-              </Button>
+              {href ? (
+                <a href={href}>
+                  <Button variant="primary">
+                    <div className="flex items-center">
+                      <FiPhone className="mr-2" />
+                      {buttontext}
+                    </div>
+                  </Button>
+                </a>
+              ) : (
+                <Button variant="primary">
+                  <div className="flex items-center">
+                    <FiPhone className="mr-2" />
+                    {buttontext}
+                  </div>
+                </Button>
+              )}
             </div>
           )}
           {showContactButton && contactRef && (
             <div className="mt-9">
-              <Button
-                variant="primary"
-                onClick={() => {
-                  contactRef?.current?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                  });
-                }}
-              >
-                <div className="flex items-center">
-                  <LuAnchor className="mr-2" />
-                  Get Aboard – Limited Availability
-                </div>
-              </Button>
+              {href ? (
+                <a href={href}>
+                  <Button variant="primary">
+                    <div className="flex items-center">
+                      <LuAnchor className="mr-2" />
+                      {contactButtonText}
+                    </div>
+                  </Button>
+                </a>
+              ) : (
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    contactRef?.current?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start"
+                    });
+                  }}
+                >
+                  <div className="flex items-center">
+                    <LuAnchor className="mr-2" />
+                    {contactButtonText}
+                  </div>
+                </Button>
+              )}
             </div>
           )}
         </div>
