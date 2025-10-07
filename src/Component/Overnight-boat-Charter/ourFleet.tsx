@@ -78,7 +78,7 @@ const OurFleet = () => {
 
                 {/* Image */}
                 <div className="col-span-12 md:col-span-4 relative">
-                    <div className={combine("relative w-full h-[300px] md:h-[580px] lg:h-[610px] xl:h-[640px]", "overflow-hidden")}>
+                    <div className={combine("relative w-full h-[300px] md:h-[600px] lg:h-[630px] xl:h-[660px]", "overflow-hidden")}>
                         <Image
                             src={PngIcons.nightCharterimg5}
                             alt="Hot Chilli Power Catamaran sailing on blue water"
@@ -175,7 +175,8 @@ const OurFleet = () => {
                     <p className={combine('text-zink font-inter leading-relaxed', styles.p3)}>
                         During high season, our shared multi-day cabin charter Phuket option is popular for couples who want to experience the best 5-night itineraries at an even great value.{' '}
                         <a
-                            href="#"
+                            href="https://www.faraway-yachting.com/best-of-phukets-islands-cabincharter"
+                            target='_blank'
                             className="text-[#005292] hover:text-[#D6ab62] underline font-semibold transition-colors duration-200"
                         >
                             Find Out More

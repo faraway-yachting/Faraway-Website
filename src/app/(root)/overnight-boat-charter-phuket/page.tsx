@@ -1,21 +1,15 @@
-"use client";
-import HeroSection from "@/Component/Overnight-boat-Charter/hero";
-import About from "@/Component/Home/about";
+import { Fragment } from "react";
+import { overnightCharterMetadata } from "@/lib/metadata";
+import OvernightCharterClient from "./OvernightCharterClient";
 
-import { Fragment, useRef } from "react";
-import TabSection from "@/Component/Overnight-boat-Charter/tabSection";
+export const metadata = overnightCharterMetadata;
 
-const NightBoat_Charter= () => {
-    const contactRef = useRef<HTMLDivElement | null>(null);
-    
-    return(
-        <Fragment>
-            <HeroSection contactRef={contactRef} />
-            <About/>
-          
-            <TabSection />
-        
-        </Fragment>
-    )
+const NightBoat_Charter = () => {
+  return (
+    <Fragment>
+      <OvernightCharterClient />
+    </Fragment>
+  );
 };
-export default NightBoat_Charter
+
+export default NightBoat_Charter;

@@ -2,7 +2,6 @@ import { IconType } from "react-icons";
 import { PiCrown } from "react-icons/pi";
 import { IoMdGlobe } from "react-icons/io";
 import { FaShuffle } from "react-icons/fa6";
-import { GrCompass } from "react-icons/gr";
 
 interface WhatWeCollectItem {
     icon: IconType;

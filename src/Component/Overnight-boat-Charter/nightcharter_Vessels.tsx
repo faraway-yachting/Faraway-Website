@@ -8,6 +8,7 @@ interface QuestionItem {
     title: string;
     description: string;
     isExpanded: boolean;
+    href: string;
 }
 
 const NightCharter_Vessels = () => {
@@ -16,25 +17,29 @@ const NightCharter_Vessels = () => {
             id: 'amadeus',
             title: 'Amadeus - built with purpose',
             description: 'A catamaran built with overnight charters in mind for your perfect escape to the islands.',
-            isExpanded: true
+            isExpanded: true,
+            href: 'https://www.faraway-yachting.com/crewed_boats/best-value-catamaran-phuket'
         },
         {
             id: 'nauti',
             title: 'Nauti By Nature - cool cruising',
-            description: 'Experience the perfect blend of comfort and adventure with this modern catamaran designed for unforgettable overnight charters.',
-            isExpanded: false
+            description: 'An older catamaran that has been fully rebuilt inside out in 2025 with newest electrical technology, cold aircon and huge fridge and freeze capacity for charters up to 3-4 weeks without re supplying',
+            isExpanded: false,
+            href: 'https://www.faraway-yachting.com/crewed_boats/sy-nauti-by-nature'
         },
         {
             id: 'mozart',
             title: 'Mozart - for the budget conscious sailors',
-            description: 'An excellent choice for those seeking quality overnight charters without compromising on comfort or safety.',
-            isExpanded: false
+            description: 'Mozart is a boat with charm and wooden saloon interior from the past decade - perfect if you are looking for the cheapest overnight charter in Phuket while enjoying an amazing service ',
+            isExpanded: false,
+            href: 'https://www.faraway-yachting.com/crewed_boats/cruising-overnight-yacht-charter-phuket'
         },
         {
             id: 'shindig',
             title: 'Shindig - modern art',
-            description: 'A contemporary yacht that combines sleek design with exceptional performance for your overnight charter experience.',
-            isExpanded: false
+            description: 'Shindig is a state of the art sailing catamaran, built in 2019 it has everything  modern sailing catamaran requires!',
+            isExpanded: false,
+            href: 'https://www.faraway-yachting.com/crewed_boats/sy-shindig-48-ft'
         }
     ]);
 
@@ -64,12 +69,14 @@ const NightCharter_Vessels = () => {
                             onClick={() => toggleQuestion(question.id)}
                             className="w-full px-6 py-4 text-left flex items-center justify-between"
                         >
-                            <h3 className={combine(
-                                "text-[#005292] font-semibold text-xl hover:text-[#d6ab62] transition-colors ",
-                                question.isExpanded ? "underline" : "hover:underline"
-                            )}>
-                                {question.title}
-                            </h3>
+                            <a href={question.href} target="_blank" rel="noopener noreferrer" className="block">
+                                <h3 className={combine(
+                                    "text-[#005292] font-semibold text-xl hover:text-[#d6ab62] transition-colors ",
+                                    question.isExpanded ? "underline" : "hover:underline"
+                                )}>
+                                    {question.title}
+                                </h3>
+                            </a>
 
                             {/* Caret Icon */}
                             <div className="ml-4 flex-shrink-0">

@@ -127,6 +127,6 @@ export const Sealife: ItineraryItem[] = [
     }, {
         
         place: "How are disputes or issues handled onboard?",
-        description: "Any issues should first be reported to the captain. If the captain is unable to resolve the matter, guests can contact our office via email, phone, or WhatsApp at info@far-away.net or +66 61 234 5623.",
+        description: "Any issues should first be reported to the captain. If the captain is unable to resolve the matter, guests can contact our office via email, phone, or WhatsApp at booking@faraway-yachting.com or +66 61 234 5623.",
     }
 ]

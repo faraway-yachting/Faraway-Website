@@ -15,7 +15,8 @@ const HeroSection = ({ contactRef }: HeroSectionProps) => {
       dividerImage={PngIcons.rframe2}
       contactRef={contactRef}
       showContactButton={true}
-      contactButtonText=" Plan Your Adventure Now"
+      contactButtonText="Plan Your Adventure Now"
+      href="/contact"
     />
   );
 };

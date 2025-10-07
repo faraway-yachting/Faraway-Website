@@ -16,9 +16,11 @@ const BareboatCharter = () => {
                             For fully licensed sailors, bareboat charters provide full independence for your overnight yacht rental Phuket with nothing included apart of the yacht itself.
                         </p>
                         <div className="pt-2">
-                        <p className={combine(styles.p1, "text-zink font-inter font-semibold underline leading-relaxed hover-text-[#D6AB62] not-first:max-w-lg")}>
-                                Find out more about bareboat charters!
+                            <a href="/bareboat-charter-thailand">
+                                <p className={combine(styles.p1, "text-zink font-inter font-semibold underline leading-relaxed cursor-pointer hover:text-[#d6ab62] not-first:max-w-lg")}>
+                                    Find out more about bareboat charters!
                                 </p>
+                            </a>
                         </div>
                     </div>
 
