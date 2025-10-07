@@ -5,11 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-    { label: "Crewed Charter", href: "/yacht-charter-phuket" },
-    { label: "Bareboat Charter", href: "/bareboat-charter-thailand" },
+    { label: "Day Charter", href: "/yacht-charter-phuket" },
+    { label: "Overnight Charter", href: "/overnight-boat-charter-phuket" },
     { label: "Cabin Charter", href: "/best-of-phukets-islands-cabincharter" },
+    { label: "Bareboat Charter", href: "/bareboat-charter-thailand" },
     { label: "Destinations", href: "/magical-destinations-with-private-yacht-in-phuket" },
-    { label: "Contact", href: "/contact" },
 ];
 
 const Drawer = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
@@ -93,7 +93,7 @@ const Navbar = () => {
                             <Link
                                 key={href}
                                 href={href}
-                                className={`relative inline-block font-sourceSansPro text-zink text-sm lg:text-base transition duration-200 group ${isActive ? "text-[#034250] font-semibold" : "text-[#118A92] hover:text-[#034250]"
+                                className={`relative inline-block font-sourceSansPro text-zink text-xs lg:text-base transition duration-200 group ${isActive ? "text-[#034250] font-semibold" : "text-[#118A92] hover:text-[#034250]"
                                     }`}
                             >
                                 {label}

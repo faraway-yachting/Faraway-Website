@@ -21,7 +21,7 @@ const quickLinks = [
 ];
 
 const usefulLinks = [
-  { label: "About Us", href: "/aboutus" },
+  { label: "About Us", href: "/about-us" },
   { label: "Mission Statement", href: "/aboutus#mission" },
   { label: "FAQ", href: "/#faq" },
   { label: "Privacy Policy", href: "/privacy-policy" },

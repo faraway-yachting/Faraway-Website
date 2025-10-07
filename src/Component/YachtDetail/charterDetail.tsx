@@ -48,7 +48,7 @@ const CharterDetail: React.FC<Props> = ({ data, showSection = "all" }) => {
       {/* Night Charter Section */}
       {shouldShowNight && (
         <div id="night-charter" className="text-zink border-b-1 font-inter border-gray-400">
-          <h3 className={`${styles.p5} text-zink font-semibold font-playfair mb-4`}>Night Charter</h3>
+          <h3 className={`${styles.p5} text-zink font-semibold font-playfair mb-4`}>Overnight Charter</h3>
           {data?.overnightCharter ? (
             <div 
               className="max-w-full overflow-hidden break-words"
