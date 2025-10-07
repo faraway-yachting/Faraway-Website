@@ -24,10 +24,10 @@ const Booking = () => {
 
                     {/* CTA Button */}
                     <div className="mb-4 mt-3">
-                        <Button variant="primary" className="px-8 py-4 text-lg">
+                        <Button variant="primary" href='/contact' className="px-8 py-4 text-lg">
                             <div className="flex items-center">
                                 <LuAnchor className="mr-2" />
-                                Contact Us Now
+                                Contact us today
                             </div>
                         </Button>
                     </div>
