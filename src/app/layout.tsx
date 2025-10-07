@@ -47,14 +47,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://faraway-psi.vercel.app'),
+  metadataBase: new URL('https://www.faraway-yachting.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Faraway Yachting - Luxury Yacht Charter in Phuket, Thailand',
     description: 'Experience luxury yacht charter in Phuket, Thailand with Faraway Yachting. Bareboat, crewed, and cabin charters available.',
-    url: 'https://faraway-psi.vercel.app',
+    url: 'https://www.faraway-yachting.com',
     siteName: 'Faraway Yachting',
     locale: 'en_US',
     type: 'website',
@@ -116,14 +116,19 @@ export default function RootLayout({
           }}
         />
         {/* Favicon Meta Tags - Clean and Optimized */}
-        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
-        <link rel="icon" href="/favicon-192x192.png" sizes="192x192" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link rel="shortcut icon" href="/favicon.ico" />
+
+        
+      
         <meta name="msapplication-TileImage" content="/faraway-logo-270x270.png" />
         
         {/* Additional SEO and Favicon Optimization */}
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://faraway-psi.vercel.app" />
+        <link rel="canonical" href="https://www.faraway-yachting.com" />
         
         {/* Force favicon refresh for search engines */}
         <meta httpEquiv="Cache-Control" content="public, max-age=31536000" />
