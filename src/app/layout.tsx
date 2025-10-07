@@ -1,5 +1,6 @@
 import {DM_Serif_Display} from "next/font/google";
 import {Plus_Jakarta_Sans} from "next/font/google";
+import type { Metadata } from "next";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
@@ -11,7 +12,6 @@ import WhatsAppIcon from "@/Component/WhatsAppIcon";
 import GoogleAnalyticsComponent from "@/Component/GoogleAnalytics";
 import GoogleTagManager from "@/Component/GoogleTagManager";
 import { getGoogleAnalyticsId, getGoogleTagManagerId } from "@/lib/env";
-import type { Metadata } from 'next';
 
 const DMSerifDisplay = DM_Serif_Display({
   variable: "--font-dm-serif-display",
@@ -69,21 +69,21 @@ export const metadata: Metadata = {
       { url: '/favicon.ico', sizes: 'any' },
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
-      { url: '/favicon.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
     ],
     apple: [
-      { url: '/favicon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
     other: [
       {
         rel: 'apple-touch-icon-precomposed',
-        url: '/favicon.png',
+        url: '/apple-touch-icon.png',
       },
     ],
   },
   manifest: '/manifest.json',
   other: {
-    'msapplication-TileImage': '/favicon.png',
+    'msapplication-TileImage': '/faraway-logo-270x270.png',
     'msapplication-TileColor': '#012A50',
     'theme-color': '#012A50',
   },
@@ -124,15 +124,11 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Favicon Meta Tags - Optimized for Google Search */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        {/* Favicon Meta Tags - Clean and Optimized */}
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" href="/favicon-192x192.png" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="msapplication-TileImage" content="/faraway-logo-270x270.png" />
-        <meta name="msapplication-TileColor" content="#012A50" />
-        <meta name="theme-color" content="#012A50" />
         
         {/* Additional SEO and Favicon Optimization */}
         <meta name="robots" content="index, follow" />
