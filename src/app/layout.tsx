@@ -68,12 +68,27 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Favicon Meta Tags */}
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        {/* Favicon Meta Tags - Optimized for Google Search */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <meta name="msapplication-TileImage" content="/faraway-logo-270x270.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="msapplication-TileImage" content="/faraway-logo-270x270.png" />
+        <meta name="msapplication-TileColor" content="#012A50" />
+        <meta name="theme-color" content="#012A50" />
+        
+        {/* Additional SEO and Favicon Optimization */}
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://faraway-psi.vercel.app" />
+        
+        {/* Force favicon refresh for search engines */}
+        <meta httpEquiv="Cache-Control" content="public, max-age=31536000" />
+        <meta httpEquiv="Last-Modified" content={new Date().toUTCString()} />
+        
+        {/* Google-specific favicon optimization */}
+        <meta name="google-site-verification" content="" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${source_Sans_Pro.variable}  ${inter.variable}  ${poppins.variable}  antialiased`}
