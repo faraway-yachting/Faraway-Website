@@ -101,7 +101,7 @@ const Specail_Occasions = () => {
                         </div>
 
                         {/* Feature Cards Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+                        <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 lg:gap-6">
                             {occasionCards.map((card) => (
                                 <OccasionCard
                                     key={card.id}

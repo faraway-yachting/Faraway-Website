@@ -88,7 +88,7 @@ const BoatCost = () => {
                 <div className="grid grid-cols-12 gap-6 mt-5">
                     {/* First column - colspan 5 */}
                     <div className="col-span-12 md:col-span-5 flex items-center">
-                        <h3 className={combine(styles.h3, "font-bold mb-3 md:mb-8 bg-gradient-to-r from-[#FF512F] via-[#F09819] to-[#FF512F] bg-[length:200%_auto] bg-clip-text text-transparent hover:bg-[length:100%_auto] transition-all duration-500 text-center")}>Factors Affecting Cost</h3>
+                        <h3 className={combine(styles.h3, "font-bold mb-3  md:mb-8 bg-gradient-to-r from-[#FF512F] via-[#F09819] to-[#FF512F] bg-[length:200%_auto] bg-clip-text text-transparent hover:bg-[length:100%_auto] transition-all duration-500 text-center")}>Factors Affecting Cost</h3>
                     </div>
 
                     {/* Second column - colspan 7 */}

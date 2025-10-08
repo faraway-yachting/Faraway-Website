@@ -83,7 +83,7 @@ const ActivityCard = ({ Icon, title }: {
 const GroupAdventure = () => {
     return (
         <div>
-            <section className={combine("py-10  bg-white", styles.px1)}>
+            <section className={combine("py-10  bg-white",)}>
                 <div className={styles.container}>
                     <div className="max-w-6xl mx-auto">
                         {/* Main Title */}
@@ -95,7 +95,7 @@ const GroupAdventure = () => {
                         </div>
 
                         {/* Feature Points */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12">
                             {activities.map((activity) => (
                                 <ActivityCard
                                     key={activity.id}
@@ -122,7 +122,7 @@ const GroupAdventure = () => {
                         </div>
 
                         {/* Feature Points */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 xl:gap-6">
+                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 xl:gap-6">
                             {sustainability.map((item) => (
                                 <ActivityCard
                                     key={item.id}
