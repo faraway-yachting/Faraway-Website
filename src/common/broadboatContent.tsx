@@ -22,7 +22,7 @@ interface BroadboatContentProps {
 
 const BroadboatContent = ({ title, description, heading, values, imageSrc,link, href, imageAlt, showFrame = true }: BroadboatContentProps) => (
     <section className={combine("relative bg-white overflow-hidden my-5 lg:my-8", styles.pb1, "pt-7 md:pt-9")}>
-        <div className={combine("relative z-10", styles.px3, styles.container)}>
+        <div className={combine("relative z-10 px-4" ,styles.container)}>
             <div className={combine("text-center", styles.mb2)}>
                 <h2 className={combine("text-zink mb-4", styles.h2)}>{title}</h2>
                 {showFrame && (
@@ -42,8 +42,8 @@ const BroadboatContent = ({ title, description, heading, values, imageSrc,link, 
                             <li key={i} className="flex items-start gap-3 max-w-lg">
                                 <FaCheckCircle className="text-mustard mt-1 flex-shrink-0 text-xl sm:text-2xl" />
                                 <div>
-                                    <p className={combine("font-bold text-zink", styles.p3)}>{v.title}</p>
-                                    <p className={combine("text-zink font-sourceSansPro", styles.p2)}>{v.description}</p>
+                                    <p className={combine("font-bold text-zink font-playfair mb-2", styles.p3)} dangerouslySetInnerHTML={{ __html: v.title || '' }}></p>
+                                    <p className={combine("text-zink font-sourceSansPro", styles.p2)} dangerouslySetInnerHTML={{ __html: v.description || '' }}></p>
                                 </div>
                             </li>
                         ))}

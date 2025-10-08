@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
     { label: "Day Charter", href: "/yacht-charter-phuket" },
-    { label: "Overnight Charter", href: "/overnight-boat-charter-phuket" },
+    { label: "Overnight Charter", href: "/crewed-overnight-charter" },
     { label: "Cabin Charter", href: "/best-of-phukets-islands-cabincharter" },
     { label: "Bareboat Charter", href: "/bareboat-charter-thailand" },
     { label: "Destinations", href: "/magical-destinations-with-private-yacht-in-phuket" },

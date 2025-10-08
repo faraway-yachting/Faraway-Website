@@ -8,7 +8,7 @@ import NightCharter_Vessels from './nightcharter_Vessels';
 
 const OurFleet = () => {
     return (
-        <div className={combine(styles.py4, styles.container, "mt-8")}>
+        <div className={combine(styles.container, "py-6 lg:py-8 mt-0 xl:mt-8")}>
             {/* Main Title Section */}
             <div className={combine("text-center", styles.mb2)}>
                 <HeadingContent
@@ -18,7 +18,7 @@ const OurFleet = () => {
             </div>
 
             {/* Budget-Friendly Section */}
-            <div className="grid grid-cols-12 gap-6 items-center mb-16 shadow-xl rounded-tl-none md:rounded-tl-3xl rounded-br-3xl overflow-hidden border border-gray-200">
+            <div className="grid grid-cols-12 gap-6 items-center mb-7 lg:mb-10 xl:mb-16 shadow-xl rounded-tl-none md:rounded-tl-3xl rounded-br-3xl overflow-hidden border border-gray-200">
                 {/* Text Content */}
                 <div className="col-span-12 md:col-span-8 space-y-4 ps-3 md:ps-5 lg:ps-7">
                     <div className={combine("flex items-center ", styles.mb1)}>
@@ -53,20 +53,13 @@ const OurFleet = () => {
             </div>
 
             {/*Mid-Tier Section*/}
-            <div className="grid grid-cols-12 gap-6 items-center mb-16 shadow-xl rounded-tl-none md:rounded-tl-3xl rounded-br-3xl overflow-hidden border border-gray-200">
+            <div className="grid grid-cols-12 gap-6 items-center mb-8 md:mb-12 lg:mb-15 xl:mb-16 shadow-xl rounded-tl-none md:rounded-tl-3xl rounded-br-3xl overflow-hidden border border-gray-200">
                 {/* Text Content */}
                 <div className="col-span-12 md:col-span-8 space-y-4 ps-4 md:ps-5 lg:ps-7">
                     <div className={combine("flex items-center ", styles.mb1)}>
                         <h3 className={combine(styles.h3, "text-zink")}>
-                            Mid-Tier
+                            Mid-Tier Sailing Catamarans
                         </h3>
-                        <a
-                            href="https://www.faraway-yachting.com/crewed_boats/power-catamaran-island-hopping"
-                            target='_blank'
-                            className={combine("text-[#005292] hover:text-[#D6ab62] ms-4 font-semibold transition-colors underline", styles.p1)}
-                        >
-                            Sailing Catamarans
-                        </a>
                     </div>
 
                     <p className={combine(styles.p3, "text-zink leading-relaxed max-w-xl")}>
@@ -175,7 +168,7 @@ const OurFleet = () => {
                     <p className={combine('text-zink font-inter leading-relaxed', styles.p3)}>
                         During high season, our shared multi-day cabin charter Phuket option is popular for couples who want to experience the best 5-night itineraries at an even great value.{' '}
                         <a
-                            href="https://www.faraway-yachting.com/best-of-phukets-islands-cabincharter"
+                            href="https://www.faraway-yachting.com/crewed_boats/yacht-charter-phuket"
                             target='_blank'
                             className="text-[#005292] hover:text-[#D6ab62] underline font-semibold transition-colors duration-200"
                         >

@@ -60,9 +60,9 @@ const TabSection = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) => {
 
     return (
         <div >
-            <div className="relative my-6 sm:my-8 md:my-10">
+            <div className="relative mt-6 sm:mt-8 md:mt-10">
                 {/* Faint Background Map */}
-                <div className="relative bg-white/80 z-10 py-0 sm:py-10 md:py-10 ">
+                <div className="relative bg-white/80 z-10 pt-0 sm:pt-10 md:pt-10 ">
                     <div className={styles.container}>
                         {/* Tabs */}
                         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-5 lg:gap-7 overflow-x-auto max-w-3xl mx-auto">
@@ -75,7 +75,7 @@ const TabSection = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) => {
                                     }}
                                     className={`py-1 px-2 sm:px-3 text-[16px] md:text-base lg:text-[18px] xl:text-[20px] font-poppins font-medium flex items-center gap-2 transition whitespace-nowrap ${activeTab === label
                                         ? "text-mustard border-b-2 border-b-mustard"
-                                        : "text-[#034250] border-b-2 border-b-zink"
+                                        : "text-[#034250] hover:text-[#d6ab61] border-b-2 border-b-zink"
                                         }`}
                                 >
                                     <Icon size={20} />
