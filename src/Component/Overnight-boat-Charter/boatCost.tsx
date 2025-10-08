@@ -24,7 +24,7 @@ interface BoatCardProps {
 const BoatCard = ({ src, alt, title, price, badge, badgeColor, badgeTextColor = "text-white" }: BoatCardProps) => (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
         <div className="relative">
-            <Image src={src} alt={alt} width={300} height={200} className="w-full h-61 object-cover" />
+            <Image src={src} alt={alt} width={300} height={200} className="w-full h-58 lg:h-56 xl:h-61 object-cover" />
             <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
             <div className="absolute top-3 right-3">
                 <span className={`${badgeColor} ${badgeTextColor} px-3 py-1 rounded-full text-base font-medium`}>
@@ -74,24 +74,25 @@ const BoatCost = () => {
     ];
 
     return (
-        <div className={combine(styles.container, "py-16")}>
+        <div className={combine(styles.container, "pt-7 pb-8 lg:pb-16")}>
             <div className="mb-10">
-                <HeadingContent heading="Cost of an Overnight Boat Charter in Phuket" />
+                <HeadingContent heading="Cost of an Overnight Boat Charter in Phuket"
+                description="The cost of an overnight boat charter Phuket varies by yacht type, group size, and season." />
             </div>
 
-            <div className={combine("grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-8 xl:gap-6 mb-16")}>
+            <div className={combine("grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-5 xl:gap-6 mb-16")}>
                 {boats.map((boat, index) => <BoatCard key={index} {...boat} />)}
             </div>
 
             <div className="mb-10">
                 <div className="grid grid-cols-12 gap-6 mt-5">
                     {/* First column - colspan 5 */}
-                    <div className="col-span-5 flex items-center">
-                        <h3 className={combine(styles.h3, "font-bold mb-8 bg-gradient-to-r from-[#FF512F] via-[#F09819] to-[#FF512F] bg-[length:200%_auto] bg-clip-text text-transparent hover:bg-[length:100%_auto] transition-all duration-500 text-center")}>Factors Affecting Cost</h3>
+                    <div className="col-span-12 md:col-span-5 flex items-center">
+                        <h3 className={combine(styles.h3, "font-bold mb-3 md:mb-8 bg-gradient-to-r from-[#FF512F] via-[#F09819] to-[#FF512F] bg-[length:200%_auto] bg-clip-text text-transparent hover:bg-[length:100%_auto] transition-all duration-500 text-center")}>Factors Affecting Cost</h3>
                     </div>
 
                     {/* Second column - colspan 7 */}
-                    <div className="col-span-7">
+                    <div className="col-span-12 md:col-span-7">
                         <ul className="space-y-4 lg:space-y-6">
                             {factors.map((factor, index) => <FactorItem key={index} {...factor} />)}
                         </ul>

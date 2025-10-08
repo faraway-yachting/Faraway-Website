@@ -8,15 +8,15 @@ interface RentalCostFeature {
 export const rentalCostValues: RentalCostFeature[] = [
     { 
         title: "2–4 Nights: Island Highlights", 
-        description: "Explore Phang Nga Bay, Phi Phi Islands, and Racha Islands. Short but packed with beauty, these are ideal if you’re new to an overnight yacht charter Phuket." 
+        description: "Explore <strong>Phang Nga Bay, Phi Phi Islands</strong>, and <strong>Racha Islands</strong>. Short but packed with beauty, these are ideal if you're new to an <strong>overnight yacht charter Phuket</strong>." 
     },
     { 
         title: "5 Nights: Best Value Itinerary", 
-        description: "Reach remote islands such as Koh Mook, Koh Rok, and Koh Ha. A 5-night overnight boat charter Phuket is our top recommendation for variety and value." 
+        description: "Reach remote islands such as Koh Mook, Koh Rok, and Koh Ha. A <strong>5-night overnight boat charter Phuket</strong> is our top recommendation for variety and value." 
     },
     { 
         title: "7+ Nights: Ultimate Adventures", 
-        description: "Longer charters let you explore the Similan Islands or the Butang Archipelago—perfect for divers and adventurers who want the most exclusive overnight boat charter Phuket experience." 
+        description: "Longer charters let you explore the <strong>Similan Islands</strong> or the Butang Archipelago—perfect for divers and adventurers who want the most exclusive <strong>overnight boat charter Phuket</strong> experience." 
     },
 ];
 

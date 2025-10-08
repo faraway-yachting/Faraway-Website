@@ -26,7 +26,7 @@ const IncludedInfo = () => {
     ];
 
     return (
-        <div className="py-16 md:py-20 lg:py-24 bg-white">
+        <div className="pb-7 md:pb-13 lg:pb-16 bg-white">
             <div className={combine(styles.container, "max-w-7xl")}>
                 {/* Main Title - Overnight Boat Charter */}
                 <div className="text-center mb-8">
@@ -36,7 +36,7 @@ const IncludedInfo = () => {
                 </div>
 
                 {/* Content Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center py-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-11 lg:gap-15 xl:gap-20 items-center py-6">
                     {/* Left Side - Organic Image Collage */}
                     <div >
                         <img
@@ -48,11 +48,11 @@ const IncludedInfo = () => {
                     {/* Right Side - Features List */}
                     <div className="space-y-2">
                         <h3 className={combine("text-zink font-semibold font-playfair mb-2", styles.h3)}>Crewed Charters</h3>
-                        <p className={combine("text-zink font-inter font-medium mb-2", styles.p3)}>Most guests prefer crewed overnight boat charters in Phuket, which include</p>
+                        <p className={combine("text-zink font-inter font-medium mb-2", styles.p3)}>Most guests prefer <span className="font-semibold">crewed overnight boat charters in Phuket</span>, which include</p>
                         {features.map((feature, index) => (
                             <div
                                 key={index}
-                                className="rounded-3xl p-4 cursor-pointer hover:shadow-xl transition-all duration-300"
+                                className="rounded-3xl p-2 lg:p-4 cursor-pointer hover:shadow-xl transition-all duration-300"
                             >
                                 <div className="flex items-start space-x-4">
                                     <div className="flex-shrink-0">
@@ -67,7 +67,7 @@ const IncludedInfo = () => {
                             </div>
                         ))}
                         <p className={combine("text-zink font-inter max-w-4xl mx-auto leading-relaxed mt-2", styles.p2)}>
-                            Alcohol and soft drinks are typically extra. Some higher end luxury yachts use an Advanced Provisioning Allowance (APA) system for provisions and fuel.
+                            Alcohol and soft drinks are typically extra. Some higher end luxury yachts use an <span className="font-semibold">Advanced Provisioning Allowance (APA)</span> system for provisions and fuel.
                         </p>
                     </div>
 

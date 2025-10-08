@@ -4,9 +4,9 @@ import Button from "@/styles/Button";
 
 const BareboatCharter = () => {
     return (
-        <section className="py-16 lg:py-20 xl:py-3 bg-white">
+        <section className="pb-9 lg:pb-15 pt-0 xl:py-3 bg-white">
             <div className={combine(styles.container, "px-4")}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
                     {/* Left Column - Text Content */}
                     <div className="space-y-6">
                         <h3 className={combine(styles.h3, "text-zink font-playfair font-semibold leading-tight")}>
@@ -29,7 +29,7 @@ const BareboatCharter = () => {
                         <img
                             src={PngIcons.nightCharterimg2}
                             alt="Beach scene with yacht rental items"
-                            className="w-full h-[380px] md:h-[490px] lg:h-[610px] rounded-2xl"
+                            className="w-full h-[380px] md:h-[460px] lg:h-[520px] xl::h-[570px] rounded-2xl"
                         />
                     </div>
                 </div>

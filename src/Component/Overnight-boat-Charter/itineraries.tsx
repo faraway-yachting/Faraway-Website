@@ -1,17 +1,16 @@
 import BroadboatContent from "@/common/broadboatContent"
 import { rentalCostData } from "@/data/overnight-boat/itinerariesdata"
 
-const Itineraries = () =>{
-    return(
+const Itineraries = () => {
+    return (
         <div>
-<BroadboatContent
-    title={rentalCostData.title}
-    description="Discover the perfect itinerary for your overnight boat charter in Phuket. Choose from our carefully crafted experiences designed to showcase the best of the Andaman Sea."
-    values={rentalCostData.features}
-    imageSrc="/images/overnightimg1.jpg"
-    imageAlt="Overnight boat charter itineraries in Phuket"
-    showFrame={true}
-/>
+            <BroadboatContent
+                title={rentalCostData.title}
+                values={rentalCostData.features}
+                imageSrc="/images/overnight1.png"
+                imageAlt="Overnight boat charter itineraries in Phuket"
+                showFrame={true}
+            />
         </div>
     )
 }
