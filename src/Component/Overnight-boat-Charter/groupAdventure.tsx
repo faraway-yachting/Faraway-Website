@@ -55,7 +55,7 @@ const ActivityCard = ({ Icon, title }: {
     Icon: React.ComponentType<any>;
     title: string;
 }) => (
-    <div className="text-center group mt-8">
+    <div className="text-center group mt-4 lg:mt-6 xl:mt-8">
         <div className="mb-6">
             <div
                 className="w-16 h-16 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 border-2 bg-white"
@@ -110,7 +110,7 @@ const GroupAdventure = () => {
             </section>
 
 
-            <section className={combine("pb-10 pt-7 bg-white", styles.px1)}>
+            <section className={combine("pb-10 pt-7 bg-white",)}>
                 <div className={styles.container}>
                     <div className="max-w-7xl mx-auto">
                         {/* Main Title */}
@@ -122,7 +122,7 @@ const GroupAdventure = () => {
                         </div>
 
                         {/* Feature Points */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 xl:gap-6">
                             {sustainability.map((item) => (
                                 <ActivityCard
                                     key={item.id}

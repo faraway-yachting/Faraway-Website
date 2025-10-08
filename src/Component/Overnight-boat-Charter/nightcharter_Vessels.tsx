@@ -67,7 +67,7 @@ const NightCharter_Vessels = () => {
                         {/* Question Header */}
                         <button
                             onClick={() => toggleQuestion(question.id)}
-                            className="w-full px-6 py-4 text-left flex items-center justify-between"
+                            className="w-full px-0 lg:px-3 xl:px-6 py-3 lg:py-4 text-left flex items-center justify-between"
                         >
                             <a href={question.href} target="_blank" rel="noopener noreferrer" className="block">
                                 <h3 className={combine(
@@ -100,7 +100,7 @@ const NightCharter_Vessels = () => {
                         {/* Answer Content */}
                         <div className={`overflow-hidden transition-all duration-300 ease-in-out ${question.isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                             }`}>
-                            <div className="px-6 pb-4">
+                            <div className="px-0 lg:px-3 xl:px-6 pb-3 lg:pb-4">
                                 <p className={combine(styles.p3, "text-zink max-w-lg leading-relaxed")}>
                                     {question.description}
                                 </p>

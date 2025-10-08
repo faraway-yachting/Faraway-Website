@@ -5,9 +5,11 @@ import { LuAnchor } from 'react-icons/lu';
 const Booking = () => {
     return (
         <section
-            className={combine(styles.bgImage, "bg-center", styles.minH2, styles.flexCenter)}
+            className={combine( "relative w-full bg-cover bg-end bg-no-repeat overflow-hidden", styles.minH2, styles.flexCenter)}
             style={{ backgroundImage: "url('/images/overnightimg17.png')" }}
         >
+            <div className="absolute inset-0 bg-[#012A50]/50 z-0" />
+
             {/* Content */}
             <div className={combine(styles.flexCenter, "h-full text-center text-white relative z-10", styles.px1)}>
                 <div className={combine(styles.flexCol, "justify-center items-center max-w-4xl mx-auto")}>
