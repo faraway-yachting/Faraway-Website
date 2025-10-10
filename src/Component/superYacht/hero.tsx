@@ -10,6 +10,7 @@ const HeroSection = () => {
       backgroundImage="/images/super1.png"
       dividerImage={PngIcons.rframe2}
       button="Book Now"
+      href="/contact"
       buttontext="Book Your Yacht Now"
     />
   );
