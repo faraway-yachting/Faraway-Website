@@ -55,7 +55,7 @@ const BusinessCard = () => {
       icon: FaCalculator, 
       title: "Accounting Manager Oil", 
       subtitle: "(not for bookings!)",
-      email: "flo@faraway-yachting.com",
+      email: "Oil@faraway-yachting.com",
       phone: "+66910606393",
       website:"https://www.faraway-yachting.com/", 
     }

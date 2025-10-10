@@ -20,7 +20,7 @@ const About = () => {
                                 Your privacy and security matter most </p>
                         </div>
                         <p className={combine(styles.h2, "mb-3 font-bold text-zink uppercase")}>Privacy Policy</p>
-                        <p className={combine(styles.p3, "text-zink font-semibold mb-2")}>Last updated: October 31, 2024 </p>
+                        <p className={combine(styles.p3, "text-zink font-semibold mb-2")}>Last updated: October 31, 2025 </p>
                         <p className={combine(styles.p3, "text-zink leading-relaxed")}>This Privacy Policy describes our policies and procedures on the collection, use and disclosure of your information when You use the Service and tells You about Your privacy rights and how the law protects You.<br />
                             We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.
                         </p>

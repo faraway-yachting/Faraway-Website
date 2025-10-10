@@ -95,7 +95,7 @@ export const changesData = {
 export const contactData: ContactData = {
     title: "Contact Us",
     description: "If you have any questions about this Privacy Policy, You can contact us:",
-    email: "info@far-away.net"
+    email: "booking@faraway-yachting.com"
 };
 
 // Definitions data for interpretation section

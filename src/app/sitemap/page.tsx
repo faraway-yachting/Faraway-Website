@@ -43,7 +43,8 @@ const SitemapPage = async () => {
       { name: 'Blog', url: '/blog' },
     ],
     'Yacht Charter Services': [
-      { name: 'Crewed Yachts', url: '/yacht-charter-phuket' },
+      { name: 'Day Charter', url: '/yacht-charter-phuket' },
+      { name: 'Overnight Charter', url: '/crewed-overnight-charter' },
       { name: 'Bareboat Charter Thailand', url: '/bareboat-charter-thailand' },
       { name: 'Super Yacht Charter Phuket', url: '/super-yacht-charter-phuket' },
       { name: 'Crewed Boats', url: '/crewed_boats' },

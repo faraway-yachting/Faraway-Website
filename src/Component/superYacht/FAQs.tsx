@@ -3,10 +3,13 @@
 import { useState } from "react";
 import { superYacht } from "@/data/superyacht/cardData";
 import { styles, combine } from "@/styles";
-
+import About from "@/Component/Home/about";
+import HeadingContent from "@/common/heading";
 interface FAQItem {
     place: string;
     description: string;
+    link?: string;
+    href?: string;
 }
 
 const SuperYachtFAQ = () => {
@@ -20,7 +23,8 @@ const SuperYachtFAQ = () => {
   };
 
   return (
-    <section className={combine("bg-white", styles.py4, styles.px4)}>
+    <div>
+    <section className={combine("bg-white py-6", styles.px4)}>
       <div className={styles.containerLarge}>
         {/* Heading */}
         <div className={combine("mb-12", styles.flexCol,styles.flexCenter)}>
@@ -32,9 +36,7 @@ const SuperYachtFAQ = () => {
             alt="Divider"
             className="w-[300px] md:w-[400px] lg:w-[500px] my-3 mx-auto"
           />
-          <p className={combine(styles.h5, "text-zink font-sourceSanspro text-center max-w-sm md:max-w-md lg:max-w-xl xl:max-w-2xl mx-auto")}>
-            Frequently asked questions about your sailing adventure
-          </p>
+       
         </div>
 
         {/* Accordion */}
@@ -66,7 +68,20 @@ const SuperYachtFAQ = () => {
                     {isOpen && (
                       <div className="px-4 pb-6">
                         <p className={combine("text-zink",styles.p4)}>
-                          {item.description}
+                          <span dangerouslySetInnerHTML={{ __html: item.description }} />
+                          {item.link && item.href && (
+                            <>
+                              {' '}
+                              <a 
+                                href={item.href} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-blue-600 hover:text-blue-800 underline font-semibold"
+                              >
+                                {item.link}
+                              </a>
+                            </>
+                          )}
                         </p>
                       </div>
                     )}
@@ -78,6 +93,13 @@ const SuperYachtFAQ = () => {
         </div>
       </div>
     </section>
+    <div className="mt-16">
+                <HeadingContent
+                    heading="Check Availability for Your Private Super Yacht Charter Phuket"
+                />
+                <About />
+            </div>
+    </div>
   );
 };
 
