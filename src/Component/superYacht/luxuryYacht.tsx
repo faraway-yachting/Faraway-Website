@@ -17,15 +17,8 @@ const LuxuryYacht = ({ id }: LuxuryYachtProps) => {
     }
 
     return (
-        <div className={styles.my3}>
+        <div className="mt-18 md:mt-21 lg:mt-25 xl:mt-28 mb-3 md:mb-6">
             <div className={combine(styles.px1, styles.containerLarge)}>
-                <div className={styles.my2}>
-                    <HeadingContent
-                        heading="Unforgettable Luxury Yacht Experiences in Phuket"
-                    description= "Discover world-class yacht charters designed for comfort, style, and sophistication. From personalized itineraries to floating five-star resorts, we bring you the finest way to explore the Andaman Sea."
-               />
-                </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
                     {attractionData.items.map((item, index) => (
                         <div key={index} className={styles.mb2}>
@@ -74,7 +67,6 @@ const LuxuryYacht = ({ id }: LuxuryYachtProps) => {
                                     </div>
 
                                     <div className="flex items-start mt-3">
-                                        <IoWarningOutline className="text-zink" size={24} />
                                         <p className={combine("text-base text-zink font-inter font-medium")}><span className="font-bold text-mustard text-base font-inter me-2 ">Tip:</span>{item.tip}</p>
                                     </div>
                                 </div>
