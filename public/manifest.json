@@ -1,31 +1,30 @@
 {
-    "name": "Faraway Yachting",
-    "short_name": "Faraway Yachting",
-    "description": "Luxury Yacht Charter in Phuket, Thailand",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#012A50",
-    "orientation": "portrait-primary",
-    "icons": [
-      {
-        "src": "/favicon-32x32.png",
-        "sizes": "32x32",
-        "type": "image/png"
-      },
-      {
-        "src": "/favicon-48x48.png",
-        "sizes": "48x48",
-        "type": "image/png"
-      },
-      {
-        "src": "/favicon.png",
-        "sizes": "192x192",
-        "type": "image/png",
-        "purpose": "any maskable"
-      }
-    ],
-    "categories": ["travel", "lifestyle", "business"],
-    "lang": "en-US"
-  }
-  
+  "name": "Faraway Yachting",
+  "short_name": "Faraway Yachting",
+  "description": "Luxury Yacht Charter in Phuket, Thailand",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#012A50",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["travel", "lifestyle", "business"],
+  "lang": "en-US"
+}
