@@ -9,8 +9,7 @@ const NightCharter_Customization = () => {
         <div className="relative">
             {/* SUSTAINABILITY SECTION */}
             <div className={combine("relative min-h-[70vh] md:min-h-[75vh] lg:min-h-[80vh]",)}>
-
-                {/* Content */}
+             {/* Content */}
                 <div className={combine("relative z-10 w-full", styles.container)}>
                     <div className="py-8 md:py-10 lg:py-15">
                         {/* Header Section */}
@@ -109,20 +108,20 @@ const NightCharter_Customization = () => {
                                 </div>
                             </div>
 
-                    </div>
-                    <div className="bg-white rounded-6xl shadow-xl p-6 flex items-start gap-4 max-w-7xl">
-                        {/* Icon */}
-                        <div className="w-14 h-14 bg-[#D6ab62] rounded-xl flex items-center justify-center flex-shrink-0">
-                            <HiMiniInformationCircle className='text-white text-3xl' />
                         </div>
+                        <div className="bg-white rounded-6xl shadow-xl p-6 flex items-start gap-4 max-w-7xl">
+                            {/* Icon */}
+                            <div className="w-14 h-14 bg-[#D6ab62] rounded-xl flex items-center justify-center flex-shrink-0">
+                                <HiMiniInformationCircle className='text-white text-3xl' />
+                            </div>
 
-                        {/* Content */}
-                        <div className="flex-1">
-                            <p className={combine('text-zink font-inter leading-relaxed', styles.p3)}>
-                                Your <span className='font-semibold'>overnight yacht charter Phuket</span> can be fully tailored to your preferences. With enough notice, almost anything is possible — making each charter a one-of-a-kind experience.
-                            </p>
+                            {/* Content */}
+                            <div className="flex-1">
+                                <p className={combine('text-zink font-inter leading-relaxed', styles.p3)}>
+                                    Your <span className='font-semibold'>overnight yacht charter Phuket</span> can be fully tailored to your preferences. With enough notice, almost anything is possible — making each charter a one-of-a-kind experience.
+                                </p>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>

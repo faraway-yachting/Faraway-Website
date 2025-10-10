@@ -136,8 +136,6 @@ const GroupAdventure = () => {
                 </div>
             </section>
 
-
-
         </div>
     );
 };

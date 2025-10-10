@@ -3,6 +3,7 @@ import { styles, combine } from "@/styles";
 type HeadingContentProps = {
     heading: string;
     description?: string;
+    subHedaing?: string;
 };
 
 const HeadingContent = ({ heading, description }: HeadingContentProps) => {
@@ -13,6 +14,7 @@ const HeadingContent = ({ heading, description }: HeadingContentProps) => {
                </h2>
 
             <img src="/images/rframe.png" alt="" className={combine(" md:max-w-4xl lg:max-w-3xl w-full my-3 mx-auto")} />
+            
             {description &&(
             <p className={combine(styles.p3, "text-center font-inter text-zink", styles.px1, styles.containerXl, "mx-auto")}>
                 {description}

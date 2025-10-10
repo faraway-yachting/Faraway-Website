@@ -85,7 +85,7 @@ const OurFleet = () => {
             {/*Luxury Section*/}
 
 
-            <div className="grid grid-cols-12 gap-6 items-center mb-7 md:mb-9 lg:mb-12 xl:mb-14 shadow-xl rounded-tl-none md:rounded-tl-3xl rounded-br-3xl overflow-hidden border border-gray-200">
+            <div className="grid grid-cols-12 gap-6 items-center mb-16 shadow-xl rounded-tl-none md:rounded-tl-3xl rounded-br-3xl overflow-hidden border border-gray-200">
                 {/* Text Content */}
                 <div className="col-span-12 md:col-span-8 space-y-4 ps-4 md:ps-5 lg:ps-7">
                     <div className={combine("flex items-center ", styles.mb1)}>
@@ -121,7 +121,7 @@ const OurFleet = () => {
             {/* Ultra-Luxury Section*/}
 
 
-            <div className="grid grid-cols-12 gap-6 items-center mb-7 md:mb-9 lg:mb-12 xl:mb-14 shadow-xl rounded-tl-none md:rounded-tl-3xl rounded-br-3xl overflow-hidden border border-gray-200">
+            <div className="grid grid-cols-12 gap-6 items-center mb-16 shadow-xl rounded-tl-none md:rounded-tl-3xl rounded-br-3xl overflow-hidden border border-gray-200">
                 {/* Text Content */}
                 <div className="col-span-12 md:col-span-8 space-y-4 ps-4 md:ps-5 lg:ps-7">
                     <div className={combine("flex items-center ", styles.mb1)}>
@@ -168,7 +168,7 @@ const OurFleet = () => {
                     <p className={combine('text-zink font-inter leading-relaxed', styles.p3)}>
                         During high season, our shared multi-day cabin charter Phuket option is popular for couples who want to experience the best 5-night itineraries at an even great value.{' '}
                         <a
-                            href="https://www.faraway-yachting.com/crewed_boats/yacht-charter-phuket"
+                            href="https://www.faraway-yachting.com/best-of-phukets-islands-cabincharter"
                             target='_blank'
                             className="text-[#005292] hover:text-[#D6ab62] underline font-semibold transition-colors duration-200"
                         >
