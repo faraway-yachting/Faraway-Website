@@ -41,7 +41,7 @@ const RentalYacht = () => {
                             </h2>
                             {/* Description */}
                             <p className={combine("text-white/80 font-normal font-inter leading-relaxed mb-7", styles.p2)}>
-                            Your dream super yacht charter Phuket vacation starts the moment you contact us. If you are looking for a romantic sailing trip, an adventure-filled family yacht holiday, or a VIP corporate yacht charter, we’ll give you the best possible options and guide you throughout your journey.                            </p>
+                            Your dream <span className='font-semibold'>super yacht charter Phuket </span>vacation starts the moment you contact us. If you are looking for a<span className='font-semibold'> romantic sailing trip</span>, an <span className='font-semibold'>adventure-filled family yacht holiday</span>, or a <span className='font-semibold'>VIP corporate yacht charter</span>, we’ll give you the best possible options and guide you throughout your journey.                            </p>
 
                             {/* Benefits Grid */}
                             <div className="grid grid-cols-1 gap-4">

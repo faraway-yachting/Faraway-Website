@@ -75,7 +75,7 @@ const Events = () => {
                             Host Your Special Moments at Sea
                         </h3>
                         <p className={combine(styles.p2, "font-normal max-w-5xl font-inter text-zink mx-auto leading-relaxed")}>
-                            Get ready to store more memories that you’ll cherish for a lifetime with a private yacht event in Phuket. Our super yachts are ready to provide you with the best floating venue when it comes to a luxury wedding, a corporate retreat, a stag or hen party, or even just a special day with your loved ones.
+                            Get ready to store more memories that you’ll cherish for a lifetime with a private yacht event in Phuket. Our super yachts are ready to provide you with the best floating venue when it comes to a <span className='font-semibold'>luxury wedding</span>, a <span className='font-semibold'>corporate retreat</span>, a <span className='font-semibold'>stag </span> or <span className='font-semibold'> hen party</span>, or even just a special day with your loved ones.
                         </p>
                     </div>
                     <p className={combine("text-zink font-semibold font-inter", styles.p3)}>Why celebrate aboard a premium yacht?                    </p>

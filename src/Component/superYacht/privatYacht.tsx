@@ -9,7 +9,7 @@ const PrivatYacht = () => {
                 <div className={combine("relative", styles.px1, styles.containerLarge, "py-12 md:py-16 lg:py-20")}>
                     
                     {/* Header Section */}
-                    <div className="mb-16">
+                    <div className="mb-9 lg:mb-13 xl:mb-16">
                         <h2 className={combine(styles.h2, "font-extrabold text-zink text-center mb-3")}>
                             Private Yacht in Phuket
                         </h2>
@@ -20,7 +20,7 @@ const PrivatYacht = () => {
                             Your Exclusive Getaway
                         </h3>
                         <p className={combine(styles.p3, "text-zink max-w-4xl mx-auto text-center leading-relaxed")}>
-                            Get to know more about Thailand's magnificent islands at your own convenience with a Private Yacht Charter in Phuket. At Faraway Yachting Co. Ltd., we create custom yachting experiences that aim to satisfy your desires, go along with your personality, and pace.
+                            Get to know more about Thailand's magnificent islands at your own convenience with a <span className="font-semibold">Private Yacht Charter in Phuket. At Faraway Yachting Co. Ltd.</span>, we create custom yachting experiences that aim to satisfy your desires, go along with your personality, and pace.
                         </p>
                     </div>
 
@@ -30,7 +30,7 @@ const PrivatYacht = () => {
                                 <FaAnchor className="text-mustard" size={40} />
                             </div>
                             <h3 className={combine(styles.p5, "font-bold text-zink")}>
-                                Enjoy a private boat charter in Phuket that will give you the following benefits:
+                                Enjoy a <span className="font-semibold">private boat charter in Phuket</span> that will give you the following benefits:
                             </h3>
                         </div>
                     <div className="mb-9 border-t border-gray-200 pt-10">
@@ -52,7 +52,7 @@ const PrivatYacht = () => {
                             <div className="flex items-start gap-3 md:col-span-2">
                                 <span className="text-zink text-2xl mt-1">•</span>
                                 <p className={combine(styles.p3, "text-zink leading-relaxed")}>
-                                    Let your dream Phuket yacht itinerary come to life, such as visiting various beaches, snorkeling spots, and eating mouth-watering food
+                                    Let your dream <span className="font-semibold">Phuket yacht itinerary </span>come to life, such as visiting various beaches, snorkeling spots, and eating mouth-watering food
                                 </p>
                             </div>
                         </div>

@@ -18,7 +18,7 @@ const FunMomentsComponent = () => {
             Your Dream Route, Your Way
           </h3>
           <p className={combine(styles.p1, "font-normal max-w-5xl font-inter text-zink mx-auto text-gray-700")}>
-            No two guests are the same, and neither are our charters. With our custom super yacht charters in Phuket, you take charge of where to go, how long to stay, and the activities you’ll want on your trip. We will ensure a fully personalized route that keeps you relaxed, excited, and safe.
+            No two guests are the same, and neither are our charters. With our <span className="font-semibold">custom super yacht charters in Phuket</span>, you take charge of where to go, how long to stay, and the activities you’ll want on your trip. We will ensure a fully personalized route that keeps you relaxed, excited, and safe.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-1 gap-5 md:gap-8 lg:gap-11 xl:gap-9 items-center">

@@ -35,7 +35,7 @@ export const attractionsMap: Record<string, SuperYachtAttractions> = {
                 title: " Luxury Super Yacht Charter Phuket",
                 heading: "Some of the benefits that you’ll get are:",
                 description:
-                    "When you book a luxury super yacht charter in Phuket, it is not just about the vessel– you’re entering a gateway to a premium experience at sea. Our luxury boat rental in Thailand is crewed with professional crews that are ready to take on your needs anytime you want to.",
+                    "When you book a <strong>luxury super yacht charter in Phuket</strong>, it is not just about the vessel– you’re entering a gateway to a premium experience at sea. Our <strong>luxury boat rental in Thailand</strong> is crewed with professional crews that are ready to take on your needs anytime you want to.",
                 highlights: [
                     "Itineraries crafted to your personal preferences",
                     "Full-service onboard",
@@ -51,7 +51,7 @@ export const attractionsMap: Record<string, SuperYachtAttractions> = {
                 title: "Your Luxury Yacht Phuket",
                 heading: "Our luxury yachts come with the following features:",
                 description:
-                    "Our guests love our luxury Yacht Charters in Phuket because they seek comfort, style, and sophistication. Once you step outside the yacht or even peek at the window, you’ll be able to see the panoramic sea views coupled with great decks and spacious seats. We guarantee to give you a great time with the blend of technology and elegance.",
+                    "Our guests love our <strong>luxury Yacht Charters in Phuket</strong> because they seek comfort, style, and sophistication. Once you step outside the yacht or even peek at the window, you’ll be able to see the panoramic sea views coupled with great decks and spacious seats. We guarantee to give you a great time with the blend of technology and elegance.",
                 highlights: [
                     "Air-conditioned, ultra-clean vessels",
                     "Entertainment systems bring more fun and excitement",
@@ -157,7 +157,7 @@ export const superYacht: FAQItem[] = [
         description: "It would be great if you had swimwear, light breathable clothing, sunscreen, a hat, sunglasses, sandals, and personal items.",
     },
     {
-        place: "s there Wi-Fi and air conditioning onboard?",
+        place: "Is there Wi-Fi and air conditioning onboard?",
         description: "Yes, all of our <strong>luxury yachts in Phuket</strong> are equipped with Wi-Fi, air-conditioning, and modern entertainment systems, so you will be comfortable and connected to the world at all times.",
     },
     {

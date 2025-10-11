@@ -48,7 +48,7 @@ const EliteFleet = () => {
                                 styles.p2,
                                 "text-white font-medium leading-relaxed"
                             )}>
-                                The comprehensive selection of high-end luxury yachts and catamarans for charter in Phuket ranges from 70 to 200+ feet. You&apos;ll feel the wonders of engineering, absolute elegance, and see the beautiful designs once you are on board. You are in for a treat as they are coupled with an indulging and adventure-packed experience.
+                                The comprehensive selection of high-end <span className="font-semibold">luxury yachts and catamarans for charter in Phuket</span> ranges from 70 to 200+ feet. You&apos;ll feel the wonders of engineering, absolute elegance, and see the beautiful designs once you are on board. You are in for a treat as they are coupled with an indulging and adventure-packed experience.
                             </p>
 
                             <p className={combine(
