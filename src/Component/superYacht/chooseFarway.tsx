@@ -34,7 +34,7 @@ const ChooseFarway = () => {
                             Experience the Faraway Yachting Difference
                         </h3>
                         <p className={combine(styles.p2, "font-normal max-w-5xl font-inter text-zink mx-auto leading-relaxed")}>
-                            Since the foundation of our company in 1997, we have garnered over 650 five-star reviews across Google and TripAdvisor, making us a trusted and exclusive yacht charter in Thailand. We have a high volume of repeat clients due to our professionalism, transparency, and commitment to delivering exceptional experiences.
+                            Since the foundation of our company in 1997, we have garnered over 650 five-star reviews across Google and TripAdvisor, making us a trusted and <span className='font-semibold'>exclusive yacht charter in Thailand</span>. We have a high volume of repeat clients due to our professionalism, transparency, and commitment to delivering exceptional experiences.
                         </p>
                     </div>
 
@@ -82,7 +82,7 @@ const ChooseFarway = () => {
                         {/* Content */}
                         <div className="flex-1">
                             <p className={combine('text-zink font-inter leading-relaxed', styles.p3)}>
-                                We’re proud to say that we are not just a yacht rental company in Phuket—we’re your dedicated luxury travel buddy.
+                                We’re proud to say that we are not just a <span className='font-semibold'>yacht rental company in Phuket</span>—we’re your dedicated luxury travel buddy.
                             </p>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ const ChooseFarway = () => {
             {/* CTA */}
             <div className="mt-12 md:mt-15 lg:mt-18">
                 <HeadingContent
-                    heading="Book Your Super Yacht Charter in Phuket Today"
+                    heading="Start Your Dream Holiday with a Luxury Yacht in Phuket"
                 />
                 <About />
             </div>

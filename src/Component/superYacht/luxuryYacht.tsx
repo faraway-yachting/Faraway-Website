@@ -1,9 +1,7 @@
 import Image from "next/image";
 import { LuSailboat } from "react-icons/lu";
-import { IoWarningOutline } from "react-icons/io5";
 import { attractionsMap } from "@/data/superyacht/cardData";
 import { combine, styles } from "@/styles";
-import HeadingContent from "@/common/heading";
 
 interface LuxuryYachtProps {
     id: string;
@@ -49,9 +47,10 @@ const LuxuryYacht = ({ id }: LuxuryYachtProps) => {
                                         <h3 className={combine(styles.h2, "text-zink relative z-10 xl:ms-11")}>
                                             {item.title}
                                         </h3>
-                                        <p className={combine(styles.p4, "text-zink relative z-10")}>
-                                            {item.description}
-                                        </p>
+                                        <p 
+                                          className={combine(styles.p4, "text-zink relative z-10")}
+                                          dangerouslySetInnerHTML={{ __html: item.description }}
+                                        />
                                     </div>
 
                                     <div className="flex gap-2 mt-4 flex-col">
