@@ -71,7 +71,7 @@ const IdealYacht: React.FC = () => {
         <img src={PngIcons.line3} alt="" className="w-auto h-auto" />
       </div>
 
-      <div className={combine("max-w-6xl mx-auto relative z-10")}>
+      <div className={combine("max-w-7xl px-4 xl:max-w-6xl mx-auto relative z-10")}>
         {/* Section Header */}
         <div className="text-center mb-12">
           <HeadingContent
@@ -89,21 +89,21 @@ const IdealYacht: React.FC = () => {
             Key Considerations
           </h3>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
             {keyConsiderations.map((item, index) => (
               <div
                 key={index}
                 className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100 hover:border-mustard/50"
               >
                 {/* Icon Header */}
-                <div className="flex items-center justify-center py-6 transition-all duration-300 bg-zink">
+                <div className="flex items-center justify-center py-4 xl:py-6 transition-all duration-300 bg-zink">
                   <item.icon className="text-4xl text-white" />
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-3 lg:p-4 xl:p-6">
                   <h4 className={combine(
-                    "text-zink font-bold mb-3 text-center font-playfair",
+                    "text-zink font-bold mb-2 xl:mb-3 text-center font-playfair",
                     styles.p1
                   )}>
                     {item.title}
@@ -132,7 +132,7 @@ const IdealYacht: React.FC = () => {
             Monohull or Catamaran?
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {yachtTypes.map((yacht, index) => (
               <div
                 key={index}
@@ -140,16 +140,16 @@ const IdealYacht: React.FC = () => {
               >
                 {/* Icon Header */}
                 <div className={combine(
-                  "flex items-center justify-center py-6 transition-all duration-300",
+                  "flex items-center justify-center py-4 lg:py-6 transition-all duration-300",
                   yacht.color
                 )}>
                   <yacht.icon className="text-5xl text-white" />
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-3 lg:p-4 xl:p-6">
                   <h4 className={combine(
-                    "text-zink font-bold mb-4 text-center font-playfair",
+                    "text-zink font-bold mb-2 xl:mb-4 text-center font-playfair",
                     styles.h5
                   )}>
                     {yacht.title}
