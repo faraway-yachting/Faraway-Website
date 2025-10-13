@@ -4,7 +4,6 @@ import React from 'react';
 import { RequirementsData, RequirementData } from '@/data/bareboat/boatContent';
 import { styles, combine } from '@/styles/style';
 import HeadingContent from '@/common/heading';
-import PngIcons from '@/icons/pngIcon';
 
 const Requirements: React.FC = () => {
     return (
@@ -29,8 +28,8 @@ const Requirements: React.FC = () => {
                             <div className="flex">
                                 {/* Left Image Section - Full Height */}
                                 <div className="w-[250px] flex items-center justify-center flex-shrink-0">
-                                    <img 
-                                        src={requirement.image} 
+                                    <img
+                                        src={requirement.image}
                                         alt={requirement.title}
                                         className="w-full h-full object-cover"
                                     />
@@ -61,10 +60,10 @@ const Requirements: React.FC = () => {
                             </p>
                             <p className={combine("text-zink font-medium max-w-4xl", styles.p4)}>
                                 In case you do not have the correct licensing, we highly recommend a
-                                <a href="https://www.faraway-yachting.com/crewed-overnight-charter" target="_blank" rel="noopener noreferrer" className='underline font-semibold hover:text-[#d6ab62] cursor-pointer ms-1'>
+                                <a href="/crewed-overnight-charter" rel="noopener noreferrer" className='underline font-semibold hover:text-[#d6ab62] cursor-pointer ms-1'>
                                     Crewed Overnight Charter in Phuket </a>
                                 or in case this is over your budget, we also operate
-                                <a href="https://www.faraway-yachting.com/best-of-phukets-islands-cabincharter" target="_blank" rel="noopener noreferrer" className='underline font-semibold hover:text-[#d6ab62] cursor-pointer ms-1'>
+                                <a href="/best-of-phukets-islands-cabincharter" rel="noopener noreferrer" className='underline font-semibold hover:text-[#d6ab62] cursor-pointer ms-1'>
                                     the best cabin charter in Phuket.
                                 </a>
                             </p>
