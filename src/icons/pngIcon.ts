@@ -224,5 +224,16 @@ nreview2: "/images/nreview1.png",
 nreview3: "/images/nreview2.png",
 nreview4: "/images/nreview3.png",
 nreview5: "/images/nreview4.png",
+
+bareboat1:"/images/bareboat1.png",
+bareboat2:"/images/bareboat2.png",
+bareboat3:"/images/bareboat3.png",
+bareboat4:"/images/bareboat4.png",
+bareboat5:"/images/bareboat5.png",
+bareboat6:"/images/bareboat6.png",
+bareboat7:"/images/bareboat7.png",
+bareboat8:"/images/bareboat8.png",
+bareboat9:"/images/bareboat9.png",
+bareboat10:"/images/bareboat10.png",
 }
 export default PngIcons

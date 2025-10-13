@@ -63,7 +63,7 @@ const SeaSide_Sixdays = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =
                   }}
                   className={`py-1 px-2 sm:px-3 text-[16px] md:text-base lg:text-[18px] xl:text-[20px] font-poppins font-medium flex items-center gap-2 transition whitespace-nowrap ${activeTab === label
                     ? "text-mustard border-b-2 border-b-mustard"
-                    : "text-[#034250] border-b-2 border-b-zink"
+                    : "text-[#034250] border-b-2 hover:text-[#d6ab62] border-b-zink"
                     }`}
                 >
                   <Icon size={20} />
