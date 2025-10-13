@@ -16,7 +16,7 @@ const About: React.FC<AboutProps> = ({ id }) => {
   const {
     preTitle,
     title,
-    subtitle,            
+    subtitle,
     description,
     buttonText,
     heroImage,
@@ -45,23 +45,26 @@ const About: React.FC<AboutProps> = ({ id }) => {
             <p className="text-sm md:text-base lg:text-lg font-inter text-zink max-w-xl">
               {description}
             </p>
-            <div className="flex justify-center md:justify-start">
-              <button className="text-sm sm:text-base md:text-lg font-poppins bg-mustard px-3 py-2 lg:px-5 lg:py-3 text-white rounded-lg mt-4 xl:mt-6 flex items-center gap-2 hover:bg-opacity-90 transition">
-                <FiPhone />
-                {buttonText}
-              </button>
-            </div>
+            <a
+              href="/contact">
+              <div className="flex justify-center md:justify-start">
+                <button className="text-sm sm:text-base md:text-lg font-poppins crsor-pointer bg-mustard px-3 py-2 lg:px-5 lg:py-3 text-white rounded-lg mt-4 xl:mt-6 flex items-center gap-2 hover:bg-opacity-90 transition">
+                  <FiPhone />
+                  {buttonText}
+                </button>
+              </div>
+            </a>
           </div>
 
           {/* Image Section */}
-        <div className="hidden md:block">
-          <div className="w-full flex justify-end item-start">
-            <img
-              src={heroImage}
-              alt={title}
-              className="hidden md:block w-full sm:max-w-xs md:max-w-sm md:h-[370px] lg:h-[450px] xl:h-[480px] lg:max-w-md object-cover"
-            />
-          </div>
+          <div className="hidden md:block">
+            <div className="w-full flex justify-end item-start">
+              <img
+                src={heroImage}
+                alt={title}
+                className="hidden md:block w-full sm:max-w-xs md:max-w-sm md:h-[370px] lg:h-[450px] xl:h-[480px] lg:max-w-md object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

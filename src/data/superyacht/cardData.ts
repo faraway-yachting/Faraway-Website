@@ -82,7 +82,7 @@ export const FunMoments: Record<string, SuperYacht2> = {
         items: [
             {
                 id: "01",
-                image: PngIcons.super2,
+                image: PngIcons.super4,
                 heading: "Make your trip more exciting with:",
                 description: [
                     "Handpicked destinations from hidden beaches to iconic islands",
@@ -93,7 +93,7 @@ export const FunMoments: Record<string, SuperYacht2> = {
             },
             {
                 id: "02",
-                image: PngIcons.super3,
+                image: PngIcons.super5,
                 heading: "Additional options include:",
                 description: [
                     "A romantic cruise with secluded island stops and candlelit dinners",
@@ -103,7 +103,7 @@ export const FunMoments: Record<string, SuperYacht2> = {
             },
             {
                 id: "03",
-                image: PngIcons.super3,
+                image: PngIcons.super6,
                 heading: "Some of the destinations are the following:",
                 description: [
                     "Similan Islands - Known for diving and crystal-clear visibility",
