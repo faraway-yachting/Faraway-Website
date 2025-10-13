@@ -16,7 +16,7 @@ const AboutSection_FAQs = () => {
   };
   return (
     <section className="bg-white mb-14" id="faq">
-      <div className={combine("mb-15",styles.container)}>
+      <div className={combine("mb-15", styles.container)}>
         {/* Heading */}
         <div className={combine("mb-8 lg:mb-10 xl:mb-12", styles.flexCenter, styles.flexCol)}>
           <h2 className={combine(styles.h2, "text-zink mb-1")}>
@@ -79,7 +79,6 @@ const AboutSection_FAQs = () => {
           ))}
         </div>
       </div>
-      <SetSail bgImage="/images/aboutimg6.png" />
     </section>
   );
 };
