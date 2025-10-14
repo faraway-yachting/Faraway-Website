@@ -48,17 +48,17 @@ export default function TermsWithTable() {
     { number: "02", title: "Altering a Booking", id: "altering-a-booking" },
     {
       number: "03", title: "Payments", id: "payments", points: [
-        { text: "3.1 Payment Methods & Accepted Currencies"},
-        { text: "3.2 Service & Administration Fee",},
-        { text: "3.3 Payment Deadlines", },
-        { text: "3.4 Clearance Responsibility"},
-        { text: "3.5 Late or Non-Payment Consequences"}]
+        { text: "3.1 Payment Methods & Accepted Currencies", id: "payments" },
+        { text: "3.2 Service & Administration Fee", id: "payments" },
+        { text: "3.3 Payment Deadlines", id: "payments" },
+        { text: "3.4 Clearance Responsibility", id: "payments" },
+        { text: "3.5 Late or Non-Payment Consequences", id: "payments" }]
     },
     {
       number: "04", title: "Cancellations and Insurance", id: "cancellations-and-insurance",
       points: [
-        { text: "4.2.1 Day charter cancellation", id: "daycharter-payments" },
-        { text: "4.2.2 Overnight charter cancellation", id: "overnight-charter-payments" }],
+        { text: "4.2.1 Day charter cancellation", id: "cancellations-and-insurance", },
+        { text: "4.2.2 Overnight charter cancellation", id: "cancellations-and-insurance" }],
     },
     { number: "05", title: "Force Majeure", id: "force-majeure" },
     { number: "06", title: "Safety", id: "safety" },
@@ -96,7 +96,15 @@ export default function TermsWithTable() {
       }
 
       // Check if it's a subsection ID by looking through all sections
-      // Note: Points no longer trigger scrolling
+      for (const section of sections) {
+        if (section.points) {
+          const point = section.points.find(p => p.id === targetId);
+          if (point?.id) {
+            setTimeout(() => handleScroll(point.id!), 100);
+            return;
+          }
+        }
+      }
     }
   }, []);
 
@@ -149,6 +157,7 @@ export default function TermsWithTable() {
                           className="cursor-pointer hover:text-[#D6AB62] transition-colors duration-200"
                           onClick={(e) => {
                             e.stopPropagation();
+                            if (point.id) handleScroll(point.id);
                           }}
                         >
                           {point.text}

@@ -31,8 +31,8 @@ const ChooseFaraway = () => {
                             ))}
                         </ul>
                     </div>
-                    <div className="flex justify-end xl:justify-center">
-                        <img src={PngIcons.bareboat1} alt="Overnight boat charter in Phuket" width={590} height={590} className="lg:w-[400px] xl:w-[430px] h-[360px] md:h-[485px] lg:h-[520px] xl:h-[570px] "/>
+                    <div className="flex justify-end">
+                        <img src={PngIcons.bareboat1} alt="Overnight boat charter in Phuket" width={590} height={590} className="w-full h-[360px] md:h-[425px] lg:h-[520px] xl:h-[550px] "/>
                     </div>
                 </div>
             </div>

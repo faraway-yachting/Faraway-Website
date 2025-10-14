@@ -18,7 +18,7 @@ const Requirements: React.FC = () => {
                     />
                 </div>
                 {/* Requirements Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-10 xl:gap-12">
                     {RequirementsData.map((requirement: RequirementData) => (
                         <div
                             key={requirement.id}
@@ -26,8 +26,8 @@ const Requirements: React.FC = () => {
                         >
                             {/* Card Layout: Left Image Section + Right Content Section */}
                             <div className="flex">
-                                {/* Left Image Section - Full Height */}
-                                <div className="w-[250px] flex items-center justify-center flex-shrink-0">
+                                {/* Left Image Section - Fixed Height */}
+                                <div className="w-[140px] md:w-[120px] lg:w-[210px] xl:w-[250px] md:h-[188px] lg:h-[230px] xl:h-[235px] flex items-center justify-center flex-shrink-0 overflow-hidden">
                                     <img
                                         src={requirement.image}
                                         alt={requirement.title}
@@ -35,7 +35,7 @@ const Requirements: React.FC = () => {
                                     />
                                 </div>
                                 {/* Right Content Section */}
-                                <div className="flex-1 py-10 px-6">
+                                <div className="flex-1 py-4 lg:py-8 xl:py-10 px-3 lg:px-6">
                                     <h3 className={`${styles.h5} text-zink font-semibold mb-3`}>
                                         {requirement.title}
                                     </h3>

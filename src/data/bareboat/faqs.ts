@@ -22,7 +22,7 @@ export const BareboatFAQs: ItineraryItem[] = [
     {
         place: "What is the minimum charter duration?",
         description: [
-            "We require a <strong>minimum of 2–3 nights in low season</strong> and <strong>7 days in high season<strong>.",
+            "We require a <strong>minimum of 2–3 nights in low season</strong> and <strong>7 days in high season</strong>.",
             "Short bareboat charters during peak months aren't possible due to marina turnaround schedules.",
         ],
     },
@@ -57,7 +57,7 @@ export const BareboatFAQs: ItineraryItem[] = [
         description: [
             "Provisioning is best done in Phuket before departure.",
             "Major supermarkets include <strong>Lotus's Thalang, Central, and Big C</strong>.",
-            "You can also arrange <stron>grocery delivery to our marina office</strong>, and our team will transfer your supplies to the yacht.",
+            "You can also arrange <strong>grocery delivery to our marina office</strong>, and our team will transfer your supplies to the yacht.",
             "Please note:",
             "• Alcohol cannot be purchased online due to Thai regulations.",
             "• Alcohol sales are limited to <strong>11:00–14:00 and 17:00–00:00</strong> in stores.",
@@ -73,7 +73,7 @@ export const BareboatFAQs: ItineraryItem[] = [
     {
         place: "Do you offer a damage waiver or insurance option?",
         description: [
-            "Yes. We offer a <Strong>Yacht Damage Waiver (YDW)</strong> that reduces your deposit by 50%.",
+            "Yes. We offer a <strong>Yacht Damage Waiver (YDW)</strong> that reduces your deposit by 50%.",
             "The fee is <strong>10% of the deposit amount per day</strong>.",
             "Example: For a €5,000 deposit, YDW = €50/day → Deposit reduced to €2,500 (refundable).",
         ],

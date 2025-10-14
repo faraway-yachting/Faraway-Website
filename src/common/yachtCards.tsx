@@ -319,15 +319,15 @@ const YachtCards: React.FC<YachtCardsProps> = ({
               </div>
 
               {/* Amenities */}
-              <div className="flex items-center text-xs sm:text-sm md:text-sm font-sourceSansPro lg:text-[12px] xl:text-sm text-zink">
+              <div className="flex items-center text-xs sm:text-sm md:text-[11px] font-sourceSansPro lg:text-[12px] xl:text-sm text-zink">
                 {[
-                  { icon: GiCaptainHatProfile, value: `With skipper` },
+                  { icon: GiCaptainHatProfile, value: boat.type === "bareboat" ? `Without skipper` : `With skipper` },
                   { icon: LuDoorOpen, value: `${boat.cabins} Cabins` },
                   { icon: LuToilet, value: `${boat.bathrooms} Bathrooms` },
                 ].map(({ icon: IconComponent, value }, i) => (
                   <div
                     key={i}
-                    className="flex items-center justify-center space-x-1 border-r font-sourceSansPro last:border-r-0 border-[#E8E8E8] py-1 ps-2 pe-2 xl:ps-4 xl:pe-4 first:ps-0 last:pe-0 text-zink"
+                    className="flex items-center justify-center space-x-1 border-r font-sourceSansPro last:border-r-0 border-[#E8E8E8] py-1 ps-2 pe-2 xl:ps-3 xl:pe-3 first:ps-0 last:pe-0 text-zink"
                   >
                     <IconComponent className="w-4 h-4 text-zink" />
                     <span>{value}</span>

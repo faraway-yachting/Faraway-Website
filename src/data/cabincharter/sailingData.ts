@@ -150,7 +150,12 @@ export const highSeason: ItineraryItem[] = [
             }
         ]
     },
-
+    {
+        id: "7",
+        days: "Day ",
+        place: "-Sailing Map",
+       image: "/images/map2.png"
+    },
 ];
 
 // Define the interface for yacht tips items

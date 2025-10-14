@@ -84,7 +84,7 @@ const Sailing_Itinerary = ({ sectionRef }: SailingItineraryProps) => {
 
     // Divide items manually
     const leftColumn = highSeason.filter(item => item.id === "1" || item.id === "2" || item.id === "3");
-    const rightColumn = highSeason.filter(item => item.id === "4" || item.id === "5" || item.id === "6");
+    const rightColumn = highSeason.filter(item => item.id === "4" || item.id === "5" || item.id === "6" || item.id === "7");
     return (
         <div ref={sectionRef} className={styles.py2}>
             <section className={combine("bg-white", styles.px1)}>

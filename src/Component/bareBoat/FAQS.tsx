@@ -67,13 +67,13 @@ const SealifeFAQ = ({ sectionRef, faqData, title }: SealifeFAQProps) => {
                           <div className="space-y-2">
                             {item.description.map((line, idx) => (
                               <p key={idx} className={combine("text-zink", styles.p2)}>
-                                {line}
+                                <span dangerouslySetInnerHTML={{ __html: line }} />
                               </p>
                             ))}
                           </div>
                         ) : (
                           <p className={combine("text-zink", styles.p2)}>
-                            {item.description}
+                            <span dangerouslySetInnerHTML={{ __html: item.description }} />
                           </p>
                         )}
                       </div>
