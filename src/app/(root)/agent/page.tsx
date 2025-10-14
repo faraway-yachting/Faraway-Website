@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Agent from "@/Component/SEO/agents";
 import LoginModal from "@/Component/LoginModal";
+import { getAgentEmail, getAgentPassword } from "@/lib/env";
 
 export default function AgentPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -14,9 +15,9 @@ export default function AgentPage() {
   }, []);
 
   const handleLogin = (email: string, password: string): boolean => {
-    // Static credentials for agent access
-    const validEmail = "agent@faraway.com";
-    const validPassword = "agent123";
+    // Get credentials from environment variables
+    const validEmail = getAgentEmail();
+    const validPassword = getAgentPassword();
     
     if (email === validEmail && password === validPassword) {
       setIsAuthenticated(true);

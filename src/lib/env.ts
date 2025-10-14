@@ -23,3 +23,11 @@ export const getGoogleAnalyticsId = (): string => {
 export const getGoogleTagManagerId = (): string => {
   return process.env.NEXT_PUBLIC_GTM_ID || '';
 };
+
+export const getAgentEmail = (): string => {
+  return process.env.NEXT_PUBLIC_AGENT_EMAIL || '';
+};
+
+export const getAgentPassword = (): string => {
+  return process.env.NEXT_PUBLIC_AGENT_PASSWORD || '';
+};
