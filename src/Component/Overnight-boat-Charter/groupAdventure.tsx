@@ -12,17 +12,17 @@ const activities = [
     {
         id: 1,
         icon: PiPersonSimpleSwimFill,
-        title: "Activities like snorkeling, swimming, & island-hopping"
+        title: "Activities like snorkeling, swimming, & island-hopping."
     },
     {
         id: 2,
         icon: TbEaseInOutControlPoints,
-        title: "Spacious cabins for kids and adults"
+        title: "Spacious cabins for kids and adults."
     },
     {
         id: 3,
         icon: PiBoatFill,
-        title: "Flexible itineraries tailored to your group's preferences"
+        title: "Flexible itineraries tailored to your group's preferences."
     }
 ];
 
@@ -90,7 +90,7 @@ const GroupAdventure = () => {
                         <div className="text-center mb-8">
                             <HeadingContent
                                 heading="Family & Group Adventures on an Overnight Boat Charter Phuket"
-                                description="An overnight boat charter Phuket is perfect for families and groups"
+                                description="An <strong>overnight boat charter Phuket</strong> is perfect for families and groups"
                             />
                         </div>
 
@@ -117,7 +117,7 @@ const GroupAdventure = () => {
                         <div className="text-center mb-8">
                             <HeadingContent
                                 heading="Sustainability and Eco-Friendly Yacht Charters"
-                                description="Faraway Yachting is proud to offer one of the most sustainable options for an overnight boat charter Phuket."
+                                description="Faraway Yachting is proud to offer one of the most sustainable options for an <strong>overnight boat charter Phuket.</strong>"
                             />
                         </div>
 

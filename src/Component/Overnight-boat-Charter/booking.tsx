@@ -5,7 +5,7 @@ import { LuAnchor } from 'react-icons/lu';
 const Booking = () => {
     return (
         <section
-            className={combine( "relative w-full bg-cover bg-start bg-no-repeat overflow-hidden", styles.minH2, styles.flexCenter)}
+            className={combine( "relative w-full bg-cover bg-center bg-no-repeat overflow-hidden", styles.minH2, styles.flexCenter)}
             style={{ backgroundImage: "url('/images/overnightimg17.png')" }}
         >
             <div className="absolute inset-0 bg-[#012A50]/50 z-0" />
@@ -21,7 +21,7 @@ const Booking = () => {
                     {/* Description */}
                     <p className={combine(styles.p1, "font-normal font-sourceSansPro text-center my-8 max-w-3xl")}>
                         Ready to experience Phuket's islands in complete privacy and comfort? Whether it's a honeymoon,
-                        a family escape, or a multi-day luxury yacht charter Phuket, Faraway Yachting will make it unforgettable.
+                        a family escape, or a <span className="font-semibold">multi-day luxury yacht charter Phuket</span>, Faraway Yachting will make it unforgettable.
                     </p>
 
                     {/* CTA Button */}
@@ -36,7 +36,7 @@ const Booking = () => {
 
                     {/* Sub-text */}
                     <p className="text-base md:text-lg lg:text-xl font-inter text-white/90">
-                        to start planning your Overnight Boat Charter Phuket
+                        to start planning your <span className="font-semibold">Overnight Boat Charter Phuket</span>.
                     </p>
                 </div>
             </div>

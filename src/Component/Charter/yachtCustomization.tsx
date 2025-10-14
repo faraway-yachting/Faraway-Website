@@ -12,7 +12,7 @@ const YachtCustomization: React.FC = () => {
     const description = [
         "Snorkeling, scuba diving, fishing, kayaking, paddleboarding, jet skiing, parasailing",
         " DJs, live bands, dancers, and themed parties",
-        " Fresh seafood BBQs, gourmet menus, and custom cake. Special alcohol selections can be arranged with advance notice."
+        " Fresh seafood BBQs, gourmet menus, and custom cakes. Special alcohol selections can be arranged with advance notice."
     ]
     // Additional services data array
     const additionalServices = [
@@ -43,7 +43,7 @@ const YachtCustomization: React.FC = () => {
 
                             {/* Main Heading */}
                             <h2 className={combine("text-white font-extrabold font-playfair leading-tight mb-6 text-shadow-lg", styles.h1)}>
-                                Customizing Your Phuket Yacht Experience
+                            Customizing Your Phuket Yacht Rental Experience
                             </h2>
                             {/* Description */}
                             <p className={combine("text-white/80 font-normal font-inter leading-relaxed mb-10", styles.p2)}>

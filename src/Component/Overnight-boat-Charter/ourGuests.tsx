@@ -42,7 +42,7 @@ const OurGuests = () => {
               Guests highlight our
             </h2>
             <p className={combine(styles.p2, "text-zink font-inter leading-relaxed")}>
-              When you choose us, you're not just booking a boat rental Phuket—you're securing the most reliable, personalized overnight boat charter Phuket experience.
+              When you choose us, you're not just booking a <span className='font-semibold'>boat rental Phuket</span>—you're securing the most reliable, personalized <span className='font-semibold'>overnight boat charter Phuket experience.</span>
             </p>
           </div>
 

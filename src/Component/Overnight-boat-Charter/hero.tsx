@@ -10,7 +10,7 @@ const HeroSection = ({ contactRef }: HeroSectionProps) => {
   return (
     <HeroContent
       heading="Overnight Boat Charter Phuket – Discover Remote Islands Beyond the Crowds"
-      description="Escape the ordinary with an Overnight Boat Charter Phuket. Sail off the beaten track, enjoy breathtaking sunsets and sunrises, feast on Thai flavors prepared by your private chef, and immerse yourself in island life and culture."
+      description="Escape the ordinary with an <strong>Overnight Boat Charter Phuket</strong>. Sail off the beaten track, enjoy breathtaking sunsets and sunrises, feast on Thai flavors prepared by your private chef, and immerse yourself in island life and culture."
       backgroundImage="/images/overnightimg1.png"
       dividerImage={PngIcons.rframe2}
       contactRef={contactRef}
