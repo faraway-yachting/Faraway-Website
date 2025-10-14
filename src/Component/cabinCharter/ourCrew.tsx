@@ -46,7 +46,7 @@ const OurCrew = () => {
                             <span className="font-semibold text-mustard font-playfair">Info:</span> Commitment to quality
                         </p>
                         <p className={combine("text-zink font-semibold max-w-3xl", styles.p4)}>
-                            We don’t just sell trips — we craft journeys. Our repeat guests, glowing reviews, and refined itineraries show our dedication to creating the best Phuket cabin charter available.
+                            We don’t just sell trips — we craft journeys. Our repeat guests, glowing reviews, and refined itineraries show our dedication to creating the best <span className="font-semibold">Phuket cabin charter</span> available.
                         </p>
                     </div>
                     <div className="flex-shrink-0 w-[150px] sm:w-[180px] md:w-[200px] hidden md:block ">

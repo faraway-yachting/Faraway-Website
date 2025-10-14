@@ -39,7 +39,7 @@ const ChooseBareboat = () => {
         </div>
 
         {/* Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 lg:gap-8 mb-12">
           {features.map((feature, index) => (
             <div
               key={index}
@@ -49,11 +49,11 @@ const ChooseBareboat = () => {
               <div className="h-1.5 bg-mustard"></div>
 
               {/* Card Content */}
-              <div className="p-8 relative z-10">
+              <div className="p-5 md:p-3 lg:p-6 xl:p-8 relative z-10">
                 {/* Number Badge with Ring */}
-                <div className="mb-6 relative inline-flex">
+                <div className="mb-4 xl:mb-6 relative inline-flex">
                   <div className="absolute inset-0 bg-mustard/20 rounded-full animate-pulse"></div>
-                  <div className="relative flex items-center justify-center w-16 h-16 bg-mustard rounded-full text-white font-bold text-2xl shadow-lg ring-4 ring-mustard/20">
+                  <div className="relative flex items-center justify-center w-12 lg:w-14 xl:w-16 h-12 lg:h-14 xl:h-16 bg-mustard rounded-full text-white font-bold text-2xl shadow-lg ring-4 ring-mustard/20">
                     {index + 1}
                   </div>
                 </div>
@@ -94,7 +94,7 @@ const ChooseBareboat = () => {
 
         {/* Bottom Banner */}
         <div 
-          className="rounded-2xl p-8 md:p-12 text-center relative overflow-hidden"
+          className="rounded-2xl p-6 lg:p-8 md:p-12 text-center relative overflow-hidden"
           style={{
             background: 'linear-gradient(135deg, #012A50 0%, #034d7d 50%, #012A50 100%)'
           }}
@@ -107,7 +107,7 @@ const ChooseBareboat = () => {
               Your Partner in Adventure
             </h2>
             <p className={combine("text-gray-200 font-sourceSansPro max-w-4xl mx-auto leading-relaxed", styles.p2)}>
-              Booking your Phuket bareboat charter with us guarantees independence on the water, backed by expertise on shore. Whether it's your first Thailand bareboat charter or your tenth, we'll make it unforgettable.
+              Booking your <span className="font-semibold">Phuket bareboat charter</span> with us guarantees independence on the water, backed by expertise on shore. Whether it's your first <span className="font-semibold">Thailand bareboat charter </span>or your tenth, we'll make it unforgettable.
             </p>
           </div>
         </div>

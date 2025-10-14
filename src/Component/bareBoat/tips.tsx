@@ -36,7 +36,7 @@ export const yachtTipsMainData = {
 
 const YachtTips: React.FC = () => {
     return (
-        <section className={combine("relative mb-9 mt-8")}>
+        <section className={combine("relative mb-6 md:mb-7 lg:mb-9 mt-8")}>
             <div className={combine(styles.container, "relative")}>
 
                 <div>
@@ -51,17 +51,15 @@ const YachtTips: React.FC = () => {
                         />
                     </div>
                     
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-
+                    <div className="grid md:grid-cols-2 gap-8 lg:gap-10 xl:gap-12 items-center">
                         {/* Left Side - Beach Scene */}
                         <div className="relative">
                             <img
                                 src={PngIcons.bareboat2}
                                 alt="Beach scene with yacht rental items"
-                                className="w-[490px]  h-[380px] md:h-[490px] lg:h-[440px] rounded-2xl"
+                                className="w-[490px] h-[380px] md:h-[440px] lg:h-[440px] rounded-2xl"
                             />
                         </div>
-
                         {/* Right Side - Tips */}
                         <div className={combine("space-y-5 lg:space-y-8")}>
                         <h3 className={combine('text-zink font-semibold',styles.p5)}>Packing Tips</h3>

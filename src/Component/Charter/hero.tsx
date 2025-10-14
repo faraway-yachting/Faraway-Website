@@ -19,7 +19,7 @@ const HeroSection = ({ contactRef }: HeroSectionProps) => {
 
   const description =
     pathname === "/bareboat-charter-thailand"
-      ? "Explore the Andaman Sea on your own terms with a bareboat charter Phuket. Take the helm yourself, enjoy total freedom, and design a sailing journey exactly the way you want it. Whether with family, friends, or as a couple, your Phuket bareboat charter lets you discover Thailand’s islands in complete independence."
+      ? "Explore the Andaman Sea on your own terms with a <strong>bareboat charter Phuket</strong>. Take the helm yourself, enjoy total freedom, and design a sailing journey exactly the way you want it. Whether with family, friends, or as a couple, your <strong>Phuket bareboat charter</strong>. lets you discover Thailand’s islands in complete independence."
       : "A Phuket yacht rental lets you escape the crowds and enjoy the Andaman Sea in total privacy. With Faraway Yachting, every trip is tailored for comfort, luxury, and unforgettable memories.";
 
       const subHeading =

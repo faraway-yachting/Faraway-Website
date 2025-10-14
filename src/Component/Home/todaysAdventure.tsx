@@ -17,7 +17,7 @@ const TodaysAdventure = () => {
                 <FunMoments 
                   testimonials={momentsTestimonials}
                   heading="Guest Reviews from our Phuket Yacht Charters"
-                  description="At Faraway Yachting, we're proud to have received over 750 verified ★★★★★ reviews from guests around the world. Travelers highlight our professional crew, delicious meals, and the unforgettable memories they made at sea. Whether it's a honeymoon, birthday, or family holiday, our reviews show that your Phuket yacht charter is in the best possible hands"
+                  description="At Faraway Yachting, we're proud to have received over <strong>750 verified ★★★★★ reviews</strong> from guests around the world. Travelers highlight our professional crew, delicious meals, and the unforgettable memories they made at sea. Whether it's a honeymoon, birthday, or family holiday, our reviews show that your Phuket yacht charter is in the best possible hands"
                 />
                 </div>
                 <BoatTypes />

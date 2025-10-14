@@ -35,7 +35,7 @@ const ChooseCharter = () => {
                                     The difference between a Phuket cabin charter and a private yacht
                                 </h3>
                                 <p className={combine(styles.p4, "text-zink leading-relaxed")}>
-                                    A cabin charter Phuket gives you the same premium sailing experience as a private yacht — but without needing to book the whole boat. You reserve just your cabin while sharing the yacht with a handful of other guests. This makes it more affordable, more social, and still fully serviced with captain, cook, and crew.
+                                    A <span className="font-semibold">cabin charter Phuket</span> gives you the same premium sailing experience as a private yacht — but without needing to book the whole boat. You reserve just your cabin while sharing the yacht with a handful of other guests. This makes it more affordable, more social, and still fully serviced with captain, cook, and crew.
                                 </p>
                             </div>
 
@@ -85,7 +85,7 @@ const ChooseCharter = () => {
                                     Benefits of choosing a cabin charter Thailand holiday
                                 </h3>
                                 <p className={combine(styles.p4, "text-zink leading-relaxed")}>
-                                    Phuket is the best starting point for a cabin charter Thailand because it's perfectly positioned to reach some of the world's most stunning islands. Towering limestone cliffs, emerald lagoons, and colorful reefs are all within reach. You'll enjoy authentic Thai cuisine on board, guided by an experienced local crew. Guests often say it's the best trip of their lives — the perfect balance of adventure, culture, and comfort.
+                                    Phuket is the best starting point for a <span className="font-semibold">cabin charter Thailand</span> because it's perfectly positioned to reach some of the world's most stunning islands. Towering limestone cliffs, emerald lagoons, and colorful reefs are all within reach. You'll enjoy authentic Thai cuisine on board, guided by an experienced local crew. Guests often say it's the best trip of their lives — the perfect balance of adventure, culture, and comfort.
                                 </p>
                             </div>
  
