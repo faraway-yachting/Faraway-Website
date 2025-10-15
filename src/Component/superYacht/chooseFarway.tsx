@@ -73,7 +73,7 @@ const ChooseFarway = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="bg-white rounded-6xl shadow-xl p-6 flex items-start gap-4 max-w-7xl">
+                    <div className="bg-white rounded-6xl shadow-xl p-6 flex items-center gap-4 max-w-7xl mx-auto">
                         {/* Icon */}
                         <div className="w-14 h-14 bg-[#D6ab62] rounded-xl flex items-center justify-center flex-shrink-0">
                             <HiMiniInformationCircle className='text-white text-3xl' />
