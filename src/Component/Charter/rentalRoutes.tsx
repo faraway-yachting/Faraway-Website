@@ -20,6 +20,7 @@ const RentalRoutes: React.FC = () => {
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+
           {rentalRoutesData.map((route) => (
             <RouteCard key={route.id} route={route} />
           ))}
