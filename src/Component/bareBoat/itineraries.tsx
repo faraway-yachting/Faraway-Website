@@ -6,7 +6,7 @@ import HeadingContent from '@/common/heading';
 
 const Itineraries: React.FC = () => {
     return (
-        <section className={combine("relative bg-white pt-10", styles.my3)}>
+        <section className={combine("relative bg-white pt-7 lg:pt-10", styles.my3)}>
             <div className={combine(styles.container)}>
                 <div className={combine("text-center", styles.mb2)}>
                     <HeadingContent

@@ -13,7 +13,7 @@ const OurFleet = () => {
             <div className={combine("text-center", styles.mb2)}>
                 <HeadingContent
                     heading='Our Fleet for Overnight Boat Charters in Phuket'
-                    description='Choosing the right yacht sets the foundation for your experience. Our fleet covers every style and budget for the perfect overnight boat charter Phuket.'
+                    description='Choosing the right yacht sets the foundation for your experience. Our fleet covers every style and budget for the perfect <strong>overnight boat charter Phuket.</strong>'
                 />
             </div>
 
@@ -35,7 +35,7 @@ const OurFleet = () => {
                     </div>
 
                     <p className={combine(styles.p3, "text-zink leading-relaxed max-w-xl")}>
-                        A great choice for couples or shorter trips, this efficient catamaran is ideal for 2- to 4-night getaways. Perfect for those who want a private overnight boat trip Phuket without stretching the budget.
+                        A great choice for couples or shorter trips, this efficient catamaran is ideal for 2- to 4-night getaways. Perfect for those who want a <span className="font-semibold">private overnight boat trip Phuket</span> without stretching the budget.
                     </p>
                 </div>
 
@@ -63,7 +63,7 @@ const OurFleet = () => {
                     </div>
 
                     <p className={combine(styles.p3, "text-zink leading-relaxed max-w-xl")}>
-                        Purpose-built for multi-day charters in Phuket, our four-cabin sailing catamarans include onboard water makers, large fridges, and solar-powered systems. They’re the best choice for families or groups seeking a comfortable and eco-friendly overnight boat charter Phuket.
+                        Purpose-built for <span className='font-semibold'>multi-day charters in Phuket</span>, our four-cabin sailing catamarans include onboard water makers, large fridges, and solar-powered systems. They’re the best choice for families or groups seeking a comfortable and eco-friendly <span className='font-semibold'>overnight boat charter Phuket</span>.
                     </p>
                     {/* Question Section */}
                     <NightCharter_Vessels />
@@ -102,7 +102,7 @@ const OurFleet = () => {
                     </div>
 
                     <p className={combine(styles.p3, "text-zink leading-relaxed max-w-xl")}>
-                        A fully air-conditioned yacht with a flybridge and experienced crew of four. This is a luxury overnight yacht Phuket designed for premium comfort.                    </p>
+                        A fully air-conditioned yacht with a flybridge and experienced crew of four. This is a <span className='font-semibold'>luxury overnight yacht Phuket</span> designed for premium comfort.                    </p>
                 </div>
 
                 {/* Image */}
@@ -137,7 +137,7 @@ const OurFleet = () => {
                     </div>
 
                     <p className={combine(styles.p3, "text-zink leading-relaxed max-w-xl")}>
-                        Among the finest superyachts in Southeast Asia, Mia Kai offers the best overnight yacht charter Phuket has to offer, with spacious cabins, gourmet dining, and first-class service.                    </p>
+                        Among the finest superyachts in Southeast Asia, Mia Kai offers the <span className="font-semibold">best overnight yacht charter Phuket</span> has to offer, with spacious cabins, gourmet dining, and first-class service.                    </p>
                 </div>
 
                 {/* Image */}
@@ -166,7 +166,7 @@ const OurFleet = () => {
                         Cabin Charter Option
                     </h4>
                     <p className={combine('text-zink font-inter leading-relaxed', styles.p3)}>
-                        During high season, our shared multi-day cabin charter Phuket option is popular for couples who want to experience the best 5-night itineraries at an even great value.{' '}
+                        During high season, our shared <span className='font-semibold'>multi-day cabin charter Phuket</span> option is popular for couples who want to experience the best 5-night itineraries at an even great value.{' '}
                         <a
                             href="https://www.faraway-yachting.com/best-of-phukets-islands-cabincharter"
                             target='_blank'

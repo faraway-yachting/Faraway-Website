@@ -27,7 +27,7 @@ const BoatTypes: React.FC = () => {
         <div className="text-center mb-16">
             <HeadingContent
              heading='Yachts for Every Occasion'
-             description='As a professional Phuket yacht charter operator, Faraway Yachting offers a wide selection of vessels for every type of experience'
+             description='As a professional <strong>Phuket yacht charter operator</strong>, Faraway Yachting offers a wide selection of vessels for every type of experience'
             />
           </div>
 

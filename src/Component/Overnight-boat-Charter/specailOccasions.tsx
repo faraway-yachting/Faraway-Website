@@ -28,7 +28,7 @@ const occasionCards = [
         id: 4,
         icon: "/images/nicon4.png",
         title: "Corporate retreats",
-        description: "Team-building in luxury aboard your overnight yacht charter Phuket.",
+        description: "Team-building in luxury aboard your <strong>overnight yacht charter Phuket.</strong>",
         titleColor: "text-mustard"
     }
 ];
@@ -43,13 +43,14 @@ const OccasionCard = ({ icon, title, description, titleColor }: {
     <div className="bg-white rounded-xl sm:rounded-2xl p-4 xl:p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
         <div className="xl:flex xl:items-center gap-3 sm:gap-4 md:gap-5">
             <img src={icon} alt={title} className="w-10 h-10 sm:w-12 sm:h-12 mb-3 xl:mb-0 flex-shrink-0 hidden lg:block" />
-            <h3 className={combine(`${titleColor} font-semibold text-[17px] md:text-[16px] lg:text-[19px] xl:text-[21px] leading-tight`)}>
+            <h3 className={combine(`${titleColor} font-semibold text-[17px] md:text-[16px] lg:text-[19px] xl:text-[20px] leading-tight`)}>
                 {title}
             </h3>
         </div>
-        <p className={combine("text-zink leading-relaxed mt-2 sm:mt-3 font-inter text-sm md:text[13px] lg:text-sm xl:text-base", styles.p2,)}>
-            {description}
-        </p>
+        <p 
+            className={combine("text-zink leading-relaxed mt-2 sm:mt-3 font-inter text-sm md:text[13px] lg:text-sm xl:text-base", styles.p2,)}
+            dangerouslySetInnerHTML={{ __html: description }}
+        />
     </div>
 );
 
@@ -96,7 +97,7 @@ const Specail_Occasions = () => {
                                 Special Occasions with Your Overnight Boat Charter Phuket
                             </h3>
                             <p className={combine('text-zink font-inter mt-2 sm:mt-3', styles.p3)}>
-                                With notice, we can arrange decorations, themed dinners, or onboard entertainment to personalize your overnight boat hire Phuket.
+                                With notice, we can arrange decorations, themed dinners, or onboard entertainment to personalize your <span className="font-semibold">overnight boat hire Phuket</span>.
                             </p>
                         </div>
 

@@ -54,7 +54,7 @@ const BoatTabSection = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =>
 
     return (
         <div >
-            <div className="relative mt-6 sm:mt-8 md:mt-10">
+            <div className="relative mt-5 sm:mt-6 lg:mt-10">
                 {/* Faint Background Map */}
                 <div className="relative bg-white/80 z-10 pt-0 sm:pt-10 md:pt-10 ">
                     <div className={styles.container}>

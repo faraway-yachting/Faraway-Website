@@ -11,7 +11,8 @@ const YachtTips: React.FC = () => {
             <div className={combine(styles.container, "relative")}>
                 {/* Main Content Container */}
 
-                <div className='absolute top-50 lg:top-70 xl:top-60 left-40 lg:left-70 xl:left-100 z-10 hidden md:block'>
+                <div className='absolute top-55 lg:top-75 xl:top-85 left-40 lg:left-70 xl:left-100 z-10 hidden md:block'>
+
                     <img src="/images/crewedimg19.png" alt="Yacht tip icon" />
                 </div> 
 

@@ -16,7 +16,7 @@ const NightCharter_Customization = () => {
                         <div className="text-center mb-6 md:mb-8 lg:mb-12">
                             <HeadingContent
                                 heading="Customizing Your Overnight Yacht Charter Phuket"
-                                description="Every Overnight Boat Charter Phuket with Faraway is unique. From your very first inquiry, our team works with you to design the perfect journey. Before departure, you’ll meet with our expert sailors for a personalized briefing, using the latest weather forecast to shape the best itinerary together."
+                                description="Every <strong>Overnight Boat Charter Phuket</strong> with Faraway is unique. From your very first inquiry, our team works with you to design the perfect journey. Before departure, you’ll meet with our expert sailors for a personalized briefing, using the latest weather forecast to shape the best itinerary together."
                             />
                         </div>
 

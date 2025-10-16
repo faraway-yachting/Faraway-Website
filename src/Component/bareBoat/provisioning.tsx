@@ -23,13 +23,13 @@ const OurGuests = () => {
     ];
 
     return (
-        <section className={combine("pb-10 pt-15 my-8 bg-white")}>
-            <div className={combine(styles.container, "px-4 sm:px-6 lg:px-8")}>
+        <section className={combine("md:pb-6 pb-3 lg:pb-8 xl:pb-10 pt-8 md:pt-10 lg:pt-13 xl:pt-15 my-8 bg-white")}>
+            <div className={combine(styles.container, "px-4 sm:px-4 lg:px-6 xl:px-8")}>
                 {/* Main Content Section - 2 Column Layout */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-7 lg:gap-16 items-center">
                     {/* Left Column - Text Content */}
                     <div className="text-left">
-                        <div className='mb-23'>
+                        <div className=' mb-7 md:mb-13 lg:mb-18 xl:mb-23'>
                             <h2 className={combine(styles.h2, "font-extrabold text-mustard mb-6")}>
                                 Provisioning
                             </h2>
@@ -66,7 +66,7 @@ const OurGuests = () => {
                                     border: '1px solid transparent'
                                 }}
                             >
-                                <div className="relative h-52 overflow-hidden">
+                                <div className="relative h-47 lg:h-50 xl:h-52 overflow-hidden">
                                     <Image
                                         src={feature.image}
                                         alt={feature.title}

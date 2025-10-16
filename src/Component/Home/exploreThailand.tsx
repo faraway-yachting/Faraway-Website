@@ -9,7 +9,7 @@ const ExploreThailand = () => {
             {/* Heading Section */}
             <HeadingContent
                 heading="Destinations in the Andaman Sea"
-                description="A Phuket yacht charter gives you access to some of the world’s most iconic islands and hidden gems" />
+                description="A <strong>Phuket yacht charter</strong> gives you access to some of the world’s most iconic islands and hidden gems" />
             {/* Destination Cards */}
             <HomeDestinationCards />
             <div className={combine(styles.my2, styles.flexCenter)}>

@@ -162,7 +162,7 @@ export const superYacht: FAQItem[] = [
     },
     {
         place: "What happens if the weather is bad?",
-        description: "The safety of our guests always matters. If the Marine Department of Thailand restricts sea travel due to weather, we will help you reschedule or adjust the route of your trip. For more details, kindly see our",
+        description: "The safety of our guests always matters. If the <strong>Marine Department of Thailand</strong> restricts sea travel due to weather, we will help you reschedule or adjust the route of your trip. For more details, kindly see our",
         link: "Terms & Conditions page",
         href: "https://www.faraway-yachting.com/terms-and-conditions",
     },

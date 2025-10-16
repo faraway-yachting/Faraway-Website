@@ -48,7 +48,7 @@ const IncludedInfo = () => {
                     {/* Right Side - Features List */}
                     <div className="space-y-2">
                         <h3 className={combine("text-zink font-semibold font-playfair mb-2", styles.h3)}>Crewed Charters</h3>
-                        <p className={combine("text-zink font-inter font-medium mb-2", styles.p3)}>Most guests prefer <span className="font-semibold">crewed overnight boat charters in Phuket</span>, which include</p>
+                        <p className={combine("text-zink font-inter font-medium mb-2", styles.p3)}>Most guests prefer crewed <span className="font-semibold">overnight boat charters in Phuket</span>, which include</p>
                         {features.map((feature, index) => (
                             <div
                                 key={index}
@@ -67,7 +67,7 @@ const IncludedInfo = () => {
                             </div>
                         ))}
                         <p className={combine("text-zink font-inter max-w-4xl mx-auto leading-relaxed mt-2", styles.p2)}>
-                            Alcohol and soft drinks are typically extra. Some higher end luxury yachts use an <span className="font-semibold">Advanced Provisioning Allowance (APA)</span> system for provisions and fuel.
+                            Alcohol and soft drinks are typically extra. Some higher end luxury yachts use on <span className="font-semibold">Advanced Provisioning Allowance (APA)</span> system for provisions and fuel.
                         </p>
                     </div>
 

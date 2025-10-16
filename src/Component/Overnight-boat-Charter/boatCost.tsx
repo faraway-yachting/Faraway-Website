@@ -77,7 +77,7 @@ const BoatCost = () => {
         <div className={combine(styles.container, "pt-7 pb-8 lg:pb-16")}>
             <div className="mb-10">
                 <HeadingContent heading="Cost of an Overnight Boat Charter in Phuket"
-                description="The cost of an overnight boat charter Phuket varies by yacht type, group size, and season." />
+                description="The cost of an <strong>overnight boat charter Phuket</strong> varies by yacht type, group size, and season." />
             </div>
 
             <div className={combine("grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-5 xl:gap-6 mb-16")}>
@@ -110,7 +110,7 @@ const BoatCost = () => {
                     <h4 className={combine('text-zink font-bold font-playfair mb-2', styles.h5)}>
                         Tip from our general manager                    </h4>
                     <p className={combine('text-zink font-inter leading-relaxed', styles.p3)}>
-                        A 5-night overnight boat charter Phuket offers the best balance of cost and experience. On top you can escape the most crowded islands if choosing a charter of 5 nights or more.
+                        <span className='font-semibold'>A 5-night overnight boat charter Phuket</span> offers the best balance of cost and experience. On top you can escape the most crowded islands if choosing a charter of 5 nights or more.
                     </p>
                 </div>
             </div>
