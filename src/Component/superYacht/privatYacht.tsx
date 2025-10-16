@@ -32,7 +32,7 @@ const PrivatYacht = () => {
                             <h3 className={combine(styles.p5, "font-bold text-zink")}>
                                 Enjoy a <span className="font-semibold">private boat charter in Phuket</span> that will give you the following benefits:
                             </h3>
-                        </div>
+                        </div>                                
                     <div className="mb-9 border-t border-gray-200 pt-10">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 max-w-6xl">
                             <div className="flex items-start gap-3">

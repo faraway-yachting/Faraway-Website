@@ -130,8 +130,7 @@ const GroupAdventure = () => {
                                     title={item.title}
                                 />
                             ))}
-                        </div>
-
+                        </div>            
                     </div>
                 </div>
             </section>
