@@ -7,6 +7,7 @@ import { styles, combine } from "@/styles/style";
 import Requirements from "./requirements"
 import Itineraries from "./itineraries"
 import IdealYacht from "./idealYacht"
+import About from "@/Component/Home/about";
 import OurGuests from "./provisioning"
 import YachtTips from "./tips"
 import SealifeFAQ from "./FAQS";
@@ -54,7 +55,7 @@ const BoatTabSection = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =>
 
     return (
         <div >
-            <div className="relative mt-5 sm:mt-6 lg:mt-10">
+            <div className="relative mt-6 sm:mt-8 lg:mt-10">
                 {/* Faint Background Map */}
                 <div className="relative bg-white/80 z-10 pt-0 sm:pt-10 md:pt-10 ">
                     <div className={styles.container}>
@@ -83,12 +84,14 @@ const BoatTabSection = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =>
             <div ref={itineraryRef}>
                 <Itineraries />
             </div>
+              <About />
             <div ref={inclusionsRef}>
                 <Requirements />
             </div>
             <div ref={yachtRef}>
                 < IdealYacht />
             </div>
+              <About />
             <div ref={pricingRef}>
                 <YachtTips />
                 <OurGuests />
@@ -96,6 +99,7 @@ const BoatTabSection = ({ contactRef: propContactRef }: SeaSide_SixdaysProps) =>
             <div ref={faqRef}>
                 <SealifeFAQ sectionRef={faqRef} faqData={BareboatFAQs} title="Frequently Asked Questions – Bareboat Charter Phuket" />
             </div>
+              <About />
         </div>
     );
 };
