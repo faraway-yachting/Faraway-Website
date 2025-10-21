@@ -238,5 +238,19 @@ var PngIcons = {
   bareboat8: "/images/bareboat8.png",
   bareboat9: "/images/bareboat9.png",
   bareboat10: "/images/bareboat10.png",
+
+  // Management Yachts
+  mYacht1: "/images/mYacht1.png",
+  mYacht2: "/images/myacht2.png",
+  mYacht3: "/images/myacht3.png",
+  mYacht4: "/images/myacht4.png",
+  mYacht5: "/images/myacht5.png",
+  mYacht6: "/images/myacht6.png",
+  mYacht7: "/images/myacht7.png",
+  mYacht8: "/images/myacht8.png",
+  mYacht9: "/images/myacht9.png",
+  mYacht10: "/images/mYacht10.png",
+  mYacht11: "/images/mYacht11.png",
+  mYacht12: "/images/mYacht12.png",
 }
 export default PngIcons
