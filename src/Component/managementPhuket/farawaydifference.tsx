@@ -94,11 +94,8 @@ const Farawaydifference= () => {
                     <div className="space-y-6 sm:space-y-8 order-1 lg:order-2">
                         <div className="text-center lg:text-left">
                             <h3 className={combine('text-zink font-semibold mb-3 sm:mb-4', styles.h3)}>
-                                Special Occasions with Your Overnight Boat Charter Phuket
+                            The Faraway Difference
                             </h3>
-                            <p className={combine('text-zink font-inter mt-2 sm:mt-3', styles.p3)}>
-                                With notice, we can arrange decorations, themed dinners, or onboard entertainment to personalize your <span className="font-semibold">overnight boat hire Phuket</span>.
-                            </p>
                         </div>
 
                         {/* Feature Cards Grid */}

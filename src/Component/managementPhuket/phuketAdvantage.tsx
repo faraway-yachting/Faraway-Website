@@ -49,11 +49,11 @@ const PhuketAdvantage = () => {
                 <div className="space-y-0">
                     {advantageData.map((item, index) => (
                         <div key={item.id}>
-                            <div className={`grid grid-cols-1 lg:grid-cols-3 gap-8 items-center py-8 ${index === 0 ? 'border-t-2 border-gray-300' : ''} ${index === advantageData.length - 1 ? 'border-b-2 border-gray-300' : ''}`}>
+                            <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-5 lg:py-6 xl:py-8 ${index === 0 ? 'border-t-2 border-gray-300' : ''} ${index === advantageData.length - 1 ? 'border-b-2 border-gray-300' : ''}`}>
                                 {/* First Column - Title */}
                                 <div className="text-left">
                                     <h3
-                                        className={combine(styles.h4, "font-bold ms-8 bg-gradient-to-r from-[#FF512F] via-[#F09819] to-[#FF512F] bg-clip-text text-transparent leading-tight")}
+                                        className={combine(styles.h4, "font-bold ms-3 lg:ms-5 xl:ms-8 bg-gradient-to-r from-[#FF512F] via-[#F09819] to-[#FF512F] bg-clip-text text-transparent leading-tight")}
                                     >
                                         {item.title}
                                     </h3>
@@ -69,11 +69,11 @@ const PhuketAdvantage = () => {
                                     </p>
                                 </div>
                                 {/* Third Column - Image */}
-                                <div className={combine(styles.flexCenter, "lg:justify-end me-8")}>
+                                <div className={combine(styles.flexCenter, "lg:justify-end me-3 lg:me-5 xl:me-8")}>
                                     <img
                                         src={item.image}
                                         alt={item.alt}
-                                        className="w-full max-w-xs h-25 object-cover rounded-full shadow-md"
+                                        className="w-full max-w-xs h-22 lg:h-25 object-cover rounded-full shadow-md"
                                     />
                                 </div>
                             </div>

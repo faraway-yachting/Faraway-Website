@@ -7,7 +7,7 @@ import { styles } from "@/styles/style";
 export default function Feedback() {
     return (
         <div>
-            <div className="relative overflow-hidden bg-[#EEF8FF]" style={{ backgroundImage: "url(/images/mbg2.png)", backgroundRepeat: "no-repeat", backgroundPosition: "bottom center", backgroundSize: "100% 260px", paddingBottom: 260 }}>
+            <div className="relative overflow-hidden bg-[#EEF8FF] lg:bg-[url('/images/mbg2.png')] lg:bg-no-repeat lg:bg-bottom lg:bg-[length:100%_260px] pb-[30px] lg:pb-[260px]">
                 {/* top border */}
 
                 <div className={`relative ${styles.container} py-16`}>
@@ -15,17 +15,17 @@ export default function Feedback() {
                         heading="Client Feedback"
                     />
                     {/* testimonials row */}
-                    <div className="relative mt-12 grid grid-cols-1 items-center gap-7 md:grid-cols-2">
+                    <div className="relative mt-0 lg:mt-12 grid grid-cols-1 items-center gap-12 lg:gap-0 xl:gap-7 lg:grid-cols-2">
                         {/* left card */}
                         <div className="relative">
-                            <div className="absolute right-0 top-14 z-10 -translate-x-1/2 transform">
+                            <div className="absolute right-0 top-14 z-10 translate-x-0 lg:-translate-x-1/2 transform-none lg:transform">
                                 {/* avatar */}
-                                <div className="">
+                                <div className="me-0 md:me-5 lg:me-0">
                                     <img src="/images/mYacht14.png" alt="Client avatar Marco L." className="h-full w-full object-cover" />
                                 </div>
                             </div>
                             {/* connector line from avatar to card */}
-                            <div className="me-58 rounded-xl mt-14 bg-white p-4 shadow-lg ring-1 ring-black/5">
+                            <div className="ml-auto lg:ml-0 me-39 md:me-46 lg:me-58 flex flex-col justify-end rounded-xl mt-14 bg-white p-4 shadow-lg ring-1 ring-black/5 max-w-xs lg:max-w-xl ">
                                 <p className={`${styles.p2} text-zink`}>
                                     "I can finally enjoy ownership without daily stress. The team handles everything."
                                 </p>
@@ -37,13 +37,13 @@ export default function Feedback() {
 
                         {/* right card */}
                         <div className="relative">
-                            <div className="absolute left-20 top-[-10px] z-10 -translate-x-1/2 transform">
+                            <div className="absolute left-18 md:left-23 lg:left-20 top-[-10px] z-10 -translate-x-1/2 transform">
                                 <div className="">
                                     <img src="/images/mYacht13.png" alt="Client avatar Ben V." className="h-full w-full object-cover" />
                                 </div>
                             </div>
                             {/* connector line from avatar to card */}
-                            <div className="ms-40 rounded-xl bg-white p-4 shadow-lg ring-1 ring-black/5">
+                            <div className="ms-39 md:ms-45 lg:ms-40 rounded-xl bg-white p-4 shadow-lg ring-1 ring-black/5 max-w-xs lg:max-w-xl">
                                 <p className={`${styles.p2} text-zink font-inter`}>
                                     "Faraway Yachting transformed my yacht into a reliable income stream. Their
                                     transparency and professionalism stand out in Phuket."
@@ -53,7 +53,7 @@ export default function Feedback() {
                         </div>
                     </div>
                     {/* bubbles */}
-                    <div className="pointer-events-none absolute inset-0">
+                    <div className="pointer-events-none absolute inset-0 hidden lg:block">
                         {/* left bubble strip under left avatar */}
                         <img
                             src="/images/mYacht15.png"

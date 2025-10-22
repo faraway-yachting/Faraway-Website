@@ -46,7 +46,7 @@ const TypicalReturns = () => {
                             <img
                                 src={PngIcons.mYacht7}
                                 alt="Beach scene with yacht rental items"
-                                className="w-full h-[380px] md:h-[490px] lg:h-[610px] rounded-2xl"
+                                className="w-full md:w-[460px] lg:w-[500px] xl:w-[550px] h-[380px] md:h-[470px] lg:h-[550px] xl:h-[590px] rounded-2xl"
                             />
                         </div>
                         {/* Right Side - Features List */}
@@ -92,7 +92,7 @@ const TypicalReturns = () => {
                             <img
                                 src={PngIcons.mYacht8}
                                 alt="Beach scene with yacht rental items"
-                                className="w-full h-[380px] md:h-[460px] lg:h-[520px] xl::h-[570px] rounded-2xl"
+                                className="w-full h-[380px] md:h-[420px] lg:h-[470px] xl::h-[550px] rounded-2xl"
                             />
                         </div>
                     </div>

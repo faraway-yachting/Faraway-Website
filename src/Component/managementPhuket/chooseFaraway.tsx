@@ -55,7 +55,7 @@ const ChooseFaraway = () => {
         <div className="flex flex-col items-center mt-16 space-y-6">
           <div className="text-center max-w-3xl">
             <p className="text-lg text-zink font-medium leading-relaxed">
-              Trusted by yacht owners worldwide for <span className="font-semibold">professional management</span> and <span className="font-semibold">exceptional results</span>
+            Our approach is straightforward: <span className="font-semibold">protect your asset, increase uptime, and grow charter yield.</span>
             </p>
           </div>
         </div>
