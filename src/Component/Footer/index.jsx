@@ -10,7 +10,7 @@ import { FaRegEnvelope } from "react-icons/fa";
 import { RiMap2Line } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const quickLinks = [
   { label: "Crewed Yachts", href: "/yacht-charter-phuket" },
@@ -36,6 +36,11 @@ const heading = "text-[22px] lg:text-[24px] xl:text-[28px] font-[400] mb-4 font-
 const Footer = () => {
   const [emailCopied, setEmailCopied] = useState(false);
   const [phoneCopied, setPhoneCopied] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const copyEmailToClipboard = async () => {
     try {
@@ -149,26 +154,27 @@ const Footer = () => {
 
           {/* Replaced form with iframe */}
           <div className="">
-            <iframe
-              src="https://api.leadconnectorhq.com/widget/form/xkQihe7gv1EoPJiKH3Jx"
-              style={{ width: '100%', height: '100%', border: 'none', borderRadius: '3px' }}
-              id="inline-xkQihe7gv1EoPJiKH3Jx"
-              data-layout="{'id':'INLINE'}"
-              data-trigger-type="alwaysShow"
-              data-trigger-value=""
-              data-activation-type="alwaysActivated"
-              data-activation-value=""
-              data-deactivation-type="neverDeactivate"
-              data-deactivation-value=""
-              data-form-name="Form 8"
-              data-height="402"
-              data-layout-iframe-id="inline-xkQihe7gv1EoPJiKH3Jx"
-              data-form-id="xkQihe7gv1EoPJiKH3Jx"
-              title="Form 8"
-              loading="lazy"
-            >
-            </iframe>
-
+            {isMounted && (
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/xkQihe7gv1EoPJiKH3Jx"
+                style={{ width: '100%', height: '100%', border: 'none', borderRadius: '3px' }}
+                id="inline-xkQihe7gv1EoPJiKH3Jx"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Form 8"
+                data-height="402"
+                data-layout-iframe-id="inline-xkQihe7gv1EoPJiKH3Jx"
+                data-form-id="xkQihe7gv1EoPJiKH3Jx"
+                title="Form 8"
+                loading="lazy"
+              >
+              </iframe>
+            )}
           </div>
 
           {/* Script tag for the iframe */}

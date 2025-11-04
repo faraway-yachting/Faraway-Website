@@ -69,6 +69,7 @@ const SitemapPage = async () => {
       { name: 'AMA Availability', url: '/amaavailability' },
       { name: 'HC Availability', url: '/hcavailability' },
       { name: 'Moz Availability', url: '/mozavailability' },
+      { name: 'NBN Availability', url: '/nbnavailability' },
       { name: 'SD Availability', url: '/sdavailability' },
       { name: 'SLV Availability', url: '/slvavailability' },
       { name: 'Day Charter Meeting', url: '/daycharter-meeting' },

@@ -42,6 +42,7 @@ export async function GET() {
     { url: '/amaavailability', priority: '0.7', changefreq: 'daily' },
     { url: '/hcavailability', priority: '0.7', changefreq: 'daily' },
     { url: '/mozavailability', priority: '0.7', changefreq: 'daily' },
+    { url: '/nbnavailability', priority: '0.7', changefreq: 'daily' },
     { url: '/sdavailability', priority: '0.7', changefreq: 'daily' },
     { url: '/slvavailability', priority: '0.7', changefreq: 'daily' },
     { url: '/daycharter-meeting', priority: '0.7', changefreq: 'monthly' },
