@@ -234,6 +234,33 @@ export const destinationsMetadata: Metadata = {
   },
 };
 
+// All Boat Agency Contract 2024-2025 Page Metadata
+export const allBoatAgencyContractMetadata: Metadata = {
+  title: "Boat Agency Contract 2024-2025 – Faraway Yachting Charter Rates",
+  description: "View complete agency contract details and charter rates for all boats in our fleet. Pricing for Amadeus, Hot Chilli, SY Mozart, SY Shindig, Sail La Vie, and SY Nauti By Nature. Day charter and overnight charter rates for 2025-2026 season.",
+  openGraph: {
+    title: "Boat Agency Contract 2024-2025 – Faraway Yachting Charter Rates",
+    description: "View complete agency contract details and charter rates for all boats in our fleet. Pricing for Amadeus, Hot Chilli, SY Mozart, SY Shindig, Sail La Vie, and SY Nauti By Nature. Day charter and overnight charter rates for 2025-2026 season.",
+    url: `${BASE_URL}/all-boat-agency-contract-24-25`,
+    images: [
+      {
+        url: `${BASE_URL}/images/homeimg1.png`,
+        width: 800,
+        height: 600,
+        alt: "Boat Agency Contract - Faraway Yachting Phuket",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Boat Agency Contract 2024-2025 – Faraway Yachting Charter Rates",
+    description: "View complete agency contract details and charter rates for all boats in our fleet. Pricing for Amadeus, Hot Chilli, SY Mozart, SY Shindig, Sail La Vie, and SY Nauti By Nature. Day charter and overnight charter rates for 2025-2026 season.",
+    images: [`${BASE_URL}/images/homeimg1.png`],
+  },
+};
+
 // Dynamic Yacht Metadata Generation
 export async function generateYachtMetadata(slug: string, yachtType?: 'crewed' | 'bareboat'): Promise<Metadata> {
   try {

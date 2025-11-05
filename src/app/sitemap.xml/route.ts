@@ -48,6 +48,7 @@ export async function GET() {
     { url: '/daycharter-meeting', priority: '0.7', changefreq: 'monthly' },
     { url: '/overnight-charter-meeting', priority: '0.7', changefreq: 'monthly' },
     { url: '/beverage-menu', priority: '0.6', changefreq: 'monthly' },
+    { url: '/all-boat-agency-contract-24-25', priority: '0.6', changefreq: 'yearly' },
     { url: '/business-card', priority: '0.6', changefreq: 'monthly' },
     { url: '/review-us', priority: '0.6', changefreq: 'monthly' },
     { url: '/world-nomads-travel-insurance', priority: '0.6', changefreq: 'monthly' },
