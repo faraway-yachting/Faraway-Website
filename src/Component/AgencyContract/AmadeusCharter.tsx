@@ -1,0 +1,374 @@
+import Link from "next/link";
+import { styles, combine } from "@/styles/style";
+
+const AmadeusCharter = () => {
+  return (
+    <div className="mt-12 space-y-6">
+        <div>
+          <h2 className={combine(styles.h2, "text-zink font-bold mb-2")}>
+            Amadeus 48 ft. Sailing Catamaran
+          </h2>
+          <h3 className={combine(styles.h3, "text-zink font-semibold mb-6")}>
+            Private Charter Rates
+          </h3>
+          
+          <h4 className={combine(styles.h4, "text-zink font-bold mb-4")}>
+            Season 2025/2026
+          </h4>
+          
+          <p className={combine(styles.p2, "text-zink mb-6 font-semibold")}>
+            Contract valid from 1st May 2025
+          </p>
+
+          <p className={combine(styles.p2, "text-zink mb-2 font-semibold")}>
+            Fill Contract Form
+          </p>
+          
+          <p className={combine(styles.p2, "text-zink mb-4")}>
+            Overnight Charter (price per 24 hours; start and finish at 11:00)
+          </p>
+
+          <div className="w-full overflow-x-auto border border-black rounded-lg mb-6">
+            <table className="min-w-[700px] w-full table-auto border-collapse text-center font-sourceSansPro">
+              <thead className="bg-[#D6AB62] text-white">
+                <tr className={combine(styles.h5, "font-bold")}>
+                  <th className="py-3 px-4 border-r border-b border-black">Date</th>
+                  <th className="py-3 px-4 border-r border-b border-black">1-4 pax<br />OR 3 cabins</th>
+                  <th className="py-3 px-4 border-r border-b border-black">5-6 pax<br />OR 3 cabins</th>
+                  <th className="py-3 px-4 border-r border-b border-black">7-8 pax<br />OR 4 cabins</th>
+                  <th className="py-3 px-4 border-b border-black">Remarks</th>
+                </tr>
+              </thead>
+              <tbody className="text-zink">
+                {[
+                  { date: "Nov. – 20th Dec.", pax1_4: "1,250 €", pax5_6: "1,350 €", pax7_8: "1,450 €", remarks: "Min. 5 nights; start on Sat" },
+                  { date: "20th Dec. – Feb.", pax1_4: "1,800 €", pax5_6: "1,800 €", pax7_8: "1,800 €", remarks: "7 or 14 nights; start on Sat" },
+                  { date: "Mar. – Apr.", pax1_4: "1,450 €", pax5_6: "1,550 €", pax7_8: "1,650 €", remarks: "Min. 5 nights; start on Sat" },
+                  { date: "May – Oct.", pax1_4: "1,100 €", pax5_6: "1,200 €", pax7_8: "1,300 €", remarks: "Charters less than 4 nights the rate is charged per day with start 11:00 and finish 17:00" },
+                ].map((row, index, array) => (
+                  <tr key={index} className={index !== array.length - 1 ? "border-b border-black" : ""}>
+                    <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.date}</td>
+                    <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.pax1_4}</td>
+                    <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.pax5_6}</td>
+                    <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.pax7_8}</td>
+                    <td className={combine(styles.p2, "py-3 px-4 text-left")}>{row.remarks}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p className={combine(styles.p2, "text-zink mb-6")}>
+            Charters longer than 5 nights the rate is charged per 24 hour with start and finish at 11:00
+          </p>
+
+          <p className={combine(styles.p2, "text-zink mb-4 font-semibold")}>
+            Day charter
+          </p>
+
+          <div className="w-full overflow-x-auto border border-black rounded-lg mb-6">
+            <table className="min-w-[700px] w-full table-auto border-collapse text-center font-sourceSansPro">
+              <thead className="bg-[#D6AB62] text-white">
+                <tr className={combine(styles.h5, "font-bold")}>
+                  <th className="py-3 px-4 border-r border-b border-black">Date</th>
+                  <th className="py-3 px-4 border-r border-b border-black">8 pax included</th>
+                  <th className="py-3 px-4 border-r border-b border-black">Additional pax<br />(max. 30)</th>
+                  <th className="py-3 px-4 border-b border-black">Remarks</th>
+                </tr>
+              </thead>
+              <tbody className="text-zink">
+                {[
+                  { date: "Nov. – 20th Dec.", dayCharter: "34,900 THB", additionalPax: "1,000 THB", remarks: "day charter only last minute if there is a minimum night" },
+                  { date: "20th Dec. – Feb.", dayCharter: "49,900 THB", additionalPax: "1,500 THB", remarks: "" },
+                  { date: "Mar. – Apr.", dayCharter: "39,900 THB", additionalPax: "1,500 THB", remarks: "" },
+                  { date: "May – Oct.", dayCharter: "29,900 THB", additionalPax: "1,000 THB", remarks: "" },
+                ].map((row, index, array) => (
+                  <tr key={index} className={index !== array.length - 1 ? "border-b border-black" : ""}>
+                    <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.date}</td>
+                    <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.dayCharter}</td>
+                    <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.additionalPax}</td>
+                    <td className={combine(styles.p2, "py-3 px-4 text-left")}>{row.remarks}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className={combine(styles.p2, "text-zink space-y-2 mb-6")}>
+            <p>
+              <span className="font-semibold">Duration:</span> 8 hours from and to Chalong pier; shorter charters only on request
+            </p>
+            <p>
+              Finish latest with sunset according to this website{" "}
+              <Link 
+                href="https://www.timeanddate.com/sun/thailand/phuket" 
+                className="text-blue-600 hover:text-blue-800 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.timeanddate.com/sun/thailand/phuket
+              </Link>
+            </p>
+            <p>
+              Additional Children between 3-12 years old charge 50% of adult rate; below 3 years free)
+            </p>
+          </div>
+
+          <div className="space-y-4 mb-8">
+            <h3 className={combine(styles.h4, "text-zink font-bold")}>
+              Pictures of the boat
+            </h3>
+            <a 
+              href="#" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <button className="px-6 py-2 border-2 border-zink text-zink bg-white rounded-lg font-semibold hover:bg-zink hover:text-white transition-colors duration-200">
+                Click to View
+              </button>
+            </a>
+          </div>
+
+          {/* Overnight Charter Section */}
+          <div className="mt-12 space-y-8">
+            <div className="space-y-6">
+              <h2 className={combine(styles.h2, "text-zink font-bold")}>
+                Overnight charter
+              </h2>
+              
+              <div className="space-y-6">
+                <h3 className={combine(styles.h3, "text-zink font-bold")}>
+                  Inclusions (What is included?)
+                </h3>
+                
+                <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0")}>
+                  <li>✔ Sole use of the yacht; no sharing with other groups</li>
+                  <li>✔ Service of 3 crew : captain, cook/stewards, and deckhand/engineer</li>
+                  <li>✔ Running cost of yacht (fuel & berthing)</li>
+                  <li>✔ 3 main meals each day, snacks and fruit</li>
+                  <li>✔ Drinking water</li>
+                  <li>✔ Coffee</li>
+                  <li>✔ Tea</li>
+                  <li>✔ Snorkeling gear (mask, snorkel and 12 fins in different sizes)</li>
+                  <li>✔ Handline fishing by guests and trawling by crew</li>
+                  <li>✔ Linen</li>
+                  <li>✔ Bath towels</li>
+                  <li>✔ Swimming towel</li>
+                  <li>✔ Shower gel and Shampoo</li>
+                  <li>✔ Onboard simcard Wifi</li>
+                  <li>✔ Welcome drink</li>
+                  <li>✔ Welcome towel</li>
+                  <li>✔ Accident insurance</li>
+                </ul>
+              </div>
+
+              <div className="space-y-6">
+                <h3 className={combine(styles.h3, "text-zink font-bold")}>
+                  Optional extras
+                </h3>
+                
+                <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0")}>
+                  <li>➜ additional charter time 3000 THB per hour</li>
+                  <li>➜ Thai Massage (max. 6 hours per day) = 3500 THB</li>
+                  <li>➜ Stand Up Paddle Boards = 700 THB per day per SUP</li>
+                  <li>➜ 2 Seater Kayak = 700 THB per day per Kayak</li>
+                  <li>➜ Local beers onboard (Leo, Singha or Chang) 100 THB per can (pay what you consume)</li>
+                  <li>➜ 1 pack (24 cans) of local beers (Leo, Singha or Chang) 1700 THB per pack</li>
+                  <li>➜ BBQ onboard, alcoholic beverages, cakes, cold platter, watersport, diving, etc. → Request our PDF's</li>
+                  <li>➜ Anything else that would make your charter special, just ask!</li>
+                </ul>
+              </div>
+
+              <div className="space-y-6">
+                <h3 className={combine(styles.h3, "text-zink font-bold")}>
+                  Exclusions (What is NOT included?)
+                </h3>
+                
+                <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0")}>
+                  <li>✖ National Park and entrance fees when applicable</li>
+                  <li>✖ Airline flights, transfers or hotels</li>
+                  <li>✖ Yacht delivery (if applicable)</li>
+                  <li>✖ Rental vehicles or water taxis</li>
+                  <li>✖ Meals or drinks in restaurants</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Day Charter Section */}
+          <div className="mt-12 space-y-8">
+            <div className="space-y-6">
+              <h2 className={combine(styles.h2, "text-zink font-bold")}>
+                Day charter
+              </h2>
+              
+              <div className="space-y-4">
+                <h3 className={combine(styles.h4, "text-zink font-bold")}>
+                  Destinations (choose one):
+                </h3>
+                <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0")}>
+                  <li>• Racha Yai + Coral island</li>
+                  <li>• Racha Yai + Prom Thep</li>
+                  <li>• Maithon + Coral island</li>
+                  <li>• Coral island + Prom Thep</li>
+                  <li>• Racha Yai + Maithon 9 hours (+3000 THB)</li>
+                  <li>• Maithon + Koh Khai 9 hours (+3000 THB)</li>
+                  <li className="font-semibold mt-2">all other itineraries and relocation ONLY on request and eventually surcharge!!!</li>
+                </ul>
+              </div>
+
+              <div className="space-y-6">
+                <h3 className={combine(styles.h3, "text-zink font-bold")}>
+                  Inclusions (What is included?)
+                </h3>
+                
+                <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0")}>
+                  <li>✔ Service of 3 crew : captain, cook/stewards, and deckhand/engineer</li>
+                  <li>✔ Running cost of yacht (fuel & berthing)</li>
+                  <li>✔ Individual, fresh-cooked Thai lunch buffet on board (choose from our menu)</li>
+                  <li>✔ Fresh fruits of the season</li>
+                  <li>✔ Towels</li>
+                  <li>✔ Drinking water</li>
+                  <li>✔ Soft drinks (Coke, Coke zero, Fanta and Sprite; other softdrinks on request and surcharge)</li>
+                  <li>✔ Snorkelling equipment (mask & snorkel)</li>
+                  <li>✔ Handline fishing by guests and trawling by crew</li>
+                  <li>✔ Accident insurance</li>
+                  <li>✔ Onboard simcard Wifi</li>
+                  <li>✔ Cabins are available as changing rooms, but beds are not made up /available for use</li>
+                </ul>
+              </div>
+
+              <div className="space-y-6">
+                <h3 className={combine(styles.h3, "text-zink font-bold")}>
+                  Optional extras
+                </h3>
+                
+                <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0")}>
+                  <li>➜ additional charter time 3000 THB per hour</li>
+                  <li>➜ BBQ onboard, alcoholic beverages, cakes, cold platter, watersport, diving, etc. → Request our PDF's</li>
+                  <li>➜ Thai Massage (max. 6 hours per day) = 3500 THB</li>
+                  <li>➜ Stand Up Paddle Boards = 700 THB per day per SUP</li>
+                  <li>➜ 2 Seater Kayak = 700 THB per day per Kayak</li>
+                  <li>➜ Local beers onboard (Leo, Singha or Chang) 100 THB per can (pay what you consume)</li>
+                  <li>➜ 1 pack (24 cans) of local beers (Leo, Singha or Chang) 1700 THB per pack</li>
+                  <li>➜ Anything else that would make your charter special, just ask!</li>
+                </ul>
+              </div>
+
+              <div className="space-y-6">
+                <h3 className={combine(styles.h3, "text-zink font-bold")}>
+                  Exclusions (What is NOT included?)
+                </h3>
+                
+                <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0")}>
+                  <li>✖ National Park and entrance fees when applicable</li>
+                  <li>✖ Airline flights, transfers or hotels</li>
+                  <li>✖ Yacht delivery (if applicable)</li>
+                  <li>✖ Rental vehicles or water taxis</li>
+                  <li>✖ Meals or drinks in restaurants</li>
+                  <li>✖ Cabin with the bed made up = 1,000 THB per cabin</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <div className="mt-12 space-y-8">
+        <div className="space-y-4">
+          <h3 className={combine(styles.h4, "text-zink font-bold")}>
+            Boat Pictures
+          </h3>
+          <a 
+            href="#" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <button className="px-6 py-2 border-2 border-zink text-zink bg-white rounded-lg font-semibold hover:bg-zink hover:text-white transition-colors duration-200">
+              Click to View
+            </button>
+          </a>
+        </div>
+
+        <div className="space-y-4">
+          <h3 className={combine(styles.h4, "text-zink font-bold")}>
+            Marketing Material
+          </h3>
+          <a 
+            href="#" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <button className="px-6 py-2 border-2 border-zink text-zink bg-white rounded-lg font-semibold hover:bg-zink hover:text-white transition-colors duration-200">
+              Click to View
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div className="mt-12 space-y-8">
+        <div className="space-y-6">
+          <h2 className={combine(styles.h2, "text-zink font-bold")}>
+            Inclusions (What is included?)
+          </h2>
+          
+          <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0")}>
+            <li>✔ 5 nights/ 6 days sailing (check-in, check out 11:00)</li>
+            <li>✔ Use of the booked cabin and bathroom</li>
+            <li>✔ Service of 3 crew: captain, cook/stewardess, and deckhand/engineer</li>
+            <li>✔ Running cost of yacht (fuel & berthing)</li>
+            <li>✔ Full board including 5 x breakfast, 5x lunch, and 4x dinner, as well as fruits and snacks</li>
+            <li>✔ Beach BBQ (if permitted by the national park)</li>
+            <li>✔ Welcome drink</li>
+            <li>✔ Welcome towel</li>
+            <li>✔ Coffee</li>
+            <li>✔ Tea</li>
+            <li>✔ Drinking water</li>
+            <li>✔ Snorkeling gear (mask, snorkel, 12 fins in different sizes)</li>
+            <li>✔ Handline fishing</li>
+            <li>✔ Trawling by crew</li>
+            <li>✔ Linen, bath towels, and swimming towels</li>
+            <li>✔ 2 x stand-up paddle boards (shared with other guests on board)</li>
+            <li>✔ 2 x kayak (shared with other guests on board)</li>
+            <li>✔ Accident insurance</li>
+          </ul>
+        </div>
+
+        <div className="space-y-6">
+          <h2 className={combine(styles.h2, "text-zink font-bold")}>
+            Optional extras
+          </h2>
+          
+          <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0")}>
+            <li>➜ Private stand Up Paddle Boards = 700 THB per day per SUP</li>
+            <li>➜ 2 Seater Kayak = 700 THB per day per Kayak</li>
+            <li>➜ Local beers onboard (Leo, Singha or Chang) 100 THB per can (pay what you consume)</li>
+            <li>➜ 1 pack (24 cans) of local beers (Leo, Singha or Chang) 1700 THB per pack</li>
+            <li>➜ BBQ onboard, alcoholic beverages, cakes, cold platter, etc. → Request our PDF's</li>
+            <li>➜ Anything else that would make your charter special, just ask!</li>
+          </ul>
+        </div>
+
+        <div className="space-y-6">
+          <h2 className={combine(styles.h2, "text-zink font-bold")}>
+            Exclusions (What is NOT included?)
+          </h2>
+          
+          <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0")}>
+            <li>✖ National Park and entrance fees when applicable</li>
+            <li className="pl-6 text-sm">(Phi Phi Don viewpoint 50 THB, Lanta water fall 200 THB, Koh Muk 300 THB, Koh Rok & Koh Haa 400 THB, Phi Phi Leh 400 THB)</li>
+            <li>✖ Airline flights, transfers or hotels</li>
+            <li>✖ Yacht delivery (if applicable)</li>
+            <li>✖ Rental vehicles or water taxis</li>
+            <li>✖ Meals or drinks in restaurants</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AmadeusCharter;
+
