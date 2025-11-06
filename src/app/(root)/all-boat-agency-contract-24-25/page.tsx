@@ -82,7 +82,7 @@ const AllBoatAgencyContract = () => {
             </ol>
           </div>
 
-          <div className="space-y-6">
+          <div id="contact-information" className="space-y-6">
             <h1 className={combine(styles.h2, "text-zink font-bold text-center mb-8")}>
               Contact Information
             </h1>
@@ -162,6 +162,15 @@ const AllBoatAgencyContract = () => {
           </div>
         </div>
         </div>
+
+      <a
+        href="https://sendlink.co/documents/doc-form/68b53602355b332ea13c54b3?locale=en-US"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] sm:w-auto px-6 py-3 bg-[#012A50] text-white font-semibold rounded-md shadow-lg transition-colors duration-200 hover:bg-[#D6AB62] hover:text-[#012A50] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D6AB62] print:hidden"
+      >
+        Fill Contract Form
+      </a>
       </Fragment>
     );
   };

@@ -5,25 +5,15 @@ const SailLaVieCharter = () => {
   return (
     <div className="mt-12 space-y-6">
       <div>
-        <h2 className={combine(styles.h2, "text-zink font-bold mb-2")}>
-          Sail La Vie 51 ft Private Charter Rates
-        </h2>
-        
-        <h4 className={combine(styles.h4, "text-zink font-bold mb-4")}>
-          Season 2025/2026
-        </h4>
-        
-        <p className={combine(styles.p2, "text-zink mb-6 font-semibold")}>
-          Contract valid from 1st May 2025
-        </p>
-
-        <p className={combine(styles.p2, "text-zink mb-2 font-semibold")}>
-          Fill Contract Form
-        </p>
-        
-        <p className={combine(styles.p2, "text-zink mb-4 font-semibold")}>
-          Day charter
-        </p>
+        <div className="space-y-4 text-center">
+          <h2 className={combine(styles.h2, "text-zink font-bold")}>Sail La Vie 51 ft Private Charter Rates</h2>
+          
+          <h4 className={combine(styles.h4, "text-zink font-bold")}>Season 2025/2026</h4>
+          
+          <p className={combine(styles.p2, "text-zink font-semibold")}>Contract valid from 1st May 2025</p>
+          
+          <p className={combine(styles.p2, "text-zink text-center font-semibold")}>Day charter</p>
+        </div>
 
         <div className="w-full overflow-x-auto border border-black rounded-lg mb-6">
           <table className="min-w-[700px] w-full table-auto border-collapse text-center font-sourceSansPro">
@@ -219,17 +209,17 @@ const SailLaVieCharter = () => {
           </div>
 
           <div className="space-y-4 mt-8">
-            <h3 className={combine(styles.h4, "text-zink font-bold")}>
+            <h3 className={combine(styles.h4, "text-zink font-bold")}> 
               Pictures of the boat
             </h3>
-            <a 
-              href="#" 
+            <a
+              href="https://drive.google.com/drive/folders/1CBA_PKwPJcQe6xAWzyjjWkqP4TMel8wx?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
             >
-              <button className="px-6 py-2 border-2 border-zink text-zink bg-white rounded-lg font-semibold hover:bg-zink hover:text-white transition-colors duration-200">
-                Click to View
+              <button className="px-6 py-2 bg-[#012A50] text-white rounded-md font-semibold transition-colors duration-200 hover:bg-[#D6AB62] hover:text-[#012A50]">
+                Pictures of the boat
               </button>
             </a>
           </div>
@@ -270,18 +260,24 @@ const SailLaVieCharter = () => {
 
               <div className="w-full overflow-x-auto border border-black rounded-lg mb-6">
                 <table className="min-w-[700px] w-full table-auto border-collapse text-center font-sourceSansPro">
-                  <thead className="bg-[#D6AB62] text-white">
-                    <tr className={combine(styles.h5, "font-bold")}>
-                      <th className="py-3 px-4 border-r border-b border-black">Overnight Charter</th>
-                      <th className="py-3 px-4 border-r border-b border-black">(max. 8pax in 4 double cabins)</th>
-                      <th className="py-3 px-4 border-r border-b border-black">High Season Pricing</th>
-                      <th className="py-3 px-4 border-b border-black">Peak Season Pricing</th>
+                  <thead>
+                    <tr className="bg-[#D6AB62] text-white">
+                      <th
+                        className={combine(styles.p2, "py-3 px-4 border-r border-b border-black font-semibold align-middle")}
+                        rowSpan={2}
+                      >
+                        Overnight Charter Duration
+                      </th>
+                      <th
+                        className={combine(styles.p2, "py-3 px-4 border-r border-b border-black font-semibold text-center")}
+                        colSpan={2}
+                      >
+                        Overnight Charter<br />(max. 8pax in 4 double cabins)
+                      </th>
                     </tr>
-                    <tr className={combine(styles.h5, "font-bold")}>
-                      <th className="py-3 px-4 border-r border-black"></th>
-                      <th className="py-3 px-4 border-r border-black"></th>
-                      <th className="py-3 px-4 border-r border-black">Nov. till Apr.</th>
-                      <th className="py-3 px-4">20th Dec – 10th Jan.</th>
+                    <tr className="bg-[#D6AB62] text-white">
+                      <th className={combine(styles.p2, "py-3 px-4 border-r border-b border-black font-semibold")}>High Season Pricing<br />Nov. till Apr.</th>
+                      <th className={combine(styles.p2, "py-3 px-4 border-b border-black font-semibold")}>Peak Season Pricing<br />20th Dec – 10th Jan.</th>
                     </tr>
                   </thead>
                   <tbody className="text-zink">
@@ -294,7 +290,6 @@ const SailLaVieCharter = () => {
                     ].map((row, index, array) => (
                       <tr key={index} className={index !== array.length - 1 ? "border-b border-black" : ""}>
                         <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.duration}</td>
-                        <td className={combine(styles.p2, "py-3 px-4 border-r border-black")}></td>
                         <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.highSeason}</td>
                         <td className={combine(styles.p2, "py-3 px-4 font-semibold")}>{row.peakSeason}</td>
                       </tr>

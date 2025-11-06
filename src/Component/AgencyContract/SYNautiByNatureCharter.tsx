@@ -5,31 +5,25 @@ const SYNautiByNatureCharter = () => {
   return (
     <div className="mt-12 space-y-6">
       <div>
-        <h2 className={combine(styles.h2, "text-zink font-bold mb-2")}>
-          SY Nauti By Nature 45 ft. Leopard sailing catamaran
-        </h2>
-        <h3 className={combine(styles.h3, "text-zink font-semibold mb-6")}>
-          Private charter rates Season 2025/2026
-        </h3>
-        
-        <p className={combine(styles.p2, "text-zink mb-6 font-semibold")}>
-          Contract valid from 1st October 2025
-        </p>
+        <div className="space-y-4 text-center">
+          <h2 className={combine(styles.h2, "text-zink font-bold")}>SY Nauti By Nature 45 ft. Leopard sailing catamaran</h2>
+          <h3 className={combine(styles.h3, "text-zink font-semibold")}>Private charter rates Season 2025/2026</h3>
+          
+          <p className={combine(styles.p2, "text-zink font-semibold")}>Contract valid from 1st October 2025</p>
 
-        <div className="space-y-4 mb-8">
-          <h3 className={combine(styles.h4, "text-zink font-bold")}>
-            Pictures of the boat
-          </h3>
-          <a 
-            href="https://drive.google.com/drive/folders/" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block"
-          >
-            <button className="px-6 py-2 border-2 border-zink text-zink bg-white rounded-lg font-semibold hover:bg-zink hover:text-white transition-colors duration-200">
-              Click to View
-            </button>
-          </a>
+          <div className="space-y-4 mb-8">
+            <h3 className={combine(styles.h4, "text-zink font-bold")}>Pictures of the boat</h3>
+            <a
+              href="https://drive.google.com/drive/folders/10idqkq1CEsqJE-k2pQSu48lP0JpLs9i8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <button className="px-6 py-2 bg-[#012A50] text-white rounded-md font-semibold transition-colors duration-200 hover:bg-[#D6AB62] hover:text-[#012A50]">
+                Pictures of the boat
+              </button>
+            </a>
+          </div>
         </div>
 
         <div className="space-y-4 mb-8">
@@ -139,7 +133,11 @@ const SYNautiByNatureCharter = () => {
                     <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.date}</td>
                     <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.dayCharterIncluded}</td>
                     <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.additionalPax}</td>
-                    <td className={combine(styles.p2, "py-3 px-4 text-left")}>{row.remarks}</td>
+                    {index === 0 ? (
+                      <td className={combine(styles.p2, "py-3 px-4 text-left")} rowSpan={array.length}>
+                        {row.remarks}
+                      </td>
+                    ) : null}
                   </tr>
                 ))}
               </tbody>

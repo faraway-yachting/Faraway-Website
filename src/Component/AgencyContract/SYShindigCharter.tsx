@@ -5,53 +5,68 @@ const SYShindigCharter = () => {
   return (
     <div className="mt-12 space-y-6">
       <div>
-        <h2 className={combine(styles.h2, "text-zink font-bold mb-2")}>
-          SY Shindig 48 ft. sailing catamaran
-        </h2>
-        <h3 className={combine(styles.h3, "text-zink font-semibold mb-6")}>
-          private charter rates
-        </h3>
-        
-        <h4 className={combine(styles.h4, "text-zink font-bold mb-4")}>
-          Season 2025/2026
-        </h4>
-        
-        <p className={combine(styles.p2, "text-zink mb-6 font-semibold")}>
-          Contract valid from 1st May 2025
-        </p>
-
-        <p className={combine(styles.p2, "text-zink mb-2 font-semibold")}>
-          Fill Contract Form
-        </p>
-        
-        <p className={combine(styles.p2, "text-zink mb-4 font-semibold")}>
-          Day Charter Pricing
-        </p>
+        <div className="space-y-4 text-center">
+          <h2 className={combine(styles.h2, "text-zink font-bold")}>SY Shindig 48 ft. sailing catamaran</h2>
+          <h3 className={combine(styles.h3, "text-zink font-semibold")}>private charter rates</h3>
+          
+          <h4 className={combine(styles.h4, "text-zink font-bold")}>Season 2025/2026</h4>
+          
+          <p className={combine(styles.p2, "text-zink font-semibold")}>Contract valid from 1st May 2025</p>
+          
+          <p className={combine(styles.p2, "text-zink text-center font-semibold")}>
+            Day Charter Pricing
+          </p>
+        </div>
 
         <div className="w-full overflow-x-auto border border-black rounded-lg mb-6">
           <table className="min-w-[700px] w-full table-auto border-collapse text-center font-sourceSansPro">
-            <thead className="bg-[#D6AB62] text-white">
-              <tr className={combine(styles.h5, "font-bold")}>
-                <th className="py-3 px-4 border-r border-b border-black">Date</th>
-                <th className="py-3 px-4 border-r border-b border-black">Day charter</th>
-                <th className="py-3 px-4 border-r border-b border-black">8 pax included</th>
-                <th className="py-3 px-4 border-r border-b border-black">Additional pax<br />(max. 30)</th>
-                <th className="py-3 px-4 border-b border-black">Remarks</th>
+            <thead>
+              <tr className="bg-[#D6AB62] text-white">
+                <th
+                  className={combine(styles.p2, "py-3 px-4 border-r border-b border-black font-semibold align-middle")}
+                  rowSpan={2}
+                >
+                  Date
+                </th>
+                <th
+                  className={combine(styles.p2, "py-3 px-4 border-r border-b border-black font-semibold")}
+                  colSpan={2}
+                >
+                  Day charter
+                </th>
+                <th
+                  className={combine(styles.p2, "py-3 px-4 border-b border-black font-semibold align-middle")}
+                  rowSpan={2}
+                >
+                  "Remarks "
+                </th>
+              </tr>
+              <tr className="bg-[#D6AB62] text-white">
+                <th className={combine(styles.p2, "py-3 px-4 border-r border-b border-black font-semibold")}>“8 pax included”</th>
+                <th className={combine(styles.p2, "py-3 px-4 border-b border-black font-semibold")}>“Additional pax (max. 30)”</th>
               </tr>
             </thead>
             <tbody className="text-zink">
               {[
-                { date: "Nov. – 20th Dec.", dayCharter: "", dayCharterIncluded: "34,900 THB", additionalPax: "1,000 THB", remarks: "day charter only last minute if there is a minimum night" },
-                { date: "20th Dec. – Feb.", dayCharter: "", dayCharterIncluded: "44,900 THB", additionalPax: "1,500 THB", remarks: "" },
-                { date: "Mar. – Apr.", dayCharter: "", dayCharterIncluded: "39,900 THB", additionalPax: "1,500 THB", remarks: "" },
-                { date: "May – Oct.", dayCharter: "", dayCharterIncluded: "29,900 THB", additionalPax: "1,000 THB", remarks: "" },
+                {
+                  date: "Nov. – 20th Dec.",
+                  dayIncluded: "34,900 THB",
+                  additionalPax: "1,000 THB",
+                  remarks: "day charter only last minute if there is a minimum night",
+                },
+                { date: "20th Dec. – Feb.", dayIncluded: "44,900 THB", additionalPax: "1,500 THB", remarks: "" },
+                { date: "Mar. – Apr.", dayIncluded: "39,900 THB", additionalPax: "1,500 THB", remarks: "" },
+                { date: "May – Oct.", dayIncluded: "29,900 THB", additionalPax: "1,000 THB", remarks: "" },
               ].map((row, index, array) => (
                 <tr key={index} className={index !== array.length - 1 ? "border-b border-black" : ""}>
                   <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.date}</td>
-                  <td className={combine(styles.p2, "py-3 px-4 border-r border-black")}>{row.dayCharter}</td>
-                  <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.dayCharterIncluded}</td>
+                  <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.dayIncluded}</td>
                   <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.additionalPax}</td>
-                  <td className={combine(styles.p2, "py-3 px-4 text-left")}>{row.remarks}</td>
+                  {index === 0 ? (
+                    <td className={combine(styles.p2, "py-3 px-4 text-left")} rowSpan={array.length}>
+                      {row.remarks}
+                    </td>
+                  ) : null}
                 </tr>
               ))}
             </tbody>
@@ -84,26 +99,42 @@ const SYShindigCharter = () => {
 
         <div className="w-full overflow-x-auto border border-black rounded-lg mb-6">
           <table className="min-w-[700px] w-full table-auto border-collapse text-center font-sourceSansPro">
-            <thead className="bg-[#D6AB62] text-white">
-              <tr className={combine(styles.h5, "font-bold")}>
-                <th className="py-3 px-4 border-r border-b border-black">Date</th>
-                <th className="py-3 px-4 border-r border-b border-black">Overnight Charter</th>
-                <th className="py-3 px-4 border-r border-b border-black">1-4 pax<br />OR 3 cabins</th>
-                <th className="py-3 px-4 border-r border-b border-black">5-6 pax<br />OR 3 cabins</th>
-                <th className="py-3 px-4 border-r border-b border-black">7-8 pax<br />OR 4 cabins</th>
-                <th className="py-3 px-4 border-b border-black">Remarks</th>
+            <thead>
+              <tr className="bg-[#D6AB62] text-white">
+                <th
+                  className={combine(styles.p2, "py-3 px-4 border-r border-b border-black font-semibold align-middle")}
+                  rowSpan={2}
+                >
+                  Date
+                </th>
+                <th
+                  className={combine(styles.p2, "py-3 px-4 border-r border-b border-black font-semibold text-center")}
+                  colSpan={3}
+                >
+                  Overnight Charter
+                </th>
+                <th
+                  className={combine(styles.p2, "py-3 px-4 border-b border-black font-semibold align-middle")}
+                  rowSpan={2}
+                >
+                  Remarks
+                </th>
+              </tr>
+              <tr className="bg-[#D6AB62] text-white">
+                <th className={combine(styles.p2, "py-3 px-4 border-r border-b border-black font-semibold")}>1-4 pax OR 3 cabins</th>
+                <th className={combine(styles.p2, "py-3 px-4 border-r border-b border-black font-semibold")}>5-6 pax OR 3 cabins</th>
+                <th className={combine(styles.p2, "py-3 px-4 border-b border-black font-semibold")}>7-8 pax OR 4 cabins</th>
               </tr>
             </thead>
             <tbody className="text-zink">
               {[
-                { date: "Nov. – 20th Dec.", overnightCharter: "", pax1_4: "1,200 €", pax5_6: "1,300 €", pax7_8: "1,400 €", remarks: "" },
-                { date: "20th Dec. – Feb.", overnightCharter: "", pax1_4: "1,400 €", pax5_6: "1,500 €", pax7_8: "1,600 €", remarks: "Min. 5 nights" },
-                { date: "Mar. – Apr.", overnightCharter: "", pax1_4: "1,300 €", pax5_6: "1,400 €", pax7_8: "1,500 €", remarks: "Min. 3 nights" },
-                { date: "May – Oct.", overnightCharter: "", pax1_4: "1,000 €", pax5_6: "1,100 €", pax7_8: "1,200 €", remarks: "" },
+                { date: "Nov. – 20th Dec.", pax1_4: "1,200 €", pax5_6: "1,300 €", pax7_8: "1,400 €", remarks: "–" },
+                { date: "20th Dec. – Feb.", pax1_4: "1,400 €", pax5_6: "1,500 €", pax7_8: "1,600 €", remarks: "Min. 5 nights" },
+                { date: "Mar. – Apr.", pax1_4: "1,300 €", pax5_6: "1,400 €", pax7_8: "1,500 €", remarks: "Min. 3 nights" },
+                { date: "May – Oct.", pax1_4: "1,000 €", pax5_6: "1,100 €", pax7_8: "1,200 €", remarks: "–" },
               ].map((row, index, array) => (
                 <tr key={index} className={index !== array.length - 1 ? "border-b border-black" : ""}>
                   <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.date}</td>
-                  <td className={combine(styles.p2, "py-3 px-4 border-r border-black")}>{row.overnightCharter}</td>
                   <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.pax1_4}</td>
                   <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.pax5_6}</td>
                   <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.pax7_8}</td>
@@ -127,17 +158,17 @@ const SYShindigCharter = () => {
         </div>
 
         <div className="space-y-4 mb-8">
-          <h3 className={combine(styles.h4, "text-zink font-bold")}>
+          <h3 className={combine(styles.h4, "text-zink font-bold")}> 
             Pictures of the boat
           </h3>
-          <a 
-            href="#" 
+          <a
+            href="https://drive.google.com/drive/folders/1xFjE68Tk-yGJlNwiZra_fkSDibNwMamW?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block"
           >
-            <button className="px-6 py-2 border-2 border-zink text-zink bg-white rounded-lg font-semibold hover:bg-zink hover:text-white transition-colors duration-200">
-              Click to View
+            <button className="px-6 py-2 bg-[#012A50] text-white rounded-md font-semibold transition-colors duration-200 hover:bg-[#D6AB62] hover:text-[#012A50]">
+              Pictures of the boat
             </button>
           </a>
         </div>
