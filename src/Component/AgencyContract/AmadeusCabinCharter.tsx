@@ -15,11 +15,7 @@ const AmadeusCabinCharter = () => {
           Prices Season 2025 - 2026
         </h4>
         
-        <p className={combine(styles.p2, "text-zink mb-2 font-semibold text-center")}>
-          Fill Contract Form
-        </p>
-        
-        <p className={combine(styles.p2, "text-zink mb-6")}>
+        <p className={combine(styles.p2, "text-zink mb-6 text-center")}>
           2 person in a double cabin (price per person)
         </p>
 
@@ -74,13 +70,13 @@ const AmadeusCabinCharter = () => {
           </table>
         </div>
 
-        <p className={combine(styles.p2, "text-zink mt-6 font-semibold")}>
+        <p className={combine(styles.p2, "text-red-500 mt-6 font-semibold")}>
           Early bird discount till 31st August 2025 on the cabin charter 10% if paid in full.
         </p>
       </div>
 
       <div className="mt-12 space-y-6">
-        <p className={combine(styles.p2, "text-zink mb-6")}>
+        <p className={combine(styles.p2, "text-zink mb-6 text-center")}>
           Single person in a double cabin (price per person)
         </p>
 
@@ -135,9 +131,81 @@ const AmadeusCabinCharter = () => {
           </table>
         </div>
 
-        <p className={combine(styles.p2, "text-zink mt-6 font-semibold")}>
+        <p className={combine(styles.p2, "text-red-500 mt-6 font-semibold")}>
           Early bird discount till 31st August 2025 on the cabin charter 10% if paid in full.
         </p>
+
+        <div className="flex justify-center mt-8">
+          <a
+            href="https://drive.google.com/drive/folders/1LZShttps://drive.google.com/drive/folders/1LZSegN6GmT90benf4whmJO2cC2P3bwJc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <button className="px-6 py-2 bg-[#012A50] text-white rounded-md font-semibold transition-colors duration-200 hover:bg-[#D6AB62] hover:text-[#012A50]">
+              Pictures of the boat
+            </button>
+          </a>
+        </div>
+
+        <div className="mt-12 space-y-8">
+          <div className="space-y-4">
+            <h3 className={combine(styles.h3, "text-zink font-bold")}>
+              Inclusions (What is included?)
+            </h3>
+            <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0 text-left")}> 
+              <li>✔ 5 nights/ 6 days sailing (check-in, check out 11:00)</li>
+              <li>✔ Use of the booked cabin and bathroom</li>
+              <li>✔ Service of 3 crew: captain, cook/stewardess, and deckhand/engineer</li>
+              <li>✔ Running cost of yacht (fuel & berthing)</li>
+              <li>✔ Full board including 5 x breakfast, 5x lunch, and 4x dinner, as well as fruits and snacks</li>
+              <li>✔ Beach BBQ (if permitted by the national park)</li>
+              <li>✔ Welcome drink</li>
+              <li>✔ Welcome towel</li>
+              <li>✔ Coffee</li>
+              <li>✔ Tea</li>
+              <li>✔ Drinking water</li>
+              <li>✔ Snorkeling gear (mask, snorkel, 12 fins in different sizes)</li>
+              <li>✔ Handline fishing</li>
+              <li>✔ Trawling by crew</li>
+              <li>✔ Linen, bath towels, and swimming towels</li>
+              <li>✔ 2 x stand-up paddle boards (shared with other guests on board)</li>
+              <li>✔ 2 x kayak (shared with other guests on board)</li>
+              <li>✔ Accident insurance</li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className={combine(styles.h3, "text-zink font-bold")}>
+              Optional extras
+            </h3>
+            <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0 text-left")}>
+              <li>➜ Private stand Up Paddle Boards = 700 THB per day per SUP</li>
+              <li>➜ 2 Seater Kayak = 700 THB per day per Kayak</li>
+              <li>➜ Local beers onboard (Leo, Singha or Chang) 100 THB per can (pay what you consume)</li>
+              <li>➜ 1 pack (24 cans) of local beers (Leo, Singha or Chang) 1700 THB per pack</li>
+              <li>➜ BBQ onboard, alcoholic beverages, cakes, cold platter, etc. → Request our PDF’s</li>
+              <li>➜ Anything else that would make your charter special, just ask!</li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className={combine(styles.h3, "text-zink font-bold")}>
+              Exclusions (What is NOT included?)
+            </h3>
+            <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0 text-left")}> 
+              <li>
+                ✖ National Park and entrance fees when applicable
+                <br />
+                (Phi Phi Don viewpoint 50 THB, Lanta water fall 200 THB, Koh Muk 300 THB, Koh Rok & Koh Haa 400 THB, Phi Phi Leh 400 THB)
+              </li>
+              <li>✖ Airline flights, transfers or hotels</li>
+              <li>✖ Yacht delivery (if applicable)</li>
+              <li>✖ Rental vehicles or water taxis</li>
+              <li>✖ Meals or drinks in restaurants</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

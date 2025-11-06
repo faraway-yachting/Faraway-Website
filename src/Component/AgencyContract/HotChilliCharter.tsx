@@ -5,51 +5,49 @@ const HotChilliCharter = () => {
   return (
     <div className="mt-12 space-y-6">
       <div>
-        <h2 className={combine(styles.h2, "text-zink font-bold mb-2")}>
-          Hot Chilli 38 ft. Power Catamaran
-        </h2>
-        <h3 className={combine(styles.h3, "text-zink font-semibold mb-6")}>
-          Private Charter Rates
-        </h3>
-        
-        <h4 className={combine(styles.h4, "text-zink font-bold mb-4")}>
-          Season 2025/2026
-        </h4>
-        
-        <p className={combine(styles.p2, "text-zink mb-6 font-semibold")}>
-          Contract valid from 1st May 2025
-        </p>
-        
-        <p className={combine(styles.p2, "text-zink mb-2 font-semibold")}>
-          Fill Contract Form
-        </p>
-        
-        <p className={combine(styles.p2, "text-zink mb-6")}>
-          Hot Chilli Day Charter (max. 14 pax)
-        </p>
+        <div className="space-y-4 text-center">
+          <h2 className={combine(styles.h2, "text-zink font-bold")}>Hot Chilli 38 ft. Power Catamaran</h2>
+          <h3 className={combine(styles.h3, "text-zink font-semibold")}>Private Charter Rates</h3>
+          
+          <h4 className={combine(styles.h4, "text-zink font-bold")}>Season 2025/2026</h4>
+          
+          <p className={combine(styles.p2, "text-zink font-semibold")}>Contract valid from 1st May 2025</p>
+          
+          <p className={combine(styles.p2, "text-zink")}>Hot Chilli Day Charter (max. 14 pax)</p>
+        </div>
 
         <div className="w-full overflow-x-auto border border-black rounded-lg mb-6">
           <table className="min-w-[700px] w-full table-auto border-collapse text-center font-sourceSansPro">
-            <thead className="bg-[#D6AB62] text-white">
-              <tr className={combine(styles.h5, "font-bold")}>
-                <th className="py-3 px-4 border-r border-b border-black">Period</th>
-                <th className="py-3 px-4 border-r border-b border-black">Day Charter<br />(8 pax included)</th>
-                <th className="py-3 px-4 border-r border-b border-black">Additional pax<br />(per person, max. 4 pax)</th>
-                <th className="py-3 px-4 border-b border-black">Total with max additional</th>
+            <thead>
+              <tr className="bg-[#D6AB62] text-white">
+                <th className="py-3 px-4 border-r border-b border-black font-semibold" rowSpan={2}>
+                  Hot Chilli
+                </th>
+                <th className="py-3 px-4 border-r border-b border-black font-semibold" colSpan={2}>
+                  Day Charter<br />(max. 14 pax)
+                </th>
+                <th className="py-3 px-4 border-b border-black font-semibold" colSpan={1}>
+                  Overnight<br />(price per day; start at 11:00 and finish at 17:00)
+                </th>
+              </tr>
+              <tr className="bg-[#D6AB62] text-white">
+                <th className="py-3 px-4 border-r border-b border-black font-semibold">8 pax included</th>
+                <th className="py-3 px-4 border-r border-b border-black font-semibold">Additional pax</th>
+                <th className="py-3 px-4 border-b border-black font-semibold">max. 4 pax</th>
               </tr>
             </thead>
             <tbody className="text-zink">
               {[
-                { period: "Nov. – 20th Dec.", dayCharter: "34,900 THB", additionalPax: "1,000 THB", totalMax: "39,900 THB" },
-                { period: "20th Dec. – Feb.", dayCharter: "39,900 THB", additionalPax: "2,000 THB", totalMax: "47,900 THB" },
-                { period: "Mar. – Apr.", dayCharter: "34,900 THB", additionalPax: "1,500 THB", totalMax: "39,900 THB" },
-                { period: "May – Oct.", dayCharter: "29,900 THB", additionalPax: "1,000 THB", totalMax: "33,900 THB" },
+                { period: "Nov. – 20th Dec.", dayIncluded: "34,900 THB", additionalPax: "1,000 THB", overnight: "39,900 THB" },
+                { period: "20th Dec. – Feb.", dayIncluded: "39,900 THB", additionalPax: "2,000 THB", overnight: "47,900 THB" },
+                { period: "Mar. – Apr.", dayIncluded: "34,900 THB", additionalPax: "1,500 THB", overnight: "39,900 THB" },
+                { period: "May – Oct.", dayIncluded: "29,900 THB", additionalPax: "1,000 THB", overnight: "33,900 THB" },
               ].map((row, index, array) => (
                 <tr key={index} className={index !== array.length - 1 ? "border-b border-black" : ""}>
                   <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.period}</td>
-                  <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.dayCharter}</td>
+                  <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.dayIncluded}</td>
                   <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.additionalPax}</td>
-                  <td className={combine(styles.p2, "py-3 px-4 font-semibold")}>{row.totalMax}</td>
+                  <td className={combine(styles.p2, "py-3 px-4 font-semibold")}>{row.overnight}</td>
                 </tr>
               ))}
             </tbody>
@@ -219,17 +217,17 @@ const HotChilliCharter = () => {
         </div>
 
         <div className="space-y-4 mt-12">
-          <h3 className={combine(styles.h4, "text-zink font-bold")}>
+          <h3 className={combine(styles.h4, "text-zink font-bold")}> 
             Pictures of the boat
           </h3>
-          <a 
-            href="#" 
+          <a
+            href="https://drive.google.com/drive/folders/1M-OzS6gWi0i2FhXjsZcWTgMqn9eL0E7q?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block"
           >
-            <button className="px-6 py-2 border-2 border-zink text-zink bg-white rounded-lg font-semibold hover:bg-zink hover:text-white transition-colors duration-200">
-              Click to View
+            <button className="px-6 py-2 bg-[#012A50] text-white rounded-md font-semibold transition-colors duration-200 hover:bg-[#D6AB62] hover:text-[#012A50]">
+              Pictures of the boat
             </button>
           </a>
         </div>

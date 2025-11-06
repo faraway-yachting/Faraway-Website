@@ -3,40 +3,47 @@ import { styles, combine } from "@/styles/style";
 
 const AmadeusCharter = () => {
   return (
-    <div className="mt-12 space-y-6">
+    <>
+      <div className="mt-12 space-y-6">
         <div>
-          <h2 className={combine(styles.h2, "text-zink font-bold mb-2")}>
-            Amadeus 48 ft. Sailing Catamaran
-          </h2>
-          <h3 className={combine(styles.h3, "text-zink font-semibold mb-6")}>
-            Private Charter Rates
-          </h3>
-          
-          <h4 className={combine(styles.h4, "text-zink font-bold mb-4")}>
-            Season 2025/2026
-          </h4>
-          
-          <p className={combine(styles.p2, "text-zink mb-6 font-semibold")}>
-            Contract valid from 1st May 2025
-          </p>
-
-          <p className={combine(styles.p2, "text-zink mb-2 font-semibold")}>
-            Fill Contract Form
-          </p>
-          
-          <p className={combine(styles.p2, "text-zink mb-4")}>
-            Overnight Charter (price per 24 hours; start and finish at 11:00)
-          </p>
+          <div className="space-y-4 text-center">
+            <h2 className={combine(styles.h2, "text-zink font-bold")}>Amadeus 48 ft. Sailing Catamaran</h2>
+            <h3 className={combine(styles.h3, "text-zink font-semibold")}>Private Charter Rates</h3>
+            
+            <h4 className={combine(styles.h4, "text-zink font-bold")}>Season 2025/2026</h4>
+            
+          <p className={combine(styles.p2, "text-zink font-semibold")}>Contract valid from 1st May 2025</p>
+            
+            <p className={combine(styles.p2, "text-zink text-center text-2xl")}>Overnight Charter (price per 24 hours; start and finish at 11:00)</p>
+          </div>
 
           <div className="w-full overflow-x-auto border border-black rounded-lg mb-6">
             <table className="min-w-[700px] w-full table-auto border-collapse text-center font-sourceSansPro">
-              <thead className="bg-[#D6AB62] text-white">
-                <tr className={combine(styles.h5, "font-bold")}>
-                  <th className="py-3 px-4 border-r border-b border-black">Date</th>
-                  <th className="py-3 px-4 border-r border-b border-black">1-4 pax<br />OR 3 cabins</th>
-                  <th className="py-3 px-4 border-r border-b border-black">5-6 pax<br />OR 3 cabins</th>
-                  <th className="py-3 px-4 border-r border-b border-black">7-8 pax<br />OR 4 cabins</th>
-                  <th className="py-3 px-4 border-b border-black">Remarks</th>
+              <thead>
+                <tr className="bg-[#D6AB62] text-white">
+                  <th
+                    className={combine(styles.p2, "py-3 px-4 border-r border-b border-black font-semibold align-middle")}
+                    rowSpan={2}
+                  >
+                    Date
+                  </th>
+                  <th
+                    className={combine(styles.p2, "py-3 px-4 border-b border-r border-black font-semibold text-center")}
+                    colSpan={3}
+                  >
+                    "Overnight Charter"<br />(price per 24 hours; start and finish at 11:00)
+                  </th>
+                  <th
+                    className={combine(styles.p2, "py-3 px-4 border-b border-black font-semibold align-middle")}
+                    rowSpan={2}
+                  >
+                    "Remarks "
+                  </th>
+                </tr>
+                <tr className="bg-[#D6AB62] text-white">
+                  <th className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>“1-4 pax OR 3 cabins“</th>
+                  <th className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>“5-6 pax OR 3 cabins”</th>
+                  <th className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>“7-8 pax OR 4 cabins”</th>
                 </tr>
               </thead>
               <tbody className="text-zink">
@@ -44,7 +51,7 @@ const AmadeusCharter = () => {
                   { date: "Nov. – 20th Dec.", pax1_4: "1,250 €", pax5_6: "1,350 €", pax7_8: "1,450 €", remarks: "Min. 5 nights; start on Sat" },
                   { date: "20th Dec. – Feb.", pax1_4: "1,800 €", pax5_6: "1,800 €", pax7_8: "1,800 €", remarks: "7 or 14 nights; start on Sat" },
                   { date: "Mar. – Apr.", pax1_4: "1,450 €", pax5_6: "1,550 €", pax7_8: "1,650 €", remarks: "Min. 5 nights; start on Sat" },
-                  { date: "May – Oct.", pax1_4: "1,100 €", pax5_6: "1,200 €", pax7_8: "1,300 €", remarks: "Charters less than 4 nights the rate is charged per day with start 11:00 and finish 17:00" },
+                  { date: "May – Oct.", pax1_4: "1,100 €", pax5_6: "1,200 €", pax7_8: "1,300 €", remarks: "–" },
                 ].map((row, index, array) => (
                   <tr key={index} className={index !== array.length - 1 ? "border-b border-black" : ""}>
                     <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.date}</td>
@@ -57,6 +64,10 @@ const AmadeusCharter = () => {
               </tbody>
             </table>
           </div>
+
+          <p className={combine(styles.p2, "text-zink mb-2")}>
+            Charters less than 4 nights the rate is charged per day with start 11:00 and finish 17:00
+          </p>
 
           <p className={combine(styles.p2, "text-zink mb-6")}>
             Charters longer than 5 nights the rate is charged per 24 hour with start and finish at 11:00
@@ -78,16 +89,25 @@ const AmadeusCharter = () => {
               </thead>
               <tbody className="text-zink">
                 {[
-                  { date: "Nov. – 20th Dec.", dayCharter: "34,900 THB", additionalPax: "1,000 THB", remarks: "day charter only last minute if there is a minimum night" },
-                  { date: "20th Dec. – Feb.", dayCharter: "49,900 THB", additionalPax: "1,500 THB", remarks: "" },
-                  { date: "Mar. – Apr.", dayCharter: "39,900 THB", additionalPax: "1,500 THB", remarks: "" },
-                  { date: "May – Oct.", dayCharter: "29,900 THB", additionalPax: "1,000 THB", remarks: "" },
+                  {
+                    date: "Nov. – 20th Dec.",
+                    dayIncluded: "34,900 THB",
+                    additionalPax: "1,000 THB",
+                    remarks: "day charter only last minute if there is a minimum night",
+                  },
+                  { date: "20th Dec. – Feb.", dayIncluded: "49,900 THB", additionalPax: "1,500 THB", remarks: "" },
+                  { date: "Mar. – Apr.", dayIncluded: "39,900 THB", additionalPax: "1,500 THB", remarks: "" },
+                  { date: "May – Oct.", dayIncluded: "29,900 THB", additionalPax: "1,000 THB", remarks: "" },
                 ].map((row, index, array) => (
                   <tr key={index} className={index !== array.length - 1 ? "border-b border-black" : ""}>
                     <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.date}</td>
-                    <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.dayCharter}</td>
+                    <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.dayIncluded}</td>
                     <td className={combine(styles.p2, "py-3 px-4 border-r border-black font-semibold")}>{row.additionalPax}</td>
-                    <td className={combine(styles.p2, "py-3 px-4 text-left")}>{row.remarks}</td>
+                    {index === 0 ? (
+                      <td className={combine(styles.p2, "py-3 px-4 text-left")} rowSpan={array.length}>
+                        {row.remarks}
+                      </td>
+                    ) : null}
                   </tr>
                 ))}
               </tbody>
@@ -99,33 +119,30 @@ const AmadeusCharter = () => {
               <span className="font-semibold">Duration:</span> 8 hours from and to Chalong pier; shorter charters only on request
             </p>
             <p>
-              Finish latest with sunset according to this website{" "}
-              <Link 
-                href="https://www.timeanddate.com/sun/thailand/phuket" 
+              Finish latest with sunset according to this website <Link
+                href="https://www.timeanddate.com/sun/thailand/phuket"
                 className="text-blue-600 hover:text-blue-800 underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 https://www.timeanddate.com/sun/thailand/phuket
               </Link>
+              .
             </p>
             <p>
               Additional Children between 3-12 years old charge 50% of adult rate; below 3 years free)
             </p>
           </div>
 
-          <div className="space-y-4 mb-8">
-            <h3 className={combine(styles.h4, "text-zink font-bold")}>
-              Pictures of the boat
-            </h3>
-            <a 
-              href="#" 
+          <div className="flex justify-center mb-8">
+            <a
+              href="https://drive.google.com/drive/folders/1LZShttps://drive.google.com/drive/folders/1LZSegN6GmT90benf4whmJO2cC2P3bwJc"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
             >
-              <button className="px-6 py-2 border-2 border-zink text-zink bg-white rounded-lg font-semibold hover:bg-zink hover:text-white transition-colors duration-200">
-                Click to View
+              <button className="px-6 py-2 bg-[#012A50] text-white rounded-md font-semibold transition-colors duration-200 hover:bg-[#D6AB62] hover:text-[#012A50]">
+                Pictures of the boat
               </button>
             </a>
           </div>
@@ -273,100 +290,8 @@ const AmadeusCharter = () => {
             </div>
           </div>
         </div>
-
-      <div className="mt-12 space-y-8">
-        <div className="space-y-4">
-          <h3 className={combine(styles.h4, "text-zink font-bold")}>
-            Boat Pictures
-          </h3>
-          <a 
-            href="#" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block"
-          >
-            <button className="px-6 py-2 border-2 border-zink text-zink bg-white rounded-lg font-semibold hover:bg-zink hover:text-white transition-colors duration-200">
-              Click to View
-            </button>
-          </a>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className={combine(styles.h4, "text-zink font-bold")}>
-            Marketing Material
-          </h3>
-          <a 
-            href="#" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block"
-          >
-            <button className="px-6 py-2 border-2 border-zink text-zink bg-white rounded-lg font-semibold hover:bg-zink hover:text-white transition-colors duration-200">
-              Click to View
-            </button>
-          </a>
-        </div>
       </div>
-
-      <div className="mt-12 space-y-8">
-        <div className="space-y-6">
-          <h2 className={combine(styles.h2, "text-zink font-bold")}>
-            Inclusions (What is included?)
-          </h2>
-          
-          <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0")}>
-            <li>✔ 5 nights/ 6 days sailing (check-in, check out 11:00)</li>
-            <li>✔ Use of the booked cabin and bathroom</li>
-            <li>✔ Service of 3 crew: captain, cook/stewardess, and deckhand/engineer</li>
-            <li>✔ Running cost of yacht (fuel & berthing)</li>
-            <li>✔ Full board including 5 x breakfast, 5x lunch, and 4x dinner, as well as fruits and snacks</li>
-            <li>✔ Beach BBQ (if permitted by the national park)</li>
-            <li>✔ Welcome drink</li>
-            <li>✔ Welcome towel</li>
-            <li>✔ Coffee</li>
-            <li>✔ Tea</li>
-            <li>✔ Drinking water</li>
-            <li>✔ Snorkeling gear (mask, snorkel, 12 fins in different sizes)</li>
-            <li>✔ Handline fishing</li>
-            <li>✔ Trawling by crew</li>
-            <li>✔ Linen, bath towels, and swimming towels</li>
-            <li>✔ 2 x stand-up paddle boards (shared with other guests on board)</li>
-            <li>✔ 2 x kayak (shared with other guests on board)</li>
-            <li>✔ Accident insurance</li>
-          </ul>
-        </div>
-
-        <div className="space-y-6">
-          <h2 className={combine(styles.h2, "text-zink font-bold")}>
-            Optional extras
-          </h2>
-          
-          <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0")}>
-            <li>➜ Private stand Up Paddle Boards = 700 THB per day per SUP</li>
-            <li>➜ 2 Seater Kayak = 700 THB per day per Kayak</li>
-            <li>➜ Local beers onboard (Leo, Singha or Chang) 100 THB per can (pay what you consume)</li>
-            <li>➜ 1 pack (24 cans) of local beers (Leo, Singha or Chang) 1700 THB per pack</li>
-            <li>➜ BBQ onboard, alcoholic beverages, cakes, cold platter, etc. → Request our PDF's</li>
-            <li>➜ Anything else that would make your charter special, just ask!</li>
-          </ul>
-        </div>
-
-        <div className="space-y-6">
-          <h2 className={combine(styles.h2, "text-zink font-bold")}>
-            Exclusions (What is NOT included?)
-          </h2>
-          
-          <ul className={combine(styles.p2, "text-zink text-sm space-y-2 list-none pl-0")}>
-            <li>✖ National Park and entrance fees when applicable</li>
-            <li className="pl-6 text-sm">(Phi Phi Don viewpoint 50 THB, Lanta water fall 200 THB, Koh Muk 300 THB, Koh Rok & Koh Haa 400 THB, Phi Phi Leh 400 THB)</li>
-            <li>✖ Airline flights, transfers or hotels</li>
-            <li>✖ Yacht delivery (if applicable)</li>
-            <li>✖ Rental vehicles or water taxis</li>
-            <li>✖ Meals or drinks in restaurants</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 
