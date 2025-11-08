@@ -1,6 +1,6 @@
 import { combine, styles } from "@/styles/style";
 import Link from "next/link";
-import SailLaVieCharter from "@/Component/AgencyContract/SailLaVieCharter";
+import SYNautiByNatureCharter from "@/Component/AgencyContract/SYNautiByNatureCharter";
 
 export const metadata = {
   title: "NBN Agency Contract 25-26",
@@ -52,7 +52,7 @@ const NbnAgencyContractPage = () => {
           </div>
         </div>
 
-        <SailLaVieCharter />
+        <SYNautiByNatureCharter />
       </div>
     </div>
   );
