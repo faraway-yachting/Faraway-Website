@@ -3,7 +3,7 @@ import { fetchBlogs } from "@/lib/api";
 import type { Metadata } from "next";
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 interface BlogData {
@@ -46,7 +46,7 @@ const resolveImageUrl = (image?: string): string => {
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const blog = await getBlogBySlug(slug);
 
   if (!blog) {
@@ -103,11 +103,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function BlogDetailPage({ params }: PageProps) {
-  const blog = await getBlogBySlug(params.slug);
+  const { slug } = await params;
+  const blog = await getBlogBySlug(slug);
 
   return (
     <div>
-      <BlogDetail slug={params.slug} initialBlog={blog ?? undefined} />
+      <BlogDetail slug={slug} initialBlog={blog ?? undefined} />
     </div>
   );
 }
