@@ -19,6 +19,18 @@ interface BlogData {
 const siteUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.faraway-yachting.com";
 const fallbackImage = `${siteUrl}/images/default-blog.jpg`;
 
+const blogMetadataMap: Record<string, {
+  title?: string;
+  description?: string;
+  image?: string;
+  keywords?: string;
+}> = {
+  "best-yacht-charter-company-thailand": {
+    title: "Faraway Yachting Wins 2025 World Luxury Travel Award | Best Yacht Charter Company in Thailand",
+    description: "Faraway Yachting, a leading luxury yacht charter company in Phuket, Thailand wins the 2025 World Luxury Travel Award for Best Yacht Charter Company.",
+  },
+};
+
 const stripHtml = (html: string): string => {
   if (!html) return "";
   return html.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
@@ -69,15 +81,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const title = `${blog.title} | Faraway Yachting Blog`;
-  const description = blog.shortDescription?.trim()
-    || stripHtml(blog.detailDescription ?? "").slice(0, 160) || "Explore luxury yacht charters, itineraries, and travel tips with Faraway Yachting.";
-  const imageUrl = resolveImageUrl(blog.image);
+  const customMeta = blogMetadataMap[slug];
+  
+  const title = customMeta?.title || `${blog.title} | Faraway Yachting Blog`;
+  const description = customMeta?.description 
+    || blog.shortDescription?.trim()
+    || stripHtml(blog.detailDescription ?? "").slice(0, 160) 
+    || "Explore luxury yacht charters, itineraries, and travel tips with Faraway Yachting.";
+  const imageUrl = resolveImageUrl(customMeta?.image || blog.image);
   const url = `${siteUrl}/blog/${blog.slug}`;
 
   return {
     title,
     description,
+    keywords: customMeta?.keywords,
     openGraph: {
       title,
       description,
