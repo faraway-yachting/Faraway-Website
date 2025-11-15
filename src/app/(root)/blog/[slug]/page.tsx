@@ -31,6 +31,10 @@ const blogMetadataMap: Record<string, {
   },
 };
 
+const normalizeSlug = (slug: string): string => {
+  return slug?.toLowerCase().trim() || "";
+};
+
 const stripHtml = (html: string): string => {
   if (!html) return "";
   return html.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
@@ -81,7 +85,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const customMeta = blogMetadataMap[slug];
+  const normalizedSlug = normalizeSlug(slug);
+  const normalizedBlogSlug = normalizeSlug(blog.slug);
+  const customMeta = blogMetadataMap[normalizedSlug] || blogMetadataMap[normalizedBlogSlug] || blogMetadataMap[slug] || blogMetadataMap[blog.slug];
   
   const title = customMeta?.title || `${blog.title} | Faraway Yachting Blog`;
   const description = customMeta?.description 
