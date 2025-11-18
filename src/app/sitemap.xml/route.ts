@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { fetchYachts } from '@/lib/api';
+import { fetchYachts, fetchBlogs } from '@/lib/api';
 
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.faraway-yachting.com';
@@ -24,6 +24,22 @@ export async function GET() {
     });
   } catch (error) {
     console.error('Failed to fetch yachts for sitemap:', error);
+  }
+  
+  let blogPages: Array<{ url: string; priority: string; changefreq: string }> = [];
+  try {
+    const blogResponse = await fetchBlogs();
+    const blogs = blogResponse.data?.blogs || [];
+    
+    const publishedBlogs = blogs.filter((blog: any) => blog.status?.toLowerCase() === 'published');
+    
+    blogPages = publishedBlogs.map((blog: any) => ({
+      url: `/blog/${blog.slug}`,
+      priority: '0.7',
+      changefreq: 'monthly'
+    }));
+  } catch (error) {
+    console.error('Failed to fetch blogs for sitemap:', error);
   }
   
   // Static pages from the project structure with priorities
@@ -59,7 +75,7 @@ export async function GET() {
   ];
 
   // Combine static pages and yacht pages
-  const allPages = [...staticPages, ...yachtPages];
+  const allPages = [...staticPages, ...yachtPages, ...blogPages];
   
   // Generate sitemap XML
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
