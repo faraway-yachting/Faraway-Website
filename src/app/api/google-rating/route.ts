@@ -19,8 +19,7 @@ export async function GET() {
 
   try {
     const response = await fetch(url.toString(), {
-      // cache for 3 hours to limit API usage
-      next: { revalidate: 60 * 60 * 3 },
+      next: { revalidate: 60 * 60 * 24 * 7 },
     });
 
     if (!response.ok) {
@@ -50,7 +49,7 @@ export async function GET() {
       },
       {
         headers: {
-          "Cache-Control": "s-maxage=10800, stale-while-revalidate",
+          "Cache-Control": "s-maxage=604800, stale-while-revalidate",
         },
       }
     );
