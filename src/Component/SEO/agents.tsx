@@ -53,35 +53,35 @@ const Agent = () => {
   const contracts = [
     {
       title: "ALL CONTRACTS 25-26",
-      href: "https://sendlink.co/documents/doc-form/68b53602355b332ea13c54b3?locale=en-US",
+      href: "/all-boat-agency-contract-24-25",
     },
     {
       title: "AMADEUS CABIN CHARTER CONTRACT 25-26",
-      href: "https://sendlink.co/documents/doc-form/68b96d08fac8341820e78b49?locale=en-US",
+      href: "/amadeus-cabin-agency-contract-25-26",
     },
     {
       title: "AMADEUS PRIVATE CHARTER CONTRACT 25-26",
-      href: "https://sendlink.co/documents/doc-form/68b930bf654223cf029f98db?locale=en-US",
+      href: "/amadeus-agency-contract-25-26",
     },
     {
       title: "HOT CHILLI CONTRACT 25-26",
-      href: "https://sendlink.co/documents/doc-form/68b94360fac834e09ee6c668?locale=en-US",
+      href: "/hot-chilli-agency-contract-25-26",
     },
     {
       title: "MOZART CONTRACT 25-26",
-      href: "https://sendlink.co/documents/doc-form/68ba5e1f0cb4b8c5dbeae59c?locale=en-US",
+      href: "/mozart-agency-contract-25-26",
     },
     {
       title: "SHINDIG CONTRACT 25-26",
-      href: "https://sendlink.co/documents/doc-form/68ba75dcd427e85dbf5ff990?locale=en-US",
+      href: "/shindig-agency-contract-25-26",
     },
     {
       title: "SAIL LA VIE CONTRACT 25-26",
-      href: "https://sendlink.co/documents/doc-form/68ba59c7fac8342daaf3d482?locale=en-US",
+      href: "/saillavie-agency-contract-25-26",
     },
     {
       title: "Nauti By Nature CONTRACT 2025-2026",
-      href: "https://sendlink.co/documents/doc-form/68ba70cf0cb4b8768ceb3bc6?locale=en-US",
+      href: "/nbn-agency-contract-25-26",
     },
   ];
 

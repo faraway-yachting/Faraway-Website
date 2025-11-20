@@ -95,9 +95,9 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                                     />
                                 </div>
                                 <div className="px-4 pt-4">
-                                    <h3 className={combine(styles.h4, "text-zink mb-2 font-semibold")}>
+                                    <h1 className={combine(styles.h4, "text-zink mb-2 font-semibold leading-snug")}>
                                         {limitCharacters(blog.title, 18)}
-                                    </h3>
+                                    </h1>
                                     <p className={combine ("font-normal text-zink",styles.p2)}>
                                         {blog.shortDescription.length > 214 ? (
                                             <>

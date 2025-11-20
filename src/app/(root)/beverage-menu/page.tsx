@@ -6,7 +6,7 @@ const BeverageMenu = () => {
     <Fragment>
       <div className="w-full h-screen">
         <iframe
-          src="/images/beverage Menu.pdf"
+          src="/images/Beverage Menu - 2025-2026 Season.pdf"
           className="w-full h-full border-0"
           title="Beverage Menu PDF"
         />
