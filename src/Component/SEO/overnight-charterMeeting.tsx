@@ -56,7 +56,7 @@ const NightCharter_Meeting = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <h4 className={combine(styles.p3, "font-semibold text-zink mb-3 hover:text-[#D6AB62]")}>
+                                <h4 className={combine(styles.p3, "font-semibold text-blue-600 underline mb-3 hover:text-[#D6AB62]")}>
                                     FARAWAY YACHTING OFFICE
                                 </h4>
                             </a>
