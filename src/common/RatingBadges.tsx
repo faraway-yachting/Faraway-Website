@@ -13,7 +13,7 @@ export function GoogleRatingBadge() {
   // Static data - loads instantly like TripAdvisor badge
   const totalReviews = 326;
   const reviewLabel = `${totalReviews.toLocaleString()} reviews`;
-  const googleUrl = "https://www.google.com/search?q=Faraway+Yachting+Phuket&ludocid=17147180263514010749";
+  const googleUrl = "https://www.google.com/maps/place/Faraway+Yachting+Phuket,+Thailand/@7.8235296,98.3451594,17z/data=!3m1!4b1!4m6!3m5!1s0x3050257bffffffff:0x937eaf99ed7fa6b7!8m2!3d7.8235296!4d98.3451594!16s%2Fg%2F12hp6d07j?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D";
 
   return (
     <a
