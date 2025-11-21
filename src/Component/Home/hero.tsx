@@ -15,7 +15,7 @@ const HeroContent = () => {
     <section
       className={combine(
         bgImage,
-          "relative bg-[url('/images/homeimg1.png')] min-h-[88vh] md:min-h-[81vh] flex justify-center overflow-hidden"
+          "relative bg-[url('/images/homeimg1.png')] min-h-[93vh] md:min-h-[81vh] flex justify-center overflow-hidden"
       )}
     >
       <WorldLuxuryAwardBadge positionClass="absolute top-1 right-3 sm:top-6 sm:right-6 lg:top-6 lg:right-7 z-20 drop-shadow-2xl sm:hidden" />
