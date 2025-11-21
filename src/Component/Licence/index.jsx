@@ -10,6 +10,8 @@ const Licence = () => {
     PngIcons.Certificate5,
     PngIcons.Certificate6,
     PngIcons.Certificate7,
+    PngIcons.Certificate8,
+
   ];
 
   return (
@@ -35,16 +37,39 @@ const Licence = () => {
 
       {/* Certificates Flex Row */}
       <div className="bg-[#F6F6F6] w-full py-5 px-4">
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-3 lg:gap-8 max-w-6xl mx-auto">
-          {certificates.map((icon, index) => (
-            <Image
-              key={index}
-              src={icon}
-              alt={`Certificate ${index + 2}`}
-              height={70}
-              width={110}
-            />
-          ))}
+          <div className="flex flex-wrap justify-center items-center max-w-6xl mx-auto">
+          {certificates.map((icon, index) => {
+            const isWinnerBadge = icon === PngIcons.Winner2025Badge;
+              const isCertificateEight = icon === PngIcons.Certificate8;
+            const isLast = index === certificates.length - 1;
+            const isSecondLast = index === certificates.length - 2;
+
+            const spacingClass = isLast
+              ? "mr-0"
+              : isSecondLast
+              ? "mr-6"
+              : "mr-6";
+
+            return (
+                <div key={index} className={`flex justify-center ${spacingClass}`}>
+                  <div
+                    className={
+                      isCertificateEight
+                        ? "rounded-full bg-[#338FBF]/80 p-1  flex items-center justify-center"
+                        : ""
+                    }
+                  >
+                    <Image
+                      src={icon}
+                      alt={isWinnerBadge ? "2025 Winner Badge" : `Certificate ${index + 1}`}
+                      height={isWinnerBadge ? 70 : 70}
+                      width={isWinnerBadge ? 110 : 110}
+                      className={isCertificateEight ? "rounded-full" : undefined}
+                    />
+                  </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

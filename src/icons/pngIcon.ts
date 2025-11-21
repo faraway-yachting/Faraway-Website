@@ -30,6 +30,8 @@ var PngIcons = {
   Certificate5: "/images/certificate5.png",
   Certificate6: "/images/certificate6.png",
   Certificate7: "/images/certificate7.gif",
+  Certificate8: "/images/certificate8.png",
+  Winner2025Badge: "/images/2025 Personalised Travel Winner Logo263.png",
   // slider Categories
   category1: "/images/category1.png",
   category2: "/images/category2.png",
@@ -252,5 +254,7 @@ var PngIcons = {
   mYacht10: "/images/mYacht10.png",
   mYacht11: "/images/mYacht11.png",
   mYacht12: "/images/mYacht12.png",
+
+  timg1: "/images/timg1.png",
 }
 export default PngIcons

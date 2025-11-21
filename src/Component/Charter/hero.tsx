@@ -42,6 +42,10 @@ const HeroSection = ({ contactRef }: HeroSectionProps) => {
       showContactButton={pathname === "/bareboat-charter-thailand"}
       contactButtonText={pathname === "/bareboat-charter-thailand" ? "  Get Aboard – Limited Availability" : undefined}
       href={pathname === "/bareboat-charter-thailand" ? "/contact" : undefined}
+      showRatingBadges={true}
+      showGoogleRating={true}
+      showTripAdvisorRating={true}
+      showWorldLuxuryAward={true}
     />
   );
 };
