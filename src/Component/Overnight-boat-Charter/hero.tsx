@@ -17,6 +17,10 @@ const HeroSection = ({ contactRef }: HeroSectionProps) => {
       showContactButton={true}
       contactButtonText="Plan Your Adventure Now"
       href="/contact"
+      showRatingBadges={true}
+      showGoogleRating={true}
+      showTripAdvisorRating={true}
+      showWorldLuxuryAward={true}
     />
   );
 };

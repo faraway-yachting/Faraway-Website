@@ -4,6 +4,12 @@ import Button from "@/styles/Button";
 import { FiPhone } from "react-icons/fi";
 import { LuAnchor } from "react-icons/lu";
 import { RefObject } from "react";
+import Image from "next/image";
+import {
+  GoogleRatingBadge,
+  TripAdvisorRatingBadge,
+  WorldLuxuryAwardBadge,
+} from "@/common/RatingBadges";
 
 type HeroSectionProps = {
   heading: string;
@@ -17,6 +23,14 @@ type HeroSectionProps = {
   contactRef?: RefObject<HTMLDivElement | null>;
   showContactButton?: boolean;
   contactButtonText?: string;
+  minHeightClass?: string;
+  overlayColor?: string;
+  textColor?: string;
+  showRatingBadges?: boolean;
+  showGoogleRating?: boolean;
+  showTripAdvisorRating?: boolean;
+  showWorldLuxuryAward?: boolean;
+  awardPositionClass?: string;
 };
 const HeroContent: React.FC<HeroSectionProps> = ({
   heading,
@@ -29,17 +43,29 @@ const HeroContent: React.FC<HeroSectionProps> = ({
   href,
   contactRef,
   showContactButton = false,
-  contactButtonText ,
+  contactButtonText,
+  minHeightClass = styles.minH2,
+  overlayColor = "bg-[#012A50]/50",
+  textColor = "text-white",
+  showRatingBadges = false,
+  showGoogleRating = false,
+  showTripAdvisorRating = false,
+  showWorldLuxuryAward = false,
+  awardPositionClass = "absolute top-1 right-3 sm:top-6 sm:right-6 lg:top-6 lg:right-7 z-20 drop-shadow-2xl",
 }) => {
   return (
     <section
-      className={combine(styles.bgImage, "bg-center", styles.minH2, styles.flexCenter)}
+      className={combine(styles.bgImage, "bg-center", minHeightClass, styles.flexCenter, "relative")}
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
+      {/* World Luxury Award Badge - positioned absolutely (mobile only) */}
+      {showWorldLuxuryAward && (
+        <WorldLuxuryAwardBadge positionClass={awardPositionClass + " sm:hidden"} />
+      )}
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#012A50]/50 z-0" />
+      <div className={combine("absolute inset-0 z-0", overlayColor)} />
       {/* Content on top */}
-      <div className={combine(styles.flexCenter, "h-full text-center text-white relative z-10", styles.px1)}>
+      <div className={combine(styles.flexCenter, "h-full text-center relative z-10", styles.px1, textColor)}>
         <div className={combine(styles.flexCol, "justify-center items-center max-w-4xl mx-auto")}>
           {/* Title Text */}
           <h1 
@@ -110,6 +136,34 @@ const HeroContent: React.FC<HeroSectionProps> = ({
                     {contactButtonText}
                   </div>
                 </Button>
+              )}
+            </div>
+          )}
+          {/* Rating Badges Section - Optional */}
+          {showRatingBadges && (showGoogleRating || showTripAdvisorRating) && (
+            <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 md:gap-5 lg:gap-9 w-full mt-4 md:mt-8 lg:mt-10 px-4 relative z-20">
+              {showGoogleRating && (
+                <GoogleRatingBadge />
+              )}
+              {showWorldLuxuryAward && (
+                <a
+                  href="https://www.theworldluxurytravelawards.com/establishment/faraway-yachting-co-ltd/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden sm:flex flex-shrink-0 transition-transform hover:scale-[1.05] drop-shadow-2xl relative z-10"
+                >
+                  <Image
+                    src="/images/2025 Personalised Travel Winner Logo263.png"
+                    alt="World Luxury Travel Awards 2025 Winner"
+                    width={140}
+                    height={180}
+                    className="h-auto w-[120px] md:w-[140px] lg:w-[160px] max-w-none"
+                    priority
+                  />
+                </a>
+              )}
+              {showTripAdvisorRating && (
+                <TripAdvisorRatingBadge />
               )}
             </div>
           )}

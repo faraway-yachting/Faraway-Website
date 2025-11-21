@@ -18,6 +18,8 @@ const quickLinks = [
   { label: "Day Trip Yachts", href: "/yacht-charter-phuket" },
   { label: "Super Yachts", href: "/super-yacht-charter-phuket" },
   { label: "Overnight Itineraries", href: "magical-destinations-with-private-yacht-in-phuket#overnightitineraries" },
+  { label: "Yacht Management", href: "/yacht-management-phuket" },
+
 ];
 
 const usefulLinks = [
