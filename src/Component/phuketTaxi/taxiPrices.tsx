@@ -1,27 +1,81 @@
 import HeadingContent from "@/common/heading"
 import { LuHandHeart } from "react-icons/lu";
-import { combine ,styles } from "@/styles";
-const TaxiPrices = () =>{
-    return(
+import { combine, styles } from "@/styles";
+import Image from "next/image";
+import { taxiPrices, mapImage, additionalInfo } from "@/data/phukettaxi";
+
+const TaxiPrices = () => {
+    return (
         <div className="my-10">
-            <HeadingContent 
-            heading="Taxi Prices If Booked With Us"
-            />
-            <img src="" alt="" />
-            <div className="bg-white rounded-6xl shadow-xl p-6 flex items-center gap-4 max-w-7xl mx-auto">
-                        {/* Icon */}
-                        <div className="w-14 h-14 bg-[#D6ab62] rounded-xl flex items-center justify-center flex-shrink-0">
-                            <LuHandHeart className='text-white text-3xl' />
-                        </div>
+            <h3 className={combine(styles.h2, "font-extrabold text-zink text-center text-zink capitalize")} style={{ boxShadow: "#00000040" }}>
+                Taxi Prices If Booked With Us
+            </h3>
+            <img src="/images/rframe.png" alt="" className={combine(" md:max-w-4xl lg:max-w-3xl w-full my-4 mx-auto")} />
 
-                        {/* Content */}
-                        <div className="flex-1">
-                            <p className={combine('text-zink font-inter leading-relaxed', styles.p3)}>
-                            If you book through us and there’s any unexpected delay on their end, we’ll make sure to help make up for lost time. You need to book at least one day in advance wit us so we can arrange the schedule for the taxi the next day.                            </p>
+            {/* Taxi Price Cards Grid */}
+            <div className={combine(styles.container, "mb-10")}>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
+                    {taxiPrices.map((taxi, index) => (
+                        <div
+                            key={index}
+                            className="bg-white h-[235px] md:h-[270px] lg:h-[283px] xl:h-[310px] p-2 border border-2 border-[#EBEBEB] rounded-tl-2xl rounded-br-2xl hover:border-[#7F93A6] overflow-hidden transition-all duration-300"
+                        >
+                            {/* Image */}
+                            <div className="relative w-full h-[120px] md:h-[145px] lg:h-[150px] xl:h-[190px] overflow-hidden rounded-tl-xl rounded-br-xl">
+                                <Image
+                                    src={taxi.image}
+                                    alt={taxi.locations.join(" / ")}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+
+                            {/* Content */}
+                            <div className="pt-2">
+                                {/* Price */}
+                                <div className="">
+                                    <span className={combine("text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] font-playfair text-zink font-bold")}>
+                                        {taxi.price.toLocaleString()} THB
+                                    </span>
+                                </div>
+
+                                {/* Locations - Display with " / " separator */}
+                                <div>
+                                    <p className={combine("text-[#6D6D6D] font-inter text-[12px] md:text-[13px] lg:text-sm leading-relaxed")}>
+                                        {taxi.locations.join(" / ")}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+                    ))}
+                </div>
+            </div>
+            <div className="max-w-7xl mx-auto px-4">
+                <div className="relative w-full h-[240px] md:h-[280px] lg:h-[580px] overflow-hidden rounded-xl">
+                    <Image
+                        src={mapImage.src}
+                        alt={mapImage.alt}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
+            </div>
+            <div className="px-4 xl:px-0">
+                <div className="bg-white rounded-6xl shadow-xl p-4 md:p-6 flex items-center gap-4 max-w-7xl mx-auto mb-10 mt-8 ">
+
+                    {/* Icon */}
+                    <div className="hidden md:flex w-14 h-14 bg-[#D6ab62] rounded-xl items-center justify-center flex-shrink-0">
+                        <LuHandHeart className='text-white text-3xl' />
                     </div>
-
+                    {/* Content */}
+                    <div className="flex-1">
+                        <p className={combine('text-zink font-inter leading-relaxed', styles.p3)}>
+                            {additionalInfo.bookingAdvice}
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     )
-}                                            
+}
 export default TaxiPrices
