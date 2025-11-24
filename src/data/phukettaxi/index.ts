@@ -133,7 +133,7 @@ export const heroData: HeroData = {
   heading: "Getting to Faraway Yachting",
   subheading: "Easy Phuket Taxi Transfers to Chalong Pier",
   description: "Planning your Phuket yacht charter with us? We're here to make your journey smooth from anywhere on the island. Whether you're starting from Patong, Phuket Town, or the airport, we'll guide you on the best ways to reach our base at Chalong Pier.",
-  backgroundImage: "/images/timg1.png",
+  backgroundImage: "/images/timg14.png",
   title: "Taxi Options, Prices, and What to Expect",
   subtitle: "You can choose between local taxi apps (Grab, Bolt) or book a private transfer through us."
 };

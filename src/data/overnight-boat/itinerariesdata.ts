@@ -11,8 +11,8 @@ export const rentalCostValues: RentalCostFeature[] = [
         description: "Explore <strong>Phang Nga Bay, Phi Phi Islands</strong>, and <strong>Racha Islands</strong>. Short but packed with beauty, these are ideal if you're new to an <strong>overnight yacht charter Phuket</strong>." 
     },
     { 
-        title: "5 Nights: Best Value Itinerary", 
-        description: "Reach remote islands such as Koh Mook, Koh Rok, and Koh Ha. A <strong>5-night overnight boat charter Phuket</strong> is our top recommendation for variety and value." 
+        title: "<span class=\"text-orange\">5 Nights: Best Value Itinerary</span>", 
+        description: "<span class=\"text-orange\">Reach remote islands such as Koh Mook, Koh Rok, and Koh Ha. A <strong>5-night overnight boat charter Phuket</strong> is our top recommendation for variety and value.</span>" 
     },
     { 
         title: "7+ Nights: Ultimate Adventures", 
