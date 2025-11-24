@@ -34,7 +34,7 @@ const AboutFaraway = () => {
                                 Faraway Yachting is a Phuket-based <span className="text-mustard font-semibold bg-mustard/15 px-3 py-1 rounded-full">yacht charter operator</span> offering tailor-made private yacht experiences. With our own catamarans and selected partner vessels, we ensure every charter is safe, smooth, and memorable.
                             </p>
                             <p className={combine(styles.p1, "text-zink font-inter leading-relaxed max-w-3xl mx-auto font-medium")}>
-                                Our goal is simple: to make your <span className="text-mustard font-semibold bg-mustard/15 px-3 py-1 rounded-full">Phuket yacht charter</span> the highlight of your holiday as promised in <a href="/about-us#mission" className="text-mustard hover:text-slate-800 transition-all duration-300 underline decoration-2 underline-offset-4 hover:decoration-mustard/50">our mission statement</a>.
+                                Our goal is simple: to make your <span className="text-mustard font-semibold bg-mustard/15 px-3 py-1 rounded-full">Phuket Yacht Charter</span> the highlight of your holiday as promised in <a href="/about-us#mission" className="text-mustard hover:text-slate-800 transition-all duration-300 underline decoration-2 underline-offset-4 hover:decoration-mustard/50">our mission statement</a>.
                             </p>
                         </div>
                         {/* Elegant decorative line */}

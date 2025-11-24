@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { fetchYachts } from '@/lib/api';
+import { fetchYachts, fetchBlogs } from '@/lib/api';
 
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.faraway-yachting.com';
@@ -26,6 +26,22 @@ export async function GET() {
     console.error('Failed to fetch yachts for sitemap:', error);
   }
   
+  let blogPages: Array<{ url: string; priority: string; changefreq: string }> = [];
+  try {
+    const blogResponse = await fetchBlogs();
+    const blogs = blogResponse.data?.blogs || [];
+    
+    const publishedBlogs = blogs.filter((blog: any) => blog.status?.toLowerCase() === 'published');
+    
+    blogPages = publishedBlogs.map((blog: any) => ({
+      url: `/blog/${blog.slug}`,
+      priority: '0.7',
+      changefreq: 'monthly'
+    }));
+  } catch (error) {
+    console.error('Failed to fetch blogs for sitemap:', error);
+  }
+  
   // Static pages from the project structure with priorities
   const staticPages = [
     { url: '', priority: '1.0', changefreq: 'daily' },
@@ -42,11 +58,13 @@ export async function GET() {
     { url: '/amaavailability', priority: '0.7', changefreq: 'daily' },
     { url: '/hcavailability', priority: '0.7', changefreq: 'daily' },
     { url: '/mozavailability', priority: '0.7', changefreq: 'daily' },
+    { url: '/nbnavailability', priority: '0.7', changefreq: 'daily' },
     { url: '/sdavailability', priority: '0.7', changefreq: 'daily' },
     { url: '/slvavailability', priority: '0.7', changefreq: 'daily' },
     { url: '/daycharter-meeting', priority: '0.7', changefreq: 'monthly' },
     { url: '/overnight-charter-meeting', priority: '0.7', changefreq: 'monthly' },
     { url: '/beverage-menu', priority: '0.6', changefreq: 'monthly' },
+    { url: '/all-boat-agency-contract-24-25', priority: '0.6', changefreq: 'yearly' },
     { url: '/business-card', priority: '0.6', changefreq: 'monthly' },
     { url: '/review-us', priority: '0.6', changefreq: 'monthly' },
     { url: '/world-nomads-travel-insurance', priority: '0.6', changefreq: 'monthly' },
@@ -57,7 +75,7 @@ export async function GET() {
   ];
 
   // Combine static pages and yacht pages
-  const allPages = [...staticPages, ...yachtPages];
+  const allPages = [...staticPages, ...yachtPages, ...blogPages];
   
   // Generate sitemap XML
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

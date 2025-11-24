@@ -46,9 +46,9 @@ const Cards = () => {
               <div className={combine("px-4 py-4 flex flex-col justify-between", "min-h-[150px] md:min-h-[180px] lg:min-h-[200px]")}>
                 <p className={combine("text-black", styles.p2)}>{truncateDescription(item.description, 112)}</p>
                 <div className={combine("flex justify-between items-center gap-4", styles.mt1)}>
-                  <Link href={`/${item.id}`}>
+                  <Link href={`/${item.id}`} aria-label={`Learn more about ${item.title}`}>
                     <p className={combine("text-zink font-extrabold underline cursor-pointer hover:text-[#d6ab62]", styles.h6)}>
-                      Read More
+                      Learn More
                     </p>
                   </Link>
                   <Button variant="outline" href="/contact">

@@ -12,6 +12,10 @@ const HeroSection = () => {
       button="Book Now"
       href="/contact"
       buttontext="Book Your Yacht Now"
+      showRatingBadges={true}
+      showGoogleRating={true}
+      showTripAdvisorRating={true}
+      showWorldLuxuryAward={true}
     />
   );
 };

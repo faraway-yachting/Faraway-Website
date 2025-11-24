@@ -30,6 +30,8 @@ var PngIcons = {
   Certificate5: "/images/certificate5.png",
   Certificate6: "/images/certificate6.png",
   Certificate7: "/images/certificate7.gif",
+  Certificate8: "/images/certificate8.png",
+  Winner2025Badge: "/images/2025 Personalised Travel Winner Logo2631.png",
   // slider Categories
   category1: "/images/category1.png",
   category2: "/images/category2.png",
@@ -238,5 +240,33 @@ var PngIcons = {
   bareboat8: "/images/bareboat8.png",
   bareboat9: "/images/bareboat9.png",
   bareboat10: "/images/bareboat10.png",
+
+  // Management Yachts
+  mYacht1: "/images/mYacht1.png",
+  mYacht2: "/images/myacht2.png",
+  mYacht3: "/images/myacht3.png",
+  mYacht4: "/images/myacht4.png",
+  mYacht5: "/images/myacht5.png",
+  mYacht6: "/images/myacht6.png",
+  mYacht7: "/images/myacht7.png",
+  mYacht8: "/images/myacht8.png",
+  mYacht9: "/images/myacht9.png",
+  mYacht10: "/images/mYacht10.png",
+  mYacht11: "/images/mYacht11.png",
+  mYacht12: "/images/mYacht12.png",
+
+  timg1: "/images/timg1.png",
+  timg2: "/images/timg2.png",
+  timg3: "/images/timg3.png",
+  timg4: "/images/timg4.png",
+  timg5: "/images/timg5.png",
+  timg6: "/images/timg6.png",
+  timg7: "/images/timg7.png",
+  timg8: "/images/timg8.png",
+  timg9: "/images/timg9.png",
+  timg10: "/images/timg10.png",
+  timg11: "/images/timg11.png",
+  timg12: "/images/timg12.png",
+  timg13: "/images/timg13.png",
 }
 export default PngIcons

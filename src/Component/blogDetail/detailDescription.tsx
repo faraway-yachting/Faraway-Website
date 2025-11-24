@@ -16,18 +16,19 @@ interface BlogData {
 }
 interface BlogProps {
   slug: string;
+  initialBlog?: BlogData | null;
 }
 const slugify = (text: string | undefined | null): string => {
   if (!text) return "";
   return text;
 };
-const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
-  const [data, setData] = useState<BlogData | null>(null);
-  const [loading, setLoading] = useState(true);
+const BlogDetail: React.FC<BlogProps> = ({ slug, initialBlog = null }) => {
+  const [data, setData] = useState<BlogData | null>(initialBlog);
+  const [loading, setLoading] = useState(!initialBlog);
   const router = useRouter();
 
   useEffect(() => {
-    if (!slug) {
+    if (!slug || initialBlog) {
       setLoading(false);
       return;
     }
@@ -53,7 +54,7 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
       }
     };
     fetchBlog();
-  }, [slug]);
+  }, [slug, initialBlog]);
 
   if (loading) {
     return (
@@ -83,10 +84,9 @@ const BlogDetail: React.FC<BlogProps> = ({ slug }) => {
         <div className={combine(styles.bgImage, "bg-[url('/images/blogimg1.png')] min-h-[30vh] md:min-h-[40vh] lg:min-h-[58vh]", styles.flexCol, "justify-center items-center", styles.px4)}>
           <div className="absolute inset-0 bg-[#012A50]/40 z-0" />
           <div className="relative z-10">
-            <p className={combine(styles.p2,"font-semibold text-zink mb-3 text-center ")} >{data.slug}</p>
-            <p className={combine(styles.h2, "mb-4 text-white max-w-2xl mx-auto text-center")}>
+            <h1 className={combine(styles.h1, "mb-4 text-white max-w-4xl mx-auto text-center leading-tight")}>
               {data.title}
-            </p>
+            </h1>
           </div>
         </div>
       </div>
