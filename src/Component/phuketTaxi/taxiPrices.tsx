@@ -18,7 +18,7 @@ const TaxiPrices = () => {
                     {taxiPrices.map((taxi, index) => (
                         <div
                             key={index}
-                            className="bg-white h-[235px] md:h-[270px] lg:h-[283px] xl:h-[310px] p-2 border border-2 border-[#EBEBEB] rounded-tl-2xl rounded-br-2xl hover:border-[#7F93A6] overflow-hidden transition-all duration-300"
+                            className="bg-white h-[253px] md:h-[270px] lg:h-[285px] xl:h-[310px] p-2 border border-2 border-[#EBEBEB] rounded-tl-2xl rounded-br-2xl hover:border-[#7F93A6] overflow-hidden transition-all duration-300"
                         >
                             {/* Image */}
                             <div className="relative w-full h-[120px] md:h-[145px] lg:h-[150px] xl:h-[190px] overflow-hidden rounded-tl-xl rounded-br-xl">
@@ -32,17 +32,16 @@ const TaxiPrices = () => {
 
                             {/* Content */}
                             <div className="pt-2">
-                                {/* Price */}
-                                <div className="">
-                                    <span className={combine("text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] font-playfair text-zink font-bold")}>
-                                        {taxi.price.toLocaleString()} THB
-                                    </span>
-                                </div>
+                            
+                                    
 
                                 {/* Locations - Display with " / " separator */}
                                 <div>
-                                    <p className={combine("text-[#6D6D6D] font-inter text-[12px] md:text-[13px] lg:text-sm leading-relaxed")}>
-                                        {taxi.locations.join(" / ")}
+                                    <p className={combine("text-zink font-playfair text-[16px] md:text-[17px] lg:text-[19px] leading-tight pt-1 md:pt-2")}>
+                                        {taxi.locations.join(" / ")}{" "}
+                                        <span className={combine("text-[16px] md:text-[17px] lg:text-[19px] font-playfair text-zink font-bold ps-1")}>
+                                            ({taxi.price.toLocaleString()} THB)
+                                        </span>
                                     </p>
                                 </div>
                             </div>

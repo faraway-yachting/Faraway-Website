@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { styles, combine } from '@/styles';
 import HeadingContent from '@/common/heading';
 import { FaCheckCircle } from "react-icons/fa";
@@ -19,10 +20,11 @@ interface BoatCardProps {
     badge: string;
     badgeColor: string;
     badgeTextColor?: string;
+    href: string;
 }
 
-const BoatCard = ({ src, alt, title, price, badge, badgeColor, badgeTextColor = "text-white" }: BoatCardProps) => (
-    <div className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+const BoatCard = ({ src, alt, title, price, badge, badgeColor, badgeTextColor = "text-white", href }: BoatCardProps) => (
+    <Link href={href} className="block bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300">
         <div className="relative">
             <Image src={src} alt={alt} width={300} height={200} className="w-full h-58 lg:h-56 xl:h-61 object-cover" />
             <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
@@ -41,7 +43,7 @@ const BoatCard = ({ src, alt, title, price, badge, badgeColor, badgeTextColor = 
                 <span className={combine(styles.p4, "text-gray-500 font-inter ml-1")}>per night.</span>
             </div>
         </div>
-    </div>
+    </Link>
 );
 
 interface FactorItemProps {
@@ -61,10 +63,10 @@ const FactorItem = ({ title, description }: FactorItemProps) => (
 
 const BoatCost = () => {
     const boats = [
-        { src: "/images/overnightimg8.png", alt: "Hot Chilli speedboat", title: "Hot Chilli", price: "€900 - €1,500", badge: "Budget", badgeColor: "bg-[#DDF0FF]", badgeTextColor: "text-zink" },
-        { src: "/images/overnightimg9.png", alt: "Mid-tier Catamaran", title: "Mid-tier Catamarans", price: "€1,000 - €1,800", badge: "Mid-tier", badgeColor: "bg-[#009AFF]" },
-        { src: "/images/overnightimg10.png", alt: "C'est La Vie luxury yacht", title: "C'est La Vie (luxury)", price: "€2,500 - €5,000", badge: "Luxury", badgeColor: "bg-[#0061B1]" },
-        { src: "/images/overnightimg11.png", alt: "Mia Kai superyacht", title: "Mia Kai (superyacht)", price: "€10,000 - €15,000", badge: "Superyacht", badgeColor: "bg-[#012A50]" }
+        { src: "/images/overnightimg8.png", alt: "Hot Chilli speedboat", title: "Hot Chilli", price: "€900 - €1,500", badge: "Budget", badgeColor: "bg-[#DDF0FF]", badgeTextColor: "text-zink", href:"/crewed_boats/power-catamaran-rental-phi-phi-islands"},
+        { src: "/images/overnightimg9.png", alt: "Mid-tier Catamaran", title: "Mid-tier Catamarans", price: "€1,000 - €1,800", badge: "Mid-tier", badgeColor: "bg-[#009AFF]", href:"/crewed_boats/cruising-overnight-yacht-charter-phuket" },
+        { src: "/images/overnightimg10.png", alt: "Sail La Vie luxury yacht", title: "Sail La Vie (luxury)", price: "€2,500 - €5,000", badge: "Luxury", badgeColor: "bg-[#0061B1]" ,href:"/crewed_boats/power-catamaran-island-hopping"},
+        { src: "/images/overnightimg11.png", alt: "Mia Kai superyacht", title: "Mia Kai (superyacht)", price: "€10,000 - €15,000", badge: "Superyacht", badgeColor: "bg-[#012A50]", href:"/crewed_boats/bilgin-yacht-98" }
     ];
 
     const factors = [
@@ -73,7 +75,7 @@ const BoatCost = () => {
         { title: "Guest count", description: "Some yachts charge extra the more guests are onboard." }
     ];
 
-    return (
+    return ( 
         <div className={combine(styles.container, "pt-7 pb-8 lg:pb-16")}>
             <div className="mb-10">
                 <HeadingContent heading="Cost of an Overnight Boat Charter in Phuket"

@@ -11,10 +11,9 @@ const HeroSection = ()=> {
       subheading={heroData.subheading}               
       description={heroData.description}
       backgroundImage={heroData.backgroundImage}
-      dividerImage={PngIcons.frame3}
+      dividerImage={PngIcons.rframe2}
       minHeightClass="min-h-[64vh]"
-      overlayColor="bg-white/1"
-      textColor="text-zink"
+    
     />
     <div className={combine("flex flex-col md:flex-row md:items-center md:justify-between","max-w-7xl mx-auto mt-5 px-4 xl:px-0 md:gap-15 lg:gap-7 xl:gap-0 gap-2")}>
       <h2 className={combine(styles.h4 ,"font-bold text-zink max-w-md")}>{heroData.title}</h2>

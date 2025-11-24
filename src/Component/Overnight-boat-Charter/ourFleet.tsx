@@ -128,7 +128,7 @@ const OurFleet = () => {
                         <h3 className={combine(styles.h3, "text-zink")}>
                             Ultra-Luxury                        </h3>
                         <a
-                            href="https://www.faraway-yachting.com/crewed_boats/yacht-charter-phuket"
+                            href="https://www.faraway-yachting.com/crewed_boats/bilgin-yacht-98"
                             target='_blank'
                             className={combine("text-[#005292] hover:text-[#D6ab62] ms-4 font-semibold transition-colors underline", styles.p1)}
                         >
