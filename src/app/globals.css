@@ -80,6 +80,10 @@ button.btn-grad:hover {
   .text-mustard {
     color: var(--mustard);
   }
+  
+  .text-orange {
+    color: #ff7a00;
+  }
 
   .text-blue {
     color: var(--blue);

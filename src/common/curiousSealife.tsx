@@ -6,7 +6,7 @@ import { RefObject } from "react";
 import { styles, combine } from "@/styles/style";
 
 interface SealifeFAQProps {
-  sectionRef: RefObject<HTMLDivElement | null>;
+  sectionRef?: RefObject<HTMLDivElement | null>;
   faqData: ItineraryItem[];
   title: string;
 }
@@ -63,8 +63,7 @@ const SealifeFAQ = ({ sectionRef, faqData, title }: SealifeFAQProps) => {
 
                     {isOpen && (
                       <div className="px-3 lg:px-4 pb-3 lg:pb-4 xl:pb-6">
-                        <p className={combine("text-zink", styles.p2)}>
-                          {item.description}
+                        <p className={combine("text-zink", styles.p2)} dangerouslySetInnerHTML={{ __html: item.description }}>
                         </p>
                       </div>
                     )}
