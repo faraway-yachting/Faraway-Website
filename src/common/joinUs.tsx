@@ -42,6 +42,7 @@ const JoinUs: React.FC<JoinUsProps> = ({
         </p>
         <div className="flex justify-center items-center mt-6">
           <Button
+          href="/contact"
             variant="outline"
           >
             Start Your Adventure

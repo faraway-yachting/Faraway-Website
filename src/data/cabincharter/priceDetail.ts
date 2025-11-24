@@ -5,13 +5,20 @@ import { TbCopyMinus } from "react-icons/tb";
 import { TbCopyPlus } from "react-icons/tb";
 import { LuWine } from "react-icons/lu";
 import { LuMartini } from "react-icons/lu";
+import { LuBed } from "react-icons/lu";
+import { LuUtensils } from "react-icons/lu";
+import { LuLeaf } from "react-icons/lu";
 
 export interface ItineraryItem {
     id: string;
     icon: IconType;
     place: string;
+    link?: string;
+    href?: string;
     itinerary: {
-        description: string[];
+        description?: string[];
+        link?: string;
+        href?: string;
     }[];
 }
 
@@ -115,11 +122,47 @@ export const priceDetail: ItineraryItem[] = [
         place: "Drinks on board (pay what you consume)",
         itinerary: [
             {
+                link: "Beverage-Menu",
+                href: "/beverage-menu",
+
+            }
+        ]
+    },
+    {
+        id: "7",
+        icon: LuBed,
+        place: "Cabins and onboard comfort",
+        itinerary: [
+            {
 
                 description: [
-                    "Soft drinks 40 THB per can",
-                    "Local beers (Leo, Singha or Chang) 100 THB per can",
-                    "Wine (white or red) = 950 THB per bottle",
+                    "You’ll stay in comfortable double cabins with fans, reading lights, and plenty of natural ventilation. Each cabin is designed for rest after a day of adventure. Whether you’re sharing with a partner or a fellow traveler, your space is cozy and private."
+                ],
+            }
+        ]
+    },
+    {
+        id: "8",
+        icon: LuUtensils,
+        place: "Gourmet dining and Thai beach BBQs",
+        itinerary: [
+            {
+
+                description: [
+                    "Meals are a highlight. Our chef prepares authentic Thai dishes daily, alongside fresh fruit, seafood, and snacks. Highlights include a beach BBQ under the stars and one dinner on land in on a scenic beach including a fire-show (if weather permits)."
+                ],
+            }
+        ]
+    },
+    {
+        id: "9",
+        icon: LuLeaf,
+        place: "Eco-friendly sailing and activities",
+        itinerary: [
+            {
+
+                description: [
+                    "Enjoy snorkeling, kayaking, and paddleboarding — all included. Our Thailand cabin charter operates with eco-conscious practices: solar power, reduced plastic use, loads of sailing and ocean-friendly cleaning products. You can relax knowing your adventure is sustainable."
                 ],
             }
         ]

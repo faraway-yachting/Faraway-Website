@@ -3,7 +3,6 @@ import CardData from "../../data/destination/destinationCards";
 import Image from "next/image";
 import Link from "next/link";
 import { styles, combine, Button} from "../../styles";
-import { GiH2O } from "react-icons/gi";
 
 // Function to truncate description text
 const truncateDescription = (text: string, maxLength: number = 112) => {
@@ -33,23 +32,23 @@ const Cards = () => {
                   height={300}
                   className={combine(
                     "object-cover w-full rounded-tl-3xl rounded-br-3xl",
-                    "h-[240px] sm:h-[230px] md:h-[245px] lg:h-[250px] xl:h-[330px]"
+                    "h-[240px] sm:h-[230px] md:h-[245px] lg:h-[250px] xl:h-[280px]"
                   )}
                 />
-                <div className="absolute bottom-0 bg-opacity-40 w-full text-white px-4 py-2">
-                  <h2 className={combine("text-foreground font-extrabold transition-all duration-300", styles.h2)}>
+                <div className="absolute inset-0 bg-[#012A50]/20 z-0" />
+                <div className="absolute bottom-0 bg-opacity-40 w-full text-white px-4 py-2 z-10">
+                  <h3 className={combine("text-foreground font-extrabold transition-all duration-300", styles.h3)}>
                     {item.title}
-                  </h2>
+                  </h3>
                 </div>
               </div>
-
               {/* TEXT & BUTTON */}
               <div className={combine("px-4 py-4 flex flex-col justify-between", "min-h-[150px] md:min-h-[180px] lg:min-h-[200px]")}>
                 <p className={combine("text-black", styles.p2)}>{truncateDescription(item.description, 112)}</p>
                 <div className={combine("flex justify-between items-center gap-4", styles.mt1)}>
-                  <Link href={`/${item.id}`}>
-                    <p className={combine("text-zink font-extrabold underline cursor-pointer hover:text-mustard", styles.h6)}>
-                      Read More
+                  <Link href={`/${item.id}`} aria-label={`Learn more about ${item.title}`}>
+                    <p className={combine("text-zink font-extrabold underline cursor-pointer hover:text-[#d6ab62]", styles.h6)}>
+                      Learn More
                     </p>
                   </Link>
                   <Button variant="outline" href="/contact">

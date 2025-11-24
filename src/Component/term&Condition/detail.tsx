@@ -28,7 +28,7 @@ const iconMap = {
 
 interface Point {
   text: string;
-  id: string;
+  id?: string;
 }
 
 interface Section {
@@ -43,27 +43,34 @@ export default function TermsWithTable() {
   // Your manually defined TOC (unchanged)
   const sections: Section[] = [
     {
-      number: "01", title: "Booking", id: "booking", points: [
-        { text: "1.6 Daycharter payments", id: "daycharter-payments" },
-        { text: "1.7 Overnight charter payments", id: "overnight-charter-payments" }],
+      number: "01", title: "Booking", id: "booking"
     },
     { number: "02", title: "Altering a Booking", id: "altering-a-booking" },
     {
-      number: "03", title: "Cancellations and Insurance", id: "cancellations-and-insurance", points: [
-        { text: "3.2.1 Day charter cancellation", id: "day-charter-cancellation" },
-        { text: "3.2.2 Overnight charter cancellation", id: "overnight-charter-cancellation" }],
+      number: "03", title: "Payments", id: "payments", points: [
+        { text: "3.1 Payment Methods & Accepted Currencies", id: "payments" },
+        { text: "3.2 Service & Administration Fee", id: "payments" },
+        { text: "3.3 Payment Deadlines", id: "payments" },
+        { text: "3.4 Clearance Responsibility", id: "payments" },
+        { text: "3.5 Late or Non-Payment Consequences", id: "payments" }]
     },
-    { number: "04", title: "Force Majeure", id: "force-majeure" },
-    { number: "05", title: "Safety", id: "safety" },
-    { number: "06", title: "Liability", id: "liability" },
-    { number: "07", title: "Holiday & Cancellation Insurance", id: "holiday&cancellation-insurance" },
-    { number: "08", title: "Equipment Breakdown", id: "equipment-breakdown" },
-    { number: "09", title: "Complaints", id: "complaints" },
-    { number: "10", title: "Information Provided", id: "information-provided" },
-    { number: "11", title: "Price Changes & Promotions", id: "price-changes&promotions" },
-    { number: "12", title: "Intellectual Property & Privacy Policy", id: "intellectual-property&privacy-policy" },
-    { number: "13", title: "Additional Terms", id: "additional-terms" },
-    { number: "14", title: "Final Note (including bookings as agency)", id: "final-note" },
+    {
+      number: "04", title: "Cancellations and Insurance", id: "cancellations-and-insurance",
+      points: [
+        { text: "4.2.1 Day charter cancellation", id: "cancellations-and-insurance", },
+        { text: "4.2.2 Overnight charter cancellation", id: "cancellations-and-insurance" }],
+    },
+    { number: "05", title: "Force Majeure", id: "force-majeure" },
+    { number: "06", title: "Safety", id: "safety" },
+    { number: "07", title: "Liability", id: "liability" },
+    { number: "08", title: "Holiday & Cancellation Insurance", id: "holiday&cancellation-insurance" },
+    { number: "09", title: "Equipment Breakdown", id: "equipment-breakdown" },
+    { number: "10", title: "Complaints", id: "complaints" },
+    { number: "11", title: "Information Provided", id: "information-provided" },
+    { number: "12", title: "Price Changes & Promotions", id: "price-changes&promotions" },
+    { number: "13", title: "Intellectual Property & Privacy Policy", id: "intellectual-property&privacy-policy" },
+    { number: "14", title: "Additional Terms", id: "additional-terms" },
+    { number: "15", title: "Final Note (including bookings as agency)", id: "final-note" },
   ];
 
   const handleScroll = (id: string) => {
@@ -92,8 +99,8 @@ export default function TermsWithTable() {
       for (const section of sections) {
         if (section.points) {
           const point = section.points.find(p => p.id === targetId);
-          if (point) {
-            setTimeout(() => handleScroll(point.id), 100);
+          if (point?.id) {
+            setTimeout(() => handleScroll(point.id!), 100);
             return;
           }
         }
@@ -127,7 +134,7 @@ export default function TermsWithTable() {
           </div>
         </div>
 
-        <div className="relative z-10 px-8 pb-8">
+        <div className="relative z-10 pb-8">
           <div className="space-y-6">
             {sections.map((section) => (
               <div
@@ -150,7 +157,7 @@ export default function TermsWithTable() {
                           className="cursor-pointer hover:text-[#D6AB62] transition-colors duration-200"
                           onClick={(e) => {
                             e.stopPropagation();
-                            handleScroll(point.id);
+                            if (point.id) handleScroll(point.id);
                           }}
                         >
                           {point.text}
@@ -165,7 +172,7 @@ export default function TermsWithTable() {
         </div>
 
         {/* Terms & Conditions */}
-        <div className={combine(styles.container, "bg-white rounded-lg overflow-hidden", styles.px1, "my-14")}>
+        <div className={combine("bg-white rounded-lg overflow-hidden my-14")}>
           {/* Header */}
           <div className="mb-10">
             <HeadingContent
@@ -184,7 +191,7 @@ export default function TermsWithTable() {
                   </div>
 
                   {/* Section Content */}
-                  <div className="pl-9">
+                  <div className="pl-6 md:pl-7 lg:pl-8 xl:pl-9">
                     {section.subsections.map((subsection) => (
                       <div key={subsection.id} id={subsection.id} className="mb-4 scroll-mt-24">
                         {subsection.title && (
@@ -195,14 +202,19 @@ export default function TermsWithTable() {
                     ))}
 
                     {/* Special Insurance Box */}
-                    {section.id === "insurance" && (
-                      <div className="bg-[#E6ECED33] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 px-4 md:px-6 py-0 xl:py-6 border-l-[7px] border-l-[#034250]">
-                        <div className="flex-1 text-left py-3">
-                          <p className={combine("text-zink font-medium", styles.p4)}>{insuranceRecommendation.title}</p>
-                          <p className={combine("text-zink mt-2 ", styles.p4)}>{insuranceRecommendation.content}</p>
+                    {section.id === "holiday&cancellation-insurance" && (
+                      <div className="bg-white flex flex-col md:flex-row items-center ps-4 justify-between gap-6 md:gap-8 py-6 border-l-[7px] border-l-[#012A50] shadow-sm">
+                        <div className="flex-1 text-left">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-mustard font-bold text-lg">Info:</span>
+                            <span className="text-zink font-bold text-lg">Travel Insurance Recommendation</span>
+                          </div>
+                          <a href="/world-nomads-travel-insurance" target="_blank" rel="noopener">
+                            <p className="text-zink text-base font-inter leading-relaxed hover:text-[#D6AB62]">{insuranceRecommendation.content}</p>
+                          </a>
                         </div>
                         <div className="flex-shrink-0 w-[150px] sm:w-[180px] md:w-[200px] hidden md:block">
-                          <img src="/images/slideText.png" alt="" />
+                          <img src="/images/slideText.png" alt="Travel insurance illustration" />
                         </div>
                       </div>
                     )}
@@ -211,10 +223,14 @@ export default function TermsWithTable() {
               );
             })}
             {/* Final Message */}
-            <div className="bg-gradient-to-r from-[#012A50] to-[#034250] font-sourceSansPro text-white p-8 text-center rounded-lg border-3 border-mustard mt-16">
+            <div className="bg-gradient-to-r from-[#012A50] to-[#034250] font-sourceSansPro text-white px-12 py-8 text-center rounded-lg border-3 border-mustard mt-16">
               <h3 className={combine("font-bold mb-4", styles.h5)}>{finalMessage.title}</h3>
               <p className={combine("text-white", styles.p3)}>{finalMessage.subtitle}</p>
               <p className={combine("text-white font-semibold mt-2", styles.p3)}>{finalMessage.signature}</p>
+              <p className={combine("text-white font-semibold mt-3 underline", styles.p3)}>
+                <a href="https://docs.google.com/document/d/16-8JaAk47nyyuGdzU_-rua_Cu-957W-8bztGRNKuFdE/edit?tab=t.0#heading=h.53qzf1ct146v" target="_blank" rel="noopener noreferrer">
+                  Terms and Conditions: &nbsp; For all charters booked before the 1st of September 2025
+                </a></p>
             </div>
           </div>
         </div>

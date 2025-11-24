@@ -16,17 +16,17 @@ const About = () => {
                     <div>
                         <div className="flex items-center">
                             <p className="w-13 md:w-15 lg:w-18 xl:w-21 border-b-3 border-mustard z-10"></p>
-                            <p className={combine("text-mustard font-semibold font-inter uppercase relative z-10 ms-3", styles.p3)}>
+                            <p className={combine("text-mustard font-semibold font-inter uppercase relative z-10 ms-3 text-[13px] md:text-[16px] lg:text-[16px] xl:text-[19px] font-inter")}>
                                 Your privacy and security matter most </p>
                         </div>
                         <p className={combine(styles.h2, "mb-3 font-bold text-zink uppercase")}>Privacy Policy</p>
-                        <p className={combine(styles.p3, "text-zink font-semibold mb-2")}>Last updated: October 31, 2024 </p>
+                        <p className={combine(styles.p3, "text-zink font-semibold mb-2")}>Last updated: October 31, 2025 </p>
                         <p className={combine(styles.p3, "text-zink leading-relaxed")}>This Privacy Policy describes our policies and procedures on the collection, use and disclosure of your information when You use the Service and tells You about Your privacy rights and how the law protects You.<br />
                             We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.
                         </p>
                     </div>
 
-                    <div className="flex items-center justify-end">
+                    <div className="flex items-center justify-center md:justify-end">
                         <img
                             src={PngIcons.policyimg2}
                             alt="Policy"

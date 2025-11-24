@@ -2,13 +2,14 @@ import PngIcons from "@/icons/pngIcon";
 import { LuTreePalm, LuUtensilsCrossed, LuOrigami } from "react-icons/lu";
 import { TbWheel } from "react-icons/tb";
 import { seaEscapeFeatures } from "@/data/cabincharter/momentsData";
+import { styles, combine } from "@/styles/style";
 
 // Icon mapping for dynamic icon rendering
 const iconMap = {
-  LuTreePalm,
-  TbWheel,
-  LuUtensilsCrossed,
-  LuOrigami,
+    LuTreePalm,
+    TbWheel,
+    LuUtensilsCrossed,
+    LuOrigami,
 };
 
 const SeaEscape = () => {
@@ -23,15 +24,15 @@ const SeaEscape = () => {
                 </div>
 
                 <div className="relative z-10 text-center max-w-5xl md:max-w-3xl mx-auto mb-6 md:mb-6 lg:mb-8 xl:mb-10">
-                    <h2 className="text-[23px] md:text-[32px] lg:text-[38px] xl:text-[40px] max-w-5xl md:max-w-3xl text-center mx-auto font-playfair text-zink font-semibold mb-3 mt-14">
+                    <h2 className={combine(styles.h2, styles.mb1, "max-w-5xl md:max-w-3xl text-center mx-auto text-zink font-semibold")}>
                         What's Included – Your All-Inclusive Sea Escape
                     </h2>
-                    <p className="text-base md:text-lg font-inter text-zink md:max-w-xl lg:max-w-2xl mx-auto xl:max-w-3xl text-center flex items-center justify-center">
+                    <p className={combine(styles.p2, styles.flexCenter, "text-zink md:max-w-xl lg:max-w-2xl mx-auto xl:max-w-3xl text-center")}>
                         Step aboard Amadeus for 6 days of island-hopping bliss—gourmet meals, snorkeling, kayaking, and epic views, all expertly handled by Far Away Charters
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 py-3 gap-7 lg:gap-5 xl:gap-10 max-w-7xl mb-7 mx-auto px-4">
+                <div className={combine("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-5 xl:gap-10 py-3 mb-7", styles.container)}>
                     {seaEscapeFeatures.map(({ icon, title, desc }) => {
                         const IconComponent = iconMap[icon as keyof typeof iconMap];
                         return (
@@ -41,8 +42,8 @@ const SeaEscape = () => {
                                         <IconComponent size={32} />
                                     </div>
                                 </div>
-                                <h3 className="lg:text-[19px] xl:text-[22px] font-bold font-sourceSanspro text-mustard">{title}</h3>
-                                <p className="text-[16px] font-normal text-gray-600 font-inter  text-center">{desc}</p>
+                                <h3 className={combine(styles.p1, "font-bold text-mustard")}>{title}</h3>
+                                <p className={combine(styles.p4, "text-gray-600 text-center")}>{desc}</p>
                             </div>
                         );
                     })}

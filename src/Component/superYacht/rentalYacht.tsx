@@ -4,32 +4,31 @@ import { styles, combine } from "@/styles";
 const RentalYacht = () => {
     // Benefits data array
     const benefits = [
-        "Untouched islands: Koh Hong, Koh Yao Noi, Phi Phi",
-        "Dream Phuket itinerary with beaches & snorkeling",
-        "Celebrate milestones: birthdays, weddings, anniversaries"
+        "Premium services that guarantee comfort and relaxation",
+        "Local insights combined with world-class service",
+        "Various yacht charter options are available",
+        "Customizable experiences to your unique preferences"
     ];
     // Services data array
     const services = [
-        "Sunset Cruises from Phuket",
-        "Island Hopping in the Andaman Sea",
-        "Luxury Sailing Trips in Thailand",
-        "Overnight Yacht Rentals"
+        " for updated yacht availability and exclusive packages. Located in Phuket, Thailand – serving guests from around the world.",
+        "Sail and make your fantasies come true. Your luxury private yacht is ready."
     ];
 
     return (
         <div className="relative">
             {/* HERO IMAGE SECTION */}
-            <div className={combine("bg-[url('/images/super4.png')] flex min-h-[60vh] md:min-h-[54vh] lg:min-h-[58vh]", styles.mt3, styles.mb1, styles.bgImage)}>
+            <div className={combine("bg-[url('/images/super4.png')] flex min-h-[60vh] md:min-h-[54vh] lg:min-h-[48vh] xl:min-h-[48vh]", styles.mt3, styles.mb1, styles.bgImage)}>
                 {/* Creative Multi-Layer Overlay */}
                 <div className="absolute inset-0 bg-[#012A50]/60 z-0" />
                 {/* Creative Floating Elements */}
-                <div className="absolute top-8 md:top-16 left-8 md:left-16 w-20 md:w-32 h-20 md:h-32 border-2 border-[#F9B233]/30 rotate-45 animate-spin"></div>
+                <div className="absolute top-8 md:top-14 left-8 md:left-14 w-20 md:w-32 h-20 md:h-32 border-2 border-[#F9B233]/30 rotate-45 animate-spin"></div>
                 <div className="absolute bottom-16 md:bottom-24 right-16 md:right-24 w-16 md:w-24 h-16 md:h-24 bg-[#F4A261]/20 rounded-full animate-bounce"></div>
                 <div className="absolute top-1/3 right-1/4 w-16 md:w-20 h-16 md:h-20 border-2 border-[#F9B233]/20 transform rotate-12 animate-pulse"></div>
                 <div className="absolute bottom-1/3 left-1/3 w-12 md:w-16 h-12 md:h-16 bg-[#F4A261]/15 rounded-full animate-ping"></div>
                 {/* Content */}
                 <div className={combine("relative z-10 w-full", styles.container)}>
-                    <div className="flex flex-col md:flex-row justify-between gap-12 md:gap-6 lg:gap-16 xl:gap-32 py-16 md:py-24 lg:py-24">
+                    <div className="flex flex-col md:flex-row justify-between gap-12 md:gap-6 lg:gap-16 xl:gap-32 py-16 md:py-24 lg:py-18">
                         {/* LEFT SIDE - Main Content */}
                         <div className="md:max-w-md lg:max-w-lg xl:max-w-2xl text-center md:text-left relative">
                             {/* Creative Background Elements */}
@@ -37,13 +36,12 @@ const RentalYacht = () => {
                             <div className="absolute -bottom-6 md:-bottom-8 -right-6 md:-right-8 w-20 md:w-24 h-20 md:h-24 border-2 border-[#F4A261]/20 rounded-full"></div>
 
                             {/* Main Heading */}
-                            <h1 className={combine("text-white font-extrabold font-playfair leading-tight mb-6 text-shadow-lg", styles.h1)}>
-                                Private Yacht in Phuket
-                            </h1>
+                            <h2 className={combine("text-white font-extrabold font-playfair leading-tight mb-4 text-shadow-lg", styles.h2)}>
+                            Book Your Dream Super Yacht in Phuket Today
+                            </h2>
                             {/* Description */}
-                            <p className={combine("text-white/80 font-normal font-inter leading-relaxed mb-10", styles.p2)}>
-                                Experience Thailand's magnificent islands with a Private Yacht Charter in Phuket. We create custom yachting experiences tailored to your desires and pace.
-                            </p>
+                            <p className={combine("text-white/80 font-normal font-inter leading-relaxed mb-7", styles.p2)}>
+                            Your dream <span className='font-semibold'>super yacht charter Phuket </span>vacation starts the moment you contact us. If you are looking for a<span className='font-semibold'> romantic sailing trip</span>, an <span className='font-semibold'>adventure-filled family yacht holiday</span>, or a <span className='font-semibold'>VIP corporate yacht charter</span>, we’ll give you the best possible options and guide you throughout your journey.                            </p>
 
                             {/* Benefits Grid */}
                             <div className="grid grid-cols-1 gap-4">
@@ -67,11 +65,10 @@ const RentalYacht = () => {
 
                                 <div className="relative z-10">
                                     {/* Services List */}
-                                    <h6 className={combine("text-white font-bold mb-6", styles.h6)}>Our Services</h6>
+                                    <h6 className={combine("text-white font-bold mb-4", styles.h5)}>Contact us today</h6>
                                     <div className="space-y-3">
                                         {services.map((service, index) => (
                                             <div key={index} className="flex items-center gap-3">
-                                                <div className="w-2 h-2 bg-mustard rounded-full"></div>
                                                 <span className={combine("text-white font-medium", styles.p4)}>{service}</span>
                                             </div>
                                         ))}
@@ -79,7 +76,7 @@ const RentalYacht = () => {
                                 </div>
                             </div>
                             {/* CTA Button */}
-                            <div className="text-center md:text-left flex justify-center md:justify-start">
+                            {/* <div className="text-center md:text-left flex justify-center md:justify-start">
                                 <Button
                                     variant="primary"
                                     href="/contact"
@@ -87,7 +84,7 @@ const RentalYacht = () => {
                                 >
                                     Check Availability
                                 </Button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

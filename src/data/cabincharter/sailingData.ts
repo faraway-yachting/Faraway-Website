@@ -43,7 +43,7 @@ export const highSeason: ItineraryItem[] = [
     {
         id: "2",
         days: "Day",
-        place: "-Tonsai Bay, Koh Phi Phi -> Kantiang beach, Koh Lanta",
+        place: "-Tonsai Bay, Koh Phi Phi — Kantiang beach, Koh Lanta",
         itinerary: [
             {
                 title: [
@@ -69,7 +69,7 @@ export const highSeason: ItineraryItem[] = [
     {
         id: "3",
         days: "Day ",
-        place: "- Kantiang beach, Koh Lanta A—> Koh Muk and Koh Rok",
+        place: "- Kantiang beach, Koh Lanta A — Koh Muk and Koh Rok",
         itinerary: [
             {
                 title: [
@@ -91,7 +91,7 @@ export const highSeason: ItineraryItem[] = [
     {
         id: "4",
         days: "Day ",
-        place: "- Koh Rok —> Koh Ha and Phi Phi Leh",
+        place: "- Koh Rok — Koh Ha and Phi Phi Leh",
         itinerary: [
             {
                 title: [
@@ -114,7 +114,7 @@ export const highSeason: ItineraryItem[] = [
     {
         id: "5",
         days: "Day ",
-        place: "- Koh Phi Phi Leh -> Koh Racha Yai",
+        place: "- Koh Phi Phi Leh — Koh Racha Yai",
         itinerary: [
             {
                 title: [
@@ -136,7 +136,7 @@ export const highSeason: ItineraryItem[] = [
     {
         id: "6",
         days: "Day ",
-        place: "- Koh Racha Yai -> Chalong Pier, Phuket",
+        place: "- Koh Racha Yai — Chalong Pier, Phuket",
         itinerary: [
             {
                 title: [
@@ -150,5 +150,54 @@ export const highSeason: ItineraryItem[] = [
             }
         ]
     },
-
+    {
+        id: "7",
+        days: "Day ",
+        place: "-Sailing Map",
+       image: "/images/map2.png"
+    },
 ];
+
+// Define the interface for yacht tips items
+interface YachtTip {
+    number: string;
+    title: string;
+    description: string;
+    icon: string; // Icon image path
+}
+
+// Export the yacht tips data based on the Figma design
+export const yachtTipsData: YachtTip[] = [
+    {
+        number: "01",
+        title: "Pack smart:",
+        description: "Bring three swimsuits, a hat, sunscreen, sunglasses, and a camera. We provide towels and body soap, but bring your own shampoo, conditioner, and hairdryer if needed.",
+        icon: "/images/crewedimg15.png"
+    },
+    {
+        number: "02", 
+        title: "Know the routine:",
+        description: "On the first day, we’ll brief you on safety, itinerary, and onboard life. Everything is easy to follow.",
+        icon: "/images/cabintip2.png"
+    },
+    {
+        number: "03",
+        title: "Seasickness", 
+        description: " Tablets are available. Most guests feel comfortable after the first night.",
+        icon: "/images/cabintip3.png"
+    },
+    {
+        number: "04",
+        title: "Onboard etiquette:", 
+        description: "Smoking is only allowed at the stern, away from meal times. Shared spaces are for everyone’s enjoyment.",
+        icon: "/images/cabintip4.png"
+    }
+];
+
+// Export the main yacht tips data
+export const yachtTipsMainData = {
+    title: "Tips for First-Time Renters",
+    subtitle: "Renting a yacht for the first time?",
+    tips: yachtTipsData
+};
+

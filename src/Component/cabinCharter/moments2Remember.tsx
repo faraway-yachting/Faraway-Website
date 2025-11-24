@@ -1,13 +1,14 @@
 "use client";
 import React from "react";
+import { styles, combine } from "@/styles/style";
 const Moments2Remember: React.FC = () => {
   return (
-    <section className="bg-white py-4 md:py-9 lg:py-12 xl:py-16 px-4 xl:px-0">
+    <section className={combine("bg-white py-4 md:py-9 lg:py-12 xl:py-16", styles.px1)}>
       {/* Heading */}
       <div className="text-center mb-[40px] flex flex-col items-center">
-        <p className="text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-playfair text-zink text-green font-extrabold">
+        <h2 className={combine(styles.h2, "text-zink text-green font-extrabold")}>
           Sailing Moments to Remember
-        </p>
+        </h2>
 
         {/* Gold underline decoration */}
         <img
@@ -16,14 +17,14 @@ const Moments2Remember: React.FC = () => {
           className="w-[500px] flex justify-center text-center my-3 mx-auto"
         />
 
-        <p className="text-base md:text-lg lg:text-xl text-zink font-sourceSansPro text-center max-w-[420px]">
+        <p className={combine(styles.p3, "text-zink text-center max-w-[420px]")}>
           A collection of memories from guests who turned dreams into voyages
         </p>
       </div>
 
 
       {/* Collage */}
-      <div className="max-w-[78.2rem] mx-auto flex flex-col gap-2 md:gap-2 lg:gap-3 xl:gap-4 items-center mt-8">
+      <div className={combine(styles.containerLarge, "flex flex-col gap-2 md:gap-2 lg:gap-3 xl:gap-4 items-center mt-8")}>
         {/* Row 1 */}
         <div className="flex flex-row gap-1 md:gap-2 lg:gap-4">
           <div className="">

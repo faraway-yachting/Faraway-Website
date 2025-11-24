@@ -68,7 +68,7 @@ const Attractions: React.FC<AttractionsProps> = ({ id }) => {
                       <span className="w-8 h-8 bg-mustard rounded-full flex items-center justify-center me-1"><LuSailboat className="text-white " size={20} /></span>
                       <p className="font-semibold text-[20px] lg:text-[24px] font-sourceSansPro text-zink">{item.heading}</p>
                     </div>
-                    <ul className="list-disc pl-4 text-base text-zink font-semibold font-sourceSansPro space-y-1">
+                    <ul className="list-disc pl-4 text-base text-zink font-medium font-sourceSansPro space-y-1">
                       {item.highlights.map((point, i) => (
                         <li key={i}>{point}</li>
                       ))}
@@ -77,7 +77,7 @@ const Attractions: React.FC<AttractionsProps> = ({ id }) => {
 
                   <div className="flex items-start mt-3">
                     <IoWarningOutline className="text-zink" size={24} />
-                    <p className="text-base text-zink font-inter font-semibold"><span className="font-bold text-mustard text-base font-inter me-2 ">Tip:</span>{item.tip}</p>
+                    <p className="text-base text-zink font-inter"><span className="font-bold text-mustard text-base font-inter me-2 ">Tip:</span>{item.tip}</p>
                   </div>
                 </div>
               </>
@@ -85,7 +85,7 @@ const Attractions: React.FC<AttractionsProps> = ({ id }) => {
               <>
                 {/* Text Left */}
                 <div className="space-y-3 lg:space-y-4 xl:space-y-5">
-                  <div className="relative mt-8 md:mt-0 ">
+                  <div className="relative mt-8 md:mt-0">
                     <span className="text-[62px] md:text-[70px] lg:text-[95px] xl:text-[128px] pt-14 md:pt-12 lg:pt-8 xl:pt-0 font-semibold font-inter text-gray-100 absolute -top-23 left-0">
                       {item.id}
                     </span>
@@ -108,7 +108,7 @@ const Attractions: React.FC<AttractionsProps> = ({ id }) => {
                       <span className="w-8 h-8 bg-mustard rounded-full flex items-center justify-center me-1"><LuSailboat className="text-white " size={20} /></span>
                       <p className="font-semibold text-[20px] lg:text-[24px] font-sourceSansPro text-zink">{item.heading}</p>
                     </div>
-                    <ul className="list-disc pl-4 text-base text-zink font-semibold font-sourceSansPro space-y-1">
+                    <ul className="list-disc pl-4 text-base text-zink font-medium font-sourceSansPro space-y-1">
                       {item.highlights.map((point, i) => (
                         <li key={i}>{point}</li>
                       ))}
@@ -117,7 +117,7 @@ const Attractions: React.FC<AttractionsProps> = ({ id }) => {
 
                   <div className="flex items-start mt-3">
                     <IoWarningOutline className="text-zink" size={24} />
-                    <p className="text-base text-zink font-inter font-semibold"><span className="font-bold text-mustard text-base font-inter me-2 ">Tip:</span>{item.tip}</p>
+                    <p className="text-base text-zink font-inter"><span className="font-bold text-mustard text-base font-inter me-2 ">Tip:</span>{item.tip}</p>
                   </div>
                 </div>
 

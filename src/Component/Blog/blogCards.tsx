@@ -48,7 +48,6 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                     : publishedBlogs;
                 setData(filteredBlogs);
             } catch (err: any) {
-                console.error("Error fetching blogs:", err);
                 setError(err?.response?.data?.message || "Failed to fetch blogs.");
             } finally {
                 setLoading(false);
@@ -77,9 +76,9 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
     const visibleBlogs = data.slice(0, visibleCount);
     const hasMore = visibleCount < data.length;
     return (
-        <div className="px-3">
+        <div className="">
             <div className="max-w-7xl mx-auto py-10 px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-7 xl:gap-9">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-5 xl:gap-9">
                     {visibleBlogs.map((blog) => {
                         const slugLink = slugify(blog.slug);
                         return (
@@ -96,11 +95,20 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                                     />
                                 </div>
                                 <div className="px-4 pt-4">
-                                    <h3 className={combine(styles.h4, "text-zink mb-2 font-semibold")}>
-                                        {limitCharacters(blog.title, 22)}
-                                    </h3>
+                                    <h1 className={combine(styles.h4, "text-zink mb-2 font-semibold leading-snug")}>
+                                        {limitCharacters(blog.title, 18)}
+                                    </h1>
                                     <p className={combine ("font-normal text-zink",styles.p2)}>
-                                        {blog.shortDescription.length > 200 ? blog.shortDescription.slice(0, 200) + "..." : blog.shortDescription}
+                                        {blog.shortDescription.length > 214 ? (
+                                            <>
+                                                {blog.shortDescription.slice(0, 214)}...
+                                                <span className="font-semibold text-zink underline  hover:text-[#D6AB62] hover:underline transition-colors duration-200 cursor-pointer ml-1">
+                                                    read more
+                                                </span>
+                                            </>
+                                        ) : (
+                                            blog.shortDescription
+                                        )}
                                     </p>
                                 </div>
                             </div>

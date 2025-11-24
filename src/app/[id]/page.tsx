@@ -1,7 +1,7 @@
 // src/app/(root)/cardDetail/[id]/page.tsx
 
 import { Fragment } from "react";
-import StartAdventure from "@/Component/readMore/adventure";
+// import StartAdventure from "@/Component/readMore/adventure";
 import About from "@/Component/readMore/about";
 import Attractions from "@/Component/readMore/cards";
 import BestLands from "@/Component/readMore/bestLands";
@@ -17,7 +17,7 @@ export default async function Page({ params }: NewsDetailPageProps) {
       <About id={id} />
       <Attractions id={id} />
       <BestLands id={id} />
-      <StartAdventure id={id} />
+      {/* <StartAdventure id={id} /> */}
       <ChartersAdventure id={id} />
     </Fragment>
   );

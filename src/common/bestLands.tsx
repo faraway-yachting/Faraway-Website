@@ -18,9 +18,9 @@ const BestLands: React.FC<Props> = ({ data }) => {
     <section className={combine("relative py-12 bg-[#FCFCFC]", styles.px1, styles.container)}>
       {/* Title */}
       <div>
-        <p className={combine(styles.h2, "font-playfair text-zink font-extrabold md:mb-5 lg:mb-8 text-center")}>
+        <h2 className={combine(styles.h2, "font-playfair text-zink font-extrabold md:mb-5 lg:mb-8 text-center")}>
           Phuket Yacht Charter Adventures
-        </p>
+        </h2>
       </div>
 
       {/* Decorative Images */}
@@ -41,7 +41,7 @@ const BestLands: React.FC<Props> = ({ data }) => {
             <div
               key={isle.id}
               className={`overflow-hidden p-0 xl:p-6 ${
-                idx === 1 ? "mt-0 md:mt-30 lg:mt-36 xl:mt-40" : ""
+                idx === 1 ? "mt-0 md:mt-30 lg:mt-32 xl:mt-40" : ""
               }`}
             >
               <div className="relative">
@@ -50,7 +50,8 @@ const BestLands: React.FC<Props> = ({ data }) => {
                   alt={isle.title}
                   className="w-full xl:w-[600px] h-[230px] md:h-[270px] lg:h-[330px] xl:h-[350px] object-cover rounded-lg"
                 />
-                <h3 className={combine("absolute bottom-2 left-2 font-extrabold text-white bg-opacity-50 px-3 py-1 rounded-lg", styles.h3)}>
+                <div className="absolute inset-0 bg-[#012A50]/20 z-0" />
+                <h3 className={combine("absolute bottom-2 left-2 font-extrabold text-white bg-opacity-50 px-3 py-1 rounded-lg z-10", styles.h3)}>
                   {isle.title}
                 </h3>
               </div>

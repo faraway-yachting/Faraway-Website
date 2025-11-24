@@ -22,7 +22,7 @@ const DayTripSlider = () => {
     : dayTripCards[autoCardIndex];
 
   return (
-    <div className={combine("bg-white", styles.py2, styles.px4)}>
+    <div className={combine("bg-white", styles.py2)}>
       <div className={combine("text-center",styles.container)}>
         <div className="text-center">
           <h2 className={combine("font-bold text-zink", styles.h2)}>
@@ -33,7 +33,7 @@ const DayTripSlider = () => {
           </p>
 
           {/* Tabs */}
-          <div className="flex flex-wrap justify-center gap-5 mt-6">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-5 mt-6">
             {dayTripCards.map(({ label, icon: Icon }) => (
               <button
                 key={label}

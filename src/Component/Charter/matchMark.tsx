@@ -164,7 +164,7 @@ const YachtMatchmaker: React.FC = () => {
 
                 {/* Right column: Yacht cards */}
                 <div className="md:col-span-12">
-                        <YachtCards columns={2} />
+                        <YachtCards columns={2} showLoadMore={true} initialLoadCount={9} loadMoreCount={9} />
                 </div>
             </div>
         </div>

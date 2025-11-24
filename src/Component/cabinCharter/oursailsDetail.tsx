@@ -3,6 +3,7 @@ import HeadingContent from "@/common/heading";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { yachtFeatures, catamaranDetails, yachtThumbnails } from "@/data/cabincharter/momentsData";
+import { styles, combine } from "@/styles/style";
 
 const SailingDetails = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,35 +19,35 @@ const SailingDetails = () => {
     <div key={index} className="border border-gray-200 px-3 py-2 rounded-md text-center bg-[#FFFDF8]">
       <div className="flex flex-col items-center gap-1 text-[#9BA6B2]">
         <img src={image} alt={title} />
-        <p className="text-lg lg:text-[20px] font-semibold font-playfar text-zink">{title}</p>
+        <p className={combine(styles.p2, "font-semibold text-zink",  index === 3 ? "mt-2" : "",)}>{title}</p>
       </div>
-      <p className="text-zink text-lg lg:text-[20px] font-medium font-sourceSansPro">{value}</p>
+      <p className={combine("text-zink font-medium", styles.p4)}>{value}</p>
     </div>
   );
 
   const renderDetail = ({ label, description }: any, idx: number) => (
     <div key={idx} className="bg-white">
-      <p className="font-bold text-2xl font-sourceSansPro text-zink">{label}:</p>
-      <p className="text-zink font-normal pt-1 pb-3 font-sourceSansPro text-base leading-relaxed md:text-xl md:py-3">
+      <h3 className={combine("font-bold text-zink", styles.h5)}>{label}:</h3>
+      <p className={combine("text-zink pt-1 pb-3 leading-relaxed md:py-3", styles.p3)}>
         {description}
       </p>
     </div>
   );
 
   return (
-    <section className="bg-white py-10 lg:py-12 xl:py-14 px-4 md:px-0 lg:px-8">
-      <div className="max-w-[78.2rem] mx-auto">
+    <section className="bg-white pb-10 lg:pb-12 xl:pb-14 px-4 md:px-4 xl:px-8">
+      <div className={styles.containerLarge}>
         {/* Title */}
         <div className="text-center mb-10">
           <HeadingContent
-            heading="Details of Our Sailing Catamaran"
+            heading="Details of Sailing Yacht Amadeus "
             description="Discover the features that make our catamaran the ultimate escape vessel"
           />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-10 items-center justify-center lg:justify-start lg:items-start">
           {/* Left: Image Slider (5 of 12 columns) */}
           <div className="md:col-span-5">
-            <div className="relative w-full h-[400px] rounded-tl-3xl rounded-br-3xl overflow-hidden mb-4">
+            <div className="relative w-full h-[290px] md:h-[320px] lg:h-[350px] xl:h-[400px] rounded-tl-3xl rounded-br-3xl overflow-hidden mb-4">
               <Image
                 src={yachtThumbnails[currentIndex]}
                 alt="Sailing Catamaran"
@@ -87,10 +88,10 @@ const SailingDetails = () => {
                 <tbody>
                   {catamaranDetails.map((item, idx) => (
                     <tr key={idx} className="bg-white">
-                      <td className="font-bold text-[24px] font-playfair text-zink px-4 py-3 w-[80px] align-top">
+                      <td className={combine("font-bold text-zink px-4 py-3 w-[80px] align-top", styles.p1)}>
                         {item.label}:
                       </td>
-                      <td className="px-4 py-3 text-zink font-normal font-sourceSansPro text-[20px] leading-relaxed">
+                      <td className={combine("px-4 py-3 text-zink leading-relaxed", styles.p2)}>
                         {item.description}
                       </td>
                     </tr>
@@ -98,9 +99,8 @@ const SailingDetails = () => {
                 </tbody>
               </table>
             </div>
-            
             {/* Mobile Details */}
-            <div className="block md:hidden space-y-4">
+            <div className="block md:hidden space-y-2 lg:space-y-3 xl:space-y-4">
               {catamaranDetails.map(renderDetail)}
             </div>
           </div>

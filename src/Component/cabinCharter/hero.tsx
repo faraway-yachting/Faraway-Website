@@ -9,12 +9,13 @@ interface HeroSectionProps {
 const HeroSection = ({ contactRef }: HeroSectionProps) => {
   return (
     <HeroContent
-      heading="Cabin Charter Phuket A Luxurious Sailing Adventure"
-      subheading="Set Sail on a Luxury yacht Phuket Adventure, Uncovering the Mystique of Phuket's Island Paradise for 6 Days and 5 Nights"
+      heading="Cabin Charter Phuket – Luxury Sailing Made Affordable"
+      description="Sail away on a 6-day, 5-night journey to Thailand’s most breathtaking islands. A <strong>cabin charter Phuket</strong> offers the perfect blend of privacy and adventure, ou’ll explore hidden caves, snorkel vibrant reefs, and enjoy beach BBQs — all from the comfort of a luxury catamaran. Perfect for solo travelers, couples, small groups or friends who want more than a day trip."
       backgroundImage="/images/charterimg.png"
       dividerImage={PngIcons.rframe2}
       contactRef={contactRef}
       showContactButton={true}
+      contactButtonText="Get Aboard – Limited Availability"
     />
   );
 };

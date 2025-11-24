@@ -47,7 +47,7 @@ export const attractionsMap: Record<string, DestinationAttractions> = {
                 description: [
                     "Tucked between soaring limestone walls, this natural turquoise lagoon offers calm, sheltered waters perfect for swimming and kayaking.",
                     "Its free entry and easy access for non-swimmers make it an ideal escape for families and adventure seekers alike."],
-                highlights: ["Calm waters", "Stunning scenery", "No crowds"],
+                highlights: ["Calm waters", "Stunning scenery"],
                 tip: "Visit early or late in the day for a peaceful, crowd-free experience.",
             },
             {
@@ -102,7 +102,7 @@ export const attractionsMap: Record<string, DestinationAttractions> = {
                     "Its powdery white sand, crystal-clear sea, and vibrant coral garden at Hin Klang make it a perfect spot for sunbathing, swimming, or simply unwinding.",
                 ],
                 highlights: ["Beautiful coral reefs & marine life at Hin Klang",
-                    "Soft sandy beaches away from the crowds",
+                    "Soft sandy beaches",
                     "Calm, clear waters ideal for snorkeling",],
                 tip: "Most day trips include the entrance fee and lunch—just book and relax.",
             },
