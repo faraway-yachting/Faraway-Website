@@ -156,7 +156,8 @@ export async function GoogleRatingBadge() {
     );
   }
 
-  const formattedRating = Number(data.rating).toFixed(1);
+  // Hardcode rating to 5.0, but use API data for total reviews
+  const formattedRating = "5.0";
   const reviewLabel = `${data.total.toLocaleString()} reviews`;
   const googleUrl = data.url || fallbackUrl;
 

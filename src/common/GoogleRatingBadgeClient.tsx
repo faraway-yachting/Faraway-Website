@@ -18,19 +18,47 @@ const FALLBACK_DATA: RatingData = {
 };
 
 // Global cache to prevent multiple API calls across page navigations
-let cachedRatingData: RatingData | null = null;
-let cacheTimestamp: number = 0;
+// Use sessionStorage for consistent caching across page navigations
+const CACHE_KEY = 'google_rating_cache';
 const CACHE_DURATION = 60 * 60 * 1000; // 1 hour in milliseconds
 
+function getCachedData(): RatingData | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    const cached = sessionStorage.getItem(CACHE_KEY);
+    if (cached) {
+      const { data, timestamp } = JSON.parse(cached);
+      if (Date.now() - timestamp < CACHE_DURATION) {
+        return data;
+      }
+    }
+  } catch (e) {
+    // Ignore errors
+  }
+  return null;
+}
+
+function setCachedData(data: RatingData) {
+  if (typeof window === 'undefined') return;
+  try {
+    sessionStorage.setItem(CACHE_KEY, JSON.stringify({
+      data,
+      timestamp: Date.now()
+    }));
+  } catch (e) {
+    // Ignore errors
+  }
+}
+
 export function GoogleRatingBadgeClient() {
-  const [data, setData] = useState<RatingData | null>(cachedRatingData);
-  const [isLoading, setIsLoading] = useState(!cachedRatingData);
+  const cachedData = getCachedData();
+  const [data, setData] = useState<RatingData | null>(cachedData);
+  const [isLoading, setIsLoading] = useState(!cachedData);
 
   useEffect(() => {
     // Check if we have valid cached data
-    const now = Date.now();
-    if (cachedRatingData && (now - cacheTimestamp) < CACHE_DURATION) {
-      setData(cachedRatingData);
+    if (cachedData) {
+      setData(cachedData);
       setIsLoading(false);
       return;
     }
@@ -59,9 +87,8 @@ export function GoogleRatingBadgeClient() {
 
         const ratingData = await response.json();
         
-        // Update global cache
-        cachedRatingData = ratingData;
-        cacheTimestamp = Date.now();
+        // Update cache in sessionStorage for consistency
+        setCachedData(ratingData);
         
         if (isMounted) {
           setData(ratingData);
@@ -71,11 +98,11 @@ export function GoogleRatingBadgeClient() {
         if (error instanceof Error && error.name !== "AbortError" && isMounted) {
           console.warn("[GoogleRatingBadgeClient] Fetch failed:", error.message);
           // Use cached data if available, otherwise fallback
-          const finalData = cachedRatingData || FALLBACK_DATA;
+          const finalData = getCachedData() || FALLBACK_DATA;
           setData(finalData);
           setIsLoading(false);
         } else if (isMounted) {
-          const finalData = cachedRatingData || FALLBACK_DATA;
+          const finalData = getCachedData() || FALLBACK_DATA;
           setData(finalData);
           setIsLoading(false);
         }
@@ -135,7 +162,8 @@ export function GoogleRatingBadgeClient() {
     );
   }
 
-  const formattedRating = Number(ratingData.rating).toFixed(1);
+  // Hardcode rating to 5.0, but use API data for total reviews
+  const formattedRating = "5.0";
   const reviewLabel = `${ratingData.total.toLocaleString()} reviews`;
   const googleUrl = ratingData.url || fallbackUrl;
 
