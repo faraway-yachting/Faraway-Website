@@ -2,10 +2,12 @@ import PngIcons from "@/icons/pngIcon";
 import { styles, combine, Button } from "@/styles";
 import { FiPhone } from "react-icons/fi";
 import Image from "next/image";
+import { Suspense } from "react";
 import {
   GoogleRatingBadge,
   TripAdvisorRatingBadge,
   WorldLuxuryAwardBadge,
+  RatingBadgeSkeleton,
 } from "@/common/RatingBadges";
 
 const HeroContent = () => {
@@ -50,7 +52,9 @@ const HeroContent = () => {
               </Button>
             </div>
             <div className="flex flex-row items-center justify-center gap-4 sm:gap-4 md:gap-5 lg:gap-9 w-full mt-0 md:mt-8 lg:mt-10">
-              <GoogleRatingBadge />
+              <Suspense fallback={<RatingBadgeSkeleton />}>
+                <GoogleRatingBadge />
+              </Suspense>
               <a
                 href="https://www.theworldluxurytravelawards.com/establishment/faraway-yachting-co-ltd/"
                 target="_blank"
