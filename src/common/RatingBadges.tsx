@@ -43,7 +43,7 @@ async function fetchGoogleRatingFromAPI(): Promise<RatingData> {
 
   try {
     const response = await fetch(apiUrl, {
-      next: { revalidate: 3600 }, // Cache for 1 hour
+      next: { revalidate: 0 }, // Don't cache - always get fresh data from API route
       headers: {
         'Content-Type': 'application/json',
       },
@@ -62,14 +62,14 @@ async function fetchGoogleRatingFromAPI(): Promise<RatingData> {
   }
 }
 
-// Cache the Google rating data for 1 hour to prevent multiple API calls
+// Cache the Google rating data for 5 minutes to prevent excessive API calls but keep data fresh
 const getCachedGoogleRating = unstable_cache(
   async (): Promise<RatingData> => {
     return await fetchGoogleRatingFromAPI();
   },
   ['google-rating'], // Cache key
   {
-    revalidate: 3600, // Revalidate every hour (3600 seconds)
+    revalidate: 300, // Revalidate every 5 minutes (300 seconds) to keep data fresh
     tags: ['google-rating'], // Cache tag for manual invalidation if needed
   }
 );

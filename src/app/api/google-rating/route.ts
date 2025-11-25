@@ -30,9 +30,10 @@ export async function GET() {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
 
+    // Fetch fresh data from Google API (no Next.js cache to ensure we get latest data)
     const response = await fetch(url.toString(), {
-      next: { revalidate: 60 * 60 * 24 * 7 },
       signal: controller.signal,
+      cache: 'no-store', // Always fetch fresh data from Google
     });
 
     clearTimeout(timeoutId);
@@ -68,7 +69,8 @@ export async function GET() {
       },
       {
         headers: {
-          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+          // Cache for 1 hour on CDN, but allow stale-while-revalidate for better performance
+          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=3600",
           "CDN-Cache-Control": "public, s-maxage=3600",
           "Vercel-CDN-Cache-Control": "public, s-maxage=3600",
         },
