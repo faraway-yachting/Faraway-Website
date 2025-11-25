@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -10,9 +10,23 @@ const navItems = [
     { label: "Cabin Charter", href: "/best-of-phukets-islands-cabincharter" },
     { label: "Bareboat Charter", href: "/bareboat-charter-thailand" },
     { label: "Destinations", href: "/magical-destinations-with-private-yacht-in-phuket" },
+    {label: "Super Yachts", href:"/super-yacht-charter-phuket"},
+    {label: "About Us", href:"/about-us"},
+    {label: "Mission Statement", href:"/about-us#mission"},
+    {label: "FAQ", href:"/#faq"}
 ];
 
-const Drawer = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+const Drawer = ({
+    isOpen,
+    onClose,
+    drawerItems,
+    showContactButton = true,
+}: {
+    isOpen: boolean;
+    onClose: () => void;
+    drawerItems: typeof navItems;
+    showContactButton?: boolean;
+}) => {
     const pathname = usePathname();
     return (
         <>
@@ -36,7 +50,7 @@ const Drawer = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =
                         </button>
                     </div>
                     <ul className="space-y-4 text-[#333] font-medium">
-                        {navItems.map(({ label, href }) => {
+                        {drawerItems.map(({ label, href }) => {
                             const isActive =
                                 (href === "/" && pathname === "/") ||
                                 (href !== "/" && pathname.startsWith(href)) ||
@@ -46,7 +60,7 @@ const Drawer = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =
                                     <Link
                                         href={href}
                                         onClick={onClose}
-                                        className={`relative inline-block text-sm lg:text-base text-zink font-sourceSansPro transition duration-200 group ${isActive ? "text-[#034250] font-semibold" : "text-[#118A92] hover:text-[#034250]"
+                                        className={`relative inline-block text-base text-zink font-sourceSansPro transition duration-200 group ${isActive ? "text-[#034250] font-semibold" : "text-[#118A92] hover:text-[#034250]"
                                             }`}
                                     >
                                         {label}
@@ -58,13 +72,15 @@ const Drawer = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =
                                 </li>
                             );
                         })}
-                        <li>
-                            <Link href="/contact" onClick={onClose}>
-                                <button className="btn-grad text-white text-base font-sourceSansPro font-bold lg:px-5 px-3 py-2 rounded-lg transition">
-                                    Start Your Adventure
-                                </button>
-                            </Link>
-                        </li>
+                        {showContactButton && (
+                            <li>
+                                <Link href="/contact" onClick={onClose}>
+                                    <button className="btn-grad text-white text-base font-sourceSansPro font-bold lg:px-5 px-3 py-2 rounded-lg transition">
+                                        Start Your Adventure
+                                    </button>
+                                </Link>
+                            </li>
+                        )}
                     </ul>
                 </div>
             </div>
@@ -74,7 +90,24 @@ const Drawer = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isMDScreen, setIsMDScreen] = useState(false);
+    const [isLargeScreen, setIsLargeScreen] = useState(false);
     const pathname = usePathname();
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsMDScreen(window.innerWidth >= 768); // md breakpoint
+            setIsLargeScreen(window.innerWidth >= 1024); // lg breakpoint
+        };
+        
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+        
+        return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
+    const navbarItems = isLargeScreen ? navItems.slice(0, 5) : (isMDScreen ? navItems.slice(0, 4) : []);
+    const drawerItems = isLargeScreen ? navItems.slice(5) : (isMDScreen ? navItems.slice(4) : navItems);
+    const showDrawerButton = !isMDScreen;
 
     return (
         <header className="bg-white shadow-sm">
@@ -83,9 +116,9 @@ const Navbar = () => {
                     <img src="/images/logo.png" alt="logo" className="w-[105px] h-[40px]" />
                 </Link>
 
-                {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center space-x-3 lg:space-x-5 xl:space-x-6 text-[#333]">
-                    {navItems.map(({ label, href }) => {
+                {/* Desktop Nav - First 4 items (md), First 5 items (lg+) */}
+                <nav className="hidden md:flex items-center space-x-3 lg:space-x-4 xl:space-x-6 text-[#333]">
+                    {navbarItems.map(({ label, href }) => {
                         const isActive =
                             (href === "/" && pathname === "/") ||
                             (href !== "/" && pathname.startsWith(href));
@@ -93,7 +126,7 @@ const Navbar = () => {
                             <Link
                                 key={href}
                                 href={href}
-                                className={`relative inline-block font-sourceSansPro text-zink text-xs lg:text-base transition duration-200 group ${isActive ? "text-[#034250] font-semibold" : "text-[#118A92] hover:text-[#034250]"
+                                className={`relative inline-block font-sourceSansPro text-zink text-base md:text-[13px] lg:text-base transition duration-200 group ${isActive ? "text-[#034250] font-semibold" : "text-[#118A92] hover:text-[#034250]"
                                     }`}
                             >
                                 {label}
@@ -106,23 +139,34 @@ const Navbar = () => {
                     })}
                 </nav>
 
-                {/* Contact Button */}
-                <div className="hidden md:block">
-                    <Link href="/contact">
-                        <button className="btn-grad text-white md:text-xs lg:text-base font-sourceSansPro font-bold px-3 lg:px-5 py-2 rounded-lg transition hover:cursor-pointer">
-                            Start Your Adventure
-                        </button>
-                    </Link>
+                {/* Contact Button and Burger Menu */}
+                <div className="flex items-center gap-2 xl:gap-3">
+                    <div className="hidden md:block">
+                        <Link href="/contact">
+                            <button className="btn-grad text-white text-base md:text-sm lg:text-sm xl:text-base font-sourceSansPro font-bold px-3 lg:px-5 py-2 rounded-lg transition hover:cursor-pointer">
+                                Start Your Adventure
+                            </button>
+                        </Link>
+                    </div>
+                    {/* Burger Menu Icon */}
+                    <button 
+                        onClick={() => setIsOpen(true)} 
+                        className="flex items-center justify-center w-7 h-7 md:w-8 md:h-8 xl:w-10 xl:h-10 text-[#FE552D] hover:text-[#333] transition-colors border-2 border-[#FE552D] hover:border-[#333] rounded"
+                        aria-label="Open menu"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
                 </div>
-                {/* Mobile Menu Icon */}
-                <button onClick={() => setIsOpen(true)} className="md:hidden block">
-                    <svg className="w-6 h-6 text-[#333]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
             </div>
-            {/* Mobile Drawer */}
-            <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)} />
+            {/* Drawer - All navlinks on mobile, rest (5th onwards) on md, rest (6th onwards) on lg+ */}
+            <Drawer
+                isOpen={isOpen}
+                onClose={() => setIsOpen(false)}
+                drawerItems={drawerItems}
+                showContactButton={showDrawerButton}
+            />
         </header>
     );
 };

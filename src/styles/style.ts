@@ -50,7 +50,7 @@ export const styles = {
   // Height REsponsive classes
   minH1: "min-h-[57vh] md:min-h-[80vh] lg:min-h-[72vh] xl:min-h-[82vh]",
   minH3: "bg-center min-h-[52vh] md:min-h-[62vh] lg:min-h-[72vh] xl:min-h-[70vh]",
-  minH2: "min-h-[96vh] md:min-h-[80vh] lg:min-h-[82vh] xl:min-h-[85vh]",
+  minH2: "min-h-[98vh] md:min-h-[80vh] lg:min-h-[82vh] xl:min-h-[85vh]",
   top1: "top-3 md:top-4 lg:top-5 xl:top-6",
 
   w1: "w-20 md:w-24 lg:w-32 xl:w-36",

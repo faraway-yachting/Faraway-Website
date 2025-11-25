@@ -1,7 +1,6 @@
 "use client";
 import { styles, combine } from "@/styles";
 import { CgDanger } from "react-icons/cg";
-import HeadingContent from "@/common/heading";
 import { taxiRules, importantReminder, additionalInfo } from "@/data/phukettaxi";
 
 const TaxiRules = () => {
