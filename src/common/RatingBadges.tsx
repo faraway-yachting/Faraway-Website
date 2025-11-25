@@ -17,65 +17,47 @@ const FALLBACK_DATA: RatingData = {
   url: "https://www.google.com/search?q=Faraway+Yachting+Phuket&ludocid=17147180263514010749",
 };
 
-async function fetchGoogleRatingDirect(): Promise<RatingData> {
+async function fetchGoogleRatingFromAPI(): Promise<RatingData> {
   // CRITICAL: This must only run on the server
   if (typeof window !== "undefined") {
-    console.error("[GoogleRating] CRITICAL: fetchGoogleRatingDirect called on client side!");
+    console.error("[GoogleRating] CRITICAL: fetchGoogleRatingFromAPI called on client side!");
     return FALLBACK_DATA;
   }
 
-  const PLACE_ID = process.env.GOOGLE_PLACE_ID;
-  const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
-
-  if (!PLACE_ID || !API_KEY) {
-    console.warn("[GoogleRating] Missing GOOGLE_PLACE_ID or GOOGLE_MAPS_API_KEY. Using fallback data.");
-    return FALLBACK_DATA;
+  // Use the API route instead of calling Google directly
+  // This ensures both server and client components use the same cached data
+  let baseUrl: string;
+  
+  if (process.env.NODE_ENV === "development") {
+    baseUrl = "http://localhost:3000";
+  } else if (process.env.NEXT_PUBLIC_BASE_URL) {
+    baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  } else if (process.env.VERCEL_URL) {
+    baseUrl = `https://${process.env.VERCEL_URL}`;
+  } else {
+    baseUrl = "http://localhost:3000";
   }
-
-  const GOOGLE_PLACES_URL = "https://maps.googleapis.com/maps/api/place/details/json";
-  const url = new URL(GOOGLE_PLACES_URL);
-  url.searchParams.set("place_id", PLACE_ID);
-  url.searchParams.set("fields", "name,rating,user_ratings_total,url");
-  url.searchParams.set("key", API_KEY);
+  
+  baseUrl = baseUrl.replace(/\/$/, "");
+  const apiUrl = `${baseUrl}/api/google-rating`;
 
   try {
-    // Add timeout to prevent long waits
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
-
-    const response = await fetch(url.toString(), {
-      signal: controller.signal,
+    const response = await fetch(apiUrl, {
       next: { revalidate: 3600 }, // Cache for 1 hour
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
-
-    clearTimeout(timeoutId);
-
+    
     if (!response.ok) {
-      console.warn("[GoogleRating] Google API returned non-OK status. Using fallback data.");
+      console.warn(`[GoogleRating] API returned ${response.status} status`);
       return FALLBACK_DATA;
     }
-
+    
     const data = await response.json();
-
-    if (data.status !== "OK") {
-      console.warn(`[GoogleRating] Google API error: ${data.error_message || "Unknown error"}. Using fallback data.`);
-      return FALLBACK_DATA;
-    }
-
-    const { name, rating, user_ratings_total, url: googleUrl } = data.result || {};
-
-    return {
-      name,
-      rating,
-      total: user_ratings_total,
-      url: googleUrl || `https://www.google.com/maps/place/?q=place_id:${PLACE_ID}`,
-    };
+    return data;
   } catch (error) {
-    if (error instanceof Error && error.name === 'AbortError') {
-      console.warn("[GoogleRating] Request timed out. Using fallback data.");
-    } else {
-      console.error("[GoogleRating] Fetch failed:", error);
-    }
+    console.error("[GoogleRating] Fetch failed:", error instanceof Error ? error.message : error);
     return FALLBACK_DATA;
   }
 }
@@ -83,7 +65,7 @@ async function fetchGoogleRatingDirect(): Promise<RatingData> {
 // Cache the Google rating data for 1 hour to prevent multiple API calls
 const getCachedGoogleRating = unstable_cache(
   async (): Promise<RatingData> => {
-    return await fetchGoogleRatingDirect();
+    return await fetchGoogleRatingFromAPI();
   },
   ['google-rating'], // Cache key
   {

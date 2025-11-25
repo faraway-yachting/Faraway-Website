@@ -73,10 +73,7 @@ export function GoogleRatingBadgeClient() {
 
         const response = await fetch("/api/google-rating", {
           signal: abortController.signal,
-          cache: "default", // Let browser handle caching
-          headers: {
-            'Cache-Control': 'max-age=3600', // Cache for 1 hour
-          },
+          cache: "force-cache", // Use cached response from Vercel CDN
         });
 
         clearTimeout(timeoutId);
