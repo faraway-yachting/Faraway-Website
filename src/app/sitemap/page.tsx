@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { fetchYachts } from '@/lib/api';
+import { fetchYachts, fetchBlogs } from '@/lib/api';
 
 export const metadata: Metadata = {
   title: 'Sitemap - Faraway Yachting',
@@ -16,6 +16,13 @@ interface Yacht {
   tags?: string[];
 }
 
+interface Blog {
+  _id: string;
+  slug: string;
+  title: string;
+  status: string;
+}
+
 const SitemapPage = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.faraway-yachting.com';
   
@@ -27,12 +34,23 @@ const SitemapPage = async () => {
   } catch (error) {
     console.error('Failed to fetch yachts:', error);
   }
+
+  // Fetch blog data
+  let blogs: Blog[] = [];
+  try {
+    const blogResponse = await fetchBlogs();
+    blogs = blogResponse.data?.blogs || [];
+  } catch (error) {
+    console.error('Failed to fetch blogs:', error);
+  }
   
   // Filter published yachts and organize by type
   const publishedYachts = yachts.filter(yacht => yacht.status?.toLowerCase() === 'published');
   const bareboatYachts = publishedYachts.filter(yacht => yacht.type?.toLowerCase() === 'bareboat');
   const crewedYachts = publishedYachts.filter(yacht => yacht.type?.toLowerCase() === 'crewed');
   const superYachts = publishedYachts.filter(yacht => yacht.tags?.includes('super yacht'));
+
+  const publishedBlogs = blogs.filter(blog => blog.status?.toLowerCase() === 'published');
   
   // Static pages organized by category
   const pageCategories = {
@@ -101,6 +119,10 @@ const SitemapPage = async () => {
       { name: 'Terms and Conditions', url: '/terms-and-conditions' },
       { name: 'Impressum', url: '/impressum' },
     ],
+    'Blog Posts': publishedBlogs.map(blog => ({
+      name: blog.title,
+      url: `/blog/${blog.slug}`
+    })),
   };
 
   return (

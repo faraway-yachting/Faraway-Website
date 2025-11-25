@@ -11,45 +11,27 @@ const TaxiPrices = () => {
                 Taxi Prices If Booked With Us
             </h3>
             <img src="/images/rframe.png" alt="" className={combine(" md:max-w-4xl lg:max-w-3xl w-full my-4 mx-auto")} />
-
-            {/* Taxi Price Cards Grid */}
+            {/* Taxi Price List matching privacy policy style */}
             <div className={combine(styles.container, "mb-10")}>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
-                    {taxiPrices.map((taxi, index) => (
-                        <div
-                            key={index}
-                            className="bg-white h-[253px] md:h-[270px] lg:h-[285px] xl:h-[310px] p-2 border border-2 border-[#EBEBEB] rounded-tl-2xl rounded-br-2xl hover:border-[#7F93A6] overflow-hidden transition-all duration-300"
-                        >
-                            {/* Image */}
-                            <div className="relative w-full h-[120px] md:h-[145px] lg:h-[150px] xl:h-[190px] overflow-hidden rounded-tl-xl rounded-br-xl">
-                                <Image
-                                    src={taxi.image}
-                                    alt={taxi.locations.join(" / ")}
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-
-                            {/* Content */}
-                            <div className="pt-2">
-                            
-                                    
-
-                                {/* Locations - Display with " / " separator */}
+                <div>
+                    <div className="space-y-4">
+                        {taxiPrices.map(({ price, locations }, index) => (
+                            <div key={index} className="flex items-start gap-3">
+                                <div className="w-2 h-2 bg-mustard rounded-full mt-2 flex-shrink-0" />
                                 <div>
-                                    <p className={combine("text-zink font-playfair text-[16px] md:text-[17px] lg:text-[19px] leading-tight pt-1 md:pt-2")}>
-                                        {taxi.locations.join(" / ")}{" "}
-                                        <span className={combine("text-[16px] md:text-[17px] lg:text-[19px] font-playfair text-zink font-bold ps-1")}>
-                                            ({taxi.price.toLocaleString()} THB)
-                                        </span>
-                                    </p>
+                                    <span className={combine("font-semibold text-mustard", styles.p3)}>
+                                        {price.toLocaleString()} THB:
+                                    </span>
+                                    <span className={combine("text-zink ml-2", styles.p3)}>
+                                        {locations.join(" / ")}
+                                    </span>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
-            <div className="max-w-7xl mx-auto px-4">
+            {/* <div className="max-w-7xl mx-auto px-4">
                 <div className="relative w-full h-[240px] md:h-[280px] lg:h-[580px] overflow-hidden rounded-xl">
                     <Image
                         src={mapImage.src}
@@ -58,7 +40,7 @@ const TaxiPrices = () => {
                         className="object-cover"
                     />
                 </div>
-            </div>
+            </div> */}
             <div className="px-4 xl:px-0">
                 <div className="bg-white rounded-6xl shadow-xl p-4 md:p-6 flex items-center gap-4 max-w-7xl mx-auto mb-10 mt-8 ">
 
