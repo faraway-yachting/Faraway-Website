@@ -71,9 +71,10 @@ export function GoogleRatingBadgeClient() {
         abortController = new AbortController();
         const timeoutId = setTimeout(() => abortController?.abort(), 5000);
 
+        // Add timestamp to bypass cache if needed, but use short cache for performance
         const response = await fetch("/api/google-rating", {
           signal: abortController.signal,
-          cache: "force-cache", // Use cached response from Vercel CDN
+          cache: "no-store", // Always fetch fresh data to get correct count
         });
 
         clearTimeout(timeoutId);

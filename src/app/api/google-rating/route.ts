@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
 
+// Disable caching for this route to always get fresh data
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 const PLACE_ID = process.env.GOOGLE_PLACE_ID;
 const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 const GOOGLE_PLACES_URL = "https://maps.googleapis.com/maps/api/place/details/json";
@@ -10,20 +14,24 @@ const FALLBACK_DATA = {
   url: "https://www.google.com/search?q=Faraway+Yachting+Phuket&ludocid=17147180263514010749",
 };
 
-export async function GET() {
+export async function GET(request: Request) {
+  // Add cache-busting: check for a query parameter to force fresh data
+  const requestUrl = new URL(request.url);
+  const forceRefresh = requestUrl.searchParams.has('refresh');
+  
   if (!PLACE_ID || !API_KEY) {
     console.warn("[google-rating] Missing GOOGLE_PLACE_ID or GOOGLE_MAPS_API_KEY. Falling back to static data.");
     return NextResponse.json(FALLBACK_DATA, {
       headers: {
-        "Cache-Control": "s-maxage=3600, stale-while-revalidate",
+        "Cache-Control": "no-cache, no-store, must-revalidate",
       },
     });
   }
 
-  const url = new URL(GOOGLE_PLACES_URL);
-  url.searchParams.set("place_id", PLACE_ID);
-  url.searchParams.set("fields", "name,rating,user_ratings_total,url");
-  url.searchParams.set("key", API_KEY);
+  const googleApiUrl = new URL(GOOGLE_PLACES_URL);
+  googleApiUrl.searchParams.set("place_id", PLACE_ID);
+  googleApiUrl.searchParams.set("fields", "name,rating,user_ratings_total,url");
+  googleApiUrl.searchParams.set("key", API_KEY);
 
   try {
     // Add timeout to prevent long waits
@@ -31,7 +39,7 @@ export async function GET() {
     const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
 
     // Fetch fresh data from Google API (no Next.js cache to ensure we get latest data)
-    const response = await fetch(url.toString(), {
+    const response = await fetch(googleApiUrl.toString(), {
       signal: controller.signal,
       cache: 'no-store', // Always fetch fresh data from Google
     });
@@ -42,7 +50,7 @@ export async function GET() {
       console.warn("[google-rating] Google API returned non-OK status. Falling back to static data.");
       return NextResponse.json(FALLBACK_DATA, {
         headers: {
-          "Cache-Control": "s-maxage=3600, stale-while-revalidate",
+          "Cache-Control": "no-cache, no-store, must-revalidate",
         },
       });
     }
@@ -53,7 +61,7 @@ export async function GET() {
       console.warn(`[google-rating] Google API error: ${data.error_message || "Unknown error"}. Falling back to static data.`);
       return NextResponse.json(FALLBACK_DATA, {
         headers: {
-          "Cache-Control": "s-maxage=3600, stale-while-revalidate",
+          "Cache-Control": "no-cache, no-store, must-revalidate",
         },
       });
     }
@@ -69,10 +77,10 @@ export async function GET() {
       },
       {
         headers: {
-          // Cache for 1 hour on CDN, but allow stale-while-revalidate for better performance
-          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=3600",
-          "CDN-Cache-Control": "public, s-maxage=3600",
-          "Vercel-CDN-Cache-Control": "public, s-maxage=3600",
+          // No cache to ensure always fresh data
+          "Cache-Control": "no-cache, no-store, must-revalidate, max-age=0",
+          "CDN-Cache-Control": "no-cache, no-store, must-revalidate",
+          "Vercel-CDN-Cache-Control": "no-cache, no-store, must-revalidate",
         },
       }
     );
@@ -85,7 +93,7 @@ export async function GET() {
     // Return fallback data instead of error
     return NextResponse.json(FALLBACK_DATA, {
       headers: {
-        "Cache-Control": "s-maxage=3600, stale-while-revalidate",
+        "Cache-Control": "no-cache, no-store, must-revalidate",
       },
     });
   }
