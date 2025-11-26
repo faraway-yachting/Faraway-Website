@@ -9,7 +9,7 @@ const PLACE_ID = process.env.GOOGLE_PLACE_ID;
 const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 const GOOGLE_PLACES_URL = "https://maps.googleapis.com/maps/api/place/details/json";
 const CACHE_DURATION = 7 * 24 * 60 * 60 * 1000;
-const CACHE_FILE = join(process.cwd(), '.next', 'cache', 'google-rating.json');
+const CACHE_FILE = join('/tmp', 'google-rating.json');
 const CONSTANT_RATING = 5.0;
 
 const FALLBACK_DATA = {
@@ -28,9 +28,6 @@ interface CacheData {
 
 async function readCache(): Promise<CacheData | null> {
   try {
-    const cacheDir = join(process.cwd(), '.next', 'cache');
-    await fs.mkdir(cacheDir, { recursive: true });
-    
     const data = await fs.readFile(CACHE_FILE, 'utf-8');
     const cache: CacheData = JSON.parse(data);
     
@@ -47,9 +44,6 @@ async function readCache(): Promise<CacheData | null> {
 
 async function writeCache(data: Omit<CacheData, 'timestamp'>): Promise<void> {
   try {
-    const cacheDir = join(process.cwd(), '.next', 'cache');
-    await fs.mkdir(cacheDir, { recursive: true });
-    
     const cache: CacheData = {
       timestamp: Date.now(),
       ...data,
