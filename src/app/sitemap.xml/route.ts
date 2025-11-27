@@ -51,6 +51,7 @@ export async function GET() {
     { url: '/bareboat-charter-thailand', priority: '0.9', changefreq: 'weekly' },
     { url: '/super-yacht-charter-phuket', priority: '0.9', changefreq: 'weekly' },
     { url: '/blog', priority: '0.8', changefreq: 'weekly' },
+    { url: '/taxi', priority: '0.8', changefreq: 'monthly' },
     { url: '/magical-destinations-with-private-yacht-in-phuket', priority: '0.8', changefreq: 'monthly' },
     { url: '/best-of-phukets-islands-cabincharter', priority: '0.8', changefreq: 'monthly' },
     { url: '/crewed_boats', priority: '0.8', changefreq: 'weekly' },

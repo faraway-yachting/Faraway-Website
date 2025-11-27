@@ -1,6 +1,6 @@
 "use client";
 import { Yacht } from "../YachtDetail/hero";
-import DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 import { styles } from '../../styles/style';
 
 type Props = {

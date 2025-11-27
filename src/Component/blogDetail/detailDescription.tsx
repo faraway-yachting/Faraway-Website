@@ -1,5 +1,5 @@
 "use client";
-import DOMPurify from "dompurify";
+import DOMPurify from "isomorphic-dompurify";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { fetchBlogs } from "@/lib/api";

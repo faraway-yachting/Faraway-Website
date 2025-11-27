@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { fetchBlogs } from "@/lib/api";
 import { styles, combine } from "@/styles";
 
@@ -28,7 +28,6 @@ const limitCharacters = (text: string, charLimit: number): string => {
         : text;
 };
 const BlogCards: React.FC<BlogProps> = ({ slug }) => {
-    const router = useRouter();
     const [data, setData] = useState<BlogData[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -81,11 +80,12 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-5 xl:gap-9">
                     {visibleBlogs.map((blog) => {
                         const slugLink = slugify(blog.slug);
+                        const blogUrl = slugLink ? `/blog/${slugLink}` : '#';
                         return (
-                            <div
+                            <Link
                                 key={blog._id}
-                                onClick={() => slugLink && router.push(`/blog/${slugLink}`)}
-                                className="group cursor-pointer mb-3 pb-5 border border-gray-300 rounded-tl-3xl rounded-b-lg overflow-hidden bg-white hover:shadow-2xl hover:scale-[1.03] transition-transform duration-300"
+                                href={blogUrl}
+                                className="group cursor-pointer mb-3 pb-5 border border-gray-300 rounded-tl-3xl rounded-b-lg overflow-hidden bg-white hover:shadow-2xl hover:scale-[1.03] transition-transform duration-300 block"
                             >
                                 <div className="overflow-hidden rounded-tl-3xl rounded-br-3xl">
                                     <img
@@ -111,7 +111,7 @@ const BlogCards: React.FC<BlogProps> = ({ slug }) => {
                                         )}
                                     </p>
                                 </div>
-                            </div>
+                            </Link>
                         );
                     })}
                 </div>
