@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
 import { fetchYachts } from "@/lib/api";
 import { LuDoorOpen, LuToilet, LuMapPin } from "react-icons/lu";
 import { GiCaptainHatProfile } from "react-icons/gi";
