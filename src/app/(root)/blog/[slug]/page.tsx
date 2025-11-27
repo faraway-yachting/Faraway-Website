@@ -62,6 +62,7 @@ const resolveImageUrl = (image?: string): string => {
 };
 
 // Generate static params for all published blog posts
+// This ensures all blog pages are pre-rendered and discoverable by search engines
 export async function generateStaticParams() {
   try {
     const response = await fetchBlogs();
@@ -86,13 +87,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!blog) {
     const notFoundTitle = "Blog Not Found | Faraway Yachting";
     const description = "Discover yacht charter insights, itineraries, and sailing tips on the Faraway Yachting blog.";
-    const notFoundUrl = `${siteUrl}/blog/${slug}`;
     return {
       title: notFoundTitle,
       description,
-      alternates: {
-        canonical: notFoundUrl,
-      },
       openGraph: {
         title: notFoundTitle,
         description,
@@ -154,46 +151,9 @@ export default async function BlogDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const blog = await getBlogBySlug(slug);
 
-  // Generate structured data for SEO
-  const structuredData = blog ? {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": blog.title,
-    "description": blog.shortDescription || stripHtml(blog.detailDescription ?? "").slice(0, 160),
-    "image": resolveImageUrl(blog.image),
-    "url": `${siteUrl}/blog/${blog.slug}`,
-    "datePublished": new Date().toISOString(),
-    "dateModified": new Date().toISOString(),
-    "author": {
-      "@type": "Organization",
-      "name": "Faraway Yachting",
-      "url": siteUrl
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Faraway Yachting",
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${siteUrl}/images/logo.png`
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `${siteUrl}/blog/${blog.slug}`
-    }
-  } : null;
-
   return (
-    <>
-      {structuredData && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      )}
-      <div>
-        <BlogDetail slug={slug} initialBlog={blog ?? undefined} />
-      </div>
-    </>
+    <div>
+      <BlogDetail slug={slug} initialBlog={blog ?? undefined} />
+    </div>
   );
 }
