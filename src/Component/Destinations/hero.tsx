@@ -1,9 +1,11 @@
 import { styles, combine } from "@/styles";
 import Image from "next/image";
+import { Suspense } from "react";
 import {
   GoogleRatingBadge,
   TripAdvisorRatingBadge,
   WorldLuxuryAwardBadge,
+  RatingBadgeSkeleton,
 } from "@/common/RatingBadges";
 
 const HeroSection = () => {
@@ -21,7 +23,9 @@ const HeroSection = () => {
           </h1>
           {/* Rating Badges Section */}
           <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 md:gap-5 w-full mt-4 md:mt-8 lg:mt-10 px-4 relative z-20">
-            <GoogleRatingBadge />
+            <Suspense fallback={<RatingBadgeSkeleton />}>
+              <GoogleRatingBadge />
+            </Suspense>
             <a
               href="https://www.theworldluxurytravelawards.com/establishment/faraway-yachting-co-ltd/"
               target="_blank"

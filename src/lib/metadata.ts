@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { fetchYachtBySlug } from "./api";
 import { getFrontendUrl } from "./env";
+import { heroData as taxiHeroData } from "@/data/phukettaxi";
 
 const BASE_URL = getFrontendUrl();
 
@@ -231,6 +232,33 @@ export const destinationsMetadata: Metadata = {
     title: "Phuket Yacht Destinations – Discover Thailand's Hidden Gems",
     description: "Explore the most beautiful destinations accessible by yacht from Phuket. From pristine beaches to hidden coves, discover where your luxury yacht charter can take you in Thailand.",
     images: [`${BASE_URL}/images/hero.png`],
+  },
+};
+
+// Phuket Taxi Page Metadata
+export const taxiMetadata: Metadata = {
+  title: taxiHeroData.heading,
+  description: taxiHeroData.description,
+  openGraph: {
+    title: taxiHeroData.heading,
+    description: taxiHeroData.description,
+    url: `${BASE_URL}/taxi`,
+    images: [
+      {
+        url: `${BASE_URL}${taxiHeroData.backgroundImage}`,
+        width: 1200,
+        height: 630,
+        alt: taxiHeroData.heading,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: taxiHeroData.heading,
+    description: taxiHeroData.description,
+    images: [`${BASE_URL}${taxiHeroData.backgroundImage}`],
   },
 };
 

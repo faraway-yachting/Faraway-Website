@@ -1,3 +1,5 @@
+"use client";
+
 import PngIcons from "@/icons/pngIcon";
 import { styles, combine } from "@/styles/style";
 import Button from "@/styles/Button";
@@ -6,10 +8,10 @@ import { LuAnchor } from "react-icons/lu";
 import { RefObject } from "react";
 import Image from "next/image";
 import {
-  GoogleRatingBadge,
   TripAdvisorRatingBadge,
   WorldLuxuryAwardBadge,
 } from "@/common/RatingBadges";
+import { GoogleRatingBadgeClient } from "@/common/GoogleRatingBadgeClient";
 
 type HeroSectionProps = {
   heading: string;
@@ -138,12 +140,12 @@ const HeroContent: React.FC<HeroSectionProps> = ({
                 </Button>
               )}
             </div>
-          )}
+          )} 
           {/* Rating Badges Section - Optional */}
           {showRatingBadges && (showGoogleRating || showTripAdvisorRating) && (
             <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 md:gap-5 lg:gap-9 w-full mt-4 md:mt-8 lg:mt-10 px-4 relative z-20">
               {showGoogleRating && (
-                <GoogleRatingBadge />
+                <GoogleRatingBadgeClient />
               )}
               {showWorldLuxuryAward && (
                 <a
