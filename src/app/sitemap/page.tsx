@@ -25,7 +25,7 @@ interface Blog {
 
 const SitemapPage = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.faraway-yachting.com';
-  
+
   // Fetch yacht data
   let yachts: Yacht[] = [];
   try {
@@ -43,7 +43,7 @@ const SitemapPage = async () => {
   } catch (error) {
     console.error('Failed to fetch blogs:', error);
   }
-  
+
   // Filter published yachts and organize by type
   const publishedYachts = yachts.filter(yacht => yacht.status?.toLowerCase() === 'published');
   const bareboatYachts = publishedYachts.filter(yacht => yacht.type?.toLowerCase() === 'bareboat');
@@ -51,7 +51,7 @@ const SitemapPage = async () => {
   const superYachts = publishedYachts.filter(yacht => yacht.tags?.includes('super yacht'));
 
   const publishedBlogs = blogs.filter(blog => blog.status?.toLowerCase() === 'published');
-  
+
   // Static pages organized by category
   const pageCategories = {
     'Main Pages': [
@@ -113,6 +113,7 @@ const SitemapPage = async () => {
       { name: 'Business Card', url: '/business-card' },
       { name: 'Review Us', url: '/review-us' },
       { name: 'World Nomads Travel Insurance', url: '/world-nomads-travel-insurance' },
+      { name: 'Taxi', url:'/taxi'},
     ],
     'Legal & Policies': [
       { name: 'Privacy Policy', url: '/privacy-policy' },
@@ -172,7 +173,7 @@ const SitemapPage = async () => {
               <li>Blog posts (blog/[slug])</li>
               <li>Dynamic content pages ([id])</li>
             </ul>
-            
+
             <div className="mb-6">
               <h4 className="text-lg font-semibold text-gray-800 mb-3">Yacht Statistics</h4>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
@@ -194,7 +195,7 @@ const SitemapPage = async () => {
                 </div>
               </div>
             </div>
-            
+
             <h3 className="text-xl font-semibold text-gray-800 mb-3 font-playfair">
               XML Sitemap
             </h3>

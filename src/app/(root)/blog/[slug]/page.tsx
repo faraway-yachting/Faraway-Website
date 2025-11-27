@@ -61,6 +61,25 @@ const resolveImageUrl = (image?: string): string => {
   return `${siteUrl}${image.startsWith("/") ? image : `/${image}`}`;
 };
 
+// Generate static params for all published blog posts
+// This ensures all blog pages are pre-rendered and discoverable by search engines
+export async function generateStaticParams() {
+  try {
+    const response = await fetchBlogs();
+    const allBlogs: BlogData[] = response.data?.blogs || [];
+    const published = allBlogs.filter(
+      (blog) => blog.status?.toLowerCase().trim() === "published"
+    );
+    
+    return published.map((blog) => ({
+      slug: blog.slug,
+    }));
+  } catch (error) {
+    console.error("Failed to generate static params for blogs:", error);
+    return [];
+  }
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const blog = await getBlogBySlug(slug);
@@ -101,6 +120,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     keywords: customMeta?.keywords,
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       title,
       description,

@@ -9,8 +9,8 @@ const navItems = [
     { label: "Overnight Charter", href: "/crewed-overnight-charter" },
     { label: "Cabin Charter", href: "/best-of-phukets-islands-cabincharter" },
     { label: "Bareboat Charter", href: "/bareboat-charter-thailand" },
-    { label: "Destinations", href: "/magical-destinations-with-private-yacht-in-phuket" },
     {label: "Super Yachts", href:"/super-yacht-charter-phuket"},
+    { label: "Destinations", href: "/magical-destinations-with-private-yacht-in-phuket" },
     {label: "About Us", href:"/about-us"},
     {label: "Mission Statement", href:"/about-us#mission"},
     {label: "FAQ", href:"/#faq"}
