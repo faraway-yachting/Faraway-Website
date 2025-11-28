@@ -6,30 +6,7 @@ import {
     FaLine,
     FaRegEnvelope,
 } from "react-icons/fa";
-import { RiMap2Line } from "react-icons/ri";
 import { TbLocation } from "react-icons/tb";
-
-// ---------- FORM FIELD TYPES ----------
-export interface FormField {
-    id: string;
-    label: string;
-    type: string;
-    required: boolean;
-}
-
-export const formFields: FormField[] = [
-    { id: "name", label: "Your Name", type: "text", required: true },
-    { id: "email", label: "Your Email", type: "email", required: true },
-    { id: "phone", label: "Your Phone", type: "text", required: false },
-    { id: "whatsapp", label: "WhatsApp", type: "text", required: false },
-    { id: "country", label: "Country", type: "text", required: false },
-    { id: "guests", label: "No. of Guests", type: "number", required: false },
-    { id: "charterType", label: "Charter Type", type: "text", required: false },
-    { id: "yachtType", label: "Select Yacht Type", type: "text", required: false },
-    { id: "travelDate", label: "Travel Date", type: "date", required: true },
-    { id: "returnDate", label: "Return Date", type: "date", required: false },
-];
-
 // ---------- CONTACT INFO TYPES ----------
 export interface ContactDetail {
     icon: IconType; // React component (not JSX)

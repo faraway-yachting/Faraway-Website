@@ -94,13 +94,13 @@ const HeroSection: React.FC<HeroProps> = ({ slug }) => {
       <div className="max-w-[78.2rem] mx-auto px-4 xl:px-0">
         <BoatInfo />
         <h2 className="text-[24px] md:text-[26px] lg:text-[28px] xl:text-[32px] font-playfair font-bold text-zink mt-6 ">{data.title}</h2>
-        <div className="flex flex-col md:flex-row gap-5 mt-6">
-          <div className="w-full md:w-[70%]">
+        <div className="flex flex-col md:flex-row gap-3 lg:gap-5 mt-6">
+          <div className="w-full md:w-[65%] lg:w-[70%]">
             <Gallery data={data} />
             <h2 className={combine(" text-zink font-semibold",styles.h3)}>{formatSlug(data.slug)}</h2>
             <TabSection data={data} />
           </div>
-          <div className="w-full md:w-[30%] sticky top-[8rem]">
+          <div className="w-full md:w-[35%] lg:w-[30%] sticky top-[8rem]">
             <ContactDetail data={data} />
           </div>
         </div>

@@ -1,10 +1,17 @@
 "use client";
 import { contactDetails } from "@/data/contact/contact";
+import { initialFormState, formFields, type FieldName } from "@/data/contact/formFields";
+import ContactForm from "@/common/contactForm";
 import { styles, combine } from "@/styles";
 import { useState } from "react";
         
 const ContactSection = () => {
     const [copiedItems, setCopiedItems] = useState<Set<string>>(new Set());
+
+    const handleFormSubmit = (formData: Record<FieldName, string>) => {
+        // Handle form submission here
+        console.log("Form submitted:", formData);
+    };
 
     const copyToClipboard = async (text: string, itemType: string) => {
         try {
@@ -50,36 +57,16 @@ const ContactSection = () => {
 
             <section className={combine("bg-white", styles.py4)}>
                 <div className={combine("bg-white p-0 xl:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-12",styles.container)}>
-                    {/* Left Side - Form (Replaced with iframe) */}
+                    {/* Left Side - Form */}
                     <div className="col-span-12 lg:col-span-7">
-                        <h2 className={combine("text-zink font-bold mb-4", styles.h3)}>
+                        <h2 className={combine("text-zink font-bold mb-6", styles.h3)}>
                             Get In Touch
                         </h2>    
-                        {/* Replaced form with iframe */}
-                        <div className="w-full h-[745px]">
-                            <iframe
-                                src="https://api.leadconnectorhq.com/widget/form/YBBUmegk6BkzfkI9GcOV"
-                                style={{width:'100%',height:'100%',border:'none',borderRadius:'3px'}}
-                                id="inline-YBBUmegk6BkzfkI9GcOV" 
-                                data-layout="{'id':'INLINE'}"
-                                data-trigger-type="alwaysShow"
-                                data-trigger-value=""
-                                data-activation-type="alwaysActivated"
-                                data-activation-value=""
-                                data-deactivation-type="neverDeactivate"
-                                data-deactivation-value=""
-                                data-form-name="Contact Us"
-                                data-height="745"
-                                data-layout-iframe-id="inline-YBBUmegk6BkzfkI9GcOV"
-                                data-form-id="YBBUmegk6BkzfkI9GcOV"
-                                title="Contact Us"
-                                loading="lazy"
-                            >
-                            </iframe>
-                        </div>
-                        
-                        {/* Script tag for the iframe */}
-                        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+                        <ContactForm
+                            formFields={formFields}
+                            initialFormState={initialFormState}
+                            onSubmit={handleFormSubmit}
+                        />
                     </div>
 
                     {/* Right Side - Contact Info */}

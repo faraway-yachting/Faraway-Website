@@ -13,7 +13,7 @@ const ImpressumContent = () => {
           setTimeout(() => setEmailCopied(false), 2000); 
       } catch (err) {
       }
-  };
+  };              
 
   const copyPhoneToClipboard = async () => {
       try {
