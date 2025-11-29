@@ -10,7 +10,7 @@ import { FaRegEnvelope } from "react-icons/fa";
 import { RiMap2Line } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const quickLinks = [
   { label: "Crewed Yachts", href: "/yacht-charter-phuket" },
@@ -38,11 +38,8 @@ const heading = "text-[22px] lg:text-[24px] xl:text-[28px] font-[400] mb-4 font-
 const Footer = () => {
   const [emailCopied, setEmailCopied] = useState(false);
   const [phoneCopied, setPhoneCopied] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const [subscribeEmail, setSubscribeEmail] = useState("");
+  const [subscribeStatus, setSubscribeStatus] = useState(""); // 'success', 'error', or ''
 
   const copyEmailToClipboard = async () => {
     try {
@@ -60,6 +57,21 @@ const Footer = () => {
       setTimeout(() => setPhoneCopied(false), 2000);
     } catch (err) {
     }
+  };
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (!subscribeEmail || !subscribeEmail.includes('@')) {
+      setSubscribeStatus('error');
+      setTimeout(() => setSubscribeStatus(''), 3000);
+      return;
+    }
+    
+    // Static email subscription - just log it or show success
+    console.log('Subscribed email:', subscribeEmail);
+    setSubscribeStatus('success');
+    setSubscribeEmail('');
+    setTimeout(() => setSubscribeStatus(''), 3000);
   };
   const renderLinks = (links) =>
     links.map((link, index) => (
@@ -154,33 +166,31 @@ const Footer = () => {
             news, promotions, and insider tips on Phuket yacht charters!
           </p>
 
-          {/* Replaced form with iframe */}
-          <div className="">
-            {isMounted && (
-              <iframe
-                src="https://api.leadconnectorhq.com/widget/form/xkQihe7gv1EoPJiKH3Jx"
-                style={{ width: '100%', height: '100%', border: 'none', borderRadius: '3px' }}
-                id="inline-xkQihe7gv1EoPJiKH3Jx"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="Form 8"
-                data-height="402"
-                data-layout-iframe-id="inline-xkQihe7gv1EoPJiKH3Jx"
-                data-form-id="xkQihe7gv1EoPJiKH3Jx"
-                title="Form 8"
-                loading="lazy"
-              >
-              </iframe>
+          {/* Subscribe Form */}
+          <form onSubmit={handleSubscribe} className="space-y-3">
+            <div className="relative">
+              <input
+                type="email"
+                value={subscribeEmail}
+                onChange={(e) => setSubscribeEmail(e.target.value)}
+                placeholder="Email*"
+                required
+                className="w-full px-4 py-2 bg-white text-zink rounded-md border-2 border-transparent focus:border-[#D6AB61] focus:outline-none text-[16px] font-normal placeholder:text-gray-400"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-white text-zink px-6 py-2 rounded-md hover:bg-[#D6AB61] hover:text-white transition-colors duration-200 font-semibold text-[16px]"
+            >
+              Subscribe
+            </button>
+            {subscribeStatus === 'success' && (
+              <p className="text-green-300 text-sm mt-2">Thank you for subscribing!</p>
             )}
-          </div>
-
-          {/* Script tag for the iframe */}
-          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+            {subscribeStatus === 'error' && (
+              <p className="text-red-300 text-sm mt-2">Please enter a valid email address.</p>
+            )}
+          </form>
         </div>
       </div>
 
