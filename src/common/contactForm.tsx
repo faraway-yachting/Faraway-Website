@@ -3,6 +3,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { styles, combine } from "@/styles";
 import { type FieldName, type FieldConfig } from "@/data/contact/formFields";
+import PhoneInput from "./PhoneInput";
 
 type BaseFieldConfig = {
     name: string;
@@ -56,21 +57,17 @@ function ContactForm<T extends Record<string, string> = Record<FieldName, string
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
-        
-        // Only allow numbers and common phone characters for phone and whatsapp fields
-        if (name === "phone" || name === "whatsapp") {
-            // Allow only numbers, spaces, +, -, and parentheses
-            const filteredValue = value.replace(/[^0-9+\-() ]/g, '');
-            setFormData(prev => ({
-                ...prev,
-                [name]: filteredValue,
-            }));
-        } else {
-            setFormData(prev => ({
-                ...prev,
-                [name]: value,
-            }));
-        }
+        setFormData(prev => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
+    const handlePhoneChange = (value: string, fieldName: string) => {
+        setFormData(prev => ({
+            ...prev,
+            [fieldName]: value,
+        }));
     };
     
     const getLabelClasses = (fieldName: string) =>
@@ -126,6 +123,25 @@ function ContactForm<T extends Record<string, string> = Record<FieldName, string
             shouldShowDatePlaceholder ? "placeholder:text-gray-400 [&::-webkit-calendar-picker-indicator]:opacity-50" : 
             isDateField && !hasValue && !isFocused ? "[&::-webkit-calendar-picker-indicator]:opacity-0" : ""
         );
+
+        // Special handling for phone and whatsapp fields with country code
+        if (field.name === "phone" || field.name === "whatsapp") {
+            return (
+                <div key={field.name}>
+                    <PhoneInput
+                        name={field.name}
+                        value={fieldValue || ""}
+                        onChange={(value) => handlePhoneChange(value, field.name)}
+                        onFocus={() => handleFocus(field.name)}
+                        onBlur={() => handleBlur(field.name)}
+                        isFocused={isFocused}
+                        hasValue={hasValue}
+                        required={field.required}
+                        label={getFieldLabel(field)}
+                    />
+                </div>
+            );
+        }
 
         const fieldElement = isSelect ? (
             <div className="relative">

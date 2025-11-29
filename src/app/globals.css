@@ -204,3 +204,54 @@ select:-webkit-autofill:active {
   box-shadow: 0 0 0 30px white inset !important;
   transition: background-color 5000s ease-in-out 0s;
 }
+/* Phone Input - Structural styles to match form fields */
+.PhoneInput {
+  display: flex !important;
+  align-items: flex-end !important;
+  gap: 8px !important;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.PhoneInputCountry {
+  position: relative;
+  align-self: flex-end !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.PhoneInputCountryIcon {
+  border: 0 !important;
+  background: transparent !important;
+  width: 24px !important;
+  height: 18px !important;
+  margin-right: 4px;
+  align-self: flex-end;
+  margin-bottom: 0;
+}
+
+.PhoneInputCountryIcon--border {
+  border: 0 !important;
+}
+
+.PhoneInputCountrySelectArrow {
+  opacity: 0.5;
+  margin-left: 4px;
+}
+
+/* Ensure country select aligns with input bottom border */
+.PhoneInputCountrySelect {
+  align-self: flex-end !important;
+  box-sizing: border-box !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 8px !important;
+}
+
+.PhoneInputInput {
+  box-sizing: border-box !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 0 !important;
+}
